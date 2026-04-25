@@ -45,6 +45,7 @@ public sealed class WeekFlowCommandHandler
             RuntimeWeekSelection[] selections = _weekSelectionState.BuildSelections(
                 WeekFlowQueryUtility.GetCurrentWeekEntries(currentWeekDefinition));
             _runtimeState.LastWeekResult = _weekRunner.RunWeek(currentWeekDefinition, _runtimeState.ChildState, selections);
+            LogResolvedWeekAnalytics(currentWeekDefinition, _runtimeState.LastWeekResult);
 
             RuntimeChildState eventResolutionChildState = _runtimeState.LastWeekResult.EventResolutionChildState ?? _runtimeState.ChildState;
             _runtimeState.SetPendingEvents(WeekNarrativeResolver.ResolvePendingEvents(
@@ -170,12 +171,26 @@ public sealed class WeekFlowCommandHandler
         _runtimeState.HasReachedEnding = true;
         _runtimeState.IsAwaitingEndingFollowUp = true;
         EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState);
+        GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());
 
         return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEnding(
             _weekSequenceState.CurrentWeekDefinition,
             ending,
             new NemoFeedbackPresentation(ending.VisualState, ending.ClosingLine)));
+    }
+
+    private static void LogResolvedWeekAnalytics(SO_WeekDefinition weekDefinition, RuntimeWeekResult weekResult)
+    {
+        if (weekResult?.ResolvedCards != null)
+        {
+            foreach (RuntimeResolvedCardRecord resolvedCard in weekResult.ResolvedCards)
+            {
+                GameplayAnalyticsLogger.LogCardOptionSelected(weekDefinition, resolvedCard);
+            }
+        }
+
+        GameplayAnalyticsLogger.LogWeekResolved(weekDefinition, weekResult);
     }
 
     private void MoveToNextWeek()

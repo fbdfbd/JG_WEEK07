@@ -79,6 +79,12 @@ public sealed class WeekFlowNarrativeHandler
         }
 
         InteractiveEventChoiceData selectedChoice = eventSession.CurrentStep.Choices[choiceIndex];
+        GameplayAnalyticsLogger.LogInteractiveChoiceSelected(
+            _weekSequenceState.CurrentWeekDefinition,
+            eventSession.EventDefinition,
+            eventSession.CurrentStep,
+            choiceIndex,
+            selectedChoice);
         eventSession.SelectChoice(selectedChoice);
         GameplayInteractionExecutor.ApplyAll(selectedChoice.Interactions, _runtimeState.ChildState);
 
@@ -195,6 +201,7 @@ public sealed class WeekFlowNarrativeHandler
         _runtimeState.HasReachedEnding = true;
         _runtimeState.IsAwaitingEndingFollowUp = true;
         EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState);
+        GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());
 
         return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEnding(

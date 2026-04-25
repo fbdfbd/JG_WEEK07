@@ -38,6 +38,7 @@ public class WeekFlowController : MonoBehaviour
     {
         ResolveConnectedView();
         BuildWeekFlowObjects();
+        GameplayAnalyticsLogger.StartSession(CurrentWeekDefinition);
         BindViewEvents();
         _presenter.RefreshAll();
         _presenter.PublishDefaultNemoFeedback();
@@ -55,8 +56,14 @@ public class WeekFlowController : MonoBehaviour
 
     protected virtual void OnDestroy()
     {
+        GameplayAnalyticsLogger.EndSession();
         UnbindRuntimeStateEvents();
         UnbindViewEvents();
+    }
+
+    private void OnApplicationQuit()
+    {
+        GameplayAnalyticsLogger.EndSession();
     }
 
     private void ResolveConnectedView()
@@ -121,7 +128,11 @@ public class WeekFlowController : MonoBehaviour
     private void HandleWeekFeedbackClosed() => RunFlowAction(_narrativeHandler.CloseWeekFeedback);
     private void HandleInteractiveEventContinueRequested() => RunFlowAction(_narrativeHandler.ContinueInteractiveEvent);
     private void HandleInteractiveEventSkipRequested() => RunFlowAction(_narrativeHandler.SkipCurrentInteractiveEvent);
-    private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex) => RunFlowAction(() => _commandHandler.SelectCardOption(cardDefinition, optionIndex));
+    private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
+    {
+        GameplayAnalyticsLogger.LogCardOptionClicked(CurrentWeekDefinition, cardDefinition, optionIndex);
+        RunFlowAction(() => _commandHandler.SelectCardOption(cardDefinition, optionIndex));
+    }
     private void HandleInteractiveEventChoiceSelected(int choiceIndex) => RunFlowAction(() => _narrativeHandler.SelectInteractiveEventChoice(choiceIndex));
 
     private void BindRuntimeStateEvents()
@@ -176,8 +187,9 @@ public class WeekFlowController : MonoBehaviour
         _presenter?.PublishChildState();
     }
 
-    private void HandleStatChanged(StatChangeInfo _)
+    private void HandleStatChanged(StatChangeInfo changeInfo)
     {
+        GameplayAnalyticsLogger.LogStatChanged(CurrentWeekDefinition, changeInfo);
         _presenter?.PublishChildState();
     }
 
@@ -256,6 +268,7 @@ public class WeekFlowController : MonoBehaviour
             if (_currentScreen != null)
             {
                 _presenter.PresentScreen(_currentScreen);
+                GameplayAnalyticsLogger.LogEventStepShown(_currentScreen);
                 _view?.SetFlowScreenContext(_currentScreen, _runtimeState.ChildState, _runtimeState.LastWeekResult);
 
                 if (ShouldEnterEventCutscene(previousScreen, _currentScreen))

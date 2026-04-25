@@ -1,0 +1,218 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+public static class GameplayAnalyticsLogger
+{
+    private static readonly List<GameplayAnalyticsEvent> Events = new();
+    private static string _sessionId;
+    private static float _startedAt;
+    private static string _rawPath;
+    private static bool _sessionEnded;
+    private static int _currentWeekIndex;
+
+    public static void StartSession(SO_WeekDefinition currentWeek)
+    {
+        if (!string.IsNullOrEmpty(_sessionId) && !_sessionEnded)
+        {
+            return;
+        }
+
+        Events.Clear();
+        _sessionId = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        _startedAt = Time.realtimeSinceStartup;
+        _sessionEnded = false;
+        _currentWeekIndex = GetWeekIndex(currentWeek);
+        _rawPath = GameplayAnalyticsExporter.BuildPath($"raw_{_sessionId}.jsonl");
+        Log("session_start", _currentWeekIndex)
+            .Add("week_id", GetWeekId(currentWeek))
+            .Add("week_title", GetWeekTitle(currentWeek));
+    }
+
+    public static void EndSession()
+    {
+        if (string.IsNullOrEmpty(_sessionId) || _sessionEnded)
+        {
+            return;
+        }
+
+        GameplayAnalyticsEvent lastEvent = Events.Count > 0 ? Events[^1] : null;
+        Log("session_end", _currentWeekIndex)
+            .Add("last_event_name", lastEvent != null ? lastEvent.EventName : string.Empty)
+            .Add("last_week_index", lastEvent != null ? lastEvent.WeekIndex : _currentWeekIndex);
+
+        _sessionEnded = true;
+        GameplayAnalyticsSummary summary = GameplayAnalyticsSummaryBuilder.Build(Events);
+        GameplayAnalyticsExporter.WriteText(
+            GameplayAnalyticsExporter.BuildPath($"summary_{_sessionId}.json"),
+            GameplayAnalyticsSummaryBuilder.ToJson(summary));
+        GameplayAnalyticsExporter.WriteText(
+            GameplayAnalyticsExporter.BuildPath($"report_{_sessionId}.txt"),
+            GameplayAnalyticsSummaryBuilder.ToReport(summary));
+    }
+
+    public static void LogCardOptionClicked(
+        SO_WeekDefinition week,
+        SO_CardInfoDefinition card,
+        int optionIndex)
+    {
+        CardOptionData option = GetOption(card, optionIndex);
+        Log("card_option_clicked", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("card_id", GetCardId(card))
+            .Add("card_title", GetCardTitle(card))
+            .Add("option_index", optionIndex)
+            .Add("semantic", option != null ? option.Semantic.ToString() : string.Empty);
+    }
+
+    public static void LogCardOptionSelected(
+        SO_WeekDefinition week,
+        RuntimeResolvedCardRecord resolvedCard)
+    {
+        if (resolvedCard == null)
+        {
+            return;
+        }
+
+        Log("card_option_selected", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("card_id", GetCardId(resolvedCard.CardDefinition))
+            .Add("card_title", GetCardTitle(resolvedCard.CardDefinition))
+            .Add("option_index", resolvedCard.SelectedOptionIndex)
+            .Add("semantic", resolvedCard.SelectedOption != null ? resolvedCard.SelectedOption.Semantic.ToString() : string.Empty);
+    }
+
+    public static void LogWeekResolved(SO_WeekDefinition week, RuntimeWeekResult result)
+    {
+        Log("week_resolved", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("week_title", GetWeekTitle(week))
+            .Add("resolved_card_count", result?.ResolvedCards?.Count ?? 0);
+    }
+
+    public static void LogEventStepShown(WeekFlowScreen screen)
+    {
+        if (screen == null || screen.ScreenType != EWeekFlowScreenType.EventStep)
+        {
+            return;
+        }
+
+        Log("event_step_shown", GetWeekIndex(screen.WeekDefinition))
+            .Add("week_id", GetWeekId(screen.WeekDefinition))
+            .Add("event_id", GetEventId(screen.EventDefinition))
+            .Add("event_title", GetEventTitle(screen.EventDefinition))
+            .Add("step_id", GetStepId(screen.StepDefinition))
+            .Add("step_title", GetStepTitle(screen.StepDefinition));
+    }
+
+    public static void LogInteractiveChoiceSelected(
+        SO_WeekDefinition week,
+        SO_InteractiveEventDefinition eventDefinition,
+        SO_InteractiveEventStepDefinition step,
+        int choiceIndex,
+        InteractiveEventChoiceData choice)
+    {
+        Log("interactive_choice_selected", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("event_id", GetEventId(eventDefinition))
+            .Add("event_title", GetEventTitle(eventDefinition))
+            .Add("step_id", GetStepId(step))
+            .Add("step_title", GetStepTitle(step))
+            .Add("choice_index", choiceIndex)
+            .Add("choice_label", choice != null ? choice.Label : string.Empty);
+    }
+
+    public static void LogStatChanged(SO_WeekDefinition week, StatChangeInfo changeInfo)
+    {
+        Log("stat_changed", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("stat", changeInfo.StatType.ToString())
+            .Add("previous", changeInfo.PreviousValue)
+            .Add("current", changeInfo.CurrentValue)
+            .Add("delta", changeInfo.Delta);
+    }
+
+    public static void LogEndingReached(SO_WeekDefinition week, EndingPresentation ending)
+    {
+        Log("ending_reached", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("ending_id", ending.EndingId)
+            .Add("ending_title", ending.Title)
+            .Add("ending_visual_state", ending.VisualState.ToString());
+    }
+
+    private static GameplayAnalyticsEvent Log(string eventName, int weekIndex)
+    {
+        if (string.IsNullOrEmpty(_sessionId))
+        {
+            StartSession(null);
+        }
+
+        _currentWeekIndex = weekIndex > 0 ? weekIndex : _currentWeekIndex;
+        GameplayAnalyticsEvent logEvent = new(
+            _sessionId,
+            eventName,
+            Time.realtimeSinceStartup - _startedAt,
+            weekIndex);
+
+        Events.Add(logEvent);
+        File.AppendAllText(_rawPath, logEvent.ToJsonLine() + Environment.NewLine);
+        return logEvent;
+    }
+
+    private static int GetWeekIndex(SO_WeekDefinition week)
+    {
+        return week != null ? week.WeekIndex : _currentWeekIndex;
+    }
+
+    private static string GetWeekId(SO_WeekDefinition week)
+    {
+        return week != null ? week.Id : string.Empty;
+    }
+
+    private static string GetWeekTitle(SO_WeekDefinition week)
+    {
+        return week != null ? week.Title : string.Empty;
+    }
+
+    private static string GetCardId(SO_CardInfoDefinition card)
+    {
+        return card != null && !string.IsNullOrWhiteSpace(card.Id) ? card.Id : card != null ? card.name : string.Empty;
+    }
+
+    private static string GetCardTitle(SO_CardInfoDefinition card)
+    {
+        return card != null ? card.Title : string.Empty;
+    }
+
+    private static CardOptionData GetOption(SO_CardInfoDefinition card, int optionIndex)
+    {
+        CardOptionData[] options = card != null ? card.Options : null;
+        return options != null && optionIndex >= 0 && optionIndex < options.Length
+            ? options[optionIndex]
+            : null;
+    }
+
+    private static string GetEventId(SO_InteractiveEventDefinition eventDefinition)
+    {
+        return eventDefinition != null && !string.IsNullOrWhiteSpace(eventDefinition.Id)
+            ? eventDefinition.Id
+            : eventDefinition != null ? eventDefinition.name : string.Empty;
+    }
+
+    private static string GetEventTitle(SO_InteractiveEventDefinition eventDefinition)
+    {
+        return eventDefinition != null ? eventDefinition.Title : string.Empty;
+    }
+
+    private static string GetStepId(SO_InteractiveEventStepDefinition step)
+    {
+        return step != null ? step.name : string.Empty;
+    }
+
+    private static string GetStepTitle(SO_InteractiveEventStepDefinition step)
+    {
+        return step != null ? step.TitleOverride : string.Empty;
+    }
+}
