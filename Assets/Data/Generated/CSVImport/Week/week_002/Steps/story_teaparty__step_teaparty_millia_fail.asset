@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_teaparty__step_teaparty_millia_fail
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\u2026\uC608\uBED0."
+  - _speaker: {fileID: 11400000, guid: 2af885eedf1120f4ebe3ea9e3df21afd, type: 2}
+    _text: "\uADF8\uB807\uC9C0\uC694."
+  - _speaker: {fileID: 11400000, guid: 5ab55b540ea181042902e62a49fb7578, type: 2}
+    _text: "\uB9DB\uC740 \uBCC4\uB860\uB370."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8 \uB9D0\uC744 \uB4E4\uC5C8\uB2E4.
+      \uD558\uC9C0\uB9CC \uB2E4\uC2DC \uB9D0\uD558\uC9C0 \uC54A\uC558\uB2E4. \uB300\uC2E0
+      \uC606\uC5D0 \uC788\uB358 \uC791\uC740 \uACFC\uC790\uB97C \uD55C \uBC88 \uB354
+      \uBC14\uB77C\uBCF4\uC558\uB2E4."
+  _nemoLine: "\u2026\uC608\uBED0."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 11400000, guid: 2a9bc9ef4910fdf469d5e691a2063228, type: 2}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

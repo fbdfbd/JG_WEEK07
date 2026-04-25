@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_teaparty__step_teaparty_millia_check
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uAF43 \uBAA8\uC591 \uACFC\uC790\uAC00 \uC811\uC2DC\uC5D0 \uC62C\uB790\uB2E4.
+      \uC544\uC8FC \uC608\uBEE4\uC9C0\uB9CC, \uD55C\uC785 \uBA39\uC740 \uC544\uC774\uB4E4\uC758
+      \uC5BC\uAD74\uC774 \uC870\uAE08 \uAD73\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 2af885eedf1120f4ebe3ea9e3df21afd, type: 2}
+    _text: "\uC608\uC058\uC9C0\uC694, \uC544\uAC00\uC528?"
+  _nemoLine: "\uAF43 \uBAA8\uC591 \uACFC\uC790\uAC00 \uC811\uC2DC\uC5D0 \uC62C\uB790\uB2E4.
+    \uC544\uC8FC \uC608\uBEE4\uC9C0\uB9CC, \uD55C\uC785 \uBA39\uC740 \uC544\uC774\uB4E4\uC758
+    \uC5BC\uAD74\uC774 \uC870\uAE08 \uAD73\uC5C8\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 11400000, guid: 5d7c578a9cc3eef499cebd7d402defc4, type: 2}
+    _fallbackStep: {fileID: 11400000, guid: 580ad6420c0a01f4b998390bfa117540, type: 2}
+    _statRequirements:
+    - _statType: 0
+      _useMinimum: 0
+      _minimumValue: 0
+      _useMaximum: 1
+      _maximumValue: -1
+    - _statType: 7
+      _useMinimum: 1
+      _minimumValue: 1
+      _useMaximum: 0
+      _maximumValue: 0
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

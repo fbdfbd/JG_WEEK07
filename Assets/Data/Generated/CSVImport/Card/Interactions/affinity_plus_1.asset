@@ -14,5 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInteraction_StatDelta
   _statType: 1
   _amount: 1
-  _toastMessage: "\uD574\uB2F9 \uD56D\uBAA9\uC740 \uD1A0\uC2A4\uD2B8\uC5D0 \uD45C\uAE30
-    \uC548\uB428"
+  _toastMessage: "\uD638\uAC10\uB3C4+1"

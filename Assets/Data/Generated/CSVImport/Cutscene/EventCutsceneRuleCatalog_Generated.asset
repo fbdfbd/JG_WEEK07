@@ -1770,3 +1770,115 @@ MonoBehaviour:
     _moment: 0
     _sequenceId: sequence_yuffie_garden
     _specialPlayerId: 
+  - _ruleId: 1
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_night_dark_room
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 2
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_night_parents
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 3
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_night_mother_resemblance
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 4
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_night_tea_party
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 5
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_night_father_book
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 6
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_night_carriage_crest
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 7
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_night_other_kids
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 8
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_night_uncle_pride
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 9
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_night_too_many_classes
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 10
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_night_unknown_frustration
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 11
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_night_ball_thoughts
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 12
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_night_chicken_dream
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 13
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_night_untold_story
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 14
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_night_unknown_mother
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 15
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_night_uncle_time
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 
+  - _ruleId: 16
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_night_sleepless_night
+    _moment: 0
+    _sequenceId: sequence_night_default
+    _specialPlayerId: 

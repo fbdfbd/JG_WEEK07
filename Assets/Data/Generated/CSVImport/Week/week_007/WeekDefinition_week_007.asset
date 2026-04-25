@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edff9b7bd1a506a42a33e4d294868a53, type: 3}
-  m_Name: week_007
+  m_Name: WeekDefinition_week_007
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekDefinition
   _id: week_007
   _weekIndex: 7

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_teaparty__step_teaparty_max_check
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uADF8\uB54C \uB9DE\uC740\uD3B8\uC5D0 \uC788\uB358 \uBC00\uB9AC\uC544\uAC00
+      \uCC3B\uC794\uC744 \uB4E4\uB2E4\uAC00 \uCC28\uB97C \uC870\uAE08 \uD758\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 5ab55b540ea181042902e62a49fb7578, type: 2}
+    _text: "\uC544\u2026"
+  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+    _text: "\uADF8\uB807\uAC8C \uB4E4\uBA74\u2026"
+  _nemoLine: "\uADF8\uB54C \uB9DE\uC740\uD3B8\uC5D0 \uC788\uB358 \uBC00\uB9AC\uC544\uAC00
+    \uCC3B\uC794\uC744 \uB4E4\uB2E4\uAC00 \uCC28\uB97C \uC870\uAE08 \uD758\uB838\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 11400000, guid: 5eb4c72dcb496fb479b30378a1bd063a, type: 2}
+    _fallbackStep: {fileID: 11400000, guid: e60be412d732b7f4e820c1712ed2ca3b, type: 2}
+    _statRequirements:
+    - _statType: 3
+      _useMinimum: 0
+      _minimumValue: 0
+      _useMaximum: 1
+      _maximumValue: -1
+    - _statType: 6
+      _useMinimum: 1
+      _minimumValue: 1
+      _useMaximum: 0
+      _maximumValue: 0
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

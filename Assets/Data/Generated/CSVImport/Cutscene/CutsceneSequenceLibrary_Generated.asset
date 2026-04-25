@@ -507,3 +507,21 @@ MonoBehaviour:
       _duration: 0
       _ease: 9
       _blocking: 1
+  - _sequenceId: sequence_night_default
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BedRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: center
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1

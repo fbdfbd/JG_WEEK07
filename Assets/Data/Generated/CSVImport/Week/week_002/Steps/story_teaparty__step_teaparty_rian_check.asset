@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_teaparty__step_teaparty_rian_check
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC790\uB9AC\uC5D0 \uC549\uC740 \uB4A4\uC5D0\uB3C4 \uB9AC\uC548\uC740
+      \uC811\uB358 \uC885\uC774\uB97C \uC190\uB05D\uC73C\uB85C \uB9CC\uC9C0\uACE0
+      \uC788\uC5C8\uB2E4. \uC885\uC774\uB294 \uC0C8 \uAC19\uAE30\uB3C4 \uD558\uACE0,
+      \uBC30 \uAC19\uAE30\uB3C4 \uD588\uB2E4."
+  _nemoLine: "\uC790\uB9AC\uC5D0 \uC549\uC740 \uB4A4\uC5D0\uB3C4 \uB9AC\uC548\uC740
+    \uC811\uB358 \uC885\uC774\uB97C \uC190\uB05D\uC73C\uB85C \uB9CC\uC9C0\uACE0 \uC788\uC5C8\uB2E4.
+    \uC885\uC774\uB294 \uC0C8 \uAC19\uAE30\uB3C4 \uD558\uACE0, \uBC30 \uAC19\uAE30\uB3C4
+    \uD588\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 11400000, guid: e22ebe165a4402549b48e10071e0f3ba, type: 2}
+    _fallbackStep: {fileID: 11400000, guid: 97f0b829f6cf0e54bbaa8a8fda852280, type: 2}
+    _statRequirements:
+    - _statType: 2
+      _useMinimum: 1
+      _minimumValue: 1
+      _useMaximum: 0
+      _maximumValue: 0
+    - _statType: 5
+      _useMinimum: 1
+      _minimumValue: 1
+      _useMaximum: 0
+      _maximumValue: 0
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

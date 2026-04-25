@@ -2700,3 +2700,249 @@ event_week_008_night_sleepless_night,step_event_week_008_night_sleepless_night_i
 event_week_008_night_sleepless_night,step_event_week_008_night_sleepless_night_intro,2,speaker_abelia,사실은…
 event_week_008_night_sleepless_night,step_event_week_008_night_sleepless_night_intro,3,speaker_abelia,"아까부터 손이 좀 떨려요. 차도 마셨고, 마리가 따뜻한 우유도 가져왔는데."
 event_week_008_night_sleepless_night,step_event_week_008_night_sleepless_night_intro,4,speaker_abelia,오늘 밤 잠을 잘 수 있을까요?
+story_teaparty,step_teaparty_intro,0,speaker_narrator,백작저 작은 다과회장. 낮. 둥근 테이블 위에는 작은 찻잔과 과자가 놓여 있었다.
+story_teaparty,step_teaparty_intro,1,speaker_narrator,"창가 쪽에는 리안이 종이를 접고 있었고, 밀리아는 과자 접시를 유심히 보고 있었다. 막스는 의자 뒤에 서서 어른들의 눈치를 살폈고, 유피는 자기 앞의 찻잔을 두 손으로 가지런히 잡고 있었다."
+story_teaparty,step_teaparty_intro,2,speaker_narrator,"아벨리아가 들어오자, 네 아이의 시선이 잠깐 아벨리아에게 모였다가 흩어졌다."
+story_teaparty,step_teaparty_intro,3,speaker_narrator,"아벨리아는 자기 이름이 적힌 자리를 찾았다. 테이블 한가운데는 너무 조용했고, 과자는 너무 예쁘게 놓여 있었다."
+story_teaparty,step_teaparty_intro,4,speaker_abelia,…여기 앉으면 되는 거야?
+story_teaparty,step_teaparty_intro,5,speaker_millia,응. 이름이 있으니까!
+story_teaparty,step_teaparty_intro,6,speaker_max,의자가 높으면 말해. 밀어줄게.
+story_teaparty,step_teaparty_intro,7,speaker_rian,…나도 아직 안 앉았어.
+story_teaparty,step_teaparty_intro,8,speaker_narrator,리안은 접던 종이를 내려놓고 의자에 앉았다. 아벨리아도 천천히 자리에 앉았다.
+story_teaparty,step_teaparty_rian_check,0,speaker_narrator,"자리에 앉은 뒤에도 리안은 접던 종이를 손끝으로 만지고 있었다. 종이는 새 같기도 하고, 배 같기도 했다."
+story_teaparty,step_teaparty_rian_success,0,speaker_abelia,그거 뭐야?
+story_teaparty,step_teaparty_rian_success,1,speaker_rian,그냥 접었어. 아직 이름은 없어.
+story_teaparty,step_teaparty_rian_success,2,speaker_abelia,그럼 작은 새.
+story_teaparty,step_teaparty_rian_success,3,speaker_rian,새?
+story_teaparty,step_teaparty_rian_success,4,speaker_abelia,응. 날아가면 좋잖아.
+story_teaparty,step_teaparty_rian_success,5,speaker_rian,그럼 작은 새야.
+story_teaparty,step_teaparty_rian_fail,0,speaker_abelia,…
+story_teaparty,step_teaparty_rian_fail,1,speaker_narrator,아벨리아는 물어보려다가 입을 다물었다. 리안은 종이를 몇 번 더 만지작거리다가 조심스럽게 주머니에 넣었다.
+story_teaparty,step_teaparty_yuffie_check,0,speaker_narrator,"아벨리아가 찻잔을 들자, 받침이 작게 흔들렸다."
+story_teaparty,step_teaparty_yuffie_check,1,speaker_servant,손을 조금 더 아래에 두면 좋겠군요.
+story_teaparty,step_teaparty_yuffie_success,0,speaker_abelia,다시 해볼게요.
+story_teaparty,step_teaparty_yuffie_success,1,speaker_narrator,아벨리아는 두 손으로 찻잔을 잡고 천천히 들어 올렸다.
+story_teaparty,step_teaparty_yuffie_success,2,speaker_abelia,이렇게?
+story_teaparty,step_teaparty_yuffie_success,3,speaker_servant,네. 그게 좋습니다.
+story_teaparty,step_teaparty_yuffie_success,4,speaker_friend_3,잘했어요.
+story_teaparty,step_teaparty_yuffie_success,5,speaker_abelia,틀리면 다시 하면 돼요?
+story_teaparty,step_teaparty_yuffie_success,6,speaker_friend_3,네. 다시 하면 돼요.
+story_teaparty,step_teaparty_yuffie_fail,0,speaker_friend_3,두 손으로 다시 들어도 돼요.
+story_teaparty,step_teaparty_yuffie_fail,1,speaker_abelia,이렇게?
+story_teaparty,step_teaparty_yuffie_fail,2,speaker_friend_3,네. 그렇게요.
+story_teaparty,step_teaparty_yuffie_fail,3,speaker_servant,네. 그게 좋습니다.
+story_teaparty,step_teaparty_yuffie_fail,4,speaker_abelia,고마워.
+story_teaparty,step_teaparty_yuffie_fail,5,speaker_friend_3,괜찮아요. 처음엔 어려워요.
+story_teaparty,step_teaparty_max_check,0,speaker_narrator,그때 맞은편에 있던 밀리아가 찻잔을 들다가 차를 조금 흘렸다.
+story_teaparty,step_teaparty_max_check,1,speaker_millia,아…
+story_teaparty,step_teaparty_max_check,2,speaker_friend_3,그렇게 들면…
+story_teaparty,step_teaparty_max_success,0,speaker_abelia,괜찮아. 흘릴 수도 있잖아.
+story_teaparty,step_teaparty_max_success,1,speaker_abelia,닦을 거 줘.
+story_teaparty,step_teaparty_max_success,2,speaker_max,맞아. 닦으면 돼.
+story_teaparty,step_teaparty_max_success,3,speaker_friend_3,…다시 들면 돼요.
+story_teaparty,step_teaparty_max_fail,0,speaker_narrator,"테이블 위가 잠깐 조용해졌다. 아벨리아는 손을 움찔했지만, 바로 말하지 못했다."
+story_teaparty,step_teaparty_max_fail,1,speaker_max,괜찮아. 흘릴 수도 있잖아.
+story_teaparty,step_teaparty_max_fail,2,speaker_narrator,막스는 손수건을 집어 밀리아 쪽으로 밀어주었다.
+story_teaparty,step_teaparty_max_fail,3,speaker_abelia,닦을거.. 줘
+story_teaparty,step_teaparty_millia_check,0,speaker_narrator,"꽃 모양 과자가 접시에 올랐다. 아주 예뻤지만, 한입 먹은 아이들의 얼굴이 조금 굳었다."
+story_teaparty,step_teaparty_millia_check,1,speaker_servant,"예쁘지요, 아가씨?"
+story_teaparty,step_teaparty_millia_success,0,speaker_abelia,예뻐. 그런데 이게 더 맛있어.
+story_teaparty,step_teaparty_millia_success,1,speaker_narrator,아벨리아는 옆에 있던 작은 과자를 가리켰다.
+story_teaparty,step_teaparty_millia_success,2,speaker_millia,맞아! 저 꽃 과자는 예쁘기만 해.
+story_teaparty,step_teaparty_millia_success,3,speaker_abelia,예쁜 거랑 맛있는 건 달라.
+story_teaparty,step_teaparty_millia_success,4,speaker_narrator,"어른은 잠깐 당황했지만, 곧 다른 과자를 접시에 올려 주었다."
+story_teaparty,step_teaparty_millia_fail,0,speaker_abelia,…예뻐.
+story_teaparty,step_teaparty_millia_fail,1,speaker_servant,그렇지요.
+story_teaparty,step_teaparty_millia_fail,2,speaker_millia,맛은 별론데.
+story_teaparty,step_teaparty_millia_fail,3,speaker_narrator,아벨리아는 그 말을 들었다. 하지만 다시 말하지 않았다. 대신 옆에 있던 작은 과자를 한 번 더 바라보았다.
+story_teaparty,step_teaparty_outro,0,speaker_narrator,"다과회가 끝날 때쯤, 찻잔은 한 번 더 채워졌다. 아벨리아는 자기 앞의 잔을 바라보다가 네 아이를 차례로 보았다."
+story_teaparty,step_teaparty_outro,1,speaker_narrator,"아이들은 잠깐 서로를 보았다. 그리고 아주 작게 웃었다. 아벨리아는 조금 전보다 천천히, 하지만 스스로 찻잔을 들었다."
+story_teaparty,step_teaparty_outro,2,speaker_narrator,"다과회는 끝났다. 찻잔은 조금 식어 있었지만, 아벨리아는 그대로 남겨두고 싶지 않았다."
+story_teaparty,step_teaparty_outro,3,speaker_abelia,"이거, 조금 더 마시고 가도 돼?"
+story_festival_street,step_festival_street_intro,0,speaker_narrator,후작가 영지의 축제 거리. 낮.
+story_festival_street,step_festival_street_intro,1,speaker_narrator,후작가 영지의 거리는 백작저의 앞길보다 훨씬 넓었다. 사람들은 가판대와 공연대 사이를 오가며 웃고 떠들었다.
+story_festival_street,step_festival_street_intro,2,speaker_narrator,아벨리아는 거리 초입에서 걸음을 멈춰 섰다. 어디부터 봐야 할지 알 수 없었다.
+story_festival_street,step_festival_street_intro,3,speaker_abelia,…사람이 많네.
+story_festival_street,step_festival_street_intro,4,speaker_narrator,아무도 바로 대답하지 않았다.
+story_festival_street,step_festival_street_intro,5,speaker_narrator,"밀리아는 베르디아 상단의 상자 옆에 있었고, 막스는 봉신가문 어른들 곁에 있었다."
+story_festival_street,step_festival_street_intro,6,speaker_narrator,유피는 후작가 사람들 사이에서 손님을 맞이하고 있었다.
+story_festival_street,step_festival_street_intro,7,speaker_narrator,"리안은 축제 거리 끝, 조금 조용해 보이는 길목에 서 있었다."
+story_festival_street,step_festival_street_intro,8,speaker_narrator,아벨리아는 네 사람이 같은 축제 안에서도 서로 다른 자리에 서 있다는 걸 깨달았다.
+story_festival_street,step_festival_street_rian_success,0,speaker_narrator,아벨리아는 리안이 서 있는 조용한 길목으로 향했다. 음악 소리가 작아졌고
+story_festival_street,step_festival_street_rian_success,1,speaker_abelia,저쪽은 뭐가 있어?
+story_festival_street,step_festival_street_rian_success,2,speaker_rian,돌아가는 길이야.
+story_festival_street,step_festival_street_rian_success,3,speaker_abelia,이쪽 길은 축제 중이 아니야?
+story_festival_street,step_festival_street_rian_success,4,speaker_rian,맞아. 그래서 저쪽은 조용해.
+story_festival_street,step_festival_street_rian_success,5,speaker_narrator,아벨리아는 붐비는 거리와 조용한 길목을 번갈아 보았다.
+story_festival_street,step_festival_street_rian_success,6,speaker_abelia,잠깐만 봐도 돼?
+story_festival_street,step_festival_street_rian_success,7,speaker_rian,응. 멀리 가지는 말고.
+story_festival_street,step_festival_street_rian_success,8,speaker_narrator,아벨리아는 조용한 길목을 몇 걸음 걸었다. 축제 소리가 조금 작아졌다.
+story_festival_street,step_festival_street_rian_success,9,speaker_narrator,곧 공연대 쪽에서 북소리가 울렸다. 사람들의 흐름이 다시 한쪽으로 몰리기 시작했다.
+story_festival_street,step_festival_street_rian_fail,0,speaker_narrator,"아벨리아는 리안이 서 있는 조용한 길목을 보았다. 그쪽은 사람도 적고, 음악 소리도 작았다."
+story_festival_street,step_festival_street_rian_fail,1,speaker_abelia,…
+story_festival_street,step_festival_street_rian_fail,2,speaker_narrator,"아벨리아는 리안에게 가고 싶었지만, 공연대로 향하는 인파에 휩쓸리고 말았다."
+story_festival_street,step_festival_street_max_success,0,speaker_narrator,"공연대 쪽으로 사람들이 몰리자, 아벨리아의 어깨가 살짝 밀렸다."
+story_festival_street,step_festival_street_max_success,1,speaker_narrator,막스가 가문 어른들 곁에서 아벨리아 쪽을 보았다.
+story_festival_street,step_festival_street_max_success,2,speaker_abelia,잠깐만.
+story_festival_street,step_festival_street_max_success,3,speaker_narrator,아벨리아는 사람들 사이에서 한 걸음 옆으로 비켜 섰다.
+story_festival_street,step_festival_street_max_success,4,speaker_abelia,여기서 기다릴래. 사람이 너무 많아.
+story_festival_street,step_festival_street_max_success,5,speaker_narrator,"막스는 더 다가오지 않고, 아벨리아가 선 자리를 확인했다."
+story_festival_street,step_festival_street_max_success,6,speaker_max,거기 괜찮아?
+story_festival_street,step_festival_street_max_success,7,speaker_abelia,응. 여기서 기다리면 좋을 것 같아.
+story_festival_street,step_festival_street_max_success,8,speaker_max,알겠어. 밀리면 말해.
+story_festival_street,step_festival_street_max_success,9,speaker_narrator,"공연이 시작되자, 후작가 사람들이 손님석 쪽으로 아이들을 안내했다."
+story_festival_street,step_festival_street_max_fail,0,speaker_narrator,"공연대 쪽으로 사람들이 몰리자, 아벨리아의 어깨가 살짝 밀렸다."
+story_festival_street,step_festival_street_max_fail,1,speaker_narrator,막스가 가문 어른들 곁에서 빠르게 다가왔다.
+story_festival_street,step_festival_street_max_fail,2,speaker_max,이쪽이 덜 밀려.
+story_festival_street,step_festival_street_max_fail,3,speaker_narrator,막스는 사람들 사이에서 빈자리를 가리켰다.
+story_festival_street,step_festival_street_max_fail,4,speaker_abelia,여기?
+story_festival_street,step_festival_street_max_fail,5,speaker_max,응. 여기 서면 덜 밀려.
+story_festival_street,step_festival_street_max_fail,6,speaker_narrator,아벨리아는 막스가 가리킨 자리로 옮겼다.
+story_festival_street,step_festival_street_max_fail,7,speaker_abelia,고마워.
+story_festival_street,step_festival_street_max_fail,8,speaker_narrator,"공연이 시작되자, 후작가 사람들이 손님석 쪽으로 아이들을 안내했다."
+story_festival_street,step_festival_street_yuffie_success,0,speaker_narrator,"후작가 사람들이 마련한 손님석은 그늘이 좋고, 공연대도 잘 보였다."
+story_festival_street,step_festival_street_yuffie_success,1,speaker_narrator,작은 표식에는 아벨리아의 이름이 적혀 있었다.
+story_festival_street,step_festival_street_yuffie_success,2,speaker_abelia,여기도 내 이름이 있네.
+story_festival_street,step_festival_street_yuffie_success,3,speaker_friend_3,후작가에서 준비한 자리예요.
+story_festival_street,step_festival_street_yuffie_success,4,speaker_abelia,좋은 자리야.
+story_festival_street,step_festival_street_yuffie_success,5,speaker_friend_3,네. 어머니가 신경 썼어요.
+story_festival_street,step_festival_street_yuffie_success,6,speaker_narrator,아벨리아는 이름표를 바라보다가 자리에 앉지 않았다.
+story_festival_street,step_festival_street_yuffie_success,7,speaker_abelia,그런데 내가 고른 자리는 아니네.
+story_festival_street,step_festival_street_yuffie_success,8,speaker_narrator,유피는 바로 대답하지 못했다.
+story_festival_street,step_festival_street_yuffie_success,9,speaker_friend_3,그래도 편한 자리예요.
+story_festival_street,step_festival_street_yuffie_success,10,speaker_abelia,응. 편한데… 조금 이상해.
+story_festival_street,step_festival_street_yuffie_success,11,speaker_narrator,공연이 끝나자 사람들은 다시 거리로 흩어졌다. 손님석 옆에는 베르디아 상단의 가판대가 있었다.
+story_festival_street,step_festival_street_yuffie_fail,0,speaker_narrator,"후작가 사람들이 마련한 손님석은 그늘이 좋고, 공연대도 잘 보였다."
+story_festival_street,step_festival_street_yuffie_fail,1,speaker_narrator,작은 표식에는 아벨리아의 이름이 적혀 있었다.
+story_festival_street,step_festival_street_yuffie_fail,2,speaker_friend_3,여기가 아벨리아 자리예요.
+story_festival_street,step_festival_street_yuffie_fail,3,speaker_abelia,내 자리?
+story_festival_street,step_festival_street_yuffie_fail,4,speaker_friend_3,네. 어머니가 준비했어요.
+story_festival_street,step_festival_street_yuffie_fail,5,speaker_narrator,아벨리아는 이름표를 보고 조용히 자리에 앉았다.
+story_festival_street,step_festival_street_yuffie_fail,6,speaker_abelia,좋은 자리네.
+story_festival_street,step_festival_street_yuffie_fail,7,speaker_friend_3,네. 잘 보일 거예요.
+story_festival_street,step_festival_street_yuffie_fail,8,speaker_narrator,아벨리아는 고개를 끄덕였다. 그 자리가 왜 자신에게 준비되었는지는 묻지 않았다.
+story_festival_street,step_festival_street_yuffie_fail,9,speaker_narrator,공연이 끝나자 사람들은 다시 거리로 흩어졌다. 손님석 옆에는 베르디아 상단의 가판대가 있었다.
+story_festival_street,step_festival_street_millia_success,0,speaker_narrator,베르디아 상단의 가판대에는 작은 장식품들이 줄지어 놓여 있었다.
+story_festival_street,step_festival_street_millia_success,1,speaker_narrator,상인이 반짝이는 머리장식을 아벨리아 쪽으로 내밀었다.
+story_festival_street,step_festival_street_millia_success,2,speaker_npc,아가씨께 잘 어울릴 겁니다. 제일 고운 물건이지요.
+story_festival_street,step_festival_street_millia_success,3,speaker_narrator,"아벨리아는 장식을 받아 들었다. 앞은 반짝였지만, 뒤쪽 매듭은 조금 헐거웠다."
+story_festival_street,step_festival_street_millia_success,4,speaker_abelia,예쁘긴 해.
+story_festival_street,step_festival_street_millia_success,5,speaker_npc,그렇지요.
+story_festival_street,step_festival_street_millia_success,6,speaker_abelia,그런데 금방 풀릴 것 같아.
+story_festival_street,step_festival_street_millia_success,7,speaker_narrator,밀리아가 고개를 들었다.
+story_festival_street,step_festival_street_millia_success,8,speaker_millia,어디?
+story_festival_street,step_festival_street_millia_success,9,speaker_abelia,여기. 묶은 데가 약해.
+story_festival_street,step_festival_street_millia_success,10,speaker_millia,맞아. 이건 오래 못 쓰겠다.
+story_festival_street,step_festival_street_millia_success,11,speaker_narrator,"상인은 잠깐 웃음을 멈췄다가, 다른 장식을 꺼냈다."
+story_festival_street,step_festival_street_millia_fail,0,speaker_narrator,베르디아 상단의 가판대에는 작은 장식품들이 줄지어 놓여 있었다.
+story_festival_street,step_festival_street_millia_fail,1,speaker_narrator,상인이 반짝이는 머리장식을 아벨리아 쪽으로 내밀었다.
+story_festival_street,step_festival_street_millia_fail,2,speaker_npc,아가씨께 잘 어울릴 겁니다. 제일 고운 물건이지요.
+story_festival_street,step_festival_street_millia_fail,3,speaker_narrator,아벨리아는 장식을 받아 들었다.
+story_festival_street,step_festival_street_millia_fail,4,speaker_abelia,…예쁘다.
+story_festival_street,step_festival_street_millia_fail,5,speaker_narrator,밀리아가 장식을 힐끗 보았다.
+story_festival_street,step_festival_street_millia_fail,6,speaker_millia,그거 뒤가 약해.
+story_festival_street,step_festival_street_millia_fail,7,speaker_abelia,뒤?
+story_festival_street,step_festival_street_millia_fail,8,speaker_millia,여기. 금방 풀릴걸.
+story_festival_street,step_festival_street_millia_fail,9,speaker_narrator,아벨리아는 장식을 다시 내려다보았다.
+story_festival_street,step_festival_street_millia_fail,10,speaker_abelia,이런 것도 봐야 하는구나.
+story_festival_street,step_festival_street_outro,0,speaker_narrator,후작가 영지의 축제 거리. 해질 무렵.
+story_festival_street,step_festival_street_outro,1,speaker_narrator,아벨리아는 오늘 지나온 길을 돌아보았다.
+story_festival_street,step_festival_street_outro,2,speaker_narrator,"조용한 길목, 붐비는 공연대 앞, 이름이 적힌 좋은 자리, 반짝이는 가판대."
+story_festival_street,step_festival_street_outro,3,speaker_abelia,다음에는…
+story_festival_street,step_festival_street_outro,4,speaker_narrator,아벨리아는 후작가의 축제 거리를 다시 보았다.
+story_festival_street,step_festival_street_outro,5,speaker_abelia,내가 먼저 보고 싶은 데를 말해도 돼?
+story_festival_street,step_festival_street_outro,6,speaker_narrator,"아무도 대답하지 않았지만, 아벨리아는 고개를 숙이지 않았다."
+story_festival_street,step_festival_street_outro,7,speaker_narrator,"마차에 오르기 전, 아벨리아는 축제 거리를 한 번 더 바라보았다."
+story_imperial_ball,step_imperial_ball_intro,0,speaker_narrator,황실 무도회장 입구. 저녁.
+story_imperial_ball,step_imperial_ball_intro,1,speaker_narrator,"황실 무도회장은 백작저의 홀보다 훨씬 높고 밝았다. 샹들리에 불빛이 바닥에 길게 비쳤고, 사람들은 서로의 가문을 먼저 물었다."
+story_imperial_ball,step_imperial_ball_intro,2,speaker_narrator,"아벨리아는 입구 앞에서 잠깐 멈춰 섰다. 누구를 먼저 봐야 할지보다, 어디에 서 있어야 할지부터 어려웠다."
+story_imperial_ball,step_imperial_ball_intro,3,speaker_narrator,"리안은 황실 사람들 가까이에 서 있었고, 막스는 무도회 순서를 확인하는 사람들 곁에 있었다."
+story_imperial_ball,step_imperial_ball_intro,4,speaker_narrator,"유피는 귀족 아이들 사이에서 조용히 인사를 나누고 있었고, 밀리아는 베르디아 상단의 납품 물품이 놓인 테이블 옆에 서 있었다."
+story_imperial_ball,step_imperial_ball_intro,5,speaker_narrator,아벨리아는 이곳에서는 모두가 이름보다 먼저 자리를 갖는다는 걸 느꼈다.
+story_imperial_ball,step_imperial_ball_rian_success,0,speaker_narrator,황실 시종이 리안에게 다가와 낮게 고개를 숙였다.
+story_imperial_ball,step_imperial_ball_rian_success,1,speaker_servant,"리안 엘바론 님, 이쪽으로 오시지요."
+story_imperial_ball,step_imperial_ball_rian_success,2,speaker_narrator,리안은 잠깐 멈췄다가 시종을 따라가려 했다.
+story_imperial_ball,step_imperial_ball_rian_success,3,speaker_narrator,아벨리아는 그 이름을 듣고 리안을 바라보았다.
+story_imperial_ball,step_imperial_ball_rian_success,4,speaker_abelia,엘바론이요?
+story_imperial_ball,step_imperial_ball_rian_success,5,speaker_narrator,리안은 걸음을 멈췄다.
+story_imperial_ball,step_imperial_ball_rian_success,6,speaker_rian,오늘은 그렇게 불려야 하나 봐요.
+story_imperial_ball,step_imperial_ball_rian_success,7,speaker_abelia,저는 뭐라고 부르면 돼요?
+story_imperial_ball,step_imperial_ball_rian_success,8,speaker_narrator,리안은 바로 대답하지 못했다.
+story_imperial_ball,step_imperial_ball_rian_success,9,speaker_rian,둘이 있을 때는… 리안이면 좋겠어요.
+story_imperial_ball,step_imperial_ball_rian_success,10,speaker_abelia,그럼 지금은 리안이에요.
+story_imperial_ball,step_imperial_ball_rian_success,11,speaker_narrator,리안은 아주 작게 웃었다.
+story_imperial_ball,step_imperial_ball_rian_fail,0,speaker_narrator,황실 시종이 리안에게 다가와 낮게 고개를 숙였다.
+story_imperial_ball,step_imperial_ball_rian_fail,1,speaker_servant,"엘바론 님, 이쪽으로 오시지요."
+story_imperial_ball,step_imperial_ball_rian_fail,2,speaker_narrator,리안은 잠깐 멈췄다가 시종을 따라갔다.
+story_imperial_ball,step_imperial_ball_rian_fail,3,speaker_narrator,아벨리아는 그 이름을 들었지만 묻지 못했다.
+story_imperial_ball,step_imperial_ball_rian_fail,4,speaker_abelia,…
+story_imperial_ball,step_imperial_ball_rian_fail,5,speaker_narrator,리안은 황실 사람들 사이로 들어갔다. 아벨리아는 그 이름이 왜 리안에게 붙었는지 알 수 없었다.
+story_imperial_ball,step_imperial_ball_yuffie_success,0,speaker_narrator,한 귀족 부인이 아벨리아에게 다가와 부드럽게 웃었다.
+story_imperial_ball,step_imperial_ball_yuffie_success,1,speaker_npc,"오늘 무도회는 마음에 드시나요, 아가씨?"
+story_imperial_ball,step_imperial_ball_yuffie_success,2,speaker_narrator,"말은 가벼웠지만, 주변의 시선이 함께 따라왔다."
+story_imperial_ball,step_imperial_ball_yuffie_success,3,speaker_narrator,유피가 멀리서 찻잔을 천천히 내려놓았다. 미리 정한 신호였다.
+story_imperial_ball,step_imperial_ball_yuffie_success,4,speaker_abelia,아직은 잘 모르겠어요.
+story_imperial_ball,step_imperial_ball_yuffie_success,5,speaker_npc,모르겠다?
+story_imperial_ball,step_imperial_ball_yuffie_success,6,speaker_abelia,"네. 처음 온 자리라서, 조금 더 보고 싶어요."
+story_imperial_ball,step_imperial_ball_yuffie_success,7,speaker_narrator,귀족 부인은 잠시 아벨리아를 보다가 웃었다.
+story_imperial_ball,step_imperial_ball_yuffie_success,8,speaker_npc,신중하시군요.
+story_imperial_ball,step_imperial_ball_yuffie_success,9,speaker_narrator,유피는 작게 숨을 내쉬었다.
+story_imperial_ball,step_imperial_ball_yuffie_fail,0,speaker_narrator,한 귀족 부인이 아벨리아에게 다가와 부드럽게 웃었다.
+story_imperial_ball,step_imperial_ball_yuffie_fail,1,speaker_npc,"오늘 무도회는 마음에 드시나요, 아가씨?"
+story_imperial_ball,step_imperial_ball_yuffie_fail,2,speaker_narrator,"말은 가벼웠지만, 주변의 시선이 함께 따라왔다."
+story_imperial_ball,step_imperial_ball_yuffie_fail,3,speaker_narrator,아벨리아는 바로 대답하지 못했다.
+story_imperial_ball,step_imperial_ball_yuffie_fail,4,speaker_friend_3,"처음 오신 자리라, 아직 둘러보고 계세요."
+story_imperial_ball,step_imperial_ball_yuffie_fail,5,speaker_narrator,유피가 조심스럽게 대신 말했다.
+story_imperial_ball,step_imperial_ball_yuffie_fail,6,speaker_narrator,"귀족 부인은 고개를 끄덕였고, 아벨리아는 그제야 작게 숨을 쉬었다."
+story_imperial_ball,step_imperial_ball_yuffie_fail,7,speaker_abelia,…고마워요.
+story_imperial_ball,step_imperial_ball_yuffie_fail,8,speaker_friend_3,괜찮아요. 이런 말은 천천히 대답해도 돼요.
+story_imperial_ball,step_imperial_ball_max_success,0,speaker_narrator,"첫 춤 순서가 가까워지자, 아이들이 하나둘 무도회장 가운데로 나갔다."
+story_imperial_ball,step_imperial_ball_max_success,1,speaker_narrator,아벨리아는 바닥에 그어진 원형 무늬를 보았다. 그 안으로 들어가면 모두의 시선이 모일 것 같았다.
+story_imperial_ball,step_imperial_ball_max_success,2,speaker_narrator,막스가 조금 떨어진 곳에서 기다리고 있었다.
+story_imperial_ball,step_imperial_ball_max_success,3,speaker_max,괜찮으세요?
+story_imperial_ball,step_imperial_ball_max_success,4,speaker_abelia,괜찮지는 않아요. 그래도 겁내지 않을게요.
+story_imperial_ball,step_imperial_ball_max_success,5,speaker_narrator,아벨리아가 먼저 한 걸음 앞으로 나섰다.
+story_imperial_ball,step_imperial_ball_max_success,6,speaker_narrator,막스는 그제야 손을 내밀었다.
+story_imperial_ball,step_imperial_ball_max_success,7,speaker_max,제가 맞출게요.
+story_imperial_ball,step_imperial_ball_max_success,8,speaker_abelia,네. 천천히요.
+story_imperial_ball,step_imperial_ball_max_fail,0,speaker_narrator,"첫 춤 순서가 가까워지자, 아이들이 하나둘 무도회장 가운데로 나갔다."
+story_imperial_ball,step_imperial_ball_max_fail,1,speaker_narrator,아벨리아는 바닥에 그어진 원형 무늬 앞에서 발을 멈췄다.
+story_imperial_ball,step_imperial_ball_max_fail,2,speaker_max,괜찮으세요?
+story_imperial_ball,step_imperial_ball_max_fail,3,speaker_abelia,잘 모르겠어요.
+story_imperial_ball,step_imperial_ball_max_fail,4,speaker_narrator,막스는 잠시 기다렸다가 손을 내밀었다.
+story_imperial_ball,step_imperial_ball_max_fail,5,speaker_max,천천히 가면 돼요.
+story_imperial_ball,step_imperial_ball_max_fail,6,speaker_narrator,"아벨리아는 막스의 손을 보고, 조심스럽게 잡았다."
+story_imperial_ball,step_imperial_ball_max_fail,7,speaker_abelia,…넘어지면요?
+story_imperial_ball,step_imperial_ball_max_fail,8,speaker_max,제가 맞출게요.
+story_imperial_ball,step_imperial_ball_millia_success,0,speaker_narrator,"춤이 끝난 뒤, 무도회장 옆 테이블에는 작은 선물들이 놓여 있었다."
+story_imperial_ball,step_imperial_ball_millia_success,1,speaker_narrator,베르디아 상단의 장식 상자도 그중 하나였다.
+story_imperial_ball,step_imperial_ball_millia_success,2,speaker_narrator,한 귀족 아이가 작은 브로치를 아벨리아에게 내밀었다.
+story_imperial_ball,step_imperial_ball_millia_success,3,speaker_npc,기념품이에요. 받으셔도 돼요.
+story_imperial_ball,step_imperial_ball_millia_success,4,speaker_narrator,아벨리아는 브로치를 받아 들었다. 뒤쪽에는 작은 상단 인장이 찍혀 있었다.
+story_imperial_ball,step_imperial_ball_millia_success,5,speaker_abelia,이건 베르디아 상단 물건이네요.
+story_imperial_ball,step_imperial_ball_millia_success,6,speaker_npc,네?
+story_imperial_ball,step_imperial_ball_millia_success,7,speaker_abelia,"기념품인데, 왜 상단 표시가 있죠?"
+story_imperial_ball,step_imperial_ball_millia_success,8,speaker_narrator,밀리아가 테이블 옆에서 고개를 들었다.
+story_imperial_ball,step_imperial_ball_millia_success,9,speaker_millia,맞아요. 이런 건 누가 줬는지가 더 중요해요.
+story_imperial_ball,step_imperial_ball_millia_success,10,speaker_narrator,아벨리아는 브로치를 다시 테이블 위에 놓았다.
+story_imperial_ball,step_imperial_ball_millia_success,11,speaker_abelia,그럼 지금은 안 받을게요.
+story_imperial_ball,step_imperial_ball_millia_fail,0,speaker_narrator,"춤이 끝난 뒤, 무도회장 옆 테이블에는 작은 선물들이 놓여 있었다."
+story_imperial_ball,step_imperial_ball_millia_fail,1,speaker_narrator,베르디아 상단의 장식 상자도 그중 하나였다.
+story_imperial_ball,step_imperial_ball_millia_fail,2,speaker_narrator,한 귀족 아이가 작은 브로치를 아벨리아에게 내밀었다.
+story_imperial_ball,step_imperial_ball_millia_fail,3,speaker_npc,기념품이에요. 받으셔도 돼요.
+story_imperial_ball,step_imperial_ball_millia_fail,4,speaker_narrator,아벨리아는 브로치를 받아 들었다.
+story_imperial_ball,step_imperial_ball_millia_fail,5,speaker_abelia,고마워요.
+story_imperial_ball,step_imperial_ball_millia_fail,6,speaker_narrator,밀리아가 테이블 옆에서 작게 말했다.
+story_imperial_ball,step_imperial_ball_millia_fail,7,speaker_millia,뒤쪽 한번 봐요.
+story_imperial_ball,step_imperial_ball_millia_fail,8,speaker_abelia,뒤쪽이요?
+story_imperial_ball,step_imperial_ball_millia_fail,9,speaker_narrator,브로치 뒤에는 작은 상단 인장이 찍혀 있었다.
+story_imperial_ball,step_imperial_ball_millia_fail,10,speaker_abelia,그래서 여기 놓여 있었던 거군요.
+story_imperial_ball,step_imperial_ball_outro,0,speaker_narrator,황실 무도회장 입구. 밤.
+story_imperial_ball,step_imperial_ball_outro,1,speaker_narrator,"무도회가 끝날 무렵, 샹들리에 불빛은 처음보다 조금 낮아 보였다."
+story_imperial_ball,step_imperial_ball_outro,2,speaker_narrator,아벨리아는 오늘 지나온 자리를 돌아보았다.
+story_imperial_ball,step_imperial_ball_outro,3,speaker_narrator,"낯선 호칭으로 불린 리안, 대답을 기다리던 시선, 모두가 보는 춤 자리, 인장이 찍힌 선물."
+story_imperial_ball,step_imperial_ball_outro,4,speaker_narrator,"모두 반짝였고, 모두 그냥 지나칠 수 없었다."
+story_imperial_ball,step_imperial_ball_outro,5,speaker_abelia,다음에는…
+story_imperial_ball,step_imperial_ball_outro,6,speaker_narrator,아벨리아는 닫히기 시작한 무도회장 문을 바라보았다.
+story_imperial_ball,step_imperial_ball_outro,7,speaker_abelia,"바로 대답하지 말고, 먼저 볼래요."
+story_imperial_ball,step_imperial_ball_outro,8,speaker_narrator,이번에는 그 말이 아주 작게만 들리지는 않았다.

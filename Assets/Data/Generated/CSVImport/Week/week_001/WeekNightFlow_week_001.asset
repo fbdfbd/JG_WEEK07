@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ab277c8fb3c9ae48b2472f837fc4b09, type: 3}
-  m_Name: week_001_NightFlow
+  m_Name: WeekNightFlow_week_001
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekNightFlowDefinition
   _dialogues:
   - {fileID: 11400000, guid: 9486dc75d4fd3be429def44c59d9e454, type: 2}

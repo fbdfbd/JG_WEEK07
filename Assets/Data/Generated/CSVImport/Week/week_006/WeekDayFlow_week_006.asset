@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82477aacd1d46994fa0595b03679138c, type: 3}
-  m_Name: week_006_DayFlow
+  m_Name: WeekDayFlow_week_006
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekDayFlowDefinition
   _routineEvents:
   - {fileID: 11400000, guid: 717849197798bce468858e799dff4e32, type: 2}
@@ -44,4 +44,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: da877e1822de3b54088a5be907c42663, type: 2}
   - {fileID: 11400000, guid: 6f3f7c8e2ca3650428127f48aff89c2d, type: 2}
   - {fileID: 11400000, guid: 940656d8c3e97f44f9412eb39f8c3e18, type: 2}
-  _storyEvents: []
+  _storyEvents:
+  - {fileID: 11400000, guid: 06e05715d94bc63498487e44137d7c08, type: 2}
