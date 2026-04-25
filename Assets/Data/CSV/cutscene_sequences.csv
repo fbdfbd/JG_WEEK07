@@ -1,0 +1,10 @@
+sequence_id,order,command,target_key,value1,value2,value3,duration,ease,blocking
+event_default_enter,0,ShowBackground,,Study,,,,,true
+event_default_enter,1,ShowCharacter,left,Nemo,,,,,true
+event_default_enter,2,ShowCharacter,right,Steward,,,,,true
+event_default_enter,3,FadeCanvas,fade_panel,InOut,,,0.3,OutCubic,true
+event_default_enter,4,Wait,,,,,0.2,,true
+event_law_enter,0,ShowBackground,,Study,,,,,true
+event_law_enter,1,ShowCharacter,left,Nemo,,,,,true
+event_law_enter,2,ShowCharacter,right,GuardCaptain,,,,,true
+event_law_enter,3,FadeCanvas,fade_panel,In,,,0.45,OutCubic,true

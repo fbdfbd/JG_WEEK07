@@ -1,0 +1,4 @@
+rule_id,enabled,week_id,event_id,moment,sequence_id,special_player_id
+default_event_enter,true,,,EventEnter,event_default_enter,
+week003_law_enter,true,week_003,event_week_003_law_direct,EventEnter,event_law_enter,
+secret_special_enter,true,week_007,event_week_007_secret,EventEnter,,secret_intro_player

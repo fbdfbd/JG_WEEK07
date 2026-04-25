@@ -48,6 +48,11 @@ public sealed class UI_EventCutsceneBridge : WeekFlowCutsceneBridgeBase
 
         if (!_resolver.TryResolve(request, _ruleCatalog, out EventCutsceneRuleData rule))
         {
+            if (request.Moment == EWeekFlowCutsceneMoment.EventExit)
+            {
+                AutoCleanupEventCutscene();
+            }
+
             yield break;
         }
 
@@ -140,6 +145,19 @@ public sealed class UI_EventCutsceneBridge : WeekFlowCutsceneBridgeBase
         }
 
         StopSpecialPlayer(ref _activeSpecialPlayer);
+    }
+
+    private static void AutoCleanupEventCutscene()
+    {
+        if (CutsceneCharacterManager.I != null)
+        {
+            CutsceneCharacterManager.I.HideAllDeferred();
+        }
+
+        if (BackgroundManager.I != null)
+        {
+            BackgroundManager.I.HideCurrentBackground();
+        }
     }
 
     private static void StopSpecialPlayer(ref WeekFlowCutscenePlayerBase player)

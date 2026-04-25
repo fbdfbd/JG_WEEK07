@@ -16,3 +16,4 @@ MonoBehaviour:
   _minValue: 3
   _targetStat: 0
   _amount: 0
+  _toastMessage: "\u3141\u3134\u3147\u3139\u3139\u31391"

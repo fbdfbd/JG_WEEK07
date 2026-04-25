@@ -130,6 +130,11 @@ public class BackgroundManager : MonoBehaviour
         ScheduleHideToDefault();
     }
 
+    public void HideCurrentBackground()
+    {
+        ScheduleHideToDefault();
+    }
+
     public void SetTransitionMode(BackgroundTransitionMode mode)
     {
         transitionMode = mode;
