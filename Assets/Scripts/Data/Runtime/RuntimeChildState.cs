@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class RuntimeChildState
 {
-    public const int MinStatValue = 0;
-    public const int MaxStatValue = 300;
-    public const int DefaultStatValue = 2;
+    public const int MinStatValue = -15;
+    public const int MaxStatValue = 15;
+    public const int DefaultStatValue = 0;
     private static readonly EChildStatusType[] CachedStatTypes = Enum.GetValues(typeof(EChildStatusType)).Cast<EChildStatusType>().ToArray();
 
     private readonly Dictionary<EChildStatusType, int> _stats = new();
@@ -189,5 +189,9 @@ public enum EChildStatusType
     Affinity,
     Curiosity,
     Anxiety,
-    Obedience
+    Obedience,
+    Rian,
+    Max,
+    Millia,
+    Yuffie
 }
