@@ -17,6 +17,7 @@ public sealed class CsvDataset
     public IReadOnlyList<EventFlagConditionRow> EventFlagConditions { get; private set; }
     public IReadOnlyList<EventStatConditionRow> EventStatConditions { get; private set; }
     public IReadOnlyList<EventInformationConditionRow> EventInformationConditions { get; private set; }
+    public IReadOnlyList<EventSelectionRuleRow> EventSelectionRules { get; private set; }
     public IReadOnlyList<EventStepRow> EventSteps { get; private set; }
     public IReadOnlyList<EventStepDialogueLineRow> EventStepDialogueLines { get; private set; }
     public IReadOnlyList<EventChoiceRow> EventChoices { get; private set; }
@@ -104,6 +105,12 @@ public sealed class CsvDataset
             record.GetBool("use_semantic_filter"),
             record["semantic"],
             record.GetInt("minimum_count", 1)));
+        dataset.EventSelectionRules = LoadTable(csvRootPath, "event_selection_rules.csv", record => new EventSelectionRuleRow(
+            record["event_id"],
+            record["selector_stat"],
+            record["selector_mode"],
+            record.GetInt("threshold"),
+            record.GetBool("is_default")));
         dataset.EventSteps = LoadTable(csvRootPath, "event_steps.csv", record => new EventStepRow(
             record["event_id"],
             record["step_id"],
@@ -417,6 +424,29 @@ public sealed class EventInformationConditionRow
     public bool UseSemanticFilter { get; }
     public string Semantic { get; }
     public int MinimumCount { get; }
+}
+
+public sealed class EventSelectionRuleRow
+{
+    public EventSelectionRuleRow(
+        string eventId,
+        string selectorStat,
+        string selectorMode,
+        int threshold,
+        bool isDefault)
+    {
+        EventId = eventId;
+        SelectorStat = selectorStat;
+        SelectorMode = selectorMode;
+        Threshold = threshold;
+        IsDefault = isDefault;
+    }
+
+    public string EventId { get; }
+    public string SelectorStat { get; }
+    public string SelectorMode { get; }
+    public int Threshold { get; }
+    public bool IsDefault { get; }
 }
 
 public sealed class EventStepRow

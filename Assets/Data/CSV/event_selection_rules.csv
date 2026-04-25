@@ -1,0 +1,5 @@
+event_id,selector_stat,selector_mode,threshold,is_default
+event_week_001_garden_curiosity,Curiosity,max_positive,0,false
+event_week_001_garden_anxiety,Anxiety,max_positive,0,false
+event_week_001_garden_obedience,Obedience,max_positive,0,false
+event_week_001_garden_default,,default,0,true

@@ -85,6 +85,7 @@ public static class EventCsvImporter
                     string.IsNullOrWhiteSpace(row.LinkedCardId)
                         ? null
                         : context.CardsById[row.LinkedCardId]);
+                CsvImportAssetUtility.SetField(routineEvent, "_selectionRule", BuildSelectionRule(context, row.Id));
             }
 
             CsvImportAssetUtility.MarkDirty(asset);
@@ -207,6 +208,49 @@ public static class EventCsvImporter
                 })
                 .ToArray());
         return conditions;
+    }
+
+    private static EventSelectionRuleData BuildSelectionRule(CsvImportContext context, string eventId)
+    {
+        EventSelectionRuleData rule = new();
+        EventSelectionRuleRow row = context.Dataset.EventSelectionRules
+            .FirstOrDefault(selectionRule => string.Equals(selectionRule.EventId, eventId, StringComparison.OrdinalIgnoreCase));
+
+        if (row == null)
+        {
+            return rule;
+        }
+
+        EEventSelectionMode mode = ParseSelectionMode(row.SelectorMode, row.IsDefault);
+        CsvImportAssetUtility.SetField(rule, "_mode", mode);
+        if (!string.IsNullOrWhiteSpace(row.SelectorStat))
+        {
+            CsvImportAssetUtility.SetField(rule, "_selectorStat", Enum.Parse<EChildStatusType>(row.SelectorStat, true));
+        }
+
+        CsvImportAssetUtility.SetField(rule, "_threshold", row.Threshold);
+        CsvImportAssetUtility.SetField(rule, "_isDefault", row.IsDefault || mode == EEventSelectionMode.Default);
+        return rule;
+    }
+
+    private static EEventSelectionMode ParseSelectionMode(string value, bool isDefault)
+    {
+        if (isDefault && string.IsNullOrWhiteSpace(value))
+        {
+            return EEventSelectionMode.Default;
+        }
+
+        return value?.Trim().ToLowerInvariant() switch
+        {
+            null or "" => EEventSelectionMode.None,
+            "none" => EEventSelectionMode.None,
+            "max_positive" => EEventSelectionMode.MaxPositive,
+            "max_negative" => EEventSelectionMode.MaxNegative,
+            "max_any" => EEventSelectionMode.MaxAny,
+            "min_any" => EEventSelectionMode.MinAny,
+            "default" => EEventSelectionMode.Default,
+            _ => EEventSelectionMode.None,
+        };
     }
 
     private static InteractiveEventChoiceData[] BuildChoices(CsvImportContext context, string eventId, string stepId)

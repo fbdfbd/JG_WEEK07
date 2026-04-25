@@ -40,6 +40,7 @@ public static class CsvImportValidator
         ValidateReferences(dataset.EventStatConditions.Select(row => (row.EventId, "event_stat_conditions.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventInformationConditions.Select(row => (row.EventId, "event_information_conditions.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventInformationConditions.Select(row => (row.InformationTypeId, "event_information_conditions.csv -> information_type_id")), cardTypeIds, errors);
+        ValidateReferences(dataset.EventSelectionRules.Select(row => (row.EventId, "event_selection_rules.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventSteps.Select(row => (row.EventId, "event_steps.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventStepDialogueLines.Select(row => (row.SpeakerId, "event_step_dialogue_lines.csv -> speaker_id")), speakerIds, errors);
         ValidateReferences(dataset.EventStepDialogueLines.Select(row => (CsvImportContext.BuildStepKey(row.EventId, row.StepId), "event_step_dialogue_lines.csv -> step")), stepKeys, errors);
@@ -107,6 +108,17 @@ public static class CsvImportValidator
             ValidateEnum<ECardOptionSemantic>(row.Semantic, $"event_information_conditions.csv -> semantic ({row.EventId})", errors, allowBlank: !row.UseSemanticFilter);
         }
 
+        foreach (EventSelectionRuleRow row in dataset.EventSelectionRules)
+        {
+            ValidateSelectionMode(row.SelectorMode, $"event_selection_rules.csv -> selector_mode ({row.EventId})", errors);
+            string selectorMode = row.SelectorMode?.Trim();
+            bool allowsBlankStat =
+                string.IsNullOrWhiteSpace(selectorMode) ||
+                string.Equals(selectorMode, "none", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(selectorMode, "default", StringComparison.OrdinalIgnoreCase);
+            ValidateEnum<EChildStatusType>(row.SelectorStat, $"event_selection_rules.csv -> selector_stat ({row.EventId})", errors, allowBlank: allowsBlankStat);
+        }
+
         foreach (EventStepRow row in dataset.EventSteps)
         {
             ValidateReferences(row.OnEnterInteractionIds.Select(id => (id, $"event_steps.csv -> on_enter_interaction_ids ({row.EventId}/{row.StepId})")), interactionIds, errors);
@@ -139,6 +151,7 @@ public static class CsvImportValidator
         ValidateGroupedUniqueness(dataset.EventChoices, row => CsvImportContext.BuildStepKey(row.EventId, row.StepId), row => row.ChoiceOrder, "event_choices.csv -> choice_order", errors);
         ValidateGroupedUniqueness(dataset.EventStepDialogueLines, row => CsvImportContext.BuildStepKey(row.EventId, row.StepId), row => row.LineOrder, "event_step_dialogue_lines.csv -> line_order", errors);
         ValidateGroupedUniqueness(dataset.EventChoiceDialogueLines, row => CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), row => row.LineOrder, "event_choice_dialogue_lines.csv -> line_order", errors);
+        ValidateUniqueKeys(dataset.EventSelectionRules, row => row.EventId, "event_selection_rules.csv -> event_id", errors);
 
         if (errors.Count > 0)
         {
@@ -194,6 +207,44 @@ public static class CsvImportValidator
         if (!Enum.TryParse(value, true, out TEnum _))
         {
             errors.Add($"Invalid enum value: {label} -> {value}");
+        }
+    }
+
+    private static void ValidateSelectionMode(string value, string label, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return;
+        }
+
+        string normalizedValue = value.Trim();
+        string[] validValues =
+        {
+            "none",
+            "max_positive",
+            "max_negative",
+            "max_any",
+            "min_any",
+            "default",
+        };
+
+        if (!validValues.Contains(normalizedValue, StringComparer.OrdinalIgnoreCase))
+        {
+            errors.Add($"Invalid enum value: {label} -> {value}");
+        }
+    }
+
+    private static void ValidateUniqueKeys<TRow, TKey>(
+        IEnumerable<TRow> rows,
+        Func<TRow, TKey> keySelector,
+        string label,
+        ICollection<string> errors)
+    {
+        foreach (IGrouping<TKey, TRow> keyGroup in rows
+                     .GroupBy(keySelector)
+                     .Where(group => group.Count() > 1))
+        {
+            errors.Add($"Duplicate key: {label} -> {keyGroup.Key}");
         }
     }
 

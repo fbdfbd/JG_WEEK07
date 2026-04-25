@@ -136,13 +136,14 @@ public static class WeekNarrativeResolver
     {
         return dayFlow?.RoutineEvents?
             .Where(routineEvent => routineEvent != null)
-            .Select(routineEvent => new
-            {
-                Event = routineEvent,
-                MatchedCard = ResolveMatchedRoutineCard(routineEvent, resolvedCardLookup),
-            })
+            .Select((routineEvent, sourceIndex) => new RoutineEventCandidate(
+                routineEvent,
+                ResolveMatchedRoutineCard(routineEvent, resolvedCardLookup),
+                sourceIndex))
             .Where(item => IsRoutineEventAvailable(item.Event, item.MatchedCard, childState))
-            .OrderByDescending(item => item.Event.Priority)
+            .GroupBy(item => item.MatchedCard.CardDefinition.Id)
+            .OrderBy(group => group.Min(item => item.SourceIndex))
+            .Select(group => SelectRoutineEventWinner(group, childState))
             .Select(item => item.Event)
             ?? Enumerable.Empty<SO_InteractiveEventDefinition>();
     }
@@ -265,7 +266,6 @@ public static class WeekNarrativeResolver
         return HasRequiredFlags(childState, conditions) &&
                HasNoBlockedFlags(childState, conditions) &&
                MeetsStatRequirements(childState, conditions) &&
-               MeetsRoutineInformationRequirements(conditions, resolvedCard) &&
                MatchesRoutineEvent(routineEvent, resolvedCard);
     }
 
@@ -299,7 +299,6 @@ public static class WeekNarrativeResolver
         SO_CardInfoDefinition linkedCard = routineEvent?.LinkedCard;
         return linkedCard != null &&
                string.Equals(resolvedCard?.CardDefinition?.Id, linkedCard.Id, StringComparison.OrdinalIgnoreCase) &&
-               MeetsRoutineInformationRequirements(routineEvent.Conditions, resolvedCard) &&
                MatchesRoutineEvent(routineEvent, resolvedCard);
     }
 
@@ -317,25 +316,101 @@ public static class WeekNarrativeResolver
             (!requirement.UseSemanticFilter || requirement.Semantic == resolvedCard.SelectedOption.Semantic));
     }
 
-    private static bool MeetsRoutineInformationRequirements(
-        WeekEventConditionData conditions,
-        RuntimeResolvedCardRecord resolvedCard)
+    private static RoutineEventCandidate SelectRoutineEventWinner(
+        IEnumerable<RoutineEventCandidate> candidates,
+        RuntimeChildState childState)
     {
-        if (conditions?.InformationRequirements == null)
+        RoutineEventCandidate[] candidateArray = candidates?
+            .Where(candidate => candidate.Event != null)
+            .ToArray()
+            ?? Array.Empty<RoutineEventCandidate>();
+
+        if (candidateArray.Length == 0)
         {
-            return true;
+            return default;
         }
 
-        return conditions.InformationRequirements.All(requirement =>
-        {
-            if (requirement.MinimumCount > 1)
+        RoutineEventCandidate[] scoredCandidates = candidateArray
+            .Select(candidate => new
             {
-                return false;
-            }
+                Candidate = candidate,
+                HasScore = TryGetSelectionScore(candidate, childState, out int score),
+                Score = score,
+            })
+            .Where(item => item.HasScore)
+            .OrderByDescending(item => item.Score)
+            .ThenByDescending(item => item.Candidate.Event.Priority)
+            .ThenBy(item => item.Candidate.SourceIndex)
+            .Select(item => item.Candidate)
+            .ToArray();
 
-            return requirement.InformationType == resolvedCard.CardDefinition.CardType &&
-                   (!requirement.UseSemanticFilter || requirement.Semantic == resolvedCard.SelectedOption.Semantic);
-        });
+        if (scoredCandidates.Length > 0)
+        {
+            return scoredCandidates[0];
+        }
+
+        RoutineEventCandidate[] defaultCandidates = candidateArray
+            .Where(candidate => IsDefaultSelection(candidate.Event?.SelectionRule))
+            .OrderByDescending(candidate => candidate.Event.Priority)
+            .ThenBy(candidate => candidate.SourceIndex)
+            .ToArray();
+
+        if (defaultCandidates.Length > 0)
+        {
+            return defaultCandidates[0];
+        }
+
+        return candidateArray
+            .OrderByDescending(candidate => candidate.Event.Priority)
+            .ThenBy(candidate => candidate.SourceIndex)
+            .First();
+    }
+
+    private static bool TryGetSelectionScore(
+        RoutineEventCandidate candidate,
+        RuntimeChildState childState,
+        out int score)
+    {
+        score = 0;
+        EventSelectionRuleData rule = candidate.Event?.SelectionRule;
+        if (rule == null || childState == null)
+        {
+            return false;
+        }
+
+        int value = childState.GetStat(rule.SelectorStat);
+        switch (rule.Mode)
+        {
+            case EEventSelectionMode.MaxPositive:
+                if (value <= rule.Threshold)
+                {
+                    return false;
+                }
+
+                score = value;
+                return true;
+            case EEventSelectionMode.MaxNegative:
+                if (value >= rule.Threshold)
+                {
+                    return false;
+                }
+
+                score = rule.Threshold - value;
+                return true;
+            case EEventSelectionMode.MaxAny:
+                score = value;
+                return true;
+            case EEventSelectionMode.MinAny:
+                score = -value;
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private static bool IsDefaultSelection(EventSelectionRuleData rule)
+    {
+        return rule != null && (rule.IsDefault || rule.Mode == EEventSelectionMode.Default);
     }
 
     private static RuntimeResolvedCardRecord ResolveMatchedRoutineCard(
@@ -371,6 +446,24 @@ public static class WeekNarrativeResolver
 
         return lookup;
     }
+
+    private readonly struct RoutineEventCandidate
+    {
+        public RoutineEventCandidate(
+            SO_DayRoutineEventDefinition eventDefinition,
+            RuntimeResolvedCardRecord matchedCard,
+            int sourceIndex)
+        {
+            Event = eventDefinition;
+            MatchedCard = matchedCard;
+            SourceIndex = sourceIndex;
+        }
+
+        public SO_DayRoutineEventDefinition Event { get; }
+        public RuntimeResolvedCardRecord MatchedCard { get; }
+        public int SourceIndex { get; }
+    }
+
     private static ENemoVisualState ResolveVisualState(
         SO_InteractiveEventStepDefinition step,
         RuntimeChildState childState)
