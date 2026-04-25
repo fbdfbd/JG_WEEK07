@@ -3,7 +3,17 @@ using UnityEngine;
 
 public static class GameplayAnalyticsExporter
 {
-    public static string LogsDirectory => Path.Combine(Application.persistentDataPath, "Logs");
+    public static string LogsDirectory
+    {
+        get
+        {
+    #if UNITY_STANDALONE && !UNITY_EDITOR
+            return Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Logs");
+    #else
+            return Path.Combine(Application.persistentDataPath, "Logs");
+    #endif
+        }
+    }
 
     public static string BuildPath(string fileName)
     {
