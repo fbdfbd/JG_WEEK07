@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233e16c21d27ebe4c82e112051bc9da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_EventCutsceneBridge
-  _ruleCatalog: {fileID: 0}
+  _ruleCatalog: {fileID: 11400000, guid: 9220a4b8507597a41b492250e00fe49d, type: 2}
   _dataDrivenPlayer: {fileID: 1727837108}
   _specialPlayers: []
 --- !u!4 &147825332
@@ -5938,9 +5938,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93167563d2f279a46b9bbff067ae7701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeekFlowController
-  _weekDefinition: {fileID: 11400000, guid: e2ab0a08d2744b92a97f30ae734b1e20, type: 2}
+  _weekDefinition: {fileID: 11400000, guid: ee7fca6b41a81b949a4525738adc1154, type: 2}
   _weekDefinitions:
-  - {fileID: 11400000, guid: e2ab0a08d2744b92a97f30ae734b1e20, type: 2}
   - {fileID: 11400000, guid: ee7fca6b41a81b949a4525738adc1154, type: 2}
   - {fileID: 11400000, guid: 7caf4d1bdd8dd8b429ff827dc3086d30, type: 2}
   - {fileID: 11400000, guid: ece288bcaf71db44fb7b9baf016379cc, type: 2}
@@ -14098,6 +14097,7 @@ MonoBehaviour:
   - {fileID: 952825187}
   - {fileID: 78364712}
   - {fileID: 1323983681}
+  _toastStatTypes: 00000000020000000300000004000000
   _burstSpeedMultiplier: 1.5
 --- !u!1 &1506608862
 GameObject:
@@ -14531,8 +14531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e428735210fb0d48b82c115aa529aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_DataDrivenCutscenePlayer
-  _sequenceLibrary: {fileID: 0}
-  _targetRegistry: {fileID: 0}
+  _sequenceLibrary: {fileID: 11400000, guid: 9e7a9628c381e47438858791ebb40947, type: 2}
+  _targetRegistry: {fileID: 1777252640}
 --- !u!4 &1727837109
 Transform:
   m_ObjectHideFlags: 0
@@ -18847,6 +18847,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 145433372}
     m_Modifications:
+    - target: {fileID: 6950949417722478183, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7908351897322252952, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
       propertyPath: m_Name
       value: CutsceneCharacterManager
@@ -21736,7 +21740,7 @@ MonoBehaviour:
   _dialogueScreenView: {fileID: 138419776}
   _dialogueLogPanel: {fileID: 1463106723}
   _transitionPlayer: {fileID: 467519527}
-  _cutsceneBridge: {fileID: 357928815}
+  _cutsceneBridge: {fileID: 147825331}
   _endingFollowUpPanel: {fileID: 398688970}
   _mainCanvasGroup: {fileID: 1850009227}
   _nemo: {fileID: 612463813}

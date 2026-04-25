@@ -13,24 +13,23 @@ MonoBehaviour:
   m_Name: event_week_009_excursion_garden_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
   _id: event_week_009_excursion_garden_blocked
-  _title: garden Blocked
+  _title: "\uC815\uC6D0 \uD1B5\uC81C"
   _priority: 10
   _conditions:
     _requiredFlags: []
     _blockedFlags: []
     _statRequirements: []
-    _informationRequirements:
-    - _informationType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-      _useSemanticFilter: 1
-      _semantic: 2
-      _minimumCount: 1
+    _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: 8fdd979c35037d24782b88acd77f2f0c, type: 2}
   _onCompletedInteractions:
-  - {fileID: 11400000, guid: 8a22b8993991b7d4b9d7d2b46ca5059a, type: 2}
-  - {fileID: 11400000, guid: 3767dfb8845aead42b17c728fe339544, type: 2}
-  - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
   - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
   _preferredSemantics: 02000000
   _linkedCard: {fileID: 11400000, guid: a9b37575f0b7b914595880e26ae67433, type: 2}
+  _selectionRule:
+    _mode: 5
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 1

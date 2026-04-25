@@ -138,6 +138,11 @@ public static class CsvImportValidator
                     $"event_steps.csv -> default_next_step_id ({row.EventId}/{row.StepId})",
                     errors);
             }
+
+            ValidateStepConditionSlot(row.EventId, row.StepId, 1, row.ConditionStat1, row.ConditionMin1, row.ConditionMax1, errors);
+            ValidateStepConditionSlot(row.EventId, row.StepId, 2, row.ConditionStat2, row.ConditionMin2, row.ConditionMax2, errors);
+            ValidateStepNextReference(row.EventId, row.StepId, row.ConditionalNextStepId, stepKeys, "conditional_next_step_id", errors);
+            ValidateStepNextReference(row.EventId, row.StepId, row.ConditionalFallbackStepId, stepKeys, "conditional_fallback_step_id", errors);
         }
 
         foreach (EventChoiceRow row in dataset.EventChoices)
@@ -263,6 +268,61 @@ public static class CsvImportValidator
         if (!validValues.Contains(normalizedValue, StringComparer.OrdinalIgnoreCase))
         {
             errors.Add($"Invalid enum value: {label} -> {value}");
+        }
+    }
+
+    private static void ValidateStepConditionSlot(
+        string eventId,
+        string stepId,
+        int slot,
+        string statType,
+        string minimumValue,
+        string maximumValue,
+        ICollection<string> errors)
+    {
+        string label = $"event_steps.csv -> condition_{slot} ({eventId}/{stepId})";
+        ValidateEnum<EChildStatusType>(statType, $"{label}.stat", errors, allowBlank: true);
+
+        bool hasBounds = !string.IsNullOrWhiteSpace(minimumValue) || !string.IsNullOrWhiteSpace(maximumValue);
+        if (hasBounds && string.IsNullOrWhiteSpace(statType))
+        {
+            errors.Add($"Missing enum value: {label}.stat");
+        }
+
+        ValidateOptionalInt(minimumValue, $"{label}.min", errors);
+        ValidateOptionalInt(maximumValue, $"{label}.max", errors);
+    }
+
+    private static void ValidateStepNextReference(
+        string eventId,
+        string stepId,
+        string nextStepId,
+        ISet<string> stepKeys,
+        string columnName,
+        ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(nextStepId))
+        {
+            return;
+        }
+
+        ValidateOptionalReference(
+            CsvImportContext.BuildStepKey(eventId, nextStepId),
+            stepKeys,
+            $"event_steps.csv -> {columnName} ({eventId}/{stepId})",
+            errors);
+    }
+
+    private static void ValidateOptionalInt(string value, string label, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return;
+        }
+
+        if (!int.TryParse(value, out _))
+        {
+            errors.Add($"Invalid integer value: {label} -> {value}");
         }
     }
 

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_002_excursion_basement_direct_curious__step_event_week_002_excursion_basement_direct_curious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC18C\uB9AC\uB294 \uC624\uB798\uB41C \uCC9C \uB4A4\uC5D0\uC11C \uB2E4\uC2DC
+      \uD55C \uBC88 \uB0AC\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC800\uAE30\uC57C."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC81C\uAC00 \uBA3C\uC800 \uBCF4\uACA0\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uB2C8, \uB098\uB3C4 \uBCFC\uB798."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC544\uAC00\uC528."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC870\uAE08\uB9CC. \uC950\uBA74 \uB3C4\uB9DD\uAC00\uC796\uC544."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uB180\uB77C\uC2DC\uBA74 \uBC14\uB85C \uB4A4\uB85C \uC624\uC154\uC57C
+      \uD569\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC228\uC744 \uC8FD\uC774\uACE0 \uCC9C
+      \uB4A4\uB97C \uB4E4\uC5EC\uB2E4\uBD24\uB2E4."
+  _nemoLine: "\uC18C\uB9AC\uB294 \uC624\uB798\uB41C \uCC9C \uB4A4\uC5D0\uC11C \uB2E4\uC2DC
+    \uD55C \uBC88 \uB0AC\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

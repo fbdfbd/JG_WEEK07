@@ -1,10 +1,10 @@
 week_id,week_index,title,summary,preturn_title,preturn_summary,on_week_start_interaction_ids,on_week_end_interaction_ids
-week_001,1,유년기 1주차,유년기 첫 번째 주차,,,,week_001_wrapup_log
-week_002,2,유년기 2주차,유년기 두 번째 주차,,,,week_002_wrapup_log
-week_003,3,유년기 3주차,유년기 세 번째 주차,,,,week_003_wrapup_log
-week_004,4,어린이기 1주차,어린이기 첫 번째 주차,,,,week_004_wrapup_log
-week_005,5,어린이기 2주차,어린이기 두 번째 주차,,,,week_005_wrapup_log
-week_006,6,어린이기 3주차,어린이기 세 번째 주차,,,,week_006_wrapup_log
-week_007,7,청소년기 1주차,청소년기 첫 번째 주차,,,,week_007_wrapup_log
-week_008,8,청소년기 2주차,청소년기 두 번째 주차,,,,week_008_wrapup_log
-week_009,9,청소년기 3주차,청소년기 세 번째 주차,,,,week_009_wrapup_log
+week_001,1,,,,,,
+week_002,2,,,,,,
+week_003,3,,,,,,
+week_004,4,,,,,,
+week_005,5,,,,,,
+week_006,6,,,,,,
+week_007,7,,,,,,
+week_008,8,,,,,,
+week_009,9,,,,,,

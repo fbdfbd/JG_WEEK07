@@ -14,21 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_basement_week_006
   _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-  _title: "\uC9C0\uD558\uC2E4 6\uC8FC\uCC28"
-  _originalText: "\uC640\uC778\uBCD1 \uACC1\uC758 \uBA54\uBAA8\uB97C \uBCF4\uACE0
-    \uBCF4\uAD00\uC5D0\uB3C4 \uB54C\uAC00 \uC788\uB2E4\uB294 \uB9D0\uC744 \uB4E3\uAC8C
-    \uB41C\uB2E4. \uC228\uAE38\uC9C0 \uC124\uBA85\uD574\uC904\uC9C0 \uC815\uD55C\uB2E4."
+  _title: "\uC9C0\uD558\uC2E4"
+  _originalText: "\uC9C0\uD558\uC2E4 \uC11C\uB78D\uC5D0\uC11C \uC5B4\uBA38\uB2C8\uC758
+    \uB0A1\uC740 \uC190\uC218\uAC74\uC774 \uB098\uC654\uB2E4."
   _options:
-  - _semantic: 2
-    _label: "\uBC29\uBB38\uC744 \uB9C9\uB294\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C \uC678\uCD9C\uC744 \uB9C9\uACE0 \uB3CC\uB824\uBCF4\uB0B8\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-    - {fileID: 11400000, guid: 7e9e7c466b743084c8fdfed064fa2fb3, type: 2}
   - _semantic: 0
-    _label: "\uC678\uCD9C\uC744 \uD5C8\uB77D\uD55C\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C\uAE4C\uC9C0 \uB098\uAC00\uB3C4\uB85D
-      \uD5C8\uB77D\uD55C\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-    - {fileID: 11400000, guid: 7e8a58bb3ab8b5440a4be57ce5a52c93, type: 2}
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uC9C0\uD558\uC2E4\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC9C0\uD558\uC2E4\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _interactions: []

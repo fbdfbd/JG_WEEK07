@@ -121,7 +121,15 @@ public sealed class CsvDataset
             record.GetBool("use_custom_visual_state"),
             record["visual_state"],
             record.GetMultiValue("on_enter_interaction_ids"),
-            record["default_next_step_id"]));
+            record["default_next_step_id"],
+            record["condition_stat_1"],
+            record["condition_min_1"],
+            record["condition_max_1"],
+            record["condition_stat_2"],
+            record["condition_min_2"],
+            record["condition_max_2"],
+            record["conditional_next_step_id"],
+            record["conditional_fallback_step_id"]));
         dataset.EventStepDialogueLines = LoadTable(csvRootPath, "event_step_dialogue_lines.csv", record => new EventStepDialogueLineRow(
             record["event_id"],
             record["step_id"],
@@ -492,7 +500,15 @@ public sealed class EventStepRow
         bool useCustomVisualState,
         string visualState,
         string[] onEnterInteractionIds,
-        string defaultNextStepId)
+        string defaultNextStepId,
+        string conditionStat1,
+        string conditionMin1,
+        string conditionMax1,
+        string conditionStat2,
+        string conditionMin2,
+        string conditionMax2,
+        string conditionalNextStepId,
+        string conditionalFallbackStepId)
     {
         EventId = eventId;
         StepId = stepId;
@@ -502,6 +518,14 @@ public sealed class EventStepRow
         VisualState = visualState;
         OnEnterInteractionIds = onEnterInteractionIds;
         DefaultNextStepId = defaultNextStepId;
+        ConditionStat1 = conditionStat1;
+        ConditionMin1 = conditionMin1;
+        ConditionMax1 = conditionMax1;
+        ConditionStat2 = conditionStat2;
+        ConditionMin2 = conditionMin2;
+        ConditionMax2 = conditionMax2;
+        ConditionalNextStepId = conditionalNextStepId;
+        ConditionalFallbackStepId = conditionalFallbackStepId;
     }
 
     public string EventId { get; }
@@ -512,6 +536,14 @@ public sealed class EventStepRow
     public string VisualState { get; }
     public string[] OnEnterInteractionIds { get; }
     public string DefaultNextStepId { get; }
+    public string ConditionStat1 { get; }
+    public string ConditionMin1 { get; }
+    public string ConditionMax1 { get; }
+    public string ConditionStat2 { get; }
+    public string ConditionMin2 { get; }
+    public string ConditionMax2 { get; }
+    public string ConditionalNextStepId { get; }
+    public string ConditionalFallbackStepId { get; }
 }
 
 public sealed class EventStepDialogueLineRow

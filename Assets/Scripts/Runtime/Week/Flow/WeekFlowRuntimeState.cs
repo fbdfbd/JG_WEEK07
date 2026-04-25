@@ -141,9 +141,9 @@ public sealed class RuntimeInteractiveEventSession
         SelectedChoice = null;
     }
 
-    public bool TryMoveToNextStep()
+    public bool TryMoveToNextStep(RuntimeChildState childState)
     {
-        SO_InteractiveEventStepDefinition nextStep = ResolveNextStep();
+        SO_InteractiveEventStepDefinition nextStep = ResolveNextStep(childState);
         if (nextStep == null)
         {
             return false;
@@ -155,11 +155,17 @@ public sealed class RuntimeInteractiveEventSession
         return true;
     }
 
-    private SO_InteractiveEventStepDefinition ResolveNextStep()
+    private SO_InteractiveEventStepDefinition ResolveNextStep(RuntimeChildState childState)
     {
         if (SelectedChoice?.NextStep != null)
         {
             return SelectedChoice.NextStep;
+        }
+
+        if (CurrentStep?.ConditionalNext != null &&
+            CurrentStep.ConditionalNext.TryResolve(childState, out SO_InteractiveEventStepDefinition conditionalNextStep))
+        {
+            return conditionalNextStep;
         }
 
         return CurrentStep != null ? CurrentStep.NextStep : null;

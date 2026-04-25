@@ -245,7 +245,7 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
             _showChoiceResult = false;
         }
 
-        if (_currentEventSession.TryMoveToNextStep())
+        if (_currentEventSession.TryMoveToNextStep(_childState))
         {
             ShowCurrentEventStep();
             return;
@@ -985,6 +985,7 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
         SetSerializedField(step, "_visualState", visualState);
         SetSerializedField(step, "_onEnterInteractions", onEnterInteractions ?? Array.Empty<SO_CardInteractionDefinition>());
         SetSerializedField(step, "_choices", choices ?? Array.Empty<InteractiveEventChoiceData>());
+        SetSerializedField(step, "_conditionalNext", null);
         SetSerializedField(step, "_nextStep", nextStep);
         return step;
     }

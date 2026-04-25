@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_008_excursion_forest_blocked
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_008_excursion_forest_blocked
+  _title: "\uC232 \uD1B5\uC81C"
+  _priority: 10
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 7d7da3a35a793b9468e744399499b1fc, type: 2}
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: b0acdf54f7c36774fbadc86a7ef5a9d2, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  _preferredSemantics: 02000000
+  _linkedCard: {fileID: 11400000, guid: 637b467f5b4ac794e886a2c79512f644, type: 2}
+  _selectionRule:
+    _mode: 5
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 1

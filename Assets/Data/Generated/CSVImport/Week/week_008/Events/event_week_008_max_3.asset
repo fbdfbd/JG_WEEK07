@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_008_max_3
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_008_max_3
+  _title: "\uB9C9\uC2A4"
+  _priority: 10
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements:
+    - _statType: 6
+      _useMinimum: 1
+      _minimumValue: 5
+      _useMaximum: 1
+      _maximumValue: 5
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 4d1becd37c7a99240b7bbfae673c55db, type: 2}
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: d6a5e766052d89c428f1743b91d1f5ed, type: 2}
+  - {fileID: 11400000, guid: 49d60b6de82ff6d499a3921eb28eb77f, type: 2}
+  - {fileID: 11400000, guid: bd623b1c95ef1da45a23d6a4d1b52ffa, type: 2}
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: 642f5cbf471684846bfec879d4c64843, type: 2}
+  _preferredSemantics: 00000000
+  _linkedCard: {fileID: 11400000, guid: a77d7118b377ffa4290d88c29ff34ad2, type: 2}
+  _selectionRule:
+    _mode: 0
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 0

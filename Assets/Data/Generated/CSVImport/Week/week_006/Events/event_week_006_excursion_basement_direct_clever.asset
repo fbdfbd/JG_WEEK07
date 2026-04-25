@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_006_excursion_basement_direct_clever
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_006_excursion_basement_direct_clever
+  _title: "\uC9C0\uD558\uC2E4 \uD5C8\uAC00-\uC601\uBBFC"
+  _priority: 20
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 6189a7f66be66c54bad86fa8b34c53d8, type: 2}
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
+  - {fileID: 11400000, guid: 156a3b33297a73c469970f297857e022, type: 2}
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  _preferredSemantics: 00000000
+  _linkedCard: {fileID: 11400000, guid: 47b1edc7802bee44daea06b2a00a120c, type: 2}
+  _selectionRule:
+    _mode: 2
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 0

@@ -1,7 +1,7 @@
 card_type_id,display_name
 card_type_excursion,외출
-card_type_visitor,방문자
-card_type_letter,편지
-card_type_textbook,교재
-card_type_house_talk,저택 내부 소문
-card_type_external_info,외부 정보
+card_type_rumor,소문
+card_type_rian,리안
+card_type_max,막스
+card_type_millia,밀리아
+card_type_yuffie,유피

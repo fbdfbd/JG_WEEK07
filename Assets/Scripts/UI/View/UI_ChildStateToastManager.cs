@@ -6,6 +6,13 @@ public class UI_ChildStateToastManager : MonoBehaviour
     [SerializeField] private WeekFlowController _weekFlowController;
     [SerializeField] private SO_WeekUiTextCatalog _weekUiTextCatalog;
     [SerializeField] private UI_ChildStateToastItem[] _toastItems;
+    [SerializeField] private EChildStatusType[] _toastStatTypes =
+    {
+        EChildStatusType.Trust,
+        EChildStatusType.Curiosity,
+        EChildStatusType.Anxiety,
+        EChildStatusType.Obedience,
+    };
     [SerializeField] private float _burstSpeedMultiplier = 1.35f;
 
     private RuntimeChildState _childState;
@@ -78,12 +85,25 @@ public class UI_ChildStateToastManager : MonoBehaviour
 
     private void HandleStatChanged(StatChangeInfo changeInfo)
     {
-        if (changeInfo.Delta == 0 || _toastItems == null || _toastItems.Length == 0)
+        if (changeInfo.Delta == 0
+            || !CanShowToast(changeInfo.StatType)
+            || _toastItems == null
+            || _toastItems.Length == 0)
         {
             return;
         }
 
         _pendingToastMessages.Enqueue(BuildStatMessage(changeInfo));
+    }
+
+    private bool CanShowToast(EChildStatusType statType)
+    {
+        if (_toastStatTypes == null || _toastStatTypes.Length == 0)
+        {
+            return true;
+        }
+
+        return System.Array.Exists(_toastStatTypes, type => type == statType);
     }
 
     private void HandleFlowPresentationCompleted()

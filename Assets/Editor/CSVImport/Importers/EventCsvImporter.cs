@@ -47,6 +47,7 @@ public static class EventCsvImporter
             CsvImportAssetUtility.SetField(step, "_visualState", Enum.Parse<ENemoVisualState>(row.VisualState, true));
             CsvImportAssetUtility.SetField(step, "_onEnterInteractions", row.OnEnterInteractionIds.Select(id => context.InteractionsById[id]).ToArray());
             CsvImportAssetUtility.SetField(step, "_choices", BuildChoices(context, row.EventId, row.StepId));
+            CsvImportAssetUtility.SetField(step, "_conditionalNext", BuildConditionalNext(context, row));
             CsvImportAssetUtility.SetField(
                 step,
                 "_nextStep",
@@ -251,6 +252,91 @@ public static class EventCsvImporter
             "default" => EEventSelectionMode.Default,
             _ => EEventSelectionMode.None,
         };
+    }
+
+    private static ConditionalStepNextData BuildConditionalNext(CsvImportContext context, EventStepRow row)
+    {
+        bool hasConditionalData =
+            HasCondition(row.ConditionStat1, row.ConditionMin1, row.ConditionMax1) ||
+            HasCondition(row.ConditionStat2, row.ConditionMin2, row.ConditionMax2) ||
+            !string.IsNullOrWhiteSpace(row.ConditionalNextStepId) ||
+            !string.IsNullOrWhiteSpace(row.ConditionalFallbackStepId);
+
+        if (!hasConditionalData)
+        {
+            return null;
+        }
+
+        ConditionalStepNextData conditionalNext = new();
+        CsvImportAssetUtility.SetField(
+            conditionalNext,
+            "_nextStep",
+            string.IsNullOrWhiteSpace(row.ConditionalNextStepId)
+                ? null
+                : context.StepsByKey[CsvImportContext.BuildStepKey(row.EventId, row.ConditionalNextStepId)]);
+        CsvImportAssetUtility.SetField(
+            conditionalNext,
+            "_fallbackStep",
+            string.IsNullOrWhiteSpace(row.ConditionalFallbackStepId)
+                ? null
+                : context.StepsByKey[CsvImportContext.BuildStepKey(row.EventId, row.ConditionalFallbackStepId)]);
+        CsvImportAssetUtility.SetField(
+            conditionalNext,
+            "_statRequirements",
+            BuildConditionalStatRequirements(row).ToArray());
+        return conditionalNext;
+    }
+
+    private static IEnumerable<WeekStatRequirementData> BuildConditionalStatRequirements(EventStepRow row)
+    {
+        WeekStatRequirementData first = BuildConditionalStatRequirement(
+            row.ConditionStat1,
+            row.ConditionMin1,
+            row.ConditionMax1);
+        if (first != null)
+        {
+            yield return first;
+        }
+
+        WeekStatRequirementData second = BuildConditionalStatRequirement(
+            row.ConditionStat2,
+            row.ConditionMin2,
+            row.ConditionMax2);
+        if (second != null)
+        {
+            yield return second;
+        }
+    }
+
+    private static WeekStatRequirementData BuildConditionalStatRequirement(
+        string statType,
+        string minimumValue,
+        string maximumValue)
+    {
+        if (!HasCondition(statType, minimumValue, maximumValue))
+        {
+            return null;
+        }
+
+        WeekStatRequirementData requirement = new();
+        CsvImportAssetUtility.SetField(requirement, "_statType", Enum.Parse<EChildStatusType>(statType, true));
+        CsvImportAssetUtility.SetField(requirement, "_useMinimum", !string.IsNullOrWhiteSpace(minimumValue));
+        CsvImportAssetUtility.SetField(requirement, "_minimumValue", ParseOptionalInt(minimumValue));
+        CsvImportAssetUtility.SetField(requirement, "_useMaximum", !string.IsNullOrWhiteSpace(maximumValue));
+        CsvImportAssetUtility.SetField(requirement, "_maximumValue", ParseOptionalInt(maximumValue));
+        return requirement;
+    }
+
+    private static bool HasCondition(string statType, string minimumValue, string maximumValue)
+    {
+        return !string.IsNullOrWhiteSpace(statType) ||
+               !string.IsNullOrWhiteSpace(minimumValue) ||
+               !string.IsNullOrWhiteSpace(maximumValue);
+    }
+
+    private static int ParseOptionalInt(string value)
+    {
+        return string.IsNullOrWhiteSpace(value) ? 0 : int.Parse(value);
     }
 
     private static InteractiveEventChoiceData[] BuildChoices(CsvImportContext context, string eventId, string stepId)

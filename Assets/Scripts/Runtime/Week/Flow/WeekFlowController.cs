@@ -8,6 +8,7 @@ public class WeekFlowController : MonoBehaviour
     [SerializeField] private SO_WeekDefinition _weekDefinition;
     [SerializeField] private SO_WeekDefinition[] _weekDefinitions = Array.Empty<SO_WeekDefinition>();
     [SerializeField] private SO_WeekUiTextCatalog _uiTextCatalog;
+    [SerializeField] private SO_EndingCatalog _endingCatalog;
 
     [Header("View Connection")]
     [SerializeField] private WeekFlowViewBase _view;
@@ -81,8 +82,8 @@ public class WeekFlowController : MonoBehaviour
         _weekSequenceState.InitializeWeekSequence(_weekDefinition, _weekDefinitions);
         _weekSelectionState.ApplyWeekEntries(WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition));
         _presenter = new WeekFlowPresenter(_view, _runtimeState, _weekUiText, _weekSelectionState, _weekSequenceState);
-        _commandHandler = new WeekFlowCommandHandler(_runtimeState, _weekUiText, _weekRunner, _weekSelectionState, _weekSequenceState);
-        _narrativeHandler = new WeekFlowNarrativeHandler(_runtimeState, _weekUiText, _weekSelectionState, _weekSequenceState);
+        _commandHandler = new WeekFlowCommandHandler(_runtimeState, _weekUiText, _weekRunner, _weekSelectionState, _weekSequenceState, _endingCatalog);
+        _narrativeHandler = new WeekFlowNarrativeHandler(_runtimeState, _weekUiText, _weekSelectionState, _weekSequenceState, _endingCatalog);
         _cinematicDirector = new WeekFlowCinematicDirector(_view, new WeekFlowCinematicResolver());
         _cutsceneBridge = _view != null ? _view.GetCutsceneBridge() : null;
         BindRuntimeStateEvents();

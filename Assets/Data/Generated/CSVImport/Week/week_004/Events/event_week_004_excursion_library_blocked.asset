@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: event_week_004_excursion_library_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
   _id: event_week_004_excursion_library_blocked
-  _title: library Blocked
+  _title: "\uB3C4\uC11C\uAD00 \uD1B5\uC81C"
   _priority: 10
   _conditions:
     _requiredFlags: []
     _blockedFlags: []
     _statRequirements: []
-    _informationRequirements:
-    - _informationType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-      _useSemanticFilter: 1
-      _semantic: 2
-      _minimumCount: 1
+    _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: fd45c31c580594d45a5fb5c0297c965b, type: 2}
   _onCompletedInteractions:
-  - {fileID: 11400000, guid: 9ad9181eec12809429aab910fe22c100, type: 2}
-  - {fileID: 11400000, guid: 7e9e7c466b743084c8fdfed064fa2fb3, type: 2}
-  - {fileID: 11400000, guid: 7e8a58bb3ab8b5440a4be57ce5a52c93, type: 2}
+  - {fileID: 11400000, guid: b0acdf54f7c36774fbadc86a7ef5a9d2, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
   - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
   _preferredSemantics: 02000000
   _linkedCard: {fileID: 11400000, guid: df3a5c370082147409cc745919c9211b, type: 2}
+  _selectionRule:
+    _mode: 5
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 1

@@ -6,17 +6,20 @@ public sealed class WeekFlowNarrativeHandler
     private readonly WeekUiTextProvider _weekUiText;
     private readonly WeekSelectionState _weekSelectionState;
     private readonly WeekSequenceState _weekSequenceState;
+    private readonly SO_EndingCatalog _endingCatalog;
 
     public WeekFlowNarrativeHandler(
         WeekFlowRuntimeState runtimeState,
         WeekUiTextProvider weekUiText,
         WeekSelectionState weekSelectionState,
-        WeekSequenceState weekSequenceState)
+        WeekSequenceState weekSequenceState,
+        SO_EndingCatalog endingCatalog)
     {
         _runtimeState = runtimeState;
         _weekUiText = weekUiText;
         _weekSelectionState = weekSelectionState;
         _weekSequenceState = weekSequenceState;
+        _endingCatalog = endingCatalog;
     }
 
     public WeekFlowActionResult CloseWeekFeedback()
@@ -44,7 +47,7 @@ public sealed class WeekFlowNarrativeHandler
 
         ApplyCurrentStepEffectsIfNeeded(eventSession);
 
-        if (eventSession.TryMoveToNextStep())
+        if (eventSession.TryMoveToNextStep(_runtimeState.ChildState))
         {
             return BuildEventStepScreen();
         }
@@ -200,7 +203,7 @@ public sealed class WeekFlowNarrativeHandler
         _runtimeState.ShouldShowEndingAfterEvents = false;
         _runtimeState.HasReachedEnding = true;
         _runtimeState.IsAwaitingEndingFollowUp = true;
-        EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState);
+        EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState, _endingCatalog);
         GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());
 

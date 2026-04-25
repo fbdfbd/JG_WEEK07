@@ -12,29 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
   m_Name: event_week_007_excursion_garden_blocked__step_event_week_007_excursion_garden_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
-  _titleOverride: "\uC815\uC6D0 \uD1B5\uC81C"
-  _bodyText: "excursion garden Blocked \uB8E8\uD2B8"
+  _titleOverride: 
+  _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "(\uACBD\uBE44\uB300\uC7A5\uC774 \uB098\uBB34 \uC904\uAE30\uB97C \uC0B4\uD53C\uBA70
-      \uAC00\uC9C0\uCE58\uAE30 \uAC00\uC704\uB97C \uB4E0\uB2E4.)"
-  - _speaker: {fileID: 11400000, guid: 0c996a4b6053a604a8453b8d2e8e4626, type: 2}
-    _text: "\uB108\uBB34 \uC81C\uBA4B\uB300\uB85C \uC790\uB790\uAD70\uC694. \uC8FC\uC778\uC758
-      \uB098\uBB34\uB77C\uBA74 \uC808\uC81C\uB41C \uD615\uD0DC\uB97C \uC720\uC9C0\uD574\uC57C
-      \uD569\uB2C8\uB2E4. \uBCF4\uAE30 \uD749\uD55C \uAC00\uC9C0\uB4E4\uC740 \uCCD0\uB0B4\uACA0\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "\uC790\uC5F0\uC2A4\uB7EC\uC6B4 \uAC8C \uB354 \uBCF4\uAE30 \uC88B\uC740\uB370...
-      \uAF2D \uADF8\uB807\uAC8C \uB531\uB531\uD558\uAC8C \uC798\uB77C\uC57C \uD574\uC694?"
-  - _speaker: {fileID: 11400000, guid: 0c996a4b6053a604a8453b8d2e8e4626, type: 2}
-    _text: "\uBB34\uC9C8\uC11C\uB294 \uACE7 \uC57D\uC810\uC785\uB2C8\uB2E4. \uB3C4\uB828\uB2D8\uB3C4
-      \uC774 \uB098\uBB34\uCC98\uB7FC \uC2A4\uC2A4\uB85C\uB97C \uAC08\uACE0\uB2E6\uC73C\uC154\uC57C
-      \uD569\uB2C8\uB2E4."
-  _nemoLine: "(\uACBD\uBE44\uB300\uC7A5\uC774 \uB098\uBB34 \uC904\uAE30\uB97C \uC0B4\uD53C\uBA70
-    \uAC00\uC9C0\uCE58\uAE30 \uAC00\uC704\uB97C \uB4E0\uB2E4.)"
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC131\uC778\uC2DD \uAD00\uB828 \uC5C5\uBB34\uAC00
+      \uBC00\uB824 \uC815\uC6D0\uC5D0 \uB098\uAC08 \uC218 \uC5C6\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uBA70\uCE60 \uB4A4 \uC544\uBCA8\uB9AC\uC544\uB294 \uCC3D\uAC00\uC5D0\uC11C
+      \uC815\uC6D0 \uCABD\uC744 \uBD24\uB2E4. \uC7A5\uBBF8 \uD654\uB2E8\uC774 \uBA40\uB9AC
+      \uBCF4\uC600\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD53C\uC5C8\uB294\uC9C0, \uC548\uD53C\uC5C8\uB294\uC9C0 \uC774 \uAC70\uB9AC\uC5D0\uC120
+      \uC54C \uC218 \uC5C6\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC5D8\uB9B0, \uC7A5\uBBF8\uAC00 \uD3C8\uB098\uC694?"
+  - _speaker: {fileID: 11400000, guid: fa0a52ca28fa9e14780e4a40b6bca1a5, type: 2}
+    _text: "\uC544\uC9C1\uC778 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uBCF4\uC168\uB098\uC694?"
+  - _speaker: {fileID: 11400000, guid: fa0a52ca28fa9e14780e4a40b6bca1a5, type: 2}
+    _text: "\uB124, \uC544\uCE68\uC5D0 \uC9C0\uB098\uAC00\uBA74\uC11C\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC5B4\uB5A4 \uC0C9\uC774\uB358\uAC00\uC694?"
+  - _speaker: {fileID: 11400000, guid: fa0a52ca28fa9e14780e4a40b6bca1a5, type: 2}
+    _text: "\uB178\uB780\uC0C9\uC774\uC5C8\uB358 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\u2026\uD770 \uC7A5\uBBF8\uB294 \uC5C6\uC5C8\uB098\uC694?"
+  - _speaker: {fileID: 11400000, guid: fa0a52ca28fa9e14780e4a40b6bca1a5, type: 2}
+    _text: "\uD770 \uC7A5\uBBF8\uC694?"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uB2C8\uC5D0\uC694. \uAD1C\uCC2E\uC2B5\uB2C8\uB2E4."
+  _nemoLine: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC131\uC778\uC2DD \uAD00\uB828 \uC5C5\uBB34\uAC00
+    \uBC00\uB824 \uC815\uC6D0\uC5D0 \uB098\uAC08 \uC218 \uC5C6\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []
   _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
   _nextStep: {fileID: 0}
   _cinematicCues:
     _enterCue: {fileID: 0}

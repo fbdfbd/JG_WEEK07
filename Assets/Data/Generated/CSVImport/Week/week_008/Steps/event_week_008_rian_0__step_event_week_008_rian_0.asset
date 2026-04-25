@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_008_rian_0__step_event_week_008_rian_0
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD669\uC2E4 \uBB38\uC7A5\uC774 \uCC0D\uD78C \uCD95\uD558 \uC11C\uC2E0\uC774
+      \uD14C\uC774\uBE14 \uC704\uC5D0 \uB193\uC5EC \uC788\uC5C8\uB2E4. \uB9AC\uC548\uC740
+      \uADF8 \uC606\uC5D0 \uC11C \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: d39a31eaba59e544f81d15fd71eb37aa, type: 2}
+    _text: "\uC804\uC57C\uC81C\uB97C \uC55E\uB450\uACE0 \uCD95\uD558 \uC778\uC0AC\uB97C
+      \uC804\uD558\uB7EC \uC654\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB9AC\uC548\uB2D8\uC774 \uC9C1\uC811\uC694?"
+  - _speaker: {fileID: 11400000, guid: d39a31eaba59e544f81d15fd71eb37aa, type: 2}
+    _text: "\uB124. \uC624\uB298\uC740 \uD669\uC2E4 \uCABD \uC778\uC0AC\uB3C4 \uACB8\uD574\uC57C
+      \uD574\uC11C\uC694."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB9AC\uC548\uC740 \uD3B8\uC9C0\uB97C \uB0B4\uB824\uB2E4\uBD24\uB2E4."
+  - _speaker: {fileID: 11400000, guid: d39a31eaba59e544f81d15fd71eb37aa, type: 2}
+    _text: "\uC624\uB298\uC740 \uC624\uB798 \uBA38\uBB3C\uC9C0 \uC54A\uACA0\uC2B5\uB2C8\uB2E4.
+      \uC778\uC0AC\uB9CC \uB4DC\uB9AC\uB7EC \uC654\uC5B4\uC694."
+  _nemoLine: "\uD669\uC2E4 \uBB38\uC7A5\uC774 \uCC0D\uD78C \uCD95\uD558 \uC11C\uC2E0\uC774
+    \uD14C\uC774\uBE14 \uC704\uC5D0 \uB193\uC5EC \uC788\uC5C8\uB2E4. \uB9AC\uC548\uC740
+    \uADF8 \uC606\uC5D0 \uC11C \uC788\uC5C8\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

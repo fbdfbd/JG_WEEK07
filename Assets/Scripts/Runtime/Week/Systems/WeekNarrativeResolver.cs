@@ -161,7 +161,7 @@ public static class WeekNarrativeResolver
         RuntimeChildState childState,
         RuntimeInformationControlResult informationControlResult)
     {
-        return ResolveEligibleEvents(nightFlow?.Dialogues, childState, informationControlResult).Take(1);
+        return ResolveEligibleEvents(nightFlow?.Dialogues, childState, informationControlResult);
     }
 
     private static IEnumerable<SO_InteractiveEventDefinition> ResolveEligibleEvents(
@@ -485,7 +485,7 @@ public static class WeekNarrativeResolver
             ?? Array.Empty<string>();
 
         return effectNames.Length == 0
-            ? weekUiText.GetNoEffectSummary()
+            ? string.Empty
             : string.Join(" / ", effectNames);
     }
 

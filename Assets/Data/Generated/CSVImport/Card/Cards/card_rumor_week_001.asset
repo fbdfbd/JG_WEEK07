@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf75e2887b3af5458d469b5570aa42c, type: 3}
+  m_Name: card_rumor_week_001
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
+  _id: card_rumor_week_001
+  _cardType: {fileID: 11400000, guid: d6f24ccffe6c8d345a45850adc9f7252, type: 2}
+  _title: "\uC18C\uBB38"
+  _originalText: "\uC815\uC6D0\uC0AC \uB2E8\uD14C\uAC00 \uC694 \uBA70\uCE60 \uC815\uC6D0
+    \uC911\uC559\uC758 \uD654\uB2E8 \uC55E\uC5D0\uC11C\uB9CC \uC624\uB798 \uBA38\uBB38\uB2E4\uB294
+    \uC18C\uBB38\uC744 \uC544\uBCA8\uB9AC\uC544\uC5D0\uAC8C \uC5B4\uB5BB\uAC8C \uC804\uD560\uC9C0
+    \uC815\uD55C\uB2E4."
+  _options:
+  - _semantic: 0
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uC18C\uBB38\uC744 \uD1B5\uC81C\uD558\uC9C0 \uC54A\uB294\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC18C\uBB38\uC744 \uD1B5\uC81C\uD55C\uB2E4."
+    _interactions: []

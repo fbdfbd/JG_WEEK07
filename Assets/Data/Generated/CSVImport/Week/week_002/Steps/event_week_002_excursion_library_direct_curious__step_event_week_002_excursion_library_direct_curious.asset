@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_002_excursion_library_direct_curious__step_event_week_002_excursion_library_direct_curious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC45\uC0C1 \uC544\uB798\uC5D0 \uB07C\uC5B4
+      \uC788\uB358 \uC791\uC740 \uCABD\uC9C0\uB97C \uBC1C\uACAC\uD588\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC5EC\uAE30 \uBB50 \uC788\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uAC00 \uCABD\uC9C0\uB97C \uD3BC\uCE5C\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\u2018\uC774 \uC544\uC774\uB97C \uC5B4\uB5BB\uAC8C \uC9C0\uCF1C\uC57C
+      \uD560\uAE4C.\u2019"
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD55C\uCC38 \uB4E4\uC5EC\uB2E4\uBD24\uB2E4. \uAE00\uC528\uB294 \uC911\uAC04\uC5D0
+      \uB04A\uACA8 \uC788\uC5C8\uB2E4. \uB4B7\uB9D0\uC740 \uC5C6\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uBE60\uB294 \uBB58 \uC4F0\uB824\uACE0 \uD588\uC744\uAE4C."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uCABD\uC9C0\uB97C \uC811\uC5B4 \uC8FC\uBA38\uB2C8\uC5D0 \uB123\uC5C8\uB2E4."
+  _nemoLine: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC45\uC0C1 \uC544\uB798\uC5D0 \uB07C\uC5B4
+    \uC788\uB358 \uC791\uC740 \uCABD\uC9C0\uB97C \uBC1C\uACAC\uD588\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

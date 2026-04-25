@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 364badc7478fc7e4b9caddf9804fe261, type: 3}
-  m_Name: WeekPreTurn_week_003
+  m_Name: week_003_PreTurn
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekPreTurnDefinition
   _title: 
   _summary: 
@@ -18,75 +18,27 @@ MonoBehaviour:
   - _card: {fileID: 11400000, guid: 00c3ff538c4ed8b4dac940de16d32c91, type: 2}
     _isRequired: 1
     _displayOrder: 0
-  - _card: {fileID: 11400000, guid: 243e05e1ba22359489d77e6cd32ee79b, type: 2}
-    _isRequired: 1
-    _displayOrder: 1
   - _card: {fileID: 11400000, guid: b0ea97e1a1ace2147bb69bd591cd5237, type: 2}
     _isRequired: 1
-    _displayOrder: 2
-  - _card: {fileID: 11400000, guid: ac6c1076801b4e9419f5dc6d710f42c1, type: 2}
+    _displayOrder: 1
+  - _card: {fileID: 11400000, guid: 6735b4b75b0677b4d8617f44e232cb3c, type: 2}
     _isRequired: 1
     _displayOrder: 3
-  - _card: {fileID: 11400000, guid: fa692d76eebc0404d9c11e9c87c2d5b6, type: 2}
+  - _card: {fileID: 11400000, guid: ac6c1076801b4e9419f5dc6d710f42c1, type: 2}
     _isRequired: 1
     _displayOrder: 4
-  - _card: {fileID: 11400000, guid: 17c34bdf923367741ac67a2e334c2966, type: 2}
+  - _card: {fileID: 11400000, guid: b11f719bec06e084197d0eb7dfbaaaf3, type: 2}
     _isRequired: 1
     _displayOrder: 5
-  - _card: {fileID: 11400000, guid: 8cb451c4520bc45408a90af445a7a0da, type: 2}
+  - _card: {fileID: 11400000, guid: d718c1867173745479cfda3f64f87807, type: 2}
     _isRequired: 1
     _displayOrder: 6
-  - _card: {fileID: 11400000, guid: 7f66dc64a6d575a4f9084ac7f800056e, type: 2}
+  - _card: {fileID: 11400000, guid: 6ec5b217ea50f21428216bea64e9b691, type: 2}
     _isRequired: 1
     _displayOrder: 7
-  - _card: {fileID: 11400000, guid: c3db8217539374a4fbad3f43cf73ca09, type: 2}
+  - _card: {fileID: 11400000, guid: b8b555327360a5144984a4b72dc22781, type: 2}
     _isRequired: 1
     _displayOrder: 8
-  - _card: {fileID: 11400000, guid: 99bc87f585fee674aa9a827e222d07d5, type: 2}
+  - _card: {fileID: 11400000, guid: af16a6a9284bcf448b70d1c95e4181ed, type: 2}
     _isRequired: 1
     _displayOrder: 9
-  - _card: {fileID: 11400000, guid: d31acc095d6fe4f4c970c31044837718, type: 2}
-    _isRequired: 1
-    _displayOrder: 10
-  - _card: {fileID: 11400000, guid: 18b6ec8ef709ace478fca9644fea6fd5, type: 2}
-    _isRequired: 1
-    _displayOrder: 11
-  - _card: {fileID: 11400000, guid: 7e0c46a18a2a6614692036ee92939f5b, type: 2}
-    _isRequired: 1
-    _displayOrder: 12
-  - _card: {fileID: 11400000, guid: 93a30023aacf8f34d9bf45a43a1ea200, type: 2}
-    _isRequired: 1
-    _displayOrder: 13
-  - _card: {fileID: 11400000, guid: 3f66cdf0bf6a17649a24ca7e2401142a, type: 2}
-    _isRequired: 1
-    _displayOrder: 14
-  - _card: {fileID: 11400000, guid: 10761244cc7ad7e44876c606fce9f559, type: 2}
-    _isRequired: 1
-    _displayOrder: 15
-  - _card: {fileID: 11400000, guid: 9dfb10c90df626a4490a43b290b035dd, type: 2}
-    _isRequired: 1
-    _displayOrder: 16
-  - _card: {fileID: 11400000, guid: b4af9e13982236e4484e01244b0dea78, type: 2}
-    _isRequired: 1
-    _displayOrder: 17
-  - _card: {fileID: 11400000, guid: 2e3b161d88bd2ec44bdd65034cbed8de, type: 2}
-    _isRequired: 1
-    _displayOrder: 18
-  - _card: {fileID: 11400000, guid: 9506d1b77da1a3a4da78a5239d2deb80, type: 2}
-    _isRequired: 1
-    _displayOrder: 19
-  - _card: {fileID: 11400000, guid: 9d0e74d83c4d4a549929b71aa114f7a6, type: 2}
-    _isRequired: 1
-    _displayOrder: 20
-  - _card: {fileID: 11400000, guid: 9d320a3fbef64a94faff764a84d9eaac, type: 2}
-    _isRequired: 0
-    _displayOrder: 21
-  - _card: {fileID: 11400000, guid: 93d1fbdddbe0774458b5b3e817b7041e, type: 2}
-    _isRequired: 0
-    _displayOrder: 22
-  - _card: {fileID: 11400000, guid: 9ed3b6d5685c772499ab484c9125c48e, type: 2}
-    _isRequired: 0
-    _displayOrder: 23
-  - _card: {fileID: 11400000, guid: 08a13e0fa94bcfd42adaedc1e880c836, type: 2}
-    _isRequired: 0
-    _displayOrder: 24

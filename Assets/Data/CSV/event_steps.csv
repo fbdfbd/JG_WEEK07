@@ -1,483 +1,302 @@
-﻿"event_id","step_id","title_override","body_text","use_custom_visual_state","visual_state","on_enter_interaction_ids","default_next_step_id"
-"event_week_001_etiquette_blocked","step_event_week_001_etiquette_blocked","예절 수업을 미룬다","인사와 식사 예절 교재 Blocked 루트","false","Neutral","",""
-"event_week_001_etiquette_direct","step_event_week_001_etiquette_direct","예절을 정식으로 가르친다","인사와 식사 예절 교재 Direct 루트","false","Neutral","",""
-"event_week_001_etiquette_modified","step_event_week_001_etiquette_modified","예절을 놀이처럼 가르친다","인사와 식사 예절 교재 Modified 루트","false","Neutral","",""
-"event_week_001_excursion_basement_blocked","step_event_week_001_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_001_excursion_basement_direct","step_event_week_001_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_001_excursion_garden_blocked","step_event_week_001_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_001_excursion_garden_direct","step_event_week_001_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_001_excursion_lake_blocked","step_event_week_001_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_001_excursion_lake_direct","step_event_week_001_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_001_excursion_library_blocked","step_event_week_001_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_001_excursion_library_direct","step_event_week_001_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_001_excursion_study_blocked","step_event_week_001_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_001_excursion_study_direct","step_event_week_001_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_001_external_w001_blocked","step_event_week_001_external_w001_blocked","축제 정보 통제","external w001 Blocked 루트","false","Neutral","",""
-"event_week_001_external_w001_blocked_2","step_event_week_001_external_w001_blocked_2","편지지연 정보 통제","external w001 Blocked 루트","false","Neutral","",""
-"event_week_001_external_w001_blocked_3","step_event_week_001_external_w001_blocked_3","미스터 이무 정보 통제","external w001 Blocked 루트","false","Neutral","",""
-"event_week_001_external_w001_direct","step_event_week_001_external_w001_direct","축제 정보 허가","external w001 Direct 루트","false","Neutral","",""
-"event_week_001_external_w001_direct_2","step_event_week_001_external_w001_direct_2","편지지연 정보 허가","external w001 Direct 루트","false","Neutral","",""
-"event_week_001_external_w001_direct_3","step_event_week_001_external_w001_direct_3","미스터 이무 정보 허가","external w001 Direct 루트","false","Neutral","",""
-"event_week_001_house_talk_backgate_wind_rumor_blocked","step_event_week_001_house_talk_backgate_wind_rumor_blocked","후문 바람 관련 소문 통제","house_talk 후문_바람_관련_소문 Blocked 루트","false","Neutral","",""
-"event_week_001_house_talk_backgate_wind_rumor_direct","step_event_week_001_house_talk_backgate_wind_rumor_direct","후문 바람 관련 소문 허가","house_talk 후문_바람_관련_소문 Direct 루트","false","Neutral","",""
-"event_week_001_house_talk_cousin1_rumor_blocked","step_event_week_001_house_talk_cousin1_rumor_blocked","카이안 관련 소문 통제","house_talk 카이온_관련_소문 Blocked 루트","false","Neutral","",""
-"event_week_001_house_talk_cousin1_rumor_direct","step_event_week_001_house_talk_cousin1_rumor_direct","카이안 관련 소문 허가","house_talk 카이온_관련_소문 Direct 루트","false","Neutral","",""
-"event_week_001_house_talk_cousin1_rumor_modified","step_event_week_001_house_talk_cousin1_rumor_modified","카이안 관련 소문 수정","house_talk 카이온_관련_소문 Modified 루트","false","Neutral","",""
-"event_week_001_house_talk_lake_wolf_rumor_blocked","step_event_week_001_house_talk_lake_wolf_rumor_blocked","호수 관련 소문 통제","house_talk 호수_관련_소문 Blocked 루트","false","Neutral","",""
-"event_week_001_house_talk_lake_wolf_rumor_direct","step_event_week_001_house_talk_lake_wolf_rumor_direct","호수 관련 소문 허가","house_talk 호수_관련_소문 Direct 루트","false","Neutral","",""
-"event_week_001_house_talk_lake_wolf_rumor_modified","step_event_week_001_house_talk_lake_wolf_rumor_modified","호수 관련 소문 수정","house_talk 호수_관련_소문 Modified 루트","false","Neutral","",""
-"event_week_001_house_talk_study_rumor_blocked","step_event_week_001_house_talk_study_rumor_blocked","내서재 관련 소문 통제","house_talk 내서재_관련_소문 Blocked 루트","false","Neutral","",""
-"event_week_001_house_talk_study_rumor_direct","step_event_week_001_house_talk_study_rumor_direct","내서재 관련 소문 허가","house_talk 내서재_관련_소문 Direct 루트","false","Neutral","",""
-"event_week_001_house_talk_study_rumor_modified","step_event_week_001_house_talk_study_rumor_modified","내서재 관련 소문 수정","house_talk 내서재_관련_소문 Modified 루트","false","Neutral","",""
-"event_week_001_lineagebook_blocked","step_event_week_001_lineagebook_blocked","가계도 장을 넘긴다","가계도 교재 교재 Blocked 루트","false","Neutral","",""
-"event_week_001_lineagebook_direct","step_event_week_001_lineagebook_direct","가계도 기록을 그대로 읽어 준다","가계도 교재 교재 Direct 루트","false","Neutral","",""
-"event_week_001_lineagebook_modified","step_event_week_001_lineagebook_modified","가계도 기록에 맥락을 붙여 설명한다","가계도 교재 교재 Modified 루트","false","Neutral","",""
-"event_week_001_nature_blocked","step_event_week_001_nature_blocked","관찰 수업을 미룬다","꽃과 벌레 관찰 교재 Blocked 루트","false","Neutral","",""
-"event_week_001_nature_direct","step_event_week_001_nature_direct","꽃과 벌레를 차근차근 살핀다","꽃과 벌레 관찰 교재 Direct 루트","false","Neutral","",""
-"event_week_001_nature_modified","step_event_week_001_nature_modified","관찰 수업을 호기심 위주로 풀어 준다","꽃과 벌레 관찰 교재 Modified 루트","false","Neutral","",""
-"event_week_001_posture_blocked","step_event_week_001_posture_blocked","몸가짐 수업을 미룬다","몸가짐과 발놀림 교재 Blocked 루트","false","Neutral","",""
-"event_week_001_posture_direct","step_event_week_001_posture_direct","자세와 발놀림을 바로잡는다","몸가짐과 발놀림 교재 Direct 루트","false","Neutral","",""
-"event_week_001_posture_modified","step_event_week_001_posture_modified","몸가짐 수업을 놀이처럼 한다","몸가짐과 발놀림 교재 Modified 루트","false","Neutral","",""
-"event_week_001_story_blocked","step_event_week_001_story_blocked","동화 수업을 미룬다","동화와 글자 교재 Blocked 루트","false","Neutral","",""
-"event_week_001_story_direct","step_event_week_001_story_direct","동화와 글자를 차근차근 읽힌다","동화와 글자 교재 Direct 루트","false","Neutral","",""
-"event_week_001_story_modified","step_event_week_001_story_modified","동화를 재미있게 풀어 읽힌다","동화와 글자 교재 Modified 루트","false","Neutral","",""
-"event_week_001_visitor_cousin_1_blocked","step_event_week_001_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_001_visitor_cousin_1_direct","step_event_week_001_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_001_visitor_cousin_2_blocked","step_event_week_001_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_001_visitor_cousin_2_direct","step_event_week_001_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_001_visitor_friend_1_blocked","step_event_week_001_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_001_visitor_friend_1_direct","step_event_week_001_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_001_visitor_friend_2_blocked","step_event_week_001_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_001_visitor_friend_2_direct","step_event_week_001_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_001_visitor_friend_3_blocked","step_event_week_001_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_001_visitor_friend_3_direct","step_event_week_001_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_002_etiquette_blocked","step_event_week_002_etiquette_blocked","수프 예절을 엄하게 익힌다","인사와 식사 예절 2주차 Blocked 루트","false","Neutral","",""
-"event_week_002_etiquette_direct","step_event_week_002_etiquette_direct","조용한 식사 순서를 익힌다","인사와 식사 예절 2주차 Direct 루트","false","Neutral","",""
-"event_week_002_etiquette_modified","step_event_week_002_etiquette_modified","잔잔한 식사 감각을 익힌다","인사와 식사 예절 2주차 Modified 루트","false","Neutral","",""
-"event_week_002_nature_blocked","step_event_week_002_nature_blocked","돋보기 관찰을 끝까지 시킨다","꽃과 벌레 관찰 2주차 Blocked 루트","false","Neutral","",""
-"event_week_002_nature_direct","step_event_week_002_nature_direct","가까이에서 차근차근 살핀다","꽃과 벌레 관찰 2주차 Direct 루트","false","Neutral","",""
-"event_week_002_nature_modified","step_event_week_002_nature_modified","낯선 것을 새롭게 보게 한다","꽃과 벌레 관찰 2주차 Modified 루트","false","Neutral","",""
-"event_week_002_posture_blocked","step_event_week_002_posture_blocked","방향 전환을 엄격히 익힌다","몸가짐과 발놀림 2주차 Blocked 루트","false","Neutral","",""
-"event_week_002_posture_direct","step_event_week_002_posture_direct","선 따라 걷기와 회전을 익힌다","몸가짐과 발놀림 2주차 Direct 루트","false","Neutral","",""
-"event_week_002_posture_modified","step_event_week_002_posture_modified","시선으로 방향을 먼저 잡게 한다","몸가짐과 발놀림 2주차 Modified 루트","false","Neutral","",""
-"event_week_002_story_blocked","step_event_week_002_story_blocked","짧은 문장을 정확히 읽힌다","동화와 글자 2주차 Blocked 루트","false","Neutral","",""
-"event_week_002_story_direct","step_event_week_002_story_direct","문장을 이어 읽게 한다","동화와 글자 2주차 Direct 루트","false","Neutral","",""
-"event_week_002_story_modified","step_event_week_002_story_modified","글자를 덩어리로 읽게 한다","동화와 글자 2주차 Modified 루트","false","Neutral","",""
-"event_week_003_etiquette_blocked","step_event_week_003_etiquette_blocked","함께 먹는 예절을 엄하게 익힌다","인사와 식사 예절 3주차 Blocked 루트","false","Neutral","",""
-"event_week_003_etiquette_direct","step_event_week_003_etiquette_direct","식사의 흐름을 함께 맞춘다","인사와 식사 예절 3주차 Direct 루트","false","Neutral","",""
-"event_week_003_etiquette_modified","step_event_week_003_etiquette_modified","함께 시작하고 끝내는 감각을 익힌다","인사와 식사 예절 3주차 Modified 루트","false","Neutral","",""
-"event_week_003_nature_blocked","step_event_week_003_nature_blocked","본 것을 기록하게 한다","꽃과 벌레 관찰 3주차 Blocked 루트","false","Neutral","",""
-"event_week_003_nature_direct","step_event_week_003_nature_direct","관찰 기록을 남기게 한다","꽃과 벌레 관찰 3주차 Direct 루트","false","Neutral","",""
-"event_week_003_nature_modified","step_event_week_003_nature_modified","기억에 남은 것만 적게 한다","꽃과 벌레 관찰 3주차 Modified 루트","false","Neutral","",""
-"event_week_003_posture_blocked","step_event_week_003_posture_blocked","마주 걷는 동선을 엄하게 익힌다","몸가짐과 발놀림 3주차 Blocked 루트","false","Neutral","",""
-"event_week_003_posture_direct","step_event_week_003_posture_direct","타이밍 맞춰 스쳐 지나간다","몸가짐과 발놀림 3주차 Direct 루트","false","Neutral","",""
-"event_week_003_posture_modified","step_event_week_003_posture_modified","비켜 주는 발걸음을 익힌다","몸가짐과 발놀림 3주차 Modified 루트","false","Neutral","",""
-"event_week_003_story_blocked","step_event_week_003_story_blocked","짧은 문장을 또박또박 쓰게 한다","동화와 글자 3주차 Blocked 루트","false","Neutral","",""
-"event_week_003_story_direct","step_event_week_003_story_direct","짧은 편지를 직접 쓰게 한다","동화와 글자 3주차 Direct 루트","false","Neutral","",""
-"event_week_003_story_modified","step_event_week_003_story_modified","말하듯 편지를 쓰게 한다","동화와 글자 3주차 Modified 루트","false","Neutral","",""
-"event_week_002_excursion_basement_blocked","step_event_week_002_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_002_excursion_basement_direct","step_event_week_002_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_002_excursion_garden_blocked","step_event_week_002_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_002_excursion_garden_direct","step_event_week_002_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_002_excursion_lake_blocked","step_event_week_002_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_002_excursion_lake_direct","step_event_week_002_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_002_excursion_library_blocked","step_event_week_002_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_002_excursion_library_direct","step_event_week_002_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_002_excursion_study_blocked","step_event_week_002_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_002_excursion_study_direct","step_event_week_002_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_002_external_w002_blocked","step_event_week_002_external_w002_blocked","축제 정보 2차 통제","external w002 Blocked 루트","false","Neutral","",""
-"event_week_002_external_w002_blocked_2","step_event_week_002_external_w002_blocked_2","미스터 이무 정보 통제","external w002 Blocked 루트","false","Neutral","",""
-"event_week_002_external_w002_direct","step_event_week_002_external_w002_direct","축제 정보 2차 허가","external w002 Direct 루트","false","Neutral","",""
-"event_week_002_external_w002_direct_2","step_event_week_002_external_w002_direct_2","미스터 이무 정보 허가","external w002 Direct 루트","false","Neutral","",""
-"event_week_002_house_talk_clock_tower_rumor_blocked","step_event_week_002_house_talk_clock_tower_rumor_blocked","시계탑 종소리 소문 통제","house_talk 시계탑_종소리_소문 Blocked 루트","false","Neutral","",""
-"event_week_002_house_talk_clock_tower_rumor_direct","step_event_week_002_house_talk_clock_tower_rumor_direct","시계탑 종소리 소문 허가","house_talk 시계탑_종소리_소문 Direct 루트","false","Neutral","",""
-"event_week_002_house_talk_clock_tower_rumor_modified","step_event_week_002_house_talk_clock_tower_rumor_modified","시계탑 종소리 소문 수정","house_talk 시계탑_종소리_소문 Modified 루트","false","Neutral","",""
-"event_week_002_house_talk_kitchen_sugar_rumor_blocked","step_event_week_002_house_talk_kitchen_sugar_rumor_blocked","주방의 설탕 소문 통제","house_talk 주방의_설탕_소문 Blocked 루트","false","Neutral","",""
-"event_week_002_house_talk_kitchen_sugar_rumor_direct","step_event_week_002_house_talk_kitchen_sugar_rumor_direct","주방의 설탕 소문 허가","house_talk 주방의_설탕_소문 Direct 루트","false","Neutral","",""
-"event_week_002_house_talk_kitchen_sugar_rumor_modified","step_event_week_002_house_talk_kitchen_sugar_rumor_modified","주방의 설탕 소문 수정","house_talk 주방의_설탕_소문 Modified 루트","false","Neutral","",""
-"event_week_002_house_talk_laundry_ribbon_rumor_blocked","step_event_week_002_house_talk_laundry_ribbon_rumor_blocked","세탁실 리본 소문 통제","house_talk 세탁실_리본_소문 Blocked 루트","false","Neutral","",""
-"event_week_002_house_talk_laundry_ribbon_rumor_direct","step_event_week_002_house_talk_laundry_ribbon_rumor_direct","세탁실 리본 소문 허가","house_talk 세탁실_리본_소문 Direct 루트","false","Neutral","",""
-"event_week_002_house_talk_laundry_ribbon_rumor_modified","step_event_week_002_house_talk_laundry_ribbon_rumor_modified","세탁실 리본 소문 수정","house_talk 세탁실_리본_소문 Modified 루트","false","Neutral","",""
-"event_week_002_house_talk_parlor_teacup_rumor_blocked","step_event_week_002_house_talk_parlor_teacup_rumor_blocked","응접실 찻잔 소문 통제","house_talk 응접실_찻잔_소문 Blocked 루트","false","Neutral","",""
-"event_week_002_house_talk_parlor_teacup_rumor_direct","step_event_week_002_house_talk_parlor_teacup_rumor_direct","응접실 찻잔 소문 허가","house_talk 응접실_찻잔_소문 Direct 루트","false","Neutral","",""
-"event_week_002_house_talk_parlor_teacup_rumor_modified","step_event_week_002_house_talk_parlor_teacup_rumor_modified","응접실 찻잔 소문 수정","house_talk 응접실_찻잔_소문 Modified 루트","false","Neutral","",""
-"event_week_002_letter_cousin_2_blocked","step_event_week_002_letter_cousin_2_blocked","리안 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_002_letter_cousin_2_direct","step_event_week_002_letter_cousin_2_direct","리안 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_002_letter_cousin_2_modified","step_event_week_002_letter_cousin_2_modified","리안 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_002_letter_friend_1_blocked","step_event_week_002_letter_friend_1_blocked","막스 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_002_letter_friend_1_direct","step_event_week_002_letter_friend_1_direct","막스 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_002_letter_friend_1_modified","step_event_week_002_letter_friend_1_modified","막스 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_002_letter_friend_2_blocked","step_event_week_002_letter_friend_2_blocked","밀리아 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_002_letter_friend_2_direct","step_event_week_002_letter_friend_2_direct","밀리아 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_002_letter_friend_2_modified","step_event_week_002_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_002_letter_friend_3_blocked","step_event_week_002_letter_friend_3_blocked","유피 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_002_letter_friend_3_direct","step_event_week_002_letter_friend_3_direct","유피 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_002_letter_friend_3_modified","step_event_week_002_letter_friend_3_modified","유피 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_002_visitor_cousin_1_blocked","step_event_week_002_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_002_visitor_cousin_1_direct","step_event_week_002_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_002_visitor_cousin_2_blocked","step_event_week_002_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_002_visitor_cousin_2_direct","step_event_week_002_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_002_visitor_friend_1_blocked","step_event_week_002_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_002_visitor_friend_1_direct","step_event_week_002_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_002_visitor_friend_2_blocked","step_event_week_002_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_002_visitor_friend_2_direct","step_event_week_002_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_002_visitor_friend_3_blocked","step_event_week_002_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_002_visitor_friend_3_direct","step_event_week_002_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_003_excursion_basement_blocked","step_event_week_003_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_003_excursion_basement_direct","step_event_week_003_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_003_excursion_garden_blocked","step_event_week_003_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_003_excursion_garden_direct","step_event_week_003_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_003_excursion_lake_blocked","step_event_week_003_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_003_excursion_lake_direct","step_event_week_003_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_003_excursion_library_blocked","step_event_week_003_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_003_excursion_library_direct","step_event_week_003_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_003_excursion_study_blocked","step_event_week_003_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_003_excursion_study_direct","step_event_week_003_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_003_external_w003_blocked","step_event_week_003_external_w003_blocked","외부 정보 통제","external w003 Blocked 루트","false","Neutral","",""
-"event_week_003_external_w003_blocked_2","step_event_week_003_external_w003_blocked_2","외부 정보 통제","external w003 Blocked 루트","false","Neutral","",""
-"event_week_003_external_w003_blocked_3","step_event_week_003_external_w003_blocked_3","외부 정보 통제","external w003 Blocked 루트","false","Neutral","",""
-"event_week_003_external_w003_direct","step_event_week_003_external_w003_direct","외부 정보 허가","external w003 Direct 루트","false","Neutral","",""
-"event_week_003_external_w003_direct_2","step_event_week_003_external_w003_direct_2","외부 정보 허가","external w003 Direct 루트","false","Neutral","",""
-"event_week_003_external_w003_direct_3","step_event_week_003_external_w003_direct_3","외부 정보 허가","external w003 Direct 루트","false","Neutral","",""
-"event_week_003_external_w003_modified","step_event_week_003_external_w003_modified","외부 정보 수정","external w003 Modified 루트","false","Neutral","",""
-"event_week_003_external_w003_modified_2","step_event_week_003_external_w003_modified_2","외부 정보 수정","external w003 Modified 루트","false","Neutral","",""
-"event_week_003_external_w003_modified_3","step_event_week_003_external_w003_modified_3","외부 정보 수정","external w003 Modified 루트","false","Neutral","",""
-"event_week_003_house_talk_attic_window_rumor_blocked","step_event_week_003_house_talk_attic_window_rumor_blocked","다락 창문 소문 통제","house_talk 다락_창문_소문 Blocked 루트","false","Neutral","",""
-"event_week_003_house_talk_attic_window_rumor_direct","step_event_week_003_house_talk_attic_window_rumor_direct","다락 창문 소문 허가","house_talk 다락_창문_소문 Direct 루트","false","Neutral","",""
-"event_week_003_house_talk_attic_window_rumor_modified","step_event_week_003_house_talk_attic_window_rumor_modified","다락 창문 소문 수정","house_talk 다락_창문_소문 Modified 루트","false","Neutral","",""
-"event_week_003_house_talk_candle_rumor_blocked","step_event_week_003_house_talk_candle_rumor_blocked","촛대 소문 통제","house_talk 촛대_소문 Blocked 루트","false","Neutral","",""
-"event_week_003_house_talk_candle_rumor_direct","step_event_week_003_house_talk_candle_rumor_direct","촛대 소문 허가","house_talk 촛대_소문 Direct 루트","false","Neutral","",""
-"event_week_003_house_talk_candle_rumor_modified","step_event_week_003_house_talk_candle_rumor_modified","촛대 소문 수정","house_talk 촛대_소문 Modified 루트","false","Neutral","",""
-"event_week_003_house_talk_fountain_fish_rumor_blocked","step_event_week_003_house_talk_fountain_fish_rumor_blocked","분수대 물고기 소문 통제","house_talk 분수대_물고기_소문 Blocked 루트","false","Neutral","",""
-"event_week_003_house_talk_fountain_fish_rumor_direct","step_event_week_003_house_talk_fountain_fish_rumor_direct","분수대 물고기 소문 허가","house_talk 분수대_물고기_소문 Direct 루트","false","Neutral","",""
-"event_week_003_house_talk_fountain_fish_rumor_modified","step_event_week_003_house_talk_fountain_fish_rumor_modified","분수대 물고기 소문 수정","house_talk 분수대_물고기_소문 Modified 루트","false","Neutral","",""
-"event_week_003_house_talk_greenhouse_glass_rumor_blocked","step_event_week_003_house_talk_greenhouse_glass_rumor_blocked","온실 유리 소문 통제","house_talk 온실_유리_소문 Blocked 루트","false","Neutral","",""
-"event_week_003_house_talk_greenhouse_glass_rumor_direct","step_event_week_003_house_talk_greenhouse_glass_rumor_direct","온실 유리 소문 허가","house_talk 온실_유리_소문 Direct 루트","false","Neutral","",""
-"event_week_003_house_talk_greenhouse_glass_rumor_modified","step_event_week_003_house_talk_greenhouse_glass_rumor_modified","온실 유리 소문 수정","house_talk 온실_유리_소문 Modified 루트","false","Neutral","",""
-"event_week_003_letter_cousin_2_blocked","step_event_week_003_letter_cousin_2_blocked","리안 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_003_letter_cousin_2_direct","step_event_week_003_letter_cousin_2_direct","리안 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_003_letter_cousin_2_modified","step_event_week_003_letter_cousin_2_modified","리안 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_003_letter_friend_1_blocked","step_event_week_003_letter_friend_1_blocked","막스 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_003_letter_friend_1_direct","step_event_week_003_letter_friend_1_direct","막스 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_003_letter_friend_1_modified","step_event_week_003_letter_friend_1_modified","막스 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_003_letter_friend_2_blocked","step_event_week_003_letter_friend_2_blocked","밀리아 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_003_letter_friend_2_direct","step_event_week_003_letter_friend_2_direct","밀리아 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_003_letter_friend_2_modified","step_event_week_003_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_003_letter_friend_3_blocked","step_event_week_003_letter_friend_3_blocked","유피 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_003_letter_friend_3_direct","step_event_week_003_letter_friend_3_direct","유피 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_003_letter_friend_3_modified","step_event_week_003_letter_friend_3_modified","유피 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_003_visitor_cousin_1_blocked","step_event_week_003_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_003_visitor_cousin_1_direct","step_event_week_003_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_003_visitor_cousin_2_blocked","step_event_week_003_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_003_visitor_cousin_2_direct","step_event_week_003_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_003_visitor_friend_1_blocked","step_event_week_003_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_003_visitor_friend_1_direct","step_event_week_003_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_003_visitor_friend_2_blocked","step_event_week_003_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_003_visitor_friend_2_direct","step_event_week_003_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_003_visitor_friend_3_blocked","step_event_week_003_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_003_visitor_friend_3_direct","step_event_week_003_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_004_astronomy_blocked","step_event_week_004_astronomy_blocked","천문 수업을 미룬다","천문 수업을 미룬다 루트","false","Neutral","",""
-"event_week_004_astronomy_direct","step_event_week_004_astronomy_direct","별자리와 달의 흐름을 가르친다","별자리와 달의 흐름을 가르친다 루트","false","Neutral","",""
-"event_week_004_astronomy_modified","step_event_week_004_astronomy_modified","천문 수업을 이야기처럼 푼다","천문 수업을 이야기처럼 푼다 루트","false","Neutral","",""
-"event_week_004_cooking_blocked","step_event_week_004_cooking_blocked","요리 수업을 미룬다","요리 수업을 미룬다 루트","false","Neutral","",""
-"event_week_004_cooking_direct","step_event_week_004_cooking_direct","부엌의 기본과 재료를 가르친다","부엌의 기본과 재료를 가르친다 루트","false","Neutral","",""
-"event_week_004_cooking_modified","step_event_week_004_cooking_modified","요리 수업을 맛있는 이야기로 푼다","요리 수업을 맛있는 이야기로 푼다 루트","false","Neutral","",""
-"event_week_004_engineering_blocked","step_event_week_004_engineering_blocked","기계 수업을 미룬다","기계 수업을 미룬다 루트","false","Neutral","",""
-"event_week_004_engineering_direct","step_event_week_004_engineering_direct","도르래와 구조의 기본을 가르친다","도르래와 구조의 기본을 가르친다 루트","false","Neutral","",""
-"event_week_004_engineering_modified","step_event_week_004_engineering_modified","기계 수업을 퍼즐처럼 푼다","기계 수업을 퍼즐처럼 푼다 루트","false","Neutral","",""
-"event_week_004_excursion_basement_blocked","step_event_week_004_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_004_excursion_basement_direct","step_event_week_004_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_004_excursion_garden_blocked","step_event_week_004_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_004_excursion_garden_direct","step_event_week_004_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_004_excursion_lake_blocked","step_event_week_004_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_004_excursion_lake_direct","step_event_week_004_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_004_excursion_library_blocked","step_event_week_004_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_004_excursion_library_direct","step_event_week_004_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_004_excursion_study_blocked","step_event_week_004_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_004_excursion_study_direct","step_event_week_004_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_004_external_w004_blocked","step_event_week_004_external_w004_blocked","은둔자 마법사 소문 통제","external w004 Blocked 루트","false","Neutral","",""
-"event_week_004_external_w004_direct","step_event_week_004_external_w004_direct","은둔자 마법사 소문 허가","external w004 Direct 루트","false","Neutral","",""
-"event_week_004_external_w004_modified","step_event_week_004_external_w004_modified","은둔자 마법사 소문 수정","external w004 Modified 루트","false","Neutral","",""
-"event_week_004_house_talk_w004_blocked","step_event_week_004_house_talk_w004_blocked","신비한 초상화 소문 차단","house_talk w004 Blocked 루트","false","Neutral","",""
-"event_week_004_house_talk_w004_direct","step_event_week_004_house_talk_w004_direct","신비한 초상화 소문 허가","house_talk w004 Direct 루트","false","Neutral","",""
-"event_week_004_house_talk_w004_modified","step_event_week_004_house_talk_w004_modified","신비한 초상화 소문 수정","house_talk w004 Modified 루트","false","Neutral","",""
-"event_week_004_letter_cousin_2_blocked","step_event_week_004_letter_cousin_2_blocked","리안 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_004_letter_cousin_2_direct","step_event_week_004_letter_cousin_2_direct","리안 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_004_letter_cousin_2_modified","step_event_week_004_letter_cousin_2_modified","리안 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_004_letter_friend_1_blocked","step_event_week_004_letter_friend_1_blocked","막스 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_004_letter_friend_1_direct","step_event_week_004_letter_friend_1_direct","막스 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_004_letter_friend_1_modified","step_event_week_004_letter_friend_1_modified","막스 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_004_letter_friend_2_blocked","step_event_week_004_letter_friend_2_blocked","밀리아 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_004_letter_friend_2_direct","step_event_week_004_letter_friend_2_direct","밀리아 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_004_letter_friend_2_modified","step_event_week_004_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_004_letter_friend_3_blocked","step_event_week_004_letter_friend_3_blocked","유피 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_004_letter_friend_3_direct","step_event_week_004_letter_friend_3_direct","유피 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_004_letter_friend_3_modified","step_event_week_004_letter_friend_3_modified","유피 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_004_riding_blocked","step_event_week_004_riding_blocked","기마 수업을 미룬다","기마 수업을 미룬다 루트","false","Neutral","",""
-"event_week_004_riding_direct","step_event_week_004_riding_direct","기마 예절과 기본을 가르친다","기마 예절과 기본을 가르친다 루트","false","Neutral","",""
-"event_week_004_riding_modified","step_event_week_004_riding_modified","기마 수업을 상상 놀이처럼 푼다","기마 수업을 상상 놀이처럼 푼다 루트","false","Neutral","",""
-"event_week_004_visitor_cousin_1_blocked","step_event_week_004_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_004_visitor_cousin_1_direct","step_event_week_004_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_004_visitor_cousin_2_blocked","step_event_week_004_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_004_visitor_cousin_2_direct","step_event_week_004_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_004_visitor_friend_1_blocked","step_event_week_004_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_004_visitor_friend_1_direct","step_event_week_004_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_004_visitor_friend_2_blocked","step_event_week_004_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_004_visitor_friend_2_direct","step_event_week_004_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_004_visitor_friend_3_blocked","step_event_week_004_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_004_visitor_friend_3_direct","step_event_week_004_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_005_astronomy_blocked","step_event_week_005_astronomy_blocked","길잡이 별부터 익힌다","별자리와 항해 5주차 Blocked 루트","false","Neutral","",""
-"event_week_005_astronomy_direct","step_event_week_005_astronomy_direct","길잡이 별로 방향을 잡는다","별자리와 항해 5주차 Direct 루트","false","Neutral","",""
-"event_week_005_astronomy_modified","step_event_week_005_astronomy_modified","친구 같은 별부터 익힌다","별자리와 항해 5주차 Modified 루트","false","Neutral","",""
-"event_week_005_cooking_blocked","step_event_week_005_cooking_blocked","계량부터 엄격히 익힌다","요리와 배식의 원리 5주차 Blocked 루트","false","Neutral","",""
-"event_week_005_cooking_direct","step_event_week_005_cooking_direct","재는 이유를 손으로 익힌다","요리와 배식의 원리 5주차 Direct 루트","false","Neutral","",""
-"event_week_005_cooking_modified","step_event_week_005_cooking_modified","순서부터 기억하게 한다","요리와 배식의 원리 5주차 Modified 루트","false","Neutral","",""
-"event_week_005_engineering_blocked","step_event_week_005_engineering_blocked","맞물림 순서를 엄격히 익힌다","장치 설계와 기초 공학 5주차 Blocked 루트","false","Neutral","",""
-"event_week_005_engineering_direct","step_event_week_005_engineering_direct","작은 부품의 흐름을 읽는다","장치 설계와 기초 공학 5주차 Direct 루트","false","Neutral","",""
-"event_week_005_engineering_modified","step_event_week_005_engineering_modified","도와주는 순서로 부품을 본다","장치 설계와 기초 공학 5주차 Modified 루트","false","Neutral","",""
-"event_week_005_excursion_basement_blocked","step_event_week_005_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_005_excursion_basement_direct","step_event_week_005_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_005_excursion_garden_blocked","step_event_week_005_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_005_excursion_garden_direct","step_event_week_005_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_005_excursion_lake_blocked","step_event_week_005_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_005_excursion_lake_direct","step_event_week_005_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_005_excursion_library_blocked","step_event_week_005_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_005_excursion_library_direct","step_event_week_005_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_005_excursion_study_blocked","step_event_week_005_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_005_excursion_study_direct","step_event_week_005_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_005_external_w005_blocked","step_event_week_005_external_w005_blocked","그림자 기사 소문 통제","external w005 Blocked 루트","false","Neutral","",""
-"event_week_005_external_w005_direct","step_event_week_005_external_w005_direct","그림자 기사 소문 허가","external w005 Direct 루트","false","Neutral","",""
-"event_week_005_external_w005_modified","step_event_week_005_external_w005_modified","그림자 기사 소문 수정","external w005 Modified 루트","false","Neutral","",""
-"event_week_005_house_talk_w005_blocked","step_event_week_005_house_talk_w005_blocked","수상한 피아노 소문 차단","house_talk w005 Blocked 루트","false","Neutral","",""
-"event_week_005_house_talk_w005_direct","step_event_week_005_house_talk_w005_direct","수상한 피아노 소문 허가","house_talk w005 Direct 루트","false","Neutral","",""
-"event_week_005_house_talk_w005_modified","step_event_week_005_house_talk_w005_modified","수상한 피아노 소문 수정","house_talk w005 Modified 루트","false","Neutral","",""
-"event_week_005_letter_cousin_2_blocked","step_event_week_005_letter_cousin_2_blocked","리안 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_005_letter_cousin_2_direct","step_event_week_005_letter_cousin_2_direct","리안 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_005_letter_cousin_2_modified","step_event_week_005_letter_cousin_2_modified","리안 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_005_letter_friend_1_blocked","step_event_week_005_letter_friend_1_blocked","막스 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_005_letter_friend_1_direct","step_event_week_005_letter_friend_1_direct","막스 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_005_letter_friend_1_modified","step_event_week_005_letter_friend_1_modified","막스 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_005_letter_friend_2_blocked","step_event_week_005_letter_friend_2_blocked","밀리아 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_005_letter_friend_2_direct","step_event_week_005_letter_friend_2_direct","밀리아 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_005_letter_friend_2_modified","step_event_week_005_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_005_letter_friend_3_blocked","step_event_week_005_letter_friend_3_blocked","유피 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_005_letter_friend_3_direct","step_event_week_005_letter_friend_3_direct","유피 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_005_letter_friend_3_modified","step_event_week_005_letter_friend_3_modified","유피 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_005_riding_blocked","step_event_week_005_riding_blocked","말 위 중심을 엄격히 잡는다","체전과 승마 기초 5주차 Blocked 루트","false","Neutral","",""
-"event_week_005_riding_direct","step_event_week_005_riding_direct","말 위 균형을 차근차근 익힌다","체전과 승마 기초 5주차 Direct 루트","false","Neutral","",""
-"event_week_005_riding_modified","step_event_week_005_riding_modified","말과 같은 박자를 먼저 익힌다","체전과 승마 기초 5주차 Modified 루트","false","Neutral","",""
-"event_week_005_visitor_cousin_1_blocked","step_event_week_005_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_005_visitor_cousin_1_direct","step_event_week_005_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_005_visitor_cousin_2_blocked","step_event_week_005_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_005_visitor_cousin_2_direct","step_event_week_005_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_005_visitor_friend_1_blocked","step_event_week_005_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_005_visitor_friend_1_direct","step_event_week_005_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_005_visitor_friend_2_blocked","step_event_week_005_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_005_visitor_friend_2_direct","step_event_week_005_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_005_visitor_friend_3_blocked","step_event_week_005_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_005_visitor_friend_3_direct","step_event_week_005_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_006_astronomy_blocked","step_event_week_006_astronomy_blocked","별로 방향을 엄격히 짚는다","별자리와 항해 6주차 Blocked 루트","false","Neutral","",""
-"event_week_006_astronomy_direct","step_event_week_006_astronomy_direct","별로 길과 시간을 읽는다","별자리와 항해 6주차 Direct 루트","false","Neutral","",""
-"event_week_006_astronomy_modified","step_event_week_006_astronomy_modified","밤길을 잃지 않는 법부터 익힌다","별자리와 항해 6주차 Modified 루트","false","Neutral","",""
-"event_week_006_cooking_blocked","step_event_week_006_cooking_blocked","배식 순서를 먼저 세운다","요리와 배식의 원리 6주차 Blocked 루트","false","Neutral","",""
-"event_week_006_cooking_direct","step_event_week_006_cooking_direct","몫과 순서를 직접 나눈다","요리와 배식의 원리 6주차 Direct 루트","false","Neutral","",""
-"event_week_006_cooking_modified","step_event_week_006_cooking_modified","자리를 정리하듯 나누게 한다","요리와 배식의 원리 6주차 Modified 루트","false","Neutral","",""
-"event_week_006_engineering_blocked","step_event_week_006_engineering_blocked","완성 전 작동을 막는다","장치 설계와 기초 공학 6주차 Blocked 루트","false","Neutral","",""
-"event_week_006_engineering_direct","step_event_week_006_engineering_direct","직접 움직이는 장치를 만든다","장치 설계와 기초 공학 6주차 Direct 루트","false","Neutral","",""
-"event_week_006_engineering_modified","step_event_week_006_engineering_modified","움직임 순서부터 짧게 그린다","장치 설계와 기초 공학 6주차 Modified 루트","false","Neutral","",""
-"event_week_006_excursion_basement_blocked","step_event_week_006_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_006_excursion_basement_direct","step_event_week_006_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_006_excursion_garden_blocked","step_event_week_006_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_006_excursion_garden_direct","step_event_week_006_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_006_excursion_lake_blocked","step_event_week_006_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_006_excursion_lake_direct","step_event_week_006_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_006_excursion_library_blocked","step_event_week_006_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_006_excursion_library_direct","step_event_week_006_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_006_excursion_study_blocked","step_event_week_006_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_006_excursion_study_direct","step_event_week_006_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_006_external_w006_blocked","step_event_week_006_external_w006_blocked","신비한 대륙 소문 통제","external w006 Blocked 루트","false","Neutral","",""
-"event_week_006_external_w006_direct","step_event_week_006_external_w006_direct","신비한 대륙 소문 허가","external w006 Direct 루트","false","Neutral","",""
-"event_week_006_external_w006_modified","step_event_week_006_external_w006_modified","신비한 대륙 소문 수정","external w006 Modified 루트","false","Neutral","",""
-"event_week_006_house_talk_w006_blocked","step_event_week_006_house_talk_w006_blocked","사라지는 식기들 소문 차단","house_talk w006 Blocked 루트","false","Neutral","",""
-"event_week_006_house_talk_w006_direct","step_event_week_006_house_talk_w006_direct","사라지는 식기들 소문 허가","house_talk w006 Direct 루트","false","Neutral","",""
-"event_week_006_house_talk_w006_modified","step_event_week_006_house_talk_w006_modified","사라지는 식기들 소문 수정","house_talk w006 Modified 루트","false","Neutral","",""
-"event_week_006_letter_cousin_2_blocked","step_event_week_006_letter_cousin_2_blocked","리안 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_006_letter_cousin_2_direct","step_event_week_006_letter_cousin_2_direct","리안 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_006_letter_cousin_2_modified","step_event_week_006_letter_cousin_2_modified","리안 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_006_letter_friend_1_blocked","step_event_week_006_letter_friend_1_blocked","막스 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_006_letter_friend_1_direct","step_event_week_006_letter_friend_1_direct","막스 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_006_letter_friend_1_modified","step_event_week_006_letter_friend_1_modified","막스 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_006_letter_friend_2_blocked","step_event_week_006_letter_friend_2_blocked","밀리아 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_006_letter_friend_2_direct","step_event_week_006_letter_friend_2_direct","밀리아 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_006_letter_friend_2_modified","step_event_week_006_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_006_letter_friend_3_blocked","step_event_week_006_letter_friend_3_blocked","유피 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_006_letter_friend_3_direct","step_event_week_006_letter_friend_3_direct","유피 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_006_letter_friend_3_modified","step_event_week_006_letter_friend_3_modified","유피 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_006_riding_blocked","step_event_week_006_riding_blocked","방향 전환을 엄격히 익힌다","체전과 승마 기초 6주차 Blocked 루트","false","Neutral","",""
-"event_week_006_riding_direct","step_event_week_006_riding_direct","멈추기와 전환을 함께 익힌다","체전과 승마 기초 6주차 Direct 루트","false","Neutral","",""
-"event_week_006_riding_modified","step_event_week_006_riding_modified","말에게 먼저 방향을 알려 준다","체전과 승마 기초 6주차 Modified 루트","false","Neutral","",""
-"event_week_006_visitor_cousin_1_blocked","step_event_week_006_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_006_visitor_cousin_1_direct","step_event_week_006_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_006_visitor_cousin_2_blocked","step_event_week_006_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_006_visitor_cousin_2_direct","step_event_week_006_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_006_visitor_friend_1_blocked","step_event_week_006_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_006_visitor_friend_1_direct","step_event_week_006_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_006_visitor_friend_2_blocked","step_event_week_006_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_006_visitor_friend_2_direct","step_event_week_006_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_006_visitor_friend_3_blocked","step_event_week_006_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_006_visitor_friend_3_direct","step_event_week_006_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_007_diplomacy_blocked","step_event_week_007_diplomacy_blocked","외교 수업을 미룬다","외교 수업을 미룬다 루트","false","Neutral","",""
-"event_week_007_diplomacy_direct","step_event_week_007_diplomacy_direct","예법과 협상의 기본을 가르친다","예법과 협상의 기본을 가르친다 루트","false","Neutral","",""
-"event_week_007_diplomacy_modified","step_event_week_007_diplomacy_modified","외교 수업을 대화 연습처럼 푼다","외교 수업을 대화 연습처럼 푼다 루트","false","Neutral","",""
-"event_week_007_economics_blocked","step_event_week_007_economics_blocked","회계 수업을 미룬다","회계 수업을 미룬다 루트","false","Neutral","",""
-"event_week_007_economics_direct","step_event_week_007_economics_direct","장부와 돈의 흐름을 가르친다","장부와 돈의 흐름을 가르친다 루트","false","Neutral","",""
-"event_week_007_economics_modified","step_event_week_007_economics_modified","회계 수업을 생활 예시로 푼다","회계 수업을 생활 예시로 푼다 루트","false","Neutral","",""
-"event_week_007_excursion_basement_blocked","step_event_week_007_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_007_excursion_basement_direct","step_event_week_007_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_007_excursion_basement_modified","step_event_week_007_excursion_basement_modified","지하실 수정","excursion basement Modified 루트","false","Neutral","",""
-"event_week_007_excursion_garden_blocked","step_event_week_007_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_007_excursion_garden_direct","step_event_week_007_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_007_excursion_lake_blocked","step_event_week_007_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_007_excursion_lake_direct","step_event_week_007_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_007_excursion_library_blocked","step_event_week_007_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_007_excursion_library_direct","step_event_week_007_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_007_excursion_study_blocked","step_event_week_007_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_007_excursion_study_direct","step_event_week_007_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_007_external_cavalry_news_blocked","step_week_007_external_cavalry_news_blocked","철갑 기병대 소문 - 통제","철갑 기병대 소문 - 통제 루트","false","Neutral","",""
-"event_week_007_external_cavalry_news_direct","step_week_007_external_cavalry_news_direct","철갑 기병대 소문 - 허락","철갑 기병대 소문 - 허락 루트","false","Neutral","",""
-"event_week_007_external_cavalry_news_modified","step_week_007_external_cavalry_news_modified","철갑 기병대 소문 - 수정","철갑 기병대 소문 - 수정 루트","false","Neutral","",""
-"event_week_007_house_talk_corridor_rumor_blocked","step_week_007_house_talk_corridor_rumor_blocked","기이한 문 소문 - 통제","기이한 문 소문 - 통제 루트","false","Neutral","",""
-"event_week_007_house_talk_corridor_rumor_direct","step_week_007_house_talk_corridor_rumor_direct","기이한 문 소문 - 허락","기이한 문 소문 - 허락 루트","false","Neutral","",""
-"event_week_007_house_talk_corridor_rumor_modified","step_week_007_house_talk_corridor_rumor_modified","기이한 문 소문 - 수정","기이한 문 소문 - 수정 루트","false","Neutral","",""
-"event_week_007_law_blocked","step_event_week_007_law_blocked","법률 수업을 미룬다","법률 수업을 미룬다 루트","false","Neutral","",""
-"event_week_007_law_direct","step_event_week_007_law_direct","영지의 규칙과 판결을 가르친다","영지의 규칙과 판결을 가르친다 루트","false","Neutral","",""
-"event_week_007_law_modified","step_event_week_007_law_modified","법률 수업을 사례 중심으로 푼다","법률 수업을 사례 중심으로 푼다 루트","false","Neutral","",""
-"event_week_007_letter_cousin_2_blocked","step_event_week_007_letter_cousin_2_blocked","리안의 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_007_letter_cousin_2_direct","step_event_week_007_letter_cousin_2_direct","리안의 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_007_letter_cousin_2_modified","step_event_week_007_letter_cousin_2_modified","리안의 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_007_letter_friend_1_blocked","step_event_week_007_letter_friend_1_blocked","막스의 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_007_letter_friend_1_direct","step_event_week_007_letter_friend_1_direct","막스의 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_007_letter_friend_1_modified","step_event_week_007_letter_friend_1_modified","막스의 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_007_letter_friend_2_blocked","step_event_week_007_letter_friend_2_blocked","밀리아의 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_007_letter_friend_2_direct","step_event_week_007_letter_friend_2_direct","밀리아의 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_007_letter_friend_2_modified","step_event_week_007_letter_friend_2_modified","밀리아의 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_007_letter_friend_3_blocked","step_event_week_007_letter_friend_3_blocked","유피의 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_007_letter_friend_3_direct","step_event_week_007_letter_friend_3_direct","유피의 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_007_letter_friend_3_modified","step_event_week_007_letter_friend_3_modified","유피의 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_007_military_blocked","step_event_week_007_military_blocked","전술 수업을 미룬다","전술 수업을 미룬다 루트","false","Neutral","",""
-"event_week_007_military_direct","step_event_week_007_military_direct","병력 배치와 명령의 기본을 가르친다","병력 배치와 명령의 기본을 가르친다 루트","false","Neutral","",""
-"event_week_007_military_modified","step_event_week_007_military_modified","전술 수업을 판짜기처럼 푼다","전술 수업을 판짜기처럼 푼다 루트","false","Neutral","",""
-"event_week_007_visitor_cousin_1_blocked","step_event_week_007_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_007_visitor_cousin_1_direct","step_event_week_007_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_007_visitor_cousin_2_blocked","step_event_week_007_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_007_visitor_cousin_2_direct","step_event_week_007_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_007_visitor_friend_1_blocked","step_event_week_007_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_007_visitor_friend_1_direct","step_event_week_007_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_007_visitor_friend_2_blocked","step_event_week_007_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_007_visitor_friend_2_direct","step_event_week_007_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_007_visitor_friend_3_blocked","step_event_week_007_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_007_visitor_friend_3_direct","step_event_week_007_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_008_diplomacy_blocked","step_event_week_008_diplomacy_blocked","질문의 함정을 먼저 가린다","외교술과 수사학 8주차 Blocked 루트","false","Neutral","",""
-"event_week_008_diplomacy_direct","step_event_week_008_diplomacy_direct","질문의 의도를 되짚어 답한다","외교술과 수사학 8주차 Direct 루트","false","Neutral","",""
-"event_week_008_diplomacy_modified","step_event_week_008_diplomacy_modified","말의 흐름부터 듣게 한다","외교술과 수사학 8주차 Modified 루트","false","Neutral","",""
-"event_week_008_economics_blocked","step_event_week_008_economics_blocked","총액보다 항목부터 나눈다","화폐 경제와 회계 기초 8주차 Blocked 루트","false","Neutral","",""
-"event_week_008_economics_direct","step_event_week_008_economics_direct","돈의 흐름에서 차이를 읽는다","화폐 경제와 회계 기초 8주차 Direct 루트","false","Neutral","",""
-"event_week_008_economics_modified","step_event_week_008_economics_modified","돈의 자루를 나누듯 분류한다","화폐 경제와 회계 기초 8주차 Modified 루트","false","Neutral","",""
-"event_week_008_excursion_basement_blocked","step_event_week_008_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_008_excursion_basement_direct","step_event_week_008_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_008_excursion_garden_blocked","step_event_week_008_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_008_excursion_garden_direct","step_event_week_008_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_008_excursion_lake_blocked","step_event_week_008_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_008_excursion_lake_direct","step_event_week_008_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_008_excursion_library_blocked","step_event_week_008_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_008_excursion_library_direct","step_event_week_008_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_008_excursion_study_blocked","step_event_week_008_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_008_excursion_study_direct","step_event_week_008_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_008_external_princess_news_blocked","step_week_008_external_princess_news_blocked","왕녀 피신 소문 - 통제","왕녀 피신 소문 - 통제 루트","false","Neutral","",""
-"event_week_008_external_princess_news_direct","step_week_008_external_princess_news_direct","왕녀 피신 소문 - 허락","왕녀 피신 소문 - 허락 루트","false","Neutral","",""
-"event_week_008_external_princess_news_modified","step_week_008_external_princess_news_modified","왕녀 피신 소문 - 수정","왕녀 피신 소문 - 수정 루트","false","Neutral","",""
-"event_week_008_house_talk_forest_rumor_blocked","step_week_008_house_talk_forest_rumor_blocked","비극의 숲 소문 - 통제","비극의 숲 소문 - 통제 루트","false","Neutral","",""
-"event_week_008_house_talk_forest_rumor_direct","step_week_008_house_talk_forest_rumor_direct","비극의 숲 소문 - 허락","비극의 숲 소문 - 허락 루트","false","Neutral","",""
-"event_week_008_house_talk_forest_rumor_modified","step_week_008_house_talk_forest_rumor_modified","비극의 숲 소문 - 수정","비극의 숲 소문 - 수정 루트","false","Neutral","",""
-"event_week_008_law_blocked","step_event_week_008_law_blocked","분쟁 기록에서 규칙부터 본다","제국법과 영지 행정 8주차 Blocked 루트","false","Neutral","",""
-"event_week_008_law_direct","step_event_week_008_law_direct","작은 분쟁에서 법의 기준을 읽는다","제국법과 영지 행정 8주차 Direct 루트","false","Neutral","",""
-"event_week_008_law_modified","step_event_week_008_law_modified","다툼의 시작점에서 법을 본다","제국법과 영지 행정 8주차 Modified 루트","false","Neutral","",""
-"event_week_008_letter_cousin_2_blocked","step_event_week_008_letter_cousin_2_blocked","리안의 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_008_letter_cousin_2_direct","step_event_week_008_letter_cousin_2_direct","리안의 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_008_letter_cousin_2_modified","step_event_week_008_letter_cousin_2_modified","리안의 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_008_letter_friend_1_blocked","step_event_week_008_letter_friend_1_blocked","막스의 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_008_letter_friend_1_direct","step_event_week_008_letter_friend_1_direct","막스의 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_008_letter_friend_1_modified","step_event_week_008_letter_friend_1_modified","막스의 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_008_letter_friend_2_blocked","step_event_week_008_letter_friend_2_blocked","밀리아의 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_008_letter_friend_2_direct","step_event_week_008_letter_friend_2_direct","밀리아의 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_008_letter_friend_2_modified","step_event_week_008_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_008_letter_friend_3_blocked","step_event_week_008_letter_friend_3_blocked","유피의 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_008_letter_friend_3_direct","step_event_week_008_letter_friend_3_direct","유피의 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_008_letter_friend_3_modified","step_event_week_008_letter_friend_3_modified","유피 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_008_military_blocked","step_event_week_008_military_blocked","지형의 약점과 강점을 먼저 본다","군사 전략과 방어 진형 8주차 Blocked 루트","false","Neutral","",""
-"event_week_008_military_direct","step_event_week_008_military_direct","지형에서 설 자리를 읽는다","군사 전략과 방어 진형 8주차 Direct 루트","false","Neutral","",""
-"event_week_008_military_modified","step_event_week_008_military_modified","지킬 자리를 먼저 고른다","군사 전략과 방어 진형 8주차 Modified 루트","false","Neutral","",""
-"event_week_008_visitor_cousin_1_blocked","step_event_week_008_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_008_visitor_cousin_1_direct","step_event_week_008_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_008_visitor_cousin_2_blocked","step_event_week_008_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_008_visitor_cousin_2_direct","step_event_week_008_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_008_visitor_friend_1_blocked","step_event_week_008_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_008_visitor_friend_1_direct","step_event_week_008_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_008_visitor_friend_2_blocked","step_event_week_008_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_008_visitor_friend_2_direct","step_event_week_008_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_008_visitor_friend_3_blocked","step_event_week_008_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_008_visitor_friend_3_direct","step_event_week_008_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"event_week_009_diplomacy_blocked","step_event_week_009_diplomacy_blocked","거절의 선을 분명히 세운다","외교술과 수사학 9주차 Blocked 루트","false","Neutral","",""
-"event_week_009_diplomacy_direct","step_event_week_009_diplomacy_direct","부드럽게 거절하는 말을 익힌다","외교술과 수사학 9주차 Direct 루트","false","Neutral","",""
-"event_week_009_diplomacy_modified","step_event_week_009_diplomacy_modified","거절을 다른 제안으로 돌린다","외교술과 수사학 9주차 Modified 루트","false","Neutral","",""
-"event_week_009_economics_blocked","step_event_week_009_economics_blocked","필요한 순서로 예산을 고른다","화폐 경제와 회계 기초 9주차 Blocked 루트","false","Neutral","",""
-"event_week_009_economics_direct","step_event_week_009_economics_direct","우선순위로 예산을 정한다","화폐 경제와 회계 기초 9주차 Direct 루트","false","Neutral","",""
-"event_week_009_economics_modified","step_event_week_009_economics_modified","먼저 무너질 곳부터 받친다","화폐 경제와 회계 기초 9주차 Modified 루트","false","Neutral","",""
-"event_week_009_excursion_basement_blocked","step_event_week_009_excursion_basement_blocked","지하실 통제","excursion basement Blocked 루트","false","Neutral","",""
-"event_week_009_excursion_basement_direct","step_event_week_009_excursion_basement_direct","지하실 허가","excursion basement Direct 루트","false","Neutral","",""
-"event_week_009_excursion_garden_blocked","step_event_week_009_excursion_garden_blocked","정원 통제","excursion garden Blocked 루트","false","Neutral","",""
-"event_week_009_excursion_garden_direct","step_event_week_009_excursion_garden_direct","정원 허가","excursion garden Direct 루트","false","Neutral","",""
-"event_week_009_excursion_lake_blocked","step_event_week_009_excursion_lake_blocked","호수 통제","excursion lake Blocked 루트","false","Neutral","",""
-"event_week_009_excursion_lake_direct","step_event_week_009_excursion_lake_direct","호수 허가","excursion lake Direct 루트","false","Neutral","",""
-"event_week_009_excursion_library_blocked","step_event_week_009_excursion_library_blocked","도서관 통제","excursion library Blocked 루트","false","Neutral","",""
-"event_week_009_excursion_library_direct","step_event_week_009_excursion_library_direct","도서관 허가","excursion library Direct 루트","false","Neutral","",""
-"event_week_009_excursion_study_blocked","step_event_week_009_excursion_study_blocked","서재 통제","excursion study Blocked 루트","false","Neutral","",""
-"event_week_009_excursion_study_direct","step_event_week_009_excursion_study_direct","서재 허가","excursion study Direct 루트","false","Neutral","",""
-"event_week_009_external_will_news_blocked","step_week_009_external_will_news_blocked","백작의 유언장 - 통제","백작의 유언장 - 통제 루트","false","Neutral","",""
-"event_week_009_external_will_news_direct","step_week_009_external_will_news_direct","백작의 유언장 - 허락","백작의 유언장 - 허락 루트","false","Neutral","",""
-"event_week_009_external_will_news_modified","step_week_009_external_will_news_modified","백작의 유언장 - 수정","백작의 유언장 - 수정 루트","false","Neutral","",""
-"event_week_009_house_talk_heirloom_rumor_blocked","step_week_009_house_talk_heirloom_rumor_blocked","기이한 가보 소문 - 통제","기이한 가보 소문 - 통제 루트","false","Neutral","",""
-"event_week_009_house_talk_heirloom_rumor_direct","step_week_009_house_talk_heirloom_rumor_direct","기이한 가보 소문 - 허락","기이한 가보 소문 - 허락 루트","false","Neutral","",""
-"event_week_009_house_talk_heirloom_rumor_modified","step_week_009_house_talk_heirloom_rumor_modified","기이한 가보 소문 - 수정","기이한 가보 소문 - 수정 루트","false","Neutral","",""
-"event_week_009_law_blocked","step_event_week_009_law_blocked","판단을 짧고 분명하게 적는다","제국법과 영지 행정 9주차 Blocked 루트","false","Neutral","",""
-"event_week_009_law_direct","step_event_week_009_law_direct","판단을 판결문으로 남긴다","제국법과 영지 행정 9주차 Direct 루트","false","Neutral","",""
-"event_week_009_law_modified","step_event_week_009_law_modified","이해되는 판결문을 쓰게 한다","제국법과 영지 행정 9주차 Modified 루트","false","Neutral","",""
-"event_week_009_letter_cousin_2_blocked","step_event_week_009_letter_cousin_2_blocked","리안의 편지 통제","letter cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_009_letter_cousin_2_direct","step_event_week_009_letter_cousin_2_direct","리안의 편지 허가","letter cousin_2 Direct 루트","false","Neutral","",""
-"event_week_009_letter_cousin_2_modified","step_event_week_009_letter_cousin_2_modified","리안의 편지 수정","letter cousin_2 Modified 루트","false","Neutral","",""
-"event_week_009_letter_friend_1_blocked","step_event_week_009_letter_friend_1_blocked","막스의 편지 통제","letter friend_1 Blocked 루트","false","Neutral","",""
-"event_week_009_letter_friend_1_direct","step_event_week_009_letter_friend_1_direct","막스의 편지 허가","letter friend_1 Direct 루트","false","Neutral","",""
-"event_week_009_letter_friend_1_modified","step_event_week_009_letter_friend_1_modified","막스의 편지 수정","letter friend_1 Modified 루트","false","Neutral","",""
-"event_week_009_letter_friend_2_blocked","step_event_week_009_letter_friend_2_blocked","밀리아의 편지 통제","letter friend_2 Blocked 루트","false","Neutral","",""
-"event_week_009_letter_friend_2_direct","step_event_week_009_letter_friend_2_direct","밀리아의 편지 허가","letter friend_2 Direct 루트","false","Neutral","",""
-"event_week_009_letter_friend_2_modified","step_event_week_009_letter_friend_2_modified","밀리아 편지 수정","letter friend_2 Modified 루트","false","Neutral","",""
-"event_week_009_letter_friend_3_blocked","step_event_week_009_letter_friend_3_blocked","유피의 편지 통제","letter friend_3 Blocked 루트","false","Neutral","",""
-"event_week_009_letter_friend_3_direct","step_event_week_009_letter_friend_3_direct","유피의 편지 허가","letter friend_3 Direct 루트","false","Neutral","",""
-"event_week_009_letter_friend_3_modified","step_event_week_009_letter_friend_3_modified","유피의 편지 수정","letter friend_3 Modified 루트","false","Neutral","",""
-"event_week_009_military_blocked","step_event_week_009_military_blocked","앞만 두껍게 세우지 않는다","군사 전략과 방어 진형 9주차 Blocked 루트","false","Neutral","",""
-"event_week_009_military_direct","step_event_week_009_military_direct","길목을 좁히는 진형을 짠다","군사 전략과 방어 진형 9주차 Direct 루트","false","Neutral","",""
-"event_week_009_military_modified","step_event_week_009_military_modified","남겨 둔 힘까지 진형으로 본다","군사 전략과 방어 진형 9주차 Modified 루트","false","Neutral","",""
-"event_week_009_visitor_cousin_1_blocked","step_event_week_009_visitor_cousin_1_blocked","카이안 방문 통제","visitor cousin_1 Blocked 루트","false","Neutral","",""
-"event_week_009_visitor_cousin_1_direct","step_event_week_009_visitor_cousin_1_direct","카이안 방문 허가","visitor cousin_1 Direct 루트","false","Neutral","",""
-"event_week_009_visitor_cousin_2_blocked","step_event_week_009_visitor_cousin_2_blocked","리안 방문 통제","visitor cousin_2 Blocked 루트","false","Neutral","",""
-"event_week_009_visitor_cousin_2_direct","step_event_week_009_visitor_cousin_2_direct","리안 방문 허가","visitor cousin_2 Direct 루트","false","Neutral","",""
-"event_week_009_visitor_friend_1_blocked","step_event_week_009_visitor_friend_1_blocked","막스 방문 통제","visitor friend_1 Blocked 루트","false","Neutral","",""
-"event_week_009_visitor_friend_1_direct","step_event_week_009_visitor_friend_1_direct","막스 방문 허가","visitor friend_1 Direct 루트","false","Neutral","",""
-"event_week_009_visitor_friend_2_blocked","step_event_week_009_visitor_friend_2_blocked","밀리아 방문 통제","visitor friend_2 Blocked 루트","false","Neutral","",""
-"event_week_009_visitor_friend_2_direct","step_event_week_009_visitor_friend_2_direct","밀리아 방문 허가","visitor friend_2 Direct 루트","false","Neutral","",""
-"event_week_009_visitor_friend_3_blocked","step_event_week_009_visitor_friend_3_blocked","유피 방문 통제","visitor friend_3 Blocked 루트","false","Neutral","",""
-"event_week_009_visitor_friend_3_direct","step_event_week_009_visitor_friend_3_direct","유피 방문 허가","visitor friend_3 Direct 루트","false","Neutral","",""
-"night_outside_interest","step_night_outside_01","밤의 대화","네모가 오늘 들은 바깥 이야기를 조심스럽게 다시 꺼낸다.","false","Neutral","",""
-"night_outside_interest","step_night_outside_02","다음 약속","네모는 아직 다 이해하지 못했지만 다음에는 직접 확인하고 싶어 한다.","false","Curious","trust_plus_1",""
-"story_letter_suspected","step_story_letter_01","수상한 질문","네모가 편지 이야기를 다시 묻는다.","true","Conflicted","hidden_info_detected_flag","step_story_letter_02"
-"story_letter_suspected","step_story_letter_02","침묵 이후","짧은 침묵 뒤에도 네모의 시선은 거두어지지 않는다.","false","Neutral","",""
+event_id,step_id,title_override,body_text,use_custom_visual_state,visual_state,on_enter_interaction_ids,default_next_step_id,condition_stat_1,condition_min_1,condition_max_1,condition_stat_2,condition_min_2,condition_max_2,conditional_next_step_id,conditional_fallback_step_id
+event_week_001_excursion_garden_direct_default,step_event_week_001_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_garden_blocked,step_event_week_001_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_garden_direct_default,step_event_week_002_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_garden_direct_curious,step_event_week_002_excursion_garden_direct_curious,정원 허가-호기심,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_garden_direct_innocent,step_event_week_002_excursion_garden_direct_innocent,정원 허가-순진,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_garden_blocked,step_event_week_002_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_garden_direct_default,step_event_week_003_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_garden_direct_curious,step_event_week_003_excursion_garden_direct_curious,정원 허가-호기심,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_garden_direct_cautious,step_event_week_003_excursion_garden_direct_cautious,정원 허가-신중,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_garden_blocked,step_event_week_003_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_garden_direct_default,step_event_week_004_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_garden_direct_clever,step_event_week_004_excursion_garden_direct_clever,정원 허가-영민,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_garden_direct_innocent,step_event_week_004_excursion_garden_direct_innocent,정원 허가-순진,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_garden_blocked,step_event_week_004_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_garden_direct_default,step_event_week_005_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_garden_direct_cautious,step_event_week_005_excursion_garden_direct_cautious,정원 허가-신중,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_garden_direct_anxious,step_event_week_005_excursion_garden_direct_anxious,정원 허가-불안,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_garden_blocked,step_event_week_005_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_garden_direct_default,step_event_week_006_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_garden_direct_clever,step_event_week_006_excursion_garden_direct_clever,정원 허가-영민,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_garden_direct_defiant,step_event_week_006_excursion_garden_direct_defiant,정원 허가-반항,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_garden_blocked,step_event_week_006_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_garden_direct_default,step_event_week_007_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_garden_direct_stable,step_event_week_007_excursion_garden_direct_stable,정원 허가-안정,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_garden_direct_cautious,step_event_week_007_excursion_garden_direct_cautious,정원 허가-신중,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_garden_blocked,step_event_week_007_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_garden_direct_default,step_event_week_008_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_garden_direct_curious,step_event_week_008_excursion_garden_direct_curious,정원 허가-호기심,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_garden_direct_anxious,step_event_week_008_excursion_garden_direct_anxious,정원 허가-불안,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_garden_blocked,step_event_week_008_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_garden_direct_default,step_event_week_009_excursion_garden_direct_default,정원 허가,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_garden_direct_stable,step_event_week_009_excursion_garden_direct_stable,정원 허가-안정,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_garden_direct_cautious,step_event_week_009_excursion_garden_direct_cautious,정원 허가-신중,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_garden_blocked,step_event_week_009_excursion_garden_blocked,,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_basement_direct_default,step_event_week_001_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_basement_blocked,step_event_week_001_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_basement_direct_default,step_event_week_002_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_basement_direct_curious,step_event_week_002_excursion_basement_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_basement_direct_cautious,step_event_week_002_excursion_basement_direct_cautious,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_basement_blocked,step_event_week_002_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_basement_direct_default,step_event_week_003_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_basement_direct_curious,step_event_week_003_excursion_basement_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_basement_direct_anxious,step_event_week_003_excursion_basement_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_basement_blocked,step_event_week_003_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_basement_direct_default,step_event_week_004_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_basement_direct_curious,step_event_week_004_excursion_basement_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_basement_direct_cautious,step_event_week_004_excursion_basement_direct_cautious,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_basement_blocked,step_event_week_004_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_basement_direct_default,step_event_week_005_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_basement_direct_curious,step_event_week_005_excursion_basement_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_basement_direct_anxious,step_event_week_005_excursion_basement_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_basement_blocked,step_event_week_005_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_basement_direct_default,step_event_week_006_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_basement_direct_innocent,step_event_week_006_excursion_basement_direct_innocent,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_basement_blocked,step_event_week_006_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_basement_direct_default,step_event_week_007_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_basement_direct_cautious,step_event_week_007_excursion_basement_direct_cautious,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_basement_direct_anxious,step_event_week_007_excursion_basement_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_basement_blocked,step_event_week_007_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_basement_direct_default,step_event_week_008_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_basement_direct_innocent,step_event_week_008_excursion_basement_direct_innocent,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_basement_direct_cautious,step_event_week_008_excursion_basement_direct_cautious,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_basement_blocked,step_event_week_008_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_basement_direct_default,step_event_week_009_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_basement_direct_stable,step_event_week_009_excursion_basement_direct_stable,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_basement_direct_anxious,step_event_week_009_excursion_basement_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_basement_blocked,step_event_week_009_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_forest_direct_default,step_event_week_001_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_forest_blocked,step_event_week_001_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_forest_direct_default,step_event_week_002_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_forest_direct_curious,step_event_week_002_excursion_forest_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_forest_direct_compliant,step_event_week_002_excursion_forest_direct_compliant,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_forest_blocked,step_event_week_002_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_forest_direct_default,step_event_week_003_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_forest_direct_clever,step_event_week_003_excursion_forest_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_forest_direct_curious,step_event_week_003_excursion_forest_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_forest_blocked,step_event_week_003_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_forest_direct_default,step_event_week_004_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_forest_direct_clever,step_event_week_004_excursion_forest_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_forest_direct_anxious,step_event_week_004_excursion_forest_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_forest_blocked,step_event_week_004_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_forest_direct_default,step_event_week_005_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_forest_direct_innocent,step_event_week_005_excursion_forest_direct_innocent,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_forest_direct_anxious,step_event_week_005_excursion_forest_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_forest_blocked,step_event_week_005_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_forest_direct_default,step_event_week_006_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_forest_direct_clever,step_event_week_006_excursion_forest_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_forest_direct_defiant,step_event_week_006_excursion_forest_direct_defiant,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_forest_blocked,step_event_week_006_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_forest_direct_default,step_event_week_007_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_forest_direct_clever,step_event_week_007_excursion_forest_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_forest_blocked,step_event_week_007_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_forest_direct_default,step_event_week_008_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_forest_direct_clever,step_event_week_008_excursion_forest_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_forest_direct_anxious,step_event_week_008_excursion_forest_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_forest_blocked,step_event_week_008_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_forest_direct_default,step_event_week_009_excursion_forest_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_forest_direct_clever,step_event_week_009_excursion_forest_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_forest_direct_innocent,step_event_week_009_excursion_forest_direct_innocent,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_forest_blocked,step_event_week_009_excursion_forest_blocked,,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_library_direct_default,step_event_week_001_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_001_excursion_library_blocked,step_event_week_001_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_library_direct_default,step_event_week_002_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_library_direct_curious,step_event_week_002_excursion_library_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_library_direct_anxious,step_event_week_002_excursion_library_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_002_excursion_library_blocked,step_event_week_002_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_library_direct_default,step_event_week_003_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_library_direct_cautious,step_event_week_003_excursion_library_direct_cautious,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_library_direct_innocent,step_event_week_003_excursion_library_direct_innocent,,,false,Neutral,,,,,,,,,,
+event_week_003_excursion_library_blocked,step_event_week_003_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_library_direct_default,step_event_week_004_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_library_direct_clever,step_event_week_004_excursion_library_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_library_direct_curious,step_event_week_004_excursion_library_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_library_blocked,step_event_week_004_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_library_direct_default,step_event_week_005_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_library_direct_clever,step_event_week_005_excursion_library_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_library_direct_innocent,step_event_week_005_excursion_library_direct_innocent,,,false,Neutral,,,,,,,,,,
+event_week_005_excursion_library_blocked,step_event_week_005_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_library_direct_default,step_event_week_006_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_library_direct_clever,step_event_week_006_excursion_library_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_library_direct_cautious,step_event_week_006_excursion_library_direct_cautious,,,false,Neutral,,,,,,,,,,
+event_week_006_excursion_library_blocked,step_event_week_006_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_library_direct_default,step_event_week_007_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_library_direct_clever,step_event_week_007_excursion_library_direct_clever,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_library_direct_anxious,step_event_week_007_excursion_library_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_007_excursion_library_blocked,step_event_week_007_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_library_direct_default,step_event_week_008_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_library_direct_curious,step_event_week_008_excursion_library_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_library_direct_anxious,step_event_week_008_excursion_library_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_008_excursion_library_blocked,step_event_week_008_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_library_direct_default,step_event_week_009_excursion_library_direct_default,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_library_direct_stable,step_event_week_009_excursion_library_direct_stable,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_library_direct_anxious,step_event_week_009_excursion_library_direct_anxious,,,false,Neutral,,,,,,,,,,
+event_week_009_excursion_library_blocked,step_event_week_009_excursion_library_blocked,,,false,Neutral,,,,,,,,,,
+event_week_001_rian,step_event_week_001_rian,,,false,Neutral,,,,,,,,,,
+event_week_002_rian_0,step_event_week_002_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_002_rian_1,step_event_week_002_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_003_rian_0,step_event_week_003_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_003_rian_1,step_event_week_003_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_004_rian_0,step_event_week_004_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_004_rian_1,step_event_week_004_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_004_rian_2,step_event_week_004_rian_2,,,false,Neutral,,,,,,,,,,
+event_week_005_rian_0,step_event_week_005_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_005_rian_1,step_event_week_005_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_005_rian_2,step_event_week_005_rian_2,,,false,Neutral,,,,,,,,,,
+event_week_006_rian_0,step_event_week_006_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_006_rian_1,step_event_week_006_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_006_rian_2,step_event_week_006_rian_2,,,false,Neutral,,,,,,,,,,
+event_week_006_rian_3,step_event_week_006_rian_3,,,false,Neutral,,,,,,,,,,
+event_week_007_rian_0,step_event_week_007_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_007_rian_1,step_event_week_007_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_007_rian_2,step_event_week_007_rian_2,,,false,Neutral,,,,,,,,,,
+event_week_007_rian_3,step_event_week_007_rian_3,,,false,Neutral,,,,,,,,,,
+event_week_007_rian_4,step_event_week_007_rian_4,,,false,Neutral,,,,,,,,,,
+event_week_008_rian_0,step_event_week_008_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_008_rian_1,step_event_week_008_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_008_rian_2,step_event_week_008_rian_2,,,false,Neutral,,,,,,,,,,
+event_week_008_rian_3,step_event_week_008_rian_3,,,false,Neutral,,,,,,,,,,
+event_week_008_rian_4,step_event_week_008_rian_4,,,false,Neutral,,,,,,,,,,
+event_week_009_rian_0,step_event_week_009_rian_0,,,false,Neutral,,,,,,,,,,
+event_week_009_rian_1,step_event_week_009_rian_1,,,false,Neutral,,,,,,,,,,
+event_week_009_rian_2,step_event_week_009_rian_2,,,false,Neutral,,,,,,,,,,
+event_week_009_rian_3,step_event_week_009_rian_3,,,false,Neutral,,,,,,,,,,
+event_week_009_rian_4,step_event_week_009_rian_4,,,false,Neutral,,,,,,,,,,
+event_week_001_max,step_event_week_001_max,,,false,Neutral,,,,,,,,,,
+event_week_002_max_0,step_event_week_002_max_0,,,false,Neutral,,,,,,,,,,
+event_week_002_max_1,step_event_week_002_max_1,,,false,Neutral,,,,,,,,,,
+event_week_003_max_0,step_event_week_003_max_0,,,false,Neutral,,,,,,,,,,
+event_week_003_max_1,step_event_week_003_max_1,,,false,Neutral,,,,,,,,,,
+event_week_003_max_2,step_event_week_003_max_2,,,false,Neutral,,,,,,,,,,
+event_week_004_max_0,step_event_week_004_max_0,,,false,Neutral,,,,,,,,,,
+event_week_004_max_1,step_event_week_004_max_1,,,false,Neutral,,,,,,,,,,
+event_week_004_max_2,step_event_week_004_max_2,,,false,Neutral,,,,,,,,,,
+event_week_005_max_0,step_event_week_005_max_0,,,false,Neutral,,,,,,,,,,
+event_week_005_max_1,step_event_week_005_max_1,,,false,Neutral,,,,,,,,,,
+event_week_005_max_2,step_event_week_005_max_2,,,false,Neutral,,,,,,,,,,
+event_week_006_max_0,step_event_week_006_max_0,,,false,Neutral,,,,,,,,,,
+event_week_006_max_1,step_event_week_006_max_1,,,false,Neutral,,,,,,,,,,
+event_week_006_max_2,step_event_week_006_max_2,,,false,Neutral,,,,,,,,,,
+event_week_006_max_3,step_event_week_006_max_3,,,false,Neutral,,,,,,,,,,
+event_week_007_max_0,step_event_week_007_max_0,,,false,Neutral,,,,,,,,,,
+event_week_007_max_1,step_event_week_007_max_1,,,false,Neutral,,,,,,,,,,
+event_week_007_max_2,step_event_week_007_max_2,,,false,Neutral,,,,,,,,,,
+event_week_007_max_3,step_event_week_007_max_3,,,false,Neutral,,,,,,,,,,
+event_week_007_max_4,step_event_week_007_max_4,,,false,Neutral,,,,,,,,,,
+event_week_008_max_0,step_event_week_008_max_0,,,false,Neutral,,,,,,,,,,
+event_week_008_max_1,step_event_week_008_max_1,,,false,Neutral,,,,,,,,,,
+event_week_008_max_2,step_event_week_008_max_2,,,false,Neutral,,,,,,,,,,
+event_week_008_max_3,step_event_week_008_max_3,,,false,Neutral,,,,,,,,,,
+event_week_008_max_4,step_event_week_008_max_4,,,false,Neutral,,,,,,,,,,
+event_week_009_max_0,step_event_week_009_max_0,,,false,Neutral,,,,,,,,,,
+event_week_009_max_1,step_event_week_009_max_1,,,false,Neutral,,,,,,,,,,
+event_week_009_max_2,step_event_week_009_max_2,,,false,Neutral,,,,,,,,,,
+event_week_009_max_3,step_event_week_009_max_3,,,false,Neutral,,,,,,,,,,
+event_week_009_max_4,step_event_week_009_max_4,,,false,Neutral,,,,,,,,,,
+event_week_001_millia,step_event_week_001_millia,,,false,Neutral,,,,,,,,,,
+event_week_002_millia_0,step_event_week_002_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_002_millia_1,step_event_week_002_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_003_millia_0,step_event_week_003_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_003_millia_1,step_event_week_003_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_003_millia_2,step_event_week_003_millia_2,,,false,Neutral,,,,,,,,,,
+event_week_004_millia_0,step_event_week_004_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_004_millia_1,step_event_week_004_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_004_millia_2,step_event_week_004_millia_2,,,false,Neutral,,,,,,,,,,
+event_week_005_millia_0,step_event_week_005_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_005_millia_1,step_event_week_005_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_005_millia_3,step_event_week_005_millia_3,,,false,Neutral,,,,,,,,,,
+event_week_006_millia_0,step_event_week_006_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_006_millia_1,step_event_week_006_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_006_millia_3,step_event_week_006_millia_3,,,false,Neutral,,,,,,,,,,
+event_week_007_millia_0,step_event_week_007_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_007_millia_1,step_event_week_007_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_007_millia_2,step_event_week_007_millia_2,,,false,Neutral,,,,,,,,,,
+event_week_007_millia_4,step_event_week_007_millia_4,,,false,Neutral,,,,,,,,,,
+event_week_008_millia_0,step_event_week_008_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_008_millia_1,step_event_week_008_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_008_millia_3,step_event_week_008_millia_3,,,false,Neutral,,,,,,,,,,
+event_week_009_millia_0,step_event_week_009_millia_0,,,false,Neutral,,,,,,,,,,
+event_week_009_millia_1,step_event_week_009_millia_1,,,false,Neutral,,,,,,,,,,
+event_week_009_millia_2,step_event_week_009_millia_2,,,false,Neutral,,,,,,,,,,
+event_week_009_millia_3,step_event_week_009_millia_3,,,false,Neutral,,,,,,,,,,
+event_week_009_millia_4,step_event_week_009_millia_4,,,false,Neutral,,,,,,,,,,
+event_week_001_yuffie,step_event_week_001_yuffie,,,false,Neutral,,,,,,,,,,
+event_week_002_yuffie_0,step_event_week_002_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_002_yuffie_1,step_event_week_002_yuffie_1,,,false,Neutral,,,,,,,,,,
+event_week_003_yuffie_0,step_event_week_003_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_003_yuffie_1,step_event_week_003_yuffie_1,,,false,Neutral,,,,,,,,,,
+event_week_003_yuffie_2,step_event_week_003_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_004_yuffie_0,step_event_week_004_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_004_yuffie_1,step_event_week_004_yuffie_1,,,false,Neutral,,,,,,,,,,
+event_week_004_yuffie_2,step_event_week_004_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_005_yuffie_0,step_event_week_005_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_005_yuffie_2,step_event_week_005_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_005_yuffie_3,step_event_week_005_yuffie_3,,,false,Neutral,,,,,,,,,,
+event_week_006_yuffie_0,step_event_week_006_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_006_yuffie_2,step_event_week_006_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_007_yuffie_0,step_event_week_007_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_007_yuffie_1,step_event_week_007_yuffie_1,,,false,Neutral,,,,,,,,,,
+event_week_007_yuffie_2,step_event_week_007_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_007_yuffie_4,step_event_week_007_yuffie_4,,,false,Neutral,,,,,,,,,,
+event_week_008_yuffie_0,step_event_week_008_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_008_yuffie_1,step_event_week_008_yuffie_1,,,false,Neutral,,,,,,,,,,
+event_week_008_yuffie_2,step_event_week_008_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_008_yuffie_4,step_event_week_008_yuffie_4,,,false,Neutral,,,,,,,,,,
+event_week_009_yuffie_0,step_event_week_009_yuffie_0,,,false,Neutral,,,,,,,,,,
+event_week_009_yuffie_1,step_event_week_009_yuffie_1,,,false,Neutral,,,,,,,,,,
+event_week_009_yuffie_2,step_event_week_009_yuffie_2,,,false,Neutral,,,,,,,,,,
+event_week_009_yuffie_3,step_event_week_009_yuffie_3,,,false,Neutral,,,,,,,,,,
+event_week_009_yuffie_4,step_event_week_009_yuffie_4,,,false,Neutral,,,,,,,,,,
+event_week_001_rumor_direct_default,step_event_week_001_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_001_rumor_blocked,step_event_week_001_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_002_rumor_direct_default,step_event_week_002_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_002_rumor_blocked,step_event_week_002_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_003_rumor_direct_default,step_event_week_003_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_003_rumor_blocked,step_event_week_003_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_004_rumor_direct_default,step_event_week_004_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_004_rumor_blocked,step_event_week_004_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_005_rumor_direct_default,step_event_week_005_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_005_rumor_blocked,step_event_week_005_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_006_rumor_direct_default,step_event_week_006_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_006_rumor_blocked,step_event_week_006_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_007_rumor_direct_default,step_event_week_007_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_008_rumor_direct_default,step_event_week_008_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_008_rumor_blocked,step_event_week_008_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_009_rumor_direct_default,step_event_week_009_rumor_direct_default,소문 허가,,false,Neutral,,,,,,,,,,
+event_week_009_rumor_blocked,step_event_week_009_rumor_blocked,,,false,Neutral,,,,,,,,,,
+event_week_001_night_dark_room,step_event_week_001_night_dark_room_intro,어두운 방,,false,Neutral,,,,,,,,,,
+event_week_001_night_dark_room,step_event_week_001_night_dark_room_outro,,,false,Neutral,,,,,,,,,,
+event_week_001_night_parents,step_event_week_001_night_parents_intro,엄마 아빠,,false,Neutral,,,,,,,,,,
+event_week_001_night_parents,step_event_week_001_night_parents_outro,,,false,Neutral,,,,,,,,,,
+event_week_002_night_mother_resemblance,step_event_week_002_night_mother_resemblance_intro,어머니를 닮았다는 말,,false,Neutral,,,,,,,,,,
+event_week_002_night_mother_resemblance,step_event_week_002_night_mother_resemblance_outro,,,false,Neutral,,,,,,,,,,
+event_week_002_night_tea_party,step_event_week_002_night_tea_party_intro,다과회 자리,,false,Neutral,,,,,,,,,,
+event_week_002_night_tea_party,step_event_week_002_night_tea_party_outro,,,false,Neutral,,,,,,,,,,
+event_week_003_night_father_book,step_event_week_003_night_father_book_intro,책장에 손이 닿은 날,,false,Neutral,,,,,,,,,,
+event_week_003_night_father_book,step_event_week_003_night_father_book_outro,,,false,Neutral,,,,,,,,,,
+event_week_003_night_carriage_crest,step_event_week_003_night_carriage_crest_intro,마차에 새겨진 문장,,false,Neutral,,,,,,,,,,
+event_week_003_night_carriage_crest,step_event_week_003_night_carriage_crest_outro,,,false,Neutral,,,,,,,,,,
+event_week_004_night_other_kids,step_event_week_004_night_other_kids_intro,다른 집 아이들,,false,Neutral,,,,,,,,,,
+event_week_004_night_other_kids,step_event_week_004_night_other_kids_outro,,,false,Neutral,,,,,,,,,,
+event_week_004_night_uncle_pride,step_event_week_004_night_uncle_pride_intro,삼촌의 자리,,false,Neutral,,,,,,,,,,
+event_week_004_night_uncle_pride,step_event_week_004_night_uncle_pride_outro,,,false,Neutral,,,,,,,,,,
+event_week_005_night_too_many_classes,step_event_week_005_night_too_many_classes_intro,늘어난 수업,,false,Neutral,,,,,,,,,,
+event_week_005_night_too_many_classes,step_event_week_005_night_too_many_classes_outro,,,false,Neutral,,,,,,,,,,
+event_week_005_night_unknown_frustration,step_event_week_005_night_unknown_frustration_intro,이름 모를 답답함,,false,Neutral,,,,,,,,,,
+event_week_005_night_unknown_frustration,step_event_week_005_night_unknown_frustration_outro,,,false,Neutral,,,,,,,,,,
+event_week_006_night_ball_thoughts,step_event_week_006_night_ball_thoughts_intro,본 사람들과 보인 자기,,false,Neutral,,,,,,,,,,
+event_week_006_night_ball_thoughts,step_event_week_006_night_ball_thoughts_outro,,,false,Neutral,,,,,,,,,,
+event_week_006_night_chicken_dream,step_event_week_006_night_chicken_dream_intro,같은 꿈,,false,Neutral,,,,,,,,,,
+event_week_006_night_chicken_dream,step_event_week_006_night_chicken_dream_outro,,,false,Neutral,,,,,,,,,,
+event_week_007_night_untold_story,step_event_week_007_night_untold_story_intro,아무도 말해주지 않은 것,,false,Neutral,,,,,,,,,,
+event_week_007_night_untold_story,step_event_week_007_night_untold_story_outro,,,false,Neutral,,,,,,,,,,
+event_week_007_night_unknown_mother,step_event_week_007_night_unknown_mother_intro,모르는 어머니,,false,Neutral,,,,,,,,,,
+event_week_007_night_unknown_mother,step_event_week_007_night_unknown_mother_outro,,,false,Neutral,,,,,,,,,,
+event_week_008_night_uncle_time,step_event_week_008_night_uncle_time_intro,삼촌이라는 사람의 시간,,false,Neutral,,,,,,,,,,
+event_week_008_night_uncle_time,step_event_week_008_night_uncle_time_outro,,,false,Neutral,,,,,,,,,,
+event_week_008_night_sleepless_night,step_event_week_008_night_sleepless_night_intro,잠이 오지 않는 밤,,false,Neutral,,,,,,,,,,
+event_week_008_night_sleepless_night,step_event_week_008_night_sleepless_night_outro,,,false,Neutral,,,,,,,,,,

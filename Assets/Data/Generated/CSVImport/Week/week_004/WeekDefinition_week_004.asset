@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edff9b7bd1a506a42a33e4d294868a53, type: 3}
-  m_Name: WeekDefinition_week_004
+  m_Name: week_004
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekDefinition
   _id: week_004
   _weekIndex: 4
-  _title: "\uC5B4\uB9B0\uC774\uAE30 1\uC8FC\uCC28"
-  _summary: "\uC5B4\uB9B0\uC774\uAE30 \uCCAB \uBC88\uC9F8 \uC8FC\uCC28"
+  _title: 
+  _summary: 
   _preTurn: {fileID: 11400000, guid: 169a56f71c4eeff448d45be67b98ffe9, type: 2}
   _dayFlow: {fileID: 11400000, guid: d5e182c437c4a584bb0f86d4b1e275c0, type: 2}
   _nightFlow: {fileID: 11400000, guid: 812885ff4170239448da2e3bc20d827b, type: 2}
   _weekRules: []
   _onWeekStartInteractions: []
-  _onWeekEndInteractions:
-  - {fileID: 11400000, guid: 4ed1ab555bf05bb46b789d7d3c8407b4, type: 2}
+  _onWeekEndInteractions: []
   _cinematicProfile: {fileID: 0}

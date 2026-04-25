@@ -1,0 +1,509 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3fde091540aa044ac182758866ccfa, type: 3}
+  m_Name: CutsceneSequenceLibrary_Generated
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CutsceneSequenceLibrary
+  _sequences:
+  - _sequenceId: sequence_garden_default_gardener
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Gardener
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_garden_default_maid
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Maid
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_basement_default
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Basement
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Maid
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_forest_default_gardener
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Lake
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: GuardCaptain
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_library_default
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Archivist
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Maid
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rian_default
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BallRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rian_garden
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rian_hallway
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rian_library
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Study
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_default
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_garden
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_hallway
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_ballroom
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BallRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_study
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Study
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_millia_drawingroom
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_millia_hallway
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_yuffie_drawingroom
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend03
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_yuffie_garden
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend03
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_yuffie_hallway
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend03
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1

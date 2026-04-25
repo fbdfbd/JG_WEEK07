@@ -13,24 +13,23 @@ MonoBehaviour:
   m_Name: event_week_005_excursion_basement_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
   _id: event_week_005_excursion_basement_blocked
-  _title: basement Blocked
+  _title: "\uC9C0\uD558\uC2E4 \uD1B5\uC81C"
   _priority: 10
   _conditions:
     _requiredFlags: []
     _blockedFlags: []
     _statRequirements: []
-    _informationRequirements:
-    - _informationType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-      _useSemanticFilter: 1
-      _semantic: 2
-      _minimumCount: 1
+    _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: d9ff1ba4c6a57114ca9681c90271a32b, type: 2}
   _onCompletedInteractions:
-  - {fileID: 11400000, guid: 9ddea03ff7625524d975bd8c203e7241, type: 2}
-  - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-  - {fileID: 11400000, guid: 7e8a58bb3ab8b5440a4be57ce5a52c93, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
   - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
   _preferredSemantics: 02000000
   _linkedCard: {fileID: 11400000, guid: ea190df199fff024d86f4e512b7a3ef1, type: 2}
+  _selectionRule:
+    _mode: 5
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 1

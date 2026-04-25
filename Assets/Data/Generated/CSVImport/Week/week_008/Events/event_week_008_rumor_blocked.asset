@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_008_rumor_blocked
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_008_rumor_blocked
+  _title: "\uC18C\uBB38 \uD1B5\uC81C"
+  _priority: 10
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: fcffd1a32b73aa145a82032fc4e0db6e, type: 2}
+  _onCompletedInteractions: []
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: d6f24ccffe6c8d345a45850adc9f7252, type: 2}
+  _preferredSemantics: 02000000
+  _linkedCard: {fileID: 11400000, guid: 3271263f637c89c41b8f80379f49b86a, type: 2}
+  _selectionRule:
+    _mode: 5
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 1

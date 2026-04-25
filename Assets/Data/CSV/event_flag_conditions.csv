@@ -1,4 +1,1 @@
 event_id,mode,flag_id
-night_outside_interest,required,external_interest
-story_letter_suspected,required,letter_suspected
-story_letter_suspected,blocked,visitor_remembered

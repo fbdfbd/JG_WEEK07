@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_008_max_3__step_event_week_008_max_3
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uBC31\uC791\uC800 \uC815\uC6D0. \uD574\uC9C8 \uBB34\uB835."
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uB0B4\uC77C\uC774\uBA74 \uBC31\uC791\uC774 \uB418\uC2ED\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uC9C1 \uC2E4\uAC10\uC774 \uC548 \uB098\uC694."
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uAE34\uC7A5\uB418\uC2ED\uB2C8\uAE4C?"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC548 \uB41C\uB2E4\uACE0 \uD558\uBA74 \uAC70\uC9D3\uB9D0\uC774\uACA0\uC8E0."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB9C9\uC2A4\uB294 \uC7A0\uC2DC \uB9D0\uC744 \uACE0\uB974\uB4EF \uCE68\uBB35\uD588\uB2E4."
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uC800\uB294 \uC544\uBCA8\uB9AC\uC544\uAC00 \uD574\uB0BC \uAC70\uB77C\uACE0
+      \uC0DD\uAC01\uD569\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC65C \uADF8\uB807\uAC8C \uC0DD\uAC01\uD558\uB098\uC694?"
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uACC4\uC18D \uBD10\uC654\uC73C\uB2C8\uAE4C\uC694, \uBC1C\uD14C\uB9AC\uC628\uB3C4
+      \uB2F9\uC2E0\uC744 \uB3D5\uACA0\uC2B5\uB2C8\uB2E4."
+  _nemoLine: "\uBC31\uC791\uC800 \uC815\uC6D0. \uD574\uC9C8 \uBB34\uB835."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

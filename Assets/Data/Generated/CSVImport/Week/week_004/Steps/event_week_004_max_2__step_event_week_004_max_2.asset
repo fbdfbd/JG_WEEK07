@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_004_max_2__step_event_week_004_max_2
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uBC31\uC791\uC800 \uB9C8\uCC28 \uB300\uAE30\uC18C. \uB0AE."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB9C9\uC2A4\uB294 \uC791\uC740 \uC885\uC774\uBD09\uD22C\uB97C \uB4E4\uACE0
+      \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uC774\uAC70 \uBA39\uC744\uB798?"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uBB50\uC57C?"
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uACFC\uC790. \uB9C8\uCC28\uC5D0\uC11C \uBA39\uC73C\uB824\uACE0 \uCC59\uACBC\uC5B4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB124 \uAC70\uC796\uC544."
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uB450 \uAC1C \uC788\uC5B4. \uD558\uB098\uB294 \uC918\uB3C4 \uB3FC."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uACFC\uC790\uB97C \uBC1B\uC544 \uB4E4\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC65C \uC918?"
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "...\uADF8\uB0E5"
+  _nemoLine: "\uBC31\uC791\uC800 \uB9C8\uCC28 \uB300\uAE30\uC18C. \uB0AE."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

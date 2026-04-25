@@ -12,31 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
   m_Name: event_week_005_excursion_library_blocked__step_event_week_005_excursion_library_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
-  _titleOverride: "\uB3C4\uC11C\uAD00 \uD1B5\uC81C"
-  _bodyText: "excursion library Blocked \uB8E8\uD2B8"
+  _titleOverride: 
+  _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "(\uB3C4\uC11C\uAD00 \uC0AC\uC11C\uAC00 \uB2E4\uAC00\uC640 \uD3EC\uC2A4\uD2B8\uC787\uC73C\uB85C
-      \uD574\uB2F9 \uC8FC\uC11D\uC744 \uAC00\uB9AC\uB824 \uD55C\uB2E4.)"
+    _text: "\uB3C4\uC11C\uAD00 \uC55E\uC5D0\uB294 \uC608\uBC95 \uC218\uC5C5 \uC900\uBE44
+      \uC911\uC774\uB77C\uB294 \uB9D0\uC774 \uBD99\uC5B4 \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uB3C4\uB828\uB2D8, \uC8FC\uC778\uB2D8\uAED8\uC11C \uBCF8\uC778\uC758
-      \uBA54\uBAA8\uAC00 \uB3C4\uB828\uB2D8\uC758 \uC0AC\uACE0\uB97C \uC81C\uD55C\uD560
-      \uC218 \uC788\uC73C\uB2C8 \uAC00\uB824\uB450\uB77C \uD558\uC168\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "(\uC0AC\uC11C\uC758 \uC190\uC744 \uB9C9\uC73C\uBA70) \uC544\uB2C8\uC694,
-      \uAC00\uB9AC\uC9C0 \uB9C8\uC138\uC694."
+    _text: "\uC624\uB298\uC740 \uCC45\uC744 \uC62E\uACA8\uC57C \uD574\uC11C \uB4E4\uC5B4\uAC00\uC2E4
+      \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC624\uB298 \uBD10\uC57C \uD558\uB294\uB370\uC694."
   - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uD558\uC9C0\uB9CC \uC8FC\uC778\uB2D8\uC758 \uBA85\uB839\uC785\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "\uB0B4 \uBA38\uB9BF\uC18D\uAE4C\uC9C0 \uC790\uAE30 \uC0DD\uAC01\uC73C\uB85C
-      \uCC44\uC6B0\uB824\uB294 \uAC8C \uB204\uAD70\uB370 \uC774\uC81C \uC640\uC11C...
-      \uADF8\uB0E5 \uB458\uB798\uC694. \uC774\uAC74 \uB0B4 \uCC45\uC774\uC5D0\uC694."
-  _nemoLine: "(\uB3C4\uC11C\uAD00 \uC0AC\uC11C\uAC00 \uB2E4\uAC00\uC640 \uD3EC\uC2A4\uD2B8\uC787\uC73C\uB85C
-    \uD574\uB2F9 \uC8FC\uC11D\uC744 \uAC00\uB9AC\uB824 \uD55C\uB2E4.)"
+    _text: "\uD544\uC694\uD55C \uCC45\uC740 \uB530\uB85C \uAC00\uC838\uB2E4\uB4DC\uB9AC\uACA0\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uACE0\uAC1C\uB97C \uB044\uB355\uC600\uC9C0\uB9CC,
+      \uC190\uB05D\uC774 \uAD73\uC5B4 \uC788\uC5C8\uB2E4."
+  _nemoLine: "\uB3C4\uC11C\uAD00 \uC55E\uC5D0\uB294 \uC608\uBC95 \uC218\uC5C5 \uC900\uBE44
+    \uC911\uC774\uB77C\uB294 \uB9D0\uC774 \uBD99\uC5B4 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []
   _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
   _nextStep: {fileID: 0}
   _cinematicCues:
     _enterCue: {fileID: 0}

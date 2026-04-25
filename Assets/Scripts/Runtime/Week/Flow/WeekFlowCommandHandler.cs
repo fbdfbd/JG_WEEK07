@@ -8,19 +8,22 @@ public sealed class WeekFlowCommandHandler
     private readonly WeekRunner _weekRunner;
     private readonly WeekSelectionState _weekSelectionState;
     private readonly WeekSequenceState _weekSequenceState;
+    private readonly SO_EndingCatalog _endingCatalog;
 
     public WeekFlowCommandHandler(
         WeekFlowRuntimeState runtimeState,
         WeekUiTextProvider weekUiText,
         WeekRunner weekRunner,
         WeekSelectionState weekSelectionState,
-        WeekSequenceState weekSequenceState)
+        WeekSequenceState weekSequenceState,
+        SO_EndingCatalog endingCatalog)
     {
         _runtimeState = runtimeState;
         _weekUiText = weekUiText;
         _weekRunner = weekRunner;
         _weekSelectionState = weekSelectionState;
         _weekSequenceState = weekSequenceState;
+        _endingCatalog = endingCatalog;
     }
 
     public WeekFlowActionResult RunCurrentWeek()
@@ -170,7 +173,7 @@ public sealed class WeekFlowCommandHandler
         _runtimeState.ShouldShowEndingAfterEvents = false;
         _runtimeState.HasReachedEnding = true;
         _runtimeState.IsAwaitingEndingFollowUp = true;
-        EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState);
+        EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState, _endingCatalog);
         GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());
 

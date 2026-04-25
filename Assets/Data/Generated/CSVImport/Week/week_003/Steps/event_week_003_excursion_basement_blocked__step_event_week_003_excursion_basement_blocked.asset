@@ -12,38 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
   m_Name: event_week_003_excursion_basement_blocked__step_event_week_003_excursion_basement_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
-  _titleOverride: "\uC9C0\uD558\uC2E4 \uD1B5\uC81C"
-  _bodyText: "excursion basement Blocked \uB8E8\uD2B8"
+  _titleOverride: 
+  _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "(\uCC3D\uACE0\uC9C0\uAE30\uAC00 \uC0C1\uC790 \uD558\uB098\uB97C \uB4E4\uACE0
-      \uB098\uC624\uB2E4 \uB124\uBAA8\uB97C \uBC1C\uACAC\uD55C\uB2E4.)"
-  - _speaker: {fileID: 11400000, guid: fecbee78e68de874dbc9bec96e9344c0, type: 2}
-    _text: "\uC8FC\uC778\uB2D8, \uAC70\uAE34 \uC548 \uB429\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "\uC800 \uB3CC\uB9CC \uBCFC\uB798."
-  - _speaker: {fileID: 11400000, guid: fecbee78e68de874dbc9bec96e9344c0, type: 2}
-    _text: "\uC800\uC7A5\uC6A9 \uB0C9\uAC01\uC11D\uC785\uB2C8\uB2E4. \uAC00\uAE4C\uC774
-      \uAC00\uC2DC\uBA74 \uC190 \uC2DC\uB9BD\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "\uC190 \uC2DC\uB9B0 \uAC74 \uAD1C\uCC2E\uC740\uB370."
-  - _speaker: {fileID: 11400000, guid: fecbee78e68de874dbc9bec96e9344c0, type: 2}
-    _text: "\uB3CC \uC606 \uBC14\uB2E5\uC774 \uCC28\uACE0 \uC816\uC5B4 \uC788\uC5B4
-      \uBBF8\uB044\uB7FD\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "\uC9C0\uD558\uC2E4\uC740 \uB9E8\uB0A0 \uB9DB\uC788\uB294 \uAC83\uB3C4
-      \uC788\uACE0, \uC704\uD5D8\uD55C \uAC83\uB3C4 \uC788\uACE0 \uADF8\uB798."
-  - _speaker: {fileID: 11400000, guid: fecbee78e68de874dbc9bec96e9344c0, type: 2}
-    _text: "\uADF8\uB798\uC11C \uC5B4\uB978\uC774 \uAC19\uC774 \uC788\uC5B4\uC57C
-      \uD569\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f0ccb6cf85e90dd45a93470958b81247, type: 2}
-    _text: "\uC54C\uACA0\uC5B4. \uADFC\uB370 \uC800 \uB3CC\uC740 \uC880 \uBA4B\uC788\uB2E4."
-  _nemoLine: "(\uCC3D\uACE0\uC9C0\uAE30\uAC00 \uC0C1\uC790 \uD558\uB098\uB97C \uB4E4\uACE0
-    \uB098\uC624\uB2E4 \uB124\uBAA8\uB97C \uBC1C\uACAC\uD55C\uB2E4.)"
+    _text: "\uC9C0\uD558\uC2E4 \uBB38 \uC55E\uC5D0\uB294 \uC815\uB9AC \uC911\uC774\uB77C\uB294
+      \uD33B\uB9D0\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB098\uB3C4 \uC0C1\uC790 \uBCFC \uC218 \uC788\uB294\uB370."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC548\uCABD \uC0C1\uC790\uB4E4\uC774 \uBD88\uC548\uC815\uD558\uAC8C
+      \uC313\uC5EC \uC788\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB0B4\uAC00 \uAC74\uB4DC\uB9AC\uC9C0 \uC54A\uC73C\uBA74 \uB418\uC796\uC544."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uADF8\uB798\uB3C4 \uC704\uD5D8\uD569\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB9E8\uB0A0 \uC704\uD5D8\uD558\uB300."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC544\uAC00\uC528\uB97C \uC0DD\uAC01\uD574\uC11C\uC785\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB098\uB3C4 \uB098\uB97C \uC0DD\uAC01\uD560 \uC218 \uC788\uC5B4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uD33B\uB9D0\uC744 \uBABB\uB9C8\uB545\uD558\uAC8C
+      \uBC14\uB77C\uBCF4\uC558\uB2E4."
+  _nemoLine: "\uC9C0\uD558\uC2E4 \uBB38 \uC55E\uC5D0\uB294 \uC815\uB9AC \uC911\uC774\uB77C\uB294
+    \uD33B\uB9D0\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []
   _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
   _nextStep: {fileID: 0}
   _cinematicCues:
     _enterCue: {fileID: 0}

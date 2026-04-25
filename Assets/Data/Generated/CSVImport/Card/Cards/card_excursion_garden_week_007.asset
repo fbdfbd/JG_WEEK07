@@ -14,21 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_garden_week_007
   _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-  _title: "\uC815\uC6D0 7\uC8FC\uCC28"
-  _originalText: "\uC5B4\uB9B4 \uB54C \uC2EC\uC740 \uB098\uBB34\uAC00 \uD6CC\uCA4D
-    \uC790\uB77C \uC788\uB2E4. \uADDC\uC728\uB300\uB85C \uB2E4\uB4EC\uAC8C \uD560\uC9C0
-    \uCD94\uC5B5\uACFC \uADF8\uB298\uC744 \uC990\uAE30\uAC8C \uD560\uC9C0 \uACB0\uC815\uD55C\uB2E4."
+  _title: "\uC815\uC6D0"
+  _originalText: "\uC7A5\uBBF8 \uD654\uB2E8\uC5D0 \uC544\uC9C1 \uD53C\uC9C0 \uC54A\uC740
+    \uBD09\uC624\uB9AC\uB4E4\uC774 \uC904\uC9C0\uC5B4 \uC11C \uC788\uB2E4."
   _options:
-  - _semantic: 2
-    _label: "\uBC29\uBB38\uC744 \uB9C9\uB294\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C \uC678\uCD9C\uC744 \uB9C9\uACE0 \uB3CC\uB824\uBCF4\uB0B8\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: 7e9e7c466b743084c8fdfed064fa2fb3, type: 2}
-    - {fileID: 11400000, guid: 7e8a58bb3ab8b5440a4be57ce5a52c93, type: 2}
   - _semantic: 0
-    _label: "\uC678\uCD9C\uC744 \uD5C8\uB77D\uD55C\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C\uAE4C\uC9C0 \uB098\uAC00\uB3C4\uB85D
-      \uD5C8\uB77D\uD55C\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: 3767dfb8845aead42b17c728fe339544, type: 2}
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uC815\uC6D0\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC815\uC6D0\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _interactions: []
