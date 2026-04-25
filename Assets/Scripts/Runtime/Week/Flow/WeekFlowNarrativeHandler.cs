@@ -146,6 +146,18 @@ public sealed class WeekFlowNarrativeHandler
         ApplyLinkedCardRewardsIfNeeded(eventSession);
 
         InteractiveEventPresentation presentation = WeekNarrativeResolver.CreatePresentation(eventSession, _runtimeState.ChildState, _weekUiText);
+        if (ShouldAutoAdvanceEmptyStep(presentation))
+        {
+            ApplyCurrentStepEffectsIfNeeded(eventSession);
+            if (eventSession.TryMoveToNextStep(_runtimeState.ChildState))
+            {
+                return BuildEventStepScreen();
+            }
+
+            CompleteCurrentEvent();
+            return ContinuePostWeekFlow();
+        }
+
         DialogueLinePresentation line = WeekNarrativeResolver.GetPrimaryDialogueLine(presentation.DialogueLines);
 
         return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEventStep(
@@ -154,6 +166,14 @@ public sealed class WeekFlowNarrativeHandler
             eventSession.CurrentStep,
             presentation,
             new NemoFeedbackPresentation(line.SpeakerName, presentation.VisualState, line.Text)));
+    }
+
+    private static bool ShouldAutoAdvanceEmptyStep(InteractiveEventPresentation presentation)
+    {
+        return string.IsNullOrWhiteSpace(presentation.BodyText)
+            && string.IsNullOrWhiteSpace(presentation.EffectSummaryLine)
+            && (presentation.DialogueLines == null || presentation.DialogueLines.Count == 0)
+            && (presentation.Choices == null || presentation.Choices.Count == 0);
     }
 
     private void ApplyLinkedCardRewardsIfNeeded(RuntimeInteractiveEventSession eventSession)

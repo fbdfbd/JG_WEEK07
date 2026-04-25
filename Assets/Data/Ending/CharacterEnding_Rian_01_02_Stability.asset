@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b68f509342da9940bf43c9618a7a70d, type: 3}
+  m_Name: CharacterEnding_Rian_01_02_Stability
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
+  _id: ending_rian_01_02_stability
+  _characterType: 0
+  _minMeetCount: 1
+  _maxMeetCount: 2
+  _moodType: 1
+  _text:
+    _title: "|- \uB9AC\uC548 \uB9CC\uB0A8 1~2 - \uC548\uC815"
+    _body: "|- \uC131\uC778\uC2DD\uC7A5\uC5D0 \uD669\uC2E4 \uC0AC\uC808\uB2E8\uC774
+      \uB3C4\uCC29\uD588\uC744 \uB54C, \uC544\uBCA8\uB9AC\uC544\uB294 \uADF8 \uB300\uC5F4
+      \uC18D\uC5D0\uC11C \uB0AF\uC775\uC740 \uC5BC\uAD74\uC744 \uCC3E\uC558\uB2E4.
+      \uB9AC\uC548\uC740 \uBA3C \uC790\uB9AC\uC5D0 \uC549\uC544 \uC788\uC5C8\uB2E4.
+      \uB208\uC774 \uB9C8\uC8FC\uCCE4\uC9C0\uB9CC, \uACE0\uAC1C\uB97C \uB044\uB355\uC774\uB294
+      \uAC83\uC774 \uC804\uBD80\uC600\uB2E4.\n\uC758\uC2DD\uC774 \uB05D\uB09C \uB4A4,
+      \uB9AC\uC548\uC740 \uCD95\uD558 \uC11C\uC2E0 \uD55C \uD1B5\uC744 \uB0A8\uAE30\uACE0
+      \uB5A0\uB0AC\uB2E4. \uC9E7\uC740 \uAE00\uC774\uC5C8\uC9C0\uB9CC \uADF8 \uC548\uC5D0
+      \uD669\uC2E4\uC758 \uACF5\uC2DD \uC785\uC7A5\uC774 \uB2F4\uACA8 \uC788\uC5C8\uB2E4
+      \u2014 \uBCA8\uB77C\uB9AC\uC6B0\uC2A4 \uBC31\uC791\uAC00\uC758 \uACC4\uC2B9\uC744
+      \uC778\uC815\uD55C\uB2E4\uB294 \uD55C \uC904.\n\uBD09\uC2E0\uAC00\uBB38\uC758
+      \uC774\uC758\uC81C\uAE30\uB294 \uADF8 \uD55C \uC904 \uC55E\uC5D0\uC11C \uD798\uC744
+      \uC783\uC5C8\uB2E4. \uC544\uBCA8\uB9AC\uC544\uB294 \uBC31\uC791\uC704\uB97C
+      \uACC4\uC2B9\uD588\uACE0, \uBC31\uC791\uB839\uC740 \uC870\uC6A9\uD788 \uC548\uC815\uC744
+      \uB418\uCC3E\uC558\uB2E4. \uB9AC\uC548\uC774\uB77C\uB294 \uC774\uB984\uC740
+      \uBA38\uC9C0\uC54A\uC544 \uAE30\uC5B5 \uC18D\uC5D0\uC11C \uD76C\uBBF8\uD574\uC84C\uC9C0\uB9CC,
+      \uC11C\uC7AC \uC11C\uB78D \uC548\uC5D0\uB294 \uC885\uC774\uBC30 \uD558\uB098\uAC00
+      \uC5EC\uC804\uD788 \uC811\uD78C \uCC44 \uB0A8\uC544 \uC788\uC5C8\uB2E4."
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 3

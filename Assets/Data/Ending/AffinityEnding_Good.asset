@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a23f5b530abb0d4c948e1689cf99dad, type: 3}
+  m_Name: AffinityEnding_Good
+  m_EditorClassIdentifier: Assembly-CSharp::SO_AffinityEndingDefinition
+  _id: '|- ending_affinity_good'
+  _minAffinity: 6
+  _maxAffinity: 100
+  _text:
+    _title: "\uCE5C\uBC00\uB3C4 \uC5D4\uB529 GOOD"
+    _body: "\uC131\uC778\uC2DD\uC774 \uB05D\uB09C \uB4A4, \uC544\uBCA8\uB9AC\uC544\uB294
+      \uC11C\uC7AC\uB85C \uD5A5\uD588\uB2E4. \uC0BC\uCD0C\uC774 \uB298 \uC549\uB358
+      \uC790\uB9AC\uB294 \uBE44\uC5B4 \uC788\uC5C8\uACE0, \uCC45\uC0C1 \uC704\uC5D0
+      \uC9E7\uC740 \uD3B8\uC9C0 \uD55C \uD1B5\uB9CC \uB193\uC5EC \uC788\uC5C8\uB2E4.
+      \uC544\uBCA8\uB9AC\uC544\uB294 \uADF8 \uD3B8\uC9C0\uB97C \uC5F4\uC9C0 \uC54A\uC740
+      \uCC44 \uC11C\uB78D\uC5D0 \uB123\uC5C8\uB2E4 \u2014 \uC5B4\uB978\uB4E4\uC740
+      \uB298, \uC911\uC694\uD55C \uB9D0\uC744 \uD558\uC9C0 \uC54A\uC558\uC73C\uB2C8\uAE4C."
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 0

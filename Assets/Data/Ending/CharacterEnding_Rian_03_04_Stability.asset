@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b68f509342da9940bf43c9618a7a70d, type: 3}
+  m_Name: CharacterEnding_Rian_03_04_Stability
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
+  _id: ending_rian_03_04_stability
+  _characterType: 0
+  _minMeetCount: 3
+  _maxMeetCount: 4
+  _moodType: 1
+  _text:
+    _title: "|- \uB9AC\uC548 \uB9CC\uB0A8 3~4 - \uC548\uC815"
+    _body: "|- \uB9AC\uC548\uC740 \uC131\uC778\uC2DD\uC5D0 \uD669\uC2E4 \uB300\uD45C\uAC00
+      \uC544\uB2CC \uAC1C\uC778 \uC790\uACA9\uC73C\uB85C \uCC38\uC11D\uD588\uB2E4.
+      \uADF8\uAC83\uB9CC\uC73C\uB85C\uB3C4 \uADC0\uC871\uB4E4 \uC0AC\uC774\uC5D0
+      \uC791\uC740 \uD30C\uBB38\uC774 \uC77C\uC5C8\uB2E4.\n\uC2DD\uC774 \uB05D\uB09C
+      \uB4A4, \uB9AC\uC548\uC740 \uC544\uBCA8\uB9AC\uC544\uC5D0\uAC8C \uAC78\uC5B4\uC654\uB2E4.
+      \"\uCD95\uD558\uD574. \uB124\uAC00 \uC774 \uC790\uB9AC\uC5D0 \uC11C \uC788\uB294
+      \uAC8C \uB2F9\uC5F0\uD55C \uAC83\uCC98\uB7FC \uBCF4\uC5EC\uC11C \uB2E4\uD589\uC774\uC57C.\"\n\uC544\uBCA8\uB9AC\uC544\uB294
+      \uC6C3\uC5C8\uB2E4. \uB5A8\uB9AC\uC9C0 \uC54A\uB294 \uC6C3\uC74C\uC774\uC5C8\uB2E4.
+      \uBD09\uC2E0\uAC00\uBB38\uC758 \uC774\uC758\uC81C\uAE30\uB294 \uD669\uC2E4\uC758
+      \uBB35\uC778 \uC544\uB798 \uAE30\uAC01\uB418\uC5C8\uACE0, \uD6C4\uC791\uAC00\uB3C4
+      \uACF5\uC2DD\uC801\uC778 \uD6C4\uACAC \uC694\uCCAD\uC744 \uCCA0\uD68C\uD588\uB2E4.
+      \uBC31\uC791\uB839\uC740 \uC544\uBCA8\uB9AC\uC544\uC758 \uC774\uB984 \uC544\uB798
+      \uC628\uC804\uD788 \uB3CC\uC544\uC654\uB2E4.\n\uB9AC\uC548\uC774 \uD669\uC2E4\uB85C
+      \uB3CC\uC544\uAC04 \uB4A4\uC5D0\uB3C4, \uACC4\uC808\uC774 \uBC14\uB014 \uB54C\uB9C8\uB2E4
+      \uC9E7\uC740 \uC11C\uC2E0\uC774 \uC624\uAC14\uB2E4. \uC815\uCE58 \uC774\uC57C\uAE30\uB294
+      \uC5C6\uC5C8\uB2E4. \uB2E4\uB9CC \uC11C\uB85C\uAC00 \uC798 \uC788\uB2E4\uB294
+      \uD655\uC778\uB9CC\uC73C\uB85C \uCDA9\uBD84\uD55C, \uADF8\uB7F0 \uD3B8\uC9C0\uB4E4\uC774\uC5C8\uB2E4."
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 3

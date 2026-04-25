@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b68f509342da9940bf43c9618a7a70d, type: 3}
+  m_Name: CharacterEnding_Yuffie_03_04_Submission
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
+  _id: ending_yuffie_03_04_submission
+  _characterType: 3
+  _minMeetCount: 3
+  _maxMeetCount: 4
+  _moodType: 4
+  _text:
+    _title: "|- \uC720\uD53C \uB9CC\uB0A8 3~4 - \uC21C\uC751"
+    _body: "|- \uC720\uD53C\uC640\uC758 \uC2DC\uAC04\uC740 \uC544\uBCA8\uB9AC\uC544\uC5D0\uAC8C
+      \uD6C4\uC791\uAC00\uC758 \uC138\uACC4\uB97C \uC775\uC219\uD558\uAC8C \uB9CC\uB4E4\uC5C8\uB2E4.
+      \uC608\uBC95, \uACA9\uC2DD, \uC62C\uBC14\uB978 \uC790\uB9AC\uC5D0 \uC549\uB294
+      \uBC95. \uC720\uD53C\uAC00 \uC54C\uB824\uC900 \uAC83\uB4E4\uC740 \uBAA8\uB450
+      \uC544\uB984\uB2F5\uACE0 \uC815\uB3C8\uB418\uC5B4 \uC788\uC5C8\uB2E4.\n\uC131\uC778\uC2DD\uC5D0\uC11C
+      \uC544\uBCA8\uB9AC\uC544\uB294 \uD55C \uCE58\uC758 \uC2E4\uC218\uB3C4 \uC5C6\uC774
+      \uC758\uC2DD\uC744 \uCE58\uB800\uB2E4. \uD6C4\uC791\uAC00 \uC0AC\uB78C\uB4E4\uC740
+      \uACE0\uAC1C\uB97C \uB044\uB355\uC600\uB2E4. \uC798 \uC790\uB780 \uC544\uC774\uB77C\uACE0.\n\uD6C4\uC791\uAC00\uC758
+      \uD6C4\uACAC \uC81C\uC548\uC774 \uB2E4\uC2DC \uC654\uC744 \uB54C, \uC544\uBCA8\uB9AC\uC544\uB294
+      \uC624\uB798 \uACE0\uBBFC\uD558\uC9C0 \uC54A\uC558\uB2E4. \uC720\uD53C\uAC00
+      \uC606\uC5D0 \uC788\uC744 \uB54C \uB290\uAF08\uB358 \uC548\uC815\uAC10\uC774,
+      \uADF8 \uC81C\uC548 \uC548\uC5D0\uB3C4 \uC788\uC744 \uAC70\uB77C\uACE0 \uC0DD\uAC01\uD588\uB2E4.\n\uBC31\uC791\uB839\uC740
+      \uD3C9\uC628\uD588\uB2E4. \uADF8\uB7EC\uB098 \uC911\uC694\uD55C \uACB0\uC815\uB9C8\uB2E4
+      \uD6C4\uC791\uAC00\uC758 \uC778\uC7A5\uC774 \uBA3C\uC800 \uCC0D\uD614\uACE0,
+      \uC544\uBCA8\uB9AC\uC544\uB294 \uADF8\uAC83\uC774 \uC808\uCC28\uC778\uC9C0
+      \uD5C8\uAC00\uC778\uC9C0 \uAD6C\uBD84\uD558\uC9C0 \uC54A\uC558\uB2E4."
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 4
