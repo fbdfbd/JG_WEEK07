@@ -402,6 +402,7 @@ MonoBehaviour:
   _choicePanel: {fileID: 624893365}
   _dialogPanel: {fileID: 138419778}
   _continueButton: {fileID: 688803797}
+  _skipEventButton: {fileID: 4473741489777658570}
 --- !u!4 &138419777
 Transform:
   m_ObjectHideFlags: 0
@@ -14048,7 +14049,7 @@ MonoBehaviour:
   - {fileID: 952825187}
   - {fileID: 78364712}
   - {fileID: 1323983681}
-  _burstSpeedMultiplier: 5
+  _burstSpeedMultiplier: 1.5
 --- !u!1 &1506608862
 GameObject:
   m_ObjectHideFlags: 0
@@ -18500,7 +18501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -202, y: -795.83}
+  m_AnchoredPosition: {x: -100, y: -94}
   m_SizeDelta: {x: 101.78, y: 60.94}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1908579848
@@ -18783,6 +18784,7 @@ RectTransform:
   - {fileID: 891424189}
   - {fileID: 624893361}
   - {fileID: 1908579847}
+  - {fileID: 4473741489777658569}
   - {fileID: 1463106720}
   - {fileID: 1245529731}
   - {fileID: 1313476821}
@@ -24383,6 +24385,119 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b80e5403dc852a47ab6ea35377c1f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventCutsceneDefault
+--- !u!1001 &4473741489777658568
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1956954678}
+    m_Modifications:
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 101.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -211
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -795.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8403094816381611431, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+      propertyPath: m_Name
+      value: SkipButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+--- !u!224 &4473741489777658569 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6431100817470850171, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+  m_PrefabInstance: {fileID: 4473741489777658568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4473741489777658570 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4027619451698573893, guid: 17706821a9b56704ba43de3df260da7a, type: 3}
+  m_PrefabInstance: {fileID: 4473741489777658568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &4507487916006979736
 PrefabInstance:
   m_ObjectHideFlags: 0

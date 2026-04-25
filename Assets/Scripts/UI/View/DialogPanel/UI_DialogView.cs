@@ -11,6 +11,7 @@ public class UI_DialogView : MonoBehaviour
 
     private Tween _typingTween;
     private string _currentContent = string.Empty;
+    private bool _isNarration;
 
     public event System.Action TypingCompleted;
 
@@ -24,6 +25,7 @@ public class UI_DialogView : MonoBehaviour
     public void SetDialogue(string speakerName, string content)
     {
         _currentContent = string.IsNullOrEmpty(content) ? string.Empty : content;
+        _isNarration = string.IsNullOrEmpty(speakerName);
 
         UpdateSpeakerName(speakerName);
         PlayTypewriter();
@@ -66,6 +68,7 @@ public class UI_DialogView : MonoBehaviour
 
         StopTypingTween();
 
+        _mainContentText.fontStyle = _isNarration ? FontStyles.Italic : FontStyles.Normal;
         _mainContentText.text = _currentContent;
         _mainContentText.maxVisibleCharacters = 0;
         _mainContentText.ForceMeshUpdate();

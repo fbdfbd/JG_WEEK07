@@ -94,6 +94,7 @@ public class WeekFlowController : MonoBehaviour
         _view.CardOptionSelected += HandleCardOptionSelected;
         _view.WeekFeedbackClosed += HandleWeekFeedbackClosed;
         _view.InteractiveEventContinueRequested += HandleInteractiveEventContinueRequested;
+        _view.InteractiveEventSkipRequested += HandleInteractiveEventSkipRequested;
         _view.InteractiveEventChoiceSelected += HandleInteractiveEventChoiceSelected;
     }
 
@@ -110,6 +111,7 @@ public class WeekFlowController : MonoBehaviour
         _view.CardOptionSelected -= HandleCardOptionSelected;
         _view.WeekFeedbackClosed -= HandleWeekFeedbackClosed;
         _view.InteractiveEventContinueRequested -= HandleInteractiveEventContinueRequested;
+        _view.InteractiveEventSkipRequested -= HandleInteractiveEventSkipRequested;
         _view.InteractiveEventChoiceSelected -= HandleInteractiveEventChoiceSelected;
     }
 
@@ -118,6 +120,7 @@ public class WeekFlowController : MonoBehaviour
     private void HandleResetChildStateRequested() => RunFlowAction(_commandHandler.ResetChildState);
     private void HandleWeekFeedbackClosed() => RunFlowAction(_narrativeHandler.CloseWeekFeedback);
     private void HandleInteractiveEventContinueRequested() => RunFlowAction(_narrativeHandler.ContinueInteractiveEvent);
+    private void HandleInteractiveEventSkipRequested() => RunFlowAction(_narrativeHandler.SkipCurrentInteractiveEvent);
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex) => RunFlowAction(() => _commandHandler.SelectCardOption(cardDefinition, optionIndex));
     private void HandleInteractiveEventChoiceSelected(int choiceIndex) => RunFlowAction(() => _narrativeHandler.SelectInteractiveEventChoice(choiceIndex));
 

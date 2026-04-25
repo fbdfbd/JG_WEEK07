@@ -188,6 +188,11 @@ public class UI_ChildStateToastManager : MonoBehaviour
 
     private string BuildStatMessage(StatChangeInfo changeInfo)
     {
+        if (!string.IsNullOrWhiteSpace(changeInfo.ToastMessage))
+        {
+            return changeInfo.ToastMessage;
+        }
+
         string label = _weekUiText != null
             ? _weekUiText.GetStatLabel(changeInfo.StatType)
             : changeInfo.StatType.ToString();

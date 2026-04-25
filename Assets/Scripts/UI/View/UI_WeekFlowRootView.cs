@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class UI_WeekFlowRootView : WeekFlowViewBase
 {
+    private const string LeftCtrlBindingPath = "<Keyboard>/leftCtrl";
+    private const string RightCtrlBindingPath = "<Keyboard>/rightCtrl";
+
     private enum EDialogueContinueRoute
     {
         None,
@@ -28,7 +31,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [SerializeField] private Button _openLogButton;
 
     [Header("Advance Input")]
-    [SerializeField] private InputAction _advanceAction = new("Advance", InputActionType.Button, "<Keyboard>/space");
+    [SerializeField] private InputAction _advanceAction = CreateAdvanceAction();
     [SerializeField] private float _advanceHoldDelay = 0.35f;
     [SerializeField] private float _advanceRepeatInterval = 0.08f;
 
@@ -281,6 +284,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         }
 
         _dialogueScreenView.ContinueRequested += HandleDialogueContinueRequested;
+        _dialogueScreenView.EventSkipRequested += HandleDialogueEventSkipRequested;
         _dialogueScreenView.ChoiceSelected += HandleDialogueChoiceSelected;
     }
 
@@ -302,6 +306,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         }
 
         _dialogueScreenView.ContinueRequested -= HandleDialogueContinueRequested;
+        _dialogueScreenView.EventSkipRequested -= HandleDialogueEventSkipRequested;
         _dialogueScreenView.ChoiceSelected -= HandleDialogueChoiceSelected;
     }
 
@@ -384,6 +389,17 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         RaiseInteractiveEventChoiceSelected(choiceIndex);
     }
 
+    private void HandleDialogueEventSkipRequested()
+    {
+        if (TrySkipCurrentTransition())
+        {
+            return;
+        }
+
+        CancelAdvanceHold();
+        RaiseInteractiveEventSkipRequested();
+    }
+
     private bool TrySkipCurrentTransition()
     {
         if (_transitionPlayer == null)
@@ -445,12 +461,31 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
     private void EnsureAdvanceAction()
     {
-        if (_advanceAction != null)
+        if (HasCtrlAdvanceBindings())
         {
             return;
         }
 
-        _advanceAction = new InputAction("Advance", InputActionType.Button, "<Keyboard>/space");
+        _advanceAction = CreateAdvanceAction();
+    }
+
+    private bool HasCtrlAdvanceBindings()
+    {
+        if (_advanceAction == null || _advanceAction.bindings.Count != 2)
+        {
+            return false;
+        }
+
+        return _advanceAction.bindings[0].path == LeftCtrlBindingPath
+            && _advanceAction.bindings[1].path == RightCtrlBindingPath;
+    }
+
+    private static InputAction CreateAdvanceAction()
+    {
+        InputAction action = new("Advance", InputActionType.Button);
+        action.AddBinding(LeftCtrlBindingPath);
+        action.AddBinding(RightCtrlBindingPath);
+        return action;
     }
 
     private void CancelAdvanceHold()

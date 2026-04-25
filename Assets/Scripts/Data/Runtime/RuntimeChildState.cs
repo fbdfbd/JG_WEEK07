@@ -36,7 +36,7 @@ public class RuntimeChildState
         return DefaultStatValue;
     }
 
-    public void SetStat(EChildStatusType statType, int value)
+    public void SetStat(EChildStatusType statType, int value, string toastMessage = null)
     {
         int previousValue = GetStat(statType);
         int currentValue = ClampStat(value);
@@ -46,12 +46,12 @@ public class RuntimeChildState
         }
 
         _stats[statType] = currentValue;
-        StatChanged?.Invoke(new StatChangeInfo(statType, previousValue, currentValue));
+        StatChanged?.Invoke(new StatChangeInfo(statType, previousValue, currentValue, toastMessage));
     }
 
-    public void AddStat(EChildStatusType statType, int amount)
+    public void AddStat(EChildStatusType statType, int amount, string toastMessage = null)
     {
-        SetStat(statType, GetStat(statType) + amount);
+        SetStat(statType, GetStat(statType) + amount, toastMessage);
     }
 
     public bool HasFlag(SO_FlagDefinition flagDefinition)
@@ -158,16 +158,18 @@ public class RuntimeChildState
 
 public readonly struct StatChangeInfo
 {
-    public StatChangeInfo(EChildStatusType statType, int previousValue, int currentValue)
+    public StatChangeInfo(EChildStatusType statType, int previousValue, int currentValue, string toastMessage = null)
     {
         StatType = statType;
         PreviousValue = previousValue;
         CurrentValue = currentValue;
+        ToastMessage = toastMessage;
     }
 
     public EChildStatusType StatType { get; }
     public int PreviousValue { get; }
     public int CurrentValue { get; }
+    public string ToastMessage { get; }
     public int Delta => CurrentValue - PreviousValue;
 }
 

@@ -10,6 +10,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public event Action ResetChildStateRequested;
     public event Action WeekFeedbackClosed;
     public event Action InteractiveEventContinueRequested;
+    public event Action InteractiveEventSkipRequested;
     public event Action<int> InteractiveEventChoiceSelected;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
 
@@ -36,6 +37,11 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     protected void RaiseInteractiveEventContinueRequested()
     {
         InteractiveEventContinueRequested?.Invoke();
+    }
+
+    protected void RaiseInteractiveEventSkipRequested()
+    {
+        InteractiveEventSkipRequested?.Invoke();
     }
 
     protected void RaiseInteractiveEventChoiceSelected(int choiceIndex)

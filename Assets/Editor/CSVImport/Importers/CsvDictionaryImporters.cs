@@ -123,6 +123,7 @@ public static class InteractionCsvImporter
             case SO_CardInteraction_StatDelta statDelta:
                 CsvImportAssetUtility.SetField(statDelta, "_statType", ParseEnum<EChildStatusType>(row.StatType));
                 CsvImportAssetUtility.SetField(statDelta, "_amount", row.Amount);
+                CsvImportAssetUtility.SetField(statDelta, "_toastMessage", row.DisplayName);
                 break;
             case SO_CardInteraction_SetFlag setFlag:
                 CsvImportAssetUtility.SetField(setFlag, "_flagDefinition", Resolve(context.FlagsById, row.FlagId));
@@ -138,6 +139,7 @@ public static class InteractionCsvImporter
                 CsvImportAssetUtility.SetField(conditionalStatDelta, "_minValue", row.MinValue);
                 CsvImportAssetUtility.SetField(conditionalStatDelta, "_targetStat", ParseEnum<EChildStatusType>(row.TargetStat));
                 CsvImportAssetUtility.SetField(conditionalStatDelta, "_amount", row.Amount);
+                CsvImportAssetUtility.SetField(conditionalStatDelta, "_toastMessage", row.DisplayName);
                 break;
             case SO_CardInteraction_AddReactionLog reactionLog:
                 CsvImportAssetUtility.SetField(reactionLog, "_reactionText", row.ReactionText);

@@ -23,6 +23,10 @@ public static class CsvImportValidator
         HashSet<string> cardIds = dataset.Cards.Select(row => row.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
         HashSet<string> weekIds = dataset.Weeks.Select(row => row.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
         HashSet<string> eventIds = dataset.Events.Select(row => row.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        HashSet<string> sequenceIds = dataset.CutsceneSequenceCommands
+            .Select(row => row.SequenceId)
+            .Where(id => !string.IsNullOrWhiteSpace(id))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
         HashSet<string> stepKeys = dataset.EventSteps
             .Select(row => CsvImportContext.BuildStepKey(row.EventId, row.StepId))
             .ToHashSet(StringComparer.OrdinalIgnoreCase);
@@ -47,6 +51,9 @@ public static class CsvImportValidator
         ValidateReferences(dataset.EventChoices.Select(row => (CsvImportContext.BuildStepKey(row.EventId, row.StepId), "event_choices.csv -> step")), stepKeys, errors);
         ValidateReferences(dataset.EventChoiceDialogueLines.Select(row => (row.SpeakerId, "event_choice_dialogue_lines.csv -> speaker_id")), speakerIds, errors);
         ValidateReferences(dataset.EventChoiceDialogueLines.Select(row => (CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), "event_choice_dialogue_lines.csv -> choice")), choiceKeys, errors);
+        ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.WeekId, "event_cutscene_rules.csv -> week_id")), weekIds, errors);
+        ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.EventId, "event_cutscene_rules.csv -> event_id")), eventIds, errors);
+        ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.SequenceId, "event_cutscene_rules.csv -> sequence_id")), sequenceIds, errors);
 
         foreach (InteractionRow row in dataset.Interactions)
         {
@@ -146,12 +153,37 @@ public static class CsvImportValidator
             }
         }
 
+        foreach (EventCutsceneRuleRow row in dataset.EventCutsceneRules)
+        {
+            ValidateEnum<EWeekFlowCutsceneMoment>(row.Moment, $"event_cutscene_rules.csv -> moment ({row.Id})", errors);
+
+            bool hasSequence = !string.IsNullOrWhiteSpace(row.SequenceId);
+            bool hasSpecialPlayer = !string.IsNullOrWhiteSpace(row.SpecialPlayerId);
+            if (hasSequence == hasSpecialPlayer)
+            {
+                errors.Add($"event_cutscene_rules.csv must set exactly one of sequence_id or special_player_id ({row.Id}).");
+            }
+        }
+
+        foreach (CutsceneSequenceCommandRow row in dataset.CutsceneSequenceCommands)
+        {
+            if (string.IsNullOrWhiteSpace(row.SequenceId))
+            {
+                errors.Add($"Missing id: cutscene_sequences.csv -> sequence_id (order {row.Order})");
+            }
+
+            ValidateEnum<EDataCutsceneCommandType>(row.Command, $"cutscene_sequences.csv -> command ({row.SequenceId}/{row.Order})", errors);
+            ValidateEnum<DG.Tweening.Ease>(row.Ease, $"cutscene_sequences.csv -> ease ({row.SequenceId}/{row.Order})", errors, allowBlank: true);
+        }
+
         ValidateGroupedUniqueness(dataset.CardOptions, row => row.CardId, row => row.OptionOrder, "card_options.csv -> option_order", errors);
         ValidateGroupedUniqueness(dataset.WeekCards, row => row.WeekId, row => row.DisplayOrder, "week_cards.csv -> display_order", errors);
         ValidateGroupedUniqueness(dataset.EventChoices, row => CsvImportContext.BuildStepKey(row.EventId, row.StepId), row => row.ChoiceOrder, "event_choices.csv -> choice_order", errors);
         ValidateGroupedUniqueness(dataset.EventStepDialogueLines, row => CsvImportContext.BuildStepKey(row.EventId, row.StepId), row => row.LineOrder, "event_step_dialogue_lines.csv -> line_order", errors);
         ValidateGroupedUniqueness(dataset.EventChoiceDialogueLines, row => CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), row => row.LineOrder, "event_choice_dialogue_lines.csv -> line_order", errors);
+        ValidateGroupedUniqueness(dataset.CutsceneSequenceCommands, row => row.SequenceId, row => row.Order, "cutscene_sequences.csv -> order", errors);
         ValidateUniqueKeys(dataset.EventSelectionRules, row => row.EventId, "event_selection_rules.csv -> event_id", errors);
+        ValidateUniqueKeys(dataset.EventCutsceneRules, row => row.Id, "event_cutscene_rules.csv -> rule_id", errors);
 
         if (errors.Count > 0)
         {

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public sealed class WeekFlowNarrativeHandler
 {
     private readonly WeekFlowRuntimeState _runtimeState;
@@ -45,6 +47,18 @@ public sealed class WeekFlowNarrativeHandler
         if (eventSession.TryMoveToNextStep())
         {
             return BuildEventStepScreen();
+        }
+
+        CompleteCurrentEvent();
+        return ContinuePostWeekFlow();
+    }
+
+    public WeekFlowActionResult SkipCurrentInteractiveEvent()
+    {
+        RuntimeInteractiveEventSession eventSession = _runtimeState.CurrentEventSession;
+        if (!WeekFlowEventSkipPolicy.CanSkip(eventSession))
+        {
+            return WeekFlowActionResult.None;
         }
 
         CompleteCurrentEvent();
@@ -216,5 +230,53 @@ public sealed class WeekFlowNarrativeHandler
         PublishStatusMessage(currentWeek == null
             ? _weekUiText.GetMovedToNextWeekFallbackMessage()
             : _weekUiText.GetReadyForWeekMessage(currentWeek.WeekIndex));
+    }
+}
+
+public static class WeekFlowEventSkipPolicy
+{
+    public static bool CanSkip(RuntimeInteractiveEventSession eventSession)
+    {
+        if (eventSession?.CurrentStep == null || eventSession.HasPendingChoiceResult)
+        {
+            return false;
+        }
+
+        return HasNoChoices(eventSession.EventDefinition)
+            && HasNoChoicesFromStep(eventSession.CurrentStep);
+    }
+
+    public static bool CanSkip(WeekFlowScreen screen)
+    {
+        if (screen == null || screen.ScreenType != EWeekFlowScreenType.EventStep)
+        {
+            return false;
+        }
+
+        return HasNoChoices(screen.EventDefinition)
+            && HasNoChoicesFromStep(screen.StepDefinition);
+    }
+
+    private static bool HasNoChoices(SO_InteractiveEventDefinition eventDefinition)
+    {
+        return eventDefinition == null || HasNoChoicesFromStep(eventDefinition.FirstStep);
+    }
+
+    private static bool HasNoChoicesFromStep(SO_InteractiveEventStepDefinition startStep)
+    {
+        HashSet<SO_InteractiveEventStepDefinition> visitedSteps = new();
+        SO_InteractiveEventStepDefinition currentStep = startStep;
+
+        while (currentStep != null && visitedSteps.Add(currentStep))
+        {
+            if (currentStep.Choices != null && currentStep.Choices.Length > 0)
+            {
+                return false;
+            }
+
+            currentStep = currentStep.NextStep;
+        }
+
+        return true;
     }
 }

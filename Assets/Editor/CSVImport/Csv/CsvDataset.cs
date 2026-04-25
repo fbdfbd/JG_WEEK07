@@ -22,6 +22,8 @@ public sealed class CsvDataset
     public IReadOnlyList<EventStepDialogueLineRow> EventStepDialogueLines { get; private set; }
     public IReadOnlyList<EventChoiceRow> EventChoices { get; private set; }
     public IReadOnlyList<EventChoiceDialogueLineRow> EventChoiceDialogueLines { get; private set; }
+    public IReadOnlyList<EventCutsceneRuleRow> EventCutsceneRules { get; private set; }
+    public IReadOnlyList<CutsceneSequenceCommandRow> CutsceneSequenceCommands { get; private set; }
 
     public static CsvDataset Load(CsvImportSettings settings)
     {
@@ -141,12 +143,43 @@ public sealed class CsvDataset
             record.GetInt("line_order"),
             record["speaker_id"],
             record["text"]));
+        dataset.EventCutsceneRules = LoadOptionalTable(csvRootPath, "event_cutscene_rules.csv", record => new EventCutsceneRuleRow(
+            record["rule_id"],
+            record.GetBool("enabled", true),
+            record["week_id"],
+            record["event_id"],
+            record["moment"],
+            record["sequence_id"],
+            record["special_player_id"]));
+        dataset.CutsceneSequenceCommands = LoadOptionalTable(csvRootPath, "cutscene_sequences.csv", record => new CutsceneSequenceCommandRow(
+            record["sequence_id"],
+            record.GetInt("order"),
+            record["command"],
+            record["target_key"],
+            record["value1"],
+            record["value2"],
+            record["value3"],
+            record.GetFloat("duration"),
+            record["ease"],
+            record.GetBool("blocking", true)));
         return dataset;
     }
 
     private static IReadOnlyList<TRow> LoadTable<TRow>(string csvRootPath, string fileName, Func<CsvRecord, TRow> factory)
     {
         CsvTable table = CsvTableParser.ParseFile(Path.Combine(csvRootPath, fileName));
+        return table.Rows.Select(factory).ToArray();
+    }
+
+    private static IReadOnlyList<TRow> LoadOptionalTable<TRow>(string csvRootPath, string fileName, Func<CsvRecord, TRow> factory)
+    {
+        string path = Path.Combine(csvRootPath, fileName);
+        if (!File.Exists(path))
+        {
+            return Array.Empty<TRow>();
+        }
+
+        CsvTable table = CsvTableParser.ParseFile(path);
         return table.Rows.Select(factory).ToArray();
     }
 }
@@ -552,4 +585,71 @@ public sealed class EventChoiceDialogueLineRow
     public int LineOrder { get; }
     public string SpeakerId { get; }
     public string Text { get; }
+}
+
+public sealed class EventCutsceneRuleRow
+{
+    public EventCutsceneRuleRow(
+        string id,
+        bool enabled,
+        string weekId,
+        string eventId,
+        string moment,
+        string sequenceId,
+        string specialPlayerId)
+    {
+        Id = id;
+        Enabled = enabled;
+        WeekId = weekId;
+        EventId = eventId;
+        Moment = moment;
+        SequenceId = sequenceId;
+        SpecialPlayerId = specialPlayerId;
+    }
+
+    public string Id { get; }
+    public bool Enabled { get; }
+    public string WeekId { get; }
+    public string EventId { get; }
+    public string Moment { get; }
+    public string SequenceId { get; }
+    public string SpecialPlayerId { get; }
+}
+
+public sealed class CutsceneSequenceCommandRow
+{
+    public CutsceneSequenceCommandRow(
+        string sequenceId,
+        int order,
+        string command,
+        string targetKey,
+        string value1,
+        string value2,
+        string value3,
+        float duration,
+        string ease,
+        bool blocking)
+    {
+        SequenceId = sequenceId;
+        Order = order;
+        Command = command;
+        TargetKey = targetKey;
+        Value1 = value1;
+        Value2 = value2;
+        Value3 = value3;
+        Duration = duration;
+        Ease = ease;
+        Blocking = blocking;
+    }
+
+    public string SequenceId { get; }
+    public int Order { get; }
+    public string Command { get; }
+    public string TargetKey { get; }
+    public string Value1 { get; }
+    public string Value2 { get; }
+    public string Value3 { get; }
+    public float Duration { get; }
+    public string Ease { get; }
+    public bool Blocking { get; }
 }
