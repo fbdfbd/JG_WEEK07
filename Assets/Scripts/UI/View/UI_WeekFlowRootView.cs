@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UI_WeekFlowRootView : WeekFlowViewBase
 {
     private const string LeftCtrlBindingPath = "<Keyboard>/leftCtrl";
-    private const string RightCtrlBindingPath = "<Keyboard>/rightCtrl";
+    private const string RightCtrlBindingPath = "<Keyboard>/space";
 
     private enum EDialogueContinueRoute
     {
