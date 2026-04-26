@@ -525,3 +525,185 @@ MonoBehaviour:
       _duration: 0
       _ease: 9
       _blocking: 1
+  - _sequenceId: sequence_story_prologue
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BedRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: GuardCaptain
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_story_teaparty
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend03
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_story_festival_street
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: FestivalStreet
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend03
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_story_imperial_ball
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: ImperialBall
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_story_eve_celebration
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BallRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_story_inheritance_ceremony
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BallRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_story_inheritance_alone
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BallRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: None
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1

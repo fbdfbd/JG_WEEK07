@@ -38,6 +38,12 @@ public class UI_CardView : MonoBehaviour
     [SerializeField] private Button _prevButton;
     [SerializeField] private Button _nextButton;
 
+    [Header("Type Specific Views")]
+    [Tooltip("Existing left/right card content root. Do not assign the CardPanel root that has UI_CardView on it.")]
+    [SerializeField] private GameObject _defaultGroupRoot;
+    [Tooltip("Optional type-specific group views, such as UI_ExcursionCardGroupView.")]
+    [SerializeField] private MonoBehaviour[] _groupViewBehaviours;
+
     private const int InvalidOptionIndex = -1;
 
     private IReadOnlyList<WeekSelectionCategoryGroupPresentation> _currentGroups;
@@ -48,6 +54,8 @@ public class UI_CardView : MonoBehaviour
     private int _selectedOptionIndex = InvalidOptionIndex;
     private int _modifiedOptionIndex = InvalidOptionIndex;
     private int _blockedOptionIndex = InvalidOptionIndex;
+    private readonly List<IWeekCardGroupView> _groupViews = new();
+    private IWeekCardGroupView _activeGroupView;
 
     // 상위 뷰로 전달할 이벤트
     public event Action<SO_CardInfoDefinition, int> OnCardOptionClicked;
@@ -55,6 +63,8 @@ public class UI_CardView : MonoBehaviour
 
     private void Awake()
     {
+        CacheGroupViews();
+
         // 인덱스 버튼 바인딩
         for (int i = 0; i < _indexButtons.Length; i++)
         {
@@ -146,6 +156,11 @@ public class UI_CardView : MonoBehaviour
         if (_nextButton != null)
         {
             _nextButton.onClick.RemoveListener(OnNextButtonClicked);
+        }
+
+        foreach (IWeekCardGroupView groupView in _groupViews)
+        {
+            groupView.OptionSelected -= HandleGroupViewOptionSelected;
         }
     }
 
@@ -371,8 +386,22 @@ public class UI_CardView : MonoBehaviour
     private void UpdateCurrentGroupedCard()
     {
         // 방어 코드: 현재 그룹 또는 카드 데이터가 비어있으면 화면 초기화 후 리턴
-        if (!TryGetCurrentGroup(out WeekSelectionCategoryGroupPresentation currentGroup) ||
-            !TryGetCurrentCardData(out WeekSelectionEntryPresentation currentCardData))
+        if (!TryGetCurrentGroup(out WeekSelectionCategoryGroupPresentation currentGroup))
+        {
+            HideTypeSpecificViews();
+            SetDefaultGroupVisible(true);
+            ClearCardDisplay();
+            return;
+        }
+
+        if (TryRenderTypeSpecificView(currentGroup))
+        {
+            return;
+        }
+
+        SetDefaultGroupVisible(true);
+
+        if (!TryGetCurrentCardData(out WeekSelectionEntryPresentation currentCardData))
         {
             ClearCardDisplay();
             return;
@@ -402,6 +431,107 @@ public class UI_CardView : MonoBehaviour
         UpdateSemanticButtons();
         UpdateNavigationButtons(currentGroup);
         RenderDescription(currentCardData);
+    }
+
+    private void CacheGroupViews()
+    {
+        _groupViews.Clear();
+
+        if (_groupViewBehaviours == null)
+        {
+            return;
+        }
+
+        foreach (MonoBehaviour behaviour in _groupViewBehaviours)
+        {
+            if (!(behaviour is IWeekCardGroupView groupView))
+            {
+                continue;
+            }
+
+            _groupViews.Add(groupView);
+            groupView.OptionSelected -= HandleGroupViewOptionSelected;
+            groupView.OptionSelected += HandleGroupViewOptionSelected;
+            groupView.Hide();
+        }
+    }
+
+    private bool TryRenderTypeSpecificView(WeekSelectionCategoryGroupPresentation currentGroup)
+    {
+        IWeekCardGroupView nextView = FindGroupView(currentGroup);
+        if (nextView == null)
+        {
+            HideTypeSpecificViews();
+            _activeGroupView = null;
+            return false;
+        }
+
+        SetDefaultGroupVisible(!CanDisableDefaultGroupRoot(nextView));
+        ClearCardDisplay();
+        UpdateIndexButtonColors();
+
+        foreach (IWeekCardGroupView groupView in _groupViews)
+        {
+            if (groupView != nextView)
+            {
+                groupView.Hide();
+            }
+        }
+
+        _activeGroupView = nextView;
+        _activeGroupView.Render(currentGroup);
+        return true;
+    }
+
+    private IWeekCardGroupView FindGroupView(WeekSelectionCategoryGroupPresentation currentGroup)
+    {
+        foreach (IWeekCardGroupView groupView in _groupViews)
+        {
+            if (groupView.CanRender(currentGroup))
+            {
+                return groupView;
+            }
+        }
+
+        return null;
+    }
+
+    private void HideTypeSpecificViews()
+    {
+        foreach (IWeekCardGroupView groupView in _groupViews)
+        {
+            groupView.Hide();
+        }
+
+        _activeGroupView = null;
+    }
+
+    private void SetDefaultGroupVisible(bool visible)
+    {
+        if (_defaultGroupRoot != null)
+        {
+            _defaultGroupRoot.SetActive(visible);
+        }
+    }
+
+    private bool CanDisableDefaultGroupRoot(IWeekCardGroupView nextView)
+    {
+        if (_defaultGroupRoot == null || nextView == null)
+        {
+            return false;
+        }
+
+        if (nextView is MonoBehaviour behaviour && behaviour != null)
+        {
+            return !behaviour.transform.IsChildOf(_defaultGroupRoot.transform);
+        }
+
+        return true;
+    }
+
+    private void HandleGroupViewOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
+    {
+        OnCardOptionClicked?.Invoke(cardDefinition, optionIndex);
     }
 
     // 선택된 인덱스 버튼만 하이라이트 색으로, 나머지는 디폴트 색으로 갱신

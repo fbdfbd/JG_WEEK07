@@ -1882,3 +1882,52 @@ MonoBehaviour:
     _moment: 0
     _sequenceId: sequence_night_default
     _specialPlayerId: 
+  - _ruleId: cutscene_story_prologue
+    _enabled: 1
+    _weekId: week_000
+    _eventId: story_prologue
+    _moment: 0
+    _sequenceId: sequence_story_prologue
+    _specialPlayerId: 
+  - _ruleId: cutscene_story_teaparty
+    _enabled: 1
+    _weekId: week_002
+    _eventId: story_teaparty
+    _moment: 0
+    _sequenceId: sequence_story_teaparty
+    _specialPlayerId: 
+  - _ruleId: cutscene_story_festival_street
+    _enabled: 1
+    _weekId: week_004
+    _eventId: story_festival_street
+    _moment: 0
+    _sequenceId: sequence_story_festival_street
+    _specialPlayerId: 
+  - _ruleId: cutscene_story_imperial_ball
+    _enabled: 1
+    _weekId: week_006
+    _eventId: story_imperial_ball
+    _moment: 0
+    _sequenceId: sequence_story_imperial_ball
+    _specialPlayerId: 
+  - _ruleId: cutscene_story_eve_celebration
+    _enabled: 1
+    _weekId: week_008
+    _eventId: story_eve_celebration
+    _moment: 0
+    _sequenceId: sequence_story_eve_celebration
+    _specialPlayerId: 
+  - _ruleId: cutscene_story_inheritance_ceremony
+    _enabled: 1
+    _weekId: week_009
+    _eventId: story_inheritance_ceremony
+    _moment: 0
+    _sequenceId: sequence_story_inheritance_ceremony
+    _specialPlayerId: 
+  - _ruleId: cutscene_story_inheritance_alone
+    _enabled: 1
+    _weekId: week_009
+    _eventId: story_inheritance_alone
+    _moment: 0
+    _sequenceId: sequence_story_inheritance_alone
+    _specialPlayerId: 
