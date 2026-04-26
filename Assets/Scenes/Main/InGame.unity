@@ -6312,9 +6312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93167563d2f279a46b9bbff067ae7701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeekFlowController
-  _weekDefinition: {fileID: 11400000, guid: a39bcc6dd53ab574a861580f1f66179f, type: 2}
+  _weekDefinition: {fileID: 11400000, guid: 7caf4d1bdd8dd8b429ff827dc3086d30, type: 2}
   _weekDefinitions:
-  - {fileID: 11400000, guid: a39bcc6dd53ab574a861580f1f66179f, type: 2}
+  - {fileID: 11400000, guid: 7caf4d1bdd8dd8b429ff827dc3086d30, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
