@@ -15,9 +15,8 @@ MonoBehaviour:
   _id: card_yuffie_week_006
   _cardType: {fileID: 11400000, guid: ced452ce8810d9f41af65fa328dd2907, type: 2}
   _title: "\uC720\uD53C"
-  _originalText: "\uC720\uD53C\uAC00 \uD669\uC2E4 \uBB34\uB3C4\uD68C\uC5D0\uC11C
-    \uC8FC\uC758\uD560 \uC0AC\uD56D\uC5D0 \uB300\uD574 \uC54C\uB824\uC8FC\uACE0\uC790
-    \uD55C\uB2E4."
+  _originalText: "\uC720\uD53C\uAC00 \uD669\uC2E4 \uBB34\uB3C4\uD68C \uC8FC\uC758\uC0AC\uD56D\uC744
+    \uC54C\uB824\uC900\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"

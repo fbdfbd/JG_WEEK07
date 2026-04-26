@@ -20,7 +20,7 @@ MonoBehaviour:
       \uCC3B\uC794\uC744 \uB4E4\uB2E4\uAC00 \uCC28\uB97C \uC870\uAE08 \uD758\uB838\uB2E4."
   - _speaker: {fileID: 11400000, guid: 5ab55b540ea181042902e62a49fb7578, type: 2}
     _text: "\uC544\u2026"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uADF8\uB807\uAC8C \uB4E4\uBA74\u2026"
   _nemoLine: "\uADF8\uB54C \uB9DE\uC740\uD3B8\uC5D0 \uC788\uB358 \uBC00\uB9AC\uC544\uAC00
     \uCC3B\uC794\uC744 \uB4E4\uB2E4\uAC00 \uCC28\uB97C \uC870\uAE08 \uD758\uB838\uB2E4."

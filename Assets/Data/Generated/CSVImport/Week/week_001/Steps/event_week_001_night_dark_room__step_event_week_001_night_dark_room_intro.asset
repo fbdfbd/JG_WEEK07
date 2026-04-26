@@ -63,7 +63,7 @@ MonoBehaviour:
         \uC62C\uB838\uB2E4."
     _responseLine: "\uADF8\uB798?"
     _interactions:
-    - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
+    - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
     - {fileID: 11400000, guid: 5567f538fa6f95541b83bef514683358, type: 2}
     _nextStep: {fileID: 11400000, guid: 0f9a9dd20cc76c94eb0808f3dc4fa3b0, type: 2}
     _resultCinematicCues:
@@ -81,7 +81,7 @@ MonoBehaviour:
         \uCC9C\uC7A5\uC744 \uC62C\uB824\uB2E4\uBD24\uB2E4."
     _responseLine: "\u2026\uC591?"
     _interactions:
-    - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
+    - {fileID: 11400000, guid: 1dd13bdd8eaf9ce4592aeb8a484f9fba, type: 2}
     _nextStep: {fileID: 11400000, guid: 0f9a9dd20cc76c94eb0808f3dc4fa3b0, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}

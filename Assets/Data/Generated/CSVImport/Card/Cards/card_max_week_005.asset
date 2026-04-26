@@ -15,9 +15,8 @@ MonoBehaviour:
   _id: card_max_week_005
   _cardType: {fileID: 11400000, guid: 642f5cbf471684846bfec879d4c64843, type: 2}
   _title: "\uB9C9\uC2A4"
-  _originalText: "\uB9C9\uC2A4\uAC00 \uBB34\uB3C4\uD68C \uD30C\uD2B8\uB108 \uD6C4\uBCF4\uAC00
-    \uB418\uACE0, \uC544\uBCA8\uB9AC\uC544\uC5D0\uAC8C \uC815\uC2DD\uC73C\uB85C \uC778\uC0AC\uD558\uACE0\uC790
-    \uD55C\uB2E4."
+  _originalText: "\uB9C9\uC2A4\uAC00 \uBB34\uB3C4\uD68C \uD30C\uD2B8\uB108 \uD6C4\uBCF4\uB85C
+    \uC778\uC0AC\uD558\uB7EC \uC628\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"

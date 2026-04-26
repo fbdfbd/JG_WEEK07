@@ -15,22 +15,22 @@ MonoBehaviour:
   _titleOverride: 
   _bodyText: 
   _dialogueLines:
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC548\uB155\uD558\uC138\uC694, \uC544\uBCA8\uB9AC\uC544 \uB2D8. \uC800\uB294
       \uC720\uD53C\uC608\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC65C \uC654\uC5B4?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC704\uB85C\uD558\uB7EC \uC654\uC5B4\uC694. \uC2AC\uD508 \uC0AC\uB78C
       \uC606\uC5D0\uB294 \uB204\uAC00 \uC788\uC5B4\uC918\uC57C \uD55C\uB2E4\uACE0
       \uBC30\uC6E0\uAC70\uB4E0\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uB098\uB97C \uC54C\uC544?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC624\uB298 \uCC98\uC74C \uBD10\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uADFC\uB370 \uC65C?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uBAB0\uB77C\uB3C4\u2026 \uC606\uC5D0 \uC788\uC5B4\uC904 \uC218\uB294
       \uC788\uC73C\uB2C8\uAE4C\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}

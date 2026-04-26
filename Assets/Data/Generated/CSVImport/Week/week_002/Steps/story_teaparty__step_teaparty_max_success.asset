@@ -21,7 +21,7 @@ MonoBehaviour:
     _text: "\uB2E6\uC744 \uAC70 \uC918."
   - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
     _text: "\uB9DE\uC544. \uB2E6\uC73C\uBA74 \uB3FC."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\u2026\uB2E4\uC2DC \uB4E4\uBA74 \uB3FC\uC694."
   _nemoLine: "\uAD1C\uCC2E\uC544. \uD758\uB9B4 \uC218\uB3C4 \uC788\uC796\uC544."
   _useCustomVisualState: 0

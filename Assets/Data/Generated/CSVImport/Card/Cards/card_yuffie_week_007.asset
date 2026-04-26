@@ -16,8 +16,7 @@ MonoBehaviour:
   _cardType: {fileID: 11400000, guid: ced452ce8810d9f41af65fa328dd2907, type: 2}
   _title: "\uC720\uD53C"
   _originalText: "\uC720\uD53C\uAC00 \uD6C4\uC791\uAC00\uC758 \uB538\uB85C \uC0AC\uB294
-    \uAC83\uC774 \uC5B4\uB5A4 \uC77C\uC778\uC9C0 \uC774\uC57C\uAE30\uD558\uACE0 \uC2F6\uC5B4
-    \uD55C\uB2E4."
+    \uC77C\uC744 \uC774\uC57C\uAE30\uD55C\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"

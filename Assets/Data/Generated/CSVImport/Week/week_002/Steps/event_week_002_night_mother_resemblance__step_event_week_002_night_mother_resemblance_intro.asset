@@ -45,6 +45,7 @@ MonoBehaviour:
     _responseLine: "\u2026\uC9C4\uC9DC?"
     _interactions:
     - {fileID: 11400000, guid: d6a5e766052d89c428f1743b91d1f5ed, type: 2}
+    - {fileID: 11400000, guid: 4e2d4519c1faa224990410a373c41ac7, type: 2}
     _nextStep: {fileID: 11400000, guid: a0c8407d4f8fe284ea0a89a9379b23cb, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}
@@ -61,7 +62,8 @@ MonoBehaviour:
         \uBCA0\uAC1C\uC5D0 \uC5BC\uAD74\uC744 \uC808\uBC18\uCBE4 \uBB3B\uC5C8\uB2E4."
     _responseLine: "\u2026\uC751."
     _interactions:
-    - {fileID: 11400000, guid: 156a3b33297a73c469970f297857e022, type: 2}
+    - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
+    - {fileID: 11400000, guid: 5567f538fa6f95541b83bef514683358, type: 2}
     _nextStep: {fileID: 11400000, guid: a0c8407d4f8fe284ea0a89a9379b23cb, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}
@@ -78,7 +80,7 @@ MonoBehaviour:
         \uCC9C\uC7A5\uC744 \uC62C\uB824\uB2E4\uBD24\uB2E4."
     _responseLine: "\u2026\uC591?"
     _interactions:
-    - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
+    - {fileID: 11400000, guid: 1dd13bdd8eaf9ce4592aeb8a484f9fba, type: 2}
     _nextStep: {fileID: 11400000, guid: a0c8407d4f8fe284ea0a89a9379b23cb, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}

@@ -15,26 +15,26 @@ MonoBehaviour:
   _titleOverride: 
   _bodyText: 
   _dialogueLines:
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC544\uBCA8\uB9AC\uC544 \uB2D8\uC774 \uC9CA\uC5B4\uC9C0\uB294 \uAC78
       \uD6C4\uC791\uAC00\uC640 \uB098\uB20C \uC218\uB3C4 \uC788\uC5B4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uB098\uB208\uB2E4\uB294 \uAC8C \uBB34\uC2A8 \uB73B\uC778\uAC00\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC774\uB984\uB3C4, \uC2DC\uC120\uB3C4, \uCC45\uC784\uB3C4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uADF8\uB7FC \uC81C \uBAAB\uC774 \uC904\uC5B4\uB4DC\uB098\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC870\uAE08\uC740\uC694. \uD63C\uC790 \uB2E4 \uBC1B\uC9C0 \uC54A\uC544\uB3C4
       \uB418\uB2C8\uAE4C\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uB300\uC2E0 \uD6C4\uC791\uAC00\uC758 \uBAAB\uB3C4 \uC0DD\uAE30\uACA0\uB124\uC694."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB124. \uADF8\uAC8C \uC2EB\uC744 \uC218\uB3C4 \uC788\uB2E4\uB294 \uAC74
       \uC54C\uC544\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC720\uD53C\uB294 \uC2EB\uC9C0 \uC54A\uB098\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC800\uB294 \uB204\uAC00 \uAC19\uC774 \uC9CA\uC5B4\uC838 \uC8FC\uB294
       \uCABD\uC774 \uB354 \uC548\uC2EC\uB3FC\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}

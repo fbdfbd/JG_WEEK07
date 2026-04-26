@@ -15,8 +15,8 @@ MonoBehaviour:
   _id: card_millia_week_008
   _cardType: {fileID: 11400000, guid: 4d3f2acf09b5168499664c9f9e26aee1, type: 2}
   _title: "\uBC00\uB9AC\uC544"
-  _originalText: "\uC0C1\uB2E8\uC774 \uCD95\uD558 \uC120\uBB3C\uB85C \uB9C9\uB300\uD55C
-    \uD6C4\uC6D0\uC744 \uC81C\uC548\uD574\uC654\uB2E4."
+  _originalText: "\uBC00\uB9AC\uC544\uAC00 \uC0C1\uB2E8\uC758 \uD6C4\uC6D0 \uC870\uAC74\uC744
+    \uAC80\uD1A0\uBC1B\uC73C\uB824 \uD55C\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"

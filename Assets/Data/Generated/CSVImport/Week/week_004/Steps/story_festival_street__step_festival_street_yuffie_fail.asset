@@ -21,18 +21,18 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC791\uC740 \uD45C\uC2DD\uC5D0\uB294 \uC544\uBCA8\uB9AC\uC544\uC758
       \uC774\uB984\uC774 \uC801\uD600 \uC788\uC5C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC5EC\uAE30\uAC00 \uC544\uBCA8\uB9AC\uC544 \uC790\uB9AC\uC608\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uB0B4 \uC790\uB9AC?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB124. \uC5B4\uBA38\uB2C8\uAC00 \uC900\uBE44\uD588\uC5B4\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC774\uB984\uD45C\uB97C \uBCF4\uACE0
       \uC870\uC6A9\uD788 \uC790\uB9AC\uC5D0 \uC549\uC558\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC88B\uC740 \uC790\uB9AC\uB124."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB124. \uC798 \uBCF4\uC77C \uAC70\uC608\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uACE0\uAC1C\uB97C \uB044\uB355\uC600\uB2E4.

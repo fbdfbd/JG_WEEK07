@@ -18,27 +18,27 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC720\uD53C\uB294 \uC7A5\uAC11\uC744 \uB080 \uC190\uC744 \uAC00\uC9C0\uB7F0\uD788
       \uBAA8\uC73C\uACE0 \uC788\uC5C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC548\uB155\uD558\uC138\uC694. \uC720\uD53C \uB85C\uC0AC\uBCA8\uC774\uC5D0\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC548\uB155\uD558\uC138\uC694."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC624\uB298\uC740 \uBB34\uB3C4\uD68C\uC5D0\uC11C \uC870\uC2EC\uD574\uC57C
       \uD560 \uAC78 \uB9D0\uD574 \uC8FC\uB7EC \uC654\uC5B4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC870\uC2EC\uD574\uC57C \uD560 \uAC70\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB124. \uBB38\uC740 \uC9C1\uC811 \uC5F4\uC9C0 \uC54A\uB294 \uAC8C \uC88B\uB300\uC694.
       \uD63C\uC790 \uAC77\uB294 \uAC83\uB3C4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uD63C\uC790 \uD560 \uC218 \uC788\uC5B4\uB3C4\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB124. \uD560 \uC218 \uC788\uB294 \uAC83\uACFC \uBCF4\uC774\uB294 \uAC74
       \uB2E4\uB974\uB300\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uADF8\uB7FC \uADC0\uD55C \uC0AC\uB78C\uC740 \uAC00\uB9CC\uD788 \uC788\uC5B4\uC57C
       \uD558\uB098\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uAC00\uB9CC\uD788 \uC788\uB294 \uAC8C \uC544\uB2C8\uB77C, \uB300\uC811\uBC1B\uB294
       \uC0AC\uB78C\uCC98\uB7FC \uBCF4\uC5EC\uC57C \uD55C\uB300\uC694."
   _nemoLine: "\uC720\uD53C\uB294 \uC7A5\uAC11\uC744 \uB080 \uC190\uC744 \uAC00\uC9C0\uB7F0\uD788

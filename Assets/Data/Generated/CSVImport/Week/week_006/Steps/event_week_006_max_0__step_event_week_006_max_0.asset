@@ -18,7 +18,7 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uBC31\uC791\uC800 \uC751\uC811\uC2E4. \uBB34\uB3C4\uD68C \uC804."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uBD09\uC2E0\uAC00\uBB38\uC5D0\uC11C \uBCF4\uB0B8 \uD30C\uD2B8\uB108
+    _text: "\uAE30\uC0AC\uAC00\uBB38\uC5D0\uC11C \uBCF4\uB0B8 \uD30C\uD2B8\uB108
       \uC2E0\uCCAD\uC11C\uAC00 \uD14C\uC774\uBE14 \uC704\uC5D0 \uB193\uC5EC \uC788\uC5C8\uB2E4.
       \uB9C9\uC2A4\uB294 \uADF8 \uC606\uC5D0 \uC11C \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}

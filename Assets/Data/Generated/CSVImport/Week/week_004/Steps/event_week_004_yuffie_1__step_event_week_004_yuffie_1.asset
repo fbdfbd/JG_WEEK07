@@ -18,7 +18,7 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC720\uD53C\uB294 \uB9AC\uBCF8 \uC0C1\uC790\uB97C \uC5F4\uC5B4 \uC544\uBCA8\uB9AC\uC544
       \uCABD\uC73C\uB85C \uB3CC\uB838\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC5B4\uBA38\uB2C8\uAED8\uC11C \uB9AC\uBCF8\uC744 \uBCF4\uB0B4\uC168\uC5B4\uC694.
       \uC624\uB298 \uC4F0\uBA74 \uC88B\uACA0\uB2E4\uACE0 \uD558\uC168\uC5B4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
@@ -28,15 +28,15 @@ MonoBehaviour:
       \uC0C9\uC758 \uB9AC\uBCF8\uC774 \uAC00\uC9C0\uB7F0\uD788 \uB193\uC5EC \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uB2E4 \uC608\uC058\uB124."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB9C8\uC74C\uC5D0 \uB4DC\uB294 \uC0C9\uC774 \uC788\uB098\uC694?"
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC774\uAC70. \uC81C\uC77C \uC548 \uBC18\uC9DD\uC774\uB294 \uAC70."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uADF8\uB7F4 \uC904 \uC54C\uC558\uC5B4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uC65C?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC544\uBCA8\uB9AC\uC544 \uB2D8\uC740 \uB108\uBB34 \uB208\uC5D0 \uB744\uB294
       \uAC78 \uBCC4\uB85C \uC548 \uC88B\uC544\uD558\uC2E4 \uAC83 \uAC19\uC544\uC11C\uC694."
   _nemoLine: "\uC720\uD53C\uB294 \uB9AC\uBCF8 \uC0C1\uC790\uB97C \uC5F4\uC5B4 \uC544\uBCA8\uB9AC\uC544

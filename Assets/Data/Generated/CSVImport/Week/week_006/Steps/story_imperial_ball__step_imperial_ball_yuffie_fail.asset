@@ -27,7 +27,7 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBC14\uB85C \uB300\uB2F5\uD558\uC9C0
       \uBABB\uD588\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uCC98\uC74C \uC624\uC2E0 \uC790\uB9AC\uB77C, \uC544\uC9C1 \uB458\uB7EC\uBCF4\uACE0
       \uACC4\uC138\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
@@ -38,7 +38,7 @@ MonoBehaviour:
       \uC26C\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\u2026\uACE0\uB9C8\uC6CC\uC694."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uAD1C\uCC2E\uC544\uC694. \uC774\uB7F0 \uB9D0\uC740 \uCC9C\uCC9C\uD788
       \uB300\uB2F5\uD574\uB3C4 \uB3FC\uC694."
   _nemoLine: "\uD55C \uADC0\uC871 \uBD80\uC778\uC774 \uC544\uBCA8\uB9AC\uC544\uC5D0\uAC8C

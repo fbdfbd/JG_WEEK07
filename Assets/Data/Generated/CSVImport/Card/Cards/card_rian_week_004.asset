@@ -15,9 +15,8 @@ MonoBehaviour:
   _id: card_rian_week_004
   _cardType: {fileID: 11400000, guid: aff23461bf1a8394e86a50769f425fb0, type: 2}
   _title: "\uB9AC\uC548"
-  _originalText: "\uB610\uB798 \uC18C\uB144\uC774 \uD6C4\uC791\uAC00 \uCD95\uC81C
-    \uC804\uC5D0 \uBC31\uC791\uC800\uB85C \uCC3E\uC544\uC640, \uBBF8\uB9AC \uC778\uC0AC\uD558\uACE0
-    \uC2F6\uB2E4\uBA70 \uB9CC\uB0A8\uC744 \uCCAD\uD55C\uB2E4."
+  _originalText: "\uB9AC\uC548\uC774 \uCD95\uC81C\uC5D0\uC11C \uC870\uC6A9\uD55C
+    \uAE38\uC744 \uC54C\uB824\uC8FC\uB824 \uD55C\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"

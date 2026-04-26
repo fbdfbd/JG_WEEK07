@@ -24,11 +24,11 @@ MonoBehaviour:
     _text: "\uC774\uB807\uAC8C?"
   - _speaker: {fileID: 11400000, guid: 2af885eedf1120f4ebe3ea9e3df21afd, type: 2}
     _text: "\uB124. \uADF8\uAC8C \uC88B\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uC798\uD588\uC5B4\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uD2C0\uB9AC\uBA74 \uB2E4\uC2DC \uD558\uBA74 \uB3FC\uC694?"
-  - _speaker: {fileID: 11400000, guid: 746862c98c186d24d80b54442fdd7344, type: 2}
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uB124. \uB2E4\uC2DC \uD558\uBA74 \uB3FC\uC694."
   _nemoLine: "\uB2E4\uC2DC \uD574\uBCFC\uAC8C\uC694."
   _useCustomVisualState: 0
