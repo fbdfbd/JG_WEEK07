@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a23f5b530abb0d4c948e1689cf99dad, type: 3}
   m_Name: AffinityEnding_Good
   m_EditorClassIdentifier: Assembly-CSharp::SO_AffinityEndingDefinition
-  _id: '|- ending_affinity_good'
+  _id: 'ending_affinity_good'
   _minAffinity: 6
   _maxAffinity: 100
   _text:

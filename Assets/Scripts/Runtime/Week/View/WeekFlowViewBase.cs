@@ -13,6 +13,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public event Action InteractiveEventSkipRequested;
     public event Action<int> InteractiveEventChoiceSelected;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
+    public event Action<ECardOptionSemantic> AllCardSemanticSelected;
 
     protected void RaiseRunWeekRequested()
     {
@@ -52,6 +53,11 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     protected void RaiseCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
     {
         CardOptionSelected?.Invoke(cardDefinition, optionIndex);
+    }
+
+    protected void RaiseAllCardSemanticSelected(ECardOptionSemantic semantic)
+    {
+        AllCardSemanticSelected?.Invoke(semantic);
     }
 
     public virtual void RenderWeekHeader(WeekHeaderPresentation presentation) { }

@@ -30,6 +30,10 @@ public class UI_CardView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _blockedButtonLabel;
     [SerializeField] private TextMeshProUGUI _directButtonLabel;
 
+    [Header("Content Panel - Batch Options")]
+    [SerializeField] private Button _allDirectButton;
+    [SerializeField] private Button _allBlockedButton;
+
     [Header("Content Panel - Navigation")]
     [SerializeField] private Button _prevButton;
     [SerializeField] private Button _nextButton;
@@ -47,6 +51,7 @@ public class UI_CardView : MonoBehaviour
 
     // 상위 뷰로 전달할 이벤트
     public event Action<SO_CardInfoDefinition, int> OnCardOptionClicked;
+    public event Action<ECardOptionSemantic> OnAllCardSemanticRequested;
 
     private void Awake()
     {
@@ -74,6 +79,16 @@ public class UI_CardView : MonoBehaviour
         }
 
         // 이전 / 다음 버튼 바인딩
+        if (_allDirectButton != null)
+        {
+            _allDirectButton.onClick.AddListener(OnAllDirectButtonClicked);
+        }
+
+        if (_allBlockedButton != null)
+        {
+            _allBlockedButton.onClick.AddListener(OnAllBlockedButtonClicked);
+        }
+
         if (_prevButton != null)
         {
             _prevButton.onClick.AddListener(OnPrevButtonClicked);
@@ -113,6 +128,16 @@ public class UI_CardView : MonoBehaviour
         }
 
         // 이전 / 다음 버튼 리스너 정리
+        if (_allDirectButton != null)
+        {
+            _allDirectButton.onClick.RemoveListener(OnAllDirectButtonClicked);
+        }
+
+        if (_allBlockedButton != null)
+        {
+            _allBlockedButton.onClick.RemoveListener(OnAllBlockedButtonClicked);
+        }
+
         if (_prevButton != null)
         {
             _prevButton.onClick.RemoveListener(OnPrevButtonClicked);
@@ -310,6 +335,16 @@ public class UI_CardView : MonoBehaviour
     private void OnDirectButtonClicked()
     {
         SelectSemanticOption(_directOptionIndex);
+    }
+
+    private void OnAllDirectButtonClicked()
+    {
+        OnAllCardSemanticRequested?.Invoke(ECardOptionSemantic.Direct);
+    }
+
+    private void OnAllBlockedButtonClicked()
+    {
+        OnAllCardSemanticRequested?.Invoke(ECardOptionSemantic.Blocked);
     }
 
     // 유저가 선택한 semantic 옵션을 현재 카드에 반영

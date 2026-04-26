@@ -14,6 +14,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
 
     public event Action RunWeekRequested;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
+    public event Action<ECardOptionSemantic> AllCardSemanticSelected;
 
     private bool _isInfoPanelVisible = false;
 
@@ -68,6 +69,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         }
 
         _cardPanel.OnCardOptionClicked += HandleCardOptionClicked;
+        _cardPanel.OnAllCardSemanticRequested += HandleAllCardSemanticRequested;
     }
 
     private void UnbindCardPanelEvents()
@@ -78,6 +80,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         }
 
         _cardPanel.OnCardOptionClicked -= HandleCardOptionClicked;
+        _cardPanel.OnAllCardSemanticRequested -= HandleAllCardSemanticRequested;
     }
 
     private void BindBottomPanelEvents()
@@ -105,6 +108,11 @@ public class UI_WeekFlowScreenView : MonoBehaviour
     private void HandleCardOptionClicked(SO_CardInfoDefinition cardDefinition, int optionIndex)
     {
         CardOptionSelected?.Invoke(cardDefinition, optionIndex);
+    }
+
+    private void HandleAllCardSemanticRequested(ECardOptionSemantic semantic)
+    {
+        AllCardSemanticSelected?.Invoke(semantic);
     }
 
     private void HandleInfoButtonClicked()

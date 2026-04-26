@@ -100,6 +100,7 @@ public class WeekFlowController : MonoBehaviour
         _view.ResetSelectionsRequested += HandleResetSelectionsRequested;
         _view.ResetChildStateRequested += HandleResetChildStateRequested;
         _view.CardOptionSelected += HandleCardOptionSelected;
+        _view.AllCardSemanticSelected += HandleAllCardSemanticSelected;
         _view.WeekFeedbackClosed += HandleWeekFeedbackClosed;
         _view.InteractiveEventContinueRequested += HandleInteractiveEventContinueRequested;
         _view.InteractiveEventSkipRequested += HandleInteractiveEventSkipRequested;
@@ -117,6 +118,7 @@ public class WeekFlowController : MonoBehaviour
         _view.ResetSelectionsRequested -= HandleResetSelectionsRequested;
         _view.ResetChildStateRequested -= HandleResetChildStateRequested;
         _view.CardOptionSelected -= HandleCardOptionSelected;
+        _view.AllCardSemanticSelected -= HandleAllCardSemanticSelected;
         _view.WeekFeedbackClosed -= HandleWeekFeedbackClosed;
         _view.InteractiveEventContinueRequested -= HandleInteractiveEventContinueRequested;
         _view.InteractiveEventSkipRequested -= HandleInteractiveEventSkipRequested;
@@ -133,6 +135,10 @@ public class WeekFlowController : MonoBehaviour
     {
         GameplayAnalyticsLogger.LogCardOptionClicked(CurrentWeekDefinition, cardDefinition, optionIndex);
         RunFlowAction(() => _commandHandler.SelectCardOption(cardDefinition, optionIndex));
+    }
+    private void HandleAllCardSemanticSelected(ECardOptionSemantic semantic)
+    {
+        RunFlowAction(() => _commandHandler.SelectAllCardOptionsBySemantic(semantic));
     }
     private void HandleInteractiveEventChoiceSelected(int choiceIndex) => RunFlowAction(() => _narrativeHandler.SelectInteractiveEventChoice(choiceIndex));
 

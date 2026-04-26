@@ -15,6 +15,8 @@ public enum BackgroundType
     Study,
     Hallway,
     Basement,
+    GardenCrapeMyrtle,
+    GardenDoor,
 }
 
 public enum BackgroundTransitionMode

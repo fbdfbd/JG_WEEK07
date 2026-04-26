@@ -81,6 +81,35 @@ public sealed class WeekSelectionState
         return true;
     }
 
+    public int SelectAllBySemantic(
+        IReadOnlyList<WeekCardEntryData> weekCardEntries,
+        ECardOptionSemantic semantic)
+    {
+        ApplyWeekEntries(weekCardEntries);
+
+        int selectedCount = 0;
+
+        foreach (WeekCardEntryData weekCardEntry in weekCardEntries ?? Array.Empty<WeekCardEntryData>())
+        {
+            SO_CardInfoDefinition cardDefinition = weekCardEntry?.Card;
+            if (cardDefinition == null)
+            {
+                continue;
+            }
+
+            int optionIndex = FindOptionIndex(cardDefinition.Options, semantic);
+            if (optionIndex < 0)
+            {
+                continue;
+            }
+
+            _selectedOptionIndexByCard[cardDefinition] = optionIndex;
+            selectedCount++;
+        }
+
+        return selectedCount;
+    }
+
     public RuntimeWeekSelection[] BuildSelections(IReadOnlyList<WeekCardEntryData> weekCardEntries)
     {
         List<RuntimeWeekSelection> selections = new();
@@ -198,5 +227,26 @@ public sealed class WeekSelectionState
         }
 
         return selectedOptionIndex;
+    }
+
+    private static int FindOptionIndex(
+        IReadOnlyList<CardOptionData> options,
+        ECardOptionSemantic semantic)
+    {
+        if (options == null)
+        {
+            return -1;
+        }
+
+        for (int i = 0; i < options.Count; i++)
+        {
+            CardOptionData option = options[i];
+            if (option != null && option.Semantic == semantic)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

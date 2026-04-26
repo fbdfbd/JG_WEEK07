@@ -96,6 +96,21 @@ public sealed class WeekFlowCommandHandler
         return WeekFlowActionResult.RefreshOnly();
     }
 
+    public WeekFlowActionResult SelectAllCardOptionsBySemantic(ECardOptionSemantic semantic)
+    {
+        WeekCardEntryData[] entries =
+            WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition);
+
+        int selectedCount = _weekSelectionState.SelectAllBySemantic(entries, semantic);
+        if (selectedCount <= 0)
+        {
+            return WeekFlowActionResult.None;
+        }
+
+        PublishStatusMessage(_weekUiText.GetCardSelectionUpdatedMessage());
+        return WeekFlowActionResult.RefreshOnly();
+    }
+
     private void PublishStatusMessage(string statusMessage)
     {
         _runtimeState.SetStatusMessage(statusMessage);

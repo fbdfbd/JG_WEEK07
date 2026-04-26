@@ -186,7 +186,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1745671551934173915, guid: 03e0363b308072240aac25b2516efbdb, type: 3}
       propertyPath: m_Name
-      value: Friend2
+      value: Millia
       objectReference: {fileID: 0}
     - target: {fileID: 3581613067881744637, guid: 03e0363b308072240aac25b2516efbdb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328934779180429392, guid: 17a455058cc5e7142ae7957b4ffc0390, type: 3}
       propertyPath: m_Name
-      value: Friend1
+      value: Max
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -263,6 +263,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
         _weekScreenView.RunWeekRequested += HandleRunWeekRequested;
         _weekScreenView.CardOptionSelected += HandleCardOptionSelected;
+        _weekScreenView.AllCardSemanticSelected += HandleAllCardSemanticSelected;
     }
 
     private void UnbindWeekScreenEvents()
@@ -274,6 +275,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
         _weekScreenView.RunWeekRequested -= HandleRunWeekRequested;
         _weekScreenView.CardOptionSelected -= HandleCardOptionSelected;
+        _weekScreenView.AllCardSemanticSelected -= HandleAllCardSemanticSelected;
     }
 
     private void BindDialogueScreenEvents()
@@ -338,6 +340,11 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
     {
         RaiseCardOptionSelected(cardDefinition, optionIndex);
+    }
+
+    private void HandleAllCardSemanticSelected(ECardOptionSemantic semantic)
+    {
+        RaiseAllCardSemanticSelected(semantic);
     }
 
     public bool TryAdvance()
