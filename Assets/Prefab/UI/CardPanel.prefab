@@ -435,6 +435,9 @@ MonoBehaviour:
   _modifiedButton: {fileID: 0}
   _blockedButton: {fileID: 0}
   _directButton: {fileID: 0}
+  _modifiedButtonLabel: {fileID: 0}
+  _blockedButtonLabel: {fileID: 0}
+  _directButtonLabel: {fileID: 0}
   _prevButton: {fileID: 3307420377179144425}
   _nextButton: {fileID: 6364990973900315815}
 --- !u!114 &1920450169981575664
@@ -2451,8 +2454,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 520, y: 585}
+  m_AnchoredPosition: {x: 0, y: 3.8438}
+  m_SizeDelta: {x: 440, y: 592.6875}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &917188889671619687
 CanvasRenderer:

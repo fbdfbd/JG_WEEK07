@@ -11,7 +11,9 @@ public class UI_TopView : MonoBehaviour
     {
         if (_dayText != null)
         {
-            _dayText.text = presentation.WeekLabel;
+            _dayText.text = string.IsNullOrWhiteSpace(presentation.Title)
+                ? presentation.WeekLabel
+                : presentation.Title;
         }
 
         //if (_titleText != null)

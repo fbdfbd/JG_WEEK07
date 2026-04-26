@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekDefinition
   _id: week_001
   _weekIndex: 1
-  _title: 
+  _title: "6\uC0B4 \uCD08\uBC18\uAE30"
   _summary: 
   _preTurn: {fileID: 11400000, guid: c6aebed45546d8248a59d1c8ba1a0d65, type: 2}
   _dayFlow: {fileID: 11400000, guid: 4b5d8f94359f9a040a698c601b7bad7d, type: 2}
