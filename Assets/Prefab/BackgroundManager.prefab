@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6431628546739815698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3771525759247000919}
+  - component: {fileID: 4743006093130583828}
+  - component: {fileID: 675552593409317479}
+  - component: {fileID: 8075475180297412509}
+  - component: {fileID: 227820304638038524}
+  m_Layer: 0
+  m_Name: BackgroundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3771525759247000919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431628546739815698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4743006093130583828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431628546739815698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac425f56e2dfedf4dba3b51933abc864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundManager
+  backgrounds:
+  - type: 0
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 1
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 2
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 3
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 4
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 5
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 6
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 7
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 8
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 9
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 10
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 11
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 12
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 13
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 14
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 15
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 16
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 17
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 18
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 19
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 20
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 21
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 22
+    targetImage: {fileID: 0}
+    visualKey: 
+  - type: 23
+    targetImage: {fileID: 0}
+    visualKey: 
+  defaultBackground: 0
+  transitionMode: 0
+  noTransition: {fileID: 227820304638038524}
+  slideTransition: {fileID: 675552593409317479}
+  popTransition: {fileID: 8075475180297412509}
+--- !u!114 &675552593409317479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431628546739815698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ea55e613f6fda4b959aa99ce65b91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIBackgroundSlideTransition
+  viewport: {fileID: 0}
+  duration: 0.5
+  direction: 0
+  easing:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8075475180297412509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431628546739815698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bee5680f3d43314ab50ef42150b5824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIBackgroundPopTransition
+  duration: 0.35
+  startScale: 0.88
+  ease: 27
+--- !u!114 &227820304638038524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6431628546739815698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5770067958eee4b83a20002d73b78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UINoBackgroundTransition

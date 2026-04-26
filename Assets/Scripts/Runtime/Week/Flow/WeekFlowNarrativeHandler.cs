@@ -272,6 +272,11 @@ public static class WeekFlowEventSkipPolicy
             return false;
         }
 
+        if (eventSession.EventDefinition is SO_StoryEventDefinition)
+        {
+            return false;
+        }
+
         return HasNoChoices(eventSession.EventDefinition)
             && HasNoChoicesFromStep(eventSession.CurrentStep);
     }
@@ -279,6 +284,11 @@ public static class WeekFlowEventSkipPolicy
     public static bool CanSkip(WeekFlowScreen screen)
     {
         if (screen == null || screen.ScreenType != EWeekFlowScreenType.EventStep)
+        {
+            return false;
+        }
+
+        if (screen.EventDefinition is SO_StoryEventDefinition)
         {
             return false;
         }
