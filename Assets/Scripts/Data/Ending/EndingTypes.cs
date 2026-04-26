@@ -14,6 +14,8 @@ public enum EEndingMoodType
     Caution,
     Submission,
     Good,
-    Bad
+    Bad,
+    Curious,
+    Cautious
 }
 

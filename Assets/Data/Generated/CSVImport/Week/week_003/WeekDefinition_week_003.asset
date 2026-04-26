@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edff9b7bd1a506a42a33e4d294868a53, type: 3}
-  m_Name: WeekDefinition_week_003
+  m_Name: week_003
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekDefinition
   _id: week_003
   _weekIndex: 3
-  _title: 
+  _title: "\uC544\uBCA8\uB9AC\uC544 10\uC0B4"
   _summary: 
   _preTurn: {fileID: 11400000, guid: e368e26427f398c45a80a0c16cf5c732, type: 2}
   _dayFlow: {fileID: 11400000, guid: 004fe041b2793dc4b807e5ea636a7bf6, type: 2}

@@ -75,8 +75,8 @@ public static class EndingContextBuilder
     private static EEndingMoodType ResolveMilliaMood(RuntimeChildState childState)
     {
         return childState.GetStat(EChildStatusType.Curiosity) >= RuntimeChildState.DefaultStatValue
-            ? EEndingMoodType.Good
-            : EEndingMoodType.Bad;
+            ? EEndingMoodType.Curious
+            : EEndingMoodType.Cautious;
     }
 
     private static EEndingMoodType ResolveYuffieMood(RuntimeChildState childState)

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b68f509342da9940bf43c9618a7a70d, type: 3}
+  m_Name: CharacterEnding_Millia_01_02_Curious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
+  _id: ending_millia_01_02_curious
+  _characterType: 2
+  _minMeetCount: 1
+  _maxMeetCount: 2
+  _moodType: 7
+  _text:
+    _title: "\uC5D4\uB529"
+    _body: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBC00\uB9AC\uC544\uAC00 \uAC00\uC838\uC624\uB294
+      \uBA3C \uB098\uB77C\uC758 \uC2E0\uAE30\uD55C \uBB3C\uAC74\uB4E4\uACFC \uC0C1\uB2E8\uC758
+      \uD65C\uAE30\uCC2C \uC5B8\uC5B4\uC5D0 \uB9C8\uC74C\uC744 \uBE7C\uC557\uACBC\uC2B5\uB2C8\uB2E4.\n\uADF8\uB140\uB294
+      \uC131\uC778\uC2DD \uB0A0, \uC0C1\uB2E8\uC758 \uD6C4\uC6D0 \uACC4\uC57D\uC11C\uC5D0
+      \uC801\uD78C \uC791\uC740 \uAE00\uC528\uB4E4\uC744 \uB300\uC218\uB86D\uC9C0
+      \uC54A\uAC8C \uC5EC\uAE30\uBA70 \uAE30\uBD84 \uC88B\uAC8C \uC11C\uBA85\uD588\uC9C0\uC694.\n\uADF8
+      \uB300\uAC00\uB85C \uC601\uC9C0\uC758 \uC2DC\uC7A5\uC740 \uBD81\uC801\uC600\uC9C0\uB9CC,
+      \uC815\uC791 \uC218\uD655\uD55C \uBC00\uC758 \uC808\uBC18\uC740 \uC544\uBCA8\uB9AC\uC544\uAC00
+      \uC544\uB2CC \uBCA0\uB974\uB514\uC544 \uC0C1\uB2E8\uC758 \uBC30\uC5D0 \uC2E4\uB824
+      \uBA40\uB9AC \uB5A0\uB098\uAC14\uB2F5\uB2C8\uB2E4.\n\uC0AC\uB78C\uB4E4\uC740
+      \uADF8\uB140\uB97C '\uC81C\uAD6D\uC5D0\uC11C \uAC00\uC7A5 \uD654\uB824\uD55C
+      \uC7A5\uC2DD\uD488\uC744 \uAC00\uC84C\uC73C\uB098 \uD145 \uBE48 \uCC3D\uACE0\uB97C
+      \uC9C0\uD0A4\uB294 \uBC31\uC791'\uC774\uB77C \uBD80\uB974\uAE30 \uC2DC\uC791\uD588\uC2B5\uB2C8\uB2E4.\n\uADF8\uB140\uB294
+      \uC6C3\uC73C\uBA70 \uBCF4\uC11D\uC744 \uB9CC\uC84C\uC9C0\uB9CC, \uADF8 \uBCF4\uC11D\uC758
+      \uC8FC\uC778\uC740 \uC0AC\uC2E4 \uC0C1\uB2E8\uC758 \uC7A5\uBD80 \uC18D\uC5D0
+      \uC801\uD600 \uC788\uC5C8\uC5B4\uC694."
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 3
