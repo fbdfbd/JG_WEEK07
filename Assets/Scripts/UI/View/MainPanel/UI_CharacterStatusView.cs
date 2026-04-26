@@ -9,6 +9,7 @@ public class UI_CharacterStatusView : MonoBehaviour
         public EChildStatusType StatType;
         public string LeftLabel;
         public string RightLabel;
+        public ECharacterStatusBarRenderMode RenderMode = ECharacterStatusBarRenderMode.Bipolar;
     }
 
     [Header("Stat Panels")]
@@ -41,14 +42,19 @@ public class UI_CharacterStatusView : MonoBehaviour
 
             StatusDisplayRule rule = _displayRules[i];
             int statValue = FindStatValue(presentation.Stats, rule.StatType);
+            ECharacterStatusBarRenderMode renderMode = ResolveRenderMode(rule);
+            int minValue = renderMode == ECharacterStatusBarRenderMode.PositiveOnly
+                ? RuntimeChildState.DefaultStatValue
+                : RuntimeChildState.MinStatValue;
 
             statusBar.gameObject.SetActive(true);
             statusBar.Render(
                 rule.LeftLabel,
                 rule.RightLabel,
                 statValue,
-                RuntimeChildState.MinStatValue,
-                RuntimeChildState.MaxStatValue);
+                minValue,
+                RuntimeChildState.MaxStatValue,
+                renderMode);
         }
 
         for (int i = count; i < _statusBars.Length; i++)
@@ -76,5 +82,12 @@ public class UI_CharacterStatusView : MonoBehaviour
         }
 
         return RuntimeChildState.DefaultStatValue;
+    }
+
+    private static ECharacterStatusBarRenderMode ResolveRenderMode(StatusDisplayRule rule)
+    {
+        return rule.StatType == EChildStatusType.Affinity
+            ? ECharacterStatusBarRenderMode.PositiveOnly
+            : rule.RenderMode;
     }
 }

@@ -26,6 +26,9 @@ public class UI_CardView : MonoBehaviour
     [SerializeField] private Button _modifiedButton;
     [SerializeField] private Button _blockedButton;
     [SerializeField] private Button _directButton;
+    [SerializeField] private TextMeshProUGUI _modifiedButtonLabel;
+    [SerializeField] private TextMeshProUGUI _blockedButtonLabel;
+    [SerializeField] private TextMeshProUGUI _directButtonLabel;
 
     [Header("Content Panel - Navigation")]
     [SerializeField] private Button _prevButton;
@@ -416,25 +419,42 @@ public class UI_CardView : MonoBehaviour
     // semantic 옵션 버튼들의 표시 / interactable 상태 갱신
     private void UpdateSemanticButtons()
     {
-        ApplyButtonState(_directButton, _directOptionIndex);
-        ApplyButtonState(_modifiedButton, _modifiedOptionIndex);
-        ApplyButtonState(_blockedButton, _blockedOptionIndex);
+        if (!TryGetCurrentCardData(out WeekSelectionEntryPresentation currentCardData))
+        {
+            ApplyButtonState(_directButton, _directButtonLabel, null, InvalidOptionIndex);
+            ApplyButtonState(_modifiedButton, _modifiedButtonLabel, null, InvalidOptionIndex);
+            ApplyButtonState(_blockedButton, _blockedButtonLabel, null, InvalidOptionIndex);
+            return;
+        }
+
+        ApplyButtonState(_directButton, _directButtonLabel, currentCardData.Options, _directOptionIndex);
+        ApplyButtonState(_modifiedButton, _modifiedButtonLabel, currentCardData.Options, _modifiedOptionIndex);
+        ApplyButtonState(_blockedButton, _blockedButtonLabel, currentCardData.Options, _blockedOptionIndex);
     }
 
     // 버튼이 가리키는 옵션이 있으면 표시, 현재 선택된 옵션이면 비활성화
-    private void ApplyButtonState(Button button, int optionIndex)
+    private void ApplyButtonState(Button button, TextMeshProUGUI buttonLabel, IReadOnlyList<CardOptionData> options, int optionIndex)
     {
         if (button == null)
         {
             return;
         }
 
-        bool hasOption = optionIndex != InvalidOptionIndex;
+        bool hasOption = IsValidOptionIndex(options, optionIndex);
         button.gameObject.SetActive(hasOption);
 
         if (!hasOption)
         {
             return;
+        }
+
+        if (buttonLabel != null)
+        {
+            CardOptionData option = options[optionIndex];
+            if (option != null && !string.IsNullOrWhiteSpace(option.Label))
+            {
+                buttonLabel.text = option.Label;
+            }
         }
 
         button.interactable = optionIndex != _selectedOptionIndex;

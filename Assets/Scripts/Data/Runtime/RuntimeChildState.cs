@@ -39,7 +39,7 @@ public class RuntimeChildState
     public void SetStat(EChildStatusType statType, int value, string toastMessage = null)
     {
         int previousValue = GetStat(statType);
-        int currentValue = ClampStat(value);
+        int currentValue = ClampStat(statType, value);
         if (previousValue == currentValue)
         {
             return;
@@ -140,11 +140,12 @@ public class RuntimeChildState
         }
     }
 
-    private static int ClampStat(int value)
+    private static int ClampStat(EChildStatusType statType, int value)
     {
-        if (value < MinStatValue)
+        int minValue = GetMinStatValue(statType);
+        if (value < minValue)
         {
-            return MinStatValue;
+            return minValue;
         }
 
         if (value > MaxStatValue)
@@ -153,6 +154,11 @@ public class RuntimeChildState
         }
 
         return value;
+    }
+
+    private static int GetMinStatValue(EChildStatusType statType)
+    {
+        return statType == EChildStatusType.Affinity ? 0 : MinStatValue;
     }
 }
 
