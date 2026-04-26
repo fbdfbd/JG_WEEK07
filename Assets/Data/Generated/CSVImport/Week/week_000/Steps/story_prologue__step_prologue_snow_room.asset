@@ -24,8 +24,6 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: ef6a476785989af4a94956e567d911ac, type: 2}
     _text: "\uD615, \uB0B4\uAC00 \uC774 \uC544\uC774\uD55C\uD14C \uBB58 \uD574\uC904
       \uC218 \uC788\uC744\uAE4C?"
-  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uD654\uBA74 \uD398\uC774\uB4DC \uC544\uC6C3."
   _nemoLine: "\uC751\uC811\uC2E4. \uCC3D\uBC16\uC5D0 \uB208."
   _useCustomVisualState: 0
   _visualState: 0

@@ -14,9 +14,16 @@ public sealed class WeekFlowCutsceneCommandExecutor
         _targetRegistry = targetRegistry;
     }
 
-    public IEnumerator Execute(CutsceneCommandData command, WeekFlowCutsceneRequest request)
+    public IEnumerator Execute(CutsceneCommandData command, WeekFlowCutsceneRequest request, bool ignoreCharacterCommands = false)
     {
         if (command == null || command.CommandType == EDataCutsceneCommandType.None)
+        {
+            yield break;
+        }
+
+        if (ignoreCharacterCommands &&
+            (command.CommandType == EDataCutsceneCommandType.ShowCharacter ||
+             command.CommandType == EDataCutsceneCommandType.HideCharacters))
         {
             yield break;
         }

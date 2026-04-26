@@ -9,6 +9,7 @@ public sealed class UI_DataDrivenCutscenePlayer : MonoBehaviour
     private WeekFlowCutsceneCommandExecutor _executor;
     private Coroutine _activeCoroutine;
     private bool _isPlaying;
+    private bool _ignoreCharacterCommands;
 
     public bool IsPlaying => _isPlaying;
 
@@ -17,7 +18,7 @@ public sealed class UI_DataDrivenCutscenePlayer : MonoBehaviour
         EnsureExecutor();
     }
 
-    public IEnumerator Play(string sequenceId, WeekFlowCutsceneRequest request)
+    public IEnumerator Play(string sequenceId, WeekFlowCutsceneRequest request, bool ignoreCharacterCommands = false)
     {
         EnsureExecutor();
         StopImmediate();
@@ -28,9 +29,11 @@ public sealed class UI_DataDrivenCutscenePlayer : MonoBehaviour
         }
 
         _isPlaying = true;
+        _ignoreCharacterCommands = ignoreCharacterCommands;
         _activeCoroutine = StartCoroutine(PlaySequence(sequence, request));
         yield return _activeCoroutine;
         _activeCoroutine = null;
+        _ignoreCharacterCommands = false;
         _isPlaying = false;
     }
 
@@ -54,6 +57,7 @@ public sealed class UI_DataDrivenCutscenePlayer : MonoBehaviour
         }
 
         _executor?.StopImmediate();
+        _ignoreCharacterCommands = false;
         _isPlaying = false;
     }
 
@@ -73,7 +77,7 @@ public sealed class UI_DataDrivenCutscenePlayer : MonoBehaviour
                 continue;
             }
 
-            IEnumerator execution = _executor.Execute(command, request);
+            IEnumerator execution = _executor.Execute(command, request, _ignoreCharacterCommands);
             if (command.Blocking)
             {
                 yield return execution;

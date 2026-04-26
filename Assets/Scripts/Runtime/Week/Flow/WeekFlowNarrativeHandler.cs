@@ -59,7 +59,7 @@ public sealed class WeekFlowNarrativeHandler
     public WeekFlowActionResult SkipCurrentInteractiveEvent()
     {
         RuntimeInteractiveEventSession eventSession = _runtimeState.CurrentEventSession;
-        if (!WeekFlowEventSkipPolicy.CanSkip(eventSession))
+        if (!WeekFlowEventSkipPolicy.CanSkip(eventSession, _weekSequenceState.CurrentWeekDefinition))
         {
             return WeekFlowActionResult.None;
         }
@@ -92,8 +92,14 @@ public sealed class WeekFlowNarrativeHandler
         GameplayInteractionExecutor.ApplyAll(selectedChoice.Interactions, _runtimeState.ChildState);
 
         InteractiveEventChoiceResultPresentation result = WeekNarrativeResolver.CreateChoiceResultPresentation(selectedChoice, _weekUiText);
-        DialogueLinePresentation line = WeekNarrativeResolver.GetPrimaryDialogueLine(result.DialogueLines);
         PublishStatusMessage(_weekUiText.GetPrivateDialogueChoiceAppliedMessage());
+
+        if (!HasChoiceResultContent(result))
+        {
+            return ContinueInteractiveEvent();
+        }
+
+        DialogueLinePresentation line = WeekNarrativeResolver.GetPrimaryDialogueLine(result.DialogueLines);
 
         return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateChoiceResult(
             _weekSequenceState.CurrentWeekDefinition,
@@ -104,6 +110,29 @@ public sealed class WeekFlowNarrativeHandler
                 line.SpeakerName,
                 WeekNarrativeResolver.GetVisualStateForCurrentState(_runtimeState.ChildState),
                 line.Text)));
+    }
+
+    private static bool HasChoiceResultContent(InteractiveEventChoiceResultPresentation result)
+    {
+        if (!string.IsNullOrWhiteSpace(result.EffectSummaryLine))
+        {
+            return true;
+        }
+
+        if (result.DialogueLines == null)
+        {
+            return false;
+        }
+
+        for (int index = 0; index < result.DialogueLines.Count; index++)
+        {
+            if (result.DialogueLines[index].HasContent)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void PublishStatusMessage(string statusMessage)
@@ -267,9 +296,19 @@ public static class WeekFlowEventSkipPolicy
 {
     public static bool CanSkip(RuntimeInteractiveEventSession eventSession)
     {
+        return CanSkip(eventSession, null);
+    }
+
+    public static bool CanSkip(RuntimeInteractiveEventSession eventSession, SO_WeekDefinition weekDefinition)
+    {
         if (eventSession?.CurrentStep == null || eventSession.HasPendingChoiceResult)
         {
             return false;
+        }
+
+        if (IsWeekZeroStoryException(weekDefinition, eventSession.EventDefinition))
+        {
+            return true;
         }
 
         if (eventSession.EventDefinition is SO_StoryEventDefinition)
@@ -288,6 +327,11 @@ public static class WeekFlowEventSkipPolicy
             return false;
         }
 
+        if (IsWeekZeroStoryException(screen.WeekDefinition, screen.EventDefinition))
+        {
+            return true;
+        }
+
         if (screen.EventDefinition is SO_StoryEventDefinition)
         {
             return false;
@@ -295,6 +339,20 @@ public static class WeekFlowEventSkipPolicy
 
         return HasNoChoices(screen.EventDefinition)
             && HasNoChoicesFromStep(screen.StepDefinition);
+    }
+
+    private static bool IsWeekZeroStoryException(
+        SO_WeekDefinition weekDefinition,
+        SO_InteractiveEventDefinition eventDefinition)
+    {
+        if (weekDefinition == null || eventDefinition is not SO_StoryEventDefinition)
+        {
+            return false;
+        }
+
+        return weekDefinition.WeekIndex == 0
+            || string.Equals(weekDefinition.Id, "week_000", System.StringComparison.OrdinalIgnoreCase)
+            || string.Equals(weekDefinition.Id, "week000", System.StringComparison.OrdinalIgnoreCase);
     }
 
     private static bool HasNoChoices(SO_InteractiveEventDefinition eventDefinition)
