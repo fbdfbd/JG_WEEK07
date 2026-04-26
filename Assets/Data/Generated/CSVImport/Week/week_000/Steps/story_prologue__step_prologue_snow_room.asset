@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_prologue__step_prologue_snow_room
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC751\uC811\uC2E4. \uCC3D\uBC16\uC5D0 \uB208."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uCC3D\uBC16\uC5D0 \uB208\uC774 \uB0B4\uB9AC\uAE30 \uC2DC\uC791\uD588\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD615\uC774 \uC88B\uC544\uD558\uB358 \uB208\uC774\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: ef6a476785989af4a94956e567d911ac, type: 2}
+    _text: "\uD615, \uB0B4\uAC00 \uC774 \uC544\uC774\uD55C\uD14C \uBB58 \uD574\uC904
+      \uC218 \uC788\uC744\uAE4C?"
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD654\uBA74 \uD398\uC774\uB4DC \uC544\uC6C3."
+  _nemoLine: "\uC751\uC811\uC2E4. \uCC3D\uBC16\uC5D0 \uB208."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 11400000, guid: 83aaba84ed3c254449bb097ff3bad584, type: 2}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

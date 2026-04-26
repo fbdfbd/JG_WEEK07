@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_prologue__step_prologue_age_six
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uAC00 \uC5EC\uC12F \uC0B4\uC774 \uB418\uC5C8\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB2F9\uC2E0\uC740 \uC784\uC2DC\uAC00\uC8FC\uB85C\uC11C \uBC31\uC791\uAC00\uB97C
+      \uB9E1\uAC8C \uB418\uC5C8\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB2F9\uC2E0\uC774 \uD5C8\uAC00\uD558\uB294 \uAC83\uACFC \uD1B5\uC81C\uD558\uB294
+      \uAC83\uC774, \uC774 \uC544\uC774\uC758 \uC138\uACC4\uAC00 \uB429\uB2C8\uB2E4."
+  _nemoLine: "\uC544\uBCA8\uB9AC\uC544\uAC00 \uC5EC\uC12F \uC0B4\uC774 \uB418\uC5C8\uC2B5\uB2C8\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

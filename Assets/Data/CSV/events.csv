@@ -284,8 +284,10 @@ event_week_007_night_untold_story,week_007,private_dialogue,1,아무도 말해�
 event_week_007_night_unknown_mother,week_007,private_dialogue,2,모르는 어머니,10,step_event_week_007_night_unknown_mother_intro,,,,
 event_week_008_night_uncle_time,week_008,private_dialogue,1,삼촌이라는 사람의 시간,10,step_event_week_008_night_uncle_time_intro,,,,
 event_week_008_night_sleepless_night,week_008,private_dialogue,2,잠이 오지 않는 밤,10,step_event_week_008_night_sleepless_night_intro,,,,
-story_teaparty,week_002,story,100,작은 다과회,100,step_teaparty_intro,,card_type_yuffie,Direct,card_yuffie_week_001
-story_festival_street,week_004,story,101,후작가 축제 거리,100,step_festival_street_intro,,,,card_yuffie_week_002
-story_imperial_ball,week_006,story,102,황실 무도회장,100,step_imperial_ball_intro,,card_type_yuffie,Direct,card_yuffie_week_002
+story_prologue,week_000,story,0,프롤로그,100,step_prologue_gate,,card_type_yuffie,Direct,card_yuffie_week_001
+story_teaparty,week_002,story,100,작은 다과회,100,step_teaparty_intro,,,,card_yuffie_week_002
+story_festival_street,week_004,story,101,후작가 축제 거리,100,step_festival_street_intro,,card_type_yuffie,Direct,card_yuffie_week_002
+story_imperial_ball,week_006,story,102,황실 무도회장,100,step_imperial_ball_intro,,,,
 story_eve_celebration,week_008,story,103,성인식 전야제,100,step_eve_celebration_intro,,,,
-story_inheritance_ceremony,week_009,story,104,성인식,100,step_inheritance_ceremony_intro,,,,
+story_inheritance_alone,week_009,story,105,성인식 (혼자),110,step_inheritance_alone_intro,,card_type_yuffie,Direct,card_yuffie_week_003
+story_inheritance_ceremony,week_009,story,104,성인식,100,step_inheritance_ceremony_intro,,card_type_yuffie,Direct,card_yuffie_week_004

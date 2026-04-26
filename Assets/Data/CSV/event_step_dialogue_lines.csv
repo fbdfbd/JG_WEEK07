@@ -3115,3 +3115,55 @@ story_inheritance_ceremony,step_inheritance_ceremony_outro,9,speaker_narrator,�
 story_inheritance_ceremony,step_inheritance_ceremony_outro,10,speaker_abelia,네. 벨라리우스 백작가의 이름을 잇겠습니다.
 story_inheritance_ceremony,step_inheritance_ceremony_outro,11,speaker_narrator,의전관은 천천히 고개를 숙였다.
 story_inheritance_ceremony,step_inheritance_ceremony_outro,12,speaker_npc,계승을 승인합니다.
+story_inheritance_alone,step_inheritance_alone_intro,0,speaker_narrator,대연회장은 조용했다.
+story_inheritance_alone,step_inheritance_alone_intro,1,speaker_narrator,"축하하는 사람은 있었지만, 가까이 다가오는 사람은 없었다. 이의를 제기하는 사람도 적었다. 아직은."
+story_inheritance_alone,step_inheritance_alone_intro,2,speaker_narrator,아벨리아는 단상에 혼자 섰다.
+story_inheritance_alone,step_inheritance_alone_intro,3,speaker_narrator,"옆에 서 줄 친구도, 앞을 막아줄 사람도, 뒤에서 알려줄 목소리도 없었다."
+story_inheritance_alone,step_inheritance_alone_intro,4,speaker_npc,아벨리아 벨라리우스.
+story_inheritance_alone,step_inheritance_alone_intro,5,speaker_narrator,아벨리아는 한 걸음 앞으로 나섰다.
+story_inheritance_alone,step_inheritance_alone_intro,6,speaker_npc,계승을 받아들이겠습니까?
+story_inheritance_alone,step_inheritance_alone_intro,7,speaker_abelia,…네.
+story_inheritance_alone,step_inheritance_alone_intro,8,speaker_narrator,목소리는 홀 안에 작게 울렸다.
+story_inheritance_alone,step_inheritance_alone_intro,9,speaker_narrator,누구도 막지 않았다. 누구도 도와주지 않았다.
+story_inheritance_alone,step_inheritance_alone_intro,10,speaker_narrator,계승은 끝났다.
+story_inheritance_alone,step_inheritance_alone_intro,11,speaker_narrator,아벨리아는 백작이 되었다.
+story_inheritance_alone,step_inheritance_alone_intro,12,speaker_narrator,"하지만 홀을 나서는 길은, 들어올 때보다 더 조용했다."
+story_prologue,step_prologue_gate,0,speaker_narrator,백작저 정문. 겨울.
+story_prologue,step_prologue_gate,1,speaker_narrator,말에서 내렸다. 12년 만이었다.
+story_prologue,step_prologue_gate,2,speaker_narrator,하늘은 곧 눈이 올 것처럼 낮게 가라앉아 있었다.
+story_prologue,step_prologue_gate,3,speaker_guard_captain,오셨습니까.
+story_prologue,step_prologue_gate,4,speaker_narrator,그는 인사를 받지 않고 안으로 들어갔다.
+story_prologue,step_prologue_corridor,0,speaker_narrator,백작저 복도.
+story_prologue,step_prologue_corridor,1,speaker_narrator,형의 방 앞에서 의사가 나왔다.
+story_prologue,step_prologue_corridor,2,speaker_narrator,의사는 고개를 한 번 숙였다.
+story_prologue,step_prologue_corridor,3,speaker_narrator,그는 그 뜻을 물을 필요가 없었다.
+story_prologue,step_prologue_brother_room,0,speaker_narrator,형의 방.
+story_prologue,step_prologue_brother_room,1,speaker_narrator,"문고리를 잡은 채, 그는 한참을 서 있었다."
+story_prologue,step_prologue_brother_room,2,speaker_narrator,침대 위의 얼굴은 평온했다.
+story_prologue,step_prologue_brother_room,3,speaker_narrator,"너무 평온해서, 오래 들여다보았다."
+story_prologue,step_prologue_brother_room,4,speaker_narrator,이자벨이 죽은 뒤부터 형은 조금씩 멈춰 갔다.
+story_prologue,step_prologue_brother_room,5,speaker_narrator,"의사는 몇 번이나 경고했지만, 형은 바뀌지 않았다."
+story_prologue,step_prologue_abelia_enters,0,speaker_narrator,형의 방. 시간이 흐른 뒤.
+story_prologue,step_prologue_abelia_enters,1,speaker_narrator,문이 소리 없이 열렸다.
+story_prologue,step_prologue_abelia_enters,2,speaker_narrator,돌아봤을 때 아이는 이미 방 안에 있었다.
+story_prologue,step_prologue_abelia_enters,3,speaker_narrator,여섯 살. 흰 잠옷. 맨발.
+story_prologue,step_prologue_abelia_enters,4,speaker_narrator,아벨리아는 그를 보지 않았다. 침대만 봤다.
+story_prologue,step_prologue_abelia_enters,5,speaker_narrator,한 걸음. 또 한 걸음.
+story_prologue,step_prologue_abelia_enters,6,speaker_narrator,작은 손이 이불 끝에 닿았다.
+story_prologue,step_prologue_abelia_enters,7,speaker_abelia,아빠가 엄마 보러 갔어?
+story_prologue,step_prologue_after_choice,0,speaker_narrator,아이는 대답을 기다리지 않았다.
+story_prologue,step_prologue_after_choice,1,speaker_abelia,…그럼 나는.
+story_prologue,step_prologue_after_choice,2,speaker_narrator,말은 거기서 끊겼다.
+story_prologue,step_prologue_after_choice,3,speaker_narrator,"아이는 끝까지 말하지 않았고, 그도 묻지 않았다."
+story_prologue,step_prologue_after_choice,4,speaker_narrator,아이는 자기 방으로 돌아가지 않았다.
+story_prologue,step_prologue_after_choice,5,speaker_narrator,"소파에 앉아 있다가, 말없이 그의 소매를 잡았다."
+story_prologue,step_prologue_after_choice,6,speaker_narrator,아이는 그 자세로 잠이 들었다.
+story_prologue,step_prologue_after_choice,7,speaker_narrator,잡은 손은 끝까지 느슨해지지 않았다.
+story_prologue,step_prologue_snow_room,0,speaker_narrator,응접실. 창밖에 눈.
+story_prologue,step_prologue_snow_room,1,speaker_narrator,창밖에 눈이 내리기 시작했다.
+story_prologue,step_prologue_snow_room,2,speaker_narrator,형이 좋아하던 눈이었다.
+story_prologue,step_prologue_snow_room,3,speaker_count,"형, 내가 이 아이한테 뭘 해줄 수 있을까?"
+story_prologue,step_prologue_snow_room,4,speaker_narrator,화면 페이드 아웃.
+story_prologue,step_prologue_age_six,0,speaker_narrator,아벨리아가 여섯 살이 되었습니다.
+story_prologue,step_prologue_age_six,1,speaker_narrator,당신은 임시가주로서 백작가를 맡게 되었습니다.
+story_prologue,step_prologue_age_six,2,speaker_narrator,"당신이 허가하는 것과 통제하는 것이, 이 아이의 세계가 됩니다."

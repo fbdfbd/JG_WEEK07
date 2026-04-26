@@ -110,3 +110,7 @@ event_week_009_yuffie_1,Yuffie,true,1,true,2
 event_week_009_yuffie_2,Yuffie,true,3,true,4
 event_week_009_yuffie_3,Yuffie,true,5,true,6
 event_week_009_yuffie_4,Yuffie,true,7,true,8
+story_inheritance_alone,Rian,false,,true,0
+story_inheritance_alone,Max,false,,true,0
+story_inheritance_alone,Millia,false,,true,0
+story_inheritance_alone,Yuffie,false,,true,0

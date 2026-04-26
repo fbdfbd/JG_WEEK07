@@ -53,3 +53,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c5fb19c6176fcdd4880c0747a4df6f26, type: 2}
   _storyEvents:
   - {fileID: 11400000, guid: 0b0dcfdbab7bec844a2f7d809371f02c, type: 2}
+  - {fileID: 11400000, guid: c7a42eabd4a5fe043a2415deaf5741e5, type: 2}

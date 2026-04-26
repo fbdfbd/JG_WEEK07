@@ -17,6 +17,19 @@ public enum BackgroundType
     Basement,
     GardenCrapeMyrtle,
     GardenDoor,
+    Hunter,
+    ForestEnterance,
+    FestivalEntrance,
+    FestivalRianBackStreet,
+    FestivalShop,
+    FestivalStreet,
+    FestivalTheater,
+    FestivalTheaterSeat,
+    ImperialBallEntrance,
+    ImperialBall,
+    ImperialBallNobleSeat,
+    ImperialPalaceHallway,
+    GardenDeclarationStage
 }
 
 public enum BackgroundTransitionMode

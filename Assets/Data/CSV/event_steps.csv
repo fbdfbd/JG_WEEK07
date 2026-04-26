@@ -357,7 +357,7 @@ story_eve_celebration,step_eve_celebration_yuffie_success,,,false,Neutral,anxiou
 story_eve_celebration,step_eve_celebration_yuffie_fail,,,false,Neutral,,step_eve_celebration_outro,,,,,,,,
 story_eve_celebration,step_eve_celebration_outro,,,false,Neutral,,,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_intro,,,false,Neutral,,step_inheritance_ceremony_rian_check,,,,,,,,
-story_inheritance_ceremony,step_inheritance_ceremony_rian_check,,,false,Neutral,,,Anxiety,,-5,Rian,7,,step_inheritance_ceremony_rian_success,step_inheritance_ceremony_rian_fail
+story_inheritance_ceremony,step_inheritance_ceremony_rian_check,,,false,Neutral,,,Obedience,,-5,Rian,7,,step_inheritance_ceremony_rian_success,step_inheritance_ceremony_rian_fail
 story_inheritance_ceremony,step_inheritance_ceremony_rian_success,,,false,Neutral,,step_inheritance_ceremony_max_check,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_rian_fail,,,false,Neutral,,step_inheritance_ceremony_max_check,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_max_check,,,false,Neutral,,,Obedience,,-5,Max,7,,step_inheritance_ceremony_max_success,step_inheritance_ceremony_max_fail
@@ -370,3 +370,11 @@ story_inheritance_ceremony,step_inheritance_ceremony_yuffie_check,,,false,Neutra
 story_inheritance_ceremony,step_inheritance_ceremony_yuffie_success,,,false,Neutral,,step_inheritance_ceremony_outro,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_yuffie_fail,,,false,Neutral,,step_inheritance_ceremony_outro,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_outro,,,false,Neutral,,,,,,,,,,
+story_inheritance_alone,step_inheritance_alone_intro,,,false,Neutral,,,,,,,,,,
+story_prologue,step_prologue_gate,프롤로그,,false,Neutral,,step_prologue_corridor,,,,,,,,
+story_prologue,step_prologue_corridor,,,false,Neutral,,step_prologue_brother_room,,,,,,,,
+story_prologue,step_prologue_brother_room,,,false,Neutral,,step_prologue_abelia_enters,,,,,,,,
+story_prologue,step_prologue_abelia_enters,,,false,Neutral,,,,,,,,,,
+story_prologue,step_prologue_after_choice,,,false,Neutral,,step_prologue_snow_room,,,,,,,,
+story_prologue,step_prologue_snow_room,,,false,Neutral,,step_prologue_age_six,,,,,,,,
+story_prologue,step_prologue_age_six,,,false,Neutral,,,,,,,,,,

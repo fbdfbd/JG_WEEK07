@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_prologue__step_prologue_abelia_enters
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD615\uC758 \uBC29. \uC2DC\uAC04\uC774 \uD750\uB978 \uB4A4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uBB38\uC774 \uC18C\uB9AC \uC5C6\uC774 \uC5F4\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB3CC\uC544\uBD24\uC744 \uB54C \uC544\uC774\uB294 \uC774\uBBF8 \uBC29
+      \uC548\uC5D0 \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC5EC\uC12F \uC0B4. \uD770 \uC7A0\uC637. \uB9E8\uBC1C."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8\uB97C \uBCF4\uC9C0 \uC54A\uC558\uB2E4.
+      \uCE68\uB300\uB9CC \uBD24\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD55C \uAC78\uC74C. \uB610 \uD55C \uAC78\uC74C."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC791\uC740 \uC190\uC774 \uC774\uBD88 \uB05D\uC5D0 \uB2FF\uC558\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uBE60\uAC00 \uC5C4\uB9C8 \uBCF4\uB7EC \uAC14\uC5B4?"
+  _nemoLine: "\uD615\uC758 \uBC29. \uC2DC\uAC04\uC774 \uD750\uB978 \uB4A4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices:
+  - _label: "\uC751."
+    _responseDialogueLines: []
+    _responseLine: 
+    _interactions: []
+    _nextStep: {fileID: 11400000, guid: 0bd860280cc50a041bc4f7ce29caa953, type: 2}
+    _resultCinematicCues:
+      _enterCue: {fileID: 0}
+      _exitCue: {fileID: 0}
+  - _label: "\uB204\uAC00 \uADF8\uB7F0 \uB9D0\uC744 \uD588\uB2C8."
+    _responseDialogueLines: []
+    _responseLine: 
+    _interactions: []
+    _nextStep: {fileID: 11400000, guid: 0bd860280cc50a041bc4f7ce29caa953, type: 2}
+    _resultCinematicCues:
+      _enterCue: {fileID: 0}
+      _exitCue: {fileID: 0}
+  - _label: "(\uC544\uBB34 \uB9D0\uB3C4 \uD558\uC9C0 \uC54A\uB294\uB2E4)"
+    _responseDialogueLines: []
+    _responseLine: 
+    _interactions: []
+    _nextStep: {fileID: 11400000, guid: 0bd860280cc50a041bc4f7ce29caa953, type: 2}
+    _resultCinematicCues:
+      _enterCue: {fileID: 0}
+      _exitCue: {fileID: 0}
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}
