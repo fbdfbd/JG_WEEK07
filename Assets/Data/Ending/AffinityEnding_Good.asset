@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a23f5b530abb0d4c948e1689cf99dad, type: 3}
   m_Name: AffinityEnding_Good
   m_EditorClassIdentifier: Assembly-CSharp::SO_AffinityEndingDefinition
-  _id: 'ending_affinity_good'
+  _id: ending_affinity_good
   _minAffinity: 6
   _maxAffinity: 100
   _text:
-    _title: "\uCE5C\uBC00\uB3C4 \uC5D4\uB529 GOOD"
+    _title: "\uC0BC\uCD0C\uACFC\uB294..."
     _body: "\uC131\uC778\uC2DD\uC774 \uB05D\uB09C \uB4A4, \uC544\uBCA8\uB9AC\uC544\uB294
       \uC11C\uC7AC\uB85C \uD5A5\uD588\uB2E4. \uC0BC\uCD0C\uC774 \uB298 \uC549\uB358
       \uC790\uB9AC\uB294 \uBE44\uC5B4 \uC788\uC5C8\uACE0, \uCC45\uC0C1 \uC704\uC5D0

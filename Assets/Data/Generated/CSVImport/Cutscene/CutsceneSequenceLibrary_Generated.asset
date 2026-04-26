@@ -507,6 +507,166 @@ MonoBehaviour:
       _duration: 0
       _ease: 9
       _blocking: 1
+  - _sequenceId: sequence_rumor_001_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_001_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_002_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_002_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_003_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_003_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_004_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_004_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_005_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_005_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_006_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_006_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_007_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_007_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_008_01
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: ForestEnterance
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_rumor_008_02
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: ForestEnterance
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
   - _sequenceId: sequence_night_default
     _commands:
     - _commandType: 1
@@ -527,14 +687,6 @@ MonoBehaviour:
       _blocking: 1
   - _sequenceId: sequence_story_prologue
     _commands:
-    - _commandType: 1
-      _targetKey: 
-      _value1: BedRoom
-      _value2: 
-      _value3: 
-      _duration: 0
-      _ease: 9
-      _blocking: 1
     - _commandType: 3
       _targetKey: left
       _value1: GuardCaptain

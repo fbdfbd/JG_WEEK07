@@ -3163,7 +3163,6 @@ story_prologue,step_prologue_snow_room,0,speaker_narrator,응접실. 창밖에 �
 story_prologue,step_prologue_snow_room,1,speaker_narrator,창밖에 눈이 내리기 시작했다.
 story_prologue,step_prologue_snow_room,2,speaker_narrator,형이 좋아하던 눈이었다.
 story_prologue,step_prologue_snow_room,3,speaker_count,"형, 내가 이 아이한테 뭘 해줄 수 있을까?"
-story_prologue,step_prologue_snow_room,4,speaker_narrator,화면 페이드 아웃.
 story_prologue,step_prologue_age_six,0,speaker_narrator,아벨리아가 여섯 살이 되었습니다.
 story_prologue,step_prologue_age_six,1,speaker_narrator,당신은 임시가주로서 백작가를 맡게 되었습니다.
 story_prologue,step_prologue_age_six,2,speaker_narrator,"당신이 허가하는 것과 통제하는 것이, 이 아이의 세계가 됩니다."

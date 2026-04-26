@@ -1144,6 +1144,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175933477}
   m_CullTransparentMesh: 1
+--- !u!1 &207482977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3846709174984049345, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
+  m_PrefabInstance: {fileID: 1936469774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &224692510
 GameObject:
   m_ObjectHideFlags: 0
@@ -6328,6 +6333,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ece288bcaf71db44fb7b9baf016379cc, type: 2}
   - {fileID: 11400000, guid: f2653ee6ce5a6bb48ae0a8d891fc4411, type: 2}
   - {fileID: 11400000, guid: ac65783dda392ff43b2f63923247923c, type: 2}
+  - {fileID: 11400000, guid: 49cfad984b12bfa4187104801313cd6d, type: 2}
   - {fileID: 11400000, guid: fd650f7260ca46e41b58ba4029058879, type: 2}
   - {fileID: 11400000, guid: e1269d5c5c11dcc49a0360f8a4d3d7d9, type: 2}
   - {fileID: 11400000, guid: a39bcc6dd53ab574a861580f1f66179f, type: 2}
@@ -19736,10 +19742,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3846709174984049345, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6950949417722478183, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7364465995795863993, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
+      propertyPath: _characterPrefabs.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364465995795863993, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
+      propertyPath: _characterPrefabs.Array.data[13].type
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364465995795863993, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
+      propertyPath: _characterPrefabs.Array.data[13].prefab
+      value: 
+      objectReference: {fileID: 207482977}
     - target: {fileID: 7908351897322252952, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
       propertyPath: m_Name
       value: CutsceneCharacterManager
@@ -26689,6 +26711,10 @@ PrefabInstance:
     - target: {fileID: 7455342117629158569, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505005362197660906, guid: df0bfc0d2390142418fe88997508f243, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7527555270928005169, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: m_AnchoredPosition.x

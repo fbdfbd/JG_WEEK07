@@ -15,6 +15,9 @@ MonoBehaviour:
   _title: 
   _summary: 
   _informationCards:
+  - _card: {fileID: 11400000, guid: fc9fde0a76de0b443831343ffd308be2, type: 2}
+    _isRequired: 1
+    _displayOrder: -1
   - _card: {fileID: 11400000, guid: 6317ba488ab11804091312bee5b68208, type: 2}
     _isRequired: 1
     _displayOrder: 0
@@ -39,6 +42,3 @@ MonoBehaviour:
   - _card: {fileID: 11400000, guid: 27b662070b8546f479b942a953c3338b, type: 2}
     _isRequired: 1
     _displayOrder: 8
-  - _card: {fileID: 11400000, guid: fc9fde0a76de0b443831343ffd308be2, type: 2}
-    _isRequired: 1
-    _displayOrder: 9

@@ -60,28 +60,28 @@ public static class EndingContextBuilder
 
     private static EEndingMoodType ResolveRianMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Trust) > childState.GetStat(EChildStatusType.Anxiety)
+        return childState.GetStat(EChildStatusType.Anxiety) < RuntimeChildState.DefaultStatValue
             ? EEndingMoodType.Stability
             : EEndingMoodType.Anxiety;
     }
 
     private static EEndingMoodType ResolveMaxMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Trust) > childState.GetStat(EChildStatusType.Anxiety)
-            ? EEndingMoodType.Rebellion
-            : EEndingMoodType.Anxiety;
+        return childState.GetStat(EChildStatusType.Obedience) >= RuntimeChildState.DefaultStatValue
+            ? EEndingMoodType.Submission
+            : EEndingMoodType.Rebellion;
     }
 
     private static EEndingMoodType ResolveMilliaMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Trust) > childState.GetStat(EChildStatusType.Curiosity)
+        return childState.GetStat(EChildStatusType.Curiosity) >= RuntimeChildState.DefaultStatValue
             ? EEndingMoodType.Good
             : EEndingMoodType.Bad;
     }
 
     private static EEndingMoodType ResolveYuffieMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Curiosity) > childState.GetStat(EChildStatusType.Obedience)
+        return childState.GetStat(EChildStatusType.Trust) < RuntimeChildState.DefaultStatValue
             ? EEndingMoodType.Caution
             : EEndingMoodType.Submission;
     }

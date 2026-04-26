@@ -167,6 +167,10 @@ public sealed class UI_EventCutsceneBridge : WeekFlowCutsceneBridgeBase
                 ShowWeek000GuardCaptain();
                 yield break;
 
+            case EWeekFlowCutsceneMoment.ScreenEnter:
+                ApplyWeek000PrologueStepBackground(request.StepName);
+                yield break;
+
             case EWeekFlowCutsceneMoment.LineEnter:
                 if (_week000PrologueActive && !_week000PrologueNemoShown && IsRightSideSpeaker(request.DialogueSpeaker))
                 {
@@ -185,6 +189,40 @@ public sealed class UI_EventCutsceneBridge : WeekFlowCutsceneBridgeBase
     {
         return string.Equals(request.WeekId, "week_000", System.StringComparison.OrdinalIgnoreCase)
             && string.Equals(request.EventId, "story_prologue", System.StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static void ApplyWeek000PrologueStepBackground(string stepName)
+    {
+        if (BackgroundManager.I == null || string.IsNullOrWhiteSpace(stepName))
+        {
+            return;
+        }
+
+        if (IsStepMatch(stepName, "step_prologue_gate"))
+        {
+            BackgroundManager.I.ShowBackground(BackgroundType.GardenDoor);
+            return;
+        }
+
+        if (IsStepMatch(stepName, "step_prologue_corridor"))
+        {
+            BackgroundManager.I.ShowBackground(BackgroundType.Hallway);
+            return;
+        }
+
+        if (IsStepMatch(stepName, "step_prologue_brother_room") ||
+            IsStepMatch(stepName, "step_prologue_abelia_enters") ||
+            IsStepMatch(stepName, "step_prologue_after_choice") ||
+            IsStepMatch(stepName, "step_prologue_snow_room") ||
+            IsStepMatch(stepName, "step_prologue_age_six"))
+        {
+            BackgroundManager.I.ShowBackground(BackgroundType.BedRoom);
+        }
+    }
+
+    private static bool IsStepMatch(string stepName, string stepId)
+    {
+        return stepName.EndsWith(stepId, System.StringComparison.OrdinalIgnoreCase);
     }
 
     private static bool IsRightSideSpeaker(SO_DialogueSpeakerDefinition speaker)
