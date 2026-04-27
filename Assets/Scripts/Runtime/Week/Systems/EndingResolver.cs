@@ -43,7 +43,7 @@ public static class EndingResolver
             return CreateFallbackPresentation(
                 MissingCatalogEndingId,
                 "Ending Catalog Missing",
-                "EndingCatalog이 연결되지 않았습니다.");
+                "EndingCatalog가 연결되지 않았습니다.");
         }
 
         if (childState == null || EndingContextBuilder.HasNoCharacterMet(childState))
@@ -58,14 +58,44 @@ public static class EndingResolver
         SO_CharacterEndingDefinition mainEnding = catalog.FindCharacterEnding(context);
         if (mainEnding == null)
         {
-            return CreateFallbackPresentation(
-                MissingMainEndingId,
-                "Ending Not Found",
-                $"엔딩 데이터를 찾지 못했습니다. Character={context.CharacterType}, Meet={context.MeetCount}, Mood={context.MoodType}");
+            mainEnding = ResolveFallbackCharacterEnding(childState, catalog);
+            if (mainEnding == null)
+            {
+                return CreateFallbackPresentation(
+                    MissingMainEndingId,
+                    "Ending Not Found",
+                    $"엔딩 데이터를 찾지 못했습니다. Character={context.CharacterType}, Meet={context.MeetCount}, Mood={context.MoodType}");
+            }
         }
 
         SO_AffinityEndingDefinition affinityEnding = catalog.FindAffinityEnding(context.Affinity);
         return CreatePresentation(mainEnding, affinityEnding);
+    }
+
+    private static SO_CharacterEndingDefinition ResolveFallbackCharacterEnding(
+        RuntimeChildState childState,
+        SO_EndingCatalog catalog)
+    {
+        EndingContext[] contexts = EndingContextBuilder.BuildMetCharacterContextsByPriority(childState);
+        for (int i = 0; i < contexts.Length; i++)
+        {
+            SO_CharacterEndingDefinition exactEnding = catalog.FindCharacterEnding(contexts[i]);
+            if (exactEnding != null)
+            {
+                return exactEnding;
+            }
+        }
+
+        for (int i = 0; i < contexts.Length; i++)
+        {
+            SO_CharacterEndingDefinition closestEnding = catalog.FindClosestCharacterEnding(contexts[i]);
+            if (closestEnding != null)
+            {
+                return closestEnding;
+            }
+        }
+
+        return null;
     }
 
     private static EndingPresentation CreatePresentation(
@@ -148,4 +178,3 @@ public static class EndingResolver
         return string.IsNullOrWhiteSpace(first) ? second : first;
     }
 }
-

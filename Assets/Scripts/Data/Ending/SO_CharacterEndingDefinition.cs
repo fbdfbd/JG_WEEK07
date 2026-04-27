@@ -28,5 +28,30 @@ public class SO_CharacterEndingDefinition : ScriptableObject
             && context.MeetCount >= _minMeetCount
             && context.MeetCount <= _maxMeetCount;
     }
+
+    public bool MatchesCharacter(EEndingCharacterType characterType)
+    {
+        return _characterType == characterType;
+    }
+
+    public bool MatchesMood(EEndingMoodType moodType)
+    {
+        return _moodType == moodType;
+    }
+
+    public int GetMeetCountDistance(int meetCount)
+    {
+        if (meetCount < _minMeetCount)
+        {
+            return _minMeetCount - meetCount;
+        }
+
+        if (meetCount > _maxMeetCount)
+        {
+            return meetCount - _maxMeetCount;
+        }
+
+        return 0;
+    }
 }
 

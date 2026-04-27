@@ -36,6 +36,33 @@ public class SO_EndingCatalog : ScriptableObject
         return bestEnding;
     }
 
+    public SO_CharacterEndingDefinition FindClosestCharacterEnding(EndingContext context)
+    {
+        SO_CharacterEndingDefinition bestEnding = null;
+        int bestDistance = int.MaxValue;
+        bool bestMoodMatches = false;
+
+        for (int i = 0; i < _characterEndings.Length; i++)
+        {
+            SO_CharacterEndingDefinition ending = _characterEndings[i];
+            if (ending == null || !ending.MatchesCharacter(context.CharacterType))
+            {
+                continue;
+            }
+
+            int distance = ending.GetMeetCountDistance(context.MeetCount);
+            bool moodMatches = ending.MatchesMood(context.MoodType);
+            if (IsBetterClosestEnding(ending, bestEnding, distance, bestDistance, moodMatches, bestMoodMatches))
+            {
+                bestEnding = ending;
+                bestDistance = distance;
+                bestMoodMatches = moodMatches;
+            }
+        }
+
+        return bestEnding;
+    }
+
     public SO_AffinityEndingDefinition FindAffinityEnding(int affinity)
     {
         SO_AffinityEndingDefinition bestEnding = null;
@@ -52,6 +79,42 @@ public class SO_EndingCatalog : ScriptableObject
         }
 
         return bestEnding;
+    }
+
+    private static bool IsBetterClosestEnding(
+        SO_CharacterEndingDefinition candidate,
+        SO_CharacterEndingDefinition current,
+        int candidateDistance,
+        int currentDistance,
+        bool candidateMoodMatches,
+        bool currentMoodMatches)
+    {
+        if (current == null)
+        {
+            return true;
+        }
+
+        if (candidateMoodMatches != currentMoodMatches)
+        {
+            return candidateMoodMatches;
+        }
+
+        if (candidateDistance != currentDistance)
+        {
+            return candidateDistance < currentDistance;
+        }
+
+        if (candidate.MaxMeetCount != current.MaxMeetCount)
+        {
+            return candidate.MaxMeetCount > current.MaxMeetCount;
+        }
+
+        if (candidate.MinMeetCount != current.MinMeetCount)
+        {
+            return candidate.MinMeetCount > current.MinMeetCount;
+        }
+
+        return candidate.Priority > current.Priority;
     }
 }
 

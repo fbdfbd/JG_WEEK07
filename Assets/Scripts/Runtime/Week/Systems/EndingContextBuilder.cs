@@ -26,6 +26,47 @@ public static class EndingContextBuilder
         return new EndingContext(characterType, meetCount, moodType, affinity);
     }
 
+    public static EndingContext[] BuildMetCharacterContextsByPriority(RuntimeChildState childState)
+    {
+        if (childState == null)
+        {
+            return System.Array.Empty<EndingContext>();
+        }
+
+        EndingContext[] contexts = new EndingContext[CharacterTiePriority.Length];
+        int count = 0;
+        for (int i = 0; i < CharacterTiePriority.Length; i++)
+        {
+            EEndingCharacterType characterType = CharacterTiePriority[i];
+            int meetCount = GetMeetCount(childState, characterType);
+            if (meetCount <= 0)
+            {
+                continue;
+            }
+
+            contexts[count] = Build(childState, characterType);
+            count++;
+        }
+
+        if (count == contexts.Length)
+        {
+            return contexts;
+        }
+
+        EndingContext[] trimmedContexts = new EndingContext[count];
+        System.Array.Copy(contexts, trimmedContexts, count);
+        return trimmedContexts;
+    }
+
+    private static EndingContext Build(RuntimeChildState childState, EEndingCharacterType characterType)
+    {
+        int meetCount = GetMeetCount(childState, characterType);
+        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
+        int affinity = childState.GetStat(EChildStatusType.Affinity);
+
+        return new EndingContext(characterType, meetCount, moodType, affinity);
+    }
+
     private static EEndingCharacterType ResolveCharacterType(RuntimeChildState childState)
     {
         int highest = GetHighestMeetCount(childState);
