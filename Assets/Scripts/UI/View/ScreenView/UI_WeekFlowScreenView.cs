@@ -16,7 +16,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
     public event Action<ECardOptionSemantic> AllCardSemanticSelected;
 
-    private bool _isInfoPanelVisible = false;
+    private bool _isInfoPanelVisible = true;
 
     private void Awake()
     {

@@ -39,9 +39,7 @@ public class UI_CardView : MonoBehaviour
     [SerializeField] private Button _nextButton;
 
     [Header("Type Specific Views")]
-    [Tooltip("Existing left/right card content root. Do not assign the CardPanel root that has UI_CardView on it.")]
     [SerializeField] private GameObject _defaultGroupRoot;
-    [Tooltip("Optional type-specific group views, such as UI_ExcursionCardGroupView.")]
     [SerializeField] private MonoBehaviour[] _groupViewBehaviours;
 
     private const int InvalidOptionIndex = -1;
