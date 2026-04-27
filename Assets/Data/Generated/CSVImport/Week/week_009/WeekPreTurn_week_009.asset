@@ -18,15 +18,24 @@ MonoBehaviour:
   - _card: {fileID: 11400000, guid: bdd5ad1f69e3ce34aa048b175dab6870, type: 2}
     _isRequired: 1
     _displayOrder: -1
+  - _card: {fileID: 11400000, guid: a9b37575f0b7b914595880e26ae67433, type: 2}
+    _isRequired: 1
+    _displayOrder: 0
   - _card: {fileID: 11400000, guid: 7164e13f904312c4eab9ab94dbe570c0, type: 2}
     _isRequired: 1
     _displayOrder: 1
+  - _card: {fileID: 11400000, guid: 2b58d89131d1a8a45a7e75797d7e630d, type: 2}
+    _isRequired: 1
+    _displayOrder: 3
   - _card: {fileID: 11400000, guid: 116f29bf78765e643bbb42c7fef71c3d, type: 2}
     _isRequired: 1
     _displayOrder: 4
   - _card: {fileID: 11400000, guid: b260b05eaf2f0584eab70cedb197ae7b, type: 2}
     _isRequired: 1
     _displayOrder: 5
+  - _card: {fileID: 11400000, guid: 0ca9dbe86ecf3884ca4ebdf8ae0bc553, type: 2}
+    _isRequired: 1
+    _displayOrder: 6
   - _card: {fileID: 11400000, guid: 096dffb9270ac474d9dad42c0d2139ba, type: 2}
     _isRequired: 1
     _displayOrder: 7

@@ -1,4 +1,0 @@
-event_id,step_id,choice_order,choice_id,label,interaction_ids,next_step_id
-story_prologue,step_prologue_abelia_enters,0,choice_prologue_answer_yes,응.,,step_prologue_after_choice
-story_prologue,step_prologue_abelia_enters,1,choice_prologue_answer_who_said,누가 그런 말을 했니.,,step_prologue_after_choice
-story_prologue,step_prologue_abelia_enters,2,choice_prologue_answer_silence,(아무 말도 하지 않는다),,step_prologue_after_choice

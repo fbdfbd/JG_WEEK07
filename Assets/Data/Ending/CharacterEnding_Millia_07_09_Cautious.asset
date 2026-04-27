@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterEnding_Millia_07_09_Cautious
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_millia_07_09_cautious
-  _priority: 4
+  _priority: 10
   _characterType: 2
   _minMeetCount: 7
   _maxMeetCount: 9

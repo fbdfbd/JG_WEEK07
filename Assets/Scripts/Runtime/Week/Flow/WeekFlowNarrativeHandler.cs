@@ -252,6 +252,7 @@ public sealed class WeekFlowNarrativeHandler
         _runtimeState.ShouldShowEndingAfterEvents = false;
         _runtimeState.HasReachedEnding = true;
         _runtimeState.IsAwaitingEndingFollowUp = true;
+        EndingResolver.LogDebugSnapshot(_runtimeState.ChildState, nameof(WeekFlowNarrativeHandler));
         EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState, _endingCatalog);
         GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());

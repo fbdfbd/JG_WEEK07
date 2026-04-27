@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CharacterEnding_Max_06_06_Rebellion
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_max_06_06_rebellion
-  _priority: 6
+  _priority: 10
   _characterType: 1
-  _minMeetCount: 6
-  _maxMeetCount: 6
+  _minMeetCount: 7
+  _maxMeetCount: 9
   _moodType: 2
   _text:
     _title: "\uC5D4\uB529"

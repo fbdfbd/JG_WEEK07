@@ -13,6 +13,68 @@ MonoBehaviour:
   m_Name: CutsceneSequenceLibrary_Generated
   m_EditorClassIdentifier: Assembly-CSharp::SO_CutsceneSequenceLibrary
   _sequences:
+  - _sequenceId: sequence_garden_default_gardener
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Gardener
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_garden_default_maid
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Maid
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_garden_crapemyrtle
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: GardenCrapeMyrtle
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
   - _sequenceId: sequence_basement_default
     _commands:
     - _commandType: 1
@@ -26,6 +88,32 @@ MonoBehaviour:
     - _commandType: 3
       _targetKey: left
       _value1: Maid
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_forest_default_gardener
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: ForestEnterance
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: GuardCaptain
       _value2: 
       _value3: 
       _duration: 0
@@ -156,6 +244,136 @@ MonoBehaviour:
     - _commandType: 3
       _targetKey: left
       _value1: Cousin02
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_default
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: DrawingRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_garden
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Garden
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_hallway
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Hallway
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_ballroom
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: BallRoom
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: right
+      _value1: Nemo
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+  - _sequenceId: sequence_max_study
+    _commands:
+    - _commandType: 1
+      _targetKey: 
+      _value1: Study
+      _value2: 
+      _value3: 
+      _duration: 0
+      _ease: 9
+      _blocking: 1
+    - _commandType: 3
+      _targetKey: left
+      _value1: Friend01
       _value2: 
       _value3: 
       _duration: 0

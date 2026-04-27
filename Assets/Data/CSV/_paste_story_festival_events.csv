@@ -1,2 +1,0 @@
-event_id,week_id,event_kind,event_order,title,priority,first_step_id,on_completed_interaction_ids,related_information_type_ids,preferred_semantics,linked_card_id
-story_prologue,week_000,story,0,프롤로그,100,step_prologue_gate,,,,

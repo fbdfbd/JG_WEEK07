@@ -1,8 +1,0 @@
-event_id,step_id,title_override,body_text,use_custom_visual_state,visual_state,on_enter_interaction_ids,default_next_step_id,condition_stat_1,condition_min_1,condition_max_1,condition_stat_2,condition_min_2,condition_max_2,conditional_next_step_id,conditional_fallback_step_id
-story_prologue,step_prologue_gate,프롤로그,,false,Neutral,,step_prologue_corridor,,,,,,,,
-story_prologue,step_prologue_corridor,,,false,Neutral,,step_prologue_brother_room,,,,,,,,
-story_prologue,step_prologue_brother_room,,,false,Neutral,,step_prologue_abelia_enters,,,,,,,,
-story_prologue,step_prologue_abelia_enters,,,false,Neutral,,,,,,,,,,
-story_prologue,step_prologue_after_choice,,,false,Neutral,,step_prologue_snow_room,,,,,,,,
-story_prologue,step_prologue_snow_room,,,false,Neutral,,step_prologue_age_six,,,,,,,,
-story_prologue,step_prologue_age_six,,,false,Neutral,,,,,,,,,,

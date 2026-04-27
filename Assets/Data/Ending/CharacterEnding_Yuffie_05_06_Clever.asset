@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterEnding_Yuffie_05_06_Clever
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_yuffie_05_06_submission
-  _priority: 8
+  _priority: 10
   _characterType: 3
   _minMeetCount: 5
   _maxMeetCount: 6

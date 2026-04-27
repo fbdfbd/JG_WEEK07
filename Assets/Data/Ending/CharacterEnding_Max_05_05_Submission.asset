@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CharacterEnding_Max_05_05_Submission
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_max_05_05_anxiety
-  _priority: 6
+  _priority: 0
   _characterType: 1
   _minMeetCount: 5
-  _maxMeetCount: 5
+  _maxMeetCount: 6
   _moodType: 4
   _text:
     _title: "\uC5D4\uB529"

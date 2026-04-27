@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterEnding_Rian_05_06_Stability
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_rian_05_06_stability
-  _priority: 100
+  _priority: 0
   _characterType: 0
   _minMeetCount: 5
   _maxMeetCount: 6

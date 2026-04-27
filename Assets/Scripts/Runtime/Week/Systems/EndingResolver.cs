@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public readonly struct EndingPresentation
 {
@@ -35,6 +36,29 @@ public static class EndingResolver
 {
     private const string MissingCatalogEndingId = "ending_catalog_missing";
     private const string MissingMainEndingId = "ending_main_missing";
+
+    public static void LogDebugSnapshot(RuntimeChildState childState, string source)
+    {
+        if (childState == null)
+        {
+            Debug.Log($"[EndingDebug] {source} ChildState=null");
+            return;
+        }
+
+        if (EndingContextBuilder.HasNoCharacterMet(childState))
+        {
+            Debug.Log(
+                $"[EndingDebug] {source} NoCharacterMet | " +
+                BuildStatSnapshot(childState));
+            return;
+        }
+
+        EndingContext context = EndingContextBuilder.Build(childState);
+        Debug.Log(
+            $"[EndingDebug] {source} " +
+            $"Selected={context.CharacterType}, Meet={context.MeetCount}, Mood={context.MoodType}, Affinity={context.Affinity} | " +
+            BuildStatSnapshot(childState));
+    }
 
     public static EndingPresentation Resolve(RuntimeChildState childState, SO_EndingCatalog catalog = null)
     {
@@ -176,5 +200,18 @@ public static class EndingResolver
     private static string FirstNotEmpty(string first, string second)
     {
         return string.IsNullOrWhiteSpace(first) ? second : first;
+    }
+
+    private static string BuildStatSnapshot(RuntimeChildState childState)
+    {
+        return
+            $"Meet(Max={childState.GetStat(EChildStatusType.Max)}, " +
+            $"Rian={childState.GetStat(EChildStatusType.Rian)}, " +
+            $"Yuffie={childState.GetStat(EChildStatusType.Yuffie)}, " +
+            $"Millia={childState.GetStat(EChildStatusType.Millia)}) | " +
+            $"MoodStats(Obedience={childState.GetStat(EChildStatusType.Obedience)}, " +
+            $"Anxiety={childState.GetStat(EChildStatusType.Anxiety)}, " +
+            $"Trust={childState.GetStat(EChildStatusType.Trust)}, " +
+            $"Curiosity={childState.GetStat(EChildStatusType.Curiosity)})";
     }
 }

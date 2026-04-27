@@ -13,6 +13,244 @@ MonoBehaviour:
   m_Name: EventCutsceneRuleCatalog_Generated
   m_EditorClassIdentifier: Assembly-CSharp::SO_EventCutsceneRuleCatalog
   _rules:
+  - _ruleId: cutscene_week_001_garden_direct_default
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_crapemyrtle
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_001_garden_blocked
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_crapemyrtle
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_garden_direct_default
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_maid
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_garden_direct_curious
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_garden_direct_curious
+    _moment: 0
+    _sequenceId: sequence_garden_default_maid
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_garden_direct_innocent
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_garden_direct_innocent
+    _moment: 0
+    _sequenceId: sequence_garden_default_maid
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_garden_blocked
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_maid
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_garden_direct_default
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_garden_direct_curious
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_garden_direct_curious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_garden_direct_cautious
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_garden_direct_cautious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_garden_blocked
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_garden_direct_default
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_garden_direct_clever
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_garden_direct_clever
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_garden_direct_innocent
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_garden_direct_innocent
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_garden_blocked
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_maid
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_garden_direct_default
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_garden_direct_cautious
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_garden_direct_cautious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_garden_direct_anxious
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_garden_direct_anxious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_garden_blocked
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_garden_direct_default
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_garden_direct_clever
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_garden_direct_clever
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_garden_direct_defiant
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_garden_direct_defiant
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_garden_blocked
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_garden_direct_default
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_garden_direct_stable
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_garden_direct_stable
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_garden_direct_cautious
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_garden_direct_cautious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_garden_blocked
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_garden_direct_default
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_garden_direct_curious
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_garden_direct_curious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_garden_direct_anxious
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_garden_direct_anxious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_garden_blocked
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_garden_direct_default
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_garden_direct_default
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_garden_direct_stable
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_garden_direct_stable
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_garden_direct_cautious
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_garden_direct_cautious
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_garden_blocked
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_garden_blocked
+    _moment: 0
+    _sequenceId: sequence_garden_default_gardener
+    _specialPlayerId: 
   - _ruleId: cutscene_basement_0
     _enabled: 1
     _weekId: week_001
@@ -250,6 +488,244 @@ MonoBehaviour:
     _eventId: event_week_009_excursion_basement_blocked
     _moment: 0
     _sequenceId: sequence_basement_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_0
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_1
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_2
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_3
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_forest_direct_curious
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_4
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_forest_direct_compliant
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_5
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_6
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_7
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_forest_direct_clever
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_8
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_forest_direct_curious
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_9
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_10
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_11
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_forest_direct_clever
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_12
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_forest_direct_anxious
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_13
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_14
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_15
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_forest_direct_innocent
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_16
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_forest_direct_anxious
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_17
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_18
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_19
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_forest_direct_clever
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_20
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_forest_direct_defiant
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_21
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_22
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_23
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_forest_direct_clever
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_24
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_forest_direct_curious
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_25
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_27
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_28
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_forest_direct_clever
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_29
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_forest_direct_anxious
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_30
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_31
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_forest_direct_default
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_32
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_forest_direct_clever
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_33
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_forest_direct_innocent
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
+    _specialPlayerId: 
+  - _ruleId: cutscene_forest_34
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_excursion_forest_blocked
+    _moment: 0
+    _sequenceId: sequence_forest_default_gardener
     _specialPlayerId: 
   - _ruleId: cutscene_library_0
     _enabled: 1
@@ -698,6 +1174,223 @@ MonoBehaviour:
     _eventId: event_week_009_rian_4
     _moment: 0
     _sequenceId: sequence_rian_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_001_max_direct
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_max
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_max_0
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_max_0
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_max_1
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_max_1
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_max_0
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_max_0
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_max_1
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_max_1
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_max_2
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_max_2
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_max_0
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_max_0
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_max_1
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_max_1
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_max_2
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_max_2
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_max_0
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_max_0
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_max_1
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_max_1
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_max_2
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_max_2
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_max_0
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_max_0
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_max_1
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_max_1
+    _moment: 0
+    _sequenceId: sequence_max_ballroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_max_2
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_max_2
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_max_3
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_max_3
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_max_0
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_max_0
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_max_1
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_max_1
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_max_2
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_max_2
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_max_3
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_max_3
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_max_4
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_max_4
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_max_0
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_max_0
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_max_1
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_max_1
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_max_2
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_max_2
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_max_3
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_max_3
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_max_4
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_max_4
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_max_0
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_max_0
+    _moment: 0
+    _sequenceId: sequence_max_ballroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_max_1
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_max_1
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_max_2
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_max_2
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_max_3
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_max_3
+    _moment: 0
+    _sequenceId: sequence_max_ballroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_max_4
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_max_4
+    _moment: 0
+    _sequenceId: sequence_max_garden
     _specialPlayerId: 
   - _ruleId: cutscene_week_001_millia_direct
     _enabled: 1
