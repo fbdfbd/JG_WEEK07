@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: speaker_npc
   m_EditorClassIdentifier: Assembly-CSharp::SO_DialogueSpeakerDefinition
   _id: speaker_npc
-  _displayName: "\uD669\uC2E4 \uC758\uC804\uAD00"
+  _displayName: "\uD669\uC2E4 \uB300\uB9AC\uC778"
   _defaultVisualState: 0

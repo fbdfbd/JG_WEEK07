@@ -1,10 +1,13 @@
 public static class EndingContextBuilder
 {
+    private const int PositiveEndingThreshold = 5;
+    private const int NegativeEndingThreshold = -5;
+
     private static readonly EEndingCharacterType[] CharacterTiePriority =
     {
+        EEndingCharacterType.Max,
         EEndingCharacterType.Rian,
         EEndingCharacterType.Yuffie,
-        EEndingCharacterType.Max,
         EEndingCharacterType.Millia,
     };
 
@@ -150,28 +153,28 @@ public static class EndingContextBuilder
 
     private static EEndingMoodType ResolveRianMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Anxiety) < RuntimeChildState.DefaultStatValue
+        return childState.GetStat(EChildStatusType.Anxiety) <= NegativeEndingThreshold
             ? EEndingMoodType.Stability
             : EEndingMoodType.Anxiety;
     }
 
     private static EEndingMoodType ResolveMaxMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Obedience) >= RuntimeChildState.DefaultStatValue
-            ? EEndingMoodType.Submission
-            : EEndingMoodType.Rebellion;
+        return childState.GetStat(EChildStatusType.Obedience) <= NegativeEndingThreshold
+            ? EEndingMoodType.Rebellion
+            : EEndingMoodType.Submission;
     }
 
     private static EEndingMoodType ResolveMilliaMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Curiosity) >= RuntimeChildState.DefaultStatValue
-            ? EEndingMoodType.Curious
-            : EEndingMoodType.Cautious;
+        return childState.GetStat(EChildStatusType.Curiosity) <= NegativeEndingThreshold
+            ? EEndingMoodType.Cautious
+            : EEndingMoodType.Curious;
     }
 
     private static EEndingMoodType ResolveYuffieMood(RuntimeChildState childState)
     {
-        return childState.GetStat(EChildStatusType.Trust) < RuntimeChildState.DefaultStatValue
+        return childState.GetStat(EChildStatusType.Trust) <= NegativeEndingThreshold
             ? EEndingMoodType.Caution
             : EEndingMoodType.Submission;
     }

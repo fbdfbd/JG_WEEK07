@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_AffinityEndingDefinition
   _id: ending_affinity_good
   _priority: 0
-  _minAffinity: 6
+  _minAffinity: 7
   _maxAffinity: 100
   _text:
     _title: "\uC0BC\uCD0C\uACFC\uB294..."
