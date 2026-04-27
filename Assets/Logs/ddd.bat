@@ -1,1 +1,0 @@
-start pythonw ddd.py
