@@ -15,4 +15,4 @@ MonoBehaviour:
   _weekId: week_005
   _context: "\uC5B4\uB5A4 \uB4DC\uB808\uC2A4\uB97C \uC0AC\uC57C\uD560\uAE4C?"
   _nemostate: 0
-  _CardInteraction_StatDelta: {fileID: 11400000, guid: 57220356c6098c248820648c99882432, type: 2}
+  _CardInteraction_StatDelta: {fileID: 0}

@@ -16,4 +16,4 @@ MonoBehaviour:
   _context: "\uC774\uC81C \uC120\uBC18\uC5D0\uB3C4 \uC190\uC774 \uB2FF\uC744 \uC218
     \uC788\uC5B4!"
   _nemostate: 0
-  _CardInteraction_StatDelta: {fileID: 11400000, guid: 57220356c6098c248820648c99882432, type: 2}
+  _CardInteraction_StatDelta: {fileID: 0}
