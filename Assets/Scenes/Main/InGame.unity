@@ -27340,16 +27340,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
+      propertyPath: _displayRules.Array.data[2].StatType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
+      propertyPath: _displayRules.Array.data[3].StatType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[0].LeftLabel
-      value: "\uC21C\uC9C4"
+      value: "\uC601\uBBFC"
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[1].LeftLabel
-      value: "\uD638\uAE30\uC2EC"
+      value: "\uC2E0\uC911"
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[2].LeftLabel
-      value: "\uC21C\uC751"
+      value: "\uBC18\uD56D"
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[3].LeftLabel
@@ -27361,15 +27369,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[0].RightLabel
-      value: "\uC601\uBBFC"
+      value: "\uC21C\uC9C4"
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[1].RightLabel
-      value: "\uC2E0\uC911"
+      value: "\uD638\uAE30\uC2EC"
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[2].RightLabel
-      value: "\uBC18\uD56D"
+      value: "\uC21C\uC751"
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[3].RightLabel
