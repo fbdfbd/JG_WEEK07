@@ -508,11 +508,12 @@ event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_ba
 event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,2,speaker_maid,예. 꽃무늬인 것 같습니다.
 event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,3,speaker_abelia,"거의 지워졌는데도 남아 있는 걸 보면, 꽤 정성 들여 수놓았나 봐요."
 event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,4,speaker_maid,그럴 수도 있겠습니다.
-event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,5,speaker_abelia,오래된 물건을 보면 이상해요.
-event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,6,speaker_maid,어떤 점이 그러십니까?
-event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,7,speaker_abelia,"말은 안 하는데, 물건이 주인을 설명해줘요."
-event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,8,speaker_maid,...잘 보시는군요.
-event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,9,speaker_abelia,그래서 더 조심히 다뤄야겠다는 생각이 들어요.
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,5,speaker_abelia,이런 건 함부로 만지면 안 될 것 같아요.
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,6,speaker_maid,왜 그러십니까?
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,7,speaker_abelia,오래된 실은 한 번 끊어지면 다시 잇기 어렵잖아요. 지금 남아 있는 게 전부일 수도 있으니까요.
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,8,speaker_maid,맞는 말씀입니다.
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,9,speaker_abelia,보관할 수 있는 천이 있으면 감싸서 넣어두는 게 좋겠어요.
+event_week_006_excursion_basement_direct_clever,step_event_week_006_excursion_basement_direct_clever,10,speaker_narrator,"아벨리아는 손수건에 손을 대지 않고, 마리에게 조심히 다뤄달라는 눈짓만 보냈다."
 event_week_006_excursion_basement_blocked,step_event_week_006_excursion_basement_blocked,0,speaker_narrator,짧고 둔한 소리가 지하실 안쪽에서 울렸다.
 event_week_006_excursion_basement_blocked,step_event_week_006_excursion_basement_blocked,1,speaker_abelia,방금 뭘 닫은 거죠?
 event_week_006_excursion_basement_blocked,step_event_week_006_excursion_basement_blocked,2,speaker_maid,오래된 서랍을 정리하고 있습니다.
@@ -894,7 +895,7 @@ event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_for
 event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,7,speaker_hunter,그냥 지내지. 오래전부터 하던 대로.
 event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,8,speaker_abelia,혼자 계시면 심심하지 않으세요?
 event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,9,speaker_hunter,자네들이 가끔 오잖아.
-event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,10,speaker_abelia,저 말고도 누가 옵니까?
+event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,10,speaker_abelia,저 말고도 누가 와요?
 event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,11,speaker_hunter,밤에 가끔 말발굽 소리가 들려.
 event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,12,speaker_abelia,누군지는 모르시고요?
 event_week_007_excursion_forest_direct_curious,step_event_week_007_excursion_forest_direct_curious,13,speaker_hunter,어두우니까 모르지. 나는 내다보지 않아.
@@ -2560,7 +2561,7 @@ event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,3,speaker_guard_c
 event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,4,speaker_abelia,발테리온 쪽 얘기도 있어요?
 event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,5,speaker_guard_captain,그쪽은 평소대로 훈련 중인 것으로 알고 있습니다.
 event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,6,speaker_abelia,평소대로요?
-event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,7,speaker_guard_captain,예. 봉신가문은 원래 훈련을 자주 합니다.
+event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,7,speaker_guard_captain,예. 발테리온은 원래 훈련을 자주 합니다.
 event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,8,speaker_abelia,그래요?
 event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,9,speaker_guard_captain,예. 성인식 즈음엔 더 그렇습니다. 축하 의례에 참여하기 위한 것이지요.
 event_week_007_rumor_blocked,step_event_week_007_rumor_blocked,10,speaker_abelia,그렇군요.
@@ -2824,10 +2825,10 @@ story_festival_street,step_festival_street_yuffie_fail,8,speaker_narrator,아벨
 story_festival_street,step_festival_street_yuffie_fail,9,speaker_narrator,공연이 끝나자 사람들은 다시 거리로 흩어졌다. 손님석 옆에는 베르디아 상단의 가판대가 있었다.
 story_festival_street,step_festival_street_millia_success,0,speaker_narrator,베르디아 상단의 가판대에는 작은 장식품들이 줄지어 놓여 있었다.
 story_festival_street,step_festival_street_millia_success,1,speaker_narrator,상인이 반짝이는 머리장식을 아벨리아 쪽으로 내밀었다.
-story_festival_street,step_festival_street_millia_success,2,speaker_npc,아가씨께 잘 어울릴 겁니다. 제일 고운 물건이지요.
+story_festival_street,step_festival_street_millia_success,2,speaker_npc2,아가씨께 잘 어울릴 겁니다. 제일 고운 물건이지요.
 story_festival_street,step_festival_street_millia_success,3,speaker_narrator,"아벨리아는 장식을 받아 들었다. 앞은 반짝였지만, 뒤쪽 매듭은 조금 헐거웠다."
 story_festival_street,step_festival_street_millia_success,4,speaker_abelia,예쁘긴 해.
-story_festival_street,step_festival_street_millia_success,5,speaker_npc,그렇지요.
+story_festival_street,step_festival_street_millia_success,5,speaker_npc2,그렇지요.
 story_festival_street,step_festival_street_millia_success,6,speaker_abelia,그런데 금방 풀릴 것 같아.
 story_festival_street,step_festival_street_millia_success,7,speaker_narrator,밀리아가 고개를 들었다.
 story_festival_street,step_festival_street_millia_success,8,speaker_millia,어디?
@@ -2836,7 +2837,7 @@ story_festival_street,step_festival_street_millia_success,10,speaker_millia,맞�
 story_festival_street,step_festival_street_millia_success,11,speaker_narrator,"상인은 잠깐 웃음을 멈췄다가, 다른 장식을 꺼냈다."
 story_festival_street,step_festival_street_millia_fail,0,speaker_narrator,베르디아 상단의 가판대에는 작은 장식품들이 줄지어 놓여 있었다.
 story_festival_street,step_festival_street_millia_fail,1,speaker_narrator,상인이 반짝이는 머리장식을 아벨리아 쪽으로 내밀었다.
-story_festival_street,step_festival_street_millia_fail,2,speaker_npc,아가씨께 잘 어울릴 겁니다. 제일 고운 물건이지요.
+story_festival_street,step_festival_street_millia_fail,2,speaker_npc2,아가씨께 잘 어울릴 겁니다. 제일 고운 물건이지요.
 story_festival_street,step_festival_street_millia_fail,3,speaker_narrator,아벨리아는 장식을 받아 들었다.
 story_festival_street,step_festival_street_millia_fail,4,speaker_abelia,…예쁘다.
 story_festival_street,step_festival_street_millia_fail,5,speaker_narrator,밀리아가 장식을 힐끗 보았다.
@@ -2878,17 +2879,17 @@ story_imperial_ball,step_imperial_ball_rian_fail,3,speaker_narrator,아벨리아
 story_imperial_ball,step_imperial_ball_rian_fail,4,speaker_abelia,…
 story_imperial_ball,step_imperial_ball_rian_fail,5,speaker_narrator,리안은 황실 사람들 사이로 들어갔다. 아벨리아는 그 이름이 왜 리안에게 붙었는지 알 수 없었다.
 story_imperial_ball,step_imperial_ball_yuffie_success,0,speaker_narrator,한 귀족 부인이 아벨리아에게 다가와 부드럽게 웃었다.
-story_imperial_ball,step_imperial_ball_yuffie_success,1,speaker_npc,"오늘 무도회는 마음에 드시나요, 아가씨?"
+story_imperial_ball,step_imperial_ball_yuffie_success,1,speaker_npc2,"오늘 무도회는 마음에 드시나요, 아가씨?"
 story_imperial_ball,step_imperial_ball_yuffie_success,2,speaker_narrator,"말은 가벼웠지만, 주변의 시선이 함께 따라왔다."
 story_imperial_ball,step_imperial_ball_yuffie_success,3,speaker_narrator,유피가 멀리서 찻잔을 천천히 내려놓았다. 미리 정한 신호였다.
 story_imperial_ball,step_imperial_ball_yuffie_success,4,speaker_abelia,아직은 잘 모르겠어요.
-story_imperial_ball,step_imperial_ball_yuffie_success,5,speaker_npc,모르겠다?
+story_imperial_ball,step_imperial_ball_yuffie_success,5,speaker_npc2,모르겠다?
 story_imperial_ball,step_imperial_ball_yuffie_success,6,speaker_abelia,"네. 처음 온 자리라서, 조금 더 보고 싶어요."
 story_imperial_ball,step_imperial_ball_yuffie_success,7,speaker_narrator,귀족 부인은 잠시 아벨리아를 보다가 웃었다.
-story_imperial_ball,step_imperial_ball_yuffie_success,8,speaker_npc,신중하시군요.
+story_imperial_ball,step_imperial_ball_yuffie_success,8,speaker_npc2,신중하시군요.
 story_imperial_ball,step_imperial_ball_yuffie_success,9,speaker_narrator,유피는 작게 숨을 내쉬었다.
 story_imperial_ball,step_imperial_ball_yuffie_fail,0,speaker_narrator,한 귀족 부인이 아벨리아에게 다가와 부드럽게 웃었다.
-story_imperial_ball,step_imperial_ball_yuffie_fail,1,speaker_npc,"오늘 무도회는 마음에 드시나요, 아가씨?"
+story_imperial_ball,step_imperial_ball_yuffie_fail,1,speaker_npc2,"오늘 무도회는 마음에 드시나요, 아가씨?"
 story_imperial_ball,step_imperial_ball_yuffie_fail,2,speaker_narrator,"말은 가벼웠지만, 주변의 시선이 함께 따라왔다."
 story_imperial_ball,step_imperial_ball_yuffie_fail,3,speaker_narrator,아벨리아는 바로 대답하지 못했다.
 story_imperial_ball,step_imperial_ball_yuffie_fail,4,speaker_yuffie,"처음 오신 자리라, 아직 둘러보고 계세요."
@@ -2917,10 +2918,10 @@ story_imperial_ball,step_imperial_ball_max_fail,8,speaker_max,제가 맞출게�
 story_imperial_ball,step_imperial_ball_millia_success,0,speaker_narrator,"춤이 끝난 뒤, 무도회장 옆 테이블에는 작은 선물들이 놓여 있었다."
 story_imperial_ball,step_imperial_ball_millia_success,1,speaker_narrator,베르디아 상단의 장식 상자도 그중 하나였다.
 story_imperial_ball,step_imperial_ball_millia_success,2,speaker_narrator,한 귀족 아이가 작은 브로치를 아벨리아에게 내밀었다.
-story_imperial_ball,step_imperial_ball_millia_success,3,speaker_npc,기념품이에요. 받으셔도 돼요.
+story_imperial_ball,step_imperial_ball_millia_success,3,speaker_npc2,기념품이에요. 받으셔도 돼요.
 story_imperial_ball,step_imperial_ball_millia_success,4,speaker_narrator,아벨리아는 브로치를 받아 들었다. 뒤쪽에는 작은 상단 인장이 찍혀 있었다.
 story_imperial_ball,step_imperial_ball_millia_success,5,speaker_abelia,이건 베르디아 상단 물건이네요.
-story_imperial_ball,step_imperial_ball_millia_success,6,speaker_npc,네?
+story_imperial_ball,step_imperial_ball_millia_success,6,speaker_npc2,네?
 story_imperial_ball,step_imperial_ball_millia_success,7,speaker_abelia,"기념품인데, 왜 상단 표시가 있죠?"
 story_imperial_ball,step_imperial_ball_millia_success,8,speaker_narrator,밀리아가 테이블 옆에서 고개를 들었다.
 story_imperial_ball,step_imperial_ball_millia_success,9,speaker_millia,맞아요. 이런 건 누가 줬는지가 더 중요해요.
@@ -2929,7 +2930,7 @@ story_imperial_ball,step_imperial_ball_millia_success,11,speaker_abelia,그럼 �
 story_imperial_ball,step_imperial_ball_millia_fail,0,speaker_narrator,"춤이 끝난 뒤, 무도회장 옆 테이블에는 작은 선물들이 놓여 있었다."
 story_imperial_ball,step_imperial_ball_millia_fail,1,speaker_narrator,베르디아 상단의 장식 상자도 그중 하나였다.
 story_imperial_ball,step_imperial_ball_millia_fail,2,speaker_narrator,한 귀족 아이가 작은 브로치를 아벨리아에게 내밀었다.
-story_imperial_ball,step_imperial_ball_millia_fail,3,speaker_npc,기념품이에요. 받으셔도 돼요.
+story_imperial_ball,step_imperial_ball_millia_fail,3,speaker_npc2,기념품이에요. 받으셔도 돼요.
 story_imperial_ball,step_imperial_ball_millia_fail,4,speaker_narrator,아벨리아는 브로치를 받아 들었다.
 story_imperial_ball,step_imperial_ball_millia_fail,5,speaker_abelia,고마워요.
 story_imperial_ball,step_imperial_ball_millia_fail,6,speaker_narrator,밀리아가 테이블 옆에서 작게 말했다.

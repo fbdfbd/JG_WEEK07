@@ -32,7 +32,7 @@ MonoBehaviour:
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uD3C9\uC18C\uB300\uB85C\uC694?"
   - _speaker: {fileID: 11400000, guid: 0c996a4b6053a604a8453b8d2e8e4626, type: 2}
-    _text: "\uC608. \uBD09\uC2E0\uAC00\uBB38\uC740 \uC6D0\uB798 \uD6C8\uB828\uC744
+    _text: "\uC608. \uBC1C\uD14C\uB9AC\uC628\uC740 \uC6D0\uB798 \uD6C8\uB828\uC744
       \uC790\uC8FC \uD569\uB2C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uADF8\uB798\uC694?"

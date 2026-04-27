@@ -177,12 +177,6 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     {
         _dialogueContinueRoute = EDialogueContinueRoute.None;
 
-        if (_dialogueScreenView != null)
-        {
-            _dialogueScreenView.HideView();
-        }
-
-        HideEndingLetterView();
         SetEndingFollowUpPanelVisible(true);
     }
 
@@ -195,8 +189,6 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         {
             _dialogueScreenView.HideView();
         }
-
-        HideEndingLetterView();
     }
 
     public override void SetMainCanvasVisible(bool visible)

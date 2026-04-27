@@ -6238,8 +6238,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 398688971}
-  - component: {fileID: 398688973}
-  - component: {fileID: 398688972}
   m_Layer: 5
   m_Name: BlackPanel
   m_TagString: Untagged
@@ -6267,44 +6265,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &398688972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398688970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &398688973
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398688970}
-  m_CullTransparentMesh: 1
 --- !u!1 &410691782
 GameObject:
   m_ObjectHideFlags: 0
@@ -6336,16 +6296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeekFlowController
   _weekDefinition: {fileID: 11400000, guid: e2ab0a08d2744b92a97f30ae734b1e20, type: 2}
   _weekDefinitions:
-  - {fileID: 11400000, guid: e2ab0a08d2744b92a97f30ae734b1e20, type: 2}
-  - {fileID: 11400000, guid: ee7fca6b41a81b949a4525738adc1154, type: 2}
-  - {fileID: 11400000, guid: 7caf4d1bdd8dd8b429ff827dc3086d30, type: 2}
   - {fileID: 11400000, guid: ece288bcaf71db44fb7b9baf016379cc, type: 2}
-  - {fileID: 11400000, guid: f2653ee6ce5a6bb48ae0a8d891fc4411, type: 2}
-  - {fileID: 11400000, guid: ac65783dda392ff43b2f63923247923c, type: 2}
-  - {fileID: 11400000, guid: 49cfad984b12bfa4187104801313cd6d, type: 2}
-  - {fileID: 11400000, guid: fd650f7260ca46e41b58ba4029058879, type: 2}
-  - {fileID: 11400000, guid: e1269d5c5c11dcc49a0360f8a4d3d7d9, type: 2}
-  - {fileID: 11400000, guid: a39bcc6dd53ab574a861580f1f66179f, type: 2}
   _uiTextCatalog: {fileID: 11400000, guid: 33e689828c88c844691c4e31ef1dcb65, type: 2}
   _endingCatalog: {fileID: 11400000, guid: 056a44d53630474ab91c42403daa699c, type: 2}
   _view: {fileID: 1201139401}
@@ -19955,7 +19906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 33}
   m_SizeDelta: {x: -1200, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1898936907 stripped
