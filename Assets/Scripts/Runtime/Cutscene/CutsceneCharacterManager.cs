@@ -76,6 +76,7 @@ public class CutsceneCharacterManager : MonoBehaviour
     [SerializeField] private Transform _leftSpawnPoint;
     [SerializeField] private Transform _rightSpawnPoint;
     [SerializeField] private Transform _centerSpawnPoint;
+    [SerializeField] private Transform _leftFriendSpawnPoint;
 
     private GameObject _leftCharacterInstance;
     private GameObject _rightCharacterInstance;
@@ -94,7 +95,7 @@ public class CutsceneCharacterManager : MonoBehaviour
             return;
         }
 
-        ShowCharacter(character, _leftSpawnPoint, false);
+        ShowCharacter(character, ResolveLeftSpawnPoint(characterType), false);
         _leftCharacterInstance = character;
     }
 
@@ -219,6 +220,24 @@ public class CutsceneCharacterManager : MonoBehaviour
         SetFlip(character.transform, flipX);
 
         character.SetActive(true);
+    }
+
+    private Transform ResolveLeftSpawnPoint(CutsceneCharacterType characterType)
+    {
+        if (_leftFriendSpawnPoint == null || !UsesLeftFriendSpawnPoint(characterType))
+        {
+            return _leftSpawnPoint;
+        }
+
+        return _leftFriendSpawnPoint;
+    }
+
+    private static bool UsesLeftFriendSpawnPoint(CutsceneCharacterType characterType)
+    {
+        return characterType == CutsceneCharacterType.Friend01
+            || characterType == CutsceneCharacterType.Friend02
+            || characterType == CutsceneCharacterType.Friend03
+            || characterType == CutsceneCharacterType.Cousin02;
     }
 
     private void SetFlip(Transform target, bool flipX)
