@@ -26,7 +26,10 @@ MonoBehaviour:
       _maximumValue: 5
     _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: 103b79415453b114a9f4f597e298092d, type: 2}
-  _onCompletedInteractions: []
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
+  - {fileID: 11400000, guid: b0acdf54f7c36774fbadc86a7ef5a9d2, type: 2}
+  - {fileID: 11400000, guid: c59b64aca8f33c74f8799b37b3b2b92c, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
   - {fileID: 11400000, guid: aff23461bf1a8394e86a50769f425fb0, type: 2}

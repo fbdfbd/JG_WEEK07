@@ -16,7 +16,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 25eadd9609a34b14399a1fe25d046577, type: 2}
   - {fileID: 11400000, guid: 7f87f9496b38de244bf3639e1051b042, type: 2}
   - {fileID: 11400000, guid: 672d2bff5692308458eacb35e2ba95b6, type: 2}
-  - {fileID: 11400000, guid: 96c9ad6e292cd1248adf21419300d7cb, type: 2}
   - {fileID: 11400000, guid: b7d11cf43a101094c99a4b3b2cec56e6, type: 2}
   - {fileID: 11400000, guid: 6e1d5549583bfbc4abd99bce53edb596, type: 2}
   - {fileID: 11400000, guid: 069ca04c2a523fd489b2c16d336e8f73, type: 2}
@@ -38,6 +37,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4a49a8f86f01ae4fb84725af46df8a2, type: 2}
   - {fileID: 11400000, guid: c6e1bdd1d15de504bae800057c367af9, type: 2}
   - {fileID: 11400000, guid: 269056c5cd3f73643a9cdf570141203d, type: 2}
+  - {fileID: 11400000, guid: 96c9ad6e292cd1248adf21419300d7cb, type: 2}
   - {fileID: 11400000, guid: db0b637204356e248a966b92b7061c91, type: 2}
   _storyEvents:
   - {fileID: 11400000, guid: e3980e02d25e8a545a8e5c444974c1cd, type: 2}
