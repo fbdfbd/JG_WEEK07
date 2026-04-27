@@ -28,7 +28,7 @@ MonoBehaviour:
   _firstStep: {fileID: 11400000, guid: ef9fde4b2526d7344bcaa3d886c848e6, type: 2}
   _onCompletedInteractions:
   - {fileID: 11400000, guid: 1dd13bdd8eaf9ce4592aeb8a484f9fba, type: 2}
-  - {fileID: 11400000, guid: d6a5e766052d89c428f1743b91d1f5ed, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
   - {fileID: 11400000, guid: 569da758ceca0f64ca12ed31cc2542e2, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
