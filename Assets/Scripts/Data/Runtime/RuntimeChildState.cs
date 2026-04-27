@@ -46,6 +46,7 @@ public class RuntimeChildState
         }
 
         _stats[statType] = currentValue;
+        Debug.Log($"[StatChanged] {statType}: {previousValue} -> {currentValue} | {string.Join(", ", AllStatTypes.Select(type => $"{type}={GetStat(type)}"))}");
         StatChanged?.Invoke(new StatChangeInfo(statType, previousValue, currentValue, toastMessage));
     }
 

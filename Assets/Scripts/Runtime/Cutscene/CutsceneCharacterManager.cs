@@ -20,6 +20,7 @@ public enum CutsceneCharacterType
     Steward,
     StoreKeeper,
     Servant,
+    Hunter,
 }
 
 public enum CutsceneParticleType
@@ -727,7 +728,6 @@ public sealed class CutsceneSpeakerCharacterResolver
             case "speaker_secretary":
             case "speaker_servant":
             case "speaker_count":
-            case "speaker_hunter":
             case "speaker_npc":
             case "speaker_worker_1":
             case "speaker_worker_2":
@@ -738,6 +738,8 @@ public sealed class CutsceneSpeakerCharacterResolver
                 return CutsceneCharacterType.Archivist;
             case "speaker_warehouse_keeper":
                 return CutsceneCharacterType.StoreKeeper;
+            case "speaker_hunter":
+                return CutsceneCharacterType.Hunter;
             default:
                 return CutsceneCharacterType.None;
         }
