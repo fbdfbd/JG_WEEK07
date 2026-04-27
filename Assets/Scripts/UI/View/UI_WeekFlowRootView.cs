@@ -19,6 +19,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [Header("Panels")]
     [SerializeField] private UI_WeekFlowScreenView _weekScreenView;
     [SerializeField] private UI_DialogueScreenView _dialogueScreenView;
+    [SerializeField] private UI_EndingLetterView _endingLetterView;
     [SerializeField] private UI_DialogueLogPanel _dialogueLogPanel;
     [SerializeField] private UI_WeekFlowTransitionPlayer _transitionPlayer;
     [SerializeField] private SO_WeekEntryIntroCatalog _weekEntryIntroCatalog;
@@ -49,6 +50,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         SetMainCanvasVisible(true);
         BindWeekScreenEvents();
         BindDialogueScreenEvents();
+        BindEndingLetterEvents();
         BindLogEvents();
         HideTransientViews();
     }
@@ -63,6 +65,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         UnbindAdvanceInput();
         UnbindWeekScreenEvents();
         UnbindDialogueScreenEvents();
+        UnbindEndingLetterEvents();
         UnbindLogEvents();
     }
 
@@ -119,6 +122,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
             return;
         }
 
+        HideEndingLetterView();
         _dialogueContinueRoute = EDialogueContinueRoute.WeekFeedback;
         _dialogueScreenView.ShowWeekFeedback(presentation);
     }
@@ -130,6 +134,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
             return;
         }
 
+        HideEndingLetterView();
         _dialogueContinueRoute = EDialogueContinueRoute.Narrative;
         _dialogueScreenView.ShowInteractiveEvent(presentation);
     }
@@ -141,6 +146,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
             return;
         }
 
+        HideEndingLetterView();
         _dialogueContinueRoute = EDialogueContinueRoute.Narrative;
         _dialogueScreenView.ShowInteractiveEventResult(presentation);
     }
@@ -148,14 +154,23 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     public override void ShowEnding(EndingPresentation presentation)
     {
         CancelAdvanceHold();
+        _dialogueContinueRoute = EDialogueContinueRoute.Narrative;
 
-        if (_dialogueScreenView == null)
+        if (_dialogueScreenView != null)
         {
+            _dialogueScreenView.HideView();
+        }
+
+        if (_endingLetterView != null)
+        {
+            _endingLetterView.Show(presentation);
             return;
         }
 
-        _dialogueContinueRoute = EDialogueContinueRoute.Narrative;
-        _dialogueScreenView.ShowEnding(presentation);
+        if (_dialogueScreenView != null)
+        {
+            _dialogueScreenView.ShowEnding(presentation);
+        }
     }
 
     public override void ShowEndingFollowUp()
@@ -167,6 +182,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
             _dialogueScreenView.HideView();
         }
 
+        HideEndingLetterView();
         SetEndingFollowUpPanelVisible(true);
     }
 
@@ -179,6 +195,8 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         {
             _dialogueScreenView.HideView();
         }
+
+        HideEndingLetterView();
     }
 
     public override void SetMainCanvasVisible(bool visible)
@@ -264,6 +282,11 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _dialogueScreenView.SetDialogueLogService(_dialogueLogService);
         _dialogueScreenView.SetCutsceneBridge(_cutsceneBridge);
 
+        if (_endingLetterView != null)
+        {
+            _endingLetterView.SetDialogueLogService(_dialogueLogService);
+        }
+
         if (_dialogueLogPanel != null)
         {
             _dialogueLogPanel.SetDialogueLogService(_dialogueLogService);
@@ -307,6 +330,16 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _dialogueScreenView.ChoiceSelected += HandleDialogueChoiceSelected;
     }
 
+    private void BindEndingLetterEvents()
+    {
+        if (_endingLetterView == null)
+        {
+            return;
+        }
+
+        _endingLetterView.ContinueRequested += HandleDialogueContinueRequested;
+    }
+
     private void BindLogEvents()
     {
         if (_openLogButton == null)
@@ -327,6 +360,16 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _dialogueScreenView.ContinueRequested -= HandleDialogueContinueRequested;
         _dialogueScreenView.EventSkipRequested -= HandleDialogueEventSkipRequested;
         _dialogueScreenView.ChoiceSelected -= HandleDialogueChoiceSelected;
+    }
+
+    private void UnbindEndingLetterEvents()
+    {
+        if (_endingLetterView == null)
+        {
+            return;
+        }
+
+        _endingLetterView.ContinueRequested -= HandleDialogueContinueRequested;
     }
 
     private void UnbindLogEvents()
@@ -374,6 +417,11 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         if (IsEndingFollowUpVisible())
         {
             return false;
+        }
+
+        if (_endingLetterView != null && _endingLetterView.IsVisible)
+        {
+            return _endingLetterView.TryAdvance();
         }
 
         if (_dialogueScreenView == null)
@@ -531,5 +579,15 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     private bool IsEndingFollowUpVisible()
     {
         return _endingFollowUpPanel != null && _endingFollowUpPanel.activeSelf;
+    }
+
+    private void HideEndingLetterView()
+    {
+        if (_endingLetterView == null)
+        {
+            return;
+        }
+
+        _endingLetterView.Hide();
     }
 }

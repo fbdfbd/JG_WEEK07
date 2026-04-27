@@ -216,7 +216,7 @@ public sealed class UI_EventCutsceneBridge : WeekFlowCutsceneBridgeBase
             IsStepMatch(stepName, "step_prologue_snow_room") ||
             IsStepMatch(stepName, "step_prologue_age_six"))
         {
-            BackgroundManager.I.ShowBackground(BackgroundType.BedRoom);
+            BackgroundManager.I.ShowBackground(BackgroundType.BedroomTutorial);
         }
     }
 

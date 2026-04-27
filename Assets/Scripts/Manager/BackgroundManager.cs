@@ -29,7 +29,8 @@ public enum BackgroundType
     ImperialBall,
     ImperialBallNobleSeat,
     ImperialPalaceHallway,
-    GardenDeclarationStage
+    GardenDeclarationStage,
+    BedroomTutorial
 }
 
 public enum BackgroundTransitionMode

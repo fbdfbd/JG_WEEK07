@@ -15,16 +15,16 @@ MonoBehaviour:
   _entries:
   - _weekId: week_003
     _title: "\uC544\uBCA8\uB9AC\uC544 10\uC0B4"
-    _fadeInSeconds: 0.1
+    _fadeInSeconds: 0
     _fadeOutSeconds: 0.5
     _waitForClick: 1
   - _weekId: week_005
     _title: "\uC544\uBCA8\uB9AC\uC544 14\uC0B4"
-    _fadeInSeconds: 0.1
+    _fadeInSeconds: 0
     _fadeOutSeconds: 0.5
     _waitForClick: 1
   - _weekId: week_007
     _title: "\uC544\uBCA8\uB9AC\uC544 18\uC0B4"
-    _fadeInSeconds: 0.1
+    _fadeInSeconds: 0
     _fadeOutSeconds: 0.5
     _waitForClick: 1

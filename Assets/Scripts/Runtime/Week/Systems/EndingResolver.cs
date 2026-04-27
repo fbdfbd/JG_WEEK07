@@ -83,7 +83,7 @@ public static class EndingResolver
         EndingTextData affinityText)
     {
         List<string> detailLines = SplitBody(mainText.Body);
-        detailLines.AddRange(SplitBody(affinityText.Body));
+        AddEndingSection(detailLines, affinityText.Title, affinityText.Body);
 
         string title = FirstNotEmpty(mainText.Title, "Ending");
         string summary = FirstNotEmpty(mainText.Summary, affinityText.Summary);
@@ -111,6 +111,22 @@ public static class EndingResolver
             string.Empty,
             string.Empty,
             ENemoVisualState.Neutral);
+    }
+
+    private static void AddEndingSection(List<string> lines, string title, string body)
+    {
+        List<string> bodyLines = SplitBody(body);
+        if (bodyLines.Count <= 0)
+        {
+            return;
+        }
+
+        if (!string.IsNullOrWhiteSpace(title))
+        {
+            lines.Add(title.Trim());
+        }
+
+        lines.AddRange(bodyLines);
     }
 
     private static List<string> SplitBody(string body)
