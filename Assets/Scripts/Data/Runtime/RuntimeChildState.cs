@@ -138,6 +138,8 @@ public class RuntimeChildState
         {
             _stats[statType] = DefaultStatValue;
         }
+
+        _stats[EChildStatusType.Anxiety] = 1;
     }
 
     private static int ClampStat(EChildStatusType statType, int value)
