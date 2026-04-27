@@ -12475,7 +12475,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   _advanceHoldDelay: 0.35
-  _advanceRepeatInterval: 0.01
+  _advanceRepeatInterval: 0.1
 --- !u!4 &1201139402
 Transform:
   m_ObjectHideFlags: 0
