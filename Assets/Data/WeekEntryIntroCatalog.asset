@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e229deffd75514ba3f309b88689d7d, type: 3}
+  m_Name: WeekEntryIntroCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::SO_WeekEntryIntroCatalog
+  _entries:
+  - _weekId: week_003
+    _title: "\uC544\uBCA8\uB9AC\uC544 10\uC0B4"
+    _fadeInSeconds: 0.1
+    _fadeOutSeconds: 0.5
+    _waitForClick: 1
+  - _weekId: week_005
+    _title: "\uC544\uBCA8\uB9AC\uC544 14\uC0B4"
+    _fadeInSeconds: 0.1
+    _fadeOutSeconds: 0.5
+    _waitForClick: 1
+  - _weekId: week_007
+    _title: "\uC544\uBCA8\uB9AC\uC544 18\uC0B4"
+    _fadeInSeconds: 0.1
+    _fadeOutSeconds: 0.5
+    _waitForClick: 1

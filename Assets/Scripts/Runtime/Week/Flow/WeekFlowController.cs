@@ -266,6 +266,12 @@ public class WeekFlowController : MonoBehaviour
         if (previousWeek != currentWeek)
         {
             yield return _cinematicDirector.PlayWeekChangeIn(currentWeek);
+
+            if (_view != null)
+            {
+                yield return _view.PlayWeekEntryIntro(currentWeek);
+            }
+
             WeekChanged?.Invoke(currentWeek);
         }
 

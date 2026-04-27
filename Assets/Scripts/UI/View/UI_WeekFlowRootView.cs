@@ -21,6 +21,8 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [SerializeField] private UI_DialogueScreenView _dialogueScreenView;
     [SerializeField] private UI_DialogueLogPanel _dialogueLogPanel;
     [SerializeField] private UI_WeekFlowTransitionPlayer _transitionPlayer;
+    [SerializeField] private SO_WeekEntryIntroCatalog _weekEntryIntroCatalog;
+    [SerializeField] private UI_WeekEntryIntroOverlay _weekEntryIntroOverlay;
     [SerializeField] private WeekFlowCutsceneBridgeBase _cutsceneBridge;
     [SerializeField] private GameObject _endingFollowUpPanel;
     [SerializeField] private CanvasGroup _mainCanvasGroup;
@@ -235,6 +237,21 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         }
 
         yield return _transitionPlayer.Play(context);
+    }
+
+    public override IEnumerator PlayWeekEntryIntro(SO_WeekDefinition weekDefinition)
+    {
+        if (weekDefinition == null || _weekEntryIntroCatalog == null || _weekEntryIntroOverlay == null)
+        {
+            yield break;
+        }
+
+        if (!_weekEntryIntroCatalog.TryGet(weekDefinition.Id, out WeekEntryIntroEntry entry))
+        {
+            yield break;
+        }
+
+        yield return _weekEntryIntroOverlay.Play(entry);
     }
 
     private void InitializePanels()

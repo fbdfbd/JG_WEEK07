@@ -101,6 +101,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public virtual void SetFlowScreenContext(WeekFlowScreen screen, RuntimeChildState childState, RuntimeWeekResult lastWeekResult) { }
     public virtual IEnumerator PlayCurrentDialogueCutscene() { yield break; }
     public virtual IEnumerator PlayFlowTransition(WeekFlowTransitionContext context) { yield break; }
+    public virtual IEnumerator PlayWeekEntryIntro(SO_WeekDefinition weekDefinition) { yield break; }
 }
 
 public readonly struct WeekHeaderPresentation
