@@ -23846,11 +23846,11 @@ MonoBehaviour:
   _leftLabelText: {fileID: 7874342276318408023}
   _rightLabelText: {fileID: 2256230484184189328}
   _leftValueText: {fileID: 1242268321492401664}
-  _rightValueText: {fileID: 7679080055989318000}
+  _rightValueText: {fileID: 1242268321492401664}
   _leftFill:
     _slider: {fileID: 0}
   _rightFill:
-    _slider: {fileID: 0}
+    _slider: {fileID: 8021856927681524788}
 --- !u!222 &1911016759057863693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26823,6 +26823,10 @@ PrefabInstance:
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[3].RightLabel
       value: "\uBD88\uC548"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
+      propertyPath: _displayRules.Array.data[4].RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8000884294605479678, guid: df0bfc0d2390142418fe88997508f243, type: 3}
       propertyPath: _displayRules.Array.data[4].RightLabel
