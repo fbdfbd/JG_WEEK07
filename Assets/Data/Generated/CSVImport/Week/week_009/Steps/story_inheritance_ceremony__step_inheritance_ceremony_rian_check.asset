@@ -24,7 +24,7 @@ MonoBehaviour:
     _nextStep: {fileID: 11400000, guid: 298d5b7fa9552ea439bf00eee5d32de1, type: 2}
     _fallbackStep: {fileID: 11400000, guid: 595d69b17cfb0994dab040524484c0f3, type: 2}
     _statRequirements:
-    - _statType: 4
+    - _statType: 3
       _useMinimum: 0
       _minimumValue: 0
       _useMaximum: 1

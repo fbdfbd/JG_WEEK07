@@ -357,7 +357,7 @@ story_eve_celebration,step_eve_celebration_yuffie_success,,,false,Neutral,anxiou
 story_eve_celebration,step_eve_celebration_yuffie_fail,,,false,Neutral,,step_eve_celebration_outro,,,,,,,,
 story_eve_celebration,step_eve_celebration_outro,,,false,Neutral,,,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_intro,,,false,Neutral,,step_inheritance_ceremony_rian_check,,,,,,,,
-story_inheritance_ceremony,step_inheritance_ceremony_rian_check,,,false,Neutral,,,Obedience,,-5,Rian,7,,step_inheritance_ceremony_rian_success,step_inheritance_ceremony_rian_fail
+story_inheritance_ceremony,step_inheritance_ceremony_rian_check,,,false,Neutral,,,Anxiety,,-5,Rian,7,,step_inheritance_ceremony_rian_success,step_inheritance_ceremony_rian_fail
 story_inheritance_ceremony,step_inheritance_ceremony_rian_success,,,false,Neutral,,step_inheritance_ceremony_max_check,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_rian_fail,,,false,Neutral,,step_inheritance_ceremony_max_check,,,,,,,,
 story_inheritance_ceremony,step_inheritance_ceremony_max_check,,,false,Neutral,,,Obedience,,-5,Max,7,,step_inheritance_ceremony_max_success,step_inheritance_ceremony_max_fail

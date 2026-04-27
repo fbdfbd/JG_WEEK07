@@ -49,6 +49,20 @@ MonoBehaviour:
     _resultCinematicCues:
       _enterCue: {fileID: 0}
       _exitCue: {fileID: 0}
+  - _label: "\uB0A8\uB4E4 \uC55E\uC5D0\uC11C\uB294 \uC548 \uD588\uC5B4. \uADF8\uAC74
+      \uB108\uD55C\uD14C \uC9C1\uC811 \uB9D0\uD558\uB294 \uAC8C \uB354 \uB0AB\uB354\uB77C\uACE0."
+    _responseDialogueLines:
+    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+      _text: "\uADF8\uB798..?"
+    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+      _text: "\uC9C1\uC811 \uB9D0\uD55C \uC801\uB3C4 \uC5C6\uB294 \uAC83 \uAC19\uC740\uB370?"
+    _responseLine: "\uADF8\uB798..?"
+    _interactions:
+    - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
+    _nextStep: {fileID: 11400000, guid: 761e7befce19691479cb9cfb2c4ae142, type: 2}
+    _resultCinematicCues:
+      _enterCue: {fileID: 0}
+      _exitCue: {fileID: 0}
   - _label: "\uC790\uB791\uC740 \uC5B4\uC6B8\uB9AC\uC9C0 \uC54A\uC544. \uB108\uB294
       \uBC31\uC791\uAC00\uC758 \uD6C4\uACC4\uC790\uB2C8\uAE4C \uADF8\uB7F0 \uC2DD\uC73C\uB85C
       \uBCF4\uC5EC\uC9C0\uBA74 \uC548 \uB3FC."
@@ -62,20 +76,6 @@ MonoBehaviour:
     _interactions:
     - {fileID: 11400000, guid: 1dd13bdd8eaf9ce4592aeb8a484f9fba, type: 2}
     - {fileID: 11400000, guid: 5567f538fa6f95541b83bef514683358, type: 2}
-    _nextStep: {fileID: 11400000, guid: 761e7befce19691479cb9cfb2c4ae142, type: 2}
-    _resultCinematicCues:
-      _enterCue: {fileID: 0}
-      _exitCue: {fileID: 0}
-  - _label: "\uB0A8\uB4E4 \uC55E\uC5D0\uC11C\uB294 \uC548 \uD588\uC5B4. \uADF8\uAC74
-      \uB108\uD55C\uD14C \uC9C1\uC811 \uB9D0\uD558\uB294 \uAC8C \uB354 \uB0AB\uB354\uB77C\uACE0."
-    _responseDialogueLines:
-    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-      _text: "\uADF8\uB798..?"
-    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-      _text: "\uC9C1\uC811 \uB9D0\uD55C \uC801\uB3C4 \uC5C6\uB294 \uAC83 \uAC19\uC740\uB370?"
-    _responseLine: "\uADF8\uB798..?"
-    _interactions:
-    - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
     _nextStep: {fileID: 11400000, guid: 761e7befce19691479cb9cfb2c4ae142, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}

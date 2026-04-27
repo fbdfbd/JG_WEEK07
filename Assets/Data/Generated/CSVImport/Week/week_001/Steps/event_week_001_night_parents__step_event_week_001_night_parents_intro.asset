@@ -30,22 +30,19 @@ MonoBehaviour:
   _visualState: 0
   _onEnterInteractions: []
   _choices:
-  - _label: "\uC544\uBCA8\uB9AC\uC544\uB97C \uBCF4\uACE0 \uC788\uC744 \uAC70\uC57C.
-      \uB298 \uBCF4\uACE0 \uACC4\uC2E4 \uAC70\uB780\uB2E4."
+  - _label: "\uADF8\uB7F0 \uAC74 \uC790\uAE30 \uC804\uC5D0 \uC0DD\uAC01\uD558\uC9C0
+      \uC54A\uB294 \uAC8C \uC88B\uACA0\uAD6C\uB098."
     _responseDialogueLines:
     - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-      _text: "\u2026\uC9C4\uC9DC?"
-    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-      _text: "\uADF8\uB7FC \uB098 \uC798 \uC790\uC57C\uACA0\uB2E4."
-    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-      _text: "\uC790\uB294 \uAC70 \uBCF4\uBA74 \uC5C4\uB9C8 \uC544\uBE60\uB3C4 \uC548\uC2EC\uD558\uC796\uC544."
+      _text: "...\uC54C\uACA0\uC5B4, \uC0BC\uCD0C."
     - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-      _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB208\uC744 \uAC10\uC558\uB2E4. \uC785\uAC00\uAC00
-        \uC544\uC8FC \uC0B4\uC9DD \uD480\uB824 \uC788\uC5C8\uB2E4."
-    _responseLine: "\u2026\uC9C4\uC9DC?"
+      _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC774\uBD88 \uC18D\uC5D0\uC11C \uC791\uAC8C
+        \uBAB8\uC744 \uC6C5\uD06C\uB838\uB2E4. \uADF8\uB0A0 \uBC24, \uC7A0\uB4DC\uB294
+        \uB370 \uC2DC\uAC04\uC774 \uD3C9\uC18C\uBCF4\uB2E4 \uB354 \uAC78\uB838\uB2E4."
+    _responseLine: "...\uC54C\uACA0\uC5B4, \uC0BC\uCD0C."
     _interactions:
-    - {fileID: 11400000, guid: 49d60b6de82ff6d499a3921eb28eb77f, type: 2}
-    - {fileID: 11400000, guid: 4e2d4519c1faa224990410a373c41ac7, type: 2}
+    - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
+    - {fileID: 11400000, guid: 5567f538fa6f95541b83bef514683358, type: 2}
     _nextStep: {fileID: 11400000, guid: e35106381b1e2a648802a3b5cf2cb676, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}
@@ -69,19 +66,22 @@ MonoBehaviour:
     _resultCinematicCues:
       _enterCue: {fileID: 0}
       _exitCue: {fileID: 0}
-  - _label: "\uADF8\uB7F0 \uAC74 \uC790\uAE30 \uC804\uC5D0 \uC0DD\uAC01\uD558\uC9C0
-      \uC54A\uB294 \uAC8C \uC88B\uACA0\uAD6C\uB098."
+  - _label: "\uC544\uBCA8\uB9AC\uC544\uB97C \uBCF4\uACE0 \uC788\uC744 \uAC70\uC57C.
+      \uB298 \uBCF4\uACE0 \uACC4\uC2E4 \uAC70\uB780\uB2E4."
     _responseDialogueLines:
     - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-      _text: "...\uC54C\uACA0\uC5B4, \uC0BC\uCD0C."
+      _text: "\u2026\uC9C4\uC9DC?"
+    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+      _text: "\uADF8\uB7FC \uB098 \uC798 \uC790\uC57C\uACA0\uB2E4."
+    - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+      _text: "\uC790\uB294 \uAC70 \uBCF4\uBA74 \uC5C4\uB9C8 \uC544\uBE60\uB3C4 \uC548\uC2EC\uD558\uC796\uC544."
     - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-      _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC774\uBD88 \uC18D\uC5D0\uC11C \uC791\uAC8C
-        \uBAB8\uC744 \uC6C5\uD06C\uB838\uB2E4. \uADF8\uB0A0 \uBC24, \uC7A0\uB4DC\uB294
-        \uB370 \uC2DC\uAC04\uC774 \uD3C9\uC18C\uBCF4\uB2E4 \uB354 \uAC78\uB838\uB2E4."
-    _responseLine: "...\uC54C\uACA0\uC5B4, \uC0BC\uCD0C."
+      _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB208\uC744 \uAC10\uC558\uB2E4. \uC785\uAC00\uAC00
+        \uC544\uC8FC \uC0B4\uC9DD \uD480\uB824 \uC788\uC5C8\uB2E4."
+    _responseLine: "\u2026\uC9C4\uC9DC?"
     _interactions:
-    - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
-    - {fileID: 11400000, guid: 5567f538fa6f95541b83bef514683358, type: 2}
+    - {fileID: 11400000, guid: 49d60b6de82ff6d499a3921eb28eb77f, type: 2}
+    - {fileID: 11400000, guid: 4e2d4519c1faa224990410a373c41ac7, type: 2}
     _nextStep: {fileID: 11400000, guid: e35106381b1e2a648802a3b5cf2cb676, type: 2}
     _resultCinematicCues:
       _enterCue: {fileID: 0}

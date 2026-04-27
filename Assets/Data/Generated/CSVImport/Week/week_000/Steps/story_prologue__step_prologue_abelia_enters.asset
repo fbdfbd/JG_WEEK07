@@ -38,14 +38,6 @@ MonoBehaviour:
   _visualState: 0
   _onEnterInteractions: []
   _choices:
-  - _label: "\uC751."
-    _responseDialogueLines: []
-    _responseLine: 
-    _interactions: []
-    _nextStep: {fileID: 11400000, guid: 0bd860280cc50a041bc4f7ce29caa953, type: 2}
-    _resultCinematicCues:
-      _enterCue: {fileID: 0}
-      _exitCue: {fileID: 0}
   - _label: "\uB204\uAC00 \uADF8\uB7F0 \uB9D0\uC744 \uD588\uB2C8."
     _responseDialogueLines: []
     _responseLine: 
@@ -55,6 +47,14 @@ MonoBehaviour:
       _enterCue: {fileID: 0}
       _exitCue: {fileID: 0}
   - _label: "(\uC544\uBB34 \uB9D0\uB3C4 \uD558\uC9C0 \uC54A\uB294\uB2E4)"
+    _responseDialogueLines: []
+    _responseLine: 
+    _interactions: []
+    _nextStep: {fileID: 11400000, guid: 0bd860280cc50a041bc4f7ce29caa953, type: 2}
+    _resultCinematicCues:
+      _enterCue: {fileID: 0}
+      _exitCue: {fileID: 0}
+  - _label: "\uC751."
     _responseDialogueLines: []
     _responseLine: 
     _interactions: []
