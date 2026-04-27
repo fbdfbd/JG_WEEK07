@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CharacterEnding_Max_03_04_Rebellion
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_max_03_04_rebellion
+  _priority: 6
   _characterType: 1
   _minMeetCount: 3
   _maxMeetCount: 4

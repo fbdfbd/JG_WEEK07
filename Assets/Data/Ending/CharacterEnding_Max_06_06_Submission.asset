@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CharacterEnding_Max_06_06_Submission
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_max_06_06_anxiety
+  _priority: 6
   _characterType: 1
   _minMeetCount: 6
   _maxMeetCount: 6

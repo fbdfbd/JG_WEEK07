@@ -6,6 +6,7 @@ using UnityEngine;
 public class SO_CharacterEndingDefinition : ScriptableObject
 {
     [SerializeField] private string _id;
+    [SerializeField] private int _priority;
     [SerializeField] private EEndingCharacterType _characterType;
     [SerializeField] private int _minMeetCount;
     [SerializeField] private int _maxMeetCount;
@@ -13,6 +14,7 @@ public class SO_CharacterEndingDefinition : ScriptableObject
     [SerializeField] private EndingTextData _text;
 
     public string Id => _id;
+    public int Priority => _priority;
     public EEndingCharacterType CharacterType => _characterType;
     public int MinMeetCount => _minMeetCount;
     public int MaxMeetCount => _maxMeetCount;

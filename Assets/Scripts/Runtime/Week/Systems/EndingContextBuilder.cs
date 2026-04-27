@@ -1,5 +1,13 @@
 public static class EndingContextBuilder
 {
+    private static readonly EEndingCharacterType[] CharacterTiePriority =
+    {
+        EEndingCharacterType.Rian,
+        EEndingCharacterType.Yuffie,
+        EEndingCharacterType.Max,
+        EEndingCharacterType.Millia,
+    };
+
     public static bool HasNoCharacterMet(RuntimeChildState childState)
     {
         return GetMeetCount(childState, EEndingCharacterType.Rian) <= 0
@@ -20,28 +28,69 @@ public static class EndingContextBuilder
 
     private static EEndingCharacterType ResolveCharacterType(RuntimeChildState childState)
     {
-        EEndingCharacterType result = EEndingCharacterType.Rian;
-        int highest = GetMeetCount(childState, result);
+        int highest = GetHighestMeetCount(childState);
 
-        ChooseIfHigher(childState, EEndingCharacterType.Max, ref result, ref highest);
-        ChooseIfHigher(childState, EEndingCharacterType.Millia, ref result, ref highest);
-        ChooseIfHigher(childState, EEndingCharacterType.Yuffie, ref result, ref highest);
+        for (int i = 0; i < CharacterTiePriority.Length; i++)
+        {
+            EEndingCharacterType candidate = CharacterTiePriority[i];
+            if (GetMeetCount(childState, candidate) == highest
+                && GetMoodDecisionMagnitude(childState, candidate) > 0)
+            {
+                return candidate;
+            }
+        }
 
-        return result;
+        for (int i = 0; i < CharacterTiePriority.Length; i++)
+        {
+            EEndingCharacterType candidate = CharacterTiePriority[i];
+            if (GetMeetCount(childState, candidate) == highest)
+            {
+                return candidate;
+            }
+        }
+
+        return EEndingCharacterType.Rian;
     }
 
-    private static void ChooseIfHigher(
-        RuntimeChildState childState,
-        EEndingCharacterType candidate,
-        ref EEndingCharacterType result,
-        ref int highest)
+    private static int GetHighestMeetCount(RuntimeChildState childState)
     {
-        int value = GetMeetCount(childState, candidate);
-        if (value > highest)
+        int highest = 0;
+        for (int i = 0; i < CharacterTiePriority.Length; i++)
         {
-            highest = value;
-            result = candidate;
+            int value = GetMeetCount(childState, CharacterTiePriority[i]);
+            if (value > highest)
+            {
+                highest = value;
+            }
         }
+
+        return highest;
+    }
+
+    private static int GetMoodDecisionMagnitude(
+        RuntimeChildState childState,
+        EEndingCharacterType characterType)
+    {
+        return System.Math.Abs(GetMoodDecisionValue(childState, characterType));
+    }
+
+    private static int GetMoodDecisionValue(
+        RuntimeChildState childState,
+        EEndingCharacterType characterType)
+    {
+        if (childState == null)
+        {
+            return RuntimeChildState.DefaultStatValue;
+        }
+
+        return characterType switch
+        {
+            EEndingCharacterType.Rian => childState.GetStat(EChildStatusType.Anxiety),
+            EEndingCharacterType.Max => childState.GetStat(EChildStatusType.Obedience),
+            EEndingCharacterType.Millia => childState.GetStat(EChildStatusType.Curiosity),
+            EEndingCharacterType.Yuffie => childState.GetStat(EChildStatusType.Trust),
+            _ => RuntimeChildState.DefaultStatValue,
+        };
     }
 
     private static EEndingMoodType ResolveMoodType(

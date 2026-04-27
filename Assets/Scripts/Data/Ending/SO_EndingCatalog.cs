@@ -20,30 +20,38 @@ public class SO_EndingCatalog : ScriptableObject
 
     public SO_CharacterEndingDefinition FindCharacterEnding(EndingContext context)
     {
+        SO_CharacterEndingDefinition bestEnding = null;
         for (int i = 0; i < _characterEndings.Length; i++)
         {
             SO_CharacterEndingDefinition ending = _characterEndings[i];
             if (ending != null && ending.Matches(context))
             {
-                return ending;
+                if (bestEnding == null || ending.Priority > bestEnding.Priority)
+                {
+                    bestEnding = ending;
+                }
             }
         }
 
-        return null;
+        return bestEnding;
     }
 
     public SO_AffinityEndingDefinition FindAffinityEnding(int affinity)
     {
+        SO_AffinityEndingDefinition bestEnding = null;
         for (int i = 0; i < _affinityEndings.Length; i++)
         {
             SO_AffinityEndingDefinition ending = _affinityEndings[i];
             if (ending != null && ending.Matches(affinity))
             {
-                return ending;
+                if (bestEnding == null || ending.Priority > bestEnding.Priority)
+                {
+                    bestEnding = ending;
+                }
             }
         }
 
-        return null;
+        return bestEnding;
     }
 }
 
