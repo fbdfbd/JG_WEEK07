@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: ending_affinity_bad
   _priority: 0
   _minAffinity: -100
-  _maxAffinity: 8
+  _maxAffinity: 5
   _text:
     _title: "\uC0BC\uCD0C\uACFC\uB294..."
     _body: "\uC131\uC778\uC2DD\uC774 \uB05D\uB098\uACE0 \uCC3E\uC544\uAC04 \uC11C\uC7AC\uB294

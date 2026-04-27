@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterEnding_Rian_01_02_Anxiety
   m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
   _id: ending_rian_01_02_anxiety
-  _priority: 10
+  _priority: 100
   _characterType: 0
   _minMeetCount: 1
   _maxMeetCount: 2

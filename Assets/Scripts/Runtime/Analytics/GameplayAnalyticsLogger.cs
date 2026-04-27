@@ -61,6 +61,8 @@ public static class GameplayAnalyticsLogger
         Log("card_option_clicked", GetWeekIndex(week))
             .Add("week_id", GetWeekId(week))
             .Add("card_id", GetCardId(card))
+            .Add("card_type_id", GetCardTypeId(card))
+            .Add("card_type_name", GetCardTypeName(card))
             .Add("card_title", GetCardTitle(card))
             .Add("option_index", optionIndex)
             .Add("semantic", option != null ? option.Semantic.ToString() : string.Empty);
@@ -78,6 +80,8 @@ public static class GameplayAnalyticsLogger
         Log("card_option_selected", GetWeekIndex(week))
             .Add("week_id", GetWeekId(week))
             .Add("card_id", GetCardId(resolvedCard.CardDefinition))
+            .Add("card_type_id", GetCardTypeId(resolvedCard.CardDefinition))
+            .Add("card_type_name", GetCardTypeName(resolvedCard.CardDefinition))
             .Add("card_title", GetCardTitle(resolvedCard.CardDefinition))
             .Add("option_index", resolvedCard.SelectedOptionIndex)
             .Add("semantic", resolvedCard.SelectedOption != null ? resolvedCard.SelectedOption.Semantic.ToString() : string.Empty);
@@ -184,6 +188,18 @@ public static class GameplayAnalyticsLogger
     private static string GetCardTitle(SO_CardInfoDefinition card)
     {
         return card != null ? card.Title : string.Empty;
+    }
+
+    private static string GetCardTypeId(SO_CardInfoDefinition card)
+    {
+        return card?.CardType != null && !string.IsNullOrWhiteSpace(card.CardType.Id)
+            ? card.CardType.Id
+            : string.Empty;
+    }
+
+    private static string GetCardTypeName(SO_CardInfoDefinition card)
+    {
+        return card?.CardType != null ? card.CardType.DisplayName : string.Empty;
     }
 
     private static CardOptionData GetOption(SO_CardInfoDefinition card, int optionIndex)
