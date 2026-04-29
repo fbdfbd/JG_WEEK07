@@ -9,6 +9,7 @@ public sealed class WeekFlowCommandHandler
     private readonly WeekSelectionState _weekSelectionState;
     private readonly WeekSequenceState _weekSequenceState;
     private readonly SO_EndingCatalog _endingCatalog;
+    private readonly bool _isTest;
 
     public WeekFlowCommandHandler(
         WeekFlowRuntimeState runtimeState,
@@ -16,7 +17,8 @@ public sealed class WeekFlowCommandHandler
         WeekRunner weekRunner,
         WeekSelectionState weekSelectionState,
         WeekSequenceState weekSequenceState,
-        SO_EndingCatalog endingCatalog)
+        SO_EndingCatalog endingCatalog,
+        bool isTest)
     {
         _runtimeState = runtimeState;
         _weekUiText = weekUiText;
@@ -24,6 +26,7 @@ public sealed class WeekFlowCommandHandler
         _weekSelectionState = weekSelectionState;
         _weekSequenceState = weekSequenceState;
         _endingCatalog = endingCatalog;
+        _isTest = isTest;
     }
 
     public WeekFlowActionResult RunCurrentWeek()
@@ -192,6 +195,14 @@ public sealed class WeekFlowCommandHandler
         EndingPresentation ending = EndingResolver.Resolve(_runtimeState.ChildState, _endingCatalog);
         GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());
+
+        if (_isTest)
+        {
+            _runtimeState.IsAwaitingEndingFollowUp = false;
+            return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEndingFollowUp(
+                _weekSequenceState.CurrentWeekDefinition,
+                new NemoFeedbackPresentation(ENemoVisualState.Neutral, string.Empty)));
+        }
 
         return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEnding(
             _weekSequenceState.CurrentWeekDefinition,
