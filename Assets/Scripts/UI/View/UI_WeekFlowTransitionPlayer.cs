@@ -36,6 +36,14 @@ public class UI_WeekFlowTransitionPlayer : MonoBehaviour
 
         CacheDefaultValues();
         StopActiveTween(false);
+
+        if (context.Cue.Duration <= 0f)
+        {
+            FinalizeTransitionState(context);
+            SetInputBlocked(false);
+            yield break;
+        }
+
         SetInputBlocked(context.Cue.BlockInput);
 
         _activeTween = BuildTween(context);

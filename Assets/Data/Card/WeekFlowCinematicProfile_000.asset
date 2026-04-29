@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: WeekFlowCinematicProfile_000
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekFlowCinematicProfile
   _weekFeedbackCues:
-    _enterCue: {fileID: 0}
+    _enterCue: {fileID: 11400000, guid: b7158ce29202ed74aa88d5b269702c3e, type: 2}
     _exitCue: {fileID: 0}
   _eventStepCues:
-    _enterCue: {fileID: 0}
+    _enterCue: {fileID: 11400000, guid: b7158ce29202ed74aa88d5b269702c3e, type: 2}
     _exitCue: {fileID: 0}
   _choiceResultCues:
     _enterCue: {fileID: 0}
@@ -25,4 +25,4 @@ MonoBehaviour:
     _enterCue: {fileID: 0}
     _exitCue: {fileID: 0}
   _weekChangeOutCue: {fileID: 0}
-  _weekChangeInCue: {fileID: 11400000, guid: bf19d7f94f186ca4d97ab16f784e7b63, type: 2}
+  _weekChangeInCue: {fileID: 0}

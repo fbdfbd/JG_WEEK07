@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeekFlowCue_In
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekFlowCueDefinition
   _id: Test
-  _style: 2
+  _style: 4
   _duration: 0.5
   _ease: 20
   _blockInput: 1
