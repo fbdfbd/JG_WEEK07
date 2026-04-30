@@ -110,6 +110,7 @@ public class WeekFlowController : MonoBehaviour
         _view.InteractiveEventSkipRequested += HandleInteractiveEventSkipRequested;
         _view.InteractiveEventChoiceSelected += HandleInteractiveEventChoiceSelected;
         _view.WeeklyResultLogContinueRequested += HandleWeeklyResultLogContinueRequested;
+        _view.WeeklyStatResultContinueRequested += HandleWeeklyStatResultContinueRequested;
     }
 
     private void UnbindViewEvents()
@@ -129,6 +130,7 @@ public class WeekFlowController : MonoBehaviour
         _view.InteractiveEventSkipRequested -= HandleInteractiveEventSkipRequested;
         _view.InteractiveEventChoiceSelected -= HandleInteractiveEventChoiceSelected;
         _view.WeeklyResultLogContinueRequested -= HandleWeeklyResultLogContinueRequested;
+        _view.WeeklyStatResultContinueRequested -= HandleWeeklyStatResultContinueRequested;
     }
 
     private void HandleRunWeekRequested() => RunFlowAction(_commandHandler.RunCurrentWeek);
@@ -138,6 +140,7 @@ public class WeekFlowController : MonoBehaviour
     private void HandleInteractiveEventContinueRequested() => RunFlowAction(_narrativeHandler.ContinueInteractiveEvent);
     private void HandleInteractiveEventSkipRequested() => RunFlowAction(_narrativeHandler.SkipCurrentInteractiveEvent);
     private void HandleWeeklyResultLogContinueRequested() => RunFlowAction(_narrativeHandler.ContinueWeeklyResultLog);
+    private void HandleWeeklyStatResultContinueRequested() => RunFlowAction(_narrativeHandler.ContinueWeeklyStatResult);
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
     {
         GameplayAnalyticsLogger.LogCardOptionClicked(CurrentWeekDefinition, cardDefinition, optionIndex);
@@ -259,7 +262,10 @@ public class WeekFlowController : MonoBehaviour
                 yield return PlayEventExitCutscene(previousScreen);
             }
 
-            _presenter.HideFlowScreens();
+            if (!ShouldKeepPreviousScreenVisible(previousScreen, nextScreen))
+            {
+                _presenter.HideFlowScreens();
+            }
         }
 
         if (previousWeek != currentWeek)
@@ -350,6 +356,12 @@ public class WeekFlowController : MonoBehaviour
             screen,
             _runtimeState.ChildState,
             _runtimeState.LastWeekResult));
+    }
+
+    private static bool ShouldKeepPreviousScreenVisible(WeekFlowScreen previousScreen, WeekFlowScreen nextScreen)
+    {
+        return previousScreen?.ScreenType == EWeekFlowScreenType.WeeklyResultLog
+            && nextScreen?.ScreenType == EWeekFlowScreenType.WeeklyStatResult;
     }
 
     private static bool ShouldEnterEventCutscene(WeekFlowScreen previousScreen, WeekFlowScreen nextScreen)

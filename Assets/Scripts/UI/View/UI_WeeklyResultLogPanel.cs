@@ -27,6 +27,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     private int _nextEntryIndex;
     private bool _isPlaying;
     private bool _isReadyToClose;
+    private bool _preserveOnContinue;
 
     public event Action ContinueRequested;
     public bool IsVisible => gameObject.activeSelf;
@@ -50,6 +51,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         KillShowSequence(false);
         ClearIndexButtons();
         ClearEntries();
+        _preserveOnContinue = false;
 
         _presentation = presentation;
         _selectedWeekId = ResolveInitialWeekId(presentation);
@@ -77,8 +79,24 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         KillShowSequence(false);
         _isPlaying = false;
         _isReadyToClose = false;
+        _preserveOnContinue = false;
         SetCanvasVisible(false);
         gameObject.SetActive(false);
+    }
+
+    public void SetPreserveOnContinue(bool preserve)
+    {
+        _preserveOnContinue = preserve;
+    }
+
+    public void SetAdvanceButtonEnabled(bool enabled)
+    {
+        if (_advanceButton == null)
+        {
+            return;
+        }
+
+        _advanceButton.interactable = enabled;
     }
 
     public bool TryAdvance()
@@ -96,7 +114,15 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
         if (_isReadyToClose)
         {
-            Hide();
+            if (_preserveOnContinue)
+            {
+                SetAdvanceButtonEnabled(false);
+            }
+            else
+            {
+                Hide();
+            }
+
             ContinueRequested?.Invoke();
             return true;
         }

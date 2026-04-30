@@ -22,7 +22,6 @@ public class UI_ChildStateToastManager : MonoBehaviour
     };
     [SerializeField] private float _burstSpeedMultiplier = 1.35f;
     [SerializeField] private EChildStateToastFlushMode _defaultFlowCompletedMode = EChildStateToastFlushMode.Sequential;
-    [SerializeField] private EChildStateToastFlushMode _weeklyResultLogMode = EChildStateToastFlushMode.Burst;
     [SerializeField] private EChildStateToastFlushMode _weekAdvancedMode = EChildStateToastFlushMode.Burst;
     [SerializeField] private EChildStateToastFlushMode _endingMode = EChildStateToastFlushMode.Burst;
     [SerializeField] private float _burstStaggerInterval = 0.06f;
@@ -168,7 +167,10 @@ public class UI_ChildStateToastManager : MonoBehaviour
             switch (context.NextScreen.ScreenType)
             {
                 case EWeekFlowScreenType.WeeklyResultLog:
-                    return _weeklyResultLogMode;
+                    return EChildStateToastFlushMode.Clear;
+
+                case EWeekFlowScreenType.WeeklyStatResult:
+                    return EChildStateToastFlushMode.Clear;
 
                 case EWeekFlowScreenType.Ending:
                 case EWeekFlowScreenType.EndingFollowUp:

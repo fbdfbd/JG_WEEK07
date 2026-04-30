@@ -46,6 +46,7 @@ public sealed class WeekFlowCommandHandler
 
         try
         {
+            _runtimeState.CaptureWeekStartStats();
             _runtimeState.ChildState.ClearReactionLogs();
 
             RuntimeWeekSelection[] selections = _weekSelectionState.BuildSelections(

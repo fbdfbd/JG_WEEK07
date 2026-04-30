@@ -13,6 +13,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public event Action InteractiveEventSkipRequested;
     public event Action<int> InteractiveEventChoiceSelected;
     public event Action WeeklyResultLogContinueRequested;
+    public event Action WeeklyStatResultContinueRequested;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
     public event Action<ECardOptionSemantic> AllCardSemanticSelected;
 
@@ -54,6 +55,11 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     protected void RaiseWeeklyResultLogContinueRequested()
     {
         WeeklyResultLogContinueRequested?.Invoke();
+    }
+
+    protected void RaiseWeeklyStatResultContinueRequested()
+    {
+        WeeklyStatResultContinueRequested?.Invoke();
     }
 
     protected void RaiseCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
@@ -100,6 +106,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public virtual void ShowInteractiveEvent(InteractiveEventPresentation presentation) { }
     public virtual void ShowInteractiveEventResult(InteractiveEventChoiceResultPresentation presentation) { }
     public virtual void ShowWeeklyResultLog(WeeklyResultLogPresentation presentation) { }
+    public virtual void ShowWeeklyStatResult(WeeklyStatResultPresentation presentation) { }
     public virtual void ShowEnding(EndingPresentation presentation) { }
     public virtual void ShowEndingFollowUp() { }
     public virtual void HideTransientViews() { }
@@ -180,6 +187,53 @@ public readonly struct ChildStatePresentation
     public IReadOnlyList<WeekStatPresentation> Stats { get; }
     public IReadOnlyList<string> Flags { get; }
     public IReadOnlyList<string> ReactionLogs { get; }
+}
+
+public readonly struct WeeklyStatResultPresentation
+{
+    public WeeklyStatResultPresentation(IReadOnlyList<WeeklyStatChangePresentation> changes)
+    {
+        Changes = changes ?? Array.Empty<WeeklyStatChangePresentation>();
+    }
+
+    public IReadOnlyList<WeeklyStatChangePresentation> Changes { get; }
+    public bool HasChanges => Changes != null && Changes.Count > 0;
+}
+
+public readonly struct WeeklyStatChangePresentation
+{
+    public WeeklyStatChangePresentation(
+        EChildStatusType statType,
+        string label,
+        string leftLabel,
+        string rightLabel,
+        int beforeValue,
+        int afterValue,
+        int minValue,
+        int maxValue,
+        ECharacterStatusBarRenderMode renderMode)
+    {
+        StatType = statType;
+        Label = label ?? string.Empty;
+        LeftLabel = leftLabel ?? string.Empty;
+        RightLabel = rightLabel ?? string.Empty;
+        BeforeValue = beforeValue;
+        AfterValue = afterValue;
+        MinValue = minValue;
+        MaxValue = maxValue;
+        RenderMode = renderMode;
+    }
+
+    public EChildStatusType StatType { get; }
+    public string Label { get; }
+    public string LeftLabel { get; }
+    public string RightLabel { get; }
+    public int BeforeValue { get; }
+    public int AfterValue { get; }
+    public int Delta => AfterValue - BeforeValue;
+    public int MinValue { get; }
+    public int MaxValue { get; }
+    public ECharacterStatusBarRenderMode RenderMode { get; }
 }
 
 public readonly struct DialogueLinePresentation

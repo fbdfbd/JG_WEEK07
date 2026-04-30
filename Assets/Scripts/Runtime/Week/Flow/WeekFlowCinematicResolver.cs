@@ -37,6 +37,7 @@ public sealed class WeekFlowCinematicResolver
                 ?? GetCue(screen.EventDefinition?.CinematicProfile?.ChoiceResultCues, isEnter)
                 ?? GetCue(screen.WeekDefinition?.CinematicProfile?.ChoiceResultCues, isEnter),
             EWeekFlowScreenType.WeeklyResultLog => null,
+            EWeekFlowScreenType.WeeklyStatResult => null,
             EWeekFlowScreenType.Ending => GetCue(screen.WeekDefinition?.CinematicProfile?.EndingCues, isEnter),
             EWeekFlowScreenType.EndingFollowUp => null,
             _ => null,

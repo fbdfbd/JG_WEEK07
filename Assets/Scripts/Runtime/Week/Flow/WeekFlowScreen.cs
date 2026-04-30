@@ -4,6 +4,7 @@ public enum EWeekFlowScreenType
     EventStep,
     ChoiceResult,
     WeeklyResultLog,
+    WeeklyStatResult,
     Ending,
     EndingFollowUp
 }
@@ -45,6 +46,7 @@ public sealed class WeekFlowScreen
         InteractiveEventPresentation eventStep,
         InteractiveEventChoiceResultPresentation choiceResult,
         WeeklyResultLogPresentation weeklyResultLog,
+        WeeklyStatResultPresentation weeklyStatResult,
         EndingPresentation ending,
         NemoFeedbackPresentation nemoFeedback)
     {
@@ -57,6 +59,7 @@ public sealed class WeekFlowScreen
         EventStep = eventStep;
         ChoiceResult = choiceResult;
         WeeklyResultLog = weeklyResultLog;
+        WeeklyStatResult = weeklyStatResult;
         Ending = ending;
         NemoFeedback = nemoFeedback;
     }
@@ -70,6 +73,7 @@ public sealed class WeekFlowScreen
     public InteractiveEventPresentation EventStep { get; }
     public InteractiveEventChoiceResultPresentation ChoiceResult { get; }
     public WeeklyResultLogPresentation WeeklyResultLog { get; }
+    public WeeklyStatResultPresentation WeeklyStatResult { get; }
     public EndingPresentation Ending { get; }
     public NemoFeedbackPresentation NemoFeedback { get; }
 
@@ -78,7 +82,7 @@ public sealed class WeekFlowScreen
         WeekFeedbackPresentation presentation,
         NemoFeedbackPresentation nemoFeedback)
     {
-        return new WeekFlowScreen(EWeekFlowScreenType.WeekFeedback, weekDefinition, null, null, null, presentation, default, default, default, default, nemoFeedback);
+        return new WeekFlowScreen(EWeekFlowScreenType.WeekFeedback, weekDefinition, null, null, null, presentation, default, default, default, default, default, nemoFeedback);
     }
 
     public static WeekFlowScreen CreateEventStep(
@@ -88,7 +92,7 @@ public sealed class WeekFlowScreen
         InteractiveEventPresentation presentation,
         NemoFeedbackPresentation nemoFeedback)
     {
-        return new WeekFlowScreen(EWeekFlowScreenType.EventStep, weekDefinition, eventDefinition, stepDefinition, null, default, presentation, default, default, default, nemoFeedback);
+        return new WeekFlowScreen(EWeekFlowScreenType.EventStep, weekDefinition, eventDefinition, stepDefinition, null, default, presentation, default, default, default, default, nemoFeedback);
     }
 
     public static WeekFlowScreen CreateChoiceResult(
@@ -98,7 +102,7 @@ public sealed class WeekFlowScreen
         InteractiveEventChoiceResultPresentation presentation,
         NemoFeedbackPresentation nemoFeedback)
     {
-        return new WeekFlowScreen(EWeekFlowScreenType.ChoiceResult, weekDefinition, eventDefinition, null, choiceData, default, default, presentation, default, default, nemoFeedback);
+        return new WeekFlowScreen(EWeekFlowScreenType.ChoiceResult, weekDefinition, eventDefinition, null, choiceData, default, default, presentation, default, default, default, nemoFeedback);
     }
 
     public static WeekFlowScreen CreateWeeklyResultLog(
@@ -106,7 +110,15 @@ public sealed class WeekFlowScreen
         WeeklyResultLogPresentation presentation,
         NemoFeedbackPresentation nemoFeedback)
     {
-        return new WeekFlowScreen(EWeekFlowScreenType.WeeklyResultLog, weekDefinition, null, null, null, default, default, default, presentation, default, nemoFeedback);
+        return new WeekFlowScreen(EWeekFlowScreenType.WeeklyResultLog, weekDefinition, null, null, null, default, default, default, presentation, default, default, nemoFeedback);
+    }
+
+    public static WeekFlowScreen CreateWeeklyStatResult(
+        SO_WeekDefinition weekDefinition,
+        WeeklyStatResultPresentation presentation,
+        NemoFeedbackPresentation nemoFeedback)
+    {
+        return new WeekFlowScreen(EWeekFlowScreenType.WeeklyStatResult, weekDefinition, null, null, null, default, default, default, default, presentation, default, nemoFeedback);
     }
 
     public static WeekFlowScreen CreateEnding(
@@ -114,13 +126,13 @@ public sealed class WeekFlowScreen
         EndingPresentation presentation,
         NemoFeedbackPresentation nemoFeedback)
     {
-        return new WeekFlowScreen(EWeekFlowScreenType.Ending, weekDefinition, null, null, null, default, default, default, default, presentation, nemoFeedback);
+        return new WeekFlowScreen(EWeekFlowScreenType.Ending, weekDefinition, null, null, null, default, default, default, default, default, presentation, nemoFeedback);
     }
 
     public static WeekFlowScreen CreateEndingFollowUp(
         SO_WeekDefinition weekDefinition,
         NemoFeedbackPresentation nemoFeedback)
     {
-        return new WeekFlowScreen(EWeekFlowScreenType.EndingFollowUp, weekDefinition, null, null, null, default, default, default, default, default, nemoFeedback);
+        return new WeekFlowScreen(EWeekFlowScreenType.EndingFollowUp, weekDefinition, null, null, null, default, default, default, default, default, default, nemoFeedback);
     }
 }

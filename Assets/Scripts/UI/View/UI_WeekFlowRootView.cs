@@ -20,6 +20,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [SerializeField] private UI_WeekFlowScreenView _weekScreenView;
     [SerializeField] private UI_DialogueScreenView _dialogueScreenView;
     [SerializeField] private UI_WeeklyResultLogPanel _weeklyResultLogPanel;
+    [SerializeField] private UI_WeeklyStatResultPanel _weeklyStatResultPanel;
     [SerializeField] private UI_EndingLetterView _endingLetterView;
     [SerializeField] private UI_DialogueLogPanel _dialogueLogPanel;
     [SerializeField] private UI_WeekFlowTransitionPlayer _transitionPlayer;
@@ -52,6 +53,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         BindWeekScreenEvents();
         BindDialogueScreenEvents();
         BindWeeklyResultLogEvents();
+        BindWeeklyStatResultEvents();
         BindEndingLetterEvents();
         BindLogEvents();
         HideTransientViews();
@@ -68,6 +70,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         UnbindWeekScreenEvents();
         UnbindDialogueScreenEvents();
         UnbindWeeklyResultLogEvents();
+        UnbindWeeklyStatResultEvents();
         UnbindEndingLetterEvents();
         UnbindLogEvents();
     }
@@ -165,9 +168,38 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
             _dialogueScreenView.HideView();
         }
 
+        if (_weeklyStatResultPanel != null)
+        {
+            _weeklyStatResultPanel.Hide();
+        }
+
         if (_weeklyResultLogPanel != null)
         {
             _weeklyResultLogPanel.Show(presentation);
+            _weeklyResultLogPanel.SetPreserveOnContinue(true);
+            _weeklyResultLogPanel.SetAdvanceButtonEnabled(true);
+        }
+    }
+
+    public override void ShowWeeklyStatResult(WeeklyStatResultPresentation presentation)
+    {
+        CancelAdvanceHold();
+        _dialogueContinueRoute = EDialogueContinueRoute.None;
+        HideEndingLetterView();
+
+        if (_dialogueScreenView != null)
+        {
+            _dialogueScreenView.HideView();
+        }
+
+        if (_weeklyStatResultPanel != null)
+        {
+            if (_weeklyResultLogPanel != null)
+            {
+                _weeklyResultLogPanel.SetAdvanceButtonEnabled(false);
+            }
+
+            _weeklyStatResultPanel.Show(presentation);
         }
     }
 
@@ -214,6 +246,11 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         {
             _weeklyResultLogPanel.Hide();
         }
+
+        if (_weeklyStatResultPanel != null)
+        {
+            _weeklyStatResultPanel.Hide();
+        }
     }
 
     public override void SetMainCanvasVisible(bool visible)
@@ -229,7 +266,14 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         }
 
         _nemo.SetActive(visible);
-        NemoEntity.Instance.ResumeRoutine();
+        if (visible)
+        {
+            NemoEntity.Instance.ResumeRoutine();
+        }
+        else
+        {
+            NemoEntity.Instance.StopDailyRoutine();
+        }
         if (_interactionPanel != null)
         {
             _interactionPanel.SetActive(visible);
@@ -257,6 +301,11 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     public override IEnumerator PlayCurrentDialogueCutscene()
     {
         if (_weeklyResultLogPanel != null && _weeklyResultLogPanel.IsVisible)
+        {
+            yield break;
+        }
+
+        if (_weeklyStatResultPanel != null && _weeklyStatResultPanel.IsVisible)
         {
             yield break;
         }
@@ -319,6 +368,11 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         {
             _weeklyResultLogPanel.Hide();
         }
+
+        if (_weeklyStatResultPanel != null)
+        {
+            _weeklyStatResultPanel.Hide();
+        }
     }
 
     private void BindWeekScreenEvents()
@@ -377,6 +431,16 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _weeklyResultLogPanel.ContinueRequested += HandleWeeklyResultLogContinueRequested;
     }
 
+    private void BindWeeklyStatResultEvents()
+    {
+        if (_weeklyStatResultPanel == null)
+        {
+            return;
+        }
+
+        _weeklyStatResultPanel.ContinueRequested += HandleWeeklyStatResultContinueRequested;
+    }
+
     private void BindLogEvents()
     {
         if (_openLogButton == null)
@@ -417,6 +481,16 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         }
 
         _weeklyResultLogPanel.ContinueRequested -= HandleWeeklyResultLogContinueRequested;
+    }
+
+    private void UnbindWeeklyStatResultEvents()
+    {
+        if (_weeklyStatResultPanel == null)
+        {
+            return;
+        }
+
+        _weeklyStatResultPanel.ContinueRequested -= HandleWeeklyStatResultContinueRequested;
     }
 
     private void UnbindLogEvents()
@@ -473,7 +547,15 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
         if (_weeklyResultLogPanel != null && _weeklyResultLogPanel.IsVisible)
         {
-            return _weeklyResultLogPanel.TryAdvance();
+            if (_weeklyStatResultPanel == null || !_weeklyStatResultPanel.IsVisible)
+            {
+                return _weeklyResultLogPanel.TryAdvance();
+            }
+        }
+
+        if (_weeklyStatResultPanel != null && _weeklyStatResultPanel.IsVisible)
+        {
+            return _weeklyStatResultPanel.TryAdvance();
         }
 
         if (_dialogueScreenView == null)
@@ -522,6 +604,17 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
         CancelAdvanceHold();
         RaiseWeeklyResultLogContinueRequested();
+    }
+
+    private void HandleWeeklyStatResultContinueRequested()
+    {
+        if (TrySkipCurrentTransition())
+        {
+            return;
+        }
+
+        CancelAdvanceHold();
+        RaiseWeeklyStatResultContinueRequested();
     }
 
     private void HandleDialogueEventSkipRequested()

@@ -112,6 +112,11 @@ public sealed class WeekFlowPresenter
         _view?.ShowWeeklyResultLog(presentation);
     }
 
+    public void ShowWeeklyStatResult(WeeklyStatResultPresentation presentation)
+    {
+        _view?.ShowWeeklyStatResult(presentation);
+    }
+
     public void ShowEnding(EndingPresentation presentation)
     {
         _view?.ShowEnding(presentation);
@@ -142,6 +147,9 @@ public sealed class WeekFlowPresenter
                 break;
             case EWeekFlowScreenType.WeeklyResultLog:
                 ShowWeeklyResultLog(screen.WeeklyResultLog);
+                break;
+            case EWeekFlowScreenType.WeeklyStatResult:
+                ShowWeeklyStatResult(screen.WeeklyStatResult);
                 break;
             case EWeekFlowScreenType.Ending:
                 ShowEnding(screen.Ending);

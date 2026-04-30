@@ -9,10 +9,12 @@ public sealed class WeekFlowRuntimeState
     private readonly List<SO_InteractiveEventDefinition> _pendingNightEvents = new();
     private readonly List<SO_EventResultDefinition> _pendingWeeklyResultLogs = new();
     private readonly List<RuntimeWeeklyResultLogRecord> _weeklyResultLogHistory = new();
+    private Dictionary<EChildStatusType, int> _weekStartStats = new();
     private int _nextDayEventIndex;
     private int _nextNightEventIndex;
     private bool _currentEventStartedFromDayFlow;
     private bool _weeklyResultLogConsumed;
+    private bool _weeklyStatResultConsumed = true;
     public event Action<RuntimeChildState> ChildStateReplaced;
 
     public WeekFlowRuntimeState()
@@ -25,6 +27,8 @@ public sealed class WeekFlowRuntimeState
     public RuntimeChildState ChildState { get; private set; }
     public RuntimeWeekResult LastWeekResult { get; set; }
     public IReadOnlyList<RuntimeWeeklyResultLogRecord> WeeklyResultLogHistory => _weeklyResultLogHistory;
+    public IReadOnlyDictionary<EChildStatusType, int> WeekStartStats => _weekStartStats;
+    public bool HasPendingWeeklyStatResult => !_weeklyStatResultConsumed && _weekStartStats.Count > 0;
     public RuntimeInteractiveEventSession CurrentEventSession { get; private set; }
     public bool ShouldShowEndingAfterEvents { get; set; }
     public bool ShouldAdvanceToNextWeekAfterEvents { get; set; }
@@ -58,6 +62,17 @@ public sealed class WeekFlowRuntimeState
         _pendingNightEvents.Clear();
         _pendingNightEvents.AddRange(pendingEvents ?? Array.Empty<SO_InteractiveEventDefinition>());
         _nextNightEventIndex = 0;
+    }
+
+    public void CaptureWeekStartStats()
+    {
+        _weekStartStats = WeekFlowQueryUtility.CaptureCurrentStats(ChildState);
+        _weeklyStatResultConsumed = false;
+    }
+
+    public void MarkWeeklyStatResultConsumed()
+    {
+        _weeklyStatResultConsumed = true;
     }
 
     public void AddWeeklyResultLog(SO_EventResultDefinition resultLog)
@@ -120,6 +135,8 @@ public sealed class WeekFlowRuntimeState
         _nextDayEventIndex = 0;
         _nextNightEventIndex = 0;
         _weeklyResultLogConsumed = false;
+        _weeklyStatResultConsumed = true;
+        _weekStartStats.Clear();
         CurrentEventSession = null;
         _currentEventStartedFromDayFlow = false;
         ShouldShowEndingAfterEvents = false;
