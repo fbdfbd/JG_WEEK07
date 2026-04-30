@@ -15,10 +15,10 @@ public class UI_CharacterStatusView : MonoBehaviour
     [Header("Stat Panels")]
     [SerializeField] private StatusDisplayRule[] _displayRules =
     {
-        new() { StatType = EChildStatusType.Trust, LeftLabel = "innocent / 순진", RightLabel = "clever / 영민" },
-        new() { StatType = EChildStatusType.Curiosity, LeftLabel = "curious / 호기심", RightLabel = "cautious / 신중" },
-        new() { StatType = EChildStatusType.Anxiety, LeftLabel = "compliant / 순응", RightLabel = "defiant / 반항" },
-        new() { StatType = EChildStatusType.Obedience, LeftLabel = "stable / 안정", RightLabel = "anxious / 불안" },
+        new() { StatType = EChildStatusType.Trust, LeftLabel = "clever / 영민", RightLabel = "innocent / 순진" },
+        new() { StatType = EChildStatusType.Curiosity, LeftLabel = "cautious / 신중", RightLabel = "curious / 호기심" },
+        new() { StatType = EChildStatusType.Anxiety, LeftLabel = "stable / 안정", RightLabel = "anxious / 불안" },
+        new() { StatType = EChildStatusType.Obedience, LeftLabel = "defiant / 반항", RightLabel = "compliant / 순응" },
     };
 
     [SerializeField] private UI_CharacterStatusBar[] _statusBars;

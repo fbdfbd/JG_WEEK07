@@ -47,6 +47,8 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
     public void Show(WeeklyResultLogPresentation presentation)
     {
+        bool wasVisible = IsVisible;
+
         ResolveReferences();
         KillShowSequence(false);
         ClearIndexButtons();
@@ -60,6 +62,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
         gameObject.SetActive(true);
         SetCanvasVisible(true);
+        LogVisibilityChangedIfNeeded(wasVisible, true);
 
         _nextEntryIndex = 0;
         _isPlaying = _pendingEntries.Count > 0 && _entryPrefab != null && _entryRoot != null;
@@ -76,12 +79,15 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
     public void Hide()
     {
+        bool wasVisible = IsVisible;
+
         KillShowSequence(false);
         _isPlaying = false;
         _isReadyToClose = false;
         _preserveOnContinue = false;
         SetCanvasVisible(false);
         gameObject.SetActive(false);
+        LogVisibilityChangedIfNeeded(wasVisible, false);
     }
 
     public void SetPreserveOnContinue(bool preserve)
@@ -402,5 +408,15 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     private void HandleAdvanceButtonClicked()
     {
         TryAdvance();
+    }
+
+    private void LogVisibilityChangedIfNeeded(bool wasVisible, bool isVisible)
+    {
+        if (wasVisible == isVisible)
+        {
+            return;
+        }
+
+        GameplayAnalyticsLogger.LogWeekResultPanelVisibilityChanged(isVisible, _presentation);
     }
 }

@@ -298,10 +298,10 @@ MonoBehaviour:
   - StatType: 2
     Root: {fileID: 7089776535845287086}
     StatusBar: {fileID: 6674789864121729500}
-  - StatType: 3
+  - StatType: 4
     Root: {fileID: 8877986895038982205}
     StatusBar: {fileID: 5041390819830963535}
-  - StatType: 4
+  - StatType: 3
     Root: {fileID: 1094778253992316071}
     StatusBar: {fileID: 3599224048730995157}
   _advanceButton: {fileID: 5714624381528991611}

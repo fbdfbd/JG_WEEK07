@@ -146,6 +146,22 @@ public static class GameplayAnalyticsLogger
             .Add("ending_visual_state", ending.VisualState.ToString());
     }
 
+    public static void LogWeekResultPanelVisibilityChanged(
+        bool visible,
+        WeeklyResultLogPresentation presentation)
+    {
+        string selectedWeekId = ResolveWeeklyResultSelectedWeekId(presentation);
+        int selectedWeekIndex = ResolveWeeklyResultSelectedWeekIndex(presentation, selectedWeekId);
+        int entryCount = ResolveWeeklyResultEntryCount(presentation, selectedWeekId);
+
+        Log(visible ? "week_result_panel_opened" : "week_result_panel_closed",
+                selectedWeekIndex > 0 ? selectedWeekIndex : _currentWeekIndex)
+            .Add("panel_name", "WeekResultPanel")
+            .Add("visible", visible)
+            .Add("selected_week_id", selectedWeekId)
+            .Add("entry_count", entryCount);
+    }
+
     private static GameplayAnalyticsEvent Log(string eventName, int weekIndex)
     {
         if (string.IsNullOrEmpty(_sessionId))
@@ -208,6 +224,61 @@ public static class GameplayAnalyticsLogger
         return options != null && optionIndex >= 0 && optionIndex < options.Length
             ? options[optionIndex]
             : null;
+    }
+
+    private static string ResolveWeeklyResultSelectedWeekId(WeeklyResultLogPresentation presentation)
+    {
+        if (!string.IsNullOrWhiteSpace(presentation.SelectedWeekId))
+        {
+            return presentation.SelectedWeekId;
+        }
+
+        return presentation.HasWeeks
+            ? presentation.Weeks[presentation.Weeks.Count - 1].WeekId
+            : string.Empty;
+    }
+
+    private static int ResolveWeeklyResultSelectedWeekIndex(
+        WeeklyResultLogPresentation presentation,
+        string selectedWeekId)
+    {
+        if (!presentation.HasWeeks)
+        {
+            return 0;
+        }
+
+        for (int index = 0; index < presentation.Weeks.Count; index++)
+        {
+            WeeklyResultLogWeekPresentation week = presentation.Weeks[index];
+            if (string.Equals(week.WeekId, selectedWeekId, StringComparison.OrdinalIgnoreCase))
+            {
+                return week.WeekIndex;
+            }
+        }
+
+        return presentation.Weeks[presentation.Weeks.Count - 1].WeekIndex;
+    }
+
+    private static int ResolveWeeklyResultEntryCount(
+        WeeklyResultLogPresentation presentation,
+        string selectedWeekId)
+    {
+        if (!presentation.HasWeeks)
+        {
+            return presentation.Entries?.Count ?? 0;
+        }
+
+        for (int index = 0; index < presentation.Weeks.Count; index++)
+        {
+            WeeklyResultLogWeekPresentation week = presentation.Weeks[index];
+            if (string.Equals(week.WeekId, selectedWeekId, StringComparison.OrdinalIgnoreCase))
+            {
+                return week.Entries?.Count ?? 0;
+            }
+        }
+
+        WeeklyResultLogWeekPresentation fallbackWeek = presentation.Weeks[presentation.Weeks.Count - 1];
+        return fallbackWeek.Entries?.Count ?? 0;
     }
 
     private static string GetEventId(SO_InteractiveEventDefinition eventDefinition)

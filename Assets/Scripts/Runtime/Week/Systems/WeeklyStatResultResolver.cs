@@ -7,8 +7,8 @@ public static class WeeklyStatResultResolver
     {
         EChildStatusType.Trust,
         EChildStatusType.Curiosity,
-        EChildStatusType.Anxiety,
         EChildStatusType.Obedience,
+        EChildStatusType.Anxiety,
     };
 
     public static WeeklyStatResultPresentation Resolve(
@@ -54,10 +54,10 @@ public static class WeeklyStatResultResolver
     {
         return statType switch
         {
-            EChildStatusType.Trust => "순진",
-            EChildStatusType.Curiosity => "호기심",
-            EChildStatusType.Anxiety => "순응",
-            EChildStatusType.Obedience => "안정",
+            EChildStatusType.Trust => "영민",
+            EChildStatusType.Curiosity => "신중",
+            EChildStatusType.Anxiety => "안정",
+            EChildStatusType.Obedience => "반항",
             _ => string.Empty,
         };
     }
@@ -66,10 +66,10 @@ public static class WeeklyStatResultResolver
     {
         return statType switch
         {
-            EChildStatusType.Trust => "영민",
-            EChildStatusType.Curiosity => "신중",
-            EChildStatusType.Anxiety => "반항",
-            EChildStatusType.Obedience => "불안",
+            EChildStatusType.Trust => "순진",
+            EChildStatusType.Curiosity => "호기심",
+            EChildStatusType.Anxiety => "불안",
+            EChildStatusType.Obedience => "순응",
             _ => string.Empty,
         };
     }

@@ -31,8 +31,8 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
     {
         new() { StatType = EChildStatusType.Trust },
         new() { StatType = EChildStatusType.Curiosity },
-        new() { StatType = EChildStatusType.Anxiety },
         new() { StatType = EChildStatusType.Obedience },
+        new() { StatType = EChildStatusType.Anxiety },
     };
     [SerializeField] private Button _advanceButton;
     [SerializeField] private float _panelFadeDuration = 0.15f;
