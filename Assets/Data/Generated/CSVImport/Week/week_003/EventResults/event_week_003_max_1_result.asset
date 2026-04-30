@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_003_max_1_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_003_max_1
+  _title: "\uB9C9\uC2A4"
+  _context: "\uB9C9\uC2A4\uB2D8\uC774 \uC218\uC5C5\uC774 \uB05D\uB09C \uB4A4\uC5D0\uB3C4
+    \uBAA9\uAC80\uC744 \uB193\uC9C0 \uC54A\uACE0 \uB354 \uD6C8\uB828\uD558\uC790\uACE0
+    \uAD8C\uD588\uC73C\uBA70, \uC544\uAC00\uC528\uB294 \uC9C0\uCE5C \uB4EF \uBCF4\uC600\uC9C0\uB9CC
+    \uC774\uB0B4 \uD568\uAED8 \uD558\uC168\uC2B5\uB2C8\uB2E4.\n\uC548\uC815 +1 /
+    \uC21C\uC751 +1"

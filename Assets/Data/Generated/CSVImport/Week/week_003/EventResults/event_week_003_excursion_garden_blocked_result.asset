@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_003_excursion_garden_blocked_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_003_excursion_garden_blocked
+  _title: "\uC815\uC6D0 - \uCC28\uB2E8"
+  _context: "\uBD84\uC218 \uCABD \uBC14\uB2E5\uC774 \uBBF8\uB044\uB7FD\uB2E4\uB294
+    \uC774\uC720\uB85C \uC815\uC6D0 \uCD9C\uC785\uC744 \uB9C9\uC790, \uC544\uAC00\uC528\uAED8\uC11C\uB294
+    \uBA40\uB9AC\uC11C\uB77C\uB3C4 \uBCF4\uBA74 \uC548 \uB418\uB290\uB0D0\uACE0 \uBB3C\uC73C\uC168\uC73C\uB098
+    \uACB0\uAD6D \uB3CC\uC544\uC11C\uC168\uC2B5\uB2C8\uB2E4.\n\uBC18\uD56D +1"

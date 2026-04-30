@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_007_excursion_garden_direct_default_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_007_excursion_garden_direct_default
+  _title: "\uC815\uC6D0"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uC815\uC6D0 \uC11C\uCABD \uC7A5\uBBF8
+    \uD654\uB2E8\uC758 \uC544\uC9C1 \uD53C\uC9C0 \uC54A\uC740 \uBD09\uC624\uB9AC\uB4E4\uC744
+    \uC0B4\uD53C\uC2DC\uBA70, \uC131\uC778\uC2DD \uC804\uC5D0 \uAF43\uC774 \uD544
+    \uC218 \uC788\uC744\uC9C0 \uB2E8\uD14C\uC5D0\uAC8C \uBB3C\uC73C\uC168\uC2B5\uB2C8\uB2E4.\n\uC21C\uC751
+    +1 / \uC548\uC815 +1"

@@ -26,7 +26,7 @@ MonoBehaviour:
       _maximumValue: 1
     _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: 97febdfe52541934a8f7b922d9f11c0b, type: 2}
-  _result: {fileID: 0}
+  _result: {fileID: 11400000, guid: bbf52126d50552740bd6d1280a50f6d9, type: 2}
   _onCompletedInteractions:
   - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
   - {fileID: 11400000, guid: 156a3b33297a73c469970f297857e022, type: 2}

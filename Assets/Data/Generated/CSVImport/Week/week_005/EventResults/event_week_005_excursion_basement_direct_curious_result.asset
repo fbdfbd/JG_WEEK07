@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_005_excursion_basement_direct_curious_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_005_excursion_basement_direct_curious
+  _title: "\uC9C0\uD558\uC2E4 - \uD638\uAE30\uC2EC"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uAC70\uBBF8\uC904 \uAC00\uC6B4\uB370
+    \uC791\uC740 \uAC70\uBBF8\uAC00 \uC549\uC544 \uC788\uB294 \uAC83\uC744 \uBCF4\uACE0,
+    \uAC74\uB4DC\uB9AC\uC9C0 \uC54A\uC740 \uCC44 \uADF8 \uAC70\uBBF8\uC758 \uC790\uB9AC\uB97C
+    \uC0B4\uD53C\uC168\uC2B5\uB2C8\uB2E4.\n\uD638\uAE30\uC2EC +1"
