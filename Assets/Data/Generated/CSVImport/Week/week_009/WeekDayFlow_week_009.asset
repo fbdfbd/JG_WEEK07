@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: week_009_DayFlow
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeekDayFlowDefinition
   _routineEvents:
-  - {fileID: 11400000, guid: 556ff386802cf6e4cb054ae38016aceb, type: 2}
-  - {fileID: 11400000, guid: a84429b24b389e84a80e1ec3c39d0a5b, type: 2}
   - {fileID: 11400000, guid: baf2fee0f46d2b44fb3ea519ffd09394, type: 2}
   - {fileID: 11400000, guid: 1cb824e55ffcf124f81f1487524ed6c1, type: 2}
   - {fileID: 11400000, guid: d1611cd4d3edfb14686fd6ee5e97e0f8, type: 2}

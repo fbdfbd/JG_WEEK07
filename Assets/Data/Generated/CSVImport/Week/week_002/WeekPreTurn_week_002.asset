@@ -15,9 +15,6 @@ MonoBehaviour:
   _title: 
   _summary: 
   _informationCards:
-  - _card: {fileID: 11400000, guid: 801cadba342336c4396a8b120c0fdacd, type: 2}
-    _isRequired: 1
-    _displayOrder: -1
   - _card: {fileID: 11400000, guid: 7eb57864ee0b05b469ff458cb09261ba, type: 2}
     _isRequired: 1
     _displayOrder: 0
