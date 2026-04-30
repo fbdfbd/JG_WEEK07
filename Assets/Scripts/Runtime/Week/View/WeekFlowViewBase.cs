@@ -12,6 +12,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public event Action InteractiveEventContinueRequested;
     public event Action InteractiveEventSkipRequested;
     public event Action<int> InteractiveEventChoiceSelected;
+    public event Action WeeklyResultLogContinueRequested;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
     public event Action<ECardOptionSemantic> AllCardSemanticSelected;
 
@@ -48,6 +49,11 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     protected void RaiseInteractiveEventChoiceSelected(int choiceIndex)
     {
         InteractiveEventChoiceSelected?.Invoke(choiceIndex);
+    }
+
+    protected void RaiseWeeklyResultLogContinueRequested()
+    {
+        WeeklyResultLogContinueRequested?.Invoke();
     }
 
     protected void RaiseCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
@@ -93,7 +99,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public virtual void ShowWeekFeedback(WeekFeedbackPresentation presentation) { }
     public virtual void ShowInteractiveEvent(InteractiveEventPresentation presentation) { }
     public virtual void ShowInteractiveEventResult(InteractiveEventChoiceResultPresentation presentation) { }
-    public virtual void ShowEventResult(InteractiveEventResultPresentation presentation) { }
+    public virtual void ShowWeeklyResultLog(WeeklyResultLogPresentation presentation) { }
     public virtual void ShowEnding(EndingPresentation presentation) { }
     public virtual void ShowEndingFollowUp() { }
     public virtual void HideTransientViews() { }
@@ -203,9 +209,20 @@ public readonly struct InteractiveEventChoiceResultPresentation
     public string EffectSummaryLine { get; }
 }
 
-public readonly struct InteractiveEventResultPresentation
+public readonly struct WeeklyResultLogPresentation
 {
-    public InteractiveEventResultPresentation(string eventId, string title, string context)
+    public WeeklyResultLogPresentation(IReadOnlyList<WeeklyResultLogEntryPresentation> entries)
+    {
+        Entries = entries ?? Array.Empty<WeeklyResultLogEntryPresentation>();
+    }
+
+    public IReadOnlyList<WeeklyResultLogEntryPresentation> Entries { get; }
+    public bool HasEntries => Entries != null && Entries.Count > 0;
+}
+
+public readonly struct WeeklyResultLogEntryPresentation
+{
+    public WeeklyResultLogEntryPresentation(string eventId, string title, string context)
     {
         EventId = eventId;
         Title = title;
@@ -215,7 +232,6 @@ public readonly struct InteractiveEventResultPresentation
     public string EventId { get; }
     public string Title { get; }
     public string Context { get; }
-    public bool HasContent => !string.IsNullOrWhiteSpace(Title) || !string.IsNullOrWhiteSpace(Context);
 }
 
 public readonly struct WeekSelectionCategoryGroupPresentation

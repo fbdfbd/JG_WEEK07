@@ -54,7 +54,11 @@ public sealed class WeekFlowCommandHandler
             LogResolvedWeekAnalytics(currentWeekDefinition, _runtimeState.LastWeekResult);
 
             RuntimeChildState eventResolutionChildState = _runtimeState.LastWeekResult.EventResolutionChildState ?? _runtimeState.ChildState;
-            _runtimeState.SetPendingEvents(WeekNarrativeResolver.ResolvePendingEvents(
+            _runtimeState.SetPendingDayEvents(WeekNarrativeResolver.ResolveDayEvents(
+                currentWeekDefinition,
+                eventResolutionChildState,
+                _runtimeState.LastWeekResult));
+            _runtimeState.SetPendingNightEvents(WeekNarrativeResolver.ResolveNightEvents(
                 currentWeekDefinition,
                 eventResolutionChildState,
                 _runtimeState.LastWeekResult));
@@ -121,14 +125,20 @@ public sealed class WeekFlowCommandHandler
 
     private WeekFlowActionResult ContinueAfterWeekFlow()
     {
-        if (_runtimeState.CurrentEventSession != null || _runtimeState.TryStartNextEvent())
+        if (_runtimeState.CurrentEventSession != null || _runtimeState.TryStartNextDayEvent())
         {
             return BuildEventStepScreen();
         }
 
-        if (_runtimeState.TryGetNextEventResult(out SO_EventResultDefinition eventResult))
+        if (ShouldShowWeeklyResultLog() &&
+            _runtimeState.TryConsumeWeeklyResultLogs(out SO_EventResultDefinition[] resultLogs))
         {
-            return BuildEventResultScreen(eventResult);
+            return BuildWeeklyResultLogScreen(resultLogs);
+        }
+
+        if (_runtimeState.TryStartNextNightEvent())
+        {
+            return BuildEventStepScreen();
         }
 
         if (_runtimeState.ShouldShowEndingAfterEvents)
@@ -172,13 +182,21 @@ public sealed class WeekFlowCommandHandler
             new NemoFeedbackPresentation(line.SpeakerName, presentation.VisualState, line.Text)));
     }
 
-    private WeekFlowActionResult BuildEventResultScreen(SO_EventResultDefinition eventResult)
+    private WeekFlowActionResult BuildWeeklyResultLogScreen(SO_EventResultDefinition[] resultLogs)
     {
-        InteractiveEventResultPresentation presentation = WeekNarrativeResolver.CreateEventResultPresentation(eventResult);
-        return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEventResult(
+        WeeklyResultLogPresentation presentation = WeekNarrativeResolver.CreateWeeklyResultLogPresentation(resultLogs);
+        return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateWeeklyResultLog(
             _weekSequenceState.CurrentWeekDefinition,
             presentation,
-            new NemoFeedbackPresentation(ENemoVisualState.Neutral, presentation.Context)));
+            new NemoFeedbackPresentation(ENemoVisualState.Neutral, string.Empty)));
+    }
+
+    private bool ShouldShowWeeklyResultLog()
+    {
+        return !string.Equals(
+            _weekSequenceState.CurrentWeekDefinition?.Id,
+            "week_000",
+            StringComparison.OrdinalIgnoreCase);
     }
 
     private void ApplyLinkedCardRewardsIfNeeded(RuntimeInteractiveEventSession eventSession)

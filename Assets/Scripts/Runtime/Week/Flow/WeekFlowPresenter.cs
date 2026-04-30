@@ -107,9 +107,9 @@ public sealed class WeekFlowPresenter
         _view?.ShowInteractiveEventResult(presentation);
     }
 
-    public void ShowEventResult(InteractiveEventResultPresentation presentation)
+    public void ShowWeeklyResultLog(WeeklyResultLogPresentation presentation)
     {
-        _view?.ShowEventResult(presentation);
+        _view?.ShowWeeklyResultLog(presentation);
     }
 
     public void ShowEnding(EndingPresentation presentation)
@@ -140,8 +140,8 @@ public sealed class WeekFlowPresenter
             case EWeekFlowScreenType.ChoiceResult:
                 ShowInteractiveEventResult(screen.ChoiceResult);
                 break;
-            case EWeekFlowScreenType.EventResult:
-                ShowEventResult(screen.EventResult);
+            case EWeekFlowScreenType.WeeklyResultLog:
+                ShowWeeklyResultLog(screen.WeeklyResultLog);
                 break;
             case EWeekFlowScreenType.Ending:
                 ShowEnding(screen.Ending);

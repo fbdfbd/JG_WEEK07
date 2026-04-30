@@ -108,6 +108,7 @@ public class WeekFlowController : MonoBehaviour
         _view.InteractiveEventContinueRequested += HandleInteractiveEventContinueRequested;
         _view.InteractiveEventSkipRequested += HandleInteractiveEventSkipRequested;
         _view.InteractiveEventChoiceSelected += HandleInteractiveEventChoiceSelected;
+        _view.WeeklyResultLogContinueRequested += HandleWeeklyResultLogContinueRequested;
     }
 
     private void UnbindViewEvents()
@@ -126,6 +127,7 @@ public class WeekFlowController : MonoBehaviour
         _view.InteractiveEventContinueRequested -= HandleInteractiveEventContinueRequested;
         _view.InteractiveEventSkipRequested -= HandleInteractiveEventSkipRequested;
         _view.InteractiveEventChoiceSelected -= HandleInteractiveEventChoiceSelected;
+        _view.WeeklyResultLogContinueRequested -= HandleWeeklyResultLogContinueRequested;
     }
 
     private void HandleRunWeekRequested() => RunFlowAction(_commandHandler.RunCurrentWeek);
@@ -134,6 +136,7 @@ public class WeekFlowController : MonoBehaviour
     private void HandleWeekFeedbackClosed() => RunFlowAction(_narrativeHandler.CloseWeekFeedback);
     private void HandleInteractiveEventContinueRequested() => RunFlowAction(_narrativeHandler.ContinueInteractiveEvent);
     private void HandleInteractiveEventSkipRequested() => RunFlowAction(_narrativeHandler.SkipCurrentInteractiveEvent);
+    private void HandleWeeklyResultLogContinueRequested() => RunFlowAction(_narrativeHandler.ContinueWeeklyResultLog);
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
     {
         GameplayAnalyticsLogger.LogCardOptionClicked(CurrentWeekDefinition, cardDefinition, optionIndex);

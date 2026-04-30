@@ -11,13 +11,31 @@ public static class WeekNarrativeResolver
         RuntimeChildState childState,
         RuntimeWeekResult weekResult)
     {
+        return ResolveDayEvents(weekDefinition, childState, weekResult)
+            .Concat(ResolveNightEvents(weekDefinition, childState, weekResult))
+            .ToArray();
+    }
+
+    public static SO_InteractiveEventDefinition[] ResolveDayEvents(
+        SO_WeekDefinition weekDefinition,
+        RuntimeChildState childState,
+        RuntimeWeekResult weekResult)
+    {
         RuntimeInformationControlResult informationControlResult = weekResult?.InformationControlResult;
         IReadOnlyDictionary<string, RuntimeResolvedCardRecord> resolvedCardLookup = BuildResolvedCardLookup(weekResult?.ResolvedCards);
         List<SO_InteractiveEventDefinition> pendingEvents = new();
         pendingEvents.AddRange(ResolveRoutineEvents(weekDefinition?.DayFlow, childState, resolvedCardLookup));
         pendingEvents.AddRange(ResolveStoryEvents(weekDefinition?.DayFlow, childState, informationControlResult));
-        pendingEvents.AddRange(ResolveNightDialogues(weekDefinition?.NightFlow, childState, informationControlResult));
         return pendingEvents.ToArray();
+    }
+
+    public static SO_InteractiveEventDefinition[] ResolveNightEvents(
+        SO_WeekDefinition weekDefinition,
+        RuntimeChildState childState,
+        RuntimeWeekResult weekResult)
+    {
+        RuntimeInformationControlResult informationControlResult = weekResult?.InformationControlResult;
+        return ResolveNightDialogues(weekDefinition?.NightFlow, childState, informationControlResult).ToArray();
     }
 
     public static RuntimeResolvedCardRecord[] ResolveLinkedCards(
@@ -80,18 +98,19 @@ public static class WeekNarrativeResolver
             BuildEffectSummary(selectedChoice?.Interactions, weekUiText));
     }
 
-    public static InteractiveEventResultPresentation CreateEventResultPresentation(
-        SO_EventResultDefinition eventResult)
+    public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
+        IReadOnlyList<SO_EventResultDefinition> resultLogs)
     {
-        if (eventResult == null)
-        {
-            return default;
-        }
+        WeeklyResultLogEntryPresentation[] entries = resultLogs?
+            .Where(resultLog => resultLog != null)
+            .Select(resultLog => new WeeklyResultLogEntryPresentation(
+                resultLog.EventId,
+                resultLog.Title,
+                resultLog.Context))
+            .ToArray()
+            ?? Array.Empty<WeeklyResultLogEntryPresentation>();
 
-        return new InteractiveEventResultPresentation(
-            eventResult.EventId,
-            eventResult.Title,
-            eventResult.Context);
+        return new WeeklyResultLogPresentation(entries);
     }
 
     public static DialogueLinePresentation GetPrimaryDialogueLine(

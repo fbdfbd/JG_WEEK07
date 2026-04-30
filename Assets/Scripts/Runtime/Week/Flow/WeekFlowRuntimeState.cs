@@ -5,10 +5,13 @@ using UnityEngine;
 
 public sealed class WeekFlowRuntimeState
 {
-    private readonly List<SO_InteractiveEventDefinition> _pendingEvents = new();
-    private readonly List<SO_EventResultDefinition> _pendingEventResults = new();
-    private int _nextEventIndex;
-    private int _nextEventResultIndex;
+    private readonly List<SO_InteractiveEventDefinition> _pendingDayEvents = new();
+    private readonly List<SO_InteractiveEventDefinition> _pendingNightEvents = new();
+    private readonly List<SO_EventResultDefinition> _pendingWeeklyResultLogs = new();
+    private int _nextDayEventIndex;
+    private int _nextNightEventIndex;
+    private bool _currentEventStartedFromDayFlow;
+    private bool _weeklyResultLogConsumed;
     public event Action<RuntimeChildState> ChildStateReplaced;
 
     public WeekFlowRuntimeState()
@@ -36,56 +39,55 @@ public sealed class WeekFlowRuntimeState
         ClearPendingEventState();
     }
 
-    public void SetPendingEvents(IReadOnlyList<SO_InteractiveEventDefinition> pendingEvents)
+    public bool IsCurrentEventFromDayFlow => _currentEventStartedFromDayFlow;
+
+    public void SetPendingDayEvents(IReadOnlyList<SO_InteractiveEventDefinition> pendingEvents)
     {
-        _pendingEvents.Clear();
-        _pendingEvents.AddRange(pendingEvents ?? Array.Empty<SO_InteractiveEventDefinition>());
-        _nextEventIndex = 0;
+        _pendingDayEvents.Clear();
+        _pendingDayEvents.AddRange(pendingEvents ?? Array.Empty<SO_InteractiveEventDefinition>());
+        _nextDayEventIndex = 0;
         CurrentEventSession = null;
+        _currentEventStartedFromDayFlow = false;
     }
 
-    public void AddEventResult(SO_EventResultDefinition eventResult)
+    public void SetPendingNightEvents(IReadOnlyList<SO_InteractiveEventDefinition> pendingEvents)
     {
-        if (eventResult != null)
+        _pendingNightEvents.Clear();
+        _pendingNightEvents.AddRange(pendingEvents ?? Array.Empty<SO_InteractiveEventDefinition>());
+        _nextNightEventIndex = 0;
+    }
+
+    public void AddWeeklyResultLog(SO_EventResultDefinition resultLog)
+    {
+        if (resultLog != null)
         {
-            _pendingEventResults.Add(eventResult);
+            _pendingWeeklyResultLogs.Add(resultLog);
         }
     }
 
-    public bool TryGetNextEventResult(out SO_EventResultDefinition eventResult)
+    public bool TryConsumeWeeklyResultLogs(out SO_EventResultDefinition[] resultLogs)
     {
-        while (_nextEventResultIndex < _pendingEventResults.Count)
+        if (_weeklyResultLogConsumed || _pendingWeeklyResultLogs.Count == 0)
         {
-            eventResult = _pendingEventResults[_nextEventResultIndex++];
-            if (eventResult != null)
-            {
-                return true;
-            }
+            resultLogs = Array.Empty<SO_EventResultDefinition>();
+            return false;
         }
 
-        eventResult = null;
-        return false;
+        _weeklyResultLogConsumed = true;
+        resultLogs = _pendingWeeklyResultLogs
+            .FindAll(resultLog => resultLog != null)
+            .ToArray();
+        return resultLogs.Length > 0;
     }
 
-    public bool TryStartNextEvent()
+    public bool TryStartNextDayEvent()
     {
-        while (_nextEventIndex < _pendingEvents.Count)
-        {
-            SO_InteractiveEventDefinition nextEvent = _pendingEvents[_nextEventIndex++];
-            SO_InteractiveEventStepDefinition initialStep = WeekEventRuntimeAugmentationService.ResolveInitialStep(
-                nextEvent,
-                ChildState);
-            if (nextEvent == null || initialStep == null)
-            {
-                continue;
-            }
+        return TryStartNextEvent(_pendingDayEvents, ref _nextDayEventIndex, true);
+    }
 
-            CurrentEventSession = new RuntimeInteractiveEventSession(nextEvent, initialStep);
-            return true;
-        }
-
-        CurrentEventSession = null;
-        return false;
+    public bool TryStartNextNightEvent()
+    {
+        return TryStartNextEvent(_pendingNightEvents, ref _nextNightEventIndex, false);
     }
 
     public void ClearCurrentEventSession()
@@ -95,11 +97,14 @@ public sealed class WeekFlowRuntimeState
 
     public void ClearPendingEventState()
     {
-        _pendingEvents.Clear();
-        _pendingEventResults.Clear();
-        _nextEventIndex = 0;
-        _nextEventResultIndex = 0;
+        _pendingDayEvents.Clear();
+        _pendingNightEvents.Clear();
+        _pendingWeeklyResultLogs.Clear();
+        _nextDayEventIndex = 0;
+        _nextNightEventIndex = 0;
+        _weeklyResultLogConsumed = false;
         CurrentEventSession = null;
+        _currentEventStartedFromDayFlow = false;
         ShouldShowEndingAfterEvents = false;
         ShouldAdvanceToNextWeekAfterEvents = false;
         IsAwaitingEndingFollowUp = false;
@@ -117,6 +122,32 @@ public sealed class WeekFlowRuntimeState
         {
             ChildStateReplaced?.Invoke(ChildState);
         }
+    }
+
+    private bool TryStartNextEvent(
+        IReadOnlyList<SO_InteractiveEventDefinition> pendingEvents,
+        ref int nextEventIndex,
+        bool isDayFlowEvent)
+    {
+        while (nextEventIndex < pendingEvents.Count)
+        {
+            SO_InteractiveEventDefinition nextEvent = pendingEvents[nextEventIndex++];
+            SO_InteractiveEventStepDefinition initialStep = WeekEventRuntimeAugmentationService.ResolveInitialStep(
+                nextEvent,
+                ChildState);
+            if (nextEvent == null || initialStep == null)
+            {
+                continue;
+            }
+
+            CurrentEventSession = new RuntimeInteractiveEventSession(nextEvent, initialStep);
+            _currentEventStartedFromDayFlow = isDayFlowEvent;
+            return true;
+        }
+
+        CurrentEventSession = null;
+        _currentEventStartedFromDayFlow = false;
+        return false;
     }
 }
 
