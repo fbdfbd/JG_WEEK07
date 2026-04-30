@@ -113,6 +113,64 @@ public static class WeekNarrativeResolver
         return new WeeklyResultLogPresentation(entries);
     }
 
+    public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
+        IReadOnlyList<RuntimeWeeklyResultLogRecord> history,
+        string selectedWeekId)
+    {
+        WeeklyResultLogWeekPresentation[] weeks = history?
+            .Where(record => record != null)
+            .Select(record => new WeeklyResultLogWeekPresentation(
+                record.WeekId,
+                record.WeekIndex,
+                record.WeekTitle,
+                CreateWeeklyResultLogEntries(record.ResultLogs)))
+            .ToArray()
+            ?? Array.Empty<WeeklyResultLogWeekPresentation>();
+
+        WeeklyResultLogWeekPresentation selectedWeek = SelectWeeklyResultLogWeek(weeks, selectedWeekId);
+        return new WeeklyResultLogPresentation(
+            selectedWeek.Entries,
+            weeks,
+            selectedWeek.WeekId);
+    }
+
+    private static WeeklyResultLogEntryPresentation[] CreateWeeklyResultLogEntries(
+        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+    {
+        return resultLogs?
+            .Where(resultLog => resultLog != null)
+            .Select(resultLog => new WeeklyResultLogEntryPresentation(
+                resultLog.EventId,
+                resultLog.Title,
+                resultLog.Context))
+            .ToArray()
+            ?? Array.Empty<WeeklyResultLogEntryPresentation>();
+    }
+
+    private static WeeklyResultLogWeekPresentation SelectWeeklyResultLogWeek(
+        IReadOnlyList<WeeklyResultLogWeekPresentation> weeks,
+        string selectedWeekId)
+    {
+        if (weeks == null || weeks.Count == 0)
+        {
+            return new WeeklyResultLogWeekPresentation(
+                string.Empty,
+                0,
+                string.Empty,
+                Array.Empty<WeeklyResultLogEntryPresentation>());
+        }
+
+        for (int index = 0; index < weeks.Count; index++)
+        {
+            if (string.Equals(weeks[index].WeekId, selectedWeekId, StringComparison.OrdinalIgnoreCase))
+            {
+                return weeks[index];
+            }
+        }
+
+        return weeks[weeks.Count - 1];
+    }
+
     public static DialogueLinePresentation GetPrimaryDialogueLine(
         IReadOnlyList<DialogueLinePresentation> dialogueLines,
         string fallbackSpeakerName = NemoFeedbackResolver.DefaultSpeakerName)

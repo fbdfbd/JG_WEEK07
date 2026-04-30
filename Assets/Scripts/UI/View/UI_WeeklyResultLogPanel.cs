@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_WeeklyResultLogPanel : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private Transform _indexRoot;
+    [SerializeField] private Button _indexButtonPrefab;
+    [SerializeField] private string _indexButtonLabelFormat = "{0}";
     [SerializeField] private Transform _entryRoot;
     [SerializeField] private UI_WeeklyResultLogEntryView _entryPrefab;
     [SerializeField] private Button _advanceButton;
@@ -15,7 +19,10 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     [SerializeField] private float _entryInterval = 0.08f;
 
     private readonly List<WeeklyResultLogEntryPresentation> _pendingEntries = new();
+    private readonly List<Button> _indexButtons = new();
     private readonly List<UI_WeeklyResultLogEntryView> _entryViews = new();
+    private WeeklyResultLogPresentation _presentation;
+    private string _selectedWeekId = string.Empty;
     private Sequence _showSequence;
     private int _nextEntryIndex;
     private bool _isPlaying;
@@ -41,13 +48,13 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     {
         ResolveReferences();
         KillShowSequence(false);
+        ClearIndexButtons();
         ClearEntries();
 
-        _pendingEntries.Clear();
-        if (presentation.Entries != null)
-        {
-            _pendingEntries.AddRange(presentation.Entries);
-        }
+        _presentation = presentation;
+        _selectedWeekId = ResolveInitialWeekId(presentation);
+        CreateIndexButtons();
+        SetPendingEntries(GetSelectedEntries());
 
         gameObject.SetActive(true);
         SetCanvasVisible(true);
@@ -145,6 +152,137 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         }
 
         entryView.PlayShow(Mathf.Max(0f, _entryShowDuration));
+    }
+
+    private void SelectWeek(string weekId)
+    {
+        if (string.IsNullOrWhiteSpace(weekId) ||
+            string.Equals(_selectedWeekId, weekId, StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        KillShowSequence(false);
+        ClearEntries();
+
+        _selectedWeekId = weekId;
+        SetIndexButtonSelection();
+        SetPendingEntries(GetSelectedEntries());
+        _nextEntryIndex = 0;
+        _isPlaying = false;
+        _isReadyToClose = true;
+        ShowAllEntriesInstant();
+    }
+
+    private void CreateIndexButtons()
+    {
+        if (!_presentation.HasWeeks || _indexRoot == null || _indexButtonPrefab == null)
+        {
+            return;
+        }
+
+        for (int index = 0; index < _presentation.Weeks.Count; index++)
+        {
+            WeeklyResultLogWeekPresentation week = _presentation.Weeks[index];
+            Button button = Instantiate(_indexButtonPrefab, _indexRoot);
+            string weekId = week.WeekId;
+
+            TextMeshProUGUI labelText = button.GetComponentInChildren<TextMeshProUGUI>(true);
+            if (labelText != null)
+            {
+                labelText.text = FormatIndexLabel(week);
+            }
+
+            button.interactable = !IsSelectedWeek(weekId);
+            button.onClick.AddListener(() => SelectWeek(weekId));
+            _indexButtons.Add(button);
+        }
+    }
+
+    private void SetIndexButtonSelection()
+    {
+        if (!_presentation.HasWeeks)
+        {
+            return;
+        }
+
+        for (int index = 0; index < _indexButtons.Count && index < _presentation.Weeks.Count; index++)
+        {
+            if (_indexButtons[index] != null)
+            {
+                _indexButtons[index].interactable = !IsSelectedWeek(_presentation.Weeks[index].WeekId);
+            }
+        }
+    }
+
+    private IReadOnlyList<WeeklyResultLogEntryPresentation> GetSelectedEntries()
+    {
+        if (!_presentation.HasWeeks)
+        {
+            return _presentation.Entries;
+        }
+
+        for (int index = 0; index < _presentation.Weeks.Count; index++)
+        {
+            WeeklyResultLogWeekPresentation week = _presentation.Weeks[index];
+            if (IsSelectedWeek(week.WeekId))
+            {
+                return week.Entries;
+            }
+        }
+
+        return _presentation.Entries;
+    }
+
+    private void SetPendingEntries(IReadOnlyList<WeeklyResultLogEntryPresentation> entries)
+    {
+        _pendingEntries.Clear();
+        if (entries != null)
+        {
+            _pendingEntries.AddRange(entries);
+        }
+    }
+
+    private bool IsSelectedWeek(string weekId)
+    {
+        return string.Equals(_selectedWeekId, weekId, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string ResolveInitialWeekId(WeeklyResultLogPresentation presentation)
+    {
+        if (!string.IsNullOrWhiteSpace(presentation.SelectedWeekId))
+        {
+            return presentation.SelectedWeekId;
+        }
+
+        if (presentation.HasWeeks)
+        {
+            return presentation.Weeks[presentation.Weeks.Count - 1].WeekId;
+        }
+
+        return string.Empty;
+    }
+
+    private string FormatIndexLabel(WeeklyResultLogWeekPresentation week)
+    {
+        string format = string.IsNullOrWhiteSpace(_indexButtonLabelFormat)
+            ? "{0}"
+            : _indexButtonLabelFormat;
+
+        return string.Format(format, week.WeekIndex);
+    }
+
+    private void ClearIndexButtons()
+    {
+        for (int index = 0; index < _indexButtons.Count; index++)
+        {
+            if (_indexButtons[index] != null)
+            {
+                Destroy(_indexButtons[index].gameObject);
+            }
+        }
+
+        _indexButtons.Clear();
     }
 
     private void MarkReadyToClose()

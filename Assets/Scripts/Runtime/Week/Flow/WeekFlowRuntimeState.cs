@@ -8,6 +8,7 @@ public sealed class WeekFlowRuntimeState
     private readonly List<SO_InteractiveEventDefinition> _pendingDayEvents = new();
     private readonly List<SO_InteractiveEventDefinition> _pendingNightEvents = new();
     private readonly List<SO_EventResultDefinition> _pendingWeeklyResultLogs = new();
+    private readonly List<RuntimeWeeklyResultLogRecord> _weeklyResultLogHistory = new();
     private int _nextDayEventIndex;
     private int _nextNightEventIndex;
     private bool _currentEventStartedFromDayFlow;
@@ -23,6 +24,7 @@ public sealed class WeekFlowRuntimeState
 
     public RuntimeChildState ChildState { get; private set; }
     public RuntimeWeekResult LastWeekResult { get; set; }
+    public IReadOnlyList<RuntimeWeeklyResultLogRecord> WeeklyResultLogHistory => _weeklyResultLogHistory;
     public RuntimeInteractiveEventSession CurrentEventSession { get; private set; }
     public bool ShouldShowEndingAfterEvents { get; set; }
     public bool ShouldAdvanceToNextWeekAfterEvents { get; set; }
@@ -34,6 +36,7 @@ public sealed class WeekFlowRuntimeState
     {
         SetChildState(new RuntimeChildState(), true);
         LastWeekResult = null;
+        _weeklyResultLogHistory.Clear();
         HasReachedEnding = false;
         IsAwaitingEndingFollowUp = false;
         ClearPendingEventState();
@@ -78,6 +81,20 @@ public sealed class WeekFlowRuntimeState
             .FindAll(resultLog => resultLog != null)
             .ToArray();
         return resultLogs.Length > 0;
+    }
+
+    public void AddWeeklyResultLogHistory(
+        SO_WeekDefinition weekDefinition,
+        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+    {
+        if (weekDefinition == null || resultLogs == null || resultLogs.Count == 0)
+        {
+            return;
+        }
+
+        string weekId = weekDefinition.Id;
+        _weeklyResultLogHistory.RemoveAll(record => record.IsForWeek(weekId));
+        _weeklyResultLogHistory.Add(new RuntimeWeeklyResultLogRecord(weekDefinition, resultLogs));
     }
 
     public bool TryStartNextDayEvent()
@@ -148,6 +165,50 @@ public sealed class WeekFlowRuntimeState
         CurrentEventSession = null;
         _currentEventStartedFromDayFlow = false;
         return false;
+    }
+}
+
+public sealed class RuntimeWeeklyResultLogRecord
+{
+    private readonly SO_EventResultDefinition[] _resultLogs;
+
+    public RuntimeWeeklyResultLogRecord(
+        SO_WeekDefinition weekDefinition,
+        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+    {
+        WeekId = weekDefinition != null ? weekDefinition.Id : string.Empty;
+        WeekIndex = weekDefinition != null ? weekDefinition.WeekIndex : 0;
+        WeekTitle = weekDefinition != null ? weekDefinition.Title : string.Empty;
+        _resultLogs = CopyLogs(resultLogs);
+    }
+
+    public string WeekId { get; }
+    public int WeekIndex { get; }
+    public string WeekTitle { get; }
+    public IReadOnlyList<SO_EventResultDefinition> ResultLogs => _resultLogs;
+
+    public bool IsForWeek(string weekId)
+    {
+        return string.Equals(WeekId, weekId, StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static SO_EventResultDefinition[] CopyLogs(IReadOnlyList<SO_EventResultDefinition> resultLogs)
+    {
+        if (resultLogs == null || resultLogs.Count == 0)
+        {
+            return Array.Empty<SO_EventResultDefinition>();
+        }
+
+        List<SO_EventResultDefinition> copiedLogs = new();
+        for (int index = 0; index < resultLogs.Count; index++)
+        {
+            if (resultLogs[index] != null)
+            {
+                copiedLogs.Add(resultLogs[index]);
+            }
+        }
+
+        return copiedLogs.ToArray();
     }
 }
 

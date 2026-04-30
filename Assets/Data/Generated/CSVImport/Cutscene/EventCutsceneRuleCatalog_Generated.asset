@@ -718,14 +718,14 @@ MonoBehaviour:
     _weekId: week_009
     _eventId: event_week_009_excursion_forest_direct_innocent
     _moment: 0
-    _sequenceId: sequence_garden_crapemyrtle
+    _sequenceId: sequence_forest_default_gardener
     _specialPlayerId: 
   - _ruleId: cutscene_forest_34
     _enabled: 1
     _weekId: week_009
     _eventId: event_week_009_excursion_forest_blocked
     _moment: 0
-    _sequenceId: sequence_garden_crapemyrtle
+    _sequenceId: sequence_forest_default_gardener
     _specialPlayerId: 
   - _ruleId: cutscene_library_0
     _enabled: 1
