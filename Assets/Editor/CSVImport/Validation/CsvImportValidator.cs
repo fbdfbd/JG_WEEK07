@@ -51,6 +51,7 @@ public static class CsvImportValidator
         ValidateReferences(dataset.EventChoices.Select(row => (CsvImportContext.BuildStepKey(row.EventId, row.StepId), "event_choices.csv -> step")), stepKeys, errors);
         ValidateReferences(dataset.EventChoiceDialogueLines.Select(row => (row.SpeakerId, "event_choice_dialogue_lines.csv -> speaker_id")), speakerIds, errors);
         ValidateReferences(dataset.EventChoiceDialogueLines.Select(row => (CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), "event_choice_dialogue_lines.csv -> choice")), choiceKeys, errors);
+        ValidateReferences(dataset.EventResults.Select(row => (row.EventId, "event_result.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.WeekId, "event_cutscene_rules.csv -> week_id")), weekIds, errors);
         ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.EventId, "event_cutscene_rules.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.SequenceId, "event_cutscene_rules.csv -> sequence_id")), sequenceIds, errors);
@@ -188,6 +189,7 @@ public static class CsvImportValidator
         ValidateGroupedUniqueness(dataset.EventChoiceDialogueLines, row => CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), row => row.LineOrder, "event_choice_dialogue_lines.csv -> line_order", errors);
         ValidateGroupedUniqueness(dataset.CutsceneSequenceCommands, row => row.SequenceId, row => row.Order, "cutscene_sequences.csv -> order", errors);
         ValidateUniqueKeys(dataset.EventSelectionRules, row => row.EventId, "event_selection_rules.csv -> event_id", errors);
+        ValidateUniqueKeys(dataset.EventResults, row => row.EventId, "event_result.csv -> event_id", errors);
         ValidateUniqueKeys(dataset.EventCutsceneRules, row => row.Id, "event_cutscene_rules.csv -> rule_id", errors);
 
         if (errors.Count > 0)

@@ -93,6 +93,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public virtual void ShowWeekFeedback(WeekFeedbackPresentation presentation) { }
     public virtual void ShowInteractiveEvent(InteractiveEventPresentation presentation) { }
     public virtual void ShowInteractiveEventResult(InteractiveEventChoiceResultPresentation presentation) { }
+    public virtual void ShowEventResult(InteractiveEventResultPresentation presentation) { }
     public virtual void ShowEnding(EndingPresentation presentation) { }
     public virtual void ShowEndingFollowUp() { }
     public virtual void HideTransientViews() { }
@@ -200,6 +201,21 @@ public readonly struct InteractiveEventChoiceResultPresentation
 
     public IReadOnlyList<DialogueLinePresentation> DialogueLines { get; }
     public string EffectSummaryLine { get; }
+}
+
+public readonly struct InteractiveEventResultPresentation
+{
+    public InteractiveEventResultPresentation(string eventId, string title, string context)
+    {
+        EventId = eventId;
+        Title = title;
+        Context = context;
+    }
+
+    public string EventId { get; }
+    public string Title { get; }
+    public string Context { get; }
+    public bool HasContent => !string.IsNullOrWhiteSpace(Title) || !string.IsNullOrWhiteSpace(Context);
 }
 
 public readonly struct WeekSelectionCategoryGroupPresentation

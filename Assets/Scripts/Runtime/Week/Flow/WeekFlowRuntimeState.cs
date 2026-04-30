@@ -6,7 +6,9 @@ using UnityEngine;
 public sealed class WeekFlowRuntimeState
 {
     private readonly List<SO_InteractiveEventDefinition> _pendingEvents = new();
+    private readonly List<SO_EventResultDefinition> _pendingEventResults = new();
     private int _nextEventIndex;
+    private int _nextEventResultIndex;
     public event Action<RuntimeChildState> ChildStateReplaced;
 
     public WeekFlowRuntimeState()
@@ -42,6 +44,29 @@ public sealed class WeekFlowRuntimeState
         CurrentEventSession = null;
     }
 
+    public void AddEventResult(SO_EventResultDefinition eventResult)
+    {
+        if (eventResult != null)
+        {
+            _pendingEventResults.Add(eventResult);
+        }
+    }
+
+    public bool TryGetNextEventResult(out SO_EventResultDefinition eventResult)
+    {
+        while (_nextEventResultIndex < _pendingEventResults.Count)
+        {
+            eventResult = _pendingEventResults[_nextEventResultIndex++];
+            if (eventResult != null)
+            {
+                return true;
+            }
+        }
+
+        eventResult = null;
+        return false;
+    }
+
     public bool TryStartNextEvent()
     {
         while (_nextEventIndex < _pendingEvents.Count)
@@ -71,7 +96,9 @@ public sealed class WeekFlowRuntimeState
     public void ClearPendingEventState()
     {
         _pendingEvents.Clear();
+        _pendingEventResults.Clear();
         _nextEventIndex = 0;
+        _nextEventResultIndex = 0;
         CurrentEventSession = null;
         ShouldShowEndingAfterEvents = false;
         ShouldAdvanceToNextWeekAfterEvents = false;

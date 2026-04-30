@@ -80,6 +80,20 @@ public static class WeekNarrativeResolver
             BuildEffectSummary(selectedChoice?.Interactions, weekUiText));
     }
 
+    public static InteractiveEventResultPresentation CreateEventResultPresentation(
+        SO_EventResultDefinition eventResult)
+    {
+        if (eventResult == null)
+        {
+            return default;
+        }
+
+        return new InteractiveEventResultPresentation(
+            eventResult.EventId,
+            eventResult.Title,
+            eventResult.Context);
+    }
+
     public static DialogueLinePresentation GetPrimaryDialogueLine(
         IReadOnlyList<DialogueLinePresentation> dialogueLines,
         string fallbackSpeakerName = NemoFeedbackResolver.DefaultSpeakerName)

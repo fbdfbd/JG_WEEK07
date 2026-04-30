@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 public class NemoWeeklyDialogController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class NemoWeeklyDialogController : MonoBehaviour
     private string _previousWeekId = string.Empty;
     private string _weekId = string.Empty;
     private SO_WeeklyTalk _currentTalk;
+    private WeeklyTalkEntryData _currentEntry;
     private Tween _typingTween;
 
     private void OnEnable()
@@ -69,6 +71,7 @@ public class NemoWeeklyDialogController : MonoBehaviour
         _currentTalk = _weeklyTalkCatalog != null
             ? _weeklyTalkCatalog.GetByWeekId(_weekId)
             : null;
+        _currentEntry = ResolveCurrentEntry();
 
         _previousWeekId = _weekId;
     }
@@ -82,13 +85,13 @@ public class NemoWeeklyDialogController : MonoBehaviour
 
         StopTypingTween();
 
-        if (_currentTalk == null || string.IsNullOrWhiteSpace(_currentTalk.Context))
+        if (_currentEntry == null || string.IsNullOrWhiteSpace(_currentEntry.Context))
         {
             _talkText.text = string.Empty;
             return;
         }
 
-        _talkText.text = _currentTalk.Context;
+        _talkText.text = _currentEntry.Context;
         _talkText.maxVisibleCharacters = 0;
         _talkText.ForceMeshUpdate();
 
@@ -115,12 +118,12 @@ public class NemoWeeklyDialogController : MonoBehaviour
 
     private void PlayCurrentTalkParticle()
     {
-        if (_currentTalk == null || _particle == null)
+        if (_currentEntry == null || _particle == null)
         {
             return;
         }
 
-        int particleIndex = (int)_currentTalk.NemoState;
+        int particleIndex = (int)_currentEntry.NemoState;
         if (particleIndex < 0 || particleIndex >= _particle.Count)
         {
             return;
@@ -135,9 +138,9 @@ public class NemoWeeklyDialogController : MonoBehaviour
         targetParticle.Play();
     }
 
-    private void ApplyCurrentTalkStat()
+    private void ApplyCurrentTalkInteractions()
     {
-        if (_currentTalk?.StatDelta == null)
+        if (_currentEntry == null)
         {
             return;
         }
@@ -148,7 +151,13 @@ public class NemoWeeklyDialogController : MonoBehaviour
             return;
         }
 
-        _currentTalk.StatDelta.Apply(childState);
+        GameplayInteractionExecutor.ApplyAll(_currentEntry.Interactions, childState);
+    }
+
+    private WeeklyTalkEntryData ResolveCurrentEntry()
+    {
+        RuntimeChildState childState = _weekFlowController != null ? _weekFlowController.CurrentChildState : null;
+        return NemoWeeklyTalkResolver.Resolve(_currentTalk, childState);
     }
 
     private int GetVisibleCharacterCount()
@@ -196,10 +205,11 @@ public class NemoWeeklyDialogController : MonoBehaviour
     {
         if (_weeklyDialogFinised)
         {
+            _currentEntry = ResolveCurrentEntry();
             _dialogPanel.Show();
             PlayCurrentTalkParticle();
             TextRefresh();
-            ApplyCurrentTalkStat();
+            ApplyCurrentTalkInteractions();
             _toastManager?.ShowQueuedToastsImmediately();
             _weeklyDialogFinised = false;
         }
@@ -225,5 +235,30 @@ public class NemoWeeklyDialogController : MonoBehaviour
         }
 
         _toastManager = FindAnyObjectByType<UI_ChildStateToastManager>();
+    }
+}
+
+public static class NemoWeeklyTalkResolver
+{
+    public static WeeklyTalkEntryData Resolve(
+        SO_WeeklyTalk talk,
+        RuntimeChildState childState)
+    {
+        if (talk == null)
+        {
+            return null;
+        }
+
+        WeeklyTalkEntryData matchedEntry = talk.Entries?
+            .Where(entry => entry != null && entry.HasContent && entry.IsAvailable(childState))
+            .OrderByDescending(entry => entry.Priority)
+            .FirstOrDefault();
+
+        if (matchedEntry != null)
+        {
+            return matchedEntry;
+        }
+
+        return talk.CreateLegacyEntry();
     }
 }

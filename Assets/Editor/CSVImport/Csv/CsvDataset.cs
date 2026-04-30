@@ -22,6 +22,7 @@ public sealed class CsvDataset
     public IReadOnlyList<EventStepDialogueLineRow> EventStepDialogueLines { get; private set; }
     public IReadOnlyList<EventChoiceRow> EventChoices { get; private set; }
     public IReadOnlyList<EventChoiceDialogueLineRow> EventChoiceDialogueLines { get; private set; }
+    public IReadOnlyList<EventResultRow> EventResults { get; private set; }
     public IReadOnlyList<EventCutsceneRuleRow> EventCutsceneRules { get; private set; }
     public IReadOnlyList<CutsceneSequenceCommandRow> CutsceneSequenceCommands { get; private set; }
 
@@ -151,6 +152,10 @@ public sealed class CsvDataset
             record.GetInt("line_order"),
             record["speaker_id"],
             record["text"]));
+        dataset.EventResults = LoadOptionalTable(csvRootPath, "event_result.csv", record => new EventResultRow(
+            record["event_id"],
+            record["title"],
+            record["context"]));
         dataset.EventCutsceneRules = LoadOptionalTable(csvRootPath, "event_cutscene_rules.csv", record => new EventCutsceneRuleRow(
             record["rule_id"],
             record.GetBool("enabled", true),
@@ -617,6 +622,20 @@ public sealed class EventChoiceDialogueLineRow
     public int LineOrder { get; }
     public string SpeakerId { get; }
     public string Text { get; }
+}
+
+public sealed class EventResultRow
+{
+    public EventResultRow(string eventId, string title, string context)
+    {
+        EventId = eventId;
+        Title = title;
+        Context = context;
+    }
+
+    public string EventId { get; }
+    public string Title { get; }
+    public string Context { get; }
 }
 
 public sealed class EventCutsceneRuleRow

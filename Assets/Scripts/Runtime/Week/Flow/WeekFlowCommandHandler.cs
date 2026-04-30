@@ -126,6 +126,11 @@ public sealed class WeekFlowCommandHandler
             return BuildEventStepScreen();
         }
 
+        if (_runtimeState.TryGetNextEventResult(out SO_EventResultDefinition eventResult))
+        {
+            return BuildEventResultScreen(eventResult);
+        }
+
         if (_runtimeState.ShouldShowEndingAfterEvents)
         {
             return BuildEndingScreen();
@@ -165,6 +170,15 @@ public sealed class WeekFlowCommandHandler
             eventSession.CurrentStep,
             presentation,
             new NemoFeedbackPresentation(line.SpeakerName, presentation.VisualState, line.Text)));
+    }
+
+    private WeekFlowActionResult BuildEventResultScreen(SO_EventResultDefinition eventResult)
+    {
+        InteractiveEventResultPresentation presentation = WeekNarrativeResolver.CreateEventResultPresentation(eventResult);
+        return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEventResult(
+            _weekSequenceState.CurrentWeekDefinition,
+            presentation,
+            new NemoFeedbackPresentation(ENemoVisualState.Neutral, presentation.Context)));
     }
 
     private void ApplyLinkedCardRewardsIfNeeded(RuntimeInteractiveEventSession eventSession)

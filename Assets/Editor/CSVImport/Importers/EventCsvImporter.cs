@@ -73,6 +73,7 @@ public static class EventCsvImporter
             CsvImportAssetUtility.SetField(asset, "_title", row.Title);
             CsvImportAssetUtility.SetField(asset, "_priority", row.Priority);
             CsvImportAssetUtility.SetField(asset, "_firstStep", context.StepsByKey[CsvImportContext.BuildStepKey(row.Id, row.FirstStepId)]);
+            CsvImportAssetUtility.SetField(asset, "_result", null);
             CsvImportAssetUtility.SetField(asset, "_onCompletedInteractions", row.OnCompletedInteractionIds.Select(id => context.InteractionsById[id]).ToArray());
             CsvImportAssetUtility.SetField(asset, "_conditions", BuildConditions(context, row.Id));
 

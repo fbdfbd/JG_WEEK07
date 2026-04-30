@@ -107,6 +107,11 @@ public sealed class WeekFlowPresenter
         _view?.ShowInteractiveEventResult(presentation);
     }
 
+    public void ShowEventResult(InteractiveEventResultPresentation presentation)
+    {
+        _view?.ShowEventResult(presentation);
+    }
+
     public void ShowEnding(EndingPresentation presentation)
     {
         _view?.ShowEnding(presentation);
@@ -134,6 +139,9 @@ public sealed class WeekFlowPresenter
                 break;
             case EWeekFlowScreenType.ChoiceResult:
                 ShowInteractiveEventResult(screen.ChoiceResult);
+                break;
+            case EWeekFlowScreenType.EventResult:
+                ShowEventResult(screen.EventResult);
                 break;
             case EWeekFlowScreenType.Ending:
                 ShowEnding(screen.Ending);

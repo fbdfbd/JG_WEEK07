@@ -150,6 +150,11 @@ public sealed class WeekFlowNarrativeHandler
             return BuildEventStepScreen();
         }
 
+        if (_runtimeState.TryGetNextEventResult(out SO_EventResultDefinition eventResult))
+        {
+            return BuildEventResultScreen(eventResult);
+        }
+
         if (_runtimeState.ShouldShowEndingAfterEvents)
         {
             return BuildEndingScreen();
@@ -200,6 +205,15 @@ public sealed class WeekFlowNarrativeHandler
             new NemoFeedbackPresentation(line.SpeakerName, presentation.VisualState, line.Text)));
     }
 
+    private WeekFlowActionResult BuildEventResultScreen(SO_EventResultDefinition eventResult)
+    {
+        InteractiveEventResultPresentation presentation = WeekNarrativeResolver.CreateEventResultPresentation(eventResult);
+        return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateEventResult(
+            _weekSequenceState.CurrentWeekDefinition,
+            presentation,
+            new NemoFeedbackPresentation(ENemoVisualState.Neutral, presentation.Context)));
+    }
+
     private static bool ShouldAutoAdvanceEmptyStep(InteractiveEventPresentation presentation)
     {
         return string.IsNullOrWhiteSpace(presentation.BodyText)
@@ -247,6 +261,7 @@ public sealed class WeekFlowNarrativeHandler
         WeekEventRuntimeAugmentationService.ApplyOnCompleted(
             eventDefinition,
             _runtimeState.ChildState);
+        _runtimeState.AddEventResult(eventDefinition.Result);
         _runtimeState.ClearCurrentEventSession();
     }
 
