@@ -109,10 +109,9 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         _showSequence = DOTween.Sequence();
         _showSequence.AppendInterval(Mathf.Max(0f, _panelFadeDuration));
 
-        while (_nextEntryIndex < _pendingEntries.Count)
+        for (int index = 0; index < _pendingEntries.Count; index++)
         {
-            int entryIndex = _nextEntryIndex++;
-            _showSequence.AppendCallback(() => CreateEntry(_pendingEntries[entryIndex], false));
+            _showSequence.AppendCallback(CreateNextEntryAnimated);
             _showSequence.AppendInterval(Mathf.Max(0f, _entryInterval));
         }
 
@@ -121,9 +120,21 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
     private void SkipEntryAnimation()
     {
-        KillShowSequence(true);
+        KillShowSequence(false);
+        ShowVisibleEntriesInstant();
         ShowAllEntriesInstant();
         MarkReadyToClose();
+    }
+
+    private void CreateNextEntryAnimated()
+    {
+        if (_nextEntryIndex >= _pendingEntries.Count)
+        {
+            return;
+        }
+
+        CreateEntry(_pendingEntries[_nextEntryIndex], false);
+        _nextEntryIndex++;
     }
 
     private void ShowAllEntriesInstant()
@@ -152,6 +163,17 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         }
 
         entryView.PlayShow(Mathf.Max(0f, _entryShowDuration));
+    }
+
+    private void ShowVisibleEntriesInstant()
+    {
+        for (int index = 0; index < _entryViews.Count; index++)
+        {
+            if (_entryViews[index] != null)
+            {
+                _entryViews[index].ShowInstant();
+            }
+        }
     }
 
     private void SelectWeek(string weekId)

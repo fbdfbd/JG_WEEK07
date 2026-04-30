@@ -2643,15 +2643,41 @@ Transform:
   - {fileID: 1050380222}
   - {fileID: 1308512131}
   - {fileID: 895194864}
-  - {fileID: 1227480492}
   - {fileID: 634593247}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &457960867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 731969451857924281, guid: 84a439617c4628744b865f2348149fb3, type: 3}
+  m_PrefabInstance: {fileID: 308981156100099991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &457960868 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6172253648124611752, guid: 84a439617c4628744b865f2348149fb3, type: 3}
   m_PrefabInstance: {fileID: 308981156100099991}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &457960873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457960867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa96efe6398ca64a96a1c7113eccc8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_WeeklyResultLogPanel
+  _canvasGroup: {fileID: 1709797381}
+  _indexRoot: {fileID: 1571159137}
+  _indexButtonPrefab: {fileID: 6607234124456004798, guid: 1e95b5b274cafdd48863f1ec4f6f97ca, type: 3}
+  _indexButtonLabelFormat: '{0}'
+  _entryRoot: {fileID: 1248808080}
+  _entryPrefab: {fileID: 7365178606967144711, guid: 806d0ef199a7ad0408ed2b62f8140155, type: 3}
+  _advanceButton: {fileID: 2013885177}
+  _panelFadeDuration: 0.15
+  _entryShowDuration: 0.28
+  _entryInterval: 0.5
 --- !u!4 &481164754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7853235209102016124, guid: e74f8a4bbcc355345a637beee3a1ca43, type: 3}
@@ -5536,7 +5562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI_WeekFlowRootView
   _weekScreenView: {fileID: 2024420380}
   _dialogueScreenView: {fileID: 1050380220}
-  _weeklyResultLogPanel: {fileID: 1227480493}
+  _weeklyResultLogPanel: {fileID: 457960873}
   _endingLetterView: {fileID: 1175174842}
   _dialogueLogPanel: {fileID: 1463106723}
   _transitionPlayer: {fileID: 1308512130}
@@ -5582,60 +5608,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 410691784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1227480491
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1227480492}
-  - component: {fileID: 1227480493}
-  m_Layer: 0
-  m_Name: UI_WeeklyResultPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1227480492
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227480491}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0648398, y: 0.87262994, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 410691784}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1227480493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227480491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa96efe6398ca64a96a1c7113eccc8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_WeeklyResultLogPanel
-  _canvasGroup: {fileID: 1709797381}
-  _indexRoot: {fileID: 1571159137}
-  _indexButtonPrefab: {fileID: 6607234124456004798, guid: 1e95b5b274cafdd48863f1ec4f6f97ca, type: 3}
-  _indexButtonLabelFormat: '{0}'
-  _entryRoot: {fileID: 1248808080}
-  _entryPrefab: {fileID: 7365178606967144711, guid: 806d0ef199a7ad0408ed2b62f8140155, type: 3}
-  _advanceButton: {fileID: 2013885177}
-  _panelFadeDuration: 0.15
-  _entryShowDuration: 0.28
-  _entryInterval: 0.5
 --- !u!1 &1243324333
 GameObject:
   m_ObjectHideFlags: 0
@@ -10238,7 +10210,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 731969451857924281, guid: 84a439617c4628744b865f2348149fb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 457960873}
   m_SourcePrefab: {fileID: 100100000, guid: 84a439617c4628744b865f2348149fb3, type: 3}
 --- !u!224 &334098316685400987
 RectTransform:
