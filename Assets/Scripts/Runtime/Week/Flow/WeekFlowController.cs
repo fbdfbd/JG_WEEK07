@@ -34,6 +34,7 @@ public class WeekFlowController : MonoBehaviour
     public event Action<SO_WeekDefinition> WeekChanged;
     public event Action<RuntimeChildState> ChildStateSourceChanged;
     public event Action FlowPresentationCompleted;
+    public event Action<WeekFlowPresentationContext> FlowPresentationCompletedWithContext;
     public SO_WeekDefinition CurrentWeekDefinition => _weekSequenceState.CurrentWeekDefinition;
     public RuntimeChildState CurrentChildState => _runtimeState?.ChildState;
 
@@ -303,6 +304,12 @@ public class WeekFlowController : MonoBehaviour
         }
 
         _isTransitionPlaying = false;
+        FlowPresentationCompletedWithContext?.Invoke(new WeekFlowPresentationContext(
+            previousWeek,
+            currentWeek,
+            previousScreen,
+            nextScreen,
+            result.ShouldReplaceScreen));
         FlowPresentationCompleted?.Invoke();
     }
 

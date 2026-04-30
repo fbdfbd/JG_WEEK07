@@ -8,6 +8,31 @@ public enum EWeekFlowScreenType
     EndingFollowUp
 }
 
+public readonly struct WeekFlowPresentationContext
+{
+    public WeekFlowPresentationContext(
+        SO_WeekDefinition previousWeek,
+        SO_WeekDefinition currentWeek,
+        WeekFlowScreen previousScreen,
+        WeekFlowScreen nextScreen,
+        bool didReplaceScreen)
+    {
+        PreviousWeek = previousWeek;
+        CurrentWeek = currentWeek;
+        PreviousScreen = previousScreen;
+        NextScreen = nextScreen;
+        DidReplaceScreen = didReplaceScreen;
+    }
+
+    public SO_WeekDefinition PreviousWeek { get; }
+    public SO_WeekDefinition CurrentWeek { get; }
+    public WeekFlowScreen PreviousScreen { get; }
+    public WeekFlowScreen NextScreen { get; }
+    public bool DidReplaceScreen { get; }
+    public bool DidChangeWeek => PreviousWeek != CurrentWeek;
+    public bool DidClearScreen => DidReplaceScreen && NextScreen == null;
+}
+
 public sealed class WeekFlowScreen
 {
     private WeekFlowScreen(

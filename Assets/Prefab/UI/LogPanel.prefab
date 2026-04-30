@@ -920,6 +920,7 @@ GameObject:
   - component: {fileID: 2751129401114165620}
   - component: {fileID: 6175397355302279829}
   - component: {fileID: 4937400586906702569}
+  - component: {fileID: 5152102777442107018}
   m_Layer: 5
   m_Name: LogPanel
   m_TagString: Untagged
@@ -1001,6 +1002,20 @@ MonoBehaviour:
   _rowPrefab: {fileID: 6326413396004693557, guid: 38d47f4dfb683a343be1d61a597b9fbf, type: 3}
   _closeButton: {fileID: 8883602962919595324}
   _emptyText: {fileID: 8826063587171484987}
+--- !u!114 &5152102777442107018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7316677502284017916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36eb67a9177068240a327b1be56ccdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_ScrollAutoDown
+  _scrollRect: {fileID: 4828951239296554918}
+  _contentRect: {fileID: 6569373123548985212}
 --- !u!1 &7946020772946897380
 GameObject:
   m_ObjectHideFlags: 0

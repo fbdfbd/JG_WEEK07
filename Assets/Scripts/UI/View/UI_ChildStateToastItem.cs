@@ -101,6 +101,13 @@ public class UI_ChildStateToastItem : MonoBehaviour
         return new PlaybackProfile(_fadeInDuration, _moveDuration, _moveDistance);
     }
 
+    public void StopAndHide()
+    {
+        CacheReferences();
+        StopCurrentTween();
+        HideImmediate();
+    }
+
     private void CacheReferences()
     {
         if (_initialized)
