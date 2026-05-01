@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using UnityEngine;
+
 
 public static class GameplayAnalyticsLogger
 {
@@ -9,8 +11,11 @@ public static class GameplayAnalyticsLogger
     private static string _sessionId;
     private static float _startedAt;
     private static string _rawPath;
+    private static string _summaryPath;
     private static bool _sessionEnded;
     private static int _currentWeekIndex;
+    private static float _lastSummaryUploadTime;
+    private const float SummaryUploadInterval = 30f;
 
     public static void StartSession(SO_WeekDefinition currentWeek)
     {
@@ -20,11 +25,14 @@ public static class GameplayAnalyticsLogger
         }
 
         Events.Clear();
-        _sessionId = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+        _sessionId = $"{DateTime.Now:yyyyMMdd_HHmmss}_{Guid.NewGuid():N}";
+
         _startedAt = Time.realtimeSinceStartup;
         _sessionEnded = false;
         _currentWeekIndex = GetWeekIndex(currentWeek);
         _rawPath = GameplayAnalyticsExporter.BuildPath($"raw_{_sessionId}.jsonl");
+        _summaryPath = GameplayAnalyticsExporter.BuildPath($"summary_{_sessionId}.json");
+
         Log("session_start", _currentWeekIndex)
             .Add("week_id", GetWeekId(currentWeek))
             .Add("week_title", GetWeekTitle(currentWeek));
@@ -43,14 +51,65 @@ public static class GameplayAnalyticsLogger
             .Add("last_week_index", lastEvent != null ? lastEvent.WeekIndex : _currentWeekIndex);
 
         _sessionEnded = true;
+        WriteCurrentSummary();
+
         GameplayAnalyticsSummary summary = GameplayAnalyticsSummaryBuilder.Build(Events);
+        string reportPath = GameplayAnalyticsExporter.BuildPath($"report_{_sessionId}.txt");
+
         GameplayAnalyticsExporter.WriteText(
-            GameplayAnalyticsExporter.BuildPath($"summary_{_sessionId}.json"),
-            GameplayAnalyticsSummaryBuilder.ToJson(summary));
-        GameplayAnalyticsExporter.WriteText(
-            GameplayAnalyticsExporter.BuildPath($"report_{_sessionId}.txt"),
+            reportPath,
             GameplayAnalyticsSummaryBuilder.ToReport(summary));
+
+        GameplayAnalyticsGoogleUploader.Upload(_summaryPath, _sessionId);
+
+
     }
+    public static async Task EndSessionAndUpload()
+    {
+        if (string.IsNullOrEmpty(_sessionId) || _sessionEnded)
+        {
+            return;
+        }
+
+        GameplayAnalyticsEvent lastEvent = Events.Count > 0 ? Events[^1] : null;
+        Log("session_end", _currentWeekIndex)
+            .Add("last_event_name", lastEvent != null ? lastEvent.EventName : string.Empty)
+            .Add("last_week_index", lastEvent != null ? lastEvent.WeekIndex : _currentWeekIndex);
+
+        _sessionEnded = true;
+        WriteCurrentSummary();
+
+        GameplayAnalyticsSummary summary = GameplayAnalyticsSummaryBuilder.Build(Events);
+        string reportPath = GameplayAnalyticsExporter.BuildPath($"report_{_sessionId}.txt");
+
+        GameplayAnalyticsExporter.WriteText(
+            reportPath,
+            GameplayAnalyticsSummaryBuilder.ToReport(summary));
+
+        await GameplayAnalyticsGoogleUploader.Upload(_summaryPath, _sessionId);
+    }
+
+    private static void WriteCurrentSummary()
+    {
+        if (string.IsNullOrEmpty(_summaryPath))
+        {
+            return;
+        }
+
+        GameplayAnalyticsSummary summary = GameplayAnalyticsSummaryBuilder.Build(Events);
+
+        GameplayAnalyticsExporter.WriteText(
+    _summaryPath,
+    GameplayAnalyticsSummaryBuilder.ToJson(summary));
+
+    if (Time.realtimeSinceStartup - _lastSummaryUploadTime >= SummaryUploadInterval)
+    {
+        _lastSummaryUploadTime = Time.realtimeSinceStartup;
+        GameplayAnalyticsGoogleUploader.Upload(_summaryPath, _sessionId);
+    }
+
+    }
+
 
     public static void LogCardOptionClicked(
         SO_WeekDefinition week,
@@ -87,6 +146,10 @@ public static class GameplayAnalyticsLogger
             .Add("semantic", resolvedCard.SelectedOption != null ? resolvedCard.SelectedOption.Semantic.ToString() : string.Empty);
     }
 
+    public static void LogCheckID()
+    {
+        Debug.LogError("폴더Id");
+    }
     public static void LogWeekResolved(SO_WeekDefinition week, RuntimeWeekResult result)
     {
         Log("week_resolved", GetWeekIndex(week))
@@ -94,6 +157,8 @@ public static class GameplayAnalyticsLogger
             .Add("week_title", GetWeekTitle(week))
             .Add("resolved_card_count", result?.ResolvedCards?.Count ?? 0);
     }
+
+
 
     public static void LogEventStepShown(WeekFlowScreen screen)
     {
@@ -211,7 +276,9 @@ public static class GameplayAnalyticsLogger
 
         Events.Add(logEvent);
         File.AppendAllText(_rawPath, logEvent.ToJsonLine() + Environment.NewLine);
+        WriteCurrentSummary();
         return logEvent;
+
     }
 
     private static int GetWeekIndex(SO_WeekDefinition week)
