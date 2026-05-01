@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine;
 
 public sealed class WeekFlowPresenter
 {
@@ -109,11 +110,18 @@ public sealed class WeekFlowPresenter
 
     public void ShowWeeklyResultLog(WeeklyResultLogPresentation presentation)
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] Presenter.ShowWeeklyResultLog " +
+            $"entryCount={presentation.Entries?.Count ?? 0} " +
+            $"weekCount={presentation.Weeks?.Count ?? 0}");
         _view?.ShowWeeklyResultLog(presentation);
     }
 
     public void ShowWeeklyStatResult(WeeklyStatResultPresentation presentation)
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] Presenter.ShowWeeklyStatResult " +
+            $"changeCount={presentation.Changes?.Count ?? 0}");
         _view?.ShowWeeklyStatResult(presentation);
     }
 
@@ -133,6 +141,11 @@ public sealed class WeekFlowPresenter
         {
             return;
         }
+
+        Debug.Log(
+            $"[WeeklyStatDebug] Presenter.PresentScreen " +
+            $"screen={screen.ScreenType} " +
+            $"week={FormatWeekId(screen.WeekDefinition)}");
 
         switch (screen.ScreenType)
         {
@@ -162,7 +175,13 @@ public sealed class WeekFlowPresenter
 
     public void HideFlowScreens()
     {
+        Debug.Log("[WeeklyStatDebug] Presenter.HideFlowScreens");
         _view?.HideTransientViews();
+    }
+
+    private static string FormatWeekId(SO_WeekDefinition weekDefinition)
+    {
+        return weekDefinition != null ? weekDefinition.Id : "null";
     }
 
     private void PublishWeekHeader()

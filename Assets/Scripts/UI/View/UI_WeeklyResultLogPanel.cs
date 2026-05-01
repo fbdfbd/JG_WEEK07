@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UI_WeeklyResultLogPanel : MonoBehaviour
@@ -28,8 +29,10 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     private bool _isPlaying;
     private bool _isReadyToClose;
     private bool _preserveOnContinue;
+    private bool _advanceInputEnabled = true;
 
     public event Action ContinueRequested;
+    public event Action AdvanceInputRequested;
     public bool IsVisible => gameObject.activeSelf;
 
     private void Awake()
@@ -62,6 +65,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
         gameObject.SetActive(true);
         SetCanvasVisible(true);
+        SetAdvanceButtonVisible(true);
         LogVisibilityChangedIfNeeded(wasVisible, true);
 
         _nextEntryIndex = 0;
@@ -85,6 +89,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         _isPlaying = false;
         _isReadyToClose = false;
         _preserveOnContinue = false;
+        _advanceInputEnabled = false;
         SetCanvasVisible(false);
         gameObject.SetActive(false);
         LogVisibilityChangedIfNeeded(wasVisible, false);
@@ -97,17 +102,55 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
     public void SetAdvanceButtonEnabled(bool enabled)
     {
+        _advanceInputEnabled = enabled;
+
         if (_advanceButton == null)
         {
             return;
         }
 
         _advanceButton.interactable = enabled;
+
+        if (!enabled && EventSystem.current != null &&
+            EventSystem.current.currentSelectedGameObject == _advanceButton.gameObject)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
+
+    public void SetAdvanceButtonVisible(bool visible)
+    {
+        if (_advanceButton == null)
+        {
+            return;
+        }
+
+        _advanceButton.gameObject.SetActive(visible);
+
+        if (!visible && EventSystem.current != null &&
+            EventSystem.current.currentSelectedGameObject == _advanceButton.gameObject)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
     }
 
     public bool TryAdvance()
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] ResultLog.TryAdvance " +
+            $"visible={IsVisible} " +
+            $"playing={_isPlaying} " +
+            $"ready={_isReadyToClose} " +
+            $"preserve={_preserveOnContinue} " +
+            $"advanceEnabled={_advanceInputEnabled} " +
+            $"advanceInteractable={(_advanceButton != null && _advanceButton.interactable)}");
+
         if (!IsVisible)
+        {
+            return false;
+        }
+
+        if (!_advanceInputEnabled)
         {
             return false;
         }
@@ -120,15 +163,12 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
         if (_isReadyToClose)
         {
-            if (_preserveOnContinue)
-            {
-                SetAdvanceButtonEnabled(false);
-            }
-            else
+            if (!_preserveOnContinue)
             {
                 Hide();
             }
 
+            Debug.Log("[WeeklyStatDebug] ResultLog.TryAdvance invoke ContinueRequested");
             ContinueRequested?.Invoke();
             return true;
         }
@@ -152,6 +192,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
     private void SkipEntryAnimation()
     {
+        Debug.Log("[WeeklyStatDebug] ResultLog.SkipEntryAnimation");
         KillShowSequence(false);
         ShowVisibleEntriesInstant();
         ShowAllEntriesInstant();
@@ -343,6 +384,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     {
         _isPlaying = false;
         _isReadyToClose = true;
+        Debug.Log("[WeeklyStatDebug] ResultLog.MarkReadyToClose");
     }
 
     private void ClearEntries()
@@ -407,7 +449,12 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
 
     private void HandleAdvanceButtonClicked()
     {
-        TryAdvance();
+        if (!_advanceInputEnabled)
+        {
+            return;
+        }
+
+        AdvanceInputRequested?.Invoke();
     }
 
     private void LogVisibilityChangedIfNeeded(bool wasVisible, bool isVisible)

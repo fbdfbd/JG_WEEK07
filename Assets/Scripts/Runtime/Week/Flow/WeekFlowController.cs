@@ -29,6 +29,7 @@ public class WeekFlowController : MonoBehaviour
     private WeekFlowCutsceneBridgeBase _cutsceneBridge;
     private WeekFlowScreen _currentScreen;
     private bool _isTransitionPlaying;
+    private Func<WeekFlowActionResult> _pendingFlowAction;
     private RuntimeChildState _boundChildState;
 
     public event Action<SO_WeekDefinition> WeekChanged;
@@ -228,13 +229,32 @@ public class WeekFlowController : MonoBehaviour
 
     private void RunFlowAction(Func<WeekFlowActionResult> action)
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] Controller.RunFlowAction begin " +
+            $"transitionPlaying={_isTransitionPlaying} " +
+            $"currentScreen={FormatScreenType(_currentScreen)} " +
+            $"currentWeek={FormatWeekId(_weekSequenceState.CurrentWeekDefinition)} " +
+            $"action={action?.Method.Name ?? "null"}");
+
         if (_isTransitionPlaying)
         {
+            _pendingFlowAction = action;
+            Debug.Log(
+                $"[WeeklyStatDebug] Controller.RunFlowAction queued " +
+                $"action={action?.Method.Name ?? "null"}");
             return;
         }
 
         SO_WeekDefinition previousWeek = _weekSequenceState.CurrentWeekDefinition;
         WeekFlowActionResult result = action();
+        Debug.Log(
+            $"[WeeklyStatDebug] Controller.RunFlowAction result " +
+            $"refresh={result.ShouldRefreshUi} " +
+            $"replace={result.ShouldReplaceScreen} " +
+            $"nextScreen={FormatScreenType(result.NextScreen)} " +
+            $"previousWeek={FormatWeekId(previousWeek)} " +
+            $"currentWeek={FormatWeekId(_weekSequenceState.CurrentWeekDefinition)}");
+
         if (!result.ShouldRefreshUi)
         {
             return;
@@ -252,6 +272,15 @@ public class WeekFlowController : MonoBehaviour
         bool shouldShowMainCanvas = result.ShouldReplaceScreen
             ? nextScreen == null
             : previousScreen == null;
+
+        Debug.Log(
+            $"[WeeklyStatDebug] Controller.ApplyFlowAction begin " +
+            $"replace={result.ShouldReplaceScreen} " +
+            $"previousScreen={FormatScreenType(previousScreen)} " +
+            $"nextScreen={FormatScreenType(nextScreen)} " +
+            $"previousWeek={FormatWeekId(previousWeek)} " +
+            $"currentWeek={FormatWeekId(currentWeek)} " +
+            $"keepPreviousVisible={ShouldKeepPreviousScreenVisible(previousScreen, nextScreen)}");
 
         if (result.ShouldReplaceScreen && previousScreen != null)
         {
@@ -293,6 +322,10 @@ public class WeekFlowController : MonoBehaviour
             _currentScreen = nextScreen;
             if (_currentScreen != null)
             {
+                Debug.Log(
+                    $"[WeeklyStatDebug] Controller.ApplyFlowAction PresentScreen " +
+                    $"screen={FormatScreenType(_currentScreen)} " +
+                    $"week={FormatWeekId(_currentScreen.WeekDefinition)}");
                 _presenter.PresentScreen(_currentScreen);
                 GameplayAnalyticsLogger.LogEventStepShown(_currentScreen);
                 _view?.SetFlowScreenContext(_currentScreen, _runtimeState.ChildState, _runtimeState.LastWeekResult);
@@ -310,6 +343,10 @@ public class WeekFlowController : MonoBehaviour
         }
 
         _isTransitionPlaying = false;
+        Debug.Log(
+            $"[WeeklyStatDebug] Controller.ApplyFlowAction end " +
+            $"currentScreen={FormatScreenType(_currentScreen)} " +
+            $"pending={(_pendingFlowAction != null)}");
         FlowPresentationCompletedWithContext?.Invoke(new WeekFlowPresentationContext(
             previousWeek,
             currentWeek,
@@ -317,6 +354,23 @@ public class WeekFlowController : MonoBehaviour
             nextScreen,
             result.ShouldReplaceScreen));
         FlowPresentationCompleted?.Invoke();
+
+        if (_pendingFlowAction != null)
+        {
+            Func<WeekFlowActionResult> pendingAction = _pendingFlowAction;
+            _pendingFlowAction = null;
+            RunFlowAction(pendingAction);
+        }
+    }
+
+    private static string FormatScreenType(WeekFlowScreen screen)
+    {
+        return screen == null ? "null" : screen.ScreenType.ToString();
+    }
+
+    private static string FormatWeekId(SO_WeekDefinition weekDefinition)
+    {
+        return weekDefinition != null ? weekDefinition.Id : "null";
     }
 
     private IEnumerator PlayEventEnterCutscene(WeekFlowScreen screen)

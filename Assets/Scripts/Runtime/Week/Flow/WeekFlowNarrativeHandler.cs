@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public sealed class WeekFlowNarrativeHandler
 {
@@ -33,6 +34,12 @@ public sealed class WeekFlowNarrativeHandler
 
     public WeekFlowActionResult ContinueWeeklyResultLog()
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] ContinueWeeklyResultLog " +
+            $"hasPending={_runtimeState.HasPendingWeeklyStatResult} " +
+            $"weekStartStats={_runtimeState.WeekStartStats?.Count ?? -1} " +
+            $"currentWeek={_weekSequenceState.CurrentWeekDefinition?.Id}");
+
         if (_runtimeState.HasPendingWeeklyStatResult)
         {
             return BuildWeeklyStatResultScreen();
@@ -43,6 +50,10 @@ public sealed class WeekFlowNarrativeHandler
 
     public WeekFlowActionResult ContinueWeeklyStatResult()
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] ContinueWeeklyStatResult " +
+            $"currentWeek={_weekSequenceState.CurrentWeekDefinition?.Id}");
+
         _runtimeState.MarkWeeklyStatResultConsumed();
         return ContinuePostWeekFlow();
     }
@@ -84,6 +95,10 @@ public sealed class WeekFlowNarrativeHandler
             return WeekFlowActionResult.None;
         }
 
+        GameplayAnalyticsLogger.LogInteractiveEventSkipped(
+            _weekSequenceState.CurrentWeekDefinition,
+            eventSession.EventDefinition,
+            eventSession.CurrentStep);
         CompleteCurrentEvent();
         return ContinuePostWeekFlow();
     }
@@ -173,8 +188,19 @@ public sealed class WeekFlowNarrativeHandler
             return BuildWeeklyResultLogScreen(resultLogs);
         }
 
+        if (ShouldShowWeeklyResultLog() && _runtimeState.HasPendingWeeklyStatResult)
+        {
+            Debug.Log(
+                $"[WeeklyStatDebug] ContinuePostWeekFlow -> BuildWeeklyStatResultScreen " +
+                $"currentWeek={_weekSequenceState.CurrentWeekDefinition?.Id}");
+            return BuildWeeklyStatResultScreen();
+        }
+
         if (_runtimeState.TryStartNextNightEvent())
         {
+            Debug.Log(
+                $"[WeeklyStatDebug] ContinuePostWeekFlow -> StartNextNightEvent " +
+                $"currentWeek={_weekSequenceState.CurrentWeekDefinition?.Id}");
             return BuildEventStepScreen();
         }
 
@@ -247,10 +273,18 @@ public sealed class WeekFlowNarrativeHandler
             _runtimeState.WeekStartStats,
             _weekUiText);
 
+        Debug.Log(
+            $"[WeeklyStatDebug] BuildWeeklyStatResultScreen " +
+            $"currentWeek={_weekSequenceState.CurrentWeekDefinition?.Id} " +
+            $"hasChanges={presentation.HasChanges} " +
+            $"changeCount={presentation.Changes?.Count ?? -1} " +
+            $"weekStartStats={_runtimeState.WeekStartStats?.Count ?? -1}");
+
         _runtimeState.MarkWeeklyStatResultConsumed();
 
         if (!presentation.HasChanges)
         {
+            Debug.Log("[WeeklyStatDebug] BuildWeeklyStatResultScreen skipped: no changes");
             return ContinuePostWeekFlow();
         }
 

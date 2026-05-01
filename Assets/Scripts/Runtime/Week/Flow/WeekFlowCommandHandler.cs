@@ -137,6 +137,11 @@ public sealed class WeekFlowCommandHandler
             return BuildWeeklyResultLogScreen(resultLogs);
         }
 
+        if (ShouldShowWeeklyResultLog() && _runtimeState.HasPendingWeeklyStatResult)
+        {
+            return BuildWeeklyStatResultScreen();
+        }
+
         if (_runtimeState.TryStartNextNightEvent())
         {
             return BuildEventStepScreen();
@@ -190,6 +195,26 @@ public sealed class WeekFlowCommandHandler
             _runtimeState.WeeklyResultLogHistory,
             _weekSequenceState.CurrentWeekDefinition?.Id);
         return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateWeeklyResultLog(
+            _weekSequenceState.CurrentWeekDefinition,
+            presentation,
+            new NemoFeedbackPresentation(ENemoVisualState.Neutral, string.Empty)));
+    }
+
+    private WeekFlowActionResult BuildWeeklyStatResultScreen()
+    {
+        WeeklyStatResultPresentation presentation = WeeklyStatResultResolver.Resolve(
+            _runtimeState.ChildState,
+            _runtimeState.WeekStartStats,
+            _weekUiText);
+
+        _runtimeState.MarkWeeklyStatResultConsumed();
+
+        if (!presentation.HasChanges)
+        {
+            return ContinueAfterWeekFlow();
+        }
+
+        return WeekFlowActionResult.ReplaceScreen(WeekFlowScreen.CreateWeeklyStatResult(
             _weekSequenceState.CurrentWeekDefinition,
             presentation,
             new NemoFeedbackPresentation(ENemoVisualState.Neutral, string.Empty)));

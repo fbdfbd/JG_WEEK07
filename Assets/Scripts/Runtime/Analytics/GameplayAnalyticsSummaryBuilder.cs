@@ -35,6 +35,8 @@ public sealed class GameplayAnalyticsWeekSummary
     public Dictionary<string, int> CardSemantics = new();
     public Dictionary<string, int> ClickedCardSemantics = new();
     public Dictionary<string, int> InteractiveChoices = new();
+    public Dictionary<string, int> SkipButtonClicks = new();
+    public Dictionary<string, int> SuccessfulSkips = new();
     public Dictionary<string, int> StatDelta = new();
     public List<GameplayAnalyticsCardChoiceSummary> SelectedCards = new();
     public List<GameplayAnalyticsCardChoiceSummary> ClickedCards = new();
@@ -104,6 +106,12 @@ public static class GameplayAnalyticsSummaryBuilder
                 case "interactive_choice_selected":
                     AddCount(week.InteractiveChoices, BuildChoiceKey(logEvent));
                     break;
+                case "skip_button_clicked":
+                    AddCount(week.SkipButtonClicks, BuildEventStepKey(logEvent));
+                    break;
+                case "interactive_event_skipped":
+                    AddCount(week.SuccessfulSkips, BuildEventStepKey(logEvent));
+                    break;
                 case "stat_changed":
                     AddStatDelta(week.StatDelta, logEvent);
                     break;
@@ -151,6 +159,8 @@ public static class GameplayAnalyticsSummaryBuilder
             AppendCardChoices(builder, 3, "selected_cards", week.SelectedCards, true);
             AppendCardChoices(builder, 3, "clicked_cards", week.ClickedCards, true);
             AppendDictionary(builder, 3, "interactive_choices", week.InteractiveChoices, true);
+            AppendDictionary(builder, 3, "skip_button_clicks", week.SkipButtonClicks, true);
+            AppendDictionary(builder, 3, "successful_skips", week.SuccessfulSkips, true);
             AppendDictionary(builder, 3, "stat_delta", week.StatDelta, true);
             AppendIndentedProperty(builder, 3, "ending_reached", week.EndingReached, true);
             AppendIndentedProperty(builder, 3, "ending_id", week.EndingId, true);
@@ -187,6 +197,8 @@ public static class GameplayAnalyticsSummaryBuilder
             AppendCountsReport(builder, "Final Card Choices", week.CardSemantics);
             AppendCountsReport(builder, "Clicked Card Choices", week.ClickedCardSemantics);
             AppendCountsReport(builder, "Interactive Choices", week.InteractiveChoices);
+            AppendCountsReport(builder, "Skip Button Clicks", week.SkipButtonClicks);
+            AppendCountsReport(builder, "Successful Skips", week.SuccessfulSkips);
             AppendCountsReport(builder, "Stat Delta", week.StatDelta, signedValues: true);
             builder.AppendLine($"Ending Reached: {(week.EndingReached ? "Yes" : "No")}");
             if (!string.IsNullOrWhiteSpace(week.EndingId))
@@ -310,6 +322,13 @@ public static class GameplayAnalyticsSummaryBuilder
         logEvent.TryGetString("step_id", out string stepId);
         logEvent.TryGetInt("choice_index", out int choiceIndex);
         return $"{eventId}/{stepId}/choice_{choiceIndex}";
+    }
+
+    private static string BuildEventStepKey(GameplayAnalyticsEvent logEvent)
+    {
+        logEvent.TryGetString("event_id", out string eventId);
+        logEvent.TryGetString("step_id", out string stepId);
+        return $"{eventId}/{stepId}";
     }
 
     private static void AppendIndentedProperty(StringBuilder builder, int indentLevel, string key, object value, bool comma)

@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UI_WeeklyStatResultPanel : MonoBehaviour
 {
+    private const float AdvanceInputGuardDuration = 0.2f;
+
     [Serializable]
     private class StatBarSlot
     {
@@ -44,15 +47,22 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
     private Sequence _playSequence;
     private bool _isPlaying;
     private bool _isReadyToClose;
+    private bool _isShowing;
+    private float _advanceInputUnlockTime;
 
     public event Action ContinueRequested;
+    public event Action AdvanceInputRequested;
     public bool IsVisible => gameObject.activeSelf;
 
     private void Awake()
     {
         ResolveReferences();
         BindAdvanceButton();
-        Hide();
+
+        if (!_isShowing)
+        {
+            Hide();
+        }
     }
 
     private void OnDestroy()
@@ -63,6 +73,13 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
 
     public void Show(WeeklyStatResultPresentation presentation)
     {
+        _isShowing = true;
+
+        Debug.Log(
+            $"[WeeklyStatDebug] StatPanel.Show begin " +
+            $"activeBefore={gameObject.activeSelf} " +
+            $"changeCount={presentation.Changes?.Count ?? -1}");
+
         ResolveReferences();
         KillPlaySequence(false);
         HideAllSlots();
@@ -73,32 +90,72 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
         gameObject.SetActive(true);
         transform.SetAsLastSibling();
         SetCanvasVisible(true);
+        _advanceInputUnlockTime = Time.unscaledTime + AdvanceInputGuardDuration;
 
         PrepareSlots();
 
         _isPlaying = _activeChanges.Count > 0;
         _isReadyToClose = !_isPlaying;
 
+        Debug.Log(
+            $"[WeeklyStatDebug] StatPanel.Show prepared " +
+            $"activeChanges={_activeChanges.Count} " +
+            $"isPlaying={_isPlaying} " +
+            $"isReadyToClose={_isReadyToClose} " +
+            $"canvasAlpha={(_canvasGroup != null ? _canvasGroup.alpha : -1f)}");
+
         if (_isPlaying)
         {
             PlayBars();
         }
+
+        SelectAdvanceButton();
+        _isShowing = false;
+    }
+
+    public void SelectAdvanceButton()
+    {
+        if (_advanceButton == null || EventSystem.current == null)
+        {
+            return;
+        }
+
+        EventSystem.current.SetSelectedGameObject(_advanceButton.gameObject);
     }
 
     public void Hide()
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] StatPanel.Hide " +
+            $"wasVisible={IsVisible} " +
+            $"isPlaying={_isPlaying} " +
+            $"isReadyToClose={_isReadyToClose}");
+
         KillPlaySequence(false);
         _isPlaying = false;
         _isReadyToClose = false;
+        _advanceInputUnlockTime = 0f;
         SetCanvasVisible(false);
         gameObject.SetActive(false);
     }
 
     public bool TryAdvance()
     {
+        Debug.Log(
+            $"[WeeklyStatDebug] StatPanel.TryAdvance " +
+            $"visible={IsVisible} " +
+            $"isPlaying={_isPlaying} " +
+            $"isReadyToClose={_isReadyToClose} " +
+            $"guarded={Time.unscaledTime < _advanceInputUnlockTime}");
+
         if (!IsVisible)
         {
             return false;
+        }
+
+        if (Time.unscaledTime < _advanceInputUnlockTime)
+        {
+            return true;
         }
 
         if (_isPlaying)
@@ -190,6 +247,7 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
 
     private void MarkReadyToClose()
     {
+        Debug.Log("[WeeklyStatDebug] StatPanel.MarkReadyToClose");
         _isPlaying = false;
         _isReadyToClose = true;
     }
@@ -256,7 +314,7 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
 
     private void HandleAdvanceButtonClicked()
     {
-        TryAdvance();
+        AdvanceInputRequested?.Invoke();
     }
 
     private StatBarSlot FindSlot(EChildStatusType statType)

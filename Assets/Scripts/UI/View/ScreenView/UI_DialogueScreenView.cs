@@ -261,6 +261,7 @@ public class UI_DialogueScreenView : MonoBehaviour
             return;
         }
 
+        GameplayAnalyticsLogger.LogSkipButtonClicked(_currentScreen);
         EventSkipRequested?.Invoke();
     }
 

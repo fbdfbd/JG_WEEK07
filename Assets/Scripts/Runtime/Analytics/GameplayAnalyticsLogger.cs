@@ -110,6 +110,39 @@ public static class GameplayAnalyticsLogger
             .Add("step_title", GetStepTitle(screen.StepDefinition));
     }
 
+    public static void LogSkipButtonClicked(WeekFlowScreen screen)
+    {
+        if (screen == null || screen.ScreenType != EWeekFlowScreenType.EventStep)
+        {
+            return;
+        }
+
+        Log("skip_button_clicked", GetWeekIndex(screen.WeekDefinition))
+            .Add("week_id", GetWeekId(screen.WeekDefinition))
+            .Add("event_id", GetEventId(screen.EventDefinition))
+            .Add("event_title", GetEventTitle(screen.EventDefinition))
+            .Add("step_id", GetStepId(screen.StepDefinition))
+            .Add("step_title", GetStepTitle(screen.StepDefinition))
+            .Add("screen_type", screen.ScreenType.ToString())
+            .Add("source_class", nameof(UI_DialogueScreenView))
+            .Add("source_method", "HandleSkipEventButtonClicked");
+    }
+
+    public static void LogInteractiveEventSkipped(
+        SO_WeekDefinition week,
+        SO_InteractiveEventDefinition eventDefinition,
+        SO_InteractiveEventStepDefinition step)
+    {
+        Log("interactive_event_skipped", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("event_id", GetEventId(eventDefinition))
+            .Add("event_title", GetEventTitle(eventDefinition))
+            .Add("step_id", GetStepId(step))
+            .Add("step_title", GetStepTitle(step))
+            .Add("source_class", nameof(WeekFlowNarrativeHandler))
+            .Add("source_method", "SkipCurrentInteractiveEvent");
+    }
+
     public static void LogInteractiveChoiceSelected(
         SO_WeekDefinition week,
         SO_InteractiveEventDefinition eventDefinition,

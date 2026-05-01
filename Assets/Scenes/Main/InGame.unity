@@ -10751,6 +10751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeeklyResultStatusPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 6052528125313785104, guid: 41d1a04fac8ff5c47b6115bb337faecf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6079072363057057880, guid: 41d1a04fac8ff5c47b6115bb337faecf, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
