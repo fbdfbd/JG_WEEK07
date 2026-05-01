@@ -129,6 +129,16 @@ public class UI_ChildStateToastManager : MonoBehaviour
         ShowQueuedToasts(EChildStateToastFlushMode.Sequential);
     }
 
+    public System.Collections.IEnumerator ShowQueuedToastsAndWait(EChildStateToastFlushMode flushMode)
+    {
+        ShowQueuedToasts(flushMode);
+
+        while (_toastSequenceCoroutine != null || _burstToastCoroutine != null)
+        {
+            yield return null;
+        }
+    }
+
     public void ShowQueuedToasts(EChildStateToastFlushMode flushMode)
     {
         while (_pendingToastMessages.Count > 0)

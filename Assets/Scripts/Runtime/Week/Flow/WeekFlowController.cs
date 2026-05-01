@@ -12,6 +12,7 @@ public class WeekFlowController : MonoBehaviour
 
     [Header("View Connection")]
     [SerializeField] private WeekFlowViewBase _view;
+    [SerializeField] private UI_ChildStateToastManager _toastManager;
 
     [Header("Test")]
     [SerializeField] private bool _isTest;
@@ -31,6 +32,7 @@ public class WeekFlowController : MonoBehaviour
     private WeekFlowCutsceneBridgeBase _cutsceneBridge;
     private WeekFlowScreen _currentScreen;
     private bool _isTransitionPlaying;
+    private bool _skipEventToastWaitOnce;
     private Func<WeekFlowActionResult> _pendingFlowAction;
     private RuntimeChildState _boundChildState;
 
@@ -80,6 +82,11 @@ public class WeekFlowController : MonoBehaviour
         if (_view == null)
         {
             _view = GetComponent<WeekFlowViewBase>();
+        }
+
+        if (_toastManager == null)
+        {
+            _toastManager = FindAnyObjectByType<UI_ChildStateToastManager>();
         }
     }
 
@@ -155,25 +162,36 @@ public class WeekFlowController : MonoBehaviour
     private void HandleRunWeekRequested()
     {
         _analyticsTracker.EndTurnDwell(CurrentWeekDefinition, "run_week_requested");
-        RunFlowAction(_commandHandler.RunCurrentWeek);
+        RunUserFlowAction(_commandHandler.RunCurrentWeek);
     }
-    private void HandleResetSelectionsRequested() => RunFlowAction(_commandHandler.ResetSelections);
-    private void HandleResetChildStateRequested() => RunFlowAction(_commandHandler.ResetChildState);
-    private void HandleWeekFeedbackClosed() => RunFlowAction(_narrativeHandler.CloseWeekFeedback);
-    private void HandleInteractiveEventContinueRequested() => RunFlowAction(_narrativeHandler.ContinueInteractiveEvent);
-    private void HandleInteractiveEventSkipRequested() => RunFlowAction(_narrativeHandler.SkipCurrentInteractiveEvent);
-    private void HandleWeeklyResultLogContinueRequested() => RunFlowAction(_narrativeHandler.ContinueWeeklyResultLog);
-    private void HandleWeeklyStatResultContinueRequested() => RunFlowAction(_narrativeHandler.ContinueWeeklyStatResult);
+    private void HandleResetSelectionsRequested() => RunUserFlowAction(_commandHandler.ResetSelections);
+    private void HandleResetChildStateRequested() => RunUserFlowAction(_commandHandler.ResetChildState);
+    private void HandleWeekFeedbackClosed() => RunUserFlowAction(_narrativeHandler.CloseWeekFeedback);
+    private void HandleInteractiveEventContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueInteractiveEvent);
+    private void HandleInteractiveEventSkipRequested() => RunUserFlowAction(SkipCurrentInteractiveEventWithoutToastWait);
+    private void HandleWeeklyResultLogContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueWeeklyResultLog);
+    private void HandleWeeklyStatResultContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueWeeklyStatResult);
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
     {
         GameplayAnalyticsLogger.LogCardOptionClicked(CurrentWeekDefinition, cardDefinition, optionIndex);
-        RunFlowAction(() => _commandHandler.SelectCardOption(cardDefinition, optionIndex));
+        RunUserFlowAction(() => _commandHandler.SelectCardOption(cardDefinition, optionIndex));
     }
     private void HandleAllCardSemanticSelected(ECardOptionSemantic semantic)
     {
-        RunFlowAction(() => _commandHandler.SelectAllCardOptionsBySemantic(semantic));
+        RunUserFlowAction(() => _commandHandler.SelectAllCardOptionsBySemantic(semantic));
     }
-    private void HandleInteractiveEventChoiceSelected(int choiceIndex) => RunFlowAction(() => _narrativeHandler.SelectInteractiveEventChoice(choiceIndex));
+    private void HandleInteractiveEventChoiceSelected(int choiceIndex) => RunUserFlowAction(() => _narrativeHandler.SelectInteractiveEventChoice(choiceIndex));
+
+    private WeekFlowActionResult SkipCurrentInteractiveEventWithoutToastWait()
+    {
+        WeekFlowActionResult result = _narrativeHandler.SkipCurrentInteractiveEvent();
+        if (result.ShouldRefreshUi)
+        {
+            _skipEventToastWaitOnce = true;
+        }
+
+        return result;
+    }
 
     private void BindRuntimeStateEvents()
     {
@@ -249,7 +267,17 @@ public class WeekFlowController : MonoBehaviour
         return string.Equals(currentWeek.Id, "week_000", StringComparison.OrdinalIgnoreCase);
     }
 
+    private void RunUserFlowAction(Func<WeekFlowActionResult> action)
+    {
+        RunFlowAction(action, false);
+    }
+
     private void RunFlowAction(Func<WeekFlowActionResult> action)
+    {
+        RunFlowAction(action, true);
+    }
+
+    private void RunFlowAction(Func<WeekFlowActionResult> action, bool queueWhenTransitionPlaying)
     {
         Debug.Log(
             $"[WeeklyStatDebug] Controller.RunFlowAction begin " +
@@ -260,6 +288,14 @@ public class WeekFlowController : MonoBehaviour
 
         if (_isTransitionPlaying)
         {
+            if (!queueWhenTransitionPlaying)
+            {
+                Debug.Log(
+                    $"[WeeklyStatDebug] Controller.RunFlowAction ignored during transition " +
+                    $"action={action?.Method.Name ?? "null"}");
+                return;
+            }
+
             _pendingFlowAction = action;
             Debug.Log(
                 $"[WeeklyStatDebug] Controller.RunFlowAction queued " +
@@ -288,6 +324,8 @@ public class WeekFlowController : MonoBehaviour
     private IEnumerator ApplyFlowAction(WeekFlowActionResult result, SO_WeekDefinition previousWeek, SO_WeekDefinition currentWeek)
     {
         _isTransitionPlaying = true;
+        bool skipEventToastWait = _skipEventToastWaitOnce;
+        _skipEventToastWaitOnce = false;
 
         WeekFlowScreen previousScreen = _currentScreen;
         WeekFlowScreen nextScreen = result.NextScreen;
@@ -306,6 +344,11 @@ public class WeekFlowController : MonoBehaviour
 
         if (result.ShouldReplaceScreen && previousScreen != null)
         {
+            if (!skipEventToastWait && ShouldWaitForEventCompletionToasts(previousScreen, nextScreen))
+            {
+                yield return _toastManager.ShowQueuedToastsAndWait(EChildStateToastFlushMode.Sequential);
+            }
+
             yield return _cinematicDirector.PlayScreenExit(previousScreen);
 
             if (ShouldExitEventCutscene(previousScreen, nextScreen))
@@ -453,6 +496,13 @@ public class WeekFlowController : MonoBehaviour
     private static bool ShouldExitEventCutscene(WeekFlowScreen previousScreen, WeekFlowScreen nextScreen)
     {
         return previousScreen?.EventDefinition != null && !IsSameEvent(previousScreen, nextScreen);
+    }
+
+    private bool ShouldWaitForEventCompletionToasts(WeekFlowScreen previousScreen, WeekFlowScreen nextScreen)
+    {
+        return _toastManager != null
+            && previousScreen?.EventDefinition != null
+            && !IsSameEvent(previousScreen, nextScreen);
     }
 
     private static bool IsSameEvent(WeekFlowScreen first, WeekFlowScreen second)
