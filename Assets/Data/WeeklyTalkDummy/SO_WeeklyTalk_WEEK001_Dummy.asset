@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513f3be7edc0a654d9af482549195ef5, type: 3}
+  m_Name: SO_WeeklyTalk_WEEK001_Dummy
+  m_EditorClassIdentifier: Assembly-CSharp::SO_WeeklyTalk
+  _weekId: week_001
+  _entries:
+  - _id: dummy_week_001_anxious_1
+    _direction: 5
+    _variantOrder: 1
+    _priority: 0
+    _weight: 1
+    _displaySeconds: 3.5
+    _cooldownSeconds: 1
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "Dummy Anxious 1: default Anxiety should pick this first."
+    _nemoState: 1
+    _interactions: []
+  - _id: dummy_week_001_anxious_2
+    _direction: 5
+    _variantOrder: 2
+    _priority: 0
+    _weight: 1
+    _displaySeconds: 3.5
+    _cooldownSeconds: 1
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "Dummy Anxious 2: rotation check."
+    _nemoState: 3
+    _interactions: []
+  - _id: dummy_week_001_curious_1
+    _direction: 3
+    _variantOrder: 1
+    _priority: 0
+    _weight: 1
+    _displaySeconds: 3.5
+    _cooldownSeconds: 1
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "Dummy Curious: raise Curiosity above Anxiety to see this."
+    _nemoState: 0
+    _interactions: []
+  - _id: dummy_week_001_clever_click
+    _direction: 0
+    _variantOrder: 1
+    _priority: 10
+    _weight: 1
+    _displaySeconds: 3
+    _cooldownSeconds: 1
+    _allowAuto: 0
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "Dummy Clever click-only: set Trust negative to test."
+    _nemoState: 2
+    _interactions: []
+  _context: "Dummy legacy fallback."
+  _nemostate: 4
+  _CardInteraction_StatDelta: {fileID: 0}
