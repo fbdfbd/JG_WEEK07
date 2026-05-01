@@ -29,6 +29,7 @@ public static class CsvImportPipeline
             EventCsvImporter.Import(context);
             EventResultCsvImporter.Import(context);
             EventCutsceneCsvImporter.Import(context);
+            WeeklyTalkCsvImporter.Import(context);
         }
         finally
         {

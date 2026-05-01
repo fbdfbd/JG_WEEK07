@@ -55,6 +55,7 @@ public static class CsvImportValidator
         ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.WeekId, "event_cutscene_rules.csv -> week_id")), weekIds, errors);
         ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.EventId, "event_cutscene_rules.csv -> event_id")), eventIds, errors);
         ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.SequenceId, "event_cutscene_rules.csv -> sequence_id")), sequenceIds, errors);
+        ValidateReferences(dataset.WeeklyTalks.Select(row => (row.WeekId, "weeklytalk.csv -> week_id")), weekIds, errors);
 
         foreach (InteractionRow row in dataset.Interactions)
         {
@@ -180,6 +181,15 @@ public static class CsvImportValidator
 
             ValidateEnum<EDataCutsceneCommandType>(row.Command, $"cutscene_sequences.csv -> command ({row.SequenceId}/{row.Order})", errors);
             ValidateEnum<DG.Tweening.Ease>(row.Ease, $"cutscene_sequences.csv -> ease ({row.SequenceId}/{row.Order})", errors, allowBlank: true);
+        }
+
+        foreach (WeeklyTalkRow row in dataset.WeeklyTalks)
+        {
+            ValidateEnum<WeeklyTalkStatDirection>(row.Direction, $"weeklytalk.csv -> direction ({row.WeekId}/{row.VariantOrder})", errors);
+            ValidateEnum<NemoEmotionState>(row.NemoState, $"weeklytalk.csv -> nemo_state ({row.WeekId}/{row.VariantOrder})", errors, allowBlank: true);
+            ValidateReferences(row.InteractionIds.Select(id => (id, $"weeklytalk.csv -> interaction_ids ({row.WeekId}/{row.VariantOrder})")), interactionIds, errors);
+            ValidateReferences(row.RequiredFlagIds.Select(id => (id, $"weeklytalk.csv -> required_flag_ids ({row.WeekId}/{row.VariantOrder})")), flagIds, errors);
+            ValidateReferences(row.BlockedFlagIds.Select(id => (id, $"weeklytalk.csv -> blocked_flag_ids ({row.WeekId}/{row.VariantOrder})")), flagIds, errors);
         }
 
         ValidateGroupedUniqueness(dataset.CardOptions, row => row.CardId, row => row.OptionOrder, "card_options.csv -> option_order", errors);

@@ -1,6 +1,5 @@
 public static class EndingContextBuilder
 {
-    private const int PositiveEndingThreshold = 5;
     private const int NegativeEndingThreshold = -5;
 
     private static readonly EEndingCharacterType[] CharacterTiePriority =
@@ -19,17 +18,21 @@ public static class EndingContextBuilder
             && GetMeetCount(childState, EEndingCharacterType.Yuffie) <= 0;
     }
 
-    public static EndingContext Build(RuntimeChildState childState)
+    public static EndingContext Build(
+        RuntimeChildState childState,
+        bool useMoodThresholdCorrection = false)
     {
         EEndingCharacterType characterType = ResolveCharacterType(childState);
         int meetCount = GetMeetCount(childState, characterType);
-        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
+        EEndingMoodType moodType = ResolveMoodType(childState, characterType, useMoodThresholdCorrection);
         int affinity = childState.GetStat(EChildStatusType.Affinity);
 
         return new EndingContext(characterType, meetCount, moodType, affinity);
     }
 
-    public static EndingContext[] BuildMetCharacterContextsByPriority(RuntimeChildState childState)
+    public static EndingContext[] BuildMetCharacterContextsByPriority(
+        RuntimeChildState childState,
+        bool useMoodThresholdCorrection = false)
     {
         if (childState == null)
         {
@@ -47,7 +50,7 @@ public static class EndingContextBuilder
                 continue;
             }
 
-            contexts[count] = Build(childState, characterType);
+            contexts[count] = Build(childState, characterType, useMoodThresholdCorrection);
             count++;
         }
 
@@ -61,10 +64,13 @@ public static class EndingContextBuilder
         return trimmedContexts;
     }
 
-    private static EndingContext Build(RuntimeChildState childState, EEndingCharacterType characterType)
+    private static EndingContext Build(
+        RuntimeChildState childState,
+        EEndingCharacterType characterType,
+        bool useMoodThresholdCorrection)
     {
         int meetCount = GetMeetCount(childState, characterType);
-        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
+        EEndingMoodType moodType = ResolveMoodType(childState, characterType, useMoodThresholdCorrection);
         int affinity = childState.GetStat(EChildStatusType.Affinity);
 
         return new EndingContext(characterType, meetCount, moodType, affinity);
@@ -139,14 +145,32 @@ public static class EndingContextBuilder
 
     private static EEndingMoodType ResolveMoodType(
         RuntimeChildState childState,
-        EEndingCharacterType characterType)
+        EEndingCharacterType characterType,
+        bool useMoodThresholdCorrection)
     {
+        if (!useMoodThresholdCorrection)
+        {
+            return ResolveDefaultMoodType(characterType);
+        }
+
         return characterType switch
         {
             EEndingCharacterType.Rian => ResolveRianMood(childState),
             EEndingCharacterType.Max => ResolveMaxMood(childState),
             EEndingCharacterType.Millia => ResolveMilliaMood(childState),
             EEndingCharacterType.Yuffie => ResolveYuffieMood(childState),
+            _ => EEndingMoodType.Anxiety,
+        };
+    }
+
+    private static EEndingMoodType ResolveDefaultMoodType(EEndingCharacterType characterType)
+    {
+        return characterType switch
+        {
+            EEndingCharacterType.Rian => EEndingMoodType.Anxiety,
+            EEndingCharacterType.Max => EEndingMoodType.Submission,
+            EEndingCharacterType.Millia => EEndingMoodType.Curious,
+            EEndingCharacterType.Yuffie => EEndingMoodType.Submission,
             _ => EEndingMoodType.Anxiety,
         };
     }

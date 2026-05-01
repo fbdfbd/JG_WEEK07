@@ -2648,6 +2648,7 @@ MonoBehaviour:
   _endingCatalog: {fileID: 11400000, guid: 056a44d53630474ab91c42403daa699c, type: 2}
   _view: {fileID: 1201139401}
   _isTest: 0
+  _useEndingMoodThresholdCorrection: 0
 --- !u!4 &410691784
 Transform:
   m_ObjectHideFlags: 0

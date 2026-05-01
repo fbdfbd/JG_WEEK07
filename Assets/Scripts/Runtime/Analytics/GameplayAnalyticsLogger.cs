@@ -195,6 +195,49 @@ public static class GameplayAnalyticsLogger
             .Add("entry_count", entryCount);
     }
 
+    public static void LogTurnDwellStarted(SO_WeekDefinition week, string source)
+    {
+        Log("turn_dwell_started", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("week_title", GetWeekTitle(week))
+            .Add("source", source);
+    }
+
+    public static void LogTurnDwellEnded(
+        SO_WeekDefinition week,
+        float durationSeconds,
+        string source)
+    {
+        Log("turn_dwell_ended", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("week_title", GetWeekTitle(week))
+            .Add("duration_seconds", Math.Round(Math.Max(0f, durationSeconds), 3))
+            .Add("source", source);
+    }
+
+    public static void LogPostDayResultPhaseStarted(
+        SO_WeekDefinition week,
+        EWeekFlowScreenType screenType)
+    {
+        Log("post_day_result_phase_started", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("week_title", GetWeekTitle(week))
+            .Add("screen_type", screenType.ToString());
+    }
+
+    public static void LogNightFlowStarted(
+        SO_WeekDefinition week,
+        SO_InteractiveEventDefinition eventDefinition,
+        float durationSinceResultPhaseSeconds)
+    {
+        Log("night_flow_started", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("week_title", GetWeekTitle(week))
+            .Add("event_id", GetEventId(eventDefinition))
+            .Add("event_title", GetEventTitle(eventDefinition))
+            .Add("duration_since_result_phase_seconds", Math.Round(Math.Max(0f, durationSinceResultPhaseSeconds), 3));
+    }
+
     private static GameplayAnalyticsEvent Log(string eventName, int weekIndex)
     {
         if (string.IsNullOrEmpty(_sessionId))
@@ -207,11 +250,31 @@ public static class GameplayAnalyticsLogger
             _sessionId,
             eventName,
             Time.realtimeSinceStartup - _startedAt,
-            weekIndex);
+            weekIndex,
+            HandleEventChanged);
 
         Events.Add(logEvent);
-        File.AppendAllText(_rawPath, logEvent.ToJsonLine() + Environment.NewLine);
+        WriteRawEvents();
         return logEvent;
+    }
+
+    private static void HandleEventChanged(GameplayAnalyticsEvent _)
+    {
+        WriteRawEvents();
+    }
+
+    private static void WriteRawEvents()
+    {
+        if (string.IsNullOrEmpty(_rawPath))
+        {
+            return;
+        }
+
+        using StreamWriter writer = new(_rawPath, false);
+        for (int index = 0; index < Events.Count; index++)
+        {
+            writer.WriteLine(Events[index].ToJsonLine());
+        }
     }
 
     private static int GetWeekIndex(SO_WeekDefinition week)

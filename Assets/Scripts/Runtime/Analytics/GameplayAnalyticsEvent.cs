@@ -6,18 +6,21 @@ using System.Text;
 public sealed class GameplayAnalyticsEvent
 {
     private readonly Dictionary<string, object> _fields = new();
+    private readonly Action<GameplayAnalyticsEvent> _changed;
 
     public GameplayAnalyticsEvent(
         string sessionId,
         string eventName,
         float elapsedSeconds,
-        int weekIndex)
+        int weekIndex,
+        Action<GameplayAnalyticsEvent> changed = null)
     {
         SessionId = sessionId;
         EventName = eventName;
         Timestamp = DateTime.Now;
         ElapsedSeconds = elapsedSeconds;
         WeekIndex = weekIndex;
+        _changed = changed;
     }
 
     public string SessionId { get; }
@@ -32,6 +35,7 @@ public sealed class GameplayAnalyticsEvent
         if (!string.IsNullOrWhiteSpace(key) && value != null)
         {
             _fields[key] = value;
+            _changed?.Invoke(this);
         }
 
         return this;

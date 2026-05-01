@@ -101,7 +101,12 @@ public sealed class NemoEntity : MonoBehaviour, IPointerClickHandler
 
         if (CurrentState == NemoState.Event) return;
 
-        if (CurrentState == NemoState.Routine && _dialogController.IsWeeklyDialogFinished())
+        if (CurrentState == NemoState.Routine && _dialogController != null && _dialogController.SpeakNow())
+        {
+            return;
+        }
+
+        if (CurrentState == NemoState.Routine)
         {
             PauseRoutine();
             return;

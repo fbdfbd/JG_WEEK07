@@ -15,6 +15,7 @@ public class WeekFlowController : MonoBehaviour
 
     [Header("Test")]
     [SerializeField] private bool _isTest;
+    [SerializeField] private bool _useEndingMoodThresholdCorrection;
 
     private readonly WeekRunner _weekRunner = new();
     private readonly WeekSelectionState _weekSelectionState = new();
@@ -26,6 +27,7 @@ public class WeekFlowController : MonoBehaviour
     private WeekFlowCommandHandler _commandHandler;
     private WeekFlowNarrativeHandler _narrativeHandler;
     private WeekFlowCinematicDirector _cinematicDirector;
+    private readonly WeekFlowAnalyticsTracker _analyticsTracker = new();
     private WeekFlowCutsceneBridgeBase _cutsceneBridge;
     private WeekFlowScreen _currentScreen;
     private bool _isTransitionPlaying;
@@ -46,6 +48,7 @@ public class WeekFlowController : MonoBehaviour
         BuildWeekFlowObjects();
         GameplayAnalyticsLogger.StartSession(CurrentWeekDefinition);
         BindViewEvents();
+        _analyticsTracker.StartTurnDwell(CurrentWeekDefinition, "controller_awake");
         _presenter.RefreshAll();
         _presenter.PublishDefaultNemoFeedback();
     }
@@ -87,8 +90,23 @@ public class WeekFlowController : MonoBehaviour
         _weekSequenceState.InitializeWeekSequence(_weekDefinition, _weekDefinitions);
         _weekSelectionState.ApplyWeekEntries(WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition));
         _presenter = new WeekFlowPresenter(_view, _runtimeState, _weekUiText, _weekSelectionState, _weekSequenceState);
-        _commandHandler = new WeekFlowCommandHandler(_runtimeState, _weekUiText, _weekRunner, _weekSelectionState, _weekSequenceState, _endingCatalog, _isTest);
-        _narrativeHandler = new WeekFlowNarrativeHandler(_runtimeState, _weekUiText, _weekSelectionState, _weekSequenceState, _endingCatalog, _isTest);
+        _commandHandler = new WeekFlowCommandHandler(
+            _runtimeState,
+            _weekUiText,
+            _weekRunner,
+            _weekSelectionState,
+            _weekSequenceState,
+            _endingCatalog,
+            _isTest,
+            _useEndingMoodThresholdCorrection);
+        _narrativeHandler = new WeekFlowNarrativeHandler(
+            _runtimeState,
+            _weekUiText,
+            _weekSelectionState,
+            _weekSequenceState,
+            _endingCatalog,
+            _isTest,
+            _useEndingMoodThresholdCorrection);
         _cinematicDirector = new WeekFlowCinematicDirector(_view, new WeekFlowCinematicResolver());
         _cutsceneBridge = _view != null ? _view.GetCutsceneBridge() : null;
         BindRuntimeStateEvents();
@@ -134,7 +152,11 @@ public class WeekFlowController : MonoBehaviour
         _view.WeeklyStatResultContinueRequested -= HandleWeeklyStatResultContinueRequested;
     }
 
-    private void HandleRunWeekRequested() => RunFlowAction(_commandHandler.RunCurrentWeek);
+    private void HandleRunWeekRequested()
+    {
+        _analyticsTracker.EndTurnDwell(CurrentWeekDefinition, "run_week_requested");
+        RunFlowAction(_commandHandler.RunCurrentWeek);
+    }
     private void HandleResetSelectionsRequested() => RunFlowAction(_commandHandler.ResetSelections);
     private void HandleResetChildStateRequested() => RunFlowAction(_commandHandler.ResetChildState);
     private void HandleWeekFeedbackClosed() => RunFlowAction(_narrativeHandler.CloseWeekFeedback);
@@ -327,6 +349,9 @@ public class WeekFlowController : MonoBehaviour
                     $"screen={FormatScreenType(_currentScreen)} " +
                     $"week={FormatWeekId(_currentScreen.WeekDefinition)}");
                 _presenter.PresentScreen(_currentScreen);
+                _analyticsTracker.ObservePresentedScreen(
+                    _currentScreen,
+                    _runtimeState.IsCurrentEventFromDayFlow);
                 GameplayAnalyticsLogger.LogEventStepShown(_currentScreen);
                 _view?.SetFlowScreenContext(_currentScreen, _runtimeState.ChildState, _runtimeState.LastWeekResult);
 
@@ -347,12 +372,14 @@ public class WeekFlowController : MonoBehaviour
             $"[WeeklyStatDebug] Controller.ApplyFlowAction end " +
             $"currentScreen={FormatScreenType(_currentScreen)} " +
             $"pending={(_pendingFlowAction != null)}");
-        FlowPresentationCompletedWithContext?.Invoke(new WeekFlowPresentationContext(
+        WeekFlowPresentationContext presentationContext = new(
             previousWeek,
             currentWeek,
             previousScreen,
             nextScreen,
-            result.ShouldReplaceScreen));
+            result.ShouldReplaceScreen);
+        _analyticsTracker.ObservePresentationCompleted(presentationContext);
+        FlowPresentationCompletedWithContext?.Invoke(presentationContext);
         FlowPresentationCompleted?.Invoke();
 
         if (_pendingFlowAction != null)

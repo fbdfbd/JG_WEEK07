@@ -25,6 +25,7 @@ public sealed class CsvDataset
     public IReadOnlyList<EventResultRow> EventResults { get; private set; }
     public IReadOnlyList<EventCutsceneRuleRow> EventCutsceneRules { get; private set; }
     public IReadOnlyList<CutsceneSequenceCommandRow> CutsceneSequenceCommands { get; private set; }
+    public IReadOnlyList<WeeklyTalkRow> WeeklyTalks { get; private set; }
 
     public static CsvDataset Load(CsvImportSettings settings)
     {
@@ -175,6 +176,21 @@ public sealed class CsvDataset
             record.GetFloat("duration"),
             record["ease"],
             record.GetBool("blocking", true)));
+        dataset.WeeklyTalks = LoadOptionalTable(csvRootPath, "weeklytalk.csv", record => new WeeklyTalkRow(
+            record["week_id"],
+            record["direction"],
+            record.GetInt("variant_order"),
+            record.GetInt("priority"),
+            record.GetInt("weight", 1),
+            record["nemo_state"],
+            record["context"],
+            record.GetFloat("display_seconds"),
+            record.GetFloat("cooldown_seconds"),
+            record.GetBool("allow_auto", true),
+            record.GetBool("allow_click", true),
+            record.GetMultiValue("interaction_ids"),
+            record.GetMultiValue("required_flag_ids"),
+            record.GetMultiValue("blocked_flag_ids")));
         return dataset;
     }
 
@@ -703,4 +719,54 @@ public sealed class CutsceneSequenceCommandRow
     public float Duration { get; }
     public string Ease { get; }
     public bool Blocking { get; }
+}
+
+public sealed class WeeklyTalkRow
+{
+    public WeeklyTalkRow(
+        string weekId,
+        string direction,
+        int variantOrder,
+        int priority,
+        int weight,
+        string nemoState,
+        string context,
+        float displaySeconds,
+        float cooldownSeconds,
+        bool allowAuto,
+        bool allowClick,
+        string[] interactionIds,
+        string[] requiredFlagIds,
+        string[] blockedFlagIds)
+    {
+        WeekId = weekId;
+        Direction = direction;
+        VariantOrder = variantOrder;
+        Priority = priority;
+        Weight = weight;
+        NemoState = nemoState;
+        Context = context;
+        DisplaySeconds = displaySeconds;
+        CooldownSeconds = cooldownSeconds;
+        AllowAuto = allowAuto;
+        AllowClick = allowClick;
+        InteractionIds = interactionIds;
+        RequiredFlagIds = requiredFlagIds;
+        BlockedFlagIds = blockedFlagIds;
+    }
+
+    public string WeekId { get; }
+    public string Direction { get; }
+    public int VariantOrder { get; }
+    public int Priority { get; }
+    public int Weight { get; }
+    public string NemoState { get; }
+    public string Context { get; }
+    public float DisplaySeconds { get; }
+    public float CooldownSeconds { get; }
+    public bool AllowAuto { get; }
+    public bool AllowClick { get; }
+    public string[] InteractionIds { get; }
+    public string[] RequiredFlagIds { get; }
+    public string[] BlockedFlagIds { get; }
 }

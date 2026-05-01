@@ -35,20 +35,46 @@ public enum NemoEmotionState
     None
 }
 
+public enum WeeklyTalkStatDirection
+{
+    Clever,
+    Innocent,
+    Cautious,
+    Curious,
+    Stable,
+    Anxious,
+    Defiant,
+    Compliant
+}
+
 [Serializable]
 public class WeeklyTalkEntryData
 {
     private static readonly SO_CardInteractionDefinition[] EmptyInteractions = Array.Empty<SO_CardInteractionDefinition>();
 
     [SerializeField] private string _id = string.Empty;
+    [SerializeField] private WeeklyTalkStatDirection _direction = WeeklyTalkStatDirection.Anxious;
+    [SerializeField] private int _variantOrder;
     [SerializeField] private int _priority;
+    [SerializeField] private int _weight = 1;
+    [SerializeField] private float _displaySeconds = 3.5f;
+    [SerializeField] private float _cooldownSeconds;
+    [SerializeField] private bool _allowAuto = true;
+    [SerializeField] private bool _allowClick = true;
     [SerializeField] private WeeklyTalkConditionData _conditions = new();
     [SerializeField, TextArea(3, 4)] private string _context = string.Empty;
     [SerializeField] private NemoEmotionState _nemoState = NemoEmotionState.None;
     [SerializeField] private SO_CardInteractionDefinition[] _interactions = EmptyInteractions;
 
     public string Id => _id;
+    public WeeklyTalkStatDirection Direction => _direction;
+    public int VariantOrder => _variantOrder;
     public int Priority => _priority;
+    public int Weight => _weight;
+    public float DisplaySeconds => _displaySeconds;
+    public float CooldownSeconds => _cooldownSeconds;
+    public bool AllowAuto => _allowAuto;
+    public bool AllowClick => _allowClick;
     public WeeklyTalkConditionData Conditions => _conditions;
     public string Context => _context;
     public NemoEmotionState NemoState => _nemoState;
