@@ -404,7 +404,9 @@ public sealed class WeekFlowNarrativeHandler
             return;
         }
 
-        WeekCardEntryData[] entries = WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition);
+        WeekCardEntryData[] entries = WeekFlowQueryUtility.GetCurrentWeekEntries(
+            _weekSequenceState.CurrentWeekDefinition,
+            _runtimeState.ChildState);
         _weekSelectionState.ApplyWeekEntries(entries);
         _weekSelectionState.ResetAllSelections(entries);
         _runtimeState.LastWeekResult = null;

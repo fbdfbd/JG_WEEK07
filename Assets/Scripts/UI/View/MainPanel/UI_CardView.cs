@@ -307,12 +307,25 @@ public class UI_CardView : MonoBehaviour
     // [로컬 UI 상태 변경] 이전 카드로 이동
     private void OnPrevButtonClicked()
     {
-        if (_currentCardIndexInGroup <= 0)
+        if (!TryGetCurrentGroup(out WeekSelectionCategoryGroupPresentation _))
         {
             return;
         }
 
-        _currentCardIndexInGroup--;
+        if (_currentCardIndexInGroup > 0)
+        {
+            _currentCardIndexInGroup--;
+        }
+        else if (TryFindPreviousGroupWithEntries(out int previousGroupIndex))
+        {
+            _currentGroupIndex = previousGroupIndex;
+            _currentCardIndexInGroup = _currentGroups[previousGroupIndex].Entries.Count - 1;
+        }
+        else
+        {
+            return;
+        }
+
         UpdateCurrentGroupedCard();
     }
 
@@ -324,12 +337,20 @@ public class UI_CardView : MonoBehaviour
             return;
         }
 
-        if (_currentCardIndexInGroup >= currentGroup.Entries.Count - 1)
+        if (_currentCardIndexInGroup < currentGroup.Entries.Count - 1)
+        {
+            _currentCardIndexInGroup++;
+        }
+        else if (TryFindNextGroupWithEntries(out int nextGroupIndex))
+        {
+            _currentGroupIndex = nextGroupIndex;
+            _currentCardIndexInGroup = 0;
+        }
+        else
         {
             return;
         }
 
-        _currentCardIndexInGroup++;
         UpdateCurrentGroupedCard();
     }
 
@@ -629,14 +650,68 @@ public class UI_CardView : MonoBehaviour
         if (_prevButton != null)
         {
             // 첫 번째 카드면 이전 버튼 비활성화
-            _prevButton.interactable = _currentCardIndexInGroup > 0;
+            _prevButton.interactable = HasPreviousCard();
         }
 
         if (_nextButton != null)
         {
             // 마지막 카드면 다음 버튼 비활성화
-            _nextButton.interactable = _currentCardIndexInGroup < currentGroup.Entries.Count - 1;
+            _nextButton.interactable = HasNextCard(currentGroup);
         }
+    }
+
+    private bool HasPreviousCard()
+    {
+        return _currentCardIndexInGroup > 0 || TryFindPreviousGroupWithEntries(out _);
+    }
+
+    private bool HasNextCard(WeekSelectionCategoryGroupPresentation currentGroup)
+    {
+        return _currentCardIndexInGroup < currentGroup.Entries.Count - 1 || TryFindNextGroupWithEntries(out _);
+    }
+
+    private bool TryFindPreviousGroupWithEntries(out int groupIndex)
+    {
+        groupIndex = -1;
+        if (_currentGroups == null)
+        {
+            return false;
+        }
+
+        for (int index = _currentGroupIndex - 1; index >= 0; index--)
+        {
+            if (_currentGroups[index].Entries == null || _currentGroups[index].Entries.Count == 0)
+            {
+                continue;
+            }
+
+            groupIndex = index;
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool TryFindNextGroupWithEntries(out int groupIndex)
+    {
+        groupIndex = -1;
+        if (_currentGroups == null)
+        {
+            return false;
+        }
+
+        for (int index = _currentGroupIndex + 1; index < _currentGroups.Count; index++)
+        {
+            if (_currentGroups[index].Entries == null || _currentGroups[index].Entries.Count == 0)
+            {
+                continue;
+            }
+
+            groupIndex = index;
+            return true;
+        }
+
+        return false;
     }
 
     // 선택된 옵션이 있으면 해당 문구를, 없으면 원문 설명을 출력

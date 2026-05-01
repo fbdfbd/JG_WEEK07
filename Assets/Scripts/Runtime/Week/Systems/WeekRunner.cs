@@ -7,7 +7,8 @@ public sealed class WeekRunner
     public RuntimeWeekResult RunWeek(
         SO_WeekDefinition weekDefinition,
         RuntimeChildState childState,
-        IReadOnlyList<RuntimeWeekSelection> selections)
+        IReadOnlyList<RuntimeWeekSelection> selections,
+        IReadOnlyList<WeekCardEntryData> weekEntries)
     {
         if (weekDefinition == null)
         {
@@ -34,11 +35,7 @@ public sealed class WeekRunner
             weekRule?.OnWeekStart(context);
         }
 
-        WeekCardEntryData[] weekEntries = weekDefinition.PreTurn != null
-            ? weekDefinition.PreTurn.InformationCards
-            : Array.Empty<WeekCardEntryData>();
-
-        foreach (WeekCardEntryData cardEntry in weekEntries.OrderBy(entry => entry.DisplayOrder))
+        foreach (WeekCardEntryData cardEntry in (weekEntries ?? Array.Empty<WeekCardEntryData>()).OrderBy(entry => entry.DisplayOrder))
         {
             ResolveCardEntry(cardEntry, selectionMap, context);
         }

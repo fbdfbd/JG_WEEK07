@@ -277,10 +277,7 @@ public static class WeekNarrativeResolver
         }
 
         WeekEventConditionData conditions = eventDefinition.Conditions;
-        return HasRequiredFlags(childState, conditions) &&
-               HasNoBlockedFlags(childState, conditions) &&
-               MeetsStatRequirements(childState, conditions) &&
-               MeetsInformationRequirements(informationControlResult, conditions);
+        return WeekEventConditionEvaluator.MeetsAllConditions(childState, informationControlResult, conditions);
     }
 
     private static bool IsCardLinkedToEvent(
@@ -300,49 +297,6 @@ public static class WeekNarrativeResolver
         return MatchesInformationRequirements(eventDefinition.Conditions, resolvedCard);
     }
 
-    private static bool HasRequiredFlags(RuntimeChildState childState, WeekEventConditionData conditions)
-    {
-        return conditions?.RequiredFlags == null || conditions.RequiredFlags.All(childState.HasFlag);
-    }
-
-    private static bool HasNoBlockedFlags(RuntimeChildState childState, WeekEventConditionData conditions)
-    {
-        return conditions?.BlockedFlags == null || conditions.BlockedFlags.All(flagType => !childState.HasFlag(flagType));
-    }
-
-    private static bool MeetsStatRequirements(RuntimeChildState childState, WeekEventConditionData conditions)
-    {
-        if (conditions?.StatRequirements == null)
-        {
-            return true;
-        }
-
-        return conditions.StatRequirements.All(requirement =>
-        {
-            int value = childState.GetStat(requirement.StatType);
-            bool meetsMinimum = !requirement.UseMinimum || value >= requirement.MinimumValue;
-            bool meetsMaximum = !requirement.UseMaximum || value <= requirement.MaximumValue;
-            return meetsMinimum && meetsMaximum;
-        });
-    }
-
-    private static bool MeetsInformationRequirements(
-        RuntimeInformationControlResult informationControlResult,
-        WeekEventConditionData conditions)
-    {
-        if (conditions?.InformationRequirements == null)
-        {
-            return true;
-        }
-
-        return conditions.InformationRequirements.All(requirement =>
-        {
-            ECardOptionSemantic? semanticFilter = requirement.UseSemanticFilter ? requirement.Semantic : null;
-            int count = informationControlResult?.CountSelectionsForType(requirement.InformationType, semanticFilter) ?? 0;
-            return count >= requirement.MinimumCount;
-        });
-    }
-
     private static bool IsRoutineEventAvailable(
         SO_DayRoutineEventDefinition routineEvent,
         RuntimeResolvedCardRecord resolvedCard,
@@ -354,9 +308,7 @@ public static class WeekNarrativeResolver
         }
 
         WeekEventConditionData conditions = routineEvent.Conditions;
-        return HasRequiredFlags(childState, conditions) &&
-               HasNoBlockedFlags(childState, conditions) &&
-               MeetsStatRequirements(childState, conditions) &&
+        return WeekEventConditionEvaluator.MeetsStateConditions(childState, conditions) &&
                MatchesRoutineEvent(routineEvent, resolvedCard);
     }
 
@@ -425,7 +377,7 @@ public static class WeekNarrativeResolver
             .Select(candidate => new
             {
                 Candidate = candidate,
-                HasScore = TryGetSelectionScore(candidate, childState, out int score),
+                HasScore = WeekEventConditionEvaluator.TryGetSelectionScore(candidate.Event?.SelectionRule, childState, out int score),
                 Score = score,
             })
             .Where(item => item.HasScore)
@@ -441,7 +393,7 @@ public static class WeekNarrativeResolver
         }
 
         RoutineEventCandidate[] defaultCandidates = candidateArray
-            .Where(candidate => IsDefaultSelection(candidate.Event?.SelectionRule))
+            .Where(candidate => WeekEventConditionEvaluator.IsDefaultSelection(candidate.Event?.SelectionRule))
             .OrderByDescending(candidate => candidate.Event.Priority)
             .ThenBy(candidate => candidate.SourceIndex)
             .ToArray();
@@ -455,53 +407,6 @@ public static class WeekNarrativeResolver
             .OrderByDescending(candidate => candidate.Event.Priority)
             .ThenBy(candidate => candidate.SourceIndex)
             .First();
-    }
-
-    private static bool TryGetSelectionScore(
-        RoutineEventCandidate candidate,
-        RuntimeChildState childState,
-        out int score)
-    {
-        score = 0;
-        EventSelectionRuleData rule = candidate.Event?.SelectionRule;
-        if (rule == null || childState == null)
-        {
-            return false;
-        }
-
-        int value = childState.GetStat(rule.SelectorStat);
-        switch (rule.Mode)
-        {
-            case EEventSelectionMode.MaxPositive:
-                if (value <= rule.Threshold)
-                {
-                    return false;
-                }
-
-                score = value;
-                return true;
-            case EEventSelectionMode.MaxNegative:
-                if (value >= rule.Threshold)
-                {
-                    return false;
-                }
-
-                score = rule.Threshold - value;
-                return true;
-            case EEventSelectionMode.MaxAny:
-                score = value;
-                return true;
-            case EEventSelectionMode.MinAny:
-                score = -value;
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    private static bool IsDefaultSelection(EventSelectionRuleData rule)
-    {
-        return rule != null && (rule.IsDefault || rule.Mode == EEventSelectionMode.Default);
     }
 
     private static RuntimeResolvedCardRecord ResolveMatchedRoutineCard(

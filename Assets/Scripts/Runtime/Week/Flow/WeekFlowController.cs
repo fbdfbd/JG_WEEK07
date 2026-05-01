@@ -95,7 +95,9 @@ public class WeekFlowController : MonoBehaviour
         _runtimeState = new WeekFlowRuntimeState();
         _weekUiText = new WeekUiTextProvider(_uiTextCatalog);
         _weekSequenceState.InitializeWeekSequence(_weekDefinition, _weekDefinitions);
-        _weekSelectionState.ApplyWeekEntries(WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition));
+        _weekSelectionState.ApplyWeekEntries(WeekFlowQueryUtility.GetCurrentWeekEntries(
+            _weekSequenceState.CurrentWeekDefinition,
+            _runtimeState.ChildState));
         _presenter = new WeekFlowPresenter(_view, _runtimeState, _weekUiText, _weekSelectionState, _weekSequenceState);
         _commandHandler = new WeekFlowCommandHandler(
             _runtimeState,
@@ -248,12 +250,23 @@ public class WeekFlowController : MonoBehaviour
     private void HandleStatChanged(StatChangeInfo changeInfo)
     {
         GameplayAnalyticsLogger.LogStatChanged(CurrentWeekDefinition, changeInfo);
+        ApplyCurrentWeekCardEntries();
         _presenter?.PublishChildState();
+        _presenter?.PublishSelectionEntries();
     }
 
     private void HandleFlagChanged(FlagChangeInfo _)
     {
+        ApplyCurrentWeekCardEntries();
         _presenter?.PublishChildState();
+        _presenter?.PublishSelectionEntries();
+    }
+
+    private void ApplyCurrentWeekCardEntries()
+    {
+        _weekSelectionState.ApplyWeekEntries(WeekFlowQueryUtility.GetCurrentWeekEntries(
+            _weekSequenceState.CurrentWeekDefinition,
+            _runtimeState?.ChildState));
     }
 
     private bool ShouldAutoRunCurrentWeekOnStart()

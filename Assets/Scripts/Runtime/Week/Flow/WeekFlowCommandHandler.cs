@@ -52,9 +52,15 @@ public sealed class WeekFlowCommandHandler
             _runtimeState.CaptureWeekStartStats();
             _runtimeState.ChildState.ClearReactionLogs();
 
-            RuntimeWeekSelection[] selections = _weekSelectionState.BuildSelections(
-                WeekFlowQueryUtility.GetCurrentWeekEntries(currentWeekDefinition));
-            _runtimeState.LastWeekResult = _weekRunner.RunWeek(currentWeekDefinition, _runtimeState.ChildState, selections);
+            WeekCardEntryData[] entries = WeekFlowQueryUtility.GetCurrentWeekEntries(
+                currentWeekDefinition,
+                _runtimeState.ChildState);
+            RuntimeWeekSelection[] selections = _weekSelectionState.BuildSelections(entries);
+            _runtimeState.LastWeekResult = _weekRunner.RunWeek(
+                currentWeekDefinition,
+                _runtimeState.ChildState,
+                selections,
+                entries);
             LogResolvedWeekAnalytics(currentWeekDefinition, _runtimeState.LastWeekResult);
 
             RuntimeChildState eventResolutionChildState = _runtimeState.LastWeekResult.EventResolutionChildState ?? _runtimeState.ChildState;
@@ -83,7 +89,9 @@ public sealed class WeekFlowCommandHandler
     public WeekFlowActionResult ResetSelections()
     {
         _weekSelectionState.ResetAllSelections(
-            WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition));
+            WeekFlowQueryUtility.GetCurrentWeekEntries(
+                _weekSequenceState.CurrentWeekDefinition,
+                _runtimeState.ChildState));
         _runtimeState.LastWeekResult = null;
         PublishStatusMessage(_weekUiText.GetAllSelectionsResetMessage());
         return WeekFlowActionResult.ClearScreen();
@@ -110,7 +118,9 @@ public sealed class WeekFlowCommandHandler
     public WeekFlowActionResult SelectAllCardOptionsBySemantic(ECardOptionSemantic semantic)
     {
         WeekCardEntryData[] entries =
-            WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition);
+            WeekFlowQueryUtility.GetCurrentWeekEntries(
+                _weekSequenceState.CurrentWeekDefinition,
+                _runtimeState.ChildState);
 
         int selectedCount = _weekSelectionState.SelectAllBySemantic(entries, semantic);
         if (selectedCount <= 0)
@@ -302,7 +312,9 @@ public sealed class WeekFlowCommandHandler
             return;
         }
 
-        WeekCardEntryData[] entries = WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition);
+        WeekCardEntryData[] entries = WeekFlowQueryUtility.GetCurrentWeekEntries(
+            _weekSequenceState.CurrentWeekDefinition,
+            _runtimeState.ChildState);
         _weekSelectionState.ApplyWeekEntries(entries);
         _weekSelectionState.ResetAllSelections(entries);
         _runtimeState.LastWeekResult = null;
