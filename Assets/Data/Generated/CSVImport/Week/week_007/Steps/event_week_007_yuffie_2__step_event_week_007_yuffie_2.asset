@@ -24,7 +24,7 @@ MonoBehaviour:
     _text: "\uB124. \uB204\uAC00 \uACC1\uC5D0 \uC788\uC5B4\uB3C4, \uACB0\uC815\uC740
       \uD63C\uC790 \uD574\uC57C \uD558\uB294 \uC0AC\uB78C\uCC98\uB7FC\uC694."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC131\uC778\uC2DD\uC774\uB2C8\uAE4C\uC694."
+    _text: "\uC81C\uAC00 \uD574\uC57C\uD558\uB294 \uC77C\uB4E4\uC774\uB2C8\uAE4C\uC694."
   - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
     _text: "\uADF8\uB798\uB3C4 \uC804\uBD80 \uD63C\uC790 \uD560 \uD544\uC694\uB294
       \uC5C6\uC796\uC544\uC694."

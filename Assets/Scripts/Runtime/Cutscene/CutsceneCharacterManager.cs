@@ -733,8 +733,10 @@ public sealed class CutsceneSpeakerCharacterResolver
             case "speaker_worker_2":
                 return CutsceneCharacterType.Secretary;
             case "speaker_butler":
+            case "speaker_teacher":
                 return CutsceneCharacterType.Steward;
             case "speaker_librarian":
+            case "speaker_tradescribe":
                 return CutsceneCharacterType.Archivist;
             case "speaker_warehouse_keeper":
                 return CutsceneCharacterType.StoreKeeper;
