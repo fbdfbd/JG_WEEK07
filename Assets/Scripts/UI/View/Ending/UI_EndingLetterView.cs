@@ -121,7 +121,7 @@ public class UI_EndingLetterView : MonoBehaviour
         _lines.Clear();
 
         AddLine(presentation.Summary);
-        AddLines(presentation.DetailLines);
+        AddDetailLines(presentation.DetailLines);
         AddLine(presentation.ReputationLine);
         AddLine(presentation.ClosingLine);
     }
@@ -136,6 +136,20 @@ public class UI_EndingLetterView : MonoBehaviour
         for (int index = 0; index < lines.Count; index++)
         {
             AddLine(lines[index]);
+        }
+    }
+
+    private void AddDetailLines(IReadOnlyList<string> lines)
+    {
+        if (lines == null)
+        {
+            return;
+        }
+
+        for (int index = 0; index < lines.Count; index++)
+        {
+            string line = index == 1 ? $"<i>{lines[index]}</i>" : lines[index];
+            AddLine(line);
         }
     }
 
