@@ -38,7 +38,8 @@ public sealed class WeekFlowPresenter
         WeekSelectionCategoryGroupPresentation[] selectionGroups =
             _weekSelectionState.BuildSelectionGroupPresentations(
                 WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition),
-                _weekUiText.GetUnknownCardType());
+                _weekUiText.GetUnknownCardType(),
+                _runtimeState.ChildState);
 
         _view?.RenderSelectionGroups(selectionGroups);
     }

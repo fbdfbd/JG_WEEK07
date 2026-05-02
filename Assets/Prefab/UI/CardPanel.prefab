@@ -554,6 +554,7 @@ MonoBehaviour:
   _indexHighlightColor: {r: 1, g: 0.6740334, b: 0, a: 1}
   _titleText: {fileID: 9061720613080698812}
   _categoryText: {fileID: 6983525834827863384}
+  _categoryTextFormat: "{0}\uD68C \uB9CC\uB0A8."
   _descText: {fileID: 3428813512333395369}
   _mainDescText: {fileID: 951994345070647958}
   _modifiedButton: {fileID: 5584574457086937889}

@@ -176,6 +176,27 @@ public readonly struct WeekSelectionEntryPresentation
         string originalText,
         int selectedOptionIndex,
         IReadOnlyList<CardOptionData> options)
+        : this(
+            cardDefinition,
+            typeName,
+            title,
+            originalText,
+            selectedOptionIndex,
+            options,
+            false,
+            0)
+    {
+    }
+
+    public WeekSelectionEntryPresentation(
+        SO_CardInfoDefinition cardDefinition,
+        string typeName,
+        string title,
+        string originalText,
+        int selectedOptionIndex,
+        IReadOnlyList<CardOptionData> options,
+        bool hasCategoryStatValue,
+        int categoryStatValue)
     {
         CardDefinition = cardDefinition;
         TypeName = typeName;
@@ -183,6 +204,8 @@ public readonly struct WeekSelectionEntryPresentation
         OriginalText = originalText;
         SelectedOptionIndex = selectedOptionIndex;
         Options = options;
+        HasCategoryStatValue = hasCategoryStatValue;
+        CategoryStatValue = categoryStatValue;
     }
 
     public SO_CardInfoDefinition CardDefinition { get; }
@@ -191,6 +214,8 @@ public readonly struct WeekSelectionEntryPresentation
     public string OriginalText { get; }
     public int SelectedOptionIndex { get; }
     public IReadOnlyList<CardOptionData> Options { get; }
+    public bool HasCategoryStatValue { get; }
+    public int CategoryStatValue { get; }
 }
 
 public readonly struct WeekStatPresentation
