@@ -161,6 +161,7 @@ public class WeekFlowController : MonoBehaviour
 
     private void HandleRunWeekRequested()
     {
+        GameplayAnalyticsLogger.LogNemoPreTurnDialogCount(CurrentWeekDefinition, "run_week_requested");
         _analyticsTracker.EndTurnDwell(CurrentWeekDefinition, "run_week_requested");
         RunUserFlowAction(_commandHandler.RunCurrentWeek);
     }
@@ -168,7 +169,7 @@ public class WeekFlowController : MonoBehaviour
     private void HandleResetChildStateRequested() => RunUserFlowAction(_commandHandler.ResetChildState);
     private void HandleWeekFeedbackClosed() => RunUserFlowAction(_narrativeHandler.CloseWeekFeedback);
     private void HandleInteractiveEventContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueInteractiveEvent);
-    private void HandleInteractiveEventSkipRequested() => RunUserFlowAction(SkipCurrentInteractiveEventWithoutToastWait);
+    private void HandleInteractiveEventSkipRequested() => RunFlowAction(SkipCurrentInteractiveEventWithoutToastWait, true);
     private void HandleWeeklyResultLogContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueWeeklyResultLog);
     private void HandleWeeklyStatResultContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueWeeklyStatResult);
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)

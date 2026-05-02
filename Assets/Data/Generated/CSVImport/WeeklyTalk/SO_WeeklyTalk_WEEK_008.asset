@@ -1,0 +1,442 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513f3be7edc0a654d9af482549195ef5, type: 3}
+  m_Name: SO_WeeklyTalk_WEEK_008
+  m_EditorClassIdentifier: Assembly-CSharp::SO_WeeklyTalk
+  _weekId: week_008
+  _entries:
+  - _id: week_008_Clever_1
+    _direction: 0
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC0AC\uAD50\uACC4\uB294 \uAC70\uB300\uD55C \uCCB4\uC2A4\uD310 \uAC19\uC544\uC694.
+      \uC81C\uAC00 \uC5B4\uB514\uC5D0 \uC11C\uC57C \uD560\uC9C0 \uBA85\uD655\uD788
+      \uBCF4\uC5EC\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Clever_2
+    _direction: 0
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uBCA8\uB77C\uB9AC\uC6B0\uC2A4\uB97C \uC9C0\uD0A4\uAE30 \uC704\uD574,
+      \uC800 \uB610\uD55C \uAC00\uC7A5 \uC601\uB9AC\uD55C \uAC00\uC8FC\uAC00 \uB418\uC5B4\uC57C\uB9CC
+      \uD574\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Clever_3
+    _direction: 0
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uCD95\uD558 \uC778\uC0AC\uC758 \uBB34\uAC8C\uB97C \uBCF4\uBA74, \uADF8\uB4E4\uC774
+      \uC6B0\uB9AC \uAC00\uBB38\uC5D0 \uBB34\uC5C7\uC744 \uC6D0\uD558\uB294\uC9C0
+      \uC54C \uC218 \uC788\uC8E0."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Innocent_1
+    _direction: 1
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC138\uC0C1\uC740 \uC544\uC9C1 \uC81C\uAC00 \uBAA8\uB974\uB294 \uB208\uBD80\uC2E0
+      \uC77C\uB4E4\uB85C \uAC00\uB4DD \uCC28 \uC788\uC744 \uAC83\uB9CC \uAC19\uC544\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Innocent_2
+    _direction: 1
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC0BC\uCD0C\uACFC \uD568\uAED8 \uAC77\uB294 \uC774 \uAE38\uC774 \uC601\uC6D0\uD788
+      \uB530\uB73B\uD55C \uBD04\uB0A0 \uAC19\uC558\uC73C\uBA74 \uC88B\uACA0\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Innocent_3
+    _direction: 1
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC131\uC778\uC2DD\uC774 \uB05D\uB098\uBA74, \uB354 \uB9CE\uC740 \uC0AC\uB78C\uC5D0\uAC8C
+      \uC0AC\uB791\uC744 \uB098\uB204\uC5B4\uC8FC\uB294 \uAC00\uC8FC\uAC00 \uB418\uACE0
+      \uC2F6\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Cautious_1
+    _direction: 2
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uACB0\uC815\uC740 \uCC28\uAC11\uAC8C, \uD589\uB3D9\uC740 \uC815\uC911\uD558\uAC8C.
+      \uC0BC\uCD0C\uC758 \uAC00\uB974\uCE68\uC744 \uC78A\uC9C0 \uC54A\uACE0 \uC788\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Cautious_2
+    _direction: 2
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC131\uC778\uC2DD \uB0A0 \uBC8C\uC5B4\uC9C8 \uC218 \uC788\uB294 \uBCC0\uC218\uB4E4\uC744
+      \uBA38\uB9BF\uC18D\uC73C\uB85C \uC218\uB9CC \uBC88\uC740 \uADF8\uB824\uBCF8
+      \uAC83 \uAC19\uC544\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Cautious_3
+    _direction: 2
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uB0AF\uC120 \uC774\uC758 \uACFC\uD55C \uCE6D\uCC2C \uC55E\uC5D0\uC11C\uB294
+      \uD56D\uC0C1 \uD55C \uAC78\uC74C \uBB3C\uB7EC\uB098 \uC0DD\uAC01\uD558\uB294
+      \uBC95\uC744 \uC775\uD614\uC8E0."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Curious_1
+    _direction: 3
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC131\uC778\uC2DD \uC774\uD6C4\uC5D0 \uB9C8\uC8FC\uD560 \uC81C \uC0B6\uC740
+      \uC9C0\uAE08\uACFC\uB294 \uC5BC\uB9C8\uB098 \uB2E4\uB978 \uD48D\uACBD\uC77C\uC9C0
+      \uAE30\uB300\uB3FC\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Curious_2
+    _direction: 3
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC544\uBE60\uAC00 \uC11C\uC7AC\uC5D0\uC11C \uD640\uB85C \uBCF4\uB0C8\uB358
+      \uC2DC\uAC04\uB4E4\uC740 \uB300\uCCB4 \uC5B4\uB560\uC744\uC9C0 \uB298 \uAD81\uAE08\uD588\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Curious_3
+    _direction: 3
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC800\uD0DD \uBCF5\uB3C4\uC758 \uCD08\uC0C1\uD654\uB4E4\uC774 \uC790\uAFB8
+      \uC800\uB97C \uCCD0\uB2E4\uBCF4\uB294 \uAE30\uBD84\uC774 \uB4E4\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Stable_1
+    _direction: 4
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC0BC\uCD0C\uC774 \uACC1\uC5D0 \uACC4\uC154\uC8FC\uC2E0 \uC2DC\uAC04\uB4E4\uC774
+      \uC800\uB97C \uC774\uD1A0\uB85D \uB2E8\uB2E8\uD558\uAC8C \uB9CC\uB4E4\uC5B4\uC8FC\uC5C8\uB098
+      \uBD10\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Stable_2
+    _direction: 4
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC5B4\uB5A4 \uC2DC\uB828\uC774 \uB2E5\uCCD0\uB3C4 \uBB34\uB108\uC9C0\uC9C0
+      \uC54A\uC744\uAC8C\uC694, \uC544\uBE60"
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Stable_3
+    _direction: 4
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uAC00\uBB38\uC758 \uBB34\uAC8C\uB97C \uAE30\uAEBC\uC774 \uC9CA\uC5B4\uC9C8
+      \uC218 \uC788\uC744 \uB9CC\uD07C, \uC81C \uB9C8\uC74C\uC740 \uC774\uBBF8 \uC131\uC219\uD574\uC84C\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Anxious_1
+    _direction: 5
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uB0B4\uC77C\uC774 \uC624\uC9C0 \uC54A\uC558\uC73C\uBA74 \uC88B\uACA0\uC5B4\uC694.
+      \uAC00\uBB38\uC758 \uBB34\uAC8C\uAC00 \uC81C \uC5B4\uAE68\uB97C \uC9D3\uB204\uB974\uB294
+      \uAE30\uBD84\uC774\uC5D0\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Anxious_2
+    _direction: 5
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC81C\uAC00 \uBC31\uC791\uAC00\uC758 \uAC00\uC8FC\uB85C\uC11C \uC790\uACA9\uC774
+      \uC5C6\uB294 \uAC74 \uC544\uB2D0\uAE4C \uC790\uAFB8\uB9CC \uAC00\uC2B4\uC774
+      \uB5A8\uB824\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Anxious_3
+    _direction: 5
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC131\uC778\uC2DD\uC774 \uB05D\uB098\uACE0 \uC0BC\uCD0C\uC774 \uC81C
+      \uACC1\uC744 \uB5A0\uB098\uBC84\uB9AC\uC2DC\uBA74, \uC804 \uC5B4\uB5A1\uD574\uC57C
+      \uD558\uC8E0?"
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Defiant_1
+    _direction: 6
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uAC00\uBB38\uC758 \uC774\uC775\uC774\uB77C\uB294 \uBA85\uBD84 \uC544\uB798,
+      \uC81C\uAC00 \uD76C\uC0DD\uB418\uB294 \uAC74 \uC774\uC81C \uCC38\uC9C0 \uC54A\uACA0\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Defiant_2
+    _direction: 6
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC0BC\uCD0C\uC774 \uC815\uD574\uC900 \uAE38\uC774 \uC815\uB9D0 \uC800\uB97C
+      \uC704\uD55C \uAE38\uC778\uC9C0, \uC774\uC81C\uB294 \uC758\uBB38\uC774 \uB4E4\uAE30
+      \uC2DC\uC791\uD574\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Defiant_3
+    _direction: 6
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uB204\uAC00 \uC815\uD588\uB294\uC9C0\uB3C4 \uBAA8\uB974\uB294 \uC608\uBC95\uB4E4\uC774
+      \uAC00\uB054\uC740 \uC81C \uC228\uD1B5\uC744 \uC870\uC774\uB294 \uAC83 \uAC19\uC544\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Compliant_1
+    _direction: 7
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC0BC\uCD0C\uC774 \uD5C8\uB77D\uD558\uC2E0 \uBC94\uC704 \uC548\uC5D0\uC11C,
+      \uAC00\uC7A5 \uC644\uBCBD\uD55C \uBC31\uC791 \uC601\uC560\uC758 \uBAA8\uC2B5\uC744
+      \uBCF4\uC5EC\uB4DC\uB9B4\uAC8C\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Compliant_2
+    _direction: 7
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC800\uBCF4\uB2E4 \uAC00\uBB38\uC758 \uC548\uC815\uC774 \uBA3C\uC800\uB77C\uB294
+      \uC0AC\uC2E4\uC744 \uC774\uC81C\uB294 \uAE30\uC058\uAC8C \uBC1B\uC544\uB4E4\uC774\uACE0
+      \uC788\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_008_Compliant_3
+    _direction: 7
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC0BC\uCD0C\uC758 \uC9C0\uC2DC \uC544\uB798 \uC788\uC744 \uB54C \uBE44\uB85C\uC18C
+      \uC81C\uAC00 \uC644\uC131\uB418\uB294 \uAC83 \uAC19\uC740 \uC548\uB3C4\uAC10\uC774
+      \uB4E4\uC5B4\uC694."
+    _nemoState: 4
+    _interactions: []
+  _context: 
+  _nemostate: 4
+  _CardInteraction_StatDelta: {fileID: 0}

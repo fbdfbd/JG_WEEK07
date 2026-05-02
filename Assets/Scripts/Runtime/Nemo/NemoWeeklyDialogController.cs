@@ -117,6 +117,7 @@ public class NemoWeeklyDialogController : MonoBehaviour
         }
 
         Speak(entry, _clickDisplaySeconds > 0f ? _clickDisplaySeconds : ResolveDisplaySeconds(entry));
+        GameplayAnalyticsLogger.CountNemoPreTurnDialogShown(_weekFlowController?.CurrentWeekDefinition);
         return true;
     }
 

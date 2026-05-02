@@ -32,14 +32,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dbeecaf1b4dc37f4c92fe89b4deb62ee, type: 2}
   - {fileID: 11400000, guid: d6316bb9bab54c14297a6ca5c85ccbd8, type: 2}
   - {fileID: 11400000, guid: 75a4a8d79acda954bb84848e90da007f, type: 2}
+  - {fileID: 11400000, guid: 2e1079d0b3cff874a941378d621352a7, type: 2}
   - {fileID: 11400000, guid: 4c86d882c8fd72545a6d21151234cd42, type: 2}
   - {fileID: 11400000, guid: 10e8fe3a56551614b940bb21850ffdf8, type: 2}
   - {fileID: 11400000, guid: 6a36eaa7a6ffb99418c9bdf601f8682f, type: 2}
+  - {fileID: 11400000, guid: 7e580246dd1b6344592d10e1ef24bae9, type: 2}
   - {fileID: 11400000, guid: 0a095e8c2221c0f42a8a9b52f491f768, type: 2}
   - {fileID: 11400000, guid: 767e49b4c0e70c94e9e230b53326754e, type: 2}
   - {fileID: 11400000, guid: 38e2ebdc6e9c3944d9263d460b505f02, type: 2}
+  - {fileID: 11400000, guid: 44f87ed2e54762547a47d886078dd299, type: 2}
   - {fileID: 11400000, guid: 205e29260d8cc1940a4eb8369e2a7b74, type: 2}
   - {fileID: 11400000, guid: e76fcc591342abc4794dd3a0019b2cfc, type: 2}
   - {fileID: 11400000, guid: be870e07eb9f1514b9c234e5ba113edb, type: 2}
+  - {fileID: 11400000, guid: 65ad00793436b87418602ee6cc3916a7, type: 2}
   _storyEvents:
   - {fileID: 11400000, guid: cb87ae28664f9af48a6c841a7fb73d1c, type: 2}

@@ -16,6 +16,7 @@ public static class GameplayAnalyticsLogger
     private static int _currentWeekIndex;
     private static float _lastSummaryUploadTime;
     private const float SummaryUploadInterval = 10f;
+    private static readonly Dictionary<string, int> NemoPreTurnDialogCountsByWeek = new(StringComparer.OrdinalIgnoreCase);
 
     private static bool IsEnabled
     {
@@ -43,6 +44,7 @@ public static class GameplayAnalyticsLogger
         }
 
         Events.Clear();
+        NemoPreTurnDialogCountsByWeek.Clear();
         _sessionId = $"{DateTime.Now:yyyyMMdd_HHmmss}_{GetOrCreateClientId()}";
 
         _startedAt = Time.realtimeSinceStartup;
@@ -201,6 +203,37 @@ public static class GameplayAnalyticsLogger
             .Add("week_id", GetWeekId(week))
             .Add("week_title", GetWeekTitle(week))
             .Add("resolved_card_count", result?.ResolvedCards?.Count ?? 0);
+    }
+
+    public static void CountNemoPreTurnDialogShown(SO_WeekDefinition week)
+    {
+        string weekKey = GetWeekAnalyticsKey(week);
+        if (string.IsNullOrWhiteSpace(weekKey))
+        {
+            return;
+        }
+
+        NemoPreTurnDialogCountsByWeek.TryGetValue(weekKey, out int count);
+        NemoPreTurnDialogCountsByWeek[weekKey] = count + 1;
+    }
+
+    public static void LogNemoPreTurnDialogCount(SO_WeekDefinition week, string source)
+    {
+        string weekKey = GetWeekAnalyticsKey(week);
+        int count = 0;
+
+        if (!string.IsNullOrWhiteSpace(weekKey))
+        {
+            NemoPreTurnDialogCountsByWeek.TryGetValue(weekKey, out count);
+            NemoPreTurnDialogCountsByWeek.Remove(weekKey);
+        }
+
+        Log("nemo_preturn_dialog_count", GetWeekIndex(week))
+            .Add("week_id", GetWeekId(week))
+            .Add("week_title", GetWeekTitle(week))
+            .Add("phase", "preturn")
+            .Add("dialog_count", count)
+            .Add("source", source ?? string.Empty);
     }
 
 
@@ -407,6 +440,21 @@ public static class GameplayAnalyticsLogger
     private static string GetWeekTitle(SO_WeekDefinition week)
     {
         return week != null ? week.Title : string.Empty;
+    }
+
+    private static string GetWeekAnalyticsKey(SO_WeekDefinition week)
+    {
+        if (week == null)
+        {
+            return _currentWeekIndex > 0 ? $"week_index:{_currentWeekIndex}" : string.Empty;
+        }
+
+        if (!string.IsNullOrWhiteSpace(week.Id))
+        {
+            return week.Id;
+        }
+
+        return week.WeekIndex > 0 ? $"week_index:{week.WeekIndex}" : week.name;
     }
 
     private static string GetCardId(SO_CardInfoDefinition card)
