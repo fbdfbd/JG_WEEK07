@@ -798,6 +798,8 @@ GameObject:
   - component: {fileID: 4720259955703835551}
   - component: {fileID: 250298576125994038}
   - component: {fileID: 6435660386918658336}
+  - component: {fileID: 913591989765880374}
+  - component: {fileID: 7154891262342639836}
   m_Layer: 5
   m_Name: Process
   m_TagString: Untagged
@@ -864,6 +866,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &913591989765880374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6173515834312046659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707e2cb2e98f7994484312ba5b876af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_DayFlowProgressView
+  _canvasGroup: {fileID: 7154891262342639836}
+  _contentRoot: {fileID: 6173515834312046659}
+  _fillImage: {fileID: 520401264564267563}
+  _indicator: {fileID: 737037615943603288}
+  _dotSlots:
+  - {fileID: 6859037971193263024}
+  - {fileID: 8888881834080370210}
+  - {fileID: 5490925066470723372}
+  - {fileID: 893242514660304633}
+  - {fileID: 3584888765262155021}
+  - {fileID: 4874224616286198681}
+  - {fileID: 7294128533958062247}
+  - {fileID: 6419320347453107725}
+  - {fileID: 2593845675033418964}
+  - {fileID: 1544720765277941711}
+  _animateFirstRender: 0
+  _moveDuration: 0.35
+  _fillDuration: 0.35
+  _moveEase: 9
+  _fillEase: 9
+--- !u!225 &7154891262342639836
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6173515834312046659}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6646296222730881971
 GameObject:
   m_ObjectHideFlags: 0
