@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WeekFlowController : MonoBehaviour
@@ -163,6 +164,7 @@ public class WeekFlowController : MonoBehaviour
 
     private void HandleRunWeekRequested()
     {
+        GameplayAnalyticsLogger.LogNemoPreTurnDialogCount(CurrentWeekDefinition, "run_week_requested");
         _analyticsTracker.EndTurnDwell(CurrentWeekDefinition, "run_week_requested");
         RunUserFlowAction(_commandHandler.RunCurrentWeek);
     }
@@ -170,7 +172,7 @@ public class WeekFlowController : MonoBehaviour
     private void HandleResetChildStateRequested() => RunUserFlowAction(_commandHandler.ResetChildState);
     private void HandleWeekFeedbackClosed() => RunUserFlowAction(_narrativeHandler.CloseWeekFeedback);
     private void HandleInteractiveEventContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueInteractiveEvent);
-    private void HandleInteractiveEventSkipRequested() => RunUserFlowAction(SkipCurrentInteractiveEventWithoutToastWait);
+    private void HandleInteractiveEventSkipRequested() => RunFlowAction(SkipCurrentInteractiveEventWithoutToastWait, true);
     private void HandleWeeklyResultLogContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueWeeklyResultLog);
     private void HandleWeeklyStatResultContinueRequested() => RunUserFlowAction(_narrativeHandler.ContinueWeeklyStatResult);
     private void HandleCardOptionSelected(SO_CardInfoDefinition cardDefinition, int optionIndex)
@@ -186,6 +188,8 @@ public class WeekFlowController : MonoBehaviour
 
     private WeekFlowActionResult SkipCurrentInteractiveEventWithoutToastWait()
     {
+        AppendRemainingSkippedEventDialogueLog();
+
         WeekFlowActionResult result = _narrativeHandler.SkipCurrentInteractiveEvent();
         if (result.ShouldRefreshUi)
         {
@@ -193,6 +197,111 @@ public class WeekFlowController : MonoBehaviour
         }
 
         return result;
+    }
+
+    private void AppendRemainingSkippedEventDialogueLog()
+    {
+        if (_view == null || _runtimeState?.CurrentEventSession == null)
+        {
+            return;
+        }
+
+        RuntimeInteractiveEventSession eventSession = _runtimeState.CurrentEventSession;
+        if (!WeekFlowEventSkipPolicy.CanSkip(eventSession, _weekSequenceState.CurrentWeekDefinition))
+        {
+            return;
+        }
+
+        List<DialogueLogEntry> entries = BuildRemainingSkippedEventDialogueLogEntries(eventSession);
+        if (entries.Count == 0)
+        {
+            return;
+        }
+
+        _view.AppendDialogueLogEntries(entries);
+    }
+
+    private List<DialogueLogEntry> BuildRemainingSkippedEventDialogueLogEntries(
+        RuntimeInteractiveEventSession eventSession)
+    {
+        List<DialogueLogEntry> entries = new();
+        HashSet<SO_InteractiveEventStepDefinition> visitedSteps = new();
+        SO_InteractiveEventStepDefinition step = ResolveNextSkippedStep(eventSession.CurrentStep);
+
+        while (step != null && visitedSteps.Add(step))
+        {
+            RuntimeInteractiveEventSession previewSession = new(eventSession.EventDefinition, step);
+            InteractiveEventPresentation presentation = WeekNarrativeResolver.CreatePresentation(
+                previewSession,
+                _runtimeState.ChildState,
+                _weekUiText);
+
+            AddSkippedEventPresentationLogEntries(entries, presentation);
+
+            if (step.Choices != null && step.Choices.Length > 0)
+            {
+                break;
+            }
+
+            step = ResolveNextSkippedStep(step);
+        }
+
+        return entries;
+    }
+
+    private void AddSkippedEventPresentationLogEntries(
+        List<DialogueLogEntry> entries,
+        InteractiveEventPresentation presentation)
+    {
+        if (presentation.DialogueLines != null && presentation.DialogueLines.Count > 0)
+        {
+            for (int index = 0; index < presentation.DialogueLines.Count; index++)
+            {
+                DialogueLinePresentation line = presentation.DialogueLines[index];
+                if (!line.HasContent)
+                {
+                    continue;
+                }
+
+                entries.Add(new DialogueLogEntry(
+                    EDialogueLogSource.EventStep,
+                    presentation.Title,
+                    line.SpeakerName,
+                    line.Text));
+            }
+
+            return;
+        }
+
+        string fallbackText = !string.IsNullOrWhiteSpace(presentation.BodyText)
+            ? presentation.BodyText
+            : presentation.EffectSummaryLine;
+        if (string.IsNullOrWhiteSpace(fallbackText))
+        {
+            return;
+        }
+
+        entries.Add(new DialogueLogEntry(
+            EDialogueLogSource.EventStep,
+            presentation.Title,
+            string.Empty,
+            fallbackText));
+    }
+
+    private SO_InteractiveEventStepDefinition ResolveNextSkippedStep(SO_InteractiveEventStepDefinition step)
+    {
+        if (step == null)
+        {
+            return null;
+        }
+
+        if (step.ConditionalNext != null &&
+            step.ConditionalNext.TryResolve(_runtimeState.ChildState, out SO_InteractiveEventStepDefinition conditionalStep))
+        {
+            return conditionalStep;
+        }
+
+        return step.NextStep;
     }
 
     private void BindRuntimeStateEvents()

@@ -17,6 +17,7 @@ public class UI_CardView : MonoBehaviour
     [Header("Content Panel - Title Panel")]
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _categoryText;
+    [SerializeField] private string _categoryTextFormat = "{0}회 만남.";
 
     [Header("Content Panel - Desc Panel")]
     [SerializeField] private TextMeshProUGUI _descText;
@@ -429,7 +430,9 @@ public class UI_CardView : MonoBehaviour
         // 텍스트 렌더링
         if (_categoryText != null)
         {
-            _categoryText.text = currentGroup.TypeName;
+            _categoryText.text = currentCardData.HasCategoryStatValue
+                ? string.Format(_categoryTextFormat, currentCardData.CategoryStatValue)
+                : currentGroup.TypeName;
         }
 
         if (_titleText != null)

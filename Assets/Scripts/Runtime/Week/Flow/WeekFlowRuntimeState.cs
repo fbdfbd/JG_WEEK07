@@ -12,10 +12,12 @@ public sealed class WeekFlowRuntimeState
     private Dictionary<EChildStatusType, int> _weekStartStats = new();
     private int _nextDayEventIndex;
     private int _nextNightEventIndex;
+    private int _currentDayEventIndex = -1;
     private bool _currentEventStartedFromDayFlow;
     private bool _weeklyResultLogConsumed;
     private bool _weeklyStatResultConsumed = true;
     public event Action<RuntimeChildState> ChildStateReplaced;
+    public event Action<DayFlowProgressSnapshot> DayFlowProgressChanged;
 
     public WeekFlowRuntimeState()
     {
@@ -47,14 +49,17 @@ public sealed class WeekFlowRuntimeState
     }
 
     public bool IsCurrentEventFromDayFlow => _currentEventStartedFromDayFlow;
+    public DayFlowProgressSnapshot DayFlowProgress { get; private set; } = DayFlowProgressSnapshot.Hidden;
 
     public void SetPendingDayEvents(IReadOnlyList<SO_InteractiveEventDefinition> pendingEvents)
     {
         _pendingDayEvents.Clear();
-        _pendingDayEvents.AddRange(pendingEvents ?? Array.Empty<SO_InteractiveEventDefinition>());
+        AddResolvableEvents(_pendingDayEvents, pendingEvents);
         _nextDayEventIndex = 0;
+        _currentDayEventIndex = -1;
         CurrentEventSession = null;
         _currentEventStartedFromDayFlow = false;
+        PublishDayFlowProgress(false);
     }
 
     public void SetPendingNightEvents(IReadOnlyList<SO_InteractiveEventDefinition> pendingEvents)
@@ -134,11 +139,13 @@ public sealed class WeekFlowRuntimeState
         _pendingWeeklyResultLogs.Clear();
         _nextDayEventIndex = 0;
         _nextNightEventIndex = 0;
+        _currentDayEventIndex = -1;
         _weeklyResultLogConsumed = false;
         _weeklyStatResultConsumed = true;
         _weekStartStats.Clear();
         CurrentEventSession = null;
         _currentEventStartedFromDayFlow = false;
+        PublishDayFlowProgress(false);
         ShouldShowEndingAfterEvents = false;
         ShouldAdvanceToNextWeekAfterEvents = false;
         IsAwaitingEndingFollowUp = false;
@@ -176,12 +183,57 @@ public sealed class WeekFlowRuntimeState
 
             CurrentEventSession = new RuntimeInteractiveEventSession(nextEvent, initialStep);
             _currentEventStartedFromDayFlow = isDayFlowEvent;
+            if (isDayFlowEvent)
+            {
+                _currentDayEventIndex = nextEventIndex - 1;
+                PublishDayFlowProgress(true);
+            }
             return true;
         }
 
         CurrentEventSession = null;
         _currentEventStartedFromDayFlow = false;
+        if (isDayFlowEvent)
+        {
+            _currentDayEventIndex = -1;
+            PublishDayFlowProgress(false);
+        }
         return false;
+    }
+
+    private void PublishDayFlowProgress(bool isActive)
+    {
+        int completedCount = isActive
+            ? Mathf.Max(0, _currentDayEventIndex)
+            : Mathf.Clamp(_nextDayEventIndex, 0, _pendingDayEvents.Count);
+        DayFlowProgress = new DayFlowProgressSnapshot(
+            _pendingDayEvents.Count,
+            _currentDayEventIndex,
+            completedCount,
+            isActive);
+        DayFlowProgressChanged?.Invoke(DayFlowProgress);
+    }
+
+    private void AddResolvableEvents(
+        List<SO_InteractiveEventDefinition> destination,
+        IReadOnlyList<SO_InteractiveEventDefinition> source)
+    {
+        if (source == null)
+        {
+            return;
+        }
+
+        for (int index = 0; index < source.Count; index++)
+        {
+            SO_InteractiveEventDefinition eventDefinition = source[index];
+            if (eventDefinition == null ||
+                WeekEventRuntimeAugmentationService.ResolveInitialStep(eventDefinition, ChildState) == null)
+            {
+                continue;
+            }
+
+            destination.Add(eventDefinition);
+        }
     }
 }
 

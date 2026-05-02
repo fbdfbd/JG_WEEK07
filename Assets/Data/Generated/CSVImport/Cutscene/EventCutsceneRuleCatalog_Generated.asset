@@ -1175,6 +1175,69 @@ MonoBehaviour:
     _moment: 0
     _sequenceId: sequence_rian_garden
     _specialPlayerId: 
+  - _ruleId: cutscene_week_001_rian_blocked
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_rian_blocked
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_rian_blocked
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_rian_blocked
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_rian_blocked
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_rian_blocked
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_rian_blocked
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_rian_blocked
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_rian_blocked
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_rian_blocked
+    _moment: 0
+    _sequenceId: sequence_rian_default
+    _specialPlayerId: 
   - _ruleId: cutscene_week_001_max_direct
     _enabled: 1
     _weekId: week_001
@@ -1392,6 +1455,69 @@ MonoBehaviour:
     _moment: 0
     _sequenceId: sequence_max_garden
     _specialPlayerId: 
+  - _ruleId: cutscene_week_001_max_blocked
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_max_blocked
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_max_blocked
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_max_blocked
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_max_blocked
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_ballroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_max_blocked
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_ballroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_max_blocked
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_hallway
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_max_blocked
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_default
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_max_blocked
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_max_blocked
+    _moment: 0
+    _sequenceId: sequence_max_ballroom
+    _specialPlayerId: 
   - _ruleId: cutscene_week_001_millia_direct
     _enabled: 1
     _weekId: week_001
@@ -1578,6 +1704,69 @@ MonoBehaviour:
     _enabled: 1
     _weekId: week_009
     _eventId: event_week_009_millia_4
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_001_millia_blocked
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_millia_blocked
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_millia_blocked
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_millia_blocked
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_millia_blocked
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_millia_blocked
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_millia_blocked
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_millia_blocked
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_millia_blocked
+    _moment: 0
+    _sequenceId: sequence_millia_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_millia_blocked
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_millia_blocked
     _moment: 0
     _sequenceId: sequence_millia_drawingroom
     _specialPlayerId: 
@@ -1769,6 +1958,69 @@ MonoBehaviour:
     _eventId: event_week_009_yuffie_4
     _moment: 0
     _sequenceId: sequence_yuffie_garden
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_001_yuffie_blocked
+    _enabled: 1
+    _weekId: week_001
+    _eventId: event_week_001_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_002_yuffie_blocked
+    _enabled: 1
+    _weekId: week_002
+    _eventId: event_week_002_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_003_yuffie_blocked
+    _enabled: 1
+    _weekId: week_003
+    _eventId: event_week_003_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_004_yuffie_blocked
+    _enabled: 1
+    _weekId: week_004
+    _eventId: event_week_004_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_005_yuffie_blocked
+    _enabled: 1
+    _weekId: week_005
+    _eventId: event_week_005_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_006_yuffie_blocked
+    _enabled: 1
+    _weekId: week_006
+    _eventId: event_week_006_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_007_yuffie_blocked
+    _enabled: 1
+    _weekId: week_007
+    _eventId: event_week_007_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_008_yuffie_blocked
+    _enabled: 1
+    _weekId: week_008
+    _eventId: event_week_008_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
+    _specialPlayerId: 
+  - _ruleId: cutscene_week_009_yuffie_blocked
+    _enabled: 1
+    _weekId: week_009
+    _eventId: event_week_009_yuffie_blocked
+    _moment: 0
+    _sequenceId: sequence_yuffie_drawingroom
     _specialPlayerId: 
   - _ruleId: 1
     _enabled: 1

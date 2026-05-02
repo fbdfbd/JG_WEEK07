@@ -31,11 +31,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4da76710082ec7d4ba70ebe98fd53d9a, type: 2}
   - {fileID: 11400000, guid: 8255039f66ec5d34b9dfda763baaac4f, type: 2}
   - {fileID: 11400000, guid: fbefaf6f632fb8b42b8567b9e20dfda8, type: 2}
+  - {fileID: 11400000, guid: 5d7feb241ee5bbc40bd755a6ff99d44b, type: 2}
   - {fileID: 11400000, guid: 0772016e0182ffd4c88ec3e39fdb7ad7, type: 2}
   - {fileID: 11400000, guid: b4a49a8f86f01ae4fb84725af46df8a2, type: 2}
+  - {fileID: 11400000, guid: 85eda2d0c818d2142b001a6aeabf27e9, type: 2}
   - {fileID: 11400000, guid: c6e1bdd1d15de504bae800057c367af9, type: 2}
   - {fileID: 11400000, guid: 269056c5cd3f73643a9cdf570141203d, type: 2}
+  - {fileID: 11400000, guid: 7ee611c1a79573e41843d00c91620110, type: 2}
   - {fileID: 11400000, guid: 96c9ad6e292cd1248adf21419300d7cb, type: 2}
   - {fileID: 11400000, guid: db0b637204356e248a966b92b7061c91, type: 2}
+  - {fileID: 11400000, guid: e26135be9fb57aa449e72e7317e43436, type: 2}
   _storyEvents:
   - {fileID: 11400000, guid: e3980e02d25e8a545a8e5c444974c1cd, type: 2}

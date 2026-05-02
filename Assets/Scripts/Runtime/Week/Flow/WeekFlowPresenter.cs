@@ -28,6 +28,7 @@ public sealed class WeekFlowPresenter
         PublishWeekHeader();
         PublishSelectionEntries();
         PublishChildState();
+        PublishDayFlowProgress();
         PublishStatusMessage();
         PublishCurrentNemoFeedback();
     }
@@ -36,10 +37,9 @@ public sealed class WeekFlowPresenter
     {
         WeekSelectionCategoryGroupPresentation[] selectionGroups =
             _weekSelectionState.BuildSelectionGroupPresentations(
-                WeekFlowQueryUtility.GetCurrentWeekEntries(
-                    _weekSequenceState.CurrentWeekDefinition,
-                    _runtimeState.ChildState),
-                _weekUiText.GetUnknownCardType());
+                WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition),
+                _weekUiText.GetUnknownCardType(),
+                _runtimeState.ChildState);
 
         _view?.RenderSelectionGroups(selectionGroups);
     }
@@ -70,6 +70,11 @@ public sealed class WeekFlowPresenter
     public void PublishStatusMessage()
     {
         _view?.RenderStatusMessage(_runtimeState.StatusMessage);
+    }
+
+    public void PublishDayFlowProgress()
+    {
+        _view?.RenderDayFlowProgress(_runtimeState.DayFlowProgress);
     }
 
     public void PublishCurrentNemoFeedback()
