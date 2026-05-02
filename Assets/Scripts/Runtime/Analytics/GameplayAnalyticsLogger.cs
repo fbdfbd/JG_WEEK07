@@ -15,8 +15,8 @@ public static class GameplayAnalyticsLogger
     private static bool _sessionEnded;
     private static int _currentWeekIndex;
     private static float _lastSummaryUploadTime;
+    private const float SummaryUploadInterval = 10f;
     private static readonly Dictionary<string, int> NemoPreTurnDialogCountsByWeek = new(StringComparer.OrdinalIgnoreCase);
-    private const float SummaryUploadInterval = 20f;
 
     private static bool IsEnabled
     {

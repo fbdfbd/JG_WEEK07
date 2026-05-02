@@ -21,7 +21,7 @@ public class UI_EndingPanel : MonoBehaviour
 
     private async void OnClickExit()
     {
-        await GameplayAnalyticsLogger.EndSessionAndUpload();
+        GameplayAnalyticsLogger.EndSession();
 
     #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
