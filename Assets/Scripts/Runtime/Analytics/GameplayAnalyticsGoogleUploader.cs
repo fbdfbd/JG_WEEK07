@@ -7,7 +7,7 @@ using UnityEngine.Networking;
 public static class GameplayAnalyticsGoogleUploader
 {
     private const string UploadUrl =
-    "https://script.google.com/macros/s/AKfycbxDGCZ6YwqnjtGjNNa935C9Z0ZUsYR7eZX35R4puxkq770KXbR2sUBnX95eUH-Viytu/exec?token=0944";
+    "https://script.google.com/macros/s/AKfycbyaYMMmOLmvkAiD3P7JAvP2_GJirEYTeLzxV2lAtQjw_60oP3aIpcWwDFp5EIzatufK/exec?token=0944";
     public static async Task<bool> Upload(string path, string sessionId)
     {
         string json = JsonUtility.ToJson(new UploadPayload

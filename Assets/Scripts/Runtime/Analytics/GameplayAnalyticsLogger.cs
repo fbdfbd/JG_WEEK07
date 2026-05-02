@@ -15,17 +15,35 @@ public static class GameplayAnalyticsLogger
     private static bool _sessionEnded;
     private static int _currentWeekIndex;
     private static float _lastSummaryUploadTime;
-    private const float SummaryUploadInterval = 30f;
+    private const float SummaryUploadInterval = 20f;
+
+    private static bool IsEnabled
+    {
+        get
+        {
+    #if UNITY_EDITOR
+            return false;
+    #else
+            return true;
+    #endif
+        }
+    }
 
     public static void StartSession(SO_WeekDefinition currentWeek)
     {
+        if (!IsEnabled)
+        {
+            return;
+        }
+
         if (!string.IsNullOrEmpty(_sessionId) && !_sessionEnded)
+
         {
             return;
         }
 
         Events.Clear();
-        _sessionId = $"{DateTime.Now:yyyyMMdd_HHmmss}_{Guid.NewGuid():N}";
+        _sessionId = $"{DateTime.Now:yyyyMMdd_HHmmss}_{GetOrCreateClientId()}";
 
         _startedAt = Time.realtimeSinceStartup;
         _sessionEnded = false;
@@ -37,9 +55,32 @@ public static class GameplayAnalyticsLogger
             .Add("week_id", GetWeekId(currentWeek))
             .Add("week_title", GetWeekTitle(currentWeek));
     }
+    private static string GetOrCreateClientId()
+    {
+        string directoryPath = Path.Combine(Application.persistentDataPath, "Analytics");
+        string filePath = Path.Combine(directoryPath, "client_id.txt");
+
+        if (File.Exists(filePath))
+        {
+            return File.ReadAllText(filePath).Trim();
+        }
+
+        Directory.CreateDirectory(directoryPath);
+
+        string clientId = Guid.NewGuid().ToString("N");
+        File.WriteAllText(filePath, clientId);
+
+        return clientId;
+    }
+
 
     public static void EndSession()
     {
+        if (!IsEnabled)
+        {
+            return;
+        }
+
         if (string.IsNullOrEmpty(_sessionId) || _sessionEnded)
         {
             return;
@@ -66,6 +107,10 @@ public static class GameplayAnalyticsLogger
     }
     public static async Task EndSessionAndUpload()
     {
+        if (!IsEnabled)
+        {
+            return;
+        }
         if (string.IsNullOrEmpty(_sessionId) || _sessionEnded)
         {
             return;
@@ -305,6 +350,10 @@ public static class GameplayAnalyticsLogger
 
     private static GameplayAnalyticsEvent Log(string eventName, int weekIndex)
     {
+        if (!IsEnabled)
+        {
+            return new GameplayAnalyticsEvent(string.Empty, eventName, 0f, weekIndex);
+        }
         if (string.IsNullOrEmpty(_sessionId))
         {
             StartSession(null);
