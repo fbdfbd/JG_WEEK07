@@ -26,6 +26,7 @@ public class UI_ChildStateToastManager : MonoBehaviour
     [SerializeField] private EChildStateToastFlushMode _endingMode = EChildStateToastFlushMode.Burst;
     [SerializeField] private float _burstStaggerInterval = 0.06f;
     [SerializeField] private float _burstMinimumSpeedMultiplier = 2.75f;
+    [SerializeField] private float _toastWaitTimeoutSeconds = 3f;
 
     private RuntimeChildState _childState;
     private int _nextToastIndex;
@@ -133,9 +134,16 @@ public class UI_ChildStateToastManager : MonoBehaviour
     {
         ShowQueuedToasts(flushMode);
 
-        while (_toastSequenceCoroutine != null || _burstToastCoroutine != null)
+        float timeoutAt = Time.unscaledTime + Mathf.Max(0f, _toastWaitTimeoutSeconds);
+        while ((_toastSequenceCoroutine != null || _burstToastCoroutine != null)
+            && Time.unscaledTime < timeoutAt)
         {
             yield return null;
+        }
+
+        if (_toastSequenceCoroutine != null || _burstToastCoroutine != null)
+        {
+            StopAllPlayback();
         }
     }
 
