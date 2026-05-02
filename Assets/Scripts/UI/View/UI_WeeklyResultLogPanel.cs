@@ -14,6 +14,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     [SerializeField] private string _indexButtonLabelFormat = "{0}";
     [SerializeField] private Transform _entryRoot;
     [SerializeField] private UI_WeeklyResultLogEntryView _entryPrefab;
+    [SerializeField] private UI_WeeklyResultLogSummaryView _summaryPrefab;
     [SerializeField] private Button _advanceButton;
     [SerializeField] private float _panelFadeDuration = 0.15f;
     [SerializeField] private float _entryShowDuration = 0.28f;
@@ -22,6 +23,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     private readonly List<WeeklyResultLogEntryPresentation> _pendingEntries = new();
     private readonly List<Button> _indexButtons = new();
     private readonly List<UI_WeeklyResultLogEntryView> _entryViews = new();
+    private UI_WeeklyResultLogSummaryView _summaryView;
     private WeeklyResultLogPresentation _presentation;
     private string _selectedWeekId = string.Empty;
     private Sequence _showSequence;
@@ -69,7 +71,7 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         LogVisibilityChangedIfNeeded(wasVisible, true);
 
         _nextEntryIndex = 0;
-        _isPlaying = _pendingEntries.Count > 0 && _entryPrefab != null && _entryRoot != null;
+        _isPlaying = CanRenderPendingEntries() || CanRenderSelectedSummary();
         _isReadyToClose = !_isPlaying;
 
         if (!_isPlaying)
@@ -187,6 +189,12 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
             _showSequence.AppendInterval(Mathf.Max(0f, _entryInterval));
         }
 
+        if (CanRenderSelectedSummary())
+        {
+            _showSequence.AppendCallback(CreateSummaryAnimated);
+            _showSequence.AppendInterval(Mathf.Max(0f, _entryInterval));
+        }
+
         _showSequence.OnComplete(MarkReadyToClose);
     }
 
@@ -216,6 +224,8 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         {
             CreateEntry(_pendingEntries[_nextEntryIndex++], true);
         }
+
+        CreateSummary(true);
     }
 
     private void CreateEntry(WeeklyResultLogEntryPresentation entry, bool instant)
@@ -238,6 +248,35 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         entryView.PlayShow(Mathf.Max(0f, _entryShowDuration));
     }
 
+    private void CreateSummaryAnimated()
+    {
+        CreateSummary(false);
+    }
+
+    private void CreateSummary(bool instant)
+    {
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary = GetSelectedStatSummary();
+        if (_summaryView != null ||
+            statSummary == null ||
+            statSummary.Count == 0 ||
+            _summaryPrefab == null ||
+            _entryRoot == null)
+        {
+            return;
+        }
+
+        _summaryView = Instantiate(_summaryPrefab, _entryRoot);
+        _summaryView.Render(statSummary);
+
+        if (instant)
+        {
+            _summaryView.ShowInstant();
+            return;
+        }
+
+        _summaryView.PlayShow(Mathf.Max(0f, _entryShowDuration));
+    }
+
     private void ShowVisibleEntriesInstant()
     {
         for (int index = 0; index < _entryViews.Count; index++)
@@ -246,6 +285,11 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
             {
                 _entryViews[index].ShowInstant();
             }
+        }
+
+        if (_summaryView != null)
+        {
+            _summaryView.ShowInstant();
         }
     }
 
@@ -329,6 +373,25 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         return _presentation.Entries;
     }
 
+    private IReadOnlyList<WeeklyResultStatDeltaPresentation> GetSelectedStatSummary()
+    {
+        if (!_presentation.HasWeeks)
+        {
+            return _presentation.StatSummary;
+        }
+
+        for (int index = 0; index < _presentation.Weeks.Count; index++)
+        {
+            WeeklyResultLogWeekPresentation week = _presentation.Weeks[index];
+            if (IsSelectedWeek(week.WeekId))
+            {
+                return week.StatSummary;
+            }
+        }
+
+        return _presentation.StatSummary;
+    }
+
     private void SetPendingEntries(IReadOnlyList<WeeklyResultLogEntryPresentation> entries)
     {
         _pendingEntries.Clear();
@@ -398,6 +461,23 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
         }
 
         _entryViews.Clear();
+
+        if (_summaryView != null)
+        {
+            Destroy(_summaryView.gameObject);
+            _summaryView = null;
+        }
+    }
+
+    private bool CanRenderPendingEntries()
+    {
+        return _pendingEntries.Count > 0 && _entryPrefab != null && _entryRoot != null;
+    }
+
+    private bool CanRenderSelectedSummary()
+    {
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary = GetSelectedStatSummary();
+        return statSummary != null && statSummary.Count > 0 && _summaryPrefab != null && _entryRoot != null;
     }
 
     private void KillShowSequence(bool complete)

@@ -1,42 +1,104 @@
 card_id,card_type_id,title,original_text
-card_excursion_garden_week_001,card_type_garden,정원,시든 크레이프 머틀이 있다.
-card_excursion_garden_week_002,card_type_garden,정원,돌 틈 사이로 달팽이 몇 마리가 줄지어 기어간다.
-card_excursion_garden_week_002_curious,card_type_garden,정원,돌 틈 사이로 달팽이 몇 마리가 줄지어 기어간다.
-card_excursion_garden_week_002_innocent,card_type_garden,정원,돌 틈 사이로 달팽이 몇 마리가 줄지어 기어간다.
-card_excursion_garden_week_003,card_type_garden,정원,돌 분수의 물이 멈춘 채 낙엽이 고여 있다.
-card_excursion_garden_week_004,card_type_garden,정원,풀밭에 이름 모를 들꽃 무리가 새로 피었다.
-card_excursion_garden_week_005,card_type_garden,정원,담쟁이 벽 한쪽이 지난 계절보다 붉게 물들었다.
-card_excursion_garden_week_006,card_type_garden,정원,정원 한가운데 오래된 거울이 세워져 있다.
-card_excursion_garden_week_007,card_type_garden,정원,장미 화단에 아직 피지 않은 봉오리들이 줄지어 서 있다.
-card_excursion_garden_week_008,card_type_garden,정원,정원의 새장이 밤새 바람에 흔들리는 소리를 냈다.
-card_excursion_garden_week_009,card_type_garden,정원,크레이프 머틀 아래에 성인식 서약대가 세워졌다.
-card_excursion_basement_week_001,card_type_basement,지하실,지하실 문틈 아래로 먼지가 쌓여 있다.
-card_excursion_basement_week_002,card_type_basement,지하실,지하실 선반 뒤에서 부스럭거리는 소리가 들린다.
-card_excursion_basement_week_003,card_type_basement,지하실,지하실 한쪽에 이름 없는 상자들이 높게 쌓여 있다.
-card_excursion_basement_week_004,card_type_basement,지하실,지하실 구석에 천으로 덮인 작은 물건들이 놓여 있다.
-card_excursion_basement_week_005,card_type_basement,지하실,지하실 바닥에 거미줄이 낮게 내려와 있다.
-card_excursion_basement_week_006,card_type_basement,지하실,지하실 서랍에서 어머니의 낡은 손수건이 나왔다.
-card_excursion_basement_week_007,card_type_basement,지하실,지하실 안쪽 벽 너머에서 물방울 떨어지는 소리가 난다.
-card_excursion_basement_week_008,card_type_basement,지하실,지하실 옷장에 아버지의 오래된 외투가 걸려 있다.
-card_excursion_basement_week_009,card_type_basement,지하실,지하실의 오래된 상자들이 정리되어 문 앞에 쌓여 있다.
-card_excursion_forest_week_001,card_type_forest,숲,숲 입구에 동물의 발자국이 남아 있다.
-card_excursion_forest_week_002,card_type_forest,숲,다과회용 꽃을 구하러 하인들이 숲으로 들어갔다.
-card_excursion_forest_week_003,card_type_forest,숲,숲의 옛 사냥지기 오두막에서 연기가 오른다.
-card_excursion_forest_week_004,card_type_forest,숲,어젯밤 숲에서 낯선 말발굽 소리가 들렸다고 한다.
-card_excursion_forest_week_005,card_type_forest,숲,"숲 깊은 곳으로 가는 길, 풀이 무성하다."
-card_excursion_forest_week_006,card_type_forest,숲,숲 경비 교대 시간이 앞당겨졌다.
-card_excursion_forest_week_007,card_type_forest,숲,사냥지기 오두막에서 다시 연기가 오른다. 이번에는 길게.
-card_excursion_forest_week_008,card_type_forest,숲,사냥지기 오두막에서 더 이상 연기가 오르지 않는다.
-card_excursion_forest_week_009,card_type_forest,숲,숲 깊은 곳으로 이어지는 길의 덤불이 치워져 있다.
-card_excursion_library_week_001,card_type_library,도서관,도서관에서 아버지의 유품이 정리되고 있다.
-card_excursion_library_week_002,card_type_library,도서관,도서관에 아버지의 책들이 정리되지 않은 채 남아 있다.
-card_excursion_library_week_003,card_type_library,도서관,어머니의 자물쇠 달린 일기장이 서가 안쪽에서 나왔다.
-card_excursion_library_week_004,card_type_library,도서관,도서관 책상에 후작가 계보를 정리한 책이 놓여 있다.
-card_excursion_library_week_005,card_type_library,도서관,도서관 책상에 무도회 예법서와 귀족 사회 인명록이 놓여 있다.
-card_excursion_library_week_006,card_type_library,도서관,도서관 책상에 펼쳐놓은 예법서가 그대로 놓여 있다.
-card_excursion_library_week_007,card_type_library,도서관,도서관 책상에 백작가의 재정과 영지 운영 기록이 쌓여 있다.
-card_excursion_library_week_008,card_type_library,도서관,도서관 책상 위에 아버지가 남긴 마지막 편지가 봉인된 채 놓여 있다.
-card_excursion_library_week_009,card_type_library,도서관,도서관에 아침 햇살이 들어온다. 성인식이 시작되기 전이다.
+card_excursion_garden_week_001,card_type_garden,정원,
+card_excursion_garden_week_002,card_type_garden,정원,
+card_excursion_garden_week_002_curious,card_type_garden,정원,
+card_excursion_garden_week_002_innocent,card_type_garden,정원,
+card_excursion_garden_week_003,card_type_garden,정원,
+card_excursion_garden_week_003_curious,card_type_garden,정원,
+card_excursion_garden_week_003_cautious,card_type_garden,정원,
+card_excursion_garden_week_004,card_type_garden,정원,
+card_excursion_garden_week_004_clever,card_type_garden,정원,
+card_excursion_garden_week_004_innocent,card_type_garden,정원,
+card_excursion_garden_week_005,card_type_garden,정원,
+card_excursion_garden_week_005_cautious,card_type_garden,정원,
+card_excursion_garden_week_005_anxious,card_type_garden,정원,
+card_excursion_garden_week_006,card_type_garden,정원,
+card_excursion_garden_week_006_clever,card_type_garden,정원,
+card_excursion_garden_week_006_defiant,card_type_garden,정원,
+card_excursion_garden_week_007,card_type_garden,정원,
+card_excursion_garden_week_007_stable,card_type_garden,정원,
+card_excursion_garden_week_007_cautious,card_type_garden,정원,
+card_excursion_garden_week_008,card_type_garden,정원,
+card_excursion_garden_week_008_curious,card_type_garden,정원,
+card_excursion_garden_week_008_anxious,card_type_garden,정원,
+card_excursion_garden_week_009,card_type_garden,정원,
+card_excursion_garden_week_009_stable,card_type_garden,정원,
+card_excursion_garden_week_009_cautious,card_type_garden,정원,
+card_excursion_basement_week_001,card_type_basement,지하실,
+card_excursion_basement_week_002,card_type_basement,지하실,
+card_excursion_basement_week_002_curious,card_type_basement,지하실,
+card_excursion_basement_week_002_cautious,card_type_basement,지하실,
+card_excursion_basement_week_003,card_type_basement,지하실,
+card_excursion_basement_week_003_curious,card_type_basement,지하실,
+card_excursion_basement_week_003_anxious,card_type_basement,지하실,
+card_excursion_basement_week_004,card_type_basement,지하실,
+card_excursion_basement_week_004_innocent,card_type_basement,지하실,
+card_excursion_basement_week_004_cautious,card_type_basement,지하실,
+card_excursion_basement_week_005,card_type_basement,지하실,
+card_excursion_basement_week_005_curious,card_type_basement,지하실,
+card_excursion_basement_week_005_anxious,card_type_basement,지하실,
+card_excursion_basement_week_006,card_type_basement,지하실,
+card_excursion_basement_week_006_innocent,card_type_basement,지하실,
+card_excursion_basement_week_006_clever,card_type_basement,지하실,
+card_excursion_basement_week_007,card_type_basement,지하실,
+card_excursion_basement_week_007_cautious,card_type_basement,지하실,
+card_excursion_basement_week_007_anxious,card_type_basement,지하실,
+card_excursion_basement_week_008,card_type_basement,지하실,
+card_excursion_basement_week_008_innocent,card_type_basement,지하실,
+card_excursion_basement_week_008_cautious,card_type_basement,지하실,
+card_excursion_basement_week_009,card_type_basement,지하실,
+card_excursion_basement_week_009_stable,card_type_basement,지하실,
+card_excursion_basement_week_009_anxious,card_type_basement,지하실,
+card_excursion_forest_week_001,card_type_forest,숲,
+card_excursion_forest_week_002,card_type_forest,숲,
+card_excursion_forest_week_002_curious,card_type_forest,숲,
+card_excursion_forest_week_002_compliant,card_type_forest,숲,
+card_excursion_forest_week_003,card_type_forest,숲,
+card_excursion_forest_week_003_clever,card_type_forest,숲,
+card_excursion_forest_week_003_curious,card_type_forest,숲,
+card_excursion_forest_week_004,card_type_forest,숲,
+card_excursion_forest_week_004_clever,card_type_forest,숲,
+card_excursion_forest_week_004_anxious,card_type_forest,숲,
+card_excursion_forest_week_005,card_type_forest,숲,
+card_excursion_forest_week_005_innocent,card_type_forest,숲,
+card_excursion_forest_week_005_anxious,card_type_forest,숲,
+card_excursion_forest_week_006,card_type_forest,숲,
+card_excursion_forest_week_006_clever,card_type_forest,숲,
+card_excursion_forest_week_006_defiant,card_type_forest,숲,
+card_excursion_forest_week_007,card_type_forest,숲,
+card_excursion_forest_week_007_clever,card_type_forest,숲,
+card_excursion_forest_week_007_curious,card_type_forest,숲,
+card_excursion_forest_week_008,card_type_forest,숲,
+card_excursion_forest_week_008_clever,card_type_forest,숲,
+card_excursion_forest_week_008_anxious,card_type_forest,숲,
+card_excursion_forest_week_009,card_type_forest,숲,
+card_excursion_forest_week_009_clever,card_type_forest,숲,
+card_excursion_forest_week_009_innocent,card_type_forest,숲,
+card_excursion_library_week_001,card_type_library,도서관,
+card_excursion_library_week_002,card_type_library,도서관,
+card_excursion_library_week_002_curious,card_type_library,도서관,
+card_excursion_library_week_002_anxious,card_type_library,도서관,
+card_excursion_library_week_003,card_type_library,도서관,
+card_excursion_library_week_003_cautious,card_type_library,도서관,
+card_excursion_library_week_003_innocent,card_type_library,도서관,
+card_excursion_library_week_004,card_type_library,도서관,
+card_excursion_library_week_004_clever,card_type_library,도서관,
+card_excursion_library_week_004_curious,card_type_library,도서관,
+card_excursion_library_week_005,card_type_library,도서관,
+card_excursion_library_week_005_clever,card_type_library,도서관,
+card_excursion_library_week_005_innocent,card_type_library,도서관,
+card_excursion_library_week_006,card_type_library,도서관,
+card_excursion_library_week_006_clever,card_type_library,도서관,
+card_excursion_library_week_006_cautious,card_type_library,도서관,
+card_excursion_library_week_007,card_type_library,도서관,
+card_excursion_library_week_007_clever,card_type_library,도서관,
+card_excursion_library_week_007_anxious,card_type_library,도서관,
+card_excursion_library_week_008,card_type_library,도서관,
+card_excursion_library_week_008_curious,card_type_library,도서관,
+card_excursion_library_week_008_anxious,card_type_library,도서관,
+card_excursion_library_week_009,card_type_library,도서관,
+card_excursion_library_week_009_stable,card_type_library,도서관,
+card_excursion_library_week_009_anxious,card_type_library,도서관,
 card_rian_week_001,card_type_rian,리안,이웃 영지에서 요양 중인 소년이 첫 편지를 보낸다.
 card_rian_week_002,card_type_rian,리안,리안이 작은 선물을 들고 찾아온다.
 card_rian_week_003,card_type_rian,리안,리안이 요양을 끝내고 아벨리아를 찾아온다.

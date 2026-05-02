@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: event_week_004_excursion_basement_direct_curious
   m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
   _id: event_week_004_excursion_basement_direct_curious
-  _title: "\uC9C0\uD558\uC2E4 \uD5C8\uAC00-\uD638\uAE30\uC2EC"
+  _title: "\uC9C0\uD558\uC2E4 \uD5C8\uAC00-\uC21C\uC9C4"
   _priority: 30
   _conditions:
     _requiredFlags: []
@@ -29,7 +29,7 @@ MonoBehaviour:
   _relatedInformationTypes:
   - {fileID: 11400000, guid: dedf20def60c1004c884dad104f732f3, type: 2}
   _preferredSemantics: 00000000
-  _linkedCard: {fileID: 11400000, guid: baf70eeb1bc95e144a46dca1d3d6926f, type: 2}
+  _linkedCard: {fileID: 11400000, guid: ee6cf91af302a7b46ba9c047554ed36b, type: 2}
   _selectionRule:
     _mode: 1
     _selectorStat: 2

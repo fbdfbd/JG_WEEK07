@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf75e2887b3af5458d469b5570aa42c, type: 3}
+  m_Name: card_excursion_library_week_009_anxious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
+  _id: card_excursion_library_week_009_anxious
+  _cardType: {fileID: 11400000, guid: 03b4f0619012dd246b390e2e5c84a0b3, type: 2}
+  _title: "\uB3C4\uC11C\uAD00"
+  _originalText: 
+  _options:
+  - _semantic: 0
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uB3C4\uC11C\uAD00\uC5D0 \uC544\uCE68 \uD587\uC0B4\uC774 \uB4E4\uC5B4\uC628\uB2E4.\n\uC544\uBC84\uC9C0\uC758
+      \uBE48\uC790\uB9AC\uB97C \uB9C8\uC8FC\uD558\uBA70 \uC790\uC2E0\uC758 \uC790\uB9AC\uC5D0
+      \uB354 \uC608\uB9CC\uD574\uC9C8 \uC218 \uC788\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC131\uC778\uC2DD \uC900\uBE44\uB85C \uB3C4\uC11C\uAD00 \uBB38\uC774
+      \uB2EB\uD600 \uC788\uB2E4.\n\uC815\uD574\uC9C4 \uC808\uCC28\uB97C \uB530\uB974\uC9C0\uB9CC,
+      \uD655\uC778\uD558\uC9C0 \uBABB\uD55C \uAE30\uB85D\uC5D0 \uC870\uAE08 \uB354
+      \uBBFC\uAC10\uD574\uC9C8 \uC218 \uC788\uB2E4."
+    _interactions: []

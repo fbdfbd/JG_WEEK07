@@ -15,14 +15,19 @@ MonoBehaviour:
   _id: card_excursion_garden_week_003
   _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
   _title: "\uC815\uC6D0"
-  _originalText: "\uB3CC \uBD84\uC218\uC758 \uBB3C\uC774 \uBA48\uCD98 \uCC44 \uB099\uC5FD\uC774
-    \uACE0\uC5EC \uC788\uB2E4."
+  _originalText: 
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC815\uC6D0\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uB3CC \uBD84\uC218\uC758 \uBB3C\uC774 \uBA48\uCD98 \uCC44 \uB099\uC5FD\uC774
+      \uACE0\uC5EC \uC788\uB2E4.\n\uC815\uC6D0\uC758 \uC9C8\uC11C\uB97C \uB418\uCC3E\uB294
+      \uC77C\uC744 \uB530\uB974\uBA70 \uB9C8\uC74C\uC744 \uCC28\uBD84\uD788 \uAC00\uB77C\uC549\uD790
+      \uC218 \uC788\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uC815\uC6D0\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uB3CC \uBD84\uC218\uC758 \uBB3C\uC774 \uBA48\uCD98 \uCC44 \uB099\uC5FD\uC774
+      \uACE0\uC5EC \uC788\uB2E4.\n\uC815\uC6D0 \uCD9C\uC785\uC774 \uB9C9\uD78C \uC774\uC720\uC5D0
+      \uC758\uBB38\uC744 \uD488\uACE0, \uC2A4\uC2A4\uB85C \uD310\uB2E8\uD574\uBCF4\uACE0
+      \uC2F6\uC5B4\uC9C8 \uC218 \uC788\uB2E4."
     _interactions: []

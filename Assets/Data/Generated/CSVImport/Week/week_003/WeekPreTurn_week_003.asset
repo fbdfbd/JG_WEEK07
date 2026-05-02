@@ -18,24 +18,48 @@ MonoBehaviour:
   - _card: {fileID: 11400000, guid: 00c3ff538c4ed8b4dac940de16d32c91, type: 2}
     _isRequired: 1
     _displayOrder: 0
-  - _card: {fileID: 11400000, guid: b0ea97e1a1ace2147bb69bd591cd5237, type: 2}
+  - _card: {fileID: 11400000, guid: d01bf09911592c44588bc540ca76d0bd, type: 2}
     _isRequired: 1
     _displayOrder: 1
+  - _card: {fileID: 11400000, guid: 64a2222ec4c5c13489c120d258350bf0, type: 2}
+    _isRequired: 1
+    _displayOrder: 2
+  - _card: {fileID: 11400000, guid: b0ea97e1a1ace2147bb69bd591cd5237, type: 2}
+    _isRequired: 1
+    _displayOrder: 10
+  - _card: {fileID: 11400000, guid: 2ce2e3aab45e9504daba92d586859eb4, type: 2}
+    _isRequired: 1
+    _displayOrder: 11
+  - _card: {fileID: 11400000, guid: 797889e26856bba4a820b20fbc6c99a5, type: 2}
+    _isRequired: 1
+    _displayOrder: 12
   - _card: {fileID: 11400000, guid: 6735b4b75b0677b4d8617f44e232cb3c, type: 2}
     _isRequired: 1
-    _displayOrder: 3
+    _displayOrder: 20
+  - _card: {fileID: 11400000, guid: fadffe93024097c43b883ac4bfae9d17, type: 2}
+    _isRequired: 1
+    _displayOrder: 21
+  - _card: {fileID: 11400000, guid: ff886192bbaa86940a37064f6cc94f10, type: 2}
+    _isRequired: 1
+    _displayOrder: 22
   - _card: {fileID: 11400000, guid: ac6c1076801b4e9419f5dc6d710f42c1, type: 2}
     _isRequired: 1
-    _displayOrder: 4
+    _displayOrder: 30
+  - _card: {fileID: 11400000, guid: 2de95cddc21b34045b826de21a259600, type: 2}
+    _isRequired: 1
+    _displayOrder: 31
+  - _card: {fileID: 11400000, guid: d07f1ab7366704d4197e726c7fc3d9e9, type: 2}
+    _isRequired: 1
+    _displayOrder: 32
   - _card: {fileID: 11400000, guid: b11f719bec06e084197d0eb7dfbaaaf3, type: 2}
     _isRequired: 1
-    _displayOrder: 5
+    _displayOrder: 40
   - _card: {fileID: 11400000, guid: d718c1867173745479cfda3f64f87807, type: 2}
     _isRequired: 1
-    _displayOrder: 6
+    _displayOrder: 50
   - _card: {fileID: 11400000, guid: 6ec5b217ea50f21428216bea64e9b691, type: 2}
     _isRequired: 1
-    _displayOrder: 7
+    _displayOrder: 60
   - _card: {fileID: 11400000, guid: b8b555327360a5144984a4b72dc22781, type: 2}
     _isRequired: 1
-    _displayOrder: 8
+    _displayOrder: 70

@@ -326,7 +326,7 @@ public readonly struct InteractiveEventChoiceResultPresentation
 public readonly struct WeeklyResultLogPresentation
 {
     public WeeklyResultLogPresentation(IReadOnlyList<WeeklyResultLogEntryPresentation> entries)
-        : this(entries, Array.Empty<WeeklyResultLogWeekPresentation>(), string.Empty)
+        : this(entries, Array.Empty<WeeklyResultLogWeekPresentation>(), string.Empty, Array.Empty<WeeklyResultStatDeltaPresentation>())
     {
     }
 
@@ -334,17 +334,29 @@ public readonly struct WeeklyResultLogPresentation
         IReadOnlyList<WeeklyResultLogEntryPresentation> entries,
         IReadOnlyList<WeeklyResultLogWeekPresentation> weeks,
         string selectedWeekId)
+        : this(entries, weeks, selectedWeekId, Array.Empty<WeeklyResultStatDeltaPresentation>())
+    {
+    }
+
+    public WeeklyResultLogPresentation(
+        IReadOnlyList<WeeklyResultLogEntryPresentation> entries,
+        IReadOnlyList<WeeklyResultLogWeekPresentation> weeks,
+        string selectedWeekId,
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary)
     {
         Entries = entries ?? Array.Empty<WeeklyResultLogEntryPresentation>();
         Weeks = weeks ?? Array.Empty<WeeklyResultLogWeekPresentation>();
         SelectedWeekId = selectedWeekId ?? string.Empty;
+        StatSummary = statSummary ?? Array.Empty<WeeklyResultStatDeltaPresentation>();
     }
 
     public IReadOnlyList<WeeklyResultLogEntryPresentation> Entries { get; }
     public IReadOnlyList<WeeklyResultLogWeekPresentation> Weeks { get; }
     public string SelectedWeekId { get; }
+    public IReadOnlyList<WeeklyResultStatDeltaPresentation> StatSummary { get; }
     public bool HasEntries => Entries != null && Entries.Count > 0;
     public bool HasWeeks => Weeks != null && Weeks.Count > 0;
+    public bool HasStatSummary => StatSummary != null && StatSummary.Count > 0;
 }
 
 public readonly struct WeeklyResultLogWeekPresentation
@@ -354,18 +366,44 @@ public readonly struct WeeklyResultLogWeekPresentation
         int weekIndex,
         string title,
         IReadOnlyList<WeeklyResultLogEntryPresentation> entries)
+        : this(weekId, weekIndex, title, entries, Array.Empty<WeeklyResultStatDeltaPresentation>())
+    {
+    }
+
+    public WeeklyResultLogWeekPresentation(
+        string weekId,
+        int weekIndex,
+        string title,
+        IReadOnlyList<WeeklyResultLogEntryPresentation> entries,
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary)
     {
         WeekId = weekId ?? string.Empty;
         WeekIndex = weekIndex;
         Title = title ?? string.Empty;
         Entries = entries ?? Array.Empty<WeeklyResultLogEntryPresentation>();
+        StatSummary = statSummary ?? Array.Empty<WeeklyResultStatDeltaPresentation>();
     }
 
     public string WeekId { get; }
     public int WeekIndex { get; }
     public string Title { get; }
     public IReadOnlyList<WeeklyResultLogEntryPresentation> Entries { get; }
+    public IReadOnlyList<WeeklyResultStatDeltaPresentation> StatSummary { get; }
     public string Label => WeekIndex > 0 ? $"WEEK {WeekIndex}" : Title;
+}
+
+public readonly struct WeeklyResultStatDeltaPresentation
+{
+    public WeeklyResultStatDeltaPresentation(EChildStatusType statType, string label, int delta)
+    {
+        StatType = statType;
+        Label = label ?? string.Empty;
+        Delta = Math.Max(0, delta);
+    }
+
+    public EChildStatusType StatType { get; }
+    public string Label { get; }
+    public int Delta { get; }
 }
 
 public readonly struct WeeklyResultLogEntryPresentation

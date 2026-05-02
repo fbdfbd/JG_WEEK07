@@ -15,14 +15,19 @@ MonoBehaviour:
   _id: card_excursion_basement_week_008
   _cardType: {fileID: 11400000, guid: dedf20def60c1004c884dad104f732f3, type: 2}
   _title: "\uC9C0\uD558\uC2E4"
-  _originalText: "\uC9C0\uD558\uC2E4 \uC637\uC7A5\uC5D0 \uC544\uBC84\uC9C0\uC758
-    \uC624\uB798\uB41C \uC678\uD22C\uAC00 \uAC78\uB824 \uC788\uB2E4."
+  _originalText: 
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC9C0\uD558\uC2E4\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC9C0\uD558\uC2E4 \uC637\uC7A5\uC5D0 \uC544\uBC84\uC9C0\uC758
+      \uB0A1\uC740 \uC678\uD22C\uAC00 \uAC78\uB824 \uC788\uB2E4.\n\uB0A8\uACA8\uC9C4
+      \uBE48\uC790\uB9AC\uC5D0 \uC870\uAE08 \uB354 \uC608\uBBFC\uD574\uC9C8 \uC218
+      \uC788\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uC9C0\uD558\uC2E4\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC9C0\uD558\uC2E4 \uC637\uC7A5\uC774 \uC788\uB294 \uBC29\uC740
+      \uB2EB\uD600 \uC788\uB2E4.\n\uB9C9\uD78C \uC774\uC720\uC5D0 \uC758\uBB38\uC744
+      \uD488\uACE0, \uBCF4\uC9C0 \uBABB\uD55C \uD754\uC801\uC5D0 \uBBFC\uAC10\uD574\uC9C8
+      \uC218 \uC788\uB2E4."
     _interactions: []

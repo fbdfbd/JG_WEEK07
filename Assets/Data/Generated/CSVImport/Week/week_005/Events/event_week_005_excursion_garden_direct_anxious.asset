@@ -28,7 +28,7 @@ MonoBehaviour:
   _relatedInformationTypes:
   - {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
   _preferredSemantics: 00000000
-  _linkedCard: {fileID: 11400000, guid: b55bbbdc5380aae42a87386478eb36e5, type: 2}
+  _linkedCard: {fileID: 11400000, guid: b7fd75b80f4c0d541a9ce30be2276a0a, type: 2}
   _selectionRule:
     _mode: 1
     _selectorStat: 3

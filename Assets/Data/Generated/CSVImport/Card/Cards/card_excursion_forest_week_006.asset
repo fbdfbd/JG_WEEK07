@@ -15,13 +15,16 @@ MonoBehaviour:
   _id: card_excursion_forest_week_006
   _cardType: {fileID: 11400000, guid: e024f57149280bd41945022e45c37b02, type: 2}
   _title: "\uC232"
-  _originalText: "\uC232 \uACBD\uBE44 \uAD50\uB300 \uC2DC\uAC04\uC774 \uC55E\uB2F9\uACA8\uC84C\uB2E4."
+  _originalText: 
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC232\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC232 \uACBD\uBE44 \uAD50\uB300 \uC2DC\uAC04\uC774 \uC55E\uB2F9\uACA8\uC84C\uB2E4.\n\uC5B4\uB978\uB4E4\uC758
+      \uC548\uB0B4\uB97C \uB530\uB974\uB294 \uBC95\uC744 \uBC30\uC6B8 \uC218 \uC788\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uC232\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC232 \uB300\uC2E0 \uBB34\uB3C4\uD68C \uC900\uBE44\uAC00 \uBA3C\uC800
+      \uC7A1\uD614\uB2E4.\n\uC815\uD574\uC9C4 \uC77C\uC815\uB9CC \uB530\uB974\uAE30\uBCF4\uB2E4,
+      \uC790\uC2E0\uC758 \uB73B\uC744 \uC0DD\uAC01\uD574\uBCFC \uC218 \uC788\uB2E4."
     _interactions: []

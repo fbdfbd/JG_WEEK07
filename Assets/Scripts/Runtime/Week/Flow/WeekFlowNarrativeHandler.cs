@@ -259,7 +259,11 @@ public sealed class WeekFlowNarrativeHandler
 
     private WeekFlowActionResult BuildWeeklyResultLogScreen(SO_EventResultDefinition[] resultLogs)
     {
-        _runtimeState.AddWeeklyResultLogHistory(_weekSequenceState.CurrentWeekDefinition, resultLogs);
+        WeeklyResultStatDeltaPresentation[] statSummary = WeekNarrativeResolver.CreateWeeklyResultStatSummary(
+            _runtimeState.ChildState,
+            _runtimeState.WeekStartStats,
+            _weekUiText);
+        _runtimeState.AddWeeklyResultLogHistory(_weekSequenceState.CurrentWeekDefinition, resultLogs, statSummary);
         WeeklyResultLogPresentation presentation = WeekNarrativeResolver.CreateWeeklyResultLogPresentation(
             _runtimeState.WeeklyResultLogHistory,
             _weekSequenceState.CurrentWeekDefinition?.Id);

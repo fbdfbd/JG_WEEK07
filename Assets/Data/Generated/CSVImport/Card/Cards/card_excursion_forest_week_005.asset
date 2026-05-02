@@ -15,14 +15,19 @@ MonoBehaviour:
   _id: card_excursion_forest_week_005
   _cardType: {fileID: 11400000, guid: e024f57149280bd41945022e45c37b02, type: 2}
   _title: "\uC232"
-  _originalText: "\uC232 \uAE4A\uC740 \uACF3\uC73C\uB85C \uAC00\uB294 \uAE38, \uD480\uC774
-    \uBB34\uC131\uD558\uB2E4."
+  _originalText: 
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC232\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC232 \uAE4A\uC740 \uACF3\uC73C\uB85C \uAC00\uB294 \uAE38\uC5D0
+      \uD480\uC774 \uBB34\uC131\uD558\uB2E4.\n\uBCF4\uC774\uC9C0 \uC54A\uB294 \uC548\uCABD\uC744
+      \uC758\uC2DD\uD558\uBA70 \uB0AF\uC120 \uAE30\uCC99\uC5D0 \uBBFC\uAC10\uD574\uC9C8
+      \uC218 \uC788\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uC232\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC232 \uC548\uCABD \uAE38\uC740 \uC815\uBE44\uB97C \uC774\uC720\uB85C
+      \uB9C9\uD600 \uC788\uB2E4.\n\uC5B4\uB978\uC758 \uACB0\uC815\uC5D0 \uC758\uBB38\uC744
+      \uD488\uACE0, \uBCF4\uC774\uC9C0 \uC54A\uB294 \uC548\uCABD\uC744 \uB354 \uC758\uC2DD\uD558\uAC8C
+      \uB420 \uC218 \uC788\uB2E4."
     _interactions: []

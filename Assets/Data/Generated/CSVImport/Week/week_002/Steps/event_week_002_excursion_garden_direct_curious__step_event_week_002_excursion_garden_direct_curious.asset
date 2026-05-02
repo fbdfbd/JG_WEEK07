@@ -42,6 +42,9 @@ MonoBehaviour:
       \uC774\uB9CC \uB4E4\uC5B4\uAC00\uBCF4\uACA0\uC2B5\uB2C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
     _text: "\uB9C8\uB9AC! \uC5B4\uB514 \uAC00!"
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBA40\uC5B4\uC9C0\uB294 \uB9C8\uB9AC\uC758
+      \uB4B7\uBAA8\uC2B5\uC744 \uAC00\uB9CC\uD788 \uBCF4\uACE0 \uC788\uC5C8\uB2E4."
   _nemoLine: "\uC904\uC9C0\uC5B4 \uAE30\uC5B4\uAC00\uB294 \uC138 \uB9C8\uB9AC\uC758
     \uB2EC\uD33D\uC774\uB97C \uBCF4\uACE0 \uC788\uB358 \uC544\uBCA8\uB9AC\uC544."
   _useCustomVisualState: 0

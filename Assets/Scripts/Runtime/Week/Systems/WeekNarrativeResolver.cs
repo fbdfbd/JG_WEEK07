@@ -5,6 +5,13 @@ using System.Linq;
 public static class WeekNarrativeResolver
 {
     private const string NarratorSpeakerId = "speaker_narrator";
+    private static readonly EChildStatusType[] WeeklyResultSummaryStatTypes =
+    {
+        EChildStatusType.Trust,
+        EChildStatusType.Curiosity,
+        EChildStatusType.Anxiety,
+        EChildStatusType.Obedience,
+    };
 
     public static SO_InteractiveEventDefinition[] ResolvePendingEvents(
         SO_WeekDefinition weekDefinition,
@@ -113,6 +120,38 @@ public static class WeekNarrativeResolver
         return new WeeklyResultLogPresentation(entries);
     }
 
+    public static WeeklyResultStatDeltaPresentation[] CreateWeeklyResultStatSummary(
+        RuntimeChildState childState,
+        IReadOnlyDictionary<EChildStatusType, int> beforeStats,
+        WeekUiTextProvider weekUiText)
+    {
+        if (childState == null || beforeStats == null)
+        {
+            return Array.Empty<WeeklyResultStatDeltaPresentation>();
+        }
+
+        List<WeeklyResultStatDeltaPresentation> summary = new();
+        for (int index = 0; index < WeeklyResultSummaryStatTypes.Length; index++)
+        {
+            EChildStatusType statType = WeeklyResultSummaryStatTypes[index];
+            int beforeValue = beforeStats.TryGetValue(statType, out int value)
+                ? value
+                : RuntimeChildState.DefaultStatValue;
+            int delta = childState.GetStat(statType) - beforeValue;
+            if (delta <= 0)
+            {
+                continue;
+            }
+
+            summary.Add(new WeeklyResultStatDeltaPresentation(
+                statType,
+                GetStatLabel(statType, weekUiText),
+                delta));
+        }
+
+        return summary.ToArray();
+    }
+
     public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
         IReadOnlyList<RuntimeWeeklyResultLogRecord> history,
         string selectedWeekId)
@@ -123,7 +162,8 @@ public static class WeekNarrativeResolver
                 record.WeekId,
                 record.WeekIndex,
                 record.WeekTitle,
-                CreateWeeklyResultLogEntries(record.ResultLogs)))
+                CreateWeeklyResultLogEntries(record.ResultLogs),
+                record.StatSummary))
             .ToArray()
             ?? Array.Empty<WeeklyResultLogWeekPresentation>();
 
@@ -131,7 +171,8 @@ public static class WeekNarrativeResolver
         return new WeeklyResultLogPresentation(
             selectedWeek.Entries,
             weeks,
-            selectedWeek.WeekId);
+            selectedWeek.WeekId,
+            selectedWeek.StatSummary);
     }
 
     private static WeeklyResultLogEntryPresentation[] CreateWeeklyResultLogEntries(
@@ -157,7 +198,8 @@ public static class WeekNarrativeResolver
                 string.Empty,
                 0,
                 string.Empty,
-                Array.Empty<WeeklyResultLogEntryPresentation>());
+                Array.Empty<WeeklyResultLogEntryPresentation>(),
+                Array.Empty<WeeklyResultStatDeltaPresentation>());
         }
 
         for (int index = 0; index < weeks.Count; index++)
@@ -414,14 +456,30 @@ public static class WeekNarrativeResolver
         IReadOnlyDictionary<string, RuntimeResolvedCardRecord> resolvedCardLookup)
     {
         string linkedCardId = routineEvent?.LinkedCard?.Id;
-        if (string.IsNullOrWhiteSpace(linkedCardId) ||
-            resolvedCardLookup == null ||
-            !resolvedCardLookup.TryGetValue(linkedCardId, out RuntimeResolvedCardRecord resolvedCard))
+        if (!string.IsNullOrWhiteSpace(linkedCardId) &&
+            resolvedCardLookup != null &&
+            resolvedCardLookup.TryGetValue(linkedCardId, out RuntimeResolvedCardRecord resolvedCard))
+        {
+            return resolvedCard;
+        }
+
+        return ResolveBlockedRoutineFallbackCard(routineEvent, resolvedCardLookup);
+    }
+
+    private static RuntimeResolvedCardRecord ResolveBlockedRoutineFallbackCard(
+        SO_DayRoutineEventDefinition routineEvent,
+        IReadOnlyDictionary<string, RuntimeResolvedCardRecord> resolvedCardLookup)
+    {
+        if (routineEvent?.PreferredSemantics == null ||
+            !routineEvent.PreferredSemantics.Contains(ECardOptionSemantic.Blocked) ||
+            resolvedCardLookup == null)
         {
             return null;
         }
 
-        return resolvedCard;
+        return resolvedCardLookup.Values
+            .Where(resolvedCard => resolvedCard?.SelectedOption?.Semantic == ECardOptionSemantic.Blocked)
+            .FirstOrDefault(resolvedCard => MatchesRoutineEvent(routineEvent, resolvedCard));
     }
 
     private static IReadOnlyDictionary<string, RuntimeResolvedCardRecord> BuildResolvedCardLookup(
@@ -483,6 +541,11 @@ public static class WeekNarrativeResolver
         return effectNames.Length == 0
             ? string.Empty
             : string.Join(" / ", effectNames);
+    }
+
+    private static string GetStatLabel(EChildStatusType statType, WeekUiTextProvider weekUiText)
+    {
+        return weekUiText != null ? weekUiText.GetStatLabel(statType) : statType.ToString();
     }
 
     private static DialogueLinePresentation[] BuildDialogueLines(

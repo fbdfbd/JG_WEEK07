@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf75e2887b3af5458d469b5570aa42c, type: 3}
+  m_Name: card_excursion_garden_week_003_cautious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
+  _id: card_excursion_garden_week_003_cautious
+  _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
+  _title: "\uC815\uC6D0"
+  _originalText: 
+  _options:
+  - _semantic: 0
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uB3CC \uBD84\uC218\uC758 \uBB3C\uC774 \uBA48\uCD98 \uCC44 \uB099\uC5FD\uC774
+      \uACE0\uC5EC \uC788\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uB294 \uCC28\uAC00\uC6B4
+      \uBB3C\uC744 \uAD81\uAE08\uD574\uD558\uACE0, \uBD84\uC218\uB3C4 \uB9C8\uC74C\uC744
+      \uC54C\uC544\uC904 \uAC70\uB77C \uC5EC\uAE30\uB294 \uC21C\uBC15\uD568\uC744
+      \uBCF4\uC77C \uC218 \uC788\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uB3CC \uBD84\uC218\uC758 \uBB3C\uC774 \uBA48\uCD98 \uCC44 \uB099\uC5FD\uC774
+      \uACE0\uC5EC \uC788\uB2E4.\n\uC815\uC6D0 \uCD9C\uC785\uC774 \uB9C9\uD78C \uC774\uC720\uC5D0
+      \uC758\uBB38\uC744 \uD488\uACE0, \uC2A4\uC2A4\uB85C \uD310\uB2E8\uD574\uBCF4\uACE0
+      \uC2F6\uC5B4\uC9C8 \uC218 \uC788\uB2E4."
+    _interactions: []

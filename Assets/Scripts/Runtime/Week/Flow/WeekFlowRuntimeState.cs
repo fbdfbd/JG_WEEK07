@@ -105,7 +105,8 @@ public sealed class WeekFlowRuntimeState
 
     public void AddWeeklyResultLogHistory(
         SO_WeekDefinition weekDefinition,
-        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+        IReadOnlyList<SO_EventResultDefinition> resultLogs,
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary = null)
     {
         if (weekDefinition == null || resultLogs == null || resultLogs.Count == 0)
         {
@@ -114,7 +115,7 @@ public sealed class WeekFlowRuntimeState
 
         string weekId = weekDefinition.Id;
         _weeklyResultLogHistory.RemoveAll(record => record.IsForWeek(weekId));
-        _weeklyResultLogHistory.Add(new RuntimeWeeklyResultLogRecord(weekDefinition, resultLogs));
+        _weeklyResultLogHistory.Add(new RuntimeWeeklyResultLogRecord(weekDefinition, resultLogs, statSummary));
     }
 
     public bool TryStartNextDayEvent()
@@ -240,21 +241,25 @@ public sealed class WeekFlowRuntimeState
 public sealed class RuntimeWeeklyResultLogRecord
 {
     private readonly SO_EventResultDefinition[] _resultLogs;
+    private readonly WeeklyResultStatDeltaPresentation[] _statSummary;
 
     public RuntimeWeeklyResultLogRecord(
         SO_WeekDefinition weekDefinition,
-        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+        IReadOnlyList<SO_EventResultDefinition> resultLogs,
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary = null)
     {
         WeekId = weekDefinition != null ? weekDefinition.Id : string.Empty;
         WeekIndex = weekDefinition != null ? weekDefinition.WeekIndex : 0;
         WeekTitle = weekDefinition != null ? weekDefinition.Title : string.Empty;
         _resultLogs = CopyLogs(resultLogs);
+        _statSummary = CopyStatSummary(statSummary);
     }
 
     public string WeekId { get; }
     public int WeekIndex { get; }
     public string WeekTitle { get; }
     public IReadOnlyList<SO_EventResultDefinition> ResultLogs => _resultLogs;
+    public IReadOnlyList<WeeklyResultStatDeltaPresentation> StatSummary => _statSummary;
 
     public bool IsForWeek(string weekId)
     {
@@ -278,6 +283,27 @@ public sealed class RuntimeWeeklyResultLogRecord
         }
 
         return copiedLogs.ToArray();
+    }
+
+    private static WeeklyResultStatDeltaPresentation[] CopyStatSummary(
+        IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary)
+    {
+        if (statSummary == null || statSummary.Count == 0)
+        {
+            return Array.Empty<WeeklyResultStatDeltaPresentation>();
+        }
+
+        List<WeeklyResultStatDeltaPresentation> copiedSummary = new();
+        for (int index = 0; index < statSummary.Count; index++)
+        {
+            WeeklyResultStatDeltaPresentation entry = statSummary[index];
+            if (entry.Delta > 0)
+            {
+                copiedSummary.Add(entry);
+            }
+        }
+
+        return copiedSummary.ToArray();
     }
 }
 
