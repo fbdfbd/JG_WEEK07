@@ -100,6 +100,7 @@ public abstract class WeekFlowViewBase : MonoBehaviour
 
 
     public virtual void RenderChildState(ChildStatePresentation presentation) { }
+    public virtual void RenderDayFlowProgress(DayFlowProgressSnapshot presentation) { }
     public virtual void RenderStatusMessage(string statusMessage) { }
     public virtual void PresentNemoFeedback(NemoFeedbackPresentation presentation) { }
     public virtual void ShowWeekFeedback(WeekFeedbackPresentation presentation) { }
@@ -111,11 +112,45 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public virtual void ShowEndingFollowUp() { }
     public virtual void HideTransientViews() { }
     public virtual void SetMainCanvasVisible(bool visible) { }
+    public virtual void AppendDialogueLogEntries(IReadOnlyList<DialogueLogEntry> entries) { }
     public virtual WeekFlowCutsceneBridgeBase GetCutsceneBridge() { return null; }
     public virtual void SetFlowScreenContext(WeekFlowScreen screen, RuntimeChildState childState, RuntimeWeekResult lastWeekResult) { }
     public virtual IEnumerator PlayCurrentDialogueCutscene() { yield break; }
     public virtual IEnumerator PlayFlowTransition(WeekFlowTransitionContext context) { yield break; }
     public virtual IEnumerator PlayWeekEntryIntro(SO_WeekDefinition weekDefinition) { yield break; }
+}
+
+public readonly struct DayFlowProgressSnapshot
+{
+    public DayFlowProgressSnapshot(int totalCount, int currentIndex, int completedCount, bool isActive)
+    {
+        TotalCount = Mathf.Max(0, totalCount);
+        CurrentIndex = currentIndex;
+        CompletedCount = Mathf.Clamp(completedCount, 0, TotalCount);
+        IsActive = isActive && TotalCount > 0 && CurrentIndex >= 0 && CurrentIndex < TotalCount;
+    }
+
+    public int TotalCount { get; }
+    public int CurrentIndex { get; }
+    public int CompletedCount { get; }
+    public bool IsActive { get; }
+
+    public float IndicatorT
+    {
+        get
+        {
+            if (!IsActive)
+            {
+                return 0f;
+            }
+
+            return TotalCount <= 1 ? 0.5f : CurrentIndex / (float)(TotalCount - 1);
+        }
+    }
+
+    public float FillAmount => TotalCount <= 0 ? 0f : Mathf.Clamp01((CompletedCount + (IsActive ? 1f : 0f)) / TotalCount);
+
+    public static DayFlowProgressSnapshot Hidden => new(0, -1, 0, false);
 }
 
 public readonly struct WeekHeaderPresentation

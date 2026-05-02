@@ -28,6 +28,7 @@ public sealed class WeekFlowPresenter
         PublishWeekHeader();
         PublishSelectionEntries();
         PublishChildState();
+        PublishDayFlowProgress();
         PublishStatusMessage();
         PublishCurrentNemoFeedback();
     }
@@ -68,6 +69,11 @@ public sealed class WeekFlowPresenter
     public void PublishStatusMessage()
     {
         _view?.RenderStatusMessage(_runtimeState.StatusMessage);
+    }
+
+    public void PublishDayFlowProgress()
+    {
+        _view?.RenderDayFlowProgress(_runtimeState.DayFlowProgress);
     }
 
     public void PublishCurrentNemoFeedback()

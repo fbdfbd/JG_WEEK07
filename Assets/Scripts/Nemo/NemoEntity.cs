@@ -13,7 +13,6 @@ public sealed class NemoEntity : MonoBehaviour, IPointerClickHandler
 
     public static NemoEntity Instance { get; private set; }
 
-    [SerializeField] private UI_DialogView _dialogView;
     [SerializeField] private NemoWeeklyDialogController _dialogController;
 
     [Header("Animation")]
@@ -33,7 +32,7 @@ public sealed class NemoEntity : MonoBehaviour, IPointerClickHandler
 
     [Header("Random Action Weights")]
     [SerializeField] private int idleWeight = 50;
-    [SerializeField] private int balanceWeight = 30;
+    // [SerializeField] private int balanceWeight = 30; // 나중에 사용할 수도 있어 보존
     [SerializeField] private int turnWeight = 20;
 
     private NemoAnimation _anim;
@@ -65,7 +64,7 @@ public sealed class NemoEntity : MonoBehaviour, IPointerClickHandler
             leftEdge,
             rightEdge,
             idleWeight,
-            balanceWeight,
+            0, // balanceWeight 자리 - 나중에 되살릴 때 balanceWeight로 교체
             turnWeight,
             CanRunRoutine
         );
@@ -194,10 +193,10 @@ public sealed class NemoEntity : MonoBehaviour, IPointerClickHandler
         _anim.PlayWalk();
     }
 
-    public void PlayBalance()
-    {
-        _anim.PlayBalance();
-    }
+    // public void PlayBalance()
+    // {
+    //     _anim.PlayBalance();
+    // }
 
     public void PlayRandomAction()
     {

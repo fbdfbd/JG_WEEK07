@@ -164,6 +164,32 @@ public class UI_DialogueScreenView : MonoBehaviour
         return true;
     }
 
+    public void FlushUnloggedDialogueLinesToLog()
+    {
+        if (_dialogueLogService == null || _dialogueLines.Count == 0)
+        {
+            return;
+        }
+
+        int startIndex = Mathf.Max(0, _lastLoggedDialogueIndex + 1);
+        for (int index = startIndex; index < _dialogueLines.Count; index++)
+        {
+            DialogueLinePresentation line = _dialogueLines[index];
+            if (!line.HasContent)
+            {
+                continue;
+            }
+
+            _dialogueLogService.Append(new DialogueLogEntry(
+                _currentLogSource,
+                _currentLogTitle,
+                line.SpeakerName,
+                line.Text));
+        }
+
+        _lastLoggedDialogueIndex = _dialogueLines.Count - 1;
+    }
+
     private void BindChoicePanelEvents()
     {
         if (_choicePanel == null)
