@@ -21,7 +21,7 @@ MonoBehaviour:
     _statRequirements: []
     _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: f49dbc1acaa21e549a4f9208e75177af, type: 2}
-  _result: {fileID: 0}
+  _result: {fileID: 11400000, guid: 50a65fc80792bba42bd4570aa1d8c4bc, type: 2}
   _onCompletedInteractions: []
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:

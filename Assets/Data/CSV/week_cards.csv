@@ -1,6 +1,8 @@
 week_id,display_order,card_id,is_required
 week_001,0,card_excursion_garden_week_001,true
-week_002,0,card_excursion_garden_week_002,true
+week_002,-3,card_excursion_garden_week_002,true
+week_002,-2,card_excursion_garden_week_002_curious,true
+week_002,-1,card_excursion_garden_week_002_innocent,true
 week_003,0,card_excursion_garden_week_003,true
 week_004,0,card_excursion_garden_week_004,true
 week_005,0,card_excursion_garden_week_005,true
@@ -26,7 +28,7 @@ week_006,3,card_excursion_forest_week_006,true
 week_007,3,card_excursion_forest_week_007,true
 week_008,3,card_excursion_forest_week_008,true
 week_009,3,card_excursion_forest_week_009,true
-week_001,4,card_excursion_library_week_001,true
+week_001,30,card_excursion_library_week_001,true
 week_002,4,card_excursion_library_week_002,true
 week_003,4,card_excursion_library_week_003,true
 week_004,4,card_excursion_library_week_004,true

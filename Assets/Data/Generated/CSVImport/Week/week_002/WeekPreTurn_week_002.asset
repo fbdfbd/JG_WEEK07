@@ -17,7 +17,13 @@ MonoBehaviour:
   _informationCards:
   - _card: {fileID: 11400000, guid: 7eb57864ee0b05b469ff458cb09261ba, type: 2}
     _isRequired: 1
-    _displayOrder: 0
+    _displayOrder: -3
+  - _card: {fileID: 11400000, guid: 820750e1039168247a9c18aba660ac4b, type: 2}
+    _isRequired: 1
+    _displayOrder: -2
+  - _card: {fileID: 11400000, guid: bca393ec0ece1584baf7ed38b521c29c, type: 2}
+    _isRequired: 1
+    _displayOrder: -1
   - _card: {fileID: 11400000, guid: 9ca0703e71ce587498a086905d468249, type: 2}
     _isRequired: 1
     _displayOrder: 1

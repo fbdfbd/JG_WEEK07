@@ -13,16 +13,17 @@ MonoBehaviour:
   m_Name: card_excursion_garden_week_002
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_garden_week_002
-  _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
   _title: "\uC815\uC6D0"
   _originalText: "\uB3CC \uD2C8 \uC0AC\uC774\uB85C \uB2EC\uD33D\uC774 \uBA87 \uB9C8\uB9AC\uAC00
     \uC904\uC9C0\uC5B4 \uAE30\uC5B4\uAC04\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC815\uC6D0\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC791\uACE0 \uB290\uB9B0 \uAC83\uB4E4\uC774 \uC544\uBCA8\uB9AC\uC544\uB97C
+      \uD3C9\uC548\uD558\uAC8C \uB9CC\uB4E4\uC5B4\uC904 \uAC83 \uAC19\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uC815\uC6D0\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC774\uACF3\uC5D0 \uD1B5\uC81C \uC2A4\uD15F \uC554\uC2DC \uD14D\uC2A4\uD2B8"
     _interactions: []

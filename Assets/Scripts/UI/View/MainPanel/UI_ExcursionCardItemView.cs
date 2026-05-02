@@ -8,6 +8,7 @@ public sealed class UI_ExcursionCardItemView : MonoBehaviour
     [Header("Texts")]
     [SerializeField] private TextMeshProUGUI _titleText;
     [SerializeField] private TextMeshProUGUI _descriptionText;
+    [SerializeField] private TextMeshProUGUI _presentedText;
 
     [Header("Options")]
     [SerializeField] private Button _directButton;
@@ -61,6 +62,11 @@ public sealed class UI_ExcursionCardItemView : MonoBehaviour
             _descriptionText.text = entry.OriginalText;
         }
 
+        if (_presentedText != null)
+        {
+            _presentedText.text = ResolvePresentedText(entry);
+        }
+
         _directOptionIndex = CardOptionViewUtility.FindOptionIndex(entry.Options, ECardOptionSemantic.Direct);
         _blockedOptionIndex = CardOptionViewUtility.FindOptionIndex(entry.Options, ECardOptionSemantic.Blocked);
 
@@ -90,6 +96,20 @@ public sealed class UI_ExcursionCardItemView : MonoBehaviour
         }
 
         button.interactable = optionIndex != _entry.SelectedOptionIndex;
+    }
+
+    private static string ResolvePresentedText(WeekSelectionEntryPresentation entry)
+    {
+        if (CardOptionViewUtility.IsValidOptionIndex(entry.Options, entry.SelectedOptionIndex))
+        {
+            CardOptionData selectedOption = entry.Options[entry.SelectedOptionIndex];
+            if (selectedOption != null && !string.IsNullOrWhiteSpace(selectedOption.PresentedText))
+            {
+                return selectedOption.PresentedText;
+            }
+        }
+
+        return string.Empty;
     }
 
     private void HandleDirectButtonClicked()

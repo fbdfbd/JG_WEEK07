@@ -1,16 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupView
+public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupCollectionView
 {
-    [SerializeField] private string _targetCardTypeId = "card_type_excursion";
+    [SerializeField] private string _displayName = "Excursion";
+    [SerializeField] private string[] _targetCardTypeIds = { "card_type_excursion" };
     [SerializeField] private Transform _contentRoot;
     [SerializeField] private UI_ExcursionCardItemView _itemPrefab;
 
     private readonly List<UI_ExcursionCardItemView> _items = new();
 
     public event Action<SO_CardInfoDefinition, int> OptionSelected;
+
+    public string DisplayName => _displayName;
 
     private void OnDestroy()
     {
@@ -23,20 +27,28 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupVie
         }
     }
 
-    public bool CanRender(WeekSelectionCategoryGroupPresentation group)
+    public bool CanRender(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
     {
-        return group.CardType != null &&
-               string.Equals(group.CardType.Id, _targetCardTypeId, StringComparison.OrdinalIgnoreCase);
+        return groups != null && groups.Any(IsTargetGroup);
     }
 
-    public void Render(WeekSelectionCategoryGroupPresentation group)
+    public bool CanRender(WeekSelectionCategoryGroupPresentation group)
+    {
+        return IsTargetGroup(group);
+    }
+
+    public void Render(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
     {
         gameObject.SetActive(true);
 
-        IReadOnlyList<WeekSelectionEntryPresentation> entries =
-            group.Entries ?? Array.Empty<WeekSelectionEntryPresentation>();
+        WeekSelectionEntryPresentation[] entries = groups == null
+            ? Array.Empty<WeekSelectionEntryPresentation>()
+            : groups
+                .Where(IsTargetGroup)
+                .SelectMany(group => group.Entries ?? Array.Empty<WeekSelectionEntryPresentation>())
+                .ToArray();
 
-        EnsureItemCount(entries.Count);
+        EnsureItemCount(entries.Length);
 
         for (int i = 0; i < _items.Count; i++)
         {
@@ -46,7 +58,7 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupVie
                 continue;
             }
 
-            bool isActive = i < entries.Count;
+            bool isActive = i < entries.Length;
             item.gameObject.SetActive(isActive);
 
             if (isActive)
@@ -59,6 +71,17 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupVie
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private bool IsTargetGroup(WeekSelectionCategoryGroupPresentation group)
+    {
+        if (group.CardType == null || string.IsNullOrWhiteSpace(group.CardType.Id) || _targetCardTypeIds == null)
+        {
+            return false;
+        }
+
+        return _targetCardTypeIds.Any(targetCardTypeId =>
+            string.Equals(group.CardType.Id, targetCardTypeId, StringComparison.OrdinalIgnoreCase));
     }
 
     private void EnsureItemCount(int count)

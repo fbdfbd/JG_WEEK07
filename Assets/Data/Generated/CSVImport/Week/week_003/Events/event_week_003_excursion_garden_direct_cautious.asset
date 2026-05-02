@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: event_week_003_excursion_garden_direct_cautious
   m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
   _id: event_week_003_excursion_garden_direct_cautious
-  _title: "\uC815\uC6D0 \uD5C8\uAC00-\uC21C\uC9C4"
+  _title: "\uC815\uC6D0 \uD5C8\uAC00-\uC2E0\uC911"
   _priority: 20
   _conditions:
     _requiredFlags: []
@@ -23,11 +23,11 @@ MonoBehaviour:
   _firstStep: {fileID: 11400000, guid: 55edf5e66a48c774787e355cc30d1a40, type: 2}
   _result: {fileID: 11400000, guid: 9ce5a4a04453f3644938de006e58b4bc, type: 2}
   _onCompletedInteractions:
-  - {fileID: 11400000, guid: 1dd13bdd8eaf9ce4592aeb8a484f9fba, type: 2}
-  - {fileID: 11400000, guid: d6a5e766052d89c428f1743b91d1f5ed, type: 2}
+  - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
+  - {fileID: 11400000, guid: 156a3b33297a73c469970f297857e022, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
-  - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  - {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
   _preferredSemantics: 00000000
   _linkedCard: {fileID: 11400000, guid: 00c3ff538c4ed8b4dac940de16d32c91, type: 2}
   _selectionRule:

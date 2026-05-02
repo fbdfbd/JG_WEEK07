@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: card_excursion_garden_week_001
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_garden_week_001
-  _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
   _title: "\uC815\uC6D0"
-  _originalText: "\uC815\uC6D0 \uC911\uC559\uC758 \uD06C\uB808\uC774\uD504 \uBA38\uD2C0\uC774
-    \uC2DC\uB4E4\uC5B4 \uC788\uB2E4."
+  _originalText: "\uC2DC\uB4E0 \uD06C\uB808\uC774\uD504 \uBA38\uD2C0\uC774 \uC788\uB2E4."
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC815\uC6D0\uC5D0 \uAC08 \uC218 \uC788\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC774\uC720\uB97C \uBB3B\uACE0,
+      \uC870\uC6A9\uD55C \uB3CC\uBD04 \uC18D\uC5D0\uC11C \uB9C8\uC74C\uC744 \uAC00\uB77C\uC549\uD790
+      \uAE30\uD68C\uB97C \uC5BB\uB294\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uC815\uC6D0\uC5D0 \uAC00\uC9C0 \uBABB\uD558\uAC8C \uD55C\uB2E4."
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uB294 \uAF43\uB098\uBB34\uB97C \uBCF4\uB7EC
+      \uAC00\uACE0 \uC2F6\uC9C0\uB9CC, \uB9C9\uD78C \uC815\uC6D0 \uC55E\uC5D0\uC11C
+      \uC5B4\uB978\uC758 \uB9D0\uC744 \uB530\uB77C\uC57C \uD55C\uB2E4."
     _interactions: []

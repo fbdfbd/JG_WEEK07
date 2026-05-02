@@ -54,7 +54,11 @@ public class UI_CardView : MonoBehaviour
     private int _modifiedOptionIndex = InvalidOptionIndex;
     private int _blockedOptionIndex = InvalidOptionIndex;
     private readonly List<IWeekCardGroupView> _groupViews = new();
+    private readonly List<IWeekCardGroupCollectionView> _collectionGroupViews = new();
+    private readonly List<CardIndexItem> _indexItems = new();
     private IWeekCardGroupView _activeGroupView;
+    private IWeekCardGroupCollectionView _activeCollectionGroupView;
+    private int _currentIndexItemIndex = 0;
 
     // 상위 뷰로 전달할 이벤트
     public event Action<SO_CardInfoDefinition, int> OnCardOptionClicked;
@@ -161,6 +165,11 @@ public class UI_CardView : MonoBehaviour
         {
             groupView.OptionSelected -= HandleGroupViewOptionSelected;
         }
+
+        foreach (IWeekCardGroupCollectionView collectionGroupView in _collectionGroupViews)
+        {
+            collectionGroupView.OptionSelected -= HandleGroupViewOptionSelected;
+        }
     }
 
     public void SetCardGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
@@ -184,16 +193,18 @@ public class UI_CardView : MonoBehaviour
 
         _currentGroups = groups;
         RestoreCurrentPosition(previousCardDefinition, previousCardType, previousGroupIndex, previousCardIndexInGroup);
+        BuildIndexItems();
+        SyncCurrentIndexItemToGroup();
 
         for (int i = 0; i < _indexButtons.Length; i++)
         {
-            if (groups != null && i < groups.Count)
+            if (i < _indexItems.Count)
             {
                 _indexButtons[i].gameObject.SetActive(true);
 
                 if (_indexTexts != null && i < _indexTexts.Length && _indexTexts[i] != null)
                 {
-                    _indexTexts[i].text = groups[i].TypeName;
+                    _indexTexts[i].text = _indexItems[i].DisplayName;
                 }
             }
             else
@@ -294,12 +305,13 @@ public class UI_CardView : MonoBehaviour
     // [로컬 UI 상태 변경] 인덱스 버튼 클릭 시 현재 그룹과 첫 카드로 이동
     private void OnIndexButtonClicked(int index)
     {
-        if (_currentGroups == null || index < 0 || index >= _currentGroups.Count)
+        if (_currentGroups == null || index < 0 || index >= _indexItems.Count)
         {
             return;
         }
 
-        _currentGroupIndex = index;
+        _currentIndexItemIndex = index;
+        _currentGroupIndex = _indexItems[index].GroupIndex;
         _currentCardIndexInGroup = 0;
 
         UpdateCurrentGroupedCard();
@@ -321,6 +333,7 @@ public class UI_CardView : MonoBehaviour
         {
             _currentGroupIndex = previousGroupIndex;
             _currentCardIndexInGroup = _currentGroups[previousGroupIndex].Entries.Count - 1;
+            SyncCurrentIndexItemToGroup();
         }
         else
         {
@@ -346,6 +359,7 @@ public class UI_CardView : MonoBehaviour
         {
             _currentGroupIndex = nextGroupIndex;
             _currentCardIndexInGroup = 0;
+            SyncCurrentIndexItemToGroup();
         }
         else
         {
@@ -405,6 +419,11 @@ public class UI_CardView : MonoBehaviour
 
     private void UpdateCurrentGroupedCard()
     {
+        if (TryRenderSelectedCollectionView())
+        {
+            return;
+        }
+
         // 방어 코드: 현재 그룹 또는 카드 데이터가 비어있으면 화면 초기화 후 리턴
         if (!TryGetCurrentGroup(out WeekSelectionCategoryGroupPresentation currentGroup))
         {
@@ -458,6 +477,7 @@ public class UI_CardView : MonoBehaviour
     private void CacheGroupViews()
     {
         _groupViews.Clear();
+        _collectionGroupViews.Clear();
 
         if (_groupViewBehaviours == null)
         {
@@ -466,16 +486,107 @@ public class UI_CardView : MonoBehaviour
 
         foreach (MonoBehaviour behaviour in _groupViewBehaviours)
         {
-            if (!(behaviour is IWeekCardGroupView groupView))
+            if (behaviour is IWeekCardGroupCollectionView collectionGroupView)
             {
+                _collectionGroupViews.Add(collectionGroupView);
+                collectionGroupView.OptionSelected -= HandleGroupViewOptionSelected;
+                collectionGroupView.OptionSelected += HandleGroupViewOptionSelected;
+                collectionGroupView.Hide();
+            }
+
+            if (behaviour is IWeekCardGroupView groupView)
+            {
+                _groupViews.Add(groupView);
+                groupView.OptionSelected -= HandleGroupViewOptionSelected;
+                groupView.OptionSelected += HandleGroupViewOptionSelected;
+                groupView.Hide();
+            }
+        }
+    }
+
+    private void BuildIndexItems()
+    {
+        _indexItems.Clear();
+
+        if (_currentGroups == null)
+        {
+            _currentIndexItemIndex = 0;
+            return;
+        }
+
+        HashSet<IWeekCardGroupCollectionView> addedCollectionViews = new();
+
+        for (int groupIndex = 0; groupIndex < _currentGroups.Count; groupIndex++)
+        {
+            WeekSelectionCategoryGroupPresentation group = _currentGroups[groupIndex];
+            IWeekCardGroupCollectionView collectionView = FindCollectionGroupView(group);
+
+            if (collectionView != null)
+            {
+                if (addedCollectionViews.Add(collectionView))
+                {
+                    string displayName = string.IsNullOrWhiteSpace(collectionView.DisplayName)
+                        ? group.TypeName
+                        : collectionView.DisplayName;
+                    _indexItems.Add(new CardIndexItem(displayName, groupIndex, collectionView));
+                }
+
                 continue;
             }
 
-            _groupViews.Add(groupView);
-            groupView.OptionSelected -= HandleGroupViewOptionSelected;
-            groupView.OptionSelected += HandleGroupViewOptionSelected;
-            groupView.Hide();
+            _indexItems.Add(new CardIndexItem(group.TypeName, groupIndex, null));
         }
+
+        if (_indexItems.Count == 0)
+        {
+            _currentIndexItemIndex = 0;
+        }
+        else
+        {
+            _currentIndexItemIndex = Mathf.Clamp(_currentIndexItemIndex, 0, _indexItems.Count - 1);
+        }
+    }
+
+    private IWeekCardGroupCollectionView FindCollectionGroupView(WeekSelectionCategoryGroupPresentation group)
+    {
+        foreach (IWeekCardGroupCollectionView collectionGroupView in _collectionGroupViews)
+        {
+            if (collectionGroupView.CanRender(group))
+            {
+                return collectionGroupView;
+            }
+        }
+
+        return null;
+    }
+
+    private void SyncCurrentIndexItemToGroup()
+    {
+        if (_indexItems.Count == 0 || _currentGroups == null || _currentGroupIndex < 0 || _currentGroupIndex >= _currentGroups.Count)
+        {
+            _currentIndexItemIndex = 0;
+            return;
+        }
+
+        WeekSelectionCategoryGroupPresentation currentGroup = _currentGroups[_currentGroupIndex];
+
+        for (int i = 0; i < _indexItems.Count; i++)
+        {
+            CardIndexItem item = _indexItems[i];
+            if (item.CollectionView != null && item.CollectionView.CanRender(currentGroup))
+            {
+                _currentIndexItemIndex = i;
+                return;
+            }
+
+            if (item.CollectionView == null && item.GroupIndex == _currentGroupIndex)
+            {
+                _currentIndexItemIndex = i;
+                return;
+            }
+        }
+
+        _currentIndexItemIndex = Mathf.Clamp(_currentIndexItemIndex, 0, _indexItems.Count - 1);
     }
 
     private bool TryRenderTypeSpecificView(WeekSelectionCategoryGroupPresentation currentGroup)
@@ -500,8 +611,51 @@ public class UI_CardView : MonoBehaviour
             }
         }
 
+        foreach (IWeekCardGroupCollectionView collectionGroupView in _collectionGroupViews)
+        {
+            collectionGroupView.Hide();
+        }
+
+        _activeCollectionGroupView = null;
         _activeGroupView = nextView;
         _activeGroupView.Render(currentGroup);
+        return true;
+    }
+
+    private bool TryRenderSelectedCollectionView()
+    {
+        if (_currentIndexItemIndex < 0 || _currentIndexItemIndex >= _indexItems.Count)
+        {
+            return false;
+        }
+
+        CardIndexItem currentIndexItem = _indexItems[_currentIndexItemIndex];
+        IWeekCardGroupCollectionView nextCollectionView = currentIndexItem.CollectionView;
+        if (nextCollectionView == null)
+        {
+            return false;
+        }
+
+        SetDefaultGroupVisible(!CanDisableDefaultGroupRoot(nextCollectionView));
+        ClearCardDisplay();
+        UpdateIndexButtonColors();
+
+        foreach (IWeekCardGroupCollectionView collectionGroupView in _collectionGroupViews)
+        {
+            if (collectionGroupView != nextCollectionView)
+            {
+                collectionGroupView.Hide();
+            }
+        }
+
+        foreach (IWeekCardGroupView groupView in _groupViews)
+        {
+            groupView.Hide();
+        }
+
+        _activeGroupView = null;
+        _activeCollectionGroupView = nextCollectionView;
+        _activeCollectionGroupView.Render(_currentGroups);
         return true;
     }
 
@@ -520,11 +674,17 @@ public class UI_CardView : MonoBehaviour
 
     private void HideTypeSpecificViews()
     {
+        foreach (IWeekCardGroupCollectionView collectionGroupView in _collectionGroupViews)
+        {
+            collectionGroupView.Hide();
+        }
+
         foreach (IWeekCardGroupView groupView in _groupViews)
         {
             groupView.Hide();
         }
 
+        _activeCollectionGroupView = null;
         _activeGroupView = null;
     }
 
@@ -537,6 +697,21 @@ public class UI_CardView : MonoBehaviour
     }
 
     private bool CanDisableDefaultGroupRoot(IWeekCardGroupView nextView)
+    {
+        if (_defaultGroupRoot == null || nextView == null)
+        {
+            return false;
+        }
+
+        if (nextView is MonoBehaviour behaviour && behaviour != null)
+        {
+            return !behaviour.transform.IsChildOf(_defaultGroupRoot.transform);
+        }
+
+        return true;
+    }
+
+    private bool CanDisableDefaultGroupRoot(IWeekCardGroupCollectionView nextView)
     {
         if (_defaultGroupRoot == null || nextView == null)
         {
@@ -573,9 +748,8 @@ public class UI_CardView : MonoBehaviour
             }
 
             bool isSelected = button.gameObject.activeSelf &&
-                              _currentGroups != null &&
-                              i == _currentGroupIndex &&
-                              i < _currentGroups.Count;
+                              i == _currentIndexItemIndex &&
+                              i < _indexItems.Count;
 
             Color targetColor = isSelected ? _indexHighlightColor : _indexDefaultColor;
 
@@ -874,5 +1048,22 @@ public class UI_CardView : MonoBehaviour
 
         // 현재 보고 있는 정확한 카드의 Definition을 상위로 쏴준다.
         OnCardOptionClicked?.Invoke(currentCardData.CardDefinition, clickedOptionIndex);
+    }
+
+    private readonly struct CardIndexItem
+    {
+        public CardIndexItem(
+            string displayName,
+            int groupIndex,
+            IWeekCardGroupCollectionView collectionView)
+        {
+            DisplayName = displayName;
+            GroupIndex = groupIndex;
+            CollectionView = collectionView;
+        }
+
+        public string DisplayName { get; }
+        public int GroupIndex { get; }
+        public IWeekCardGroupCollectionView CollectionView { get; }
     }
 }

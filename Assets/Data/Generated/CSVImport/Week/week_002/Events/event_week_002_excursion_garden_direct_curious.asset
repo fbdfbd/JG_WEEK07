@@ -27,9 +27,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
-  - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  - {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
   _preferredSemantics: 00000000
-  _linkedCard: {fileID: 11400000, guid: 7eb57864ee0b05b469ff458cb09261ba, type: 2}
+  _linkedCard: {fileID: 11400000, guid: 820750e1039168247a9c18aba660ac4b, type: 2}
   _selectionRule:
     _mode: 1
     _selectorStat: 2

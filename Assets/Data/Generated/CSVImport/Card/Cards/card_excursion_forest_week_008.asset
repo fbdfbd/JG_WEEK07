@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: card_excursion_forest_week_008
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_forest_week_008
-  _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  _cardType: {fileID: 11400000, guid: e024f57149280bd41945022e45c37b02, type: 2}
   _title: "\uC232"
   _originalText: "\uC0AC\uB0E5\uC9C0\uAE30 \uC624\uB450\uB9C9\uC5D0\uC11C \uB354
     \uC774\uC0C1 \uC5F0\uAE30\uAC00 \uC624\uB974\uC9C0 \uC54A\uB294\uB2E4."

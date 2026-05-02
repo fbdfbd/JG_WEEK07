@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_006_millia_blocked_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_006_millia_blocked
+  _title: "\uBC00\uB9AC\uC544-\uCC28\uB2E8"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uD30C\uD2F0 \uBA85\uB2E8\uC744
+    \uC0B4\uD53C\uC2DC\uBA70 \uC778\uBB3C\uC744 \uBB3C\uAC74\uCC98\uB7FC \uC124\uBA85\uD558\uB294
+    \uBC29\uC2DD\uC5D0 \uB300\uD574 \uBD88\uCF8C\uAC10\uC744 \uD45C\uD558\uC168\uC2B5\uB2C8\uB2E4."
