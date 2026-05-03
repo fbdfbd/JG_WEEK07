@@ -8,6 +8,7 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private TMP_Text _titleText;
+    [SerializeField] private TMP_Text _contextText;
     [SerializeField] private Button _clickArea;
 
     private bool _isClicked;
@@ -30,7 +31,7 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
         StopFade(false);
     }
 
-    public IEnumerator Play(WeekEntryIntroEntry entry)
+    public IEnumerator Play(WeekEntryIntroEntry entry, string contextLine = null)
     {
         if (entry == null || _canvasGroup == null)
         {
@@ -39,6 +40,7 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
 
         gameObject.SetActive(true);
         SetTitle(entry.Title);
+        SetContext(contextLine);
         SetClicked(false);
         SetClickEnabled(false);
 
@@ -63,6 +65,18 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
         }
 
         _titleText.text = title;
+    }
+
+    private void SetContext(string contextLine)
+    {
+        if (_contextText == null)
+        {
+            return;
+        }
+
+        _contextText.text = string.IsNullOrWhiteSpace(contextLine)
+            ? string.Empty
+            : contextLine.Trim();
     }
 
     private IEnumerator FadeTo(float alpha, float seconds)

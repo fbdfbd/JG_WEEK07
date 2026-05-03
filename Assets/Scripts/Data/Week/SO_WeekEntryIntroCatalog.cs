@@ -34,12 +34,14 @@ public class WeekEntryIntroEntry
     [SerializeField] private float _fadeInSeconds = 0.4f;
     [SerializeField] private float _fadeOutSeconds = 0.4f;
     [SerializeField] private bool _waitForClick = true;
+    [SerializeField] private bool _showMoodContextLine = true;
 
     public string WeekId => _weekId;
     public string Title => _title;
     public float FadeInSeconds => Mathf.Max(0f, _fadeInSeconds);
     public float FadeOutSeconds => Mathf.Max(0f, _fadeOutSeconds);
     public bool WaitForClick => _waitForClick;
+    public bool ShowMoodContextLine => _showMoodContextLine;
 
     public bool IsForWeek(string weekId)
     {

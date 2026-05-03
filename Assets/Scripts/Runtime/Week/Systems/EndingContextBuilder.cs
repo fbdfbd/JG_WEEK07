@@ -64,6 +64,14 @@ public static class EndingContextBuilder
         return trimmedContexts;
     }
 
+    public static EndingContext BuildForCharacter(
+        RuntimeChildState childState,
+        EEndingCharacterType characterType,
+        bool useMoodThresholdCorrection = false)
+    {
+        return Build(childState, characterType, useMoodThresholdCorrection);
+    }
+
     private static EndingContext Build(
         RuntimeChildState childState,
         EEndingCharacterType characterType,

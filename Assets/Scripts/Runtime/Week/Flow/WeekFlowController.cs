@@ -498,7 +498,7 @@ public class WeekFlowController : MonoBehaviour
 
             if (_view != null)
             {
-                yield return _view.PlayWeekEntryIntro(currentWeek);
+                yield return _view.PlayWeekEntryIntro(currentWeek, _runtimeState?.ChildState);
             }
 
             WeekChanged?.Invoke(currentWeek);
