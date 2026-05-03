@@ -10,6 +10,8 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
     [SerializeField] private TMP_Text _titleText;
     [SerializeField] private TMP_Text _contextText;
     [SerializeField] private Button _clickArea;
+    [SerializeField] private float _closeSecond = 2f;
+
 
     private bool _isClicked;
     private Tween _fadeTween;
@@ -46,12 +48,11 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
 
         yield return FadeTo(1f, entry.FadeInSeconds);
 
-        if (entry.WaitForClick)
-        {
-            SetClickEnabled(true);
-            yield return new WaitUntil(() => _isClicked);
-            SetClickEnabled(false);
-        }
+        yield return new WaitForSecondsRealtime(_closeSecond);
+
+        yield return FadeTo(0f, entry.FadeOutSeconds);
+        HideImmediate();
+
 
         yield return FadeTo(0f, entry.FadeOutSeconds);
         HideImmediate();
