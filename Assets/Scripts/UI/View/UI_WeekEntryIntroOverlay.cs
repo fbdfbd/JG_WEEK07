@@ -10,7 +10,7 @@ public class UI_WeekEntryIntroOverlay : MonoBehaviour
     [SerializeField] private TMP_Text _titleText;
     [SerializeField] private TMP_Text _contextText;
     [SerializeField] private Button _clickArea;
-    [SerializeField] private float _closeSecond = 2f;
+    [SerializeField] private float _closeSecond = 3.5f;
 
 
     private bool _isClicked;
