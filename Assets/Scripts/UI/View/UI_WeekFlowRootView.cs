@@ -104,14 +104,16 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _weekScreenView.RenderWeekHeader(presentation);
     }
 
-    public override void RenderSelectionGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
+    public override void RenderSelectionGroups(
+        IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups,
+        WeekSelectionGroupRenderOptions renderOptions = default)
     {
         if (_weekScreenView == null)
         {
             return;
         }
 
-        _weekScreenView.RenderSelectionGroups(groups);
+        _weekScreenView.RenderSelectionGroups(groups, renderOptions);
     }
 
     public override void RenderChildState(ChildStatePresentation presentation)

@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public sealed class WeekFlowPresenter
     private readonly WeekUiTextProvider _weekUiText;
     private readonly WeekSelectionState _weekSelectionState;
     private readonly WeekSequenceState _weekSequenceState;
+    private string _lastRenderedSelectionWeekId;
 
     public WeekFlowPresenter(
         WeekFlowViewBase view,
@@ -35,15 +37,27 @@ public sealed class WeekFlowPresenter
 
     public void PublishSelectionEntries()
     {
+        SO_WeekDefinition currentWeekDefinition = _weekSequenceState.CurrentWeekDefinition;
+        string currentWeekId = ResolveWeekId(currentWeekDefinition);
+        bool shouldResetPosition = !string.Equals(
+            _lastRenderedSelectionWeekId,
+            currentWeekId,
+            StringComparison.OrdinalIgnoreCase);
+
         WeekSelectionCategoryGroupPresentation[] selectionGroups =
             _weekSelectionState.BuildSelectionGroupPresentations(
                 WeekFlowQueryUtility.GetCurrentWeekEntries(
-                    _weekSequenceState.CurrentWeekDefinition,
+                    currentWeekDefinition,
                     _runtimeState.ChildState),
                 _weekUiText.GetUnknownCardType(),
                 _runtimeState.ChildState);
 
-        _view?.RenderSelectionGroups(selectionGroups);
+        WeekSelectionGroupRenderOptions renderOptions = shouldResetPosition
+            ? WeekSelectionGroupRenderOptions.ResetToFirstGroup
+            : WeekSelectionGroupRenderOptions.PreservePosition;
+
+        _view?.RenderSelectionGroups(selectionGroups, renderOptions);
+        _lastRenderedSelectionWeekId = currentWeekId;
     }
 
 
@@ -191,6 +205,11 @@ public sealed class WeekFlowPresenter
     private static string FormatWeekId(SO_WeekDefinition weekDefinition)
     {
         return weekDefinition != null ? weekDefinition.Id : "null";
+    }
+
+    private static string ResolveWeekId(SO_WeekDefinition weekDefinition)
+    {
+        return weekDefinition != null ? weekDefinition.Id : string.Empty;
     }
 
     private void PublishWeekHeader()

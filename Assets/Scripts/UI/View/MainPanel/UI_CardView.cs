@@ -172,7 +172,7 @@ public class UI_CardView : MonoBehaviour
         }
     }
 
-    public void SetCardGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
+    public void SetCardGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups, bool resetPosition = false)
     {
         SO_CardInfoDefinition previousCardDefinition = null;
         SO_CardInfoTypeDefinition previousCardType = null;
@@ -192,7 +192,16 @@ public class UI_CardView : MonoBehaviour
         }
 
         _currentGroups = groups;
-        RestoreCurrentPosition(previousCardDefinition, previousCardType, previousGroupIndex, previousCardIndexInGroup);
+
+        if (resetPosition)
+        {
+            ResetCurrentPosition();
+        }
+        else
+        {
+            RestoreCurrentPosition(previousCardDefinition, previousCardType, previousGroupIndex, previousCardIndexInGroup);
+        }
+
         BuildIndexItems();
         SyncCurrentIndexItemToGroup();
 
@@ -215,6 +224,13 @@ public class UI_CardView : MonoBehaviour
         }
 
         UpdateCurrentGroupedCard();
+    }
+
+    private void ResetCurrentPosition()
+    {
+        _currentGroupIndex = 0;
+        _currentCardIndexInGroup = 0;
+        _currentIndexItemIndex = 0;
     }
 
     private void RestoreCurrentPosition(

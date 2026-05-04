@@ -37,14 +37,16 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         UnbindOutsideClickButtonEvent();
     }
 
-    public void RenderSelectionGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
+    public void RenderSelectionGroups(
+        IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups,
+        WeekSelectionGroupRenderOptions renderOptions = default)
     {
         if (_cardPanel == null)
         {
             return;
         }
 
-        _cardPanel.SetCardGroups(groups);
+        _cardPanel.SetCardGroups(groups, renderOptions.ResetPosition);
     }
 
     public void RenderChildState(ChildStatePresentation presentation)

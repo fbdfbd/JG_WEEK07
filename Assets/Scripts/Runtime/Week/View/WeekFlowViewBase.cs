@@ -75,7 +75,9 @@ public abstract class WeekFlowViewBase : MonoBehaviour
     public virtual void RenderWeekHeader(WeekHeaderPresentation presentation) { }
     public virtual void RenderSelections(IReadOnlyList<WeekSelectionEntryPresentation> presentations) { }
 
-    public virtual void RenderSelectionGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
+    public virtual void RenderSelectionGroups(
+        IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups,
+        WeekSelectionGroupRenderOptions renderOptions = default)
     {
         if (groups == null || groups.Count == 0)
         {
@@ -435,4 +437,17 @@ public readonly struct WeekSelectionCategoryGroupPresentation
     public SO_CardInfoTypeDefinition CardType { get; }
     public string TypeName { get; }
     public IReadOnlyList<WeekSelectionEntryPresentation> Entries { get; }
+}
+
+public readonly struct WeekSelectionGroupRenderOptions
+{
+    public WeekSelectionGroupRenderOptions(bool resetPosition)
+    {
+        ResetPosition = resetPosition;
+    }
+
+    public bool ResetPosition { get; }
+
+    public static WeekSelectionGroupRenderOptions PreservePosition => new(false);
+    public static WeekSelectionGroupRenderOptions ResetToFirstGroup => new(true);
 }
