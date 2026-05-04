@@ -95,7 +95,7 @@ public class UI_WeeklyResultLogSummaryView : MonoBehaviour
         for (int index = 0; index < statSummary.Count; index++)
         {
             WeeklyResultStatDeltaPresentation entry = statSummary[index];
-            if (entry.Delta <= 0)
+            if (entry.Delta == 0)
             {
                 continue;
             }
@@ -107,7 +107,7 @@ public class UI_WeeklyResultLogSummaryView : MonoBehaviour
 
             builder.Append(entry.Label);
             builder.Append(" +");
-            builder.Append(entry.Delta);
+            builder.Append(Mathf.Abs(entry.Delta));
         }
 
         return builder.ToString();

@@ -138,14 +138,14 @@ public static class WeekNarrativeResolver
                 ? value
                 : RuntimeChildState.DefaultStatValue;
             int delta = childState.GetStat(statType) - beforeValue;
-            if (delta <= 0)
+            if (delta == 0)
             {
                 continue;
             }
 
             summary.Add(new WeeklyResultStatDeltaPresentation(
                 statType,
-                GetStatLabel(statType, weekUiText),
+                GetDirectionalStatLabel(statType, delta),
                 delta));
         }
 
@@ -546,6 +546,19 @@ public static class WeekNarrativeResolver
     private static string GetStatLabel(EChildStatusType statType, WeekUiTextProvider weekUiText)
     {
         return weekUiText != null ? weekUiText.GetStatLabel(statType) : statType.ToString();
+    }
+
+    private static string GetDirectionalStatLabel(EChildStatusType statType, int delta)
+    {
+        bool isPositive = delta > 0;
+        return statType switch
+        {
+            EChildStatusType.Trust => isPositive ? "순진" : "영민",
+            EChildStatusType.Curiosity => isPositive ? "호기심" : "신중",
+            EChildStatusType.Anxiety => isPositive ? "불안" : "안정",
+            EChildStatusType.Obedience => isPositive ? "순응" : "반항",
+            _ => statType.ToString(),
+        };
     }
 
     private static DialogueLinePresentation[] BuildDialogueLines(

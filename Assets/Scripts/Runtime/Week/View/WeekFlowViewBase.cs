@@ -398,7 +398,7 @@ public readonly struct WeeklyResultStatDeltaPresentation
     {
         StatType = statType;
         Label = label ?? string.Empty;
-        Delta = Math.Max(0, delta);
+        Delta = delta;
     }
 
     public EChildStatusType StatType { get; }
