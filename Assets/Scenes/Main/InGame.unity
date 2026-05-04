@@ -3000,6 +3000,7 @@ MonoBehaviour:
   _titleText: {fileID: 1249547902}
   _contextText: {fileID: 47915510}
   _clickArea: {fileID: 196930148}
+  _closeSecond: 3.5
 --- !u!225 &532799077
 CanvasGroup:
   m_ObjectHideFlags: 0
