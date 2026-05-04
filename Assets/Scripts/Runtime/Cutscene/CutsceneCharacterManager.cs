@@ -307,6 +307,7 @@ public sealed class DialogueCharacterAutoPresenter
 
     private SO_InteractiveEventDefinition _eventDefinition;
     private IReadOnlyList<SO_DialogueSpeakerDefinition> _eventSpeakers = Array.Empty<SO_DialogueSpeakerDefinition>();
+    private bool _isNarrationOnlyEvent;
     private CutsceneCharacterType _currentLeft = CutsceneCharacterType.None;
     private CutsceneCharacterType _currentRight = CutsceneCharacterType.None;
     private CutsceneCharacterType _currentCenter = CutsceneCharacterType.None;
@@ -320,6 +321,7 @@ public sealed class DialogueCharacterAutoPresenter
     {
         _eventDefinition = request.EventDefinition;
         _eventSpeakers = _speakerScanner.GetSpeakers(_eventDefinition);
+        _isNarrationOnlyEvent = _speakerScanner.IsNarrationOnly(_eventDefinition);
         ApplySpeaker(request.DialogueSpeaker);
     }
 
@@ -338,6 +340,7 @@ public sealed class DialogueCharacterAutoPresenter
     {
         _eventDefinition = null;
         _eventSpeakers = Array.Empty<SO_DialogueSpeakerDefinition>();
+        _isNarrationOnlyEvent = false;
         _currentLeft = CutsceneCharacterType.None;
         _currentRight = CutsceneCharacterType.None;
         _currentCenter = CutsceneCharacterType.None;
@@ -350,7 +353,7 @@ public sealed class DialogueCharacterAutoPresenter
             return;
         }
 
-        DialogueCharacterLayout layout = _layoutPolicy.Resolve(_eventSpeakers, speaker);
+        DialogueCharacterLayout layout = _layoutPolicy.Resolve(_eventSpeakers, speaker, _isNarrationOnlyEvent);
 
         if (layout.UseCenter)
         {
@@ -477,26 +480,63 @@ public sealed class EventDialogueSpeakerScanner
                 }
             }
 
-            if (step.ConditionalNext != null)
-            {
-                if (step.ConditionalNext.NextStep != null)
-                {
-                    pendingSteps.Enqueue(step.ConditionalNext.NextStep);
-                }
-
-                if (step.ConditionalNext.FallbackStep != null)
-                {
-                    pendingSteps.Enqueue(step.ConditionalNext.FallbackStep);
-                }
-            }
-
-            if (step.NextStep != null)
-            {
-                pendingSteps.Enqueue(step.NextStep);
-            }
+            EnqueueNextSteps(step, pendingSteps);
         }
 
         return speakers;
+    }
+
+    public bool IsNarrationOnly(SO_InteractiveEventDefinition eventDefinition)
+    {
+        if (eventDefinition?.FirstStep == null)
+        {
+            return false;
+        }
+
+        bool hasNarration = false;
+        HashSet<SO_InteractiveEventStepDefinition> visitedSteps = new();
+        Queue<SO_InteractiveEventStepDefinition> pendingSteps = new();
+        pendingSteps.Enqueue(eventDefinition.FirstStep);
+
+        while (pendingSteps.Count > 0)
+        {
+            SO_InteractiveEventStepDefinition step = pendingSteps.Dequeue();
+            if (step == null || !visitedSteps.Add(step))
+            {
+                continue;
+            }
+
+            if (HasNonNarration(step.DialogueLines, ref hasNarration))
+            {
+                return false;
+            }
+
+            if (step.Choices != null)
+            {
+                for (int index = 0; index < step.Choices.Length; index++)
+                {
+                    InteractiveEventChoiceData choice = step.Choices[index];
+                    if (choice == null)
+                    {
+                        continue;
+                    }
+
+                    if (HasNonNarration(choice.ResponseDialogueLines, ref hasNarration))
+                    {
+                        return false;
+                    }
+
+                    if (choice.NextStep != null)
+                    {
+                        pendingSteps.Enqueue(choice.NextStep);
+                    }
+                }
+            }
+
+            EnqueueNextSteps(step, pendingSteps);
+        }
+
+        return hasNarration;
     }
 
     private static void AddSpeakers(
@@ -536,6 +576,56 @@ public sealed class EventDialogueSpeakerScanner
         return false;
     }
 
+    private static bool HasNonNarration(IReadOnlyList<DialogueLineData> lines, ref bool hasNarration)
+    {
+        if (lines == null)
+        {
+            return false;
+        }
+
+        for (int index = 0; index < lines.Count; index++)
+        {
+            DialogueLineData line = lines[index];
+            if (line == null || string.IsNullOrWhiteSpace(line.Text))
+            {
+                continue;
+            }
+
+            if (IsNarrator(line.Speaker))
+            {
+                hasNarration = true;
+                continue;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private static void EnqueueNextSteps(
+        SO_InteractiveEventStepDefinition step,
+        Queue<SO_InteractiveEventStepDefinition> pendingSteps)
+    {
+        if (step.ConditionalNext != null)
+        {
+            if (step.ConditionalNext.NextStep != null)
+            {
+                pendingSteps.Enqueue(step.ConditionalNext.NextStep);
+            }
+
+            if (step.ConditionalNext.FallbackStep != null)
+            {
+                pendingSteps.Enqueue(step.ConditionalNext.FallbackStep);
+            }
+        }
+
+        if (step.NextStep != null)
+        {
+            pendingSteps.Enqueue(step.NextStep);
+        }
+    }
+
     private static bool SameSpeakerId(SO_DialogueSpeakerDefinition first, SO_DialogueSpeakerDefinition second)
     {
         return !string.IsNullOrWhiteSpace(first?.Id)
@@ -559,10 +649,11 @@ public sealed class DialogueCharacterLayoutPolicy
 
     public DialogueCharacterLayout Resolve(
         IReadOnlyList<SO_DialogueSpeakerDefinition> eventSpeakers,
-        SO_DialogueSpeakerDefinition currentSpeaker)
+        SO_DialogueSpeakerDefinition currentSpeaker,
+        bool isNarrationOnlyEvent)
     {
         CutsceneCharacterType right = _characterResolver.RightCharacterType;
-        if (IsSoloRightSideEvent(eventSpeakers))
+        if (isNarrationOnlyEvent || IsSoloRightSideEvent(eventSpeakers))
         {
             return DialogueCharacterLayout.WithCenter(right);
         }
