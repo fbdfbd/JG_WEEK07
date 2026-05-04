@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d027a98769faaa14984799d6ae3c5034, type: 3}
   m_Name: yuffie_plus_1
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInteraction_StatDelta
+  _displayName: "\uC720\uD53C+1"
   _statType: 8
   _amount: 1
-  _toastMessage: "\uD574\uB2F9 \uD56D\uBAA9\uC740 \uD1A0\uC2A4\uD2B8\uC5D0 \uD45C\uAE30
-    \uC548\uB428"
+  _toastMessage: "\uC720\uD53C+1"

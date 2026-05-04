@@ -118,6 +118,8 @@ public static class InteractionCsvImporter
 
     private static void ConfigureAsset(SO_CardInteractionDefinition asset, InteractionRow row, CsvImportContext context)
     {
+        CsvImportAssetUtility.SetField(asset, "_displayName", row.DisplayName);
+
         switch (asset)
         {
             case SO_CardInteraction_StatDelta statDelta:

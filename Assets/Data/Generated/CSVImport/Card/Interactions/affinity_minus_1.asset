@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d027a98769faaa14984799d6ae3c5034, type: 3}
   m_Name: affinity_minus_1
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInteraction_StatDelta
+  _displayName: "\uCE5C\uBC00\uB3C4-1"
   _statType: 1
   _amount: -1
   _toastMessage: "\uCE5C\uBC00\uB3C4-1"

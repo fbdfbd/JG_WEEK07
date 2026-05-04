@@ -7,7 +7,7 @@ public sealed class WeekFlowRuntimeState
 {
     private readonly List<SO_InteractiveEventDefinition> _pendingDayEvents = new();
     private readonly List<SO_InteractiveEventDefinition> _pendingNightEvents = new();
-    private readonly List<SO_EventResultDefinition> _pendingWeeklyResultLogs = new();
+    private readonly List<RuntimeWeeklyResultLogEntryRecord> _pendingWeeklyResultLogs = new();
     private readonly List<RuntimeWeeklyResultLogRecord> _weeklyResultLogHistory = new();
     private Dictionary<EChildStatusType, int> _weekStartStats = new();
     private int _nextDayEventIndex;
@@ -80,32 +80,34 @@ public sealed class WeekFlowRuntimeState
         _weeklyStatResultConsumed = true;
     }
 
-    public void AddWeeklyResultLog(SO_EventResultDefinition resultLog)
+    public void AddWeeklyResultLog(
+        SO_EventResultDefinition resultLog,
+        IReadOnlyList<SO_CardInteractionDefinition> interactions = null)
     {
         if (resultLog != null)
         {
-            _pendingWeeklyResultLogs.Add(resultLog);
+            _pendingWeeklyResultLogs.Add(new RuntimeWeeklyResultLogEntryRecord(resultLog, interactions));
         }
     }
 
-    public bool TryConsumeWeeklyResultLogs(out SO_EventResultDefinition[] resultLogs)
+    public bool TryConsumeWeeklyResultLogs(out RuntimeWeeklyResultLogEntryRecord[] resultLogs)
     {
         if (_weeklyResultLogConsumed || _pendingWeeklyResultLogs.Count == 0)
         {
-            resultLogs = Array.Empty<SO_EventResultDefinition>();
+            resultLogs = Array.Empty<RuntimeWeeklyResultLogEntryRecord>();
             return false;
         }
 
         _weeklyResultLogConsumed = true;
         resultLogs = _pendingWeeklyResultLogs
-            .FindAll(resultLog => resultLog != null)
+            .FindAll(resultLog => resultLog?.ResultLog != null)
             .ToArray();
         return resultLogs.Length > 0;
     }
 
     public void AddWeeklyResultLogHistory(
         SO_WeekDefinition weekDefinition,
-        IReadOnlyList<SO_EventResultDefinition> resultLogs,
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs,
         IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary = null)
     {
         if (weekDefinition == null || resultLogs == null || resultLogs.Count == 0)
@@ -240,12 +242,12 @@ public sealed class WeekFlowRuntimeState
 
 public sealed class RuntimeWeeklyResultLogRecord
 {
-    private readonly SO_EventResultDefinition[] _resultLogs;
+    private readonly RuntimeWeeklyResultLogEntryRecord[] _resultLogs;
     private readonly WeeklyResultStatDeltaPresentation[] _statSummary;
 
     public RuntimeWeeklyResultLogRecord(
         SO_WeekDefinition weekDefinition,
-        IReadOnlyList<SO_EventResultDefinition> resultLogs,
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs,
         IReadOnlyList<WeeklyResultStatDeltaPresentation> statSummary = null)
     {
         WeekId = weekDefinition != null ? weekDefinition.Id : string.Empty;
@@ -258,7 +260,7 @@ public sealed class RuntimeWeeklyResultLogRecord
     public string WeekId { get; }
     public int WeekIndex { get; }
     public string WeekTitle { get; }
-    public IReadOnlyList<SO_EventResultDefinition> ResultLogs => _resultLogs;
+    public IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> ResultLogs => _resultLogs;
     public IReadOnlyList<WeeklyResultStatDeltaPresentation> StatSummary => _statSummary;
 
     public bool IsForWeek(string weekId)
@@ -266,17 +268,18 @@ public sealed class RuntimeWeeklyResultLogRecord
         return string.Equals(WeekId, weekId, StringComparison.OrdinalIgnoreCase);
     }
 
-    private static SO_EventResultDefinition[] CopyLogs(IReadOnlyList<SO_EventResultDefinition> resultLogs)
+    private static RuntimeWeeklyResultLogEntryRecord[] CopyLogs(
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs)
     {
         if (resultLogs == null || resultLogs.Count == 0)
         {
-            return Array.Empty<SO_EventResultDefinition>();
+            return Array.Empty<RuntimeWeeklyResultLogEntryRecord>();
         }
 
-        List<SO_EventResultDefinition> copiedLogs = new();
+        List<RuntimeWeeklyResultLogEntryRecord> copiedLogs = new();
         for (int index = 0; index < resultLogs.Count; index++)
         {
-            if (resultLogs[index] != null)
+            if (resultLogs[index]?.ResultLog != null)
             {
                 copiedLogs.Add(resultLogs[index]);
             }
@@ -304,6 +307,42 @@ public sealed class RuntimeWeeklyResultLogRecord
         }
 
         return copiedSummary.ToArray();
+    }
+}
+
+public sealed class RuntimeWeeklyResultLogEntryRecord
+{
+    private readonly SO_CardInteractionDefinition[] _interactions;
+
+    public RuntimeWeeklyResultLogEntryRecord(
+        SO_EventResultDefinition resultLog,
+        IReadOnlyList<SO_CardInteractionDefinition> interactions)
+    {
+        ResultLog = resultLog;
+        _interactions = CopyInteractions(interactions);
+    }
+
+    public SO_EventResultDefinition ResultLog { get; }
+    public IReadOnlyList<SO_CardInteractionDefinition> Interactions => _interactions;
+
+    private static SO_CardInteractionDefinition[] CopyInteractions(
+        IReadOnlyList<SO_CardInteractionDefinition> interactions)
+    {
+        if (interactions == null || interactions.Count == 0)
+        {
+            return Array.Empty<SO_CardInteractionDefinition>();
+        }
+
+        List<SO_CardInteractionDefinition> copiedInteractions = new();
+        for (int index = 0; index < interactions.Count; index++)
+        {
+            if (interactions[index] != null)
+            {
+                copiedInteractions.Add(interactions[index]);
+            }
+        }
+
+        return copiedInteractions.ToArray();
     }
 }
 

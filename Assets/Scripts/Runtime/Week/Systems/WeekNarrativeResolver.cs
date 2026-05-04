@@ -76,7 +76,7 @@ public static class WeekNarrativeResolver
             .Where(choice => choice != null)
             .Select(choice => new InteractiveEventChoicePresentation(
                 choice.Label,
-                BuildEffectSummary(choice.Interactions, weekUiText)))
+                BuildEffectSummary(choice.Interactions)))
             .ToArray()
             ?? Array.Empty<InteractiveEventChoicePresentation>();
 
@@ -87,7 +87,7 @@ public static class WeekNarrativeResolver
         return new InteractiveEventPresentation(
             string.IsNullOrWhiteSpace(step.TitleOverride) ? eventSession.EventDefinition.Title : step.TitleOverride,
             step.BodyText,
-            BuildEffectSummary(step.OnEnterInteractions, weekUiText),
+            BuildEffectSummary(step.OnEnterInteractions),
             ResolveVisualState(step, childState),
             dialogueLines,
             choices,
@@ -102,7 +102,7 @@ public static class WeekNarrativeResolver
             BuildDialogueLines(
                 selectedChoice?.ResponseDialogueLines,
                 selectedChoice?.ResponseLine),
-            BuildEffectSummary(selectedChoice?.Interactions, weekUiText));
+            BuildEffectSummary(selectedChoice?.Interactions));
     }
 
     public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
@@ -118,6 +118,12 @@ public static class WeekNarrativeResolver
             ?? Array.Empty<WeeklyResultLogEntryPresentation>();
 
         return new WeeklyResultLogPresentation(entries);
+    }
+
+    public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs)
+    {
+        return new WeeklyResultLogPresentation(CreateWeeklyResultLogEntries(resultLogs));
     }
 
     public static WeeklyResultStatDeltaPresentation[] CreateWeeklyResultStatSummary(
@@ -176,14 +182,14 @@ public static class WeekNarrativeResolver
     }
 
     private static WeeklyResultLogEntryPresentation[] CreateWeeklyResultLogEntries(
-        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs)
     {
         return resultLogs?
-            .Where(resultLog => resultLog != null)
+            .Where(record => record?.ResultLog != null)
             .Select(resultLog => new WeeklyResultLogEntryPresentation(
-                resultLog.EventId,
-                resultLog.Title,
-                resultLog.Context))
+                resultLog.ResultLog.EventId,
+                resultLog.ResultLog.Title,
+                BuildResultContext(resultLog.ResultLog.Context, resultLog.Interactions)))
             .ToArray()
             ?? Array.Empty<WeeklyResultLogEntryPresentation>();
     }
@@ -528,19 +534,36 @@ public static class WeekNarrativeResolver
     }
 
     private static string BuildEffectSummary(
-        IReadOnlyList<SO_CardInteractionDefinition> interactions,
-        WeekUiTextProvider weekUiText)
+        IReadOnlyList<SO_CardInteractionDefinition> interactions)
     {
         string[] effectNames = interactions?
             .Where(interaction => interaction != null)
-            .Select(interaction => interaction.name)
+            .SelectMany(interaction => interaction.GetDisplayNames())
             .Where(effectName => !string.IsNullOrWhiteSpace(effectName))
             .ToArray()
             ?? Array.Empty<string>();
 
         return effectNames.Length == 0
             ? string.Empty
-            : string.Join(" / ", effectNames);
+            : string.Join(" ", effectNames);
+    }
+
+    private static string BuildResultContext(
+        string context,
+        IReadOnlyList<SO_CardInteractionDefinition> interactions)
+    {
+        string effectSummary = BuildEffectSummary(interactions);
+        if (string.IsNullOrWhiteSpace(effectSummary))
+        {
+            return context ?? string.Empty;
+        }
+
+        if (string.IsNullOrWhiteSpace(context))
+        {
+            return effectSummary;
+        }
+
+        return $"{context.TrimEnd()}\n{effectSummary}";
     }
 
     private static string GetStatLabel(EChildStatusType statType, WeekUiTextProvider weekUiText)

@@ -183,7 +183,7 @@ public sealed class WeekFlowNarrativeHandler
         }
 
         if (ShouldShowWeeklyResultLog() &&
-            _runtimeState.TryConsumeWeeklyResultLogs(out SO_EventResultDefinition[] resultLogs))
+            _runtimeState.TryConsumeWeeklyResultLogs(out RuntimeWeeklyResultLogEntryRecord[] resultLogs))
         {
             return BuildWeeklyResultLogScreen(resultLogs);
         }
@@ -254,7 +254,7 @@ public sealed class WeekFlowNarrativeHandler
             new NemoFeedbackPresentation(line.SpeakerName, presentation.VisualState, line.Text)));
     }
 
-    private WeekFlowActionResult BuildWeeklyResultLogScreen(SO_EventResultDefinition[] resultLogs)
+    private WeekFlowActionResult BuildWeeklyResultLogScreen(RuntimeWeeklyResultLogEntryRecord[] resultLogs)
     {
         WeeklyResultStatDeltaPresentation[] statSummary = WeekNarrativeResolver.CreateWeeklyResultStatSummary(
             _runtimeState.ChildState,
@@ -355,7 +355,7 @@ public sealed class WeekFlowNarrativeHandler
             _runtimeState.ChildState);
         if (_runtimeState.IsCurrentEventFromDayFlow)
         {
-            _runtimeState.AddWeeklyResultLog(eventDefinition.Result);
+            _runtimeState.AddWeeklyResultLog(eventDefinition.Result, eventDefinition.OnCompletedInteractions);
         }
 
         _runtimeState.ClearCurrentEventSession();

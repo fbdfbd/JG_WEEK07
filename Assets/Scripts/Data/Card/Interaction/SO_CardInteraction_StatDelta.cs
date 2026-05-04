@@ -13,4 +13,13 @@ public class SO_CardInteraction_StatDelta : SO_CardInteractionDefinition
     {
         childState.AddStat(_statType, _amount, _toastMessage);
     }
+
+    protected override string ResolveDisplayName()
+    {
+        return !string.IsNullOrWhiteSpace(SerializedDisplayName)
+            ? SerializedDisplayName
+            : !string.IsNullOrWhiteSpace(_toastMessage)
+                ? _toastMessage
+                : base.ResolveDisplayName();
+    }
 }

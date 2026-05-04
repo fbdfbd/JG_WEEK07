@@ -19,4 +19,13 @@ public class SO_CardInteraction_ConditionalStatDelta : SO_CardInteractionDefinit
             childState.AddStat(_targetStat, _amount, _toastMessage);
         }
     }
+
+    protected override string ResolveDisplayName()
+    {
+        return !string.IsNullOrWhiteSpace(SerializedDisplayName)
+            ? SerializedDisplayName
+            : !string.IsNullOrWhiteSpace(_toastMessage)
+                ? _toastMessage
+                : base.ResolveDisplayName();
+    }
 }
