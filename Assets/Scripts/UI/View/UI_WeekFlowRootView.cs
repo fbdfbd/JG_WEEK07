@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,7 +7,7 @@ using UnityEngine.UI;
 public class UI_WeekFlowRootView : WeekFlowViewBase
 {
     private const string LeftCtrlBindingPath = "<Keyboard>/leftCtrl";
-    private const string RightCtrlBindingPath = "<Keyboard>/space";
+    private const string RightCtrlBindingPath = "<Keyboard>/rightCtrl";
 
     private enum EDialogueContinueRoute
     {
@@ -39,7 +38,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [SerializeField] private Button _openLogButton;
 
     [Header("Advance Input")]
-    [SerializeField] private InputAction _advanceAction = CreateAdvanceAction();
+    private InputAction _advanceAction;
     [SerializeField] private float _advanceHoldDelay = 0.35f;
     [SerializeField] private float _advanceRepeatInterval = 0.08f;
 
