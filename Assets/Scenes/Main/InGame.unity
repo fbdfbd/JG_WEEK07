@@ -4854,25 +4854,8 @@ MonoBehaviour:
   _nemo: {fileID: 612463813}
   _interactionPanel: {fileID: 1857524534}
   _openLogButton: {fileID: 1908579848}
-  _advanceAction:
-    m_Name: Advance
-    m_Type: 1
-    m_ExpectedControlType: 
-    m_Id: fd9c8d23-db24-44d6-ad3a-a3aab3cc2e2a
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: ec0178dc-9260-4005-818c-0111dda8e249
-      m_Path: <Keyboard>/space
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Advance
-      m_Flags: 0
-    m_Flags: 0
   _advanceHoldDelay: 0.35
-  _advanceRepeatInterval: 0.1
+  _advanceRepeatInterval: 0.07
 --- !u!4 &1201139402
 Transform:
   m_ObjectHideFlags: 0

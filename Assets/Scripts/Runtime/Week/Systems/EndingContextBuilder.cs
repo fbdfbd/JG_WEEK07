@@ -80,14 +80,9 @@ public static class EndingContextBuilder
     {
         int highest = GetHighestMeetCount(childState);
 
-        for (int i = 0; i < CharacterTiePriority.Length; i++)
+        if (highest <= 0)
         {
-            EEndingCharacterType candidate = CharacterTiePriority[i];
-            if (GetMeetCount(childState, candidate) == highest
-                && GetMoodDecisionMagnitude(childState, candidate) > 0)
-            {
-                return candidate;
-            }
+            return EEndingCharacterType.Rian;
         }
 
         for (int i = 0; i < CharacterTiePriority.Length; i++)
