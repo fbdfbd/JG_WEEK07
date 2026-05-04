@@ -10,7 +10,6 @@ public sealed class WeekFlowNarrativeHandler
     private readonly WeekSequenceState _weekSequenceState;
     private readonly SO_EndingCatalog _endingCatalog;
     private readonly bool _isTest;
-    private readonly bool _useEndingMoodThresholdCorrection;
 
     public WeekFlowNarrativeHandler(
         WeekFlowRuntimeState runtimeState,
@@ -18,8 +17,7 @@ public sealed class WeekFlowNarrativeHandler
         WeekSelectionState weekSelectionState,
         WeekSequenceState weekSequenceState,
         SO_EndingCatalog endingCatalog,
-        bool isTest,
-        bool useEndingMoodThresholdCorrection = false)
+        bool isTest)
     {
         _runtimeState = runtimeState;
         _weekUiText = weekUiText;
@@ -27,7 +25,6 @@ public sealed class WeekFlowNarrativeHandler
         _weekSequenceState = weekSequenceState;
         _endingCatalog = endingCatalog;
         _isTest = isTest;
-        _useEndingMoodThresholdCorrection = useEndingMoodThresholdCorrection;
     }
 
     public WeekFlowActionResult CloseWeekFeedback()
@@ -371,12 +368,10 @@ public sealed class WeekFlowNarrativeHandler
         _runtimeState.IsAwaitingEndingFollowUp = true;
         EndingResolver.LogDebugSnapshot(
             _runtimeState.ChildState,
-            nameof(WeekFlowNarrativeHandler),
-            _useEndingMoodThresholdCorrection);
+            nameof(WeekFlowNarrativeHandler));
         EndingPresentation ending = EndingResolver.Resolve(
             _runtimeState.ChildState,
-            _endingCatalog,
-            _useEndingMoodThresholdCorrection);
+            _endingCatalog);
         GameplayAnalyticsLogger.LogEndingReached(_weekSequenceState.CurrentWeekDefinition, ending);
         PublishStatusMessage(_weekUiText.GetEndingReachedMessage());
 

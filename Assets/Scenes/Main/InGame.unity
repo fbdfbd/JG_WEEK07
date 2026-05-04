@@ -2523,7 +2523,6 @@ MonoBehaviour:
   _view: {fileID: 1201139401}
   _toastManager: {fileID: 1499134517}
   _isTest: 0
-  _useEndingMoodThresholdCorrection: 0
 --- !u!4 &410691784
 Transform:
   m_ObjectHideFlags: 0

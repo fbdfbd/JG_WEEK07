@@ -1,7 +1,5 @@
 public static class EndingContextBuilder
 {
-    private const int NegativeEndingThreshold = -5;
-
     private static readonly EEndingCharacterType[] CharacterTiePriority =
     {
         EEndingCharacterType.Max,
@@ -18,21 +16,17 @@ public static class EndingContextBuilder
             && GetMeetCount(childState, EEndingCharacterType.Yuffie) <= 0;
     }
 
-    public static EndingContext Build(
-        RuntimeChildState childState,
-        bool useMoodThresholdCorrection = false)
+    public static EndingContext Build(RuntimeChildState childState)
     {
         EEndingCharacterType characterType = ResolveCharacterType(childState);
         int meetCount = GetMeetCount(childState, characterType);
-        EEndingMoodType moodType = ResolveMoodType(childState, characterType, useMoodThresholdCorrection);
+        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
         int affinity = childState.GetStat(EChildStatusType.Affinity);
 
         return new EndingContext(characterType, meetCount, moodType, affinity);
     }
 
-    public static EndingContext[] BuildMetCharacterContextsByPriority(
-        RuntimeChildState childState,
-        bool useMoodThresholdCorrection = false)
+    public static EndingContext[] BuildMetCharacterContextsByPriority(RuntimeChildState childState)
     {
         if (childState == null)
         {
@@ -50,7 +44,7 @@ public static class EndingContextBuilder
                 continue;
             }
 
-            contexts[count] = Build(childState, characterType, useMoodThresholdCorrection);
+            contexts[count] = Build(childState, characterType);
             count++;
         }
 
@@ -66,19 +60,17 @@ public static class EndingContextBuilder
 
     public static EndingContext BuildForCharacter(
         RuntimeChildState childState,
-        EEndingCharacterType characterType,
-        bool useMoodThresholdCorrection = false)
+        EEndingCharacterType characterType)
     {
-        return Build(childState, characterType, useMoodThresholdCorrection);
+        return Build(childState, characterType);
     }
 
     private static EndingContext Build(
         RuntimeChildState childState,
-        EEndingCharacterType characterType,
-        bool useMoodThresholdCorrection)
+        EEndingCharacterType characterType)
     {
         int meetCount = GetMeetCount(childState, characterType);
-        EEndingMoodType moodType = ResolveMoodType(childState, characterType, useMoodThresholdCorrection);
+        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
         int affinity = childState.GetStat(EChildStatusType.Affinity);
 
         return new EndingContext(characterType, meetCount, moodType, affinity);
@@ -151,64 +143,43 @@ public static class EndingContextBuilder
         };
     }
 
-    private static EEndingMoodType ResolveMoodType(
+    private static EEndingMoodType ResolveMoodType(RuntimeChildState childState, EEndingCharacterType characterType)
+    {
+        return characterType switch
+        {
+            EEndingCharacterType.Rian => ResolveSignedMood(
+                childState,
+                characterType,
+                EEndingMoodType.Anxiety,
+                EEndingMoodType.Stability),
+            EEndingCharacterType.Max => ResolveSignedMood(
+                childState,
+                characterType,
+                EEndingMoodType.Submission,
+                EEndingMoodType.Rebellion),
+            EEndingCharacterType.Millia => ResolveSignedMood(
+                childState,
+                characterType,
+                EEndingMoodType.Curious,
+                EEndingMoodType.Cautious),
+            EEndingCharacterType.Yuffie => ResolveSignedMood(
+                childState,
+                characterType,
+                EEndingMoodType.Submission,
+                EEndingMoodType.Caution),
+            _ => EEndingMoodType.Anxiety,
+        };
+    }
+
+    private static EEndingMoodType ResolveSignedMood(
         RuntimeChildState childState,
         EEndingCharacterType characterType,
-        bool useMoodThresholdCorrection)
+        EEndingMoodType zeroOrPositiveMood,
+        EEndingMoodType negativeMood)
     {
-        if (!useMoodThresholdCorrection)
-        {
-            return ResolveDefaultMoodType(characterType);
-        }
-
-        return characterType switch
-        {
-            EEndingCharacterType.Rian => ResolveRianMood(childState),
-            EEndingCharacterType.Max => ResolveMaxMood(childState),
-            EEndingCharacterType.Millia => ResolveMilliaMood(childState),
-            EEndingCharacterType.Yuffie => ResolveYuffieMood(childState),
-            _ => EEndingMoodType.Anxiety,
-        };
-    }
-
-    private static EEndingMoodType ResolveDefaultMoodType(EEndingCharacterType characterType)
-    {
-        return characterType switch
-        {
-            EEndingCharacterType.Rian => EEndingMoodType.Anxiety,
-            EEndingCharacterType.Max => EEndingMoodType.Submission,
-            EEndingCharacterType.Millia => EEndingMoodType.Curious,
-            EEndingCharacterType.Yuffie => EEndingMoodType.Submission,
-            _ => EEndingMoodType.Anxiety,
-        };
-    }
-
-    private static EEndingMoodType ResolveRianMood(RuntimeChildState childState)
-    {
-        return childState.GetStat(EChildStatusType.Anxiety) <= NegativeEndingThreshold
-            ? EEndingMoodType.Stability
-            : EEndingMoodType.Anxiety;
-    }
-
-    private static EEndingMoodType ResolveMaxMood(RuntimeChildState childState)
-    {
-        return childState.GetStat(EChildStatusType.Obedience) <= NegativeEndingThreshold
-            ? EEndingMoodType.Rebellion
-            : EEndingMoodType.Submission;
-    }
-
-    private static EEndingMoodType ResolveMilliaMood(RuntimeChildState childState)
-    {
-        return childState.GetStat(EChildStatusType.Curiosity) <= NegativeEndingThreshold
-            ? EEndingMoodType.Cautious
-            : EEndingMoodType.Curious;
-    }
-
-    private static EEndingMoodType ResolveYuffieMood(RuntimeChildState childState)
-    {
-        return childState.GetStat(EChildStatusType.Trust) <= NegativeEndingThreshold
-            ? EEndingMoodType.Caution
-            : EEndingMoodType.Submission;
+        return GetMoodDecisionValue(childState, characterType) < 0
+            ? negativeMood
+            : zeroOrPositiveMood;
     }
 
     private static int GetMeetCount(RuntimeChildState childState, EEndingCharacterType characterType)

@@ -297,7 +297,7 @@ public sealed class RuntimeWeeklyResultLogRecord
         for (int index = 0; index < statSummary.Count; index++)
         {
             WeeklyResultStatDeltaPresentation entry = statSummary[index];
-            if (entry.Delta > 0)
+            if (entry.Delta != 0)
             {
                 copiedSummary.Add(entry);
             }

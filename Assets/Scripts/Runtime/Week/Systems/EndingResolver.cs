@@ -37,10 +37,7 @@ public static class EndingResolver
     private const string MissingCatalogEndingId = "ending_catalog_missing";
     private const string MissingMainEndingId = "ending_main_missing";
 
-    public static void LogDebugSnapshot(
-        RuntimeChildState childState,
-        string source,
-        bool useMoodThresholdCorrection = false)
+    public static void LogDebugSnapshot(RuntimeChildState childState, string source)
     {
         if (childState == null)
         {
@@ -56,18 +53,17 @@ public static class EndingResolver
             return;
         }
 
-        EndingContext context = EndingContextBuilder.Build(childState, useMoodThresholdCorrection);
+        EndingContext context = EndingContextBuilder.Build(childState);
         Debug.Log(
             $"[EndingDebug] {source} " +
             $"Selected={context.CharacterType}, Meet={context.MeetCount}, Mood={context.MoodType}, " +
-            $"Affinity={context.Affinity}, MoodThresholdCorrection={useMoodThresholdCorrection} | " +
+            $"Affinity={context.Affinity} | " +
             BuildStatSnapshot(childState));
     }
 
     public static EndingPresentation Resolve(
         RuntimeChildState childState,
-        SO_EndingCatalog catalog = null,
-        bool useMoodThresholdCorrection = false)
+        SO_EndingCatalog catalog = null)
     {
         if (catalog == null)
         {
@@ -85,11 +81,11 @@ public static class EndingResolver
                 default);
         }
 
-        EndingContext context = EndingContextBuilder.Build(childState, useMoodThresholdCorrection);
+        EndingContext context = EndingContextBuilder.Build(childState);
         SO_CharacterEndingDefinition mainEnding = catalog.FindCharacterEnding(context);
         if (mainEnding == null)
         {
-            mainEnding = ResolveFallbackCharacterEnding(childState, catalog, useMoodThresholdCorrection);
+            mainEnding = ResolveFallbackCharacterEnding(childState, catalog);
             if (mainEnding == null)
             {
                 return CreateFallbackPresentation(
@@ -105,12 +101,9 @@ public static class EndingResolver
 
     private static SO_CharacterEndingDefinition ResolveFallbackCharacterEnding(
         RuntimeChildState childState,
-        SO_EndingCatalog catalog,
-        bool useMoodThresholdCorrection)
+        SO_EndingCatalog catalog)
     {
-        EndingContext[] contexts = EndingContextBuilder.BuildMetCharacterContextsByPriority(
-            childState,
-            useMoodThresholdCorrection);
+        EndingContext[] contexts = EndingContextBuilder.BuildMetCharacterContextsByPriority(childState);
         for (int i = 0; i < contexts.Length; i++)
         {
             SO_CharacterEndingDefinition exactEnding = catalog.FindCharacterEnding(contexts[i]);

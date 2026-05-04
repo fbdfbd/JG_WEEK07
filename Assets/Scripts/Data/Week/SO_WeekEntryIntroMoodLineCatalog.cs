@@ -11,8 +11,7 @@ public class SO_WeekEntryIntroMoodLineCatalog : ScriptableObject
     public bool TryResolve(
         string weekId,
         RuntimeChildState childState,
-        out string line,
-        bool useMoodThresholdCorrection = true)
+        out string line)
     {
         line = string.Empty;
 
@@ -26,7 +25,7 @@ public class SO_WeekEntryIntroMoodLineCatalog : ScriptableObject
             return false;
         }
 
-        return weekLineSet.TryResolve(childState, out line, useMoodThresholdCorrection);
+        return weekLineSet.TryResolve(childState, out line);
     }
 
     private bool TryGetWeekLineSet(string weekId, out WeekEntryIntroMoodLineSet weekLineSet)
@@ -66,8 +65,7 @@ public class WeekEntryIntroMoodLineSet
 
     public bool TryResolve(
         RuntimeChildState childState,
-        out string line,
-        bool useMoodThresholdCorrection = true)
+        out string line)
     {
         line = string.Empty;
 
@@ -82,7 +80,7 @@ public class WeekEntryIntroMoodLineSet
             return !string.IsNullOrWhiteSpace(line);
         }
 
-        EndingContext context = EndingContextBuilder.Build(childState, useMoodThresholdCorrection);
+        EndingContext context = EndingContextBuilder.Build(childState);
         return TryGetCharacterMoodLine(context.CharacterType, context.MoodType, out line);
     }
 

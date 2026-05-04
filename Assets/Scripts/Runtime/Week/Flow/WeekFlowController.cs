@@ -17,7 +17,6 @@ public class WeekFlowController : MonoBehaviour
 
     [Header("Test")]
     [SerializeField] private bool _isTest;
-    [SerializeField] private bool _useEndingMoodThresholdCorrection;
 
     private readonly WeekRunner _weekRunner = new();
     private readonly WeekSelectionState _weekSelectionState = new();
@@ -107,16 +106,14 @@ public class WeekFlowController : MonoBehaviour
             _weekSelectionState,
             _weekSequenceState,
             _endingCatalog,
-            _isTest,
-            _useEndingMoodThresholdCorrection);
+            _isTest);
         _narrativeHandler = new WeekFlowNarrativeHandler(
             _runtimeState,
             _weekUiText,
             _weekSelectionState,
             _weekSequenceState,
             _endingCatalog,
-            _isTest,
-            _useEndingMoodThresholdCorrection);
+            _isTest);
         _cinematicDirector = new WeekFlowCinematicDirector(_view, new WeekFlowCinematicResolver());
         _cutsceneBridge = _view != null ? _view.GetCutsceneBridge() : null;
         BindRuntimeStateEvents();
