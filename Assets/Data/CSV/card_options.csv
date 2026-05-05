@@ -1,204 +1,404 @@
 card_id,option_order,semantic,label,presented_text,interaction_ids
-card_excursion_garden_week_001,0,Direct,허가,아벨리아의 안정과 호기심이 높아집니다.,
-card_excursion_garden_week_001,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_002,0,Direct,허가,아벨리아의 안정과 순진이 높아집니다.,
-card_excursion_garden_week_002,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_002_curious,0,Direct,허가,아벨리아의 호기심과 영민이 높아집니다.,
-card_excursion_garden_week_002_curious,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_002_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_garden_week_002_innocent,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_003,0,Direct,허가,아벨리아의 순응과 안정이 높아집니다.,
-card_excursion_garden_week_003,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_003_curious,0,Direct,허가,아벨리아의 호기심과 영민이 높아집니다.,
-card_excursion_garden_week_003_curious,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_003_cautious,0,Direct,허가,아벨리아의 신중과 안정이 높아집니다.,
-card_excursion_garden_week_003_cautious,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_004,0,Direct,허가,아벨리아의 호기심과 안정이 높아집니다.,
-card_excursion_garden_week_004,1,Blocked,통제,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_garden_week_004_clever,0,Direct,허가,아벨리아의 영민과 호기심이 높아집니다.,
-card_excursion_garden_week_004_clever,1,Blocked,통제,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_garden_week_004_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_garden_week_004_innocent,1,Blocked,통제,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_garden_week_005,0,Direct,허가,아벨리아의 불안과 호기심이 높아집니다.,
-card_excursion_garden_week_005,1,Blocked,통제,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_garden_week_005_cautious,0,Direct,허가,아벨리아의 신중과 영민이 높아집니다.,
-card_excursion_garden_week_005_cautious,1,Blocked,통제,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_garden_week_005_anxious,0,Direct,허가,아벨리아의 불안과 순진이 높아집니다.,
-card_excursion_garden_week_005_anxious,1,Blocked,통제,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_garden_week_006,0,Direct,허가,아벨리아의 순응과 안정이 높아집니다.,
-card_excursion_garden_week_006,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_garden_week_006_clever,0,Direct,허가,아벨리아의 영민과 호기심이 높아집니다.,
-card_excursion_garden_week_006_clever,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_garden_week_006_defiant,0,Direct,허가,아벨리아의 반항과 영민이 높아집니다.,
-card_excursion_garden_week_006_defiant,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_garden_week_007,0,Direct,허가,아벨리아의 순응과 안정이 높아집니다.,
-card_excursion_garden_week_007,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_007_stable,0,Direct,허가,아벨리아의 안정과 순진이 높아집니다.,
-card_excursion_garden_week_007_stable,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_007_cautious,0,Direct,허가,아벨리아의 신중과 안정이 높아집니다.,
-card_excursion_garden_week_007_cautious,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_008,0,Direct,허가,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_garden_week_008,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_garden_week_008_curious,0,Direct,허가,아벨리아의 호기심과 불안이 높아집니다.,
-card_excursion_garden_week_008_curious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_garden_week_008_anxious,0,Direct,허가,아벨리아의 영민과 불안이 높아집니다.,
-card_excursion_garden_week_008_anxious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_garden_week_009,0,Direct,허가,아벨리아의 순응과 안정이 높아집니다.,
-card_excursion_garden_week_009,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_009_stable,0,Direct,허가,아벨리아의 안정과 영민이 높아집니다.,
-card_excursion_garden_week_009_stable,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_garden_week_009_cautious,0,Direct,허가,아벨리아의 신중과 안정이 높아집니다.,
-card_excursion_garden_week_009_cautious,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_basement_week_001,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_basement_week_001,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_basement_week_002,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_basement_week_002,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_basement_week_002_curious,0,Direct,허가,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_basement_week_002_curious,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_basement_week_002_cautious,0,Direct,허가,아벨리아의 신중과 안정이 높아집니다.,
-card_excursion_basement_week_002_cautious,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_basement_week_003,0,Direct,허가,아벨리아의 불안과 호기심이 높아집니다.,
-card_excursion_basement_week_003,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_basement_week_003_curious,0,Direct,허가,아벨리아의 호기심과 영민이 높아집니다.,
-card_excursion_basement_week_003_curious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_basement_week_003_anxious,0,Direct,허가,아벨리아의 불안과 순응이 높아집니다.,
-card_excursion_basement_week_003_anxious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_basement_week_004,0,Direct,허가,아벨리아의 호기심과 순진이 높아집니다.,
-card_excursion_basement_week_004,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_004_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_basement_week_004_innocent,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_004_cautious,0,Direct,허가,아벨리아의 신중과 영민이 높아집니다.,
-card_excursion_basement_week_004_cautious,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_005,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_basement_week_005,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_005_curious,0,Direct,허가,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_005_curious,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_005_anxious,0,Direct,허가,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_basement_week_005_anxious,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_006,0,Direct,허가,아벨리아의 불안과 호기심이 높아집니다.,
-card_excursion_basement_week_006,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_006_innocent,0,Direct,허가,아벨리아의 순진과 불안이 높아집니다.,
-card_excursion_basement_week_006_innocent,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_006_clever,0,Direct,허가,아벨리아의 영민과 신중이 높아집니다.,
-card_excursion_basement_week_006_clever,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_007,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_basement_week_007,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_007_cautious,0,Direct,허가,아벨리아의 신중과 안정이 높아집니다.,
-card_excursion_basement_week_007_cautious,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_007_anxious,0,Direct,허가,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_basement_week_007_anxious,1,Blocked,통제,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_basement_week_008,0,Direct,허가,아벨리아의 불안과 호기심이 높아집니다.,
-card_excursion_basement_week_008,1,Blocked,통제,아벨리아의 신중과 순응이 높아집니다.,
-card_excursion_basement_week_008_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_basement_week_008_innocent,1,Blocked,통제,아벨리아의 신중과 순응이 높아집니다.,
-card_excursion_basement_week_008_cautious,0,Direct,허가,아벨리아의 영민과 신중이 높아집니다.,
-card_excursion_basement_week_008_cautious,1,Blocked,통제,아벨리아의 신중과 순응이 높아집니다.,
-card_excursion_basement_week_009,0,Direct,허가,아벨리아의 불안과 영민이 높아집니다.,
-card_excursion_basement_week_009,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_basement_week_009_stable,0,Direct,허가,아벨리아의 안정과 호기심이 높아집니다.,
-card_excursion_basement_week_009_stable,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_basement_week_009_anxious,0,Direct,허가,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_basement_week_009_anxious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_001,0,Direct,허가,아벨리아의 호기심과 불안이 높아집니다.,
-card_excursion_forest_week_001,1,Blocked,통제,아벨리아의 순응과 신중이 높아집니다.,
-card_excursion_forest_week_002,0,Direct,허가,아벨리아의 안정과 호기심이 높아집니다.,
-card_excursion_forest_week_002,1,Blocked,통제,아벨리아의 반항과 신중이 높아집니다.,
-card_excursion_forest_week_002_curious,0,Direct,허가,아벨리아의 호기심과 순진이 높아집니다.,
-card_excursion_forest_week_002_curious,1,Blocked,통제,아벨리아의 반항과 신중이 높아집니다.,
-card_excursion_forest_week_002_compliant,0,Direct,허가,아벨리아의 순응과 안정이 높아집니다.,
-card_excursion_forest_week_002_compliant,1,Blocked,통제,아벨리아의 반항과 신중이 높아집니다.,
-card_excursion_forest_week_003,0,Direct,허가,아벨리아의 호기심과 안정이 높아집니다.,
-card_excursion_forest_week_003,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_forest_week_003_clever,0,Direct,허가,아벨리아의 영민과 안정이 높아집니다.,
-card_excursion_forest_week_003_clever,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_forest_week_003_curious,0,Direct,허가,아벨리아의 호기심과 반항이 높아집니다.,
-card_excursion_forest_week_003_curious,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_forest_week_004,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_forest_week_004,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_004_clever,0,Direct,허가,아벨리아의 영민과 신중이 높아집니다.,
-card_excursion_forest_week_004_clever,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_004_anxious,0,Direct,허가,아벨리아의 불안과 순진이 높아집니다.,
-card_excursion_forest_week_004_anxious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_005,0,Direct,허가,아벨리아의 불안과 신중이 높아집니다.,
-card_excursion_forest_week_005,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_005_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_forest_week_005_innocent,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_005_anxious,0,Direct,허가,아벨리아의 불안과 영민이 높아집니다.,
-card_excursion_forest_week_005_anxious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_006,0,Direct,허가,아벨리아의 안정과 순응이 높아집니다.,
-card_excursion_forest_week_006,1,Blocked,통제,아벨리아의 순진과 반항이 높아집니다.,
-card_excursion_forest_week_006_clever,0,Direct,허가,아벨리아의 영민과 신중이 높아집니다.,
-card_excursion_forest_week_006_clever,1,Blocked,통제,아벨리아의 순진과 반항이 높아집니다.,
-card_excursion_forest_week_006_defiant,0,Direct,허가,아벨리아의 반항과 호기심이 높아집니다.,
-card_excursion_forest_week_006_defiant,1,Blocked,통제,아벨리아의 순진과 반항이 높아집니다.,
-card_excursion_forest_week_007,0,Direct,허가,아벨리아의 불안과 호기심이 높아집니다.,
-card_excursion_forest_week_007,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_007_clever,0,Direct,허가,아벨리아의 영민과 불안이 높아집니다.,
-card_excursion_forest_week_007_clever,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_007_curious,0,Direct,허가,아벨리아의 호기심과 불안이 높아집니다.,
-card_excursion_forest_week_007_curious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_008,0,Direct,허가,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_forest_week_008,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_forest_week_008_clever,0,Direct,허가,아벨리아의 영민과 불안이 높아집니다.,
-card_excursion_forest_week_008_clever,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_forest_week_008_anxious,0,Direct,허가,아벨리아의 순진과 불안이 높아집니다.,
-card_excursion_forest_week_008_anxious,1,Blocked,통제,아벨리아의 반항과 불안이 높아집니다.,
-card_excursion_forest_week_009,0,Direct,허가,아벨리아의 불안과 호기심이 높아집니다.,
-card_excursion_forest_week_009,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_009_clever,0,Direct,허가,아벨리아의 영민과 불안이 높아집니다.,
-card_excursion_forest_week_009_clever,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_forest_week_009_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_forest_week_009_innocent,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_library_week_001,0,Direct,허가,아벨리아의 순진과 불안이 높아집니다.,
-card_excursion_library_week_001,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_002,0,Direct,허가,아벨리아의 순진과 불안이 높아집니다.,
-card_excursion_library_week_002,1,Blocked,통제,아벨리아의 순응과 호기심이 높아집니다.,
-card_excursion_library_week_002_curious,0,Direct,허가,아벨리아의 신중과 영민이 높아집니다.,
-card_excursion_library_week_002_curious,1,Blocked,통제,아벨리아의 순응과 호기심이 높아집니다.,
-card_excursion_library_week_002_anxious,0,Direct,허가,아벨리아의 불안과 순진이 높아집니다.,
-card_excursion_library_week_002_anxious,1,Blocked,통제,아벨리아의 순응과 호기심이 높아집니다.,
-card_excursion_library_week_003,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_library_week_003,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_003_cautious,0,Direct,허가,아벨리아의 안정과 영민이 높아집니다.,
-card_excursion_library_week_003_cautious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_003_innocent,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_library_week_003_innocent,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_004,0,Direct,허가,아벨리아의 영민과 신중이 높아집니다.,
-card_excursion_library_week_004,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_004_clever,0,Direct,허가,아벨리아의 영민과 안정이 높아집니다.,
-card_excursion_library_week_004_clever,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_004_curious,0,Direct,허가,아벨리아의 호기심과 영민이 높아집니다.,
-card_excursion_library_week_004_curious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_005,0,Direct,허가,아벨리아의 영민과 신중이 높아집니다.,
-card_excursion_library_week_005,1,Blocked,통제,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_library_week_005_clever,0,Direct,허가,아벨리아의 영민과 불안이 높아집니다.,
-card_excursion_library_week_005_clever,1,Blocked,통제,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_library_week_005_innocent,0,Direct,허가,아벨리아의 순진과 순응이 높아집니다.,
-card_excursion_library_week_005_innocent,1,Blocked,통제,아벨리아의 순응과 불안이 높아집니다.,
-card_excursion_library_week_006,0,Direct,허가,아벨리아의 불안과 영민이 높아집니다.,
-card_excursion_library_week_006,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_006_clever,0,Direct,허가,아벨리아의 영민과 안정이 높아집니다.,
-card_excursion_library_week_006_clever,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_006_cautious,0,Direct,허가,아벨리아의 신중과 불안이 높아집니다.,
-card_excursion_library_week_006_cautious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_007,0,Direct,허가,아벨리아의 영민과 불안이 높아집니다.,
-card_excursion_library_week_007,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_library_week_007_clever,0,Direct,허가,아벨리아의 영민과 안정이 높아집니다.,
-card_excursion_library_week_007_clever,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_library_week_007_anxious,0,Direct,허가,아벨리아의 순진과 불안이 높아집니다.,
-card_excursion_library_week_007_anxious,1,Blocked,통제,아벨리아의 신중과 반항이 높아집니다.,
-card_excursion_library_week_008,0,Direct,허가,아벨리아의 호기심과 순진이 높아집니다.,
-card_excursion_library_week_008,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_008_curious,0,Direct,허가,아벨리아의 호기심과 순진이 높아집니다.,
-card_excursion_library_week_008_curious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_008_anxious,0,Direct,허가,아벨리아의 순진과 안정이 높아집니다.,
-card_excursion_library_week_008_anxious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_009,0,Direct,허가,아벨리아의 영민과 안정이 높아집니다.,
-card_excursion_library_week_009,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_009_stable,0,Direct,허가,아벨리아의 안정과 순진이 높아집니다.,
-card_excursion_library_week_009_stable,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
-card_excursion_library_week_009_anxious,0,Direct,허가,아벨리아의 불안과 순진이 높아집니다.,
-card_excursion_library_week_009_anxious,1,Blocked,통제,아벨리아의 순응과 순진이 높아집니다.,
+card_excursion_garden_week_001,0,Direct,허가,"시든 크레이프 머틀 앞에 아벨리아가 멈춰 섰다.
+아벨리아의 안정과 호기심이 높아집니다.",
+card_excursion_garden_week_001,1,Blocked,통제,"정원 입구에는 정리 중이라는 표식이 걸려 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_002,0,Direct,허가,"비가 그친 정원에 달팽이들이 줄지어 지나갔다.
+아벨리아의 안정과 순진이 높아집니다.",
+card_excursion_garden_week_002,1,Blocked,통제,"창가 너머의 정원 길은 아직 젖어 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_002_curious,0,Direct,허가,"달팽이가 지나간 자리에 희미한 물자국이 남아 있었다.
+아벨리아의 호기심과 영민이 높아집니다.",
+card_excursion_garden_week_002_curious,1,Blocked,통제,"창가 너머의 정원 길은 아직 젖어 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_002_innocent,0,Direct,허가,"아벨리아는 가장 작은 달팽이에게 이름을 붙였다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_garden_week_002_innocent,1,Blocked,통제,"창가 너머의 정원 길은 아직 젖어 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_003,0,Direct,허가,"돌 분수에는 물 대신 낙엽이 고여 있었다.
+아벨리아의 순응과 안정이 높아집니다.",
+card_excursion_garden_week_003,1,Blocked,통제,"수리 중인 분수 앞에는 낮은 줄이 쳐져 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_003_curious,0,Direct,허가,"정원 분수의 물길은 어딘가에서 막혀 있었다.
+아벨리아의 호기심과 영민이 높아집니다.",
+card_excursion_garden_week_003_curious,1,Blocked,통제,"수리 중인 분수 앞에는 낮은 줄이 쳐져 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_003_cautious,0,Direct,허가,"차가운 분수에는 함부로 손대기 어려웠다.
+아벨리아의 신중과 안정이 높아집니다.",
+card_excursion_garden_week_003_cautious,1,Blocked,통제,"수리 중인 분수 앞에는 낮은 줄이 쳐져 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_004,0,Direct,허가,"풀밭 사이에 이름 모를 들꽃들이 새로 피어 있었다.
+아벨리아의 호기심과 안정이 높아집니다.",
+card_excursion_garden_week_004,1,Blocked,통제,"정원의 들꽃들이 뽑혀 한쪽에 모여 있었다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_garden_week_004_clever,0,Direct,허가,"아벨리아는 정원에 없던 꽃이 있다는 것을 알아차렸다.
+아벨리아의 영민과 호기심이 높아집니다.",
+card_excursion_garden_week_004_clever,1,Blocked,통제,"정원의 들꽃들이 뽑혀 한쪽에 모여 있었다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_garden_week_004_innocent,0,Direct,허가,"이름 모를 들꽃들이 정원 한쪽에 피어 있었다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_garden_week_004_innocent,1,Blocked,통제,"정원의 들꽃들이 뽑혀 한쪽에 모여 있었다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_garden_week_005,0,Direct,허가,"담을 따라 덩굴이 붉게 물들어 있었다.
+아벨리아의 불안과 호기심이 높아집니다.",
+card_excursion_garden_week_005,1,Blocked,통제,"정원은 담벼락 공사로 못들어간다고 했다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_garden_week_005_cautious,0,Direct,허가,"담의 덩굴이 한쪽 방향으로 잘려있었다.
+아벨리아의 신중과 영민이 높아집니다.",
+card_excursion_garden_week_005_cautious,1,Blocked,통제,"정원은 담벼락 공사로 못들어간다고 했다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_garden_week_005_anxious,0,Direct,허가,"담에 붙은 덩굴잎은 바람도 없는데 한쪽으로 흔들렸다.
+아벨리아의 불안과 순진이 높아집니다.",
+card_excursion_garden_week_005_anxious,1,Blocked,통제,"정원은 담벼락 공사로 못들어간다고 했다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_garden_week_006,0,Direct,허가,"정원 한가운데 오래된 거울이 세워져 있다.
+아벨리아의 순응과 안정이 높아집니다.",
+card_excursion_garden_week_006,1,Blocked,통제,"정원에서 드레스를 맞추기로 한 일정이 갑자기 취소되었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_garden_week_006_clever,0,Direct,허가,"정원에서 아벨리아는 새롭게 입을 드레스의 치수를 쟀다.
+아벨리아의 영민과 호기심이 높아집니다.",
+card_excursion_garden_week_006_clever,1,Blocked,통제,"정원에서 드레스를 맞추기로 한 일정이 갑자기 취소되었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_garden_week_006_defiant,0,Direct,허가,"정원에 놓인 긴 거울을 보고 아벨리아는 드레스가 맞지 않는다고 생각했다.
+아벨리아의 반항과 영민이 높아집니다.",
+card_excursion_garden_week_006_defiant,1,Blocked,통제,"정원에서 드레스를 맞추기로 한 일정이 갑자기 취소되었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_garden_week_007,0,Direct,허가,"장미 화단에는 아직 피지 않은 봉오리들이 줄지어 있었다.
+아벨리아의 순응과 안정이 높아집니다.",
+card_excursion_garden_week_007,1,Blocked,통제,"아직 꽃들이 피지않아 출입을 막는다는 표지판이 정원 한쪽에 놓여 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_007_stable,0,Direct,허가,"어머니가 심은 장미들이 화단에 아직 꽃을 피지 않았다.
+아벨리아의 안정과 순진이 높아집니다.",
+card_excursion_garden_week_007_stable,1,Blocked,통제,"아직 꽃들이 피지않아 출입을 막는다는 표지판이 정원 한쪽에 놓여 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_007_cautious,0,Direct,허가,"아벨리아는 화단에 있는 장미 봉오리를 건드리지 않았다.
+아벨리아의 신중과 안정이 높아집니다.",
+card_excursion_garden_week_007_cautious,1,Blocked,통제,"아직 꽃들이 피지않아 출입을 막는다는 표지판이 정원 한쪽에 놓여 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_008,0,Direct,허가,"정원 구석의 낡은 새장이 바람에 흔들렸다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_garden_week_008,1,Blocked,통제,"창밖에서 정원에 있는 새장이 달그락거리는 소리가 났다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_garden_week_008_curious,0,Direct,허가,"정원 구석의 낡은 새장안에 작은 깃털이 남아 있었다.
+아벨리아의 호기심과 불안이 높아집니다.",
+card_excursion_garden_week_008_curious,1,Blocked,통제,"창밖에서 정원에 있는 새장이 달그락거리는 소리가 났다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_garden_week_008_anxious,0,Direct,허가,"정원 구석의 낡은새장이 바람에 흔들렸다.
+아벨리아의 영민과 불안이 높아집니다.",
+card_excursion_garden_week_008_anxious,1,Blocked,통제,"창밖에서 정원에 있는 새장이 달그락거리는 소리가 났다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_garden_week_009,0,Direct,허가,"크레이프 머틀 아래에 성인식 서약대가 세워져 있었다.
+아벨리아의 순응과 안정이 높아집니다.",
+card_excursion_garden_week_009,1,Blocked,통제,"의식 전에는 정원에 나갈 수 없었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_009_stable,0,Direct,허가,"크레이프 머틀은 마침내 꽃을 틔웠다.
+아벨리아의 안정과 영민이 높아집니다.",
+card_excursion_garden_week_009_stable,1,Blocked,통제,"의식 전에는 정원에 나갈 수 없었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_garden_week_009_cautious,0,Direct,허가,"정원의 서약대 위에는 맹세문이 놓여 있었다.
+아벨리아의 신중과 안정이 높아집니다.",
+card_excursion_garden_week_009_cautious,1,Blocked,통제,"의식 전에는 정원에 나갈 수 없었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_basement_week_001,0,Direct,허가,"지하실 문틈 아래로 먼지가 길게 쌓여 있었다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_basement_week_001,1,Blocked,통제,"지하실 문은 잠겨 있었고, 마리는 아무 말도 하지 않았다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_basement_week_002,0,Direct,허가,"선반 뒤에서 작은 소리가 났다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_basement_week_002,1,Blocked,통제,"지하실 문은 잠겨 있었고, 안쪽 소리도 더는 들리지 않았다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_basement_week_002_curious,0,Direct,허가,"선반 뒤에서 작은 소리가 났다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_basement_week_002_curious,1,Blocked,통제,"지하실 문은 잠겨 있었고, 안쪽 소리도 더는 들리지 않았다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_basement_week_002_cautious,0,Direct,허가,"천에 싸인 물건이 선반 아래에 놓여 있었다.
+아벨리아의 신중과 안정이 높아집니다.",
+card_excursion_basement_week_002_cautious,1,Blocked,통제,"지하실 문은 잠겨 있었고, 안쪽 소리도 더는 들리지 않았다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_basement_week_003,0,Direct,허가,"이름 없는 상자들이 높게 쌓여 있었다.
+아벨리아의 불안과 호기심이 높아집니다.",
+card_excursion_basement_week_003,1,Blocked,통제,"상자가 있는 방은 닫혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_basement_week_003_curious,0,Direct,허가,"지하실의 상자들은 제각각 다른 크기와 모양이었다.
+아벨리아의 호기심과 영민이 높아집니다.",
+card_excursion_basement_week_003_curious,1,Blocked,통제,"상자가 있는 방은 닫혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_basement_week_003_anxious,0,Direct,허가,"상자 더미는 금방이라도 무너질 것 같았다.
+아벨리아의 불안과 순응이 높아집니다.",
+card_excursion_basement_week_003_anxious,1,Blocked,통제,"상자가 있는 방은 닫혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_basement_week_004,0,Direct,허가,"천으로 덮인 작은 물건들이 줄지어 놓여 있었다.
+아벨리아의 호기심과 순진이 높아집니다.",
+card_excursion_basement_week_004,1,Blocked,통제,"지하실의 천으로 덮인 물건 앞에는 건드리지 말라는 표식이 놓여 있었다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_004_innocent,0,Direct,허가,"아벨리아는 천 아래 물건이 자신에게 온 선물이라고 생각했다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_basement_week_004_innocent,1,Blocked,통제,"지하실의 천으로 덮인 물건 앞에는 건드리지 말라는 표식이 놓여 있었다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_004_cautious,0,Direct,허가,"아벨리아는 천 아래 물건들이 있는것을 발견했다.
+아벨리아의 신중과 영민이 높아집니다.",
+card_excursion_basement_week_004_cautious,1,Blocked,통제,"지하실의 천으로 덮인 물건 앞에는 건드리지 말라는 표식이 놓여 있었다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_005,0,Direct,허가,"지하실 바닥 가까이 거미줄이 내려와 있었다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_basement_week_005,1,Blocked,통제,"지하실 문틈 사이로 독한 약 냄새가 새어 나왔다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_005_curious,0,Direct,허가,"거미줄 뒤쪽이 어둠으로 가득차있었다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_005_curious,1,Blocked,통제,"지하실 문틈 사이로 독한 약 냄새가 새어 나왔다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_005_anxious,0,Direct,허가,"거미줄이 살짝 흔들렸다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_basement_week_005_anxious,1,Blocked,통제,"지하실 문틈 사이로 독한 약 냄새가 새어 나왔다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_006,0,Direct,허가,"지하실 서랍 안에 어머니의 낡은 손수건이 있었다.
+아벨리아의 불안과 호기심이 높아집니다.",
+card_excursion_basement_week_006,1,Blocked,통제,"지하실 안쪽에서 서랍이 닫히는 소리가 났다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_006_innocent,0,Direct,허가,"지하실 서랍 안의 손수건에는 희미한 향이 남아 있었다.
+아벨리아의 순진과 불안이 높아집니다.",
+card_excursion_basement_week_006_innocent,1,Blocked,통제,"지하실 안쪽에서 서랍이 닫히는 소리가 났다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_006_clever,0,Direct,허가,"지하실 서랍 안의 손수건에 평범하지 않은 문양이 자수되어 있었다.
+아벨리아의 영민과 신중이 높아집니다.",
+card_excursion_basement_week_006_clever,1,Blocked,통제,"지하실 안쪽에서 서랍이 닫히는 소리가 났다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_007,0,Direct,허가,"지하실 벽 너머에서 물방울 소리가 들렸다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_basement_week_007,1,Blocked,통제,"지하실 안쪽에서는 물소리가 계속 들렸다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_007_cautious,0,Direct,허가,"지하실 벽 너머에서 물방울 소리가 들렸다.
+아벨리아의 신중과 안정이 높아집니다.",
+card_excursion_basement_week_007_cautious,1,Blocked,통제,"지하실 안쪽에서는 물소리가 계속 들렸다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_007_anxious,0,Direct,허가,"지하실 벽너머에서 보이지 않는 물소리가 계속 들렸다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_basement_week_007_anxious,1,Blocked,통제,"지하실 안쪽에서는 물소리가 계속 들렸다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_basement_week_008,0,Direct,허가,"지하실 옷장에는 아버지의 낡은 외투가 걸려 있었다.
+아벨리아의 불안과 호기심이 높아집니다.",
+card_excursion_basement_week_008,1,Blocked,통제,"지하실 저 너머에는 옷장이 하나 놓여있었다.
+아벨리아의 신중과 순응이 높아집니다.",
+card_excursion_basement_week_008_innocent,0,Direct,허가,"지하실 옷장의 낡은 외투에는 온기가 남아 있는 것 같았다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_basement_week_008_innocent,1,Blocked,통제,"지하실 저 너머에는 옷장이 하나 놓여있었다.
+아벨리아의 신중과 순응이 높아집니다.",
+card_excursion_basement_week_008_cautious,0,Direct,허가,"아벨리아는 낡은 외투가 누구의 것인지 살폈다.
+아벨리아의 영민과 신중이 높아집니다.",
+card_excursion_basement_week_008_cautious,1,Blocked,통제,"지하실 저 너머에는 옷장이 하나 놓여있었다.
+아벨리아의 신중과 순응이 높아집니다.",
+card_excursion_basement_week_009,0,Direct,허가,"오래된 상자들이 문 주변에 흩어져 있었다.
+아벨리아의 불안과 영민이 높아집니다.",
+card_excursion_basement_week_009,1,Blocked,통제,"마지막 정리가 끝난 지하실 문은 닫혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_basement_week_009_stable,0,Direct,허가,"오래된 상자들이 문 주변에 흩어져 있었다.
+아벨리아의 안정과 호기심이 높아집니다.",
+card_excursion_basement_week_009_stable,1,Blocked,통제,"마지막 정리가 끝난 지하실 문은 닫혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_basement_week_009_anxious,0,Direct,허가,"지하실 안에는 오래된 상자들이 하나씩 사라지고 있었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_basement_week_009_anxious,1,Blocked,통제,"마지막 정리가 끝난 지하실 문은 닫혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_001,0,Direct,허가,"숲 입구의 진흙 위에 사슴 발자국이 남아 있었다.
+아벨리아의 호기심과 불안이 높아집니다.",
+card_excursion_forest_week_001,1,Blocked,통제,"숲길에는 비에 젖은 흙이 깊게 패여 있었다.
+아벨리아의 순응과 신중이 높아집니다.",
+card_excursion_forest_week_002,0,Direct,허가,"하인들이 다과회에 쓸 꽃을 구하러 숲으로 향한다.
+아벨리아의 안정과 호기심이 높아집니다.",
+card_excursion_forest_week_002,1,Blocked,통제,"숲길에는 비에 젖은 흙이 깊게 패여 있었다.
+아벨리아의 반항과 신중이 높아집니다.",
+card_excursion_forest_week_002_curious,0,Direct,허가,"하인들이 바구니를 들고 숲길 안쪽으로 들어갔다.
+아벨리아의 호기심과 순진이 높아집니다.",
+card_excursion_forest_week_002_curious,1,Blocked,통제,"숲길에는 비에 젖은 흙이 깊게 패여 있다.
+아벨리아의 반항과 신중이 높아집니다.",
+card_excursion_forest_week_002_compliant,0,Direct,허가,"아벨리아는 숲 입구 부근에서 하인들이 돌아오기를 기다린다.
+아벨리아의 순응과 안정이 높아집니다.",
+card_excursion_forest_week_002_compliant,1,Blocked,통제,"숲길에는 비에 젖은 흙이 깊게 패여 있었다.
+아벨리아의 반항과 신중이 높아집니다.",
+card_excursion_forest_week_003,0,Direct,허가,"아벨리아는 숲에 들어가서 사냥터지기의 오두막을 발견했다.
+아벨리아의 호기심과 안정이 높아집니다.",
+card_excursion_forest_week_003,1,Blocked,통제,"아벨리아는 숲에서 연기가 나는 것을 발견했다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_forest_week_003_clever,0,Direct,허가,"아벨리아는 숲에 들어가서 오두막을 발견했다.
+아벨리아의 영민과 안정이 높아집니다.",
+card_excursion_forest_week_003_clever,1,Blocked,통제,"아벨리아는 숲에서 연기가 나는 것을 발견했다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_forest_week_003_curious,0,Direct,허가,"아벨리아는 숲에 들어가서 오두막을 발견했다.
+아벨리아의 호기심과 반항이 높아집니다.",
+card_excursion_forest_week_003_curious,1,Blocked,통제,"아벨리아는 숲에서 연기가 나는 것을 발견했다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_forest_week_004,0,Direct,허가,"숲길에 낯선 말발굽 자국이 남아 있었다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_forest_week_004,1,Blocked,통제,"숲 입구에는 출입을 삼가해달라는 표식이 걸려있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_004_clever,0,Direct,허가,"말발굽이 일정하지 않은 방향으로 여기저기 찍혀있었다.
+아벨리아의 영민과 신중이 높아집니다.",
+card_excursion_forest_week_004_clever,1,Blocked,통제,"숲 입구에는 출입을 삼가해달라는 표식이 걸려있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_004_anxious,0,Direct,허가,"숲에서 말발굽 자국을 발견하고 어젯밤 들은 말발굽 소리가 생각났다.
+아벨리아의 불안과 순진이 높아집니다.",
+card_excursion_forest_week_004_anxious,1,Blocked,통제,"숲 입구에는 출입을 삼가해달라는 표식이 걸려있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_005,0,Direct,허가,"숲 안쪽 길은 풀로 무성하게 뒤덮여 있었다.
+아벨리아의 불안과 신중이 높아집니다.",
+card_excursion_forest_week_005,1,Blocked,통제,"숲 안쪽 길은 정비 중이라는 표식이 세워져 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_005_innocent,0,Direct,허가,"무성한 숲길은 조용하고 포근해 보였다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_forest_week_005_innocent,1,Blocked,통제,"숲 안쪽 길은 정비 중이라는 표식이 세워져 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_005_anxious,0,Direct,허가,"숲에는 다른 길과 달리 길 한쪽의 풀들만 유난히 무성했다.
+아벨리아의 불안과 영민이 높아집니다.",
+card_excursion_forest_week_005_anxious,1,Blocked,통제,"숲 안쪽 길은 정비 중이라는 표식이 세워져 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_006,0,Direct,허가,"경비병 배치가 평소와는 다르게 되어있었다.
+아벨리아의 안정과 순응이 높아집니다.",
+card_excursion_forest_week_006,1,Blocked,통제,"아벨리아는 바람을 쐬러 숲을 가고 싶었다.
+아벨리아의 순진과 반항이 높아집니다.",
+card_excursion_forest_week_006_clever,0,Direct,허가,"경비병 배치가 평소와는 다르게 되어있었다.
+아벨리아의 영민과 신중이 높아집니다.",
+card_excursion_forest_week_006_clever,1,Blocked,통제,"아벨리아는 바람을 쐬러 숲을 가고 싶었다.
+아벨리아의 순진과 반항이 높아집니다.",
+card_excursion_forest_week_006_defiant,0,Direct,허가,"경비병들은 교대중이었다.
+아벨리아의 반항과 호기심이 높아집니다.",
+card_excursion_forest_week_006_defiant,1,Blocked,통제,"아벨리아는 바람을 쐬러 숲을 가고 싶었다.
+아벨리아의 순진과 반항이 높아집니다.",
+card_excursion_forest_week_007,0,Direct,허가,"사냥터지기 오두막에서 다시 긴 연기가 피어올랐다.
+아벨리아의 불안과 호기심이 높아집니다.",
+card_excursion_forest_week_007,1,Blocked,통제,"사냥터지기 오두막으로 가는 길은 임시 표식으로 막혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_007_clever,0,Direct,허가,"아벨리아는 오두막에 방문해 사냥터지기와 대화를 나눴다.
+아벨리아의 영민과 불안이 높아집니다.",
+card_excursion_forest_week_007_clever,1,Blocked,통제,"사냥터지기 오두막으로 가는 길은 임시 표식으로 막혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_007_curious,0,Direct,허가,"아벨리아는 오두막에 방문해 사냥터지기와 대화를 나눴다.
+아벨리아의 호기심과 불안이 높아집니다.",
+card_excursion_forest_week_007_curious,1,Blocked,통제,"사냥터지기 오두막으로 가는 길은 임시 표식으로 막혀 있었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_008,0,Direct,허가,"사냥터지기 오두막에서는 더 이상 연기가 오르지 않았다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_forest_week_008,1,Blocked,통제,"사냥터지기 오두막으로 향하는 길은 닫혀 있었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_forest_week_008_clever,0,Direct,허가,"경비병에게 사냥터지기가 세상을 떠났다는 말을 들었다.
+아벨리아의 영민과 불안이 높아집니다.",
+card_excursion_forest_week_008_clever,1,Blocked,통제,"사냥터지기 오두막으로 향하는 길은 닫혀 있었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_forest_week_008_anxious,0,Direct,허가,"사냥터지기의 굴뚝은 식어 있었다.
+아벨리아의 순진과 불안이 높아집니다.",
+card_excursion_forest_week_008_anxious,1,Blocked,통제,"사냥터지기 오두막으로 향하는 길은 닫혀 있었다.
+아벨리아의 반항과 불안이 높아집니다.",
+card_excursion_forest_week_009,0,Direct,허가,"덤불이 치워진 숲 깊은 길이 드러나 있었다.
+아벨리아의 불안과 호기심이 높아집니다.",
+card_excursion_forest_week_009,1,Blocked,통제,"숲길은 끝내 정리되지 않았다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_009_clever,0,Direct,허가,"덤불이 치워진 숲 깊은 길이 드러나 있었다.
+아벨리아의 영민과 불안이 높아집니다.",
+card_excursion_forest_week_009_clever,1,Blocked,통제,"숲길은 끝내 정리되지 않았다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_forest_week_009_innocent,0,Direct,허가,"덤불이 치워진 숲 깊은 길이 드러나 있었다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_forest_week_009_innocent,1,Blocked,통제,"숲길은 끝내 정리되지 않았다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_library_week_001,0,Direct,허가,"책갈피가 꽂힌 아버지의 책이 책상 위에 놓여 있었다.
+아벨리아의 순진과 불안이 높아집니다.",
+card_excursion_library_week_001,1,Blocked,통제,"닫힌 도서관 문 너머로 책을 옮기는 소리가 들렸다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_002,0,Direct,허가,"아버지 책에는 사람이 춤추는 낙서가 남아 있었다.
+아벨리아의 순진과 불안이 높아집니다.",
+card_excursion_library_week_002,1,Blocked,통제,"아버지의 책들이 도서관 안쪽에서 정리되고 있었다.
+아벨리아의 순응과 호기심이 높아집니다.",
+card_excursion_library_week_002_curious,0,Direct,허가,"책상 아래에 작은 쪽지가 끼어 있었다.
+아벨리아의 신중과 영민이 높아집니다.",
+card_excursion_library_week_002_curious,1,Blocked,통제,"아버지의 책들이 도서관 안쪽에서 정리되고 있었다.
+아벨리아의 순응과 호기심이 높아집니다.",
+card_excursion_library_week_002_anxious,0,Direct,허가,"너덜너덜해진 아버지의 책은 금방이라도 찢어질 것 같았다.
+아벨리아의 불안과 순진이 높아집니다.",
+card_excursion_library_week_002_anxious,1,Blocked,통제,"아버지의 책들이 도서관 안쪽에서 정리되고 있었다.
+아벨리아의 순응과 호기심이 높아집니다.",
+card_excursion_library_week_003,0,Direct,허가,"어머니의 일기장에는 작은 자물쇠가 걸려 있었다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_library_week_003,1,Blocked,통제,"마리는 도서관 서랍들을 열 수 있는 열쇠를 잃어버렸다고 했다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_003_cautious,0,Direct,허가,"아벨리아는 일기장을 바로 열지 않았다.
+아벨리아의 안정과 영민이 높아집니다.",
+card_excursion_library_week_003_cautious,1,Blocked,통제,"마리는 도서관 서랍들을 열 수 있는 열쇠를 잃어버렸다고 했다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_003_innocent,0,Direct,허가,"일기장 표지에는 어머니의 이름이 작게 적혀 있었다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_library_week_003_innocent,1,Blocked,통제,"마리는 도서관 서랍들을 열 수 있는 열쇠를 잃어버렸다고 했다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_004,0,Direct,허가,"귀족 계보를 정리한 책이 펼쳐져 있었다.
+아벨리아의 영민과 신중이 높아집니다.",
+card_excursion_library_week_004,1,Blocked,통제,"마리는 사람들이 도서관 책들을 대규모로 옮기고 있다고 했다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_004_clever,0,Direct,허가,"아벨리아는 여러 귀족가의 계보를 펼쳐보고 사람들 사이의 관계를 손으로 이어보았다.
+아벨리아의 영민과 안정이 높아집니다.",
+card_excursion_library_week_004_clever,1,Blocked,통제,"마리는 사람들이 도서관 책들을 대규모로 옮기고 있다고 했다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_004_curious,0,Direct,허가,"제국 귀족가 계보에 많은 이름들이 써있었다.
+아벨리아의 호기심과 영민이 높아집니다.",
+card_excursion_library_week_004_curious,1,Blocked,통제,"마리는 사람들이 도서관 책들을 대규모로 옮기고 있다고 했다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_005,0,Direct,허가,"도서관에는 예법서와 귀족 사회 인명록이 함께 펼쳐져 있었다.
+아벨리아의 영민과 신중이 높아집니다.",
+card_excursion_library_week_005,1,Blocked,통제,"예법 수업 준비가 끝날 때까지 도서관은 열리지 않았다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_library_week_005_clever,0,Direct,허가,"도서관에 놓인 예법서의 문장 뒤에는 숨은 위계가 느껴졌다.
+아벨리아의 영민과 불안이 높아집니다.",
+card_excursion_library_week_005_clever,1,Blocked,통제,"예법 수업 준비가 끝날 때까지 도서관은 열리지 않았다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_library_week_005_innocent,0,Direct,허가,"도서관에 놓인 예법서에는 그림들이 그려져 있었다.
+아벨리아의 순진과 순응이 높아집니다.",
+card_excursion_library_week_005_innocent,1,Blocked,통제,"예법 수업 준비가 끝날 때까지 도서관은 열리지 않았다.
+아벨리아의 순응과 불안이 높아집니다.",
+card_excursion_library_week_006,0,Direct,허가,"예법서에는 입장 순서와 함께 불릴 가문명이 적혀 있었다.
+아벨리아의 불안과 영민이 높아집니다.",
+card_excursion_library_week_006,1,Blocked,통제,"무도회 준비가 먼저라는 이유로 도서관은 정리 중이었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_006_clever,0,Direct,허가,"아벨리아는 도서관의 예법서를 살펴보았다.
+아벨리아의 영민과 안정이 높아집니다.",
+card_excursion_library_week_006_clever,1,Blocked,통제,"무도회 준비가 먼저라는 이유로 도서관은 정리 중이었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_006_cautious,0,Direct,허가,"도서관의 예법서에는 무도회 순서와 인사 동선이 길게 쓰여져 있었다.
+아벨리아의 신중과 불안이 높아집니다.",
+card_excursion_library_week_006_cautious,1,Blocked,통제,"무도회 준비가 먼저라는 이유로 도서관은 정리 중이었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_007,0,Direct,허가,"백작가의 재정 기록과 영지 운영 기록이 펼쳐져 있었다.
+아벨리아의 영민과 불안이 높아집니다.",
+card_excursion_library_week_007,1,Blocked,통제,"재정 기록이 놓인 도서관에는 들어갈 수 없었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_library_week_007_clever,0,Direct,허가,"백작가의 재정 기록에는 손익과 책임이 담겨있었다.
+아벨리아의 영민과 안정이 높아집니다.",
+card_excursion_library_week_007_clever,1,Blocked,통제,"재정 기록이 놓인 도서관에는 들어갈 수 없었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_library_week_007_anxious,0,Direct,허가,"백작가의 재정기록을 보자 손실은 생각보다 컸다.
+아벨리아의 순진과 불안이 높아집니다.",
+card_excursion_library_week_007_anxious,1,Blocked,통제,"재정 기록이 놓인 도서관에는 들어갈 수 없었다.
+아벨리아의 신중과 반항이 높아집니다.",
+card_excursion_library_week_008,0,Direct,허가,"도서관 한곳에는 밀랍으로 봉인된 아버지의 편지가 놓여 있었다.
+아벨리아의 호기심과 순진이 높아집니다.",
+card_excursion_library_week_008,1,Blocked,통제,"도서관 문앞에 아직은 때가 아니라는 쪽지가 떨어져 있었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_008_curious,0,Direct,허가,"아벨리아는 아버지가 쓴 편지의 봉인을 열었다.
+아벨리아의 호기심과 순진이 높아집니다.",
+card_excursion_library_week_008_curious,1,Blocked,통제,"도서관 문앞에 아직은 때가 아니라는 쪽지가 떨어져 있었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_008_anxious,0,Direct,허가,"아벨리아는 밀랍봉인때문에 아버지의 편지가 찢어질까봐 열지 못했다.
+아벨리아의 순진과 안정이 높아집니다.",
+card_excursion_library_week_008_anxious,1,Blocked,통제,"도서관 문앞에 아직은 때가 아니라는 쪽지가 떨어져 있었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_009,0,Direct,허가,"아침 햇살이 든 도서관에 아버지의 자리가 남아 있었다.
+아벨리아의 영민과 안정이 높아집니다.",
+card_excursion_library_week_009,1,Blocked,통제,"예식 준비 때문에 도서관 문은 닫혀 있었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_009_stable,0,Direct,허가,"아버지의 책상 앞은 조용했다.
+아벨리아의 안정과 순진이 높아집니다.",
+card_excursion_library_week_009_stable,1,Blocked,통제,"예식 준비 때문에 도서관 문은 닫혀 있었다.
+아벨리아의 순응과 순진이 높아집니다.",
+card_excursion_library_week_009_anxious,0,Direct,허가,"도서관에는 아버지가 쓰던 의자가 남아 있었다.
+아벨리아의 불안과 순진이 높아집니다.",
+card_excursion_library_week_009_anxious,1,Blocked,통제,"예식 준비 때문에 도서관 문은 닫혀 있었다.
+아벨리아의 순응과 순진이 높아집니다.",
 card_rian_week_001,0,Direct,허가,허가한다,
 card_rian_week_001,1,Blocked,거부,불허한다,
 card_rian_week_002,0,Direct,허가,허가한다,
