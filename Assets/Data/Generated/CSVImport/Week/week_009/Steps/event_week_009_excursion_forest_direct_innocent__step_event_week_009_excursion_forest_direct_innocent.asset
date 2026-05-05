@@ -41,8 +41,8 @@ MonoBehaviour:
       \uC54A\uC558\uB2E4. \uCC9C\uCC9C\uD788 \uAC78\uC5B4 \uB4E4\uC5B4\uAC00\uC11C
       \uB3CC \uC55E\uC5D0 \uC130\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544: \uC804\uC5D0\uB3C4 \uC654\uC5C8\uC5B4\uC694.
-      \uC5EC\uAE30 \uC549\uC544 \uC788\uC5C8\uB358 \uAC83 \uAC19\uC740\uB370."
+    _text: "\uC804\uC5D0\uB3C4 \uC654\uC5C8\uC5B4\uC694. \uC5EC\uAE30 \uC549\uC544
+      \uC788\uC5C8\uB358 \uAC83 \uAC19\uC740\uB370."
   - _speaker: {fileID: 11400000, guid: ea8bb1cd384c18f4c83d6f267d5433b5, type: 2}
     _text: "\u2026\uC608, \uC544\uAC00\uC528."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
