@@ -81,19 +81,18 @@ public class WeekEntryIntroMoodLineSet
         }
 
         EndingContext context = EndingContextBuilder.Build(childState);
-        EEndingMoodType moodType = EndingContextBuilder.BuildLegacyMoodType(childState, context.CharacterType);
-        return TryGetCharacterMoodLine(context.CharacterType, moodType, out line);
+        return TryGetCharacterMoodLine(context.CharacterType, context.DirectionType, out line);
     }
 
     private bool TryGetCharacterMoodLine(
         EEndingCharacterType characterType,
-        EEndingMoodType moodType,
+        EEndingDirectionType directionType,
         out string line)
     {
         for (int i = 0; i < _characterMoodLines.Length; i++)
         {
             WeekEntryIntroCharacterMoodLine entry = _characterMoodLines[i];
-            if (entry != null && entry.Matches(characterType, moodType))
+            if (entry != null && entry.Matches(characterType, directionType))
             {
                 line = entry.ContextLine;
                 return !string.IsNullOrWhiteSpace(line);
@@ -109,17 +108,17 @@ public class WeekEntryIntroMoodLineSet
 public class WeekEntryIntroCharacterMoodLine
 {
     [SerializeField] private EEndingCharacterType _characterType;
-    [SerializeField] private EEndingMoodType _resolvedMoodType;
+    [SerializeField] private EEndingDirectionType _directionType;
     [TextArea(2, 4)]
     [SerializeField] private string _contextLine = string.Empty;
 
     public EEndingCharacterType CharacterType => _characterType;
-    public EEndingMoodType ResolvedMoodType => _resolvedMoodType;
+    public EEndingDirectionType DirectionType => _directionType;
     public string ContextLine => _contextLine;
 
-    public bool Matches(EEndingCharacterType characterType, EEndingMoodType moodType)
+    public bool Matches(EEndingCharacterType characterType, EEndingDirectionType directionType)
     {
         return _characterType == characterType
-            && _resolvedMoodType == moodType;
+            && _directionType == directionType;
     }
 }
