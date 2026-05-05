@@ -8,6 +8,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 {
     private const string LeftCtrlBindingPath = "<Keyboard>/leftCtrl";
     private const string RightCtrlBindingPath = "<Keyboard>/rightCtrl";
+    private const string SpaceBindingPath = "<Keyboard>/space";
 
     private enum EDialogueContinueRoute
     {
@@ -754,13 +755,14 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
     private bool HasCtrlAdvanceBindings()
     {
-        if (_advanceAction == null || _advanceAction.bindings.Count != 2)
+        if (_advanceAction == null || _advanceAction.bindings.Count != 3)
         {
             return false;
         }
 
         return _advanceAction.bindings[0].path == LeftCtrlBindingPath
-            && _advanceAction.bindings[1].path == RightCtrlBindingPath;
+            && _advanceAction.bindings[1].path == RightCtrlBindingPath
+            && _advanceAction.bindings[2].path == SpaceBindingPath;
     }
 
     private static InputAction CreateAdvanceAction()
@@ -768,6 +770,7 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         InputAction action = new("Advance", InputActionType.Button);
         action.AddBinding(LeftCtrlBindingPath);
         action.AddBinding(RightCtrlBindingPath);
+        action.AddBinding(SpaceBindingPath);
         return action;
     }
 

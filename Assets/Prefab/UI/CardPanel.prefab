@@ -204,6 +204,7 @@ MonoBehaviour:
   - card_type_library
   _contentRoot: {fileID: 5471539071361854039}
   _itemPrefab: {fileID: 1835937919017219712, guid: 6876b4335a79013448be6e9008da9dd2, type: 3}
+  _scrollRect: {fileID: 8217661984771338310}
 --- !u!1 &935441891586294285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,7 +1129,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123060464935254287}
-  m_LocalRotation: {x: -0, y: -0, z: -0.041620195, w: 0.9991335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1139,7 +1140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -252.37186, y: 3.4647827}
+  m_AnchoredPosition: {x: -252.37189, y: 3.4647827}
   m_SizeDelta: {x: 160, y: 227.094}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1910593039586260001
@@ -3363,7 +3364,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3546999683291020973}
   m_HandleRect: {fileID: 9053664717390599759}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

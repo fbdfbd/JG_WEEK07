@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupCollectionView
 {
@@ -9,6 +10,7 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupCol
     [SerializeField] private string[] _targetCardTypeIds = { "card_type_excursion" };
     [SerializeField] private Transform _contentRoot;
     [SerializeField] private UI_ExcursionCardItemView _itemPrefab;
+    [SerializeField] private ScrollRect _scrollRect;
 
     private readonly List<UI_ExcursionCardItemView> _items = new();
 
@@ -66,8 +68,22 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupCol
                 item.Render(entries[i]);
             }
         }
+
+        ResetScrollPosition();
     }
 
+    private void ResetScrollPosition()
+    {
+        if (_scrollRect == null)
+        {
+            return;
+        }
+
+        Canvas.ForceUpdateCanvases();
+        _scrollRect.StopMovement();
+        _scrollRect.verticalNormalizedPosition = 1f;
+
+    }
     public void Hide()
     {
         gameObject.SetActive(false);
