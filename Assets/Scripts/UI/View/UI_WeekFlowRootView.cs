@@ -22,6 +22,9 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [SerializeField] private UI_DialogueScreenView _dialogueScreenView;
     [SerializeField] private UI_WeeklyResultLogPanel _weeklyResultLogPanel;
     [SerializeField] private UI_WeeklyStatResultPanel _weeklyStatResultPanel;
+    [SerializeField] private GameObject _map;
+
+
     [SerializeField] private UI_DayFlowProgressView _dayFlowProgressView;
     [SerializeField] private UI_EndingLetterView _endingLetterView;
     [SerializeField] private UI_DialogueLogPanel _dialogueLogPanel;
@@ -224,7 +227,9 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
 
             _weeklyStatResultPanel.Show(presentation);
             _weeklyStatResultPanel.SelectAdvanceButton();
+
         }
+
     }
 
     public override void ShowEnding(EndingPresentation presentation)
@@ -290,6 +295,8 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         }
 
         _nemo.SetActive(visible);
+        _map.SetActive(visible);
+
         if (visible)
         {
             NemoEntity.Instance.ResumeRoutine();

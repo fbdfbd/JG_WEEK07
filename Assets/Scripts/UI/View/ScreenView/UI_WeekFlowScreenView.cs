@@ -14,6 +14,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
     [SerializeField] private UI_CanvasGroupVisibilityEffect _semanticPanelEffect;
     [SerializeField] private List<GameObject> _linkedInfoPanels = new();
     [SerializeField] private Button _cardOutsideClickButton;
+    [SerializeField] private UI_TabSlideImage _mapSlideImage;
 
     public event Action RunWeekRequested;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
@@ -131,6 +132,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
     private void HandleOutsideClickButtonClicked()
     {
         SetInfoPanelsVisible(false);
+        _mapSlideImage.Close();
     }
 
     private void SetInfoPanelsVisible(bool visible)
