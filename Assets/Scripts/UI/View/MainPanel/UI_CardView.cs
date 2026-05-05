@@ -223,7 +223,7 @@ public class UI_CardView : MonoBehaviour
             }
         }
 
-        UpdateCurrentGroupedCard();
+        UpdateCurrentGroupedCard(resetPosition);
     }
 
     private void ResetCurrentPosition()
@@ -433,9 +433,9 @@ public class UI_CardView : MonoBehaviour
         RaiseCardOptionSelectedEvent(optionIndex);
     }
 
-    private void UpdateCurrentGroupedCard()
+    private void UpdateCurrentGroupedCard(bool resetCollectionScroll = false)
     {
-        if (TryRenderSelectedCollectionView())
+        if (TryRenderSelectedCollectionView(resetCollectionScroll))
         {
             return;
         }
@@ -638,7 +638,7 @@ public class UI_CardView : MonoBehaviour
         return true;
     }
 
-    private bool TryRenderSelectedCollectionView()
+    private bool TryRenderSelectedCollectionView(bool resetScroll)
     {
         if (_currentIndexItemIndex < 0 || _currentIndexItemIndex >= _indexItems.Count)
         {
@@ -672,6 +672,12 @@ public class UI_CardView : MonoBehaviour
         _activeGroupView = null;
         _activeCollectionGroupView = nextCollectionView;
         _activeCollectionGroupView.Render(_currentGroups);
+
+        if (resetScroll && _activeCollectionGroupView is UI_ExcursionCardGroupView excursionCardGroupView)
+        {
+            excursionCardGroupView.ResetScrollPosition();
+        }
+
         return true;
     }
 

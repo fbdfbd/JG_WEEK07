@@ -69,10 +69,9 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupCol
             }
         }
 
-        ResetScrollPosition();
     }
 
-    private void ResetScrollPosition()
+    public void ResetScrollPosition()
     {
         if (_scrollRect == null)
         {
@@ -82,7 +81,6 @@ public sealed class UI_ExcursionCardGroupView : MonoBehaviour, IWeekCardGroupCol
         Canvas.ForceUpdateCanvases();
         _scrollRect.StopMovement();
         _scrollRect.verticalNormalizedPosition = 1f;
-
     }
     public void Hide()
     {

@@ -355,10 +355,20 @@ public sealed class WeekFlowNarrativeHandler
             _runtimeState.ChildState);
         if (_runtimeState.IsCurrentEventFromDayFlow)
         {
-            _runtimeState.AddWeeklyResultLog(eventDefinition.Result, eventDefinition.OnCompletedInteractions);
+            _runtimeState.AddWeeklyResultLog(
+                eventDefinition.Result,
+                ResolveWeeklyResultLogInteractions(eventDefinition));
         }
 
         _runtimeState.ClearCurrentEventSession();
+    }
+
+    private static IReadOnlyList<SO_CardInteractionDefinition> ResolveWeeklyResultLogInteractions(
+        SO_InteractiveEventDefinition eventDefinition)
+    {
+        return eventDefinition is SO_StoryEventDefinition
+            ? Array.Empty<SO_CardInteractionDefinition>()
+            : eventDefinition?.OnCompletedInteractions;
     }
 
     private WeekFlowActionResult BuildEndingScreen()
