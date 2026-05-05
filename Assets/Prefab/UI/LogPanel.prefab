@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC544\uC9C1 \uD45C\uC2DC\uB41C \uB300\uC0AC\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: eb91bef7b0b83e042a37b0a2f86076a3, type: 2}
-  m_sharedMaterial: {fileID: 697555715455890385, guid: eb91bef7b0b83e042a37b0a2f86076a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7efbdb022e61d540b09c86cb6962dba, type: 2}
+  m_sharedMaterial: {fileID: 2461779223567442644, guid: e7efbdb022e61d540b09c86cb6962dba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
