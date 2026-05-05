@@ -16,7 +16,7 @@ MonoBehaviour:
   _priority: 100
   _isNoCharacterEnding: 0
   _characterType: 1
-  _minMeetCount: 11
+  _minMeetCount: 7
   _maxMeetCount: -1
   _directionType: 2
   _text:
