@@ -296,7 +296,7 @@ event_week_004_night_other_kids,week_004,private_dialogue,1,다른 집 아이들
 event_week_004_night_uncle_pride,week_004,private_dialogue,2,삼촌의 자리,10,step_event_week_004_night_uncle_pride_intro,,,,
 event_week_005_night_too_many_classes,week_005,private_dialogue,1,늘어난 수업,10,step_event_week_005_night_too_many_classes_intro,,,,
 event_week_005_night_unknown_frustration,week_005,private_dialogue,2,이름 모를 답답함,10,step_event_week_005_night_unknown_frustration_intro,,,,
-event_week_006_night_ball_thoughts,week_006,private_dialogue,1,본 사람들과 보인 자기,10,step_event_week_006_night_ball_thoughts_intro,,,,
+event_week_006_night_ball_thoughts,week_006,private_dialogue,1,수많은 시선들,10,step_event_week_006_night_ball_thoughts_intro,,,,
 event_week_006_night_chicken_dream,week_006,private_dialogue,2,같은 꿈,10,step_event_week_006_night_chicken_dream_intro,,,,
 event_week_007_night_untold_story,week_007,private_dialogue,1,아무도 말해주지 않은 것,10,step_event_week_007_night_untold_story_intro,,,,
 event_week_007_night_unknown_mother,week_007,private_dialogue,2,모르는 어머니,10,step_event_week_007_night_unknown_mother_intro,,,,
