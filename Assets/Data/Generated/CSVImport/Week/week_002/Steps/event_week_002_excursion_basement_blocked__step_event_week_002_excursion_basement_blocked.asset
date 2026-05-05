@@ -16,16 +16,29 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC9C0\uD558\uC2E4 \uBB38\uC740 \uC7A0\uACA8 \uC788\uC5C8\uACE0, \uC548\uCABD
-      \uC18C\uB9AC\uB3C4 \uB354\uB294 \uB4E4\uB9AC\uC9C0 \uC54A\uC558\uB2E4."
+    _text: "\uC9C0\uD558\uC2E4 \uC785\uAD6C \uC55E\uC5D0 \uCCAD\uC18C \uB3C4\uAD6C\uAC00
+      \uC138\uC6CC\uC838 \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC624\uB298\uC740 \uC65C \uBABB \uAC00?"
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC548\uCABD\uC5D0\uC11C \uC950\uB4E4\uC744 \uBD24\uB2E4\uB294 \uB9D0\uC774
+      \uC788\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC950?"
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC544\uB2D0 \uC218\uB3C4 \uC788\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uBB50\uC57C, \uADF8\uB7FC \uB4E4\uC5B4\uAC00\uAC8C \uD574\uC918."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC950\uBCF4\uB2E4 \uB354 \uBB34\uC11C\uC6B4 \uAC8C \uC788\uC744 \uC218\uB3C4
+      \uC788\uB294\uB370\uC694?"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB354 \uBB34\uC11C\uC6B4 \uAC70..?"
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBB38 \uC55E\uC5D0\uC11C \uD55C\uB3D9\uC548
-      \uC6C0\uC9C1\uC774\uC9C0 \uC54A\uC558\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uBC18\uD56D\uACFC \uBD88\uC548\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uC9C0\uD558\uC2E4 \uBB38\uC740 \uC7A0\uACA8 \uC788\uC5C8\uACE0, \uC548\uCABD
-    \uC18C\uB9AC\uB3C4 \uB354\uB294 \uB4E4\uB9AC\uC9C0 \uC54A\uC558\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBB38 \uC544\uB798\uCABD\uC744 \uC624\uB798
+      \uBC14\uB77C\uBCF4\uC558\uB2E4."
+  _nemoLine: "\uC9C0\uD558\uC2E4 \uC785\uAD6C \uC55E\uC5D0 \uCCAD\uC18C \uB3C4\uAD6C\uAC00
+    \uC138\uC6CC\uC838 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

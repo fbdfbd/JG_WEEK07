@@ -221,7 +221,7 @@ MonoBehaviour:
     _weekId: week_008
     _eventId: event_week_008_excursion_garden_blocked
     _moment: 0
-    _sequenceId: sequence_garden_default_gardener
+    _sequenceId: sequence_garden_default_maid
     _specialPlayerId: 
   - _ruleId: cutscene_week_009_garden_direct_default
     _enabled: 1

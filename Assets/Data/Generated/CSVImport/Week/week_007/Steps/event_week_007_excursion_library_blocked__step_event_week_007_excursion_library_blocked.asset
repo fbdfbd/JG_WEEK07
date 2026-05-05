@@ -16,16 +16,23 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC7AC\uC815 \uAE30\uB85D\uC774 \uB193\uC778 \uB3C4\uC11C\uAD00\uC5D0\uB294
-      \uB4E4\uC5B4\uAC08 \uC218 \uC5C6\uC5C8\uB2E4."
+    _text: "\uB3C4\uC11C\uAD00 \uBB38 \uC55E\uC5D0\uB294 \uC7A5\uBD80 \uC815\uB9AC
+      \uC911\uC774\uB77C\uB294 \uD33B\uB9D0\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC81C\uAC00 \uBC31\uC791\uC774 \uB420\uAC74\uB370, \uC81C\uAC00 \uC65C
+      \uBABB\uBCF4\uB098\uC694?"
+  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
+    _text: "\uC544\uC9C1 \uC815\uB9AC\uAC00 \uB05D\uB098\uC9C0 \uC54A\uC558\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC815\uB9D0 \uC815\uB9AC \uB54C\uBB38\uC778\uAC00\uC694, \uC544\uB2C8\uBA74
+      \uC81C\uAC00 \uBCF4\uBA74 \uC548 \uB418\uB294 \uAC8C \uC788\uB098\uC694?"
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8 \uC774\uC720\uB97C \uC870\uC6A9\uD788
-      \uC0DD\uAC01\uD588\uB2E4."
+    _text: "\uC11C\uACE0\uAD00\uB9AC\uC778\uC740 \uB300\uB2F5\uD558\uC9C0 \uC54A\uC558\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC2E0\uC911\uACFC \uBC18\uD56D\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uC7AC\uC815 \uAE30\uB85D\uC774 \uB193\uC778 \uB3C4\uC11C\uAD00\uC5D0\uB294
-    \uB4E4\uC5B4\uAC08 \uC218 \uC5C6\uC5C8\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBB38 \uC55E\uC5D0\uC11C \uD55C\uB3D9\uC548
+      \uC6C0\uC9C1\uC774\uC9C0 \uC54A\uC558\uB2E4."
+  _nemoLine: "\uB3C4\uC11C\uAD00 \uBB38 \uC55E\uC5D0\uB294 \uC7A5\uBD80 \uC815\uB9AC
+    \uC911\uC774\uB77C\uB294 \uD33B\uB9D0\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

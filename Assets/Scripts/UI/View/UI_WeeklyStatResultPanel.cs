@@ -47,7 +47,6 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
     private Sequence _playSequence;
     private bool _isPlaying;
     private bool _isReadyToClose;
-    private bool _isShowing;
     private float _advanceInputUnlockTime;
 
     public event Action ContinueRequested;
@@ -58,11 +57,6 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
     {
         ResolveReferences();
         BindAdvanceButton();
-
-        if (!_isShowing)
-        {
-            Hide();
-        }
     }
 
     private void OnDestroy()
@@ -73,8 +67,6 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
 
     public void Show(WeeklyStatResultPresentation presentation)
     {
-        _isShowing = true;
-
         Debug.Log(
             $"[WeeklyStatDebug] StatPanel.Show begin " +
             $"activeBefore={gameObject.activeSelf} " +
@@ -110,7 +102,6 @@ public class UI_WeeklyStatResultPanel : MonoBehaviour
         }
 
         SelectAdvanceButton();
-        _isShowing = false;
     }
 
     public void SelectAdvanceButton()

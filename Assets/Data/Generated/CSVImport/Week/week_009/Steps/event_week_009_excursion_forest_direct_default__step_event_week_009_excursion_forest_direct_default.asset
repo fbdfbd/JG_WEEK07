@@ -16,16 +16,25 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uB364\uBD88\uC774 \uCE58\uC6CC\uC9C4 \uC232 \uAE4A\uC740 \uAE38\uC774
-      \uB4DC\uB7EC\uB098 \uC788\uC5C8\uB2E4."
+    _text: "\uB364\uBD88\uC774 \uAE38 \uC591\uC606\uC73C\uB85C \uAE54\uB054\uD558\uAC8C
+      \uCE58\uC6CC\uC838 \uC788\uC5C8\uB2E4. \uBCA0\uC778 \uB2E8\uBA74\uC774 \uC544\uC9C1
+      \uC0C8\uAC83\uC774\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC774\uAC70, \uCD5C\uADFC\uC5D0 \uB204\uAC00 \uD55C \uAC70\uC608\uC694?"
+  - _speaker: {fileID: 11400000, guid: ea8bb1cd384c18f4c83d6f267d5433b5, type: 2}
+    _text: "...\uC798 \uBAA8\uB974\uACA0\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uBA70\uCE60 \uC548 \uB3FC \uBCF4\uC774\uB294\uB370\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB204\uAC00 \uC774 \uAE38\uC744 \uC815\uBE44\uD588\uB294\uC9C0
-      \uAD81\uAE08\uD574\uD588\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uBD88\uC548\uACFC \uD638\uAE30\uC2EC\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uB364\uBD88\uC774 \uCE58\uC6CC\uC9C4 \uC232 \uAE4A\uC740 \uAE38\uC774
-    \uB4DC\uB7EC\uB098 \uC788\uC5C8\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uAE38\uC744 \uB530\uB77C \uCC9C\uCC9C\uD788
+      \uAC78\uC73C\uBA70 \uC591\uC606\uC744 \uB458\uB7EC\uBD24\uB2E4. \uB364\uBD88\uC740
+      \uC548\uCABD\uAE4C\uC9C0 \uC77C\uC815\uD55C \uD3ED\uC73C\uB85C \uCE58\uC6CC\uC838
+      \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB204\uAC00, \uC5B4\uB514\uAE4C\uC9C0 \uCE58\uC6CC\uB454 \uAC78\uAE4C\uC694."
+  _nemoLine: "\uB364\uBD88\uC774 \uAE38 \uC591\uC606\uC73C\uB85C \uAE54\uB054\uD558\uAC8C
+    \uCE58\uC6CC\uC838 \uC788\uC5C8\uB2E4. \uBCA0\uC778 \uB2E8\uBA74\uC774 \uC544\uC9C1
+    \uC0C8\uAC83\uC774\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

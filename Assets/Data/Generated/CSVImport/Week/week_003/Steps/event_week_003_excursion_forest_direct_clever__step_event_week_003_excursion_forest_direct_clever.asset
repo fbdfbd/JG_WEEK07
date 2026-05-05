@@ -16,16 +16,53 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC232\uC5D0 \uB4E4\uC5B4\uAC00\uC11C
-      \uC624\uB450\uB9C9\uC744 \uBC1C\uACAC\uD588\uB2E4."
+    _text: "\uAD74\uB69D\uC5D0\uC11C \uC5F0\uAE30\uAC00 \uAC00\uB298\uAC8C \uC62C\uB77C\uC624\uACE0
+      \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC800\uAE30\uC5D0 \uB204\uAC00 \uC0B4\uACE0 \uC788\uC5B4?"
+  - _speaker: {fileID: 11400000, guid: ea8bb1cd384c18f4c83d6f267d5433b5, type: 2}
+    _text: "\uC61B\uB0A0\uBD80\uD130 \uC774 \uC232\uC744 \uAD00\uB9AC\uD558\uB358
+      \uC0AC\uB0E5\uC9C0\uAE30 \uC601\uAC10\uC785\uB2C8\uB2E4. \uC624\uB798\uC804\uBD80\uD130
+      \uC800\uAE30\uC11C \uC9C0\uB0B4\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uBC31\uC791\uAC00 \uC0AC\uB78C\uC774\uC57C?"
+  - _speaker: {fileID: 11400000, guid: ea8bb1cd384c18f4c83d6f267d5433b5, type: 2}
+    _text: "\u2026\uADF8\uB7F0 \uC148\uC785\uB2C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8\uACF3\uC5D0 \uB204\uAC00 \uC0B4\uACE0
-      \uC788\uC744\uC9C0 \uC0DD\uAC01\uD588\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC624\uB450\uB9C9 \uBB38\uC744 \uC9C1\uC811
+      \uB450\uB4DC\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uB204\uAD6C\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC785\uB2C8\uB2E4!"
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC601\uBBFC\uACFC \uC548\uC815\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC232\uC5D0 \uB4E4\uC5B4\uAC00\uC11C
-    \uC624\uB450\uB9C9\uC744 \uBC1C\uACAC\uD588\uB2E4."
+    _text: "\uC7A0\uC2DC \uCE68\uBB35\uC774 \uD758\uB800\uB2E4. \uBB38\uC774 \uC5F4\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\u2026\uB9CE\uC774 \uCEF8\uAD6C\uBA3C."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC800 \uC544\uC138\uC694?"
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uD0DC\uC5B4\uB0A0 \uB54C\uBD80\uD130 \uBD24\uC73C\uB2C8\uAE4C."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uADF8\uB7FC \uC544\uBC84\uC9C0\uB3C4 \uC54C\uACA0\uB124\uC694."
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\u2026\uC54C\uC558\uC9C0."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uBE60\uAC00 \uC774 \uC232\uC5D0 \uC790\uC8FC \uC654\uC5B4\uC694?"
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uBC31\uC791\uB2D8\uC740 \uC232\uC744 \uC88B\uC544\uD558\uC168\uC5B4.
+      \uBD80\uC778\uC774 \uC0B4\uC544\uACC4\uC2E4 \uB54C\uB294 \uAC19\uC774 \uC624\uC2DC\uAE30\uB3C4
+      \uD588\uACE0."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC5C4\uB9C8\uB791\uC694?"
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uADF8\uB798."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\u2026\uB610 \uC640\uB3C4 \uB3FC\uC694?"
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uCAD3\uC544\uB0B4\uC9C0\uB294 \uC54A\uC73C\uB9C8."
+  _nemoLine: "\uAD74\uB69D\uC5D0\uC11C \uC5F0\uAE30\uAC00 \uAC00\uB298\uAC8C \uC62C\uB77C\uC624\uACE0
+    \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

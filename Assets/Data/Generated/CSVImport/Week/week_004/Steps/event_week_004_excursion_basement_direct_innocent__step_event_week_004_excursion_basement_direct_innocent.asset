@@ -16,15 +16,26 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC9C \uC544\uB798 \uBB3C\uAC74\uC774
-      \uC790\uC2E0\uC5D0\uAC8C \uC628 \uC120\uBB3C\uC774\uB77C\uACE0 \uC0DD\uAC01\uD588\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC9C \uB05D\uC744 \uC0B4\uC9DD \uB4E4\uC5B4
+      \uC62C\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB9D0 \uBAA8\uC591\uC774\uC57C."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uB098\uBB34\uB85C \uB9CC\uB4E0 \uC870\uAC01\uC0C1\uC774\uC5D0\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC6B0\uC640, \uB204\uAC00 \uB9CC\uB4E4\uC5C8\uC744\uAE4C?"
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC544\uB9C8 \uC804 \uBC31\uC791 \uBD80\uC778\uAED8\uC11C \uC870\uAC01\uD558\uC168\uC744
+      \uAC81\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC5C4\uB9C8\uAC00?"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC774\uAC70 \uB098 \uAC00\uC9C8\uB798. \uADF8\uB798\uB3C4 \uB418\uC9C0?"
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC6C3\uC73C\uBA70 \uCC9C\uC744 \uB4E4\uCDB0\uBCF4\uB7EC \uB2E4\uAC00\uAC14\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC9C4\uACFC \uC548\uC815\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC9C \uC544\uB798 \uBB3C\uAC74\uC774
-    \uC790\uC2E0\uC5D0\uAC8C \uC628 \uC120\uBB3C\uC774\uB77C\uACE0 \uC0DD\uAC01\uD588\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB098\uBB34 \uB9D0\uC744 \uC18C\uC911\uD558\uAC8C
+      \uAC10\uC2F8 \uC548\uC558\uB2E4."
+  _nemoLine: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC9C \uB05D\uC744 \uC0B4\uC9DD \uB4E4\uC5B4
+    \uC62C\uB838\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

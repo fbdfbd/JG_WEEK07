@@ -22,7 +22,7 @@ MonoBehaviour:
     _text: "\uBC1C\uD14C\uB9AC\uC628 \uAC00\uBB38\uC740 \uC624\uB298 \uBC31\uC791\uAC00
       \uC55E\uC5D0 \uAC80\uC758 \uB9F9\uC57D\uC744 \uB2E4\uC2DC \uBC14\uCE60 \uC608\uC815\uC785\uB2C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uAC80\uC758 \uB9F9\uC57D\uC774\uC694."
+    _text: "\uAC80\uC758 \uB9F9\uC57D\uC774\uC694?"
   - _speaker: {fileID: 11400000, guid: 84ffa10995c48764388074048cfd595e, type: 2}
     _text: "\uC608. \uC55E\uC73C\uB85C\uB3C4 \uBC31\uC791\uAC00\uB97C \uC9C0\uD0A4\uACA0\uB2E4\uB294
       \uB73B\uC785\uB2C8\uB2E4."

@@ -16,16 +16,20 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC608\uBC95 \uC218\uC5C5 \uC900\uBE44\uAC00 \uB05D\uB0A0 \uB54C\uAE4C\uC9C0
-      \uB3C4\uC11C\uAD00\uC740 \uC5F4\uB9AC\uC9C0 \uC54A\uC558\uB2E4."
+    _text: "\uB3C4\uC11C\uAD00 \uC55E\uC5D0\uB294 \uC608\uBC95 \uC218\uC5C5 \uC900\uBE44
+      \uC911\uC774\uB77C\uB294 \uB9D0\uC774 \uBD99\uC5B4 \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
+    _text: "\uC624\uB298\uC740 \uCC45\uC744 \uC62E\uACA8\uC57C \uD574\uC11C \uB4E4\uC5B4\uAC00\uC2E4
+      \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC624\uB298 \uBD10\uC57C \uD558\uB294\uB370\uC694."
+  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
+    _text: "\uD544\uC694\uD55C \uCC45\uC740 \uB530\uB85C \uAC00\uC838\uB2E4\uB4DC\uB9AC\uACA0\uC2B5\uB2C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC608\uBC95\uC744 \uBC30\uC6B8 \uB0A0\uC744
-      \uAE30\uB2E4\uB9AC\uBA70 \uC870\uC6A9\uD788 \uAE30\uB2E4\uB838\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uBD88\uC548\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uC608\uBC95 \uC218\uC5C5 \uC900\uBE44\uAC00 \uB05D\uB0A0 \uB54C\uAE4C\uC9C0
-    \uB3C4\uC11C\uAD00\uC740 \uC5F4\uB9AC\uC9C0 \uC54A\uC558\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uACE0\uAC1C\uB97C \uB044\uB355\uC600\uC9C0\uB9CC,
+      \uC190\uB05D\uC774 \uAD73\uC5B4 \uC788\uC5C8\uB2E4."
+  _nemoLine: "\uB3C4\uC11C\uAD00 \uC55E\uC5D0\uB294 \uC608\uBC95 \uC218\uC5C5 \uC900\uBE44
+    \uC911\uC774\uB77C\uB294 \uB9D0\uC774 \uBD99\uC5B4 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

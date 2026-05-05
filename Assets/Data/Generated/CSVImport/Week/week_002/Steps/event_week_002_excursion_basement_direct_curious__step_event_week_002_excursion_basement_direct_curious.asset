@@ -16,14 +16,27 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC120\uBC18 \uB4A4\uC5D0\uC11C \uC791\uC740 \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
+    _text: "\uC120\uBC18 \uB4A4\uC5D0\uC11C \uBD80\uC2A4\uB7ED\uAC70\uB9AC\uB294
+      \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC800\uAE30\uC11C \uB09C \uAC83 \uAC19\uC740\uB370?"
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC81C\uAC00 \uD655\uC778\uD574\uBCF4\uACA0\uC2B5\uB2C8\uB2E4"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC544\uB2C8, \uB098\uB3C4 \uBCFC\uB798."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC544\uAC00\uC528."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB098\uB3C4 \uBCF4\uACE0 \uC2F6\uC5B4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBB3C\uB7EC\uC11C\uC9C0 \uC54A\uACE0,
-      \uCC9C \uB05D\uC790\uB77D\uB9CC \uC870\uC2EC\uD788 \uC7A1\uC558\uB2E4."
+    _text: "\uB9C8\uB9AC\uAC00 \uD55C \uC228\uC744 \uB0B4\uC270\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uADF8\uB7FC \uB4A4\uC5D0 \uAF2D \uBD99\uC5B4\uC11C \uC640\uC8FC\uC138\uC694."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC2E0\uC911\uACFC \uBC18\uD56D\uC774
-      \uB192\uC544\uC9D1\uB2C8\uB2E4."
-  _nemoLine: "\uC120\uBC18 \uB4A4\uC5D0\uC11C \uC791\uC740 \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uAC00 \uC228\uC744 \uC8FD\uC774\uACE0 \uB9C8\uB9AC\uB97C
+      \uB530\uB77C \uB4E4\uC5B4\uAC04\uB2E4."
+  _nemoLine: "\uC120\uBC18 \uB4A4\uC5D0\uC11C \uBD80\uC2A4\uB7ED\uAC70\uB9AC\uB294
+    \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

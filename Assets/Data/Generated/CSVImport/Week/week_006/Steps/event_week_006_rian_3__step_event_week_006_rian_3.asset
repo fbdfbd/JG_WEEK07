@@ -19,7 +19,7 @@ MonoBehaviour:
     _text: "\uC791\uC740 \uD3B8\uC9C0\uAC00 \uB3C4\uCC29\uD588\uB2E4. \uBD09\uD22C\uC5D0\uB294
       \uB9AC\uC548\uC758 \uC774\uB984\uC774 \uC801\uD600 \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC624\uB298 \uC81C\uAC00 \uBAA8\uB974\uB294 \uC0AC\uB78C\uCC98\uB7FC
+    _text: "'\uC624\uB298 \uC81C\uAC00 \uBAA8\uB974\uB294 \uC0AC\uB78C\uCC98\uB7FC
       \uAD74\uC5B4\uB3C4, \uC544\uBCA8\uB9AC\uC544 \uB54C\uBB38\uC774 \uC544\uB2C8\uC5D0\uC694.'"
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
     _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uD3B8\uC9C0\uB97C \uD55C\uB3D9\uC548

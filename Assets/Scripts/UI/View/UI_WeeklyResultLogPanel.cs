@@ -41,7 +41,6 @@ public class UI_WeeklyResultLogPanel : MonoBehaviour
     {
         ResolveReferences();
         BindAdvanceButton();
-        Hide();
     }
 
     private void OnDestroy()
