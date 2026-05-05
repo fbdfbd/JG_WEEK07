@@ -56,7 +56,7 @@ public static class EndingResolver
         EndingContext context = EndingContextBuilder.Build(childState);
         Debug.Log(
             $"[EndingDebug] {source} " +
-            $"Selected={context.CharacterType}, Meet={context.MeetCount}, Mood={context.MoodType}, " +
+            $"Direction={context.DirectionType}, Selected={context.CharacterType}, Meet={context.MeetCount}, " +
             $"Affinity={context.Affinity} | " +
             BuildStatSnapshot(childState));
     }
@@ -73,52 +73,68 @@ public static class EndingResolver
                 "EndingCatalog가 연결되지 않았습니다.");
         }
 
-        if (childState == null || EndingContextBuilder.HasNoCharacterMet(childState))
+        EndingContext context = EndingContextBuilder.Build(childState);
+        bool hasNoCharacterMet = childState == null || EndingContextBuilder.HasNoCharacterMet(childState);
+        SO_EndingLayerDefinition directionLayer = catalog.FindDirectionLayer(context);
+        SO_CharacterEndingDefinition characterEnding = hasNoCharacterMet
+            ? catalog.FindNoCharacterEnding(context.DirectionType)
+            : catalog.FindCharacterEnding(context);
+        if (characterEnding != null && directionLayer != null)
         {
-            return CreatePresentation(
-                catalog.NoCharacterMetEndingId,
-                catalog.NoCharacterMetEnding,
-                default);
+            SO_AffinityEndingDefinition affinityEnding = catalog.FindAffinityEnding(context.Affinity);
+            return CreatePresentation(directionLayer, characterEnding, affinityEnding);
         }
 
-        EndingContext context = EndingContextBuilder.Build(childState);
-        SO_CharacterEndingDefinition mainEnding = catalog.FindCharacterEnding(context);
-        if (mainEnding == null)
+        SO_EndingLayerDefinition characterMeetLayer = null;
+        if (!hasNoCharacterMet)
         {
-            mainEnding = ResolveFallbackCharacterEnding(childState, catalog);
-            if (mainEnding == null)
+            characterMeetLayer = catalog.FindCharacterMeetLayer(context);
+            if (characterMeetLayer == null)
             {
-                return CreateFallbackPresentation(
-                    MissingMainEndingId,
-                    "Ending Not Found",
-                    $"엔딩 데이터를 찾지 못했습니다. Character={context.CharacterType}, Meet={context.MeetCount}, Mood={context.MoodType}");
+                characterMeetLayer = ResolveFallbackCharacterMeetLayer(childState, catalog);
             }
         }
 
-        SO_AffinityEndingDefinition affinityEnding = catalog.FindAffinityEnding(context.Affinity);
-        return CreatePresentation(mainEnding, affinityEnding);
+        if (directionLayer == null || characterMeetLayer == null)
+        {
+            if (hasNoCharacterMet)
+            {
+                return CreatePresentation(
+                    catalog.NoCharacterMetEndingId,
+                    catalog.NoCharacterMetEnding,
+                    default);
+            }
+
+            return CreateFallbackPresentation(
+                MissingMainEndingId,
+                "Ending Not Found",
+                $"엔딩 레이어를 찾지 못했습니다. Direction={context.DirectionType}, Character={context.CharacterType}, Meet={context.MeetCount}");
+        }
+
+        SO_EndingLayerDefinition affinityLayer = catalog.FindAffinityLayer(context.Affinity);
+        return CreatePresentation(directionLayer, characterMeetLayer, affinityLayer);
     }
 
-    private static SO_CharacterEndingDefinition ResolveFallbackCharacterEnding(
+    private static SO_EndingLayerDefinition ResolveFallbackCharacterMeetLayer(
         RuntimeChildState childState,
         SO_EndingCatalog catalog)
     {
         EndingContext[] contexts = EndingContextBuilder.BuildMetCharacterContextsByPriority(childState);
         for (int i = 0; i < contexts.Length; i++)
         {
-            SO_CharacterEndingDefinition exactEnding = catalog.FindCharacterEnding(contexts[i]);
-            if (exactEnding != null)
+            SO_EndingLayerDefinition exactLayer = catalog.FindCharacterMeetLayer(contexts[i]);
+            if (exactLayer != null)
             {
-                return exactEnding;
+                return exactLayer;
             }
         }
 
         for (int i = 0; i < contexts.Length; i++)
         {
-            SO_CharacterEndingDefinition closestEnding = catalog.FindClosestCharacterEnding(contexts[i]);
-            if (closestEnding != null)
+            SO_EndingLayerDefinition closestLayer = catalog.FindClosestCharacterMeetLayer(contexts[i]);
+            if (closestLayer != null)
             {
-                return closestEnding;
+                return closestLayer;
             }
         }
 
@@ -126,12 +142,33 @@ public static class EndingResolver
     }
 
     private static EndingPresentation CreatePresentation(
-        SO_CharacterEndingDefinition mainEnding,
+        SO_EndingLayerDefinition directionLayer,
+        SO_CharacterEndingDefinition characterEnding,
         SO_AffinityEndingDefinition affinityEnding)
     {
-        EndingTextData mainText = mainEnding.Text;
+        EndingTextData directionText = directionLayer.Text;
+        EndingTextData characterText = characterEnding.Text;
         EndingTextData affinityText = affinityEnding != null ? affinityEnding.Text : default;
-        return CreatePresentation(mainEnding.Id, mainText, affinityText);
+        string endingId = affinityEnding != null
+            ? $"{directionLayer.Id}+{characterEnding.Id}+{affinityEnding.Id}"
+            : $"{directionLayer.Id}+{characterEnding.Id}";
+
+        return CreatePresentation(endingId, directionText, characterText, affinityText);
+    }
+
+    private static EndingPresentation CreatePresentation(
+        SO_EndingLayerDefinition directionLayer,
+        SO_EndingLayerDefinition characterMeetLayer,
+        SO_EndingLayerDefinition affinityLayer)
+    {
+        EndingTextData directionText = directionLayer.Text;
+        EndingTextData characterText = characterMeetLayer.Text;
+        EndingTextData affinityText = affinityLayer != null ? affinityLayer.Text : default;
+        string endingId = affinityLayer != null
+            ? $"{directionLayer.Id}+{characterMeetLayer.Id}+{affinityLayer.Id}"
+            : $"{directionLayer.Id}+{characterMeetLayer.Id}";
+
+        return CreatePresentation(endingId, directionText, characterText, affinityText);
     }
 
     private static EndingPresentation CreatePresentation(
@@ -147,6 +184,32 @@ public static class EndingResolver
         string closingLine = FirstNotEmpty(affinityText.ClosingLine, mainText.ClosingLine);
         string reputationLine = FirstNotEmpty(mainText.ReputationLine, affinityText.ReputationLine);
         ENemoVisualState visualState = mainText.VisualState;
+
+        return new EndingPresentation(
+            endingId,
+            title,
+            detailLines,
+            summary,
+            closingLine,
+            reputationLine,
+            visualState);
+    }
+
+    private static EndingPresentation CreatePresentation(
+        string endingId,
+        EndingTextData directionText,
+        EndingTextData characterText,
+        EndingTextData affinityText)
+    {
+        List<string> detailLines = SplitBody(directionText.Body);
+        AddEndingSection(detailLines, characterText.Title, characterText.Body);
+        AddEndingSection(detailLines, affinityText.Title, affinityText.Body);
+
+        string title = FirstNotEmpty(directionText.Title, FirstNotEmpty(characterText.Title, "Ending"));
+        string summary = FirstNotEmpty(directionText.Summary, FirstNotEmpty(characterText.Summary, affinityText.Summary));
+        string closingLine = FirstNotEmpty(affinityText.ClosingLine, FirstNotEmpty(characterText.ClosingLine, directionText.ClosingLine));
+        string reputationLine = FirstNotEmpty(characterText.ReputationLine, FirstNotEmpty(directionText.ReputationLine, affinityText.ReputationLine));
+        ENemoVisualState visualState = directionText.VisualState;
 
         return new EndingPresentation(
             endingId,
@@ -212,9 +275,9 @@ public static class EndingResolver
             $"Rian={childState.GetStat(EChildStatusType.Rian)}, " +
             $"Yuffie={childState.GetStat(EChildStatusType.Yuffie)}, " +
             $"Millia={childState.GetStat(EChildStatusType.Millia)}) | " +
-            $"MoodStats(Obedience={childState.GetStat(EChildStatusType.Obedience)}, " +
+            $"DirectionStats(Trust={childState.GetStat(EChildStatusType.Trust)}, " +
             $"Anxiety={childState.GetStat(EChildStatusType.Anxiety)}, " +
-            $"Trust={childState.GetStat(EChildStatusType.Trust)}, " +
+            $"Obedience={childState.GetStat(EChildStatusType.Obedience)}, " +
             $"Curiosity={childState.GetStat(EChildStatusType.Curiosity)})";
     }
 }

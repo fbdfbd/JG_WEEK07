@@ -26,6 +26,7 @@ public sealed class CsvDataset
     public IReadOnlyList<EventCutsceneRuleRow> EventCutsceneRules { get; private set; }
     public IReadOnlyList<CutsceneSequenceCommandRow> CutsceneSequenceCommands { get; private set; }
     public IReadOnlyList<WeeklyTalkRow> WeeklyTalks { get; private set; }
+    public IReadOnlyList<EndingRow> Endings { get; private set; }
 
     public static CsvDataset Load(CsvImportSettings settings)
     {
@@ -191,6 +192,24 @@ public sealed class CsvDataset
             record.GetMultiValue("interaction_ids"),
             record.GetMultiValue("required_flag_ids"),
             record.GetMultiValue("blocked_flag_ids")));
+        dataset.Endings = LoadOptionalTable(csvRootPath, "ending_catalog.csv", record => new EndingRow(
+            record["ending_id"],
+            record["ending_category"],
+            record["direction_type"],
+            record["character_type"],
+            record["min_meet_count"],
+            record["max_meet_count"],
+            record["affinity_min"],
+            record["affinity_max"],
+            record.GetInt("priority"),
+            record["title"],
+            record["summary"],
+            record["body"],
+            record["closing_line"],
+            record["reputation_line"],
+            record["visual_state"],
+            record.GetBool("enabled", true),
+            record["memo"]));
         return dataset;
     }
 
@@ -769,4 +788,63 @@ public sealed class WeeklyTalkRow
     public string[] InteractionIds { get; }
     public string[] RequiredFlagIds { get; }
     public string[] BlockedFlagIds { get; }
+}
+
+public sealed class EndingRow
+{
+    public EndingRow(
+        string id,
+        string category,
+        string directionType,
+        string characterType,
+        string minMeetCount,
+        string maxMeetCount,
+        string affinityMin,
+        string affinityMax,
+        int priority,
+        string title,
+        string summary,
+        string body,
+        string closingLine,
+        string reputationLine,
+        string visualState,
+        bool enabled,
+        string memo)
+    {
+        Id = id;
+        Category = category;
+        DirectionType = directionType;
+        CharacterType = characterType;
+        MinMeetCount = minMeetCount;
+        MaxMeetCount = maxMeetCount;
+        AffinityMin = affinityMin;
+        AffinityMax = affinityMax;
+        Priority = priority;
+        Title = title;
+        Summary = summary;
+        Body = body;
+        ClosingLine = closingLine;
+        ReputationLine = reputationLine;
+        VisualState = visualState;
+        Enabled = enabled;
+        Memo = memo;
+    }
+
+    public string Id { get; }
+    public string Category { get; }
+    public string DirectionType { get; }
+    public string CharacterType { get; }
+    public string MinMeetCount { get; }
+    public string MaxMeetCount { get; }
+    public string AffinityMin { get; }
+    public string AffinityMax { get; }
+    public int Priority { get; }
+    public string Title { get; }
+    public string Summary { get; }
+    public string Body { get; }
+    public string ClosingLine { get; }
+    public string ReputationLine { get; }
+    public string VisualState { get; }
+    public bool Enabled { get; }
+    public string Memo { get; }
 }

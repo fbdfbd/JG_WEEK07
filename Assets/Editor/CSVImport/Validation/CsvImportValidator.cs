@@ -201,7 +201,6 @@ public static class CsvImportValidator
         ValidateUniqueKeys(dataset.EventSelectionRules, row => row.EventId, "event_selection_rules.csv -> event_id", errors);
         ValidateUniqueKeys(dataset.EventResults, row => row.EventId, "event_result.csv -> event_id", errors);
         ValidateUniqueKeys(dataset.EventCutsceneRules, row => row.Id, "event_cutscene_rules.csv -> rule_id", errors);
-
         if (errors.Count > 0)
         {
             throw new InvalidOperationException("CSV validation failed.\n" + string.Join("\n", errors));
@@ -336,6 +335,17 @@ public static class CsvImportValidator
         {
             errors.Add($"Invalid integer value: {label} -> {value}");
         }
+    }
+
+    private static void ValidateRequiredInt(string value, string label, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            errors.Add($"Missing integer value: {label}");
+            return;
+        }
+
+        ValidateOptionalInt(value, label, errors);
     }
 
     private static void ValidateUniqueKeys<TRow, TKey>(

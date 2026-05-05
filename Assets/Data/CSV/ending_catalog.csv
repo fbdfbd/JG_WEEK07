@@ -1,0 +1,20 @@
+ending_id,ending_category,direction_type,character_type,min_meet_count,max_meet_count,affinity_min,affinity_max,priority,title,summary,body,closing_line,reputation_line,visual_state,enabled,memo
+ending_direction_clever,DirectionBase,Clever,,,,,,100,영민한 끝,영민 성향 공용 엔딩,네모는 들은 말을 그대로 믿기보다 그 사이의 틈을 먼저 바라보게 되었다.,생각은 조용히 깊어졌다.,저택에는 날카로운 침묵이 남았다.,Neutral,TRUE,Trust 음수 우세
+ending_direction_innocent,DirectionBase,Innocent,,,,,,100,순진한 끝,순진 성향 공용 엔딩,네모는 아직 세상의 말을 믿고 싶어 했다. 그 믿음은 작지만 분명하게 남아 있었다.,그 믿음은 쉽게 사라지지 않았다.,저택에는 조심스러운 온기가 남았다.,Trusting,TRUE,Trust 양수 우세
+ending_direction_cautious,DirectionBase,Cautious,,,,,,100,신중한 끝,신중 성향 공용 엔딩,네모는 서두르지 않고 한 걸음 뒤에서 상황을 바라보는 법을 배웠다.,대답보다 침묵이 먼저 남았다.,저택에는 조용한 관찰이 남았다.,Neutral,TRUE,Curiosity 음수 우세
+ending_direction_curious,DirectionBase,Curious,,,,,,100,호기심의 끝,호기심 성향 공용 엔딩,네모는 아직 말해지지 않은 조각을 찾으려 했다. 닫힌 문은 더 이상 단순한 문이 아니었다.,질문은 다음 문을 두드렸다.,저택에는 작은 가능성이 남았다.,Curious,TRUE,Curiosity 양수 우세
+ending_direction_stable,DirectionBase,Stable,,,,,,100,안정의 끝,안정 성향 공용 엔딩,네모는 흔들리는 소리들 속에서도 쉽게 휩쓸리지 않는 마음을 붙잡았다.,고요는 두려움이 아니라 선택이 되었다.,저택에는 낮은 평온이 남았다.,Neutral,TRUE,Anxiety 음수 우세
+ending_direction_anxious,DirectionBase,Anxious,,,,,,100,불안의 끝,불안 성향 공용 엔딩,네모는 설명되지 않은 기척을 오래 붙잡았다. 모르는 것이 많아질수록 방 안은 더 크게 느껴졌다.,말하지 못한 불안이 방 안에 머물렀다.,저택에는 낮은 긴장이 남았다.,Anxious,TRUE,Anxiety 양수 우세
+ending_direction_defiant,DirectionBase,Defiant,,,,,,100,반항의 끝,반항 성향 공용 엔딩,네모는 주어진 말에 고개를 끄덕이기보다 자신의 감각을 먼저 믿으려 했다.,작은 거절은 오래 남았다.,저택에는 낯선 균열이 남았다.,Conflicted,TRUE,Obedience 음수 우세
+ending_direction_compliant,DirectionBase,Compliant,,,,,,100,순응의 끝,순응 성향 공용 엔딩,네모는 들은 대로 기억하고 배운 대로 움직이는 일에 익숙해졌다.,조용함은 점점 몸에 배었다.,저택에는 질서가 남았다.,Obedient,TRUE,Obedience 양수 우세
+ending_character_max_low,CharacterMeetLayer,,Max,1,10,,,100,맥스와 스친 시간,맥스 낮은 만남 분기,맥스와의 만남은 많지 않았지만 네모의 하루에 선명한 자국을 남겼다.,,,,TRUE,Max 1~10
+ending_character_max_high,CharacterMeetLayer,,Max,11,-1,,,100,맥스와 쌓은 시간,맥스 높은 만남 분기,맥스는 여러 번의 만남 끝에 네모가 어떤 방향으로 자라고 있는지 마주하게 되었다.,,,,TRUE,Max 11 이상
+ending_character_rian_low,CharacterMeetLayer,,Rian,1,10,,,100,리안과 스친 시간,리안 낮은 만남 분기,리안과의 만남은 짧았지만 네모가 마지막에 떠올릴 만큼 또렷했다.,,,,TRUE,Rian 1~10
+ending_character_rian_high,CharacterMeetLayer,,Rian,11,-1,,,100,리안과 쌓은 시간,리안 높은 만남 분기,오랜 만남 끝에 리안은 네모의 변화가 우연이 아니라는 것을 알게 되었다.,,,,TRUE,Rian 11 이상
+ending_character_yuffie_low,CharacterMeetLayer,,Yuffie,1,10,,,100,유피와 스친 시간,유피 낮은 만남 분기,유피와 나눈 시간은 많지 않았지만 네모에게 작은 기준점이 되어 주었다.,,,,TRUE,Yuffie 1~10
+ending_character_yuffie_high,CharacterMeetLayer,,Yuffie,11,-1,,,100,유피와 쌓은 시간,유피 높은 만남 분기,유피는 오래 지켜본 만큼 네모의 마지막 표정을 쉽게 지나칠 수 없었다.,,,,TRUE,Yuffie 11 이상
+ending_character_millia_low,CharacterMeetLayer,,Millia,1,10,,,100,밀리아와 스친 시간,밀리아 낮은 만남 분기,밀리아와의 짧은 만남은 네모에게 아직 이름 붙이지 못한 감각을 남겼다.,,,,TRUE,Millia 1~10
+ending_character_millia_high,CharacterMeetLayer,,Millia,11,-1,,,100,밀리아와 쌓은 시간,밀리아 높은 만남 분기,여러 번의 만남 속에서 밀리아는 네모 안에 남은 질문과 대답을 함께 보았다.,,,,TRUE,Millia 11 이상
+ending_no_character_met,NoCharacterMet,,,0,0,,,100,홀로 남은 하루,아무 캐릭터도 만나지 않은 엔딩,네모는 누구와도 충분히 닿지 못한 채 하루의 끝에 도착한다.,끝내 부르지 못한 이름들이 남았다.,저택에는 고요만 남았다.,Neutral,TRUE,캐릭터 만남 수가 모두 0일 때만
+ending_affinity_low,AffinityLayer,,,,,-999,6,50,희미한 유대,낮은 친밀도 후첨 엔딩,마음 한켠에는 아직 닿지 못한 거리가 남아 있었다.,서로에게 닿기에는 시간이 조금 부족했다.,,Neutral,TRUE,메인 엔딩 뒤에 후첨
+ending_affinity_high,AffinityLayer,,,,,7,999,50,단단한 유대,높은 친밀도 후첨 엔딩,그럼에도 서로를 향한 감각은 분명히 남아 있었다.,남겨진 마음은 쉽게 사라지지 않았다.,,Trusting,TRUE,메인 엔딩 뒤에 후첨

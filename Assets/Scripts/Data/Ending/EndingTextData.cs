@@ -3,6 +3,22 @@ using UnityEngine;
 [System.Serializable]
 public struct EndingTextData
 {
+    public EndingTextData(
+        string title,
+        string body,
+        string summary,
+        string closingLine,
+        string reputationLine,
+        ENemoVisualState visualState)
+    {
+        _title = title;
+        _body = body;
+        _summary = summary;
+        _closingLine = closingLine;
+        _reputationLine = reputationLine;
+        _visualState = visualState;
+    }
+
     [SerializeField] private string _title;
     [TextArea(3, 12)]
     [SerializeField] private string _body;

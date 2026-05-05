@@ -81,7 +81,8 @@ public class WeekEntryIntroMoodLineSet
         }
 
         EndingContext context = EndingContextBuilder.Build(childState);
-        return TryGetCharacterMoodLine(context.CharacterType, context.MoodType, out line);
+        EEndingMoodType moodType = EndingContextBuilder.BuildLegacyMoodType(childState, context.CharacterType);
+        return TryGetCharacterMoodLine(context.CharacterType, moodType, out line);
     }
 
     private bool TryGetCharacterMoodLine(

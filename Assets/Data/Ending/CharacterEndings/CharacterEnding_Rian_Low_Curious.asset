@@ -1,0 +1,28 @@
+﻿%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b68f509342da9940bf43c9618a7a70d, type: 3}
+  m_Name: CharacterEnding_Rian_Low_Curious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CharacterEndingDefinition
+  _id: ending_rian_low_curious
+  _priority: 100
+  _isNoCharacterEnding: 0
+  _characterType: 0
+  _minMeetCount: 1
+  _maxMeetCount: 10
+  _directionType: 3
+  _text:
+    _title: 
+    _body: 
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 0

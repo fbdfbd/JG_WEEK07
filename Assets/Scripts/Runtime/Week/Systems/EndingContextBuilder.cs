@@ -1,29 +1,14 @@
 public static class EndingContextBuilder
 {
-    private static readonly EEndingCharacterType[] CharacterTiePriority =
-    {
-        EEndingCharacterType.Max,
-        EEndingCharacterType.Rian,
-        EEndingCharacterType.Yuffie,
-        EEndingCharacterType.Millia,
-    };
-
     public static bool HasNoCharacterMet(RuntimeChildState childState)
     {
-        return GetMeetCount(childState, EEndingCharacterType.Rian) <= 0
-            && GetMeetCount(childState, EEndingCharacterType.Max) <= 0
-            && GetMeetCount(childState, EEndingCharacterType.Millia) <= 0
-            && GetMeetCount(childState, EEndingCharacterType.Yuffie) <= 0;
+        return !EndingCharacterResolver.HasAnyMet(childState);
     }
 
     public static EndingContext Build(RuntimeChildState childState)
     {
-        EEndingCharacterType characterType = ResolveCharacterType(childState);
-        int meetCount = GetMeetCount(childState, characterType);
-        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
-        int affinity = childState.GetStat(EChildStatusType.Affinity);
-
-        return new EndingContext(characterType, meetCount, moodType, affinity);
+        EEndingCharacterType characterType = EndingCharacterResolver.Resolve(childState);
+        return Build(childState, characterType);
     }
 
     public static EndingContext[] BuildMetCharacterContextsByPriority(RuntimeChildState childState)
@@ -33,12 +18,12 @@ public static class EndingContextBuilder
             return System.Array.Empty<EndingContext>();
         }
 
-        EndingContext[] contexts = new EndingContext[CharacterTiePriority.Length];
+        EndingContext[] contexts = new EndingContext[EndingCharacterResolver.TiePriority.Length];
         int count = 0;
-        for (int i = 0; i < CharacterTiePriority.Length; i++)
+        for (int i = 0; i < EndingCharacterResolver.TiePriority.Length; i++)
         {
-            EEndingCharacterType characterType = CharacterTiePriority[i];
-            int meetCount = GetMeetCount(childState, characterType);
+            EEndingCharacterType characterType = EndingCharacterResolver.TiePriority[i];
+            int meetCount = EndingCharacterResolver.GetMeetCount(childState, characterType);
             if (meetCount <= 0)
             {
                 continue;
@@ -65,58 +50,22 @@ public static class EndingContextBuilder
         return Build(childState, characterType);
     }
 
+    public static EEndingMoodType BuildLegacyMoodType(
+        RuntimeChildState childState,
+        EEndingCharacterType characterType)
+    {
+        return ResolveMoodType(childState, characterType);
+    }
+
     private static EndingContext Build(
         RuntimeChildState childState,
         EEndingCharacterType characterType)
     {
-        int meetCount = GetMeetCount(childState, characterType);
-        EEndingMoodType moodType = ResolveMoodType(childState, characterType);
-        int affinity = childState.GetStat(EChildStatusType.Affinity);
+        int meetCount = EndingCharacterResolver.GetMeetCount(childState, characterType);
+        EEndingDirectionType directionType = EndingDirectionResolver.Resolve(childState);
+        int affinity = childState != null ? childState.GetStat(EChildStatusType.Affinity) : 0;
 
-        return new EndingContext(characterType, meetCount, moodType, affinity);
-    }
-
-    private static EEndingCharacterType ResolveCharacterType(RuntimeChildState childState)
-    {
-        int highest = GetHighestMeetCount(childState);
-
-        if (highest <= 0)
-        {
-            return EEndingCharacterType.Rian;
-        }
-
-        for (int i = 0; i < CharacterTiePriority.Length; i++)
-        {
-            EEndingCharacterType candidate = CharacterTiePriority[i];
-            if (GetMeetCount(childState, candidate) == highest)
-            {
-                return candidate;
-            }
-        }
-
-        return EEndingCharacterType.Rian;
-    }
-
-    private static int GetHighestMeetCount(RuntimeChildState childState)
-    {
-        int highest = 0;
-        for (int i = 0; i < CharacterTiePriority.Length; i++)
-        {
-            int value = GetMeetCount(childState, CharacterTiePriority[i]);
-            if (value > highest)
-            {
-                highest = value;
-            }
-        }
-
-        return highest;
-    }
-
-    private static int GetMoodDecisionMagnitude(
-        RuntimeChildState childState,
-        EEndingCharacterType characterType)
-    {
-        return System.Math.Abs(GetMoodDecisionValue(childState, characterType));
+        return new EndingContext(characterType, meetCount, directionType, affinity);
     }
 
     private static int GetMoodDecisionValue(
@@ -177,26 +126,5 @@ public static class EndingContextBuilder
             : zeroOrPositiveMood;
     }
 
-    private static int GetMeetCount(RuntimeChildState childState, EEndingCharacterType characterType)
-    {
-        if (childState == null)
-        {
-            return 0;
-        }
-
-        return childState.GetStat(ToStatType(characterType));
-    }
-
-    private static EChildStatusType ToStatType(EEndingCharacterType characterType)
-    {
-        return characterType switch
-        {
-            EEndingCharacterType.Rian => EChildStatusType.Rian,
-            EEndingCharacterType.Max => EChildStatusType.Max,
-            EEndingCharacterType.Millia => EChildStatusType.Millia,
-            EEndingCharacterType.Yuffie => EChildStatusType.Yuffie,
-            _ => EChildStatusType.Rian,
-        };
-    }
 }
 

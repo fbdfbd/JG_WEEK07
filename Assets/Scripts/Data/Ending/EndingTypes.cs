@@ -19,3 +19,22 @@ public enum EEndingMoodType
     Cautious
 }
 
+public enum EEndingDirectionType
+{
+    Clever,
+    Innocent,
+    Cautious,
+    Curious,
+    Stable,
+    Anxious,
+    Defiant,
+    Compliant
+}
+
+public enum EEndingLayerCategory
+{
+    DirectionBase,
+    CharacterMeetLayer,
+    AffinityLayer
+}
+

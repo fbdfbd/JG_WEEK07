@@ -3,18 +3,18 @@ public readonly struct EndingContext
     public EndingContext(
         EEndingCharacterType characterType,
         int meetCount,
-        EEndingMoodType moodType,
+        EEndingDirectionType directionType,
         int affinity)
     {
         CharacterType = characterType;
         MeetCount = meetCount;
-        MoodType = moodType;
+        DirectionType = directionType;
         Affinity = affinity;
     }
 
     public EEndingCharacterType CharacterType { get; }
     public int MeetCount { get; }
-    public EEndingMoodType MoodType { get; }
+    public EEndingDirectionType DirectionType { get; }
     public int Affinity { get; }
 }
 
