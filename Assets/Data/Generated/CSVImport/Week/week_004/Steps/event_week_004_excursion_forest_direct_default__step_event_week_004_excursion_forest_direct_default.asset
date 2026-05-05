@@ -15,21 +15,17 @@ MonoBehaviour:
   _titleOverride: 
   _bodyText: 
   _dialogueLines:
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uBC1C\uC790\uAD6D\uC774\uB2E4."
-  - _speaker: {fileID: 11400000, guid: ea8bb1cd384c18f4c83d6f267d5433b5, type: 2}
-    _text: "\uC5B4\uC82F\uBC24 \uB9D0 \uBC1C\uC790\uAD6D\uC778 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uB204\uAD6C \uAC70\uC57C?"
-  - _speaker: {fileID: 11400000, guid: ea8bb1cd384c18f4c83d6f267d5433b5, type: 2}
-    _text: "\uC544\uC9C1 \uBAA8\uB985\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uADF8\uB807\uAD6C\uB098."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBC1C\uC790\uAD6D\uC744 \uC7A0\uAE50
-      \uB0B4\uB824\uB2E4\uBCF4\uB2E4 \uADF8\uB0E5 \uAC78\uC5C8\uB2E4. \uD2B9\uBCC4\uD788
-      \uB354 \uBB3B\uC9C0 \uC54A\uC558\uB2E4."
-  _nemoLine: "\uBC1C\uC790\uAD6D\uC774\uB2E4."
+    _text: "\uC232\uAE38\uC5D0 \uB0AF\uC120 \uB9D0\uBC1C\uAD7D \uC790\uAD6D\uC774
+      \uB0A8\uC544 \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8 \uC790\uAD6D\uC774 \uC5B4\uB514\uC11C
+      \uC654\uB294\uC9C0 \uC0B4\uD3C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC2E0\uC911\uACFC \uBD88\uC548\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uC232\uAE38\uC5D0 \uB0AF\uC120 \uB9D0\uBC1C\uAD7D \uC790\uAD6D\uC774
+    \uB0A8\uC544 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

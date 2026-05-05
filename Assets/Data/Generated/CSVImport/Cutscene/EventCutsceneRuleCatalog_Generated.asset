@@ -331,7 +331,7 @@ MonoBehaviour:
   - _ruleId: cutscene_basement_11
     _enabled: 1
     _weekId: week_004
-    _eventId: event_week_004_excursion_basement_direct_curious
+    _eventId: event_week_004_excursion_basement_direct_innocent
     _moment: 0
     _sequenceId: sequence_basement_default
     _specialPlayerId: 

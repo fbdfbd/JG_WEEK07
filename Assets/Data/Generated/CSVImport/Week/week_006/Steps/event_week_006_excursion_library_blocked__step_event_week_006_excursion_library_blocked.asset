@@ -16,22 +16,16 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uBB34\uB3C4\uD68C \uC900\uBE44 \uB54C\uBB38\uC5D0 \uB3C4\uC11C\uAD00
-      \uBB38\uC774 \uB2EB\uD600 \uC788\uC5C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uC624\uB298\uC740 \uC2DC\uAC04\uC774 \uC5C6\uC2B5\uB2C8\uB2E4. \uBC14\uB85C
-      \uC900\uBE44\uD558\uC154\uC57C \uD569\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uD55C \uBC88\uB9CC \uBCF4\uBA74 \uC548 \uB3FC\uC694?"
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uD544\uC694\uD55C \uAC83\uC740 \uC774\uBBF8 \uCDA9\uBD84\uD788 \uC775\uD788\uC168\uC2B5\uB2C8\uB2E4."
+    _text: "\uBB34\uB3C4\uD68C \uC900\uBE44\uAC00 \uBA3C\uC800\uB77C\uB294 \uC774\uC720\uB85C
+      \uB3C4\uC11C\uAD00\uC740 \uC815\uB9AC \uC911\uC774\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB2EB\uD78C \uBB38\uC744 \uBCF4\uB2E4\uAC00
-      \uACE0\uAC1C\uB97C \uC219\uC600\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uB124."
-  _nemoLine: "\uBB34\uB3C4\uD68C \uC900\uBE44 \uB54C\uBB38\uC5D0 \uB3C4\uC11C\uAD00
-    \uBB38\uC774 \uB2EB\uD600 \uC788\uC5C8\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8\uAC83\uC744 \uD655\uC778\uD558\uACE0
+      \uB3C4\uC11C\uAD00\uC5D0\uC11C \uBB3C\uB7EC\uB0AC\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uC21C\uC9C4\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uBB34\uB3C4\uD68C \uC900\uBE44\uAC00 \uBA3C\uC800\uB77C\uB294 \uC774\uC720\uB85C
+    \uB3C4\uC11C\uAD00\uC740 \uC815\uB9AC \uC911\uC774\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

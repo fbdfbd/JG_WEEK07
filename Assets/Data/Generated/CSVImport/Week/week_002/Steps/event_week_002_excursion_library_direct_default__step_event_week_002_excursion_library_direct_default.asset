@@ -16,21 +16,16 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uD750\uB728\uB7EC\uC9C4 \uCC45\uB4E4 \uC911 \uAC19\uC740 \uD398\uC774\uC9C0\uAC00
-      \uC5EC\uB7EC \uBC88 \uC811\uD600 \uC788\uB294 \uCC45\uC774 \uC788\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC5EC\uAE30\uB9CC \uC811\uD600 \uC788\uC5B4."
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uC5EC\uB7EC \uBC88 \uBCF4\uC2E0 \uBAA8\uC591\uC785\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC544\uBE60\uAC00 \uC774\uAC70 \uC88B\uC544\uD588\uC5B4?"
+    _text: "\uC544\uBC84\uC9C0 \uCC45\uC5D0\uB294 \uC0AC\uB78C\uC774 \uCDA4\uCD94\uB294
+      \uB099\uC11C\uAC00 \uB0A8\uC544 \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC811\uD78C \uD398\uC774\uC9C0\uB97C
-      \uC870\uC2EC\uD788 \uD3BC\uCCE4\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uC5EC\uAE30\uB9CC \uB9CE\uC774 \uBD24\uB098\uBD10."
-  _nemoLine: "\uD750\uB728\uB7EC\uC9C4 \uCC45\uB4E4 \uC911 \uAC19\uC740 \uD398\uC774\uC9C0\uAC00
-    \uC5EC\uB7EC \uBC88 \uC811\uD600 \uC788\uB294 \uCC45\uC774 \uC788\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8\uB9BC\uC744 \uBCF4\uACE0 \uC870\uC2EC\uC2A4\uB7FD\uAC8C
+      \uB530\uB77C \uD588\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC9C4\uACFC \uC548\uC815\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uC544\uBC84\uC9C0 \uCC45\uC5D0\uB294 \uC0AC\uB78C\uC774 \uCDA4\uCD94\uB294
+    \uB099\uC11C\uAC00 \uB0A8\uC544 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

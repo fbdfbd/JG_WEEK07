@@ -16,27 +16,16 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uB192\uAC8C \uC313\uC778 \uC0C1\uC790\uB4E4\uC774 \uC870\uAE08 \uAE30\uC6B8\uC5B4
-      \uBCF4\uC600\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC800\uAC70 \uB5A8\uC5B4\uC9C0\uBA74 \uC5B4\uB5A1\uD574?"
-  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
-    _text: "\uAC00\uAE4C\uC774 \uAC00\uC9C0 \uC54A\uC73C\uBA74 \uAD1C\uCC2E\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC548\uC5D0 \uBB50\uAC00 \uC788\uB294\uC9C0\uB3C4 \uBAA8\uB974\uC796\uC544."
-  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
-    _text: "\uC704\uD5D8\uD55C \uBB3C\uAC74\uC740 \uC544\uB2D0 \uAC81\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uBAA8\uB974\uBA74 \uC704\uD5D8\uD55C\uC9C0 \uBAA8\uB974\uC9C0."
-  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
-    _text: "\uB9DE\uB294 \uB9D0\uC500\uC785\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC624\uB298\uC740 \uC548 \uC5F4\uB798."
+    _text: "\uC0C1\uC790 \uB354\uBBF8\uB294 \uAE08\uBC29\uC774\uB77C\uB3C4 \uBB34\uB108\uC9C8
+      \uAC83 \uAC19\uC558\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC0C1\uC790\uC5D0\uC11C \uB208\uC744
-      \uB5BC\uC9C0 \uC54A\uC740 \uCC44 \uB4A4\uB85C \uBB3C\uB7EC\uC130\uB2E4."
-  _nemoLine: "\uB192\uAC8C \uC313\uC778 \uC0C1\uC790\uB4E4\uC774 \uC870\uAE08 \uAE30\uC6B8\uC5B4
-    \uBCF4\uC600\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB9C8\uB9AC\uC758 \uB9D0\uB300\uB85C
+      \uC870\uC2EC\uD788 \uB4A4\uB85C \uBB3C\uB7EC\uC130\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uBD88\uC548\uACFC \uC21C\uC751\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uC0C1\uC790 \uB354\uBBF8\uB294 \uAE08\uBC29\uC774\uB77C\uB3C4 \uBB34\uB108\uC9C8
+    \uAC83 \uAC19\uC558\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

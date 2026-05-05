@@ -16,22 +16,16 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uB3C4\uC11C\uAD00 \uBB38 \uC55E\uC5D0 \uC815\uB9AC \uC911\uC774\uB77C\uB294
-      \uD33B\uB9D0\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uB2E4\uACFC\uD68C \uC900\uBE44 \uB54C\uBB38\uC5D0 \uCC45\uB4E4\uC744
-      \uC7A0\uC2DC \uC62E\uAE30\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC544\uBE60 \uCC45\uB3C4?"
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uC608."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uC783\uC5B4\uBC84\uB9AC\uBA74 \uC548 \uB3FC."
+    _text: "\uC544\uBC84\uC9C0\uC758 \uCC45\uB4E4\uC774 \uB3C4\uC11C\uAD00 \uC548\uCABD\uC5D0\uC11C
+      \uC815\uB9AC\uB418\uACE0 \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBB38\uC744 \uBCF4\uACE0 \uC791\uAC8C
-      \uB9D0\uD588\uB2E4."
-  _nemoLine: "\uB3C4\uC11C\uAD00 \uBB38 \uC55E\uC5D0 \uC815\uB9AC \uC911\uC774\uB77C\uB294
-    \uD33B\uB9D0\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBB34\uC2A8 \uCC45\uC778\uC9C0 \uAD81\uAE08\uD588\uC9C0\uB9CC
+      \uB2E4 \uC815\uB9AC\uB418\uBA74 \uB4E4\uC5B4\uAC00\uAE30\uB85C \uACB0\uC2EC\uD588\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uD638\uAE30\uC2EC\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uC544\uBC84\uC9C0\uC758 \uCC45\uB4E4\uC774 \uB3C4\uC11C\uAD00 \uC548\uCABD\uC5D0\uC11C
+    \uC815\uB9AC\uB418\uACE0 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

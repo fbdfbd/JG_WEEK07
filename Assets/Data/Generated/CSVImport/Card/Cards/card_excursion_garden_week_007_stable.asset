@@ -14,20 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_garden_week_007_stable
   _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
-  _title: "\uC815\uC6D0"
+  _title: "\uC815\uC6D0 - \uC548\uC815"
   _originalText: 
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uC7A5\uBBF8 \uD654\uB2E8\uC5D0 \uC544\uC9C1 \uD53C\uC9C0 \uC54A\uC740
-      \uBD09\uC624\uB9AC\uB4E4\uC774 \uC904\uC9C0\uC5B4 \uC11C \uC788\uB2E4.\r\n\uC5B4\uBA38\uB2C8\uAC00
-      \uB0A8\uAE34 \uC7A5\uBBF8\uC758 \uC758\uBBF8\uB97C \uC9DA\uC5B4\uBCF4\uBA70
-      \uB9C8\uC74C\uC744 \uCC28\uBD84\uD788 \uAC00\uB2E4\uB4EC\uC744 \uC218 \uC788\uB2E4."
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC548\uC815\uACFC \uC21C\uC9C4\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uD53C\uC9C0 \uC54A\uC740 \uC7A5\uBBF8\uAC00 \uC788\uB294 \uC815\uC6D0\uC5D0
-      \uAC08 \uC218 \uC5C6\uB2E4.\r\n\uC815\uD574\uC9C4 \uC5C5\uBB34\uB97C \uB530\uB974\uBA70,
-      \uC9C0\uB098\uAC00\uB294 \uBCC0\uD654\uC5D0 \uC870\uAE08 \uB354 \uBBFC\uAC10\uD574\uC9C8
-      \uC218 \uC788\uB2E4."
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uC2E0\uC911\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
     _interactions: []

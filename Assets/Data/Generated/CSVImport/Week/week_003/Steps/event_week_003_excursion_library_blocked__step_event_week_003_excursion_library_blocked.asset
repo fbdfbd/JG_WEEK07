@@ -15,22 +15,18 @@ MonoBehaviour:
   _titleOverride: 
   _bodyText: 
   _dialogueLines:
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uC544\uAC00\uC528. \uC624\uB298\uC740 \uC11C\uACE0 \uC815\uB9AC \uC911\uC774\uB77C
-      \uB4E4\uC5B4\uC624\uC2E4 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC5BC\uB9C8\uB098 \uAC78\uB824?"
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uBA70\uCE60\uC740 \uAC78\uB9B4 \uAC83 \uAC19\uC2B5\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uC911\uC694\uD55C \uCC45 \uB098\uC624\uBA74 \uC54C\uB824\uC918."
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uADF8\uB7EC\uACA0\uC2B5\uB2C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uACE0\uAC1C\uB97C \uB044\uB355\uC774\uACE0
-      \uB3CC\uC544\uC130\uB2E4."
-  _nemoLine: "\uC544\uAC00\uC528. \uC624\uB298\uC740 \uC11C\uACE0 \uC815\uB9AC \uC911\uC774\uB77C
-    \uB4E4\uC5B4\uC624\uC2E4 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+    _text: "\uB9C8\uB9AC\uB294 \uB3C4\uC11C\uAD00 \uC11C\uB78D\uB4E4\uC744 \uC5F4
+      \uC218 \uC788\uB294 \uC5F4\uC1E0\uB97C \uC783\uC5B4\uBC84\uB838\uB2E4\uACE0
+      \uD588\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uADF8 \uB9D0\uC744 \uBBFF\uACE0 \uB3C4\uC11C\uAD00\uC744
+      \uB098\uC654\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uC21C\uC9C4\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uB9C8\uB9AC\uB294 \uB3C4\uC11C\uAD00 \uC11C\uB78D\uB4E4\uC744 \uC5F4
+    \uC218 \uC788\uB294 \uC5F4\uC1E0\uB97C \uC783\uC5B4\uBC84\uB838\uB2E4\uACE0 \uD588\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

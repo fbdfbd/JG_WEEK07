@@ -44,7 +44,7 @@ event_week_003_excursion_basement_direct_curious,step_event_week_003_excursion_b
 event_week_003_excursion_basement_direct_anxious,step_event_week_003_excursion_basement_direct_anxious,,,false,Neutral,,,,,,,,,,
 event_week_003_excursion_basement_blocked,step_event_week_003_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
 event_week_004_excursion_basement_direct_default,step_event_week_004_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,
-event_week_004_excursion_basement_direct_curious,step_event_week_004_excursion_basement_direct_curious,,,false,Neutral,,,,,,,,,,
+event_week_004_excursion_basement_direct_innocent,step_event_week_004_excursion_basement_direct_innocent,,,false,Neutral,,,,,,,,,,
 event_week_004_excursion_basement_direct_cautious,step_event_week_004_excursion_basement_direct_cautious,,,false,Neutral,,,,,,,,,,
 event_week_004_excursion_basement_blocked,step_event_week_004_excursion_basement_blocked,,,false,Neutral,,,,,,,,,,
 event_week_005_excursion_basement_direct_default,step_event_week_005_excursion_basement_direct_default,,,false,Neutral,,,,,,,,,,

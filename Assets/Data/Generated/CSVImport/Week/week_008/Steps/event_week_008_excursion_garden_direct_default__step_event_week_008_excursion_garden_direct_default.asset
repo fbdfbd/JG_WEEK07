@@ -16,35 +16,16 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC0C8\uC7A5\uC740 \uBE44\uC5B4 \uC788\uC5C8\uB2E4. \uBB38\uC774 \uBC14\uB78C\uC5D0
-      \uB35C\uCEF9\uAC70\uB9AC\uACE0 \uC788\uC5C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC774 \uC0C8\uC7A5, \uC608\uC804\uBD80\uD130 \uC788\uC5C8\uB098\uC694?"
-  - _speaker: {fileID: 11400000, guid: 382a01f86413cfc439d75f63e427a411, type: 2}
-    _text: "\uC624\uB798\uC804\uBD80\uD130 \uC788\uC5C8\uC2B5\uB2C8\uB2E4, \uC544\uAC00\uC528.
-      \uB9C8\uB2D8\uAED8\uC11C \uACC4\uC2E4 \uB54C\uBD80\uD130\uC694."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uADF8\uB7F0\uB370 \uC800\uB294 \uC65C \uC774\uC81C\uC57C \uBCF8 \uAC83
-      \uAC19\uC744\uAE4C\uC694."
-  - _speaker: {fileID: 11400000, guid: 382a01f86413cfc439d75f63e427a411, type: 2}
-    _text: "\uC815\uC6D0 \uAD6C\uC11D\uC5D0 \uC788\uC5B4 \uB208\uC5D0 \uC798 \uB744\uC9C0
-      \uC54A\uC558\uC744 \uAC81\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC548\uC5D0 \uC788\uB358 \uC0C8\uB294\uC694?"
-  - _speaker: {fileID: 11400000, guid: 382a01f86413cfc439d75f63e427a411, type: 2}
-    _text: "\uB9C8\uB2D8\uAED8\uC11C \uAE30\uB974\uC2DC\uB358 \uC0C8\uAC00 \uC788\uC5C8\uB2E4\uACE0
-      \uB4E4\uC5C8\uC2B5\uB2C8\uB2E4. \uB9C8\uB2D8\uAED8\uC11C \uB3CC\uC544\uAC00\uC2E0
-      \uB4A4 \uC5BC\uB9C8 \uC9C0\uB098\uC9C0 \uC54A\uC544 \uC8FD\uC5C8\uB2E4\uACE0
-      \uD569\uB2C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uADF8\uB7AC\uAD70\uC694."
+    _text: "\uC815\uC6D0 \uAD6C\uC11D\uC758 \uB0A1\uC740 \uC0C8\uC7A5\uC774 \uBC14\uB78C\uC5D0
+      \uD754\uB4E4\uB838\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uD754\uB4E4\uB9AC\uB294 \uBB38\uC744
-      \uC870\uC6A9\uD788 \uC7A1\uC544 \uB2EB\uC558\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uC774\uC81C \uC870\uC6A9\uD558\uB124\uC694."
-  _nemoLine: "\uC0C8\uC7A5\uC740 \uBE44\uC5B4 \uC788\uC5C8\uB2E4. \uBB38\uC774 \uBC14\uB78C\uC5D0
-    \uB35C\uCEF9\uAC70\uB9AC\uACE0 \uC788\uC5C8\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uBE48 \uC0C8\uC7A5 \uC55E\uC5D0\uC11C
+      \uD55C\uB3D9\uC548 \uC11C\uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uBD88\uC548\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uC815\uC6D0 \uAD6C\uC11D\uC758 \uB0A1\uC740 \uC0C8\uC7A5\uC774 \uBC14\uB78C\uC5D0
+    \uD754\uB4E4\uB838\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

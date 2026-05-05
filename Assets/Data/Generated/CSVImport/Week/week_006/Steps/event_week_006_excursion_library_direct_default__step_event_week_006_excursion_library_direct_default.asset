@@ -16,21 +16,16 @@ MonoBehaviour:
   _bodyText: 
   _dialogueLines:
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC5B4\uC81C \uD3BC\uCCD0\uB193\uC740 \uC608\uBC95\uC11C\uAC00 \uADF8\uB300\uB85C
-      \uCC45\uC0C1 \uC704\uC5D0 \uC788\uC5C8\uB2E4. \uC544\uBCA8\uB9AC\uC544\uB294
-      \uCC45\uC744 \uD55C \uBC88 \uC4F8\uC5C8\uB2E4."
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\u2026\uB410\uC5B4\uC694."
-  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
-    _text: "\uB354 \uBCF4\uC9C0 \uC54A\uC73C\uC154\uB3C4 \uB429\uB2C8\uAE4C?"
-  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
-    _text: "\uB354 \uBCF4\uBA74 \uB354 \uD5F7\uAC08\uB9B4 \uAC83 \uAC19\uC544\uC694."
+    _text: "\uC608\uBC95\uC11C\uC5D0\uB294 \uC785\uC7A5 \uC21C\uC11C\uC640 \uD568\uAED8
+      \uBD88\uB9B4 \uAC00\uBB38\uBA85\uC774 \uC801\uD600 \uC788\uC5C8\uB2E4."
   - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
-    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC45\uC744 \uB36E\uACE0 \uBB38 \uCABD\uC73C\uB85C
-      \uAC78\uC5B4\uAC14\uB2E4."
-  _nemoLine: "\uC5B4\uC81C \uD3BC\uCCD0\uB193\uC740 \uC608\uBC95\uC11C\uAC00 \uADF8\uB300\uB85C
-    \uCC45\uC0C1 \uC704\uC5D0 \uC788\uC5C8\uB2E4. \uC544\uBCA8\uB9AC\uC544\uB294
-    \uCC45\uC744 \uD55C \uBC88 \uC4F8\uC5C8\uB2E4."
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC790\uC2E0\uC758 \uCC28\uB840\uAC00
+      \uC624\uB294 \uC21C\uAC04\uC744 \uB5A0\uC62C\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uC758 \uBD88\uC548\uACFC \uC601\uBBFC\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+  _nemoLine: "\uC608\uBC95\uC11C\uC5D0\uB294 \uC785\uC7A5 \uC21C\uC11C\uC640 \uD568\uAED8
+    \uBD88\uB9B4 \uAC00\uBB38\uBA85\uC774 \uC801\uD600 \uC788\uC5C8\uB2E4."
   _useCustomVisualState: 0
   _visualState: 0
   _onEnterInteractions: []

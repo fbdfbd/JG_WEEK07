@@ -14,20 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_garden_week_004_innocent
   _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
-  _title: "\uC815\uC6D0"
+  _title: "\uC815\uC6D0 - \uC21C\uC9C4"
   _originalText: 
   _options:
   - _semantic: 0
     _label: "\uD5C8\uAC00"
-    _presentedText: "\uD480\uBC2D\uC5D0 \uC774\uB984 \uBAA8\uB97C \uB4E4\uAF43 \uBB34\uB9AC\uAC00
-      \uC0C8\uB85C \uD53C\uC5C8\uB2E4.\r\n\uC791\uC740 \uAF43\uC5D0 \uB9C8\uC74C\uC744
-      \uC8FC\uB294 \uAFB8\uBC08\uC5C6\uB294 \uD0DC\uB3C4\uB85C \uB9C8\uC74C\uC744
-      \uCC28\uBD84\uD788 \uAC00\uB77C\uC549\uD790 \uC218 \uC788\uB2E4."
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC9C4\uACFC \uC548\uC815\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
     _interactions: []
   - _semantic: 2
     _label: "\uD1B5\uC81C"
-    _presentedText: "\uD480\uBC2D\uC5D0 \uC0C8\uB85C \uD540 \uB4E4\uAF43\uC744 \uBCFC
-      \uC218 \uC5C6\uAC8C \uB418\uC5C8\uB2E4.\r\n\uBCF4\uC9C0 \uBABB\uD55C \uCC44
-      \uC9C0\uB098\uAC00\uB294 \uBCC0\uD654\uC5D0 \uC870\uAE08 \uB354 \uBBFC\uAC10\uD574\uC9C8
-      \uC218 \uC788\uB2E4."
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uC758 \uBC18\uD56D\uACFC \uD638\uAE30\uC2EC\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
     _interactions: []

@@ -23,7 +23,8 @@ MonoBehaviour:
   _firstStep: {fileID: 11400000, guid: 28ba4f4844bc7ac4595817b4a236ef07, type: 2}
   _result: {fileID: 11400000, guid: 1ec7a8f01107cc24ab3344d2bc5654c2, type: 2}
   _onCompletedInteractions:
-  - {fileID: 11400000, guid: d6a5e766052d89c428f1743b91d1f5ed, type: 2}
+  - {fileID: 11400000, guid: 156a3b33297a73c469970f297857e022, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
   - {fileID: 11400000, guid: 03b4f0619012dd246b390e2e5c84a0b3, type: 2}
