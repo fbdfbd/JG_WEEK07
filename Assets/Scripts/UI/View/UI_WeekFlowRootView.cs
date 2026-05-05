@@ -39,7 +39,8 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     [SerializeField] private Button _openLogButton;
 
     [Header("Advance Input")]
-    private InputAction _advanceAction;
+    private InputAction _advanceAction;       // Ctrl: 홀드 시 빨리감기(자동 반복)
+    private InputAction _advanceStepAction;   // Space: 1회 진행만
     [SerializeField] private float _advanceHoldDelay = 0.35f;
     [SerializeField] private float _advanceRepeatInterval = 0.08f;
 
@@ -697,19 +698,29 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     private void BindAdvanceInput()
     {
         EnsureAdvanceAction();
-        if (_advanceAction == null)
+
+        if (_advanceAction != null)
         {
-            return;
+            _advanceAction.performed -= HandleAdvancePerformed;
+            _advanceAction.canceled -= HandleAdvanceCanceled;
+            _advanceAction.performed += HandleAdvancePerformed;
+            _advanceAction.canceled += HandleAdvanceCanceled;
+
+            if (!_advanceAction.enabled)
+            {
+                _advanceAction.Enable();
+            }
         }
 
-        _advanceAction.performed -= HandleAdvancePerformed;
-        _advanceAction.canceled -= HandleAdvanceCanceled;
-        _advanceAction.performed += HandleAdvancePerformed;
-        _advanceAction.canceled += HandleAdvanceCanceled;
-
-        if (!_advanceAction.enabled)
+        if (_advanceStepAction != null)
         {
-            _advanceAction.Enable();
+            _advanceStepAction.performed -= HandleAdvanceStepPerformed;
+            _advanceStepAction.performed += HandleAdvanceStepPerformed;
+
+            if (!_advanceStepAction.enabled)
+            {
+                _advanceStepAction.Enable();
+            }
         }
     }
 
@@ -717,17 +728,25 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
     {
         _isAdvanceHeld = false;
 
-        if (_advanceAction == null)
+        if (_advanceAction != null)
         {
-            return;
+            _advanceAction.performed -= HandleAdvancePerformed;
+            _advanceAction.canceled -= HandleAdvanceCanceled;
+
+            if (_advanceAction.enabled)
+            {
+                _advanceAction.Disable();
+            }
         }
 
-        _advanceAction.performed -= HandleAdvancePerformed;
-        _advanceAction.canceled -= HandleAdvanceCanceled;
-
-        if (_advanceAction.enabled)
+        if (_advanceStepAction != null)
         {
-            _advanceAction.Disable();
+            _advanceStepAction.performed -= HandleAdvanceStepPerformed;
+
+            if (_advanceStepAction.enabled)
+            {
+                _advanceStepAction.Disable();
+            }
         }
     }
 
@@ -743,26 +762,44 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _isAdvanceHeld = false;
     }
 
+    private void HandleAdvanceStepPerformed(InputAction.CallbackContext context)
+    {
+        // Space는 빨리감기 없이 1회만 진행
+        TryAdvance();
+    }
+
     private void EnsureAdvanceAction()
     {
-        if (HasCtrlAdvanceBindings())
+        if (!HasCtrlAdvanceBindings())
         {
-            return;
+            _advanceAction = CreateAdvanceAction();
         }
 
-        _advanceAction = CreateAdvanceAction();
+        if (!HasSpaceStepBinding())
+        {
+            _advanceStepAction = CreateAdvanceStepAction();
+        }
     }
 
     private bool HasCtrlAdvanceBindings()
     {
-        if (_advanceAction == null || _advanceAction.bindings.Count != 3)
+        if (_advanceAction == null || _advanceAction.bindings.Count != 2)
         {
             return false;
         }
 
         return _advanceAction.bindings[0].path == LeftCtrlBindingPath
-            && _advanceAction.bindings[1].path == RightCtrlBindingPath
-            && _advanceAction.bindings[2].path == SpaceBindingPath;
+            && _advanceAction.bindings[1].path == RightCtrlBindingPath;
+    }
+
+    private bool HasSpaceStepBinding()
+    {
+        if (_advanceStepAction == null || _advanceStepAction.bindings.Count != 1)
+        {
+            return false;
+        }
+
+        return _advanceStepAction.bindings[0].path == SpaceBindingPath;
     }
 
     private static InputAction CreateAdvanceAction()
@@ -770,6 +807,12 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         InputAction action = new("Advance", InputActionType.Button);
         action.AddBinding(LeftCtrlBindingPath);
         action.AddBinding(RightCtrlBindingPath);
+        return action;
+    }
+
+    private static InputAction CreateAdvanceStepAction()
+    {
+        InputAction action = new("AdvanceStep", InputActionType.Button);
         action.AddBinding(SpaceBindingPath);
         return action;
     }
@@ -805,4 +848,3 @@ public class UI_WeekFlowRootView : WeekFlowViewBase
         _endingLetterView.Hide();
     }
 }
-
