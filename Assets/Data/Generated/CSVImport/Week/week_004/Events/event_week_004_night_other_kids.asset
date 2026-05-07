@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad1bfc9a98c714295628ddfb149f51, type: 3}
+  m_Name: event_week_004_night_other_kids
+  m_EditorClassIdentifier: Assembly-CSharp::SO_PrivateDialogueDefinition
+  _id: event_week_004_night_other_kids
+  _title: "\uB2E4\uB978 \uC9D1 \uC544\uC774\uB4E4"
+  _priority: 10
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 31a20cc9a3e1b8d489999b2f26b9d1e5, type: 2}
+  _result: {fileID: 0}
+  _onCompletedInteractions: []
+  _cinematicProfile: {fileID: 0}

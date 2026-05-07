@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_004_millia_0__step_event_week_004_millia_0
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 5ab55b540ea181042902e62a49fb7578, type: 2}
+    _text: "\uB098 \uBC00\uB9AC\uC544\uC57C.\uBCA0\uB974\uB514\uC544 \uC0C1\uB2E8\uC8FC
+      \uB538. \uCD95\uC81C \uB54C \uAC19\uC774 \uB180\uB798?"
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "...\uCC98\uC74C \uBCF4\uB294\uB370."
+  - _speaker: {fileID: 11400000, guid: 5ab55b540ea181042902e62a49fb7578, type: 2}
+    _text: "\uC544 \uB9DE\uB2E4. \uCC98\uC74C\uC774\uC9C0. \uC544\uBB34\uD2BC 1\uBC88\uAC00
+      \uC0C1\uC778\uAC70\uB9AC\uB85C \uC640. \uC88B\uC740 \uAC70 \uB9CE\uC544."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB10C \uAC70\uAE30\uC5D0\uB9CC \uC788\uC5B4?"
+  - _speaker: {fileID: 11400000, guid: 5ab55b540ea181042902e62a49fb7578, type: 2}
+    _text: "\uC751. \uC544\uBE60\uAC00 \uADF8\uB7EC\uB798"
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uBC00\uB9AC\uC544\uAC00 \uC548\uB0B4\uBB38\uC744 \uB0B4\uBC00\uC5C8\uB2E4.
+      \uAD6C\uACA8\uC838 \uC788\uC5C8\uB2E4."
+  _nemoLine: "\uB098 \uBC00\uB9AC\uC544\uC57C.\uBCA0\uB974\uB514\uC544 \uC0C1\uB2E8\uC8FC
+    \uB538. \uCD95\uC81C \uB54C \uAC19\uC774 \uB180\uB798?"
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

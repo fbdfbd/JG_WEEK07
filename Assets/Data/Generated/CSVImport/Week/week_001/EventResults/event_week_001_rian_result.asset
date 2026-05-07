@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_001_rian_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_001_rian
+  _title: "\uB9AC\uC548"
+  _context: "\uB9AC\uC548\uC774\uB77C\uB294 \uC544\uC774\uAC00 \uC544\uAC00\uC528\uAED8
+    \uC885\uC774\uBC30\uB97C \uAC74\uB138\uACE0, \uADF8 \uC774\uC720\uB97C \uBB3B\uC790
+    \uADF8\uC800 \uC8FC\uACE0 \uC2F6\uC5C8\uAE30 \uB54C\uBB38\uC774\uB77C \uB2F5\uD588\uC2B5\uB2C8\uB2E4."

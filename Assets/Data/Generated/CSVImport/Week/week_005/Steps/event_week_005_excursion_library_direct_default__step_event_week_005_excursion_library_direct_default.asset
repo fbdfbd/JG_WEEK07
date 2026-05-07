@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_005_excursion_library_direct_default__step_event_week_005_excursion_library_direct_default
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC608\uBC95\uC11C \uC606\uC5D0 \uADC0\uC871 \uC0AC\uD68C \uC778\uBA85\uB85D\uC774
+      \uB193\uC5EC \uC788\uC5C8\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB450 \uCC45\uC744 \uBC88\uAC08\uC544
+      \uBCF4\uC558\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC608\uBC95\uC11C\uB791 \uC778\uBA85\uB85D\uC744 \uAC19\uC774 \uBCF4\uB294
+      \uC774\uC720\uAC00 \uC788\uC8E0?"
+  - _speaker: {fileID: 11400000, guid: f8e7ba4054caf9048a0b07e84278c8e6, type: 2}
+    _text: "\uC778\uC0AC\uBC95\uC740 \uC0C1\uB300\uC5D0 \uB530\uB77C \uB2EC\uB77C\uC9C0\uB2C8\uAE4C\uC694."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC774\uB984 \uBA87 \uAC1C\uB97C \uC608\uBC95\uC11C\uC758
+      \uD56D\uBAA9\uACFC \uB9DE\uCDB0 \uBCF4\uC558\uB2E4."
+  _nemoLine: "\uC608\uBC95\uC11C \uC606\uC5D0 \uADC0\uC871 \uC0AC\uD68C \uC778\uBA85\uB85D\uC774
+    \uB193\uC5EC \uC788\uC5C8\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_006_excursion_library_direct_clever_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_006_excursion_library_direct_clever
+  _title: "\uB3C4\uC11C\uAD00 - \uC601\uBBFC"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uC608\uBC95\uC11C\uC758 \uBB38\uC7A5\uC744
+    \uB2E4\uC2DC \uC77D\uC73C\uBA70, \uBA3C\uC800 \uACE0\uAC1C\uB97C \uC219\uC774\uB294
+    \uCABD\uACFC \uADF8\uB807\uC9C0 \uC54A\uC740 \uCABD\uC758 \uCC28\uC774\uB97C
+    \uC2E0\uBD84\uACFC \uC704\uCE58\uC758 \uBB38\uC81C\uB85C \uC774\uD574\uD558\uC168\uC2B5\uB2C8\uB2E4."

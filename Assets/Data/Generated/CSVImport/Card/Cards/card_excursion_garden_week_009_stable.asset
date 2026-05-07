@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf75e2887b3af5458d469b5570aa42c, type: 3}
+  m_Name: card_excursion_garden_week_009_stable
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
+  _id: card_excursion_garden_week_009_stable
+  _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
+  _title: "\uC815\uC6D0 - \uC548\uC815"
+  _originalText: 
+  _options:
+  - _semantic: 0
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uD06C\uB808\uC774\uD504 \uBA38\uD2C0\uC740 \uB9C8\uCE68\uB0B4
+      \uAF43\uC744 \uD2D4\uC6E0\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758 \uC548\uC815\uACFC
+      \uC601\uBBFC\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC758\uC2DD \uC804\uC5D0\uB294 \uC815\uC6D0\uC5D0 \uB098\uAC08
+      \uC218 \uC5C6\uC5C8\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC
+      \uC2E0\uC911\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []

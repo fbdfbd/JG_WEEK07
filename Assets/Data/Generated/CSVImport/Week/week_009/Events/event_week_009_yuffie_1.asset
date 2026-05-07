@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_009_yuffie_1
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_009_yuffie_1
+  _title: "\uC720\uD53C"
+  _priority: 10
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements:
+    - _statType: 8
+      _useMinimum: 1
+      _minimumValue: 1
+      _useMaximum: 1
+      _maximumValue: 2
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 4b6ef56ed9bd9ca4a9e83045cfc87fb3, type: 2}
+  _result: {fileID: 11400000, guid: 2564ca983ed595f49999a43a33d52263, type: 2}
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: 1dd13bdd8eaf9ce4592aeb8a484f9fba, type: 2}
+  - {fileID: 11400000, guid: deb0ce5818482394cbd8341c67eafeb7, type: 2}
+  - {fileID: 11400000, guid: 569da758ceca0f64ca12ed31cc2542e2, type: 2}
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: ced452ce8810d9f41af65fa328dd2907, type: 2}
+  _preferredSemantics: 00000000
+  _linkedCard: {fileID: 11400000, guid: 358cf9d280f6c1f4fab0675dca322d4f, type: 2}
+  _selectionRule:
+    _mode: 0
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 0

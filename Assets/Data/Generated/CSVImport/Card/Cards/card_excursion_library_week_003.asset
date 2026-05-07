@@ -13,22 +13,20 @@ MonoBehaviour:
   m_Name: card_excursion_library_week_003
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_library_week_003
-  _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-  _title: "\uB3C4\uC11C\uAD00 3\uC8FC\uCC28"
-  _originalText: "\uBCC4\uBE5B\uC774 \uB5A0\uC624\uB974\uB294 \uCC45\uC744 \uB9C8\uC8FC\uD55C\uB2E4.
-    \uC190\uB300\uC9C0 \uBABB\uD558\uAC8C \uD560\uC9C0 \uBCC4\uC790\uB9AC\uB97C \uB530\uB77C\uAC00
-    \uBCF4\uAC8C \uD560\uC9C0 \uC815\uD55C\uB2E4."
+  _cardType: {fileID: 11400000, guid: 03b4f0619012dd246b390e2e5c84a0b3, type: 2}
+  _title: "\uB3C4\uC11C\uAD00"
+  _originalText: 
   _options:
-  - _semantic: 2
-    _label: "\uBC29\uBB38\uC744 \uB9C9\uB294\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C \uC678\uCD9C\uC744 \uB9C9\uACE0 \uB3CC\uB824\uBCF4\uB0B8\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-    - {fileID: 11400000, guid: 7e9e7c466b743084c8fdfed064fa2fb3, type: 2}
   - _semantic: 0
-    _label: "\uC678\uCD9C\uC744 \uD5C8\uB77D\uD55C\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C\uAE4C\uC9C0 \uB098\uAC00\uB3C4\uB85D
-      \uD5C8\uB77D\uD55C\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-    - {fileID: 11400000, guid: 3767dfb8845aead42b17c728fe339544, type: 2}
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uC5B4\uBA38\uB2C8\uC758 \uC77C\uAE30\uC7A5\uC5D0\uB294 \uC791\uC740
+      \uC790\uBB3C\uC1E0\uAC00 \uAC78\uB824 \uC788\uC5C8\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758
+      \uC2E0\uC911\uACFC \uBD88\uC548\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uB9C8\uB9AC\uB294 \uB3C4\uC11C\uAD00 \uC11C\uB78D\uB4E4\uC744
+      \uC5F4 \uC218 \uC788\uB294 \uC5F4\uC1E0\uB97C \uC783\uC5B4\uBC84\uB838\uB2E4\uACE0
+      \uD588\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758 \uC21C\uC751\uACFC \uC21C\uC9C4\uC774
+      \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []

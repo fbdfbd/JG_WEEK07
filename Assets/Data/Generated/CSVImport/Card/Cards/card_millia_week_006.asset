@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf75e2887b3af5458d469b5570aa42c, type: 3}
+  m_Name: card_millia_week_006
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
+  _id: card_millia_week_006
+  _cardType: {fileID: 11400000, guid: 4d3f2acf09b5168499664c9f9e26aee1, type: 2}
+  _title: "\uBC00\uB9AC\uC544"
+  _originalText: "\uBC00\uB9AC\uC544\uAC00 \uBB34\uB3C4\uD68C \uD6C4 \uD30C\uD2F0\uC640
+    \uC0C1\uB2E8 \uC0AC\uB78C\uB4E4\uC744 \uC54C\uB824\uC900\uB2E4."
+  _options:
+  - _semantic: 0
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uD5C8\uAC00\uD55C\uB2E4"
+    _interactions: []
+  - _semantic: 2
+    _label: "\uAC70\uBD80"
+    _presentedText: "\uBD88\uD5C8\uD55C\uB2E4"
+    _interactions: []

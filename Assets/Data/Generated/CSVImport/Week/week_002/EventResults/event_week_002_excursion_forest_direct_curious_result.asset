@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_002_excursion_forest_direct_curious_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_002_excursion_forest_direct_curious
+  _title: "\uC232 - \uD638\uAE30\uC2EC"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uD558\uC778\uB4E4\uC744 \uB530\uB77C
+    \uC232 \uC548\uCABD\uC73C\uB85C \uB4E4\uC5B4\uAC00 \uB178\uB8E8\uADC0\uB77C\uB294
+    \uB0AF\uC120 \uAF43\uC758 \uC774\uB984\uACFC \uBAA8\uC591\uC744 \uC9C1\uC811
+    \uD655\uC778\uD558\uC168\uC2B5\uB2C8\uB2E4."

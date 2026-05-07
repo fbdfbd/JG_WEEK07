@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513f3be7edc0a654d9af482549195ef5, type: 3}
+  m_Name: SO_WeeklyTalk_WEEK_001
+  m_EditorClassIdentifier: Assembly-CSharp::SO_WeeklyTalk
+  _weekId: week_001
+  _entries:
+  - _id: week_001_Anxious_1
+    _direction: 5
+    _variantOrder: 1
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uB098\uB9CC \uD63C\uC790 \uB0A8\uC73C\uBA74 \uC5B4\uB5A1\uD574? \uC0BC\uCD0C,
+      \uAC00\uC9C0 \uB9C8\u2026"
+    _nemoState: 4
+    _interactions: []
+  - _id: week_001_Anxious_2
+    _direction: 5
+    _variantOrder: 2
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uC870\uC6A9\uD558\uBA74 \uBB34\uC11C\uC6CC. \uC544\uBB34\uB3C4 \uC5C6\uB294
+      \uAC83 \uAC19\uC544."
+    _nemoState: 4
+    _interactions: []
+  - _id: week_001_Anxious_3
+    _direction: 5
+    _variantOrder: 3
+    _priority: 1
+    _weight: 1
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 1
+    _allowClick: 1
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: "\uB098 \uB54C\uBB38\uC5D0 \uB2E4 \uC544\uD30C\uC9C0\uB294 \uAC83 \uAC19\uC544.
+      \uC5C4\uB9C8\uB3C4, \uC544\uBE60\uB3C4\u2026"
+    _nemoState: 4
+    _interactions: []
+  _context: 
+  _nemostate: 4
+  _CardInteraction_StatDelta: {fileID: 0}

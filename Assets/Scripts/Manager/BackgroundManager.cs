@@ -15,6 +15,22 @@ public enum BackgroundType
     Study,
     Hallway,
     Basement,
+    GardenCrapeMyrtle,
+    GardenDoor,
+    Hunter,
+    ForestEnterance,
+    FestivalEntrance,
+    FestivalRianBackStreet,
+    FestivalShop,
+    FestivalStreet,
+    FestivalTheater,
+    FestivalTheaterSeat,
+    ImperialBallEntrance,
+    ImperialBall,
+    ImperialBallNobleSeat,
+    ImperialPalaceHallway,
+    GardenDeclarationStage,
+    BedroomTutorial
 }
 
 public enum BackgroundTransitionMode
@@ -127,6 +143,11 @@ public class BackgroundManager : MonoBehaviour
         if (currentBackground != type)
             return;
 
+        ScheduleHideToDefault();
+    }
+
+    public void HideCurrentBackground()
+    {
         ScheduleHideToDefault();
     }
 

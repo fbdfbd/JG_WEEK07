@@ -14,6 +14,7 @@ public class SO_InteractiveEventStepDefinition : ScriptableObject
     [SerializeField] private ENemoVisualState _visualState = ENemoVisualState.Neutral;
     [SerializeField] private SO_CardInteractionDefinition[] _onEnterInteractions = Array.Empty<SO_CardInteractionDefinition>();
     [SerializeField] private InteractiveEventChoiceData[] _choices = Array.Empty<InteractiveEventChoiceData>();
+    [SerializeField] private ConditionalStepNextData _conditionalNext;
     [SerializeField] private SO_InteractiveEventStepDefinition _nextStep;
     [SerializeField] private WeekFlowScreenCues _cinematicCues = new();
 
@@ -25,8 +26,64 @@ public class SO_InteractiveEventStepDefinition : ScriptableObject
     public ENemoVisualState VisualState => _visualState;
     public SO_CardInteractionDefinition[] OnEnterInteractions => _onEnterInteractions;
     public InteractiveEventChoiceData[] Choices => _choices;
+    public ConditionalStepNextData ConditionalNext => _conditionalNext;
     public SO_InteractiveEventStepDefinition NextStep => _nextStep;
     public WeekFlowScreenCues CinematicCues => _cinematicCues;
+}
+
+[Serializable]
+public class ConditionalStepNextData
+{
+    [SerializeField] private SO_InteractiveEventStepDefinition _nextStep;
+    [SerializeField] private SO_InteractiveEventStepDefinition _fallbackStep;
+    [SerializeField] private WeekStatRequirementData[] _statRequirements = Array.Empty<WeekStatRequirementData>();
+
+    public SO_InteractiveEventStepDefinition NextStep => _nextStep;
+    public SO_InteractiveEventStepDefinition FallbackStep => _fallbackStep;
+    public WeekStatRequirementData[] StatRequirements => _statRequirements;
+
+    public bool TryResolve(RuntimeChildState childState, out SO_InteractiveEventStepDefinition nextStep)
+    {
+        nextStep = null;
+        if (_nextStep == null && _fallbackStep == null)
+        {
+            return false;
+        }
+
+        nextStep = MeetsRequirements(childState) ? _nextStep : _fallbackStep;
+        return nextStep != null;
+    }
+
+    private bool MeetsRequirements(RuntimeChildState childState)
+    {
+        if (childState == null)
+        {
+            return false;
+        }
+
+        if (_statRequirements == null || _statRequirements.Length == 0)
+        {
+            return true;
+        }
+
+        foreach (WeekStatRequirementData requirement in _statRequirements)
+        {
+            if (requirement == null)
+            {
+                continue;
+            }
+
+            int value = childState.GetStat(requirement.StatType);
+            bool meetsMinimum = !requirement.UseMinimum || value >= requirement.MinimumValue;
+            bool meetsMaximum = !requirement.UseMaximum || value <= requirement.MaximumValue;
+            if (!meetsMinimum || !meetsMaximum)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
 
 [Serializable]

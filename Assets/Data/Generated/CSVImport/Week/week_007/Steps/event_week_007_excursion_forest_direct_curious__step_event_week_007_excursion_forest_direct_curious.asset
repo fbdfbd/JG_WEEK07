@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_007_excursion_forest_direct_curious__step_event_week_007_excursion_forest_direct_curious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uBC29 \uC548\uC5D0\uB294 \uB9E4\uCE90\uD55C \uC5F0\uAE30\uAC00 \uAC00\uB4DD\uD558\uB2E4.
+      \uC544\uBCA8\uB9AC\uC544\uB294 \uB9E4\uC6B4 \uC5F0\uAE30\uB97C \uACAC\uB514\uBA70
+      \uBC29 \uC548\uCABD\uC744 \uC720\uC2EC\uD788 \uC0B4\uD540\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB098\uBB34 \uD0C0\uB294 \uB0C4\uC0C8\uAC00 \uC544\uB2C8\uC5D0\uC694.
+      \uBB58 \uC228\uAE30\uACE0 \uACC4\uC2E0 \uAC74 \uC544\uB2C8\uC8E0?"
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uADF8\uB0E5 \uC816\uC740 \uB098\uBB34\uAC00 \uD0C0\uB294 \uAC70\uB2E4.
+      \uC4F8\uB370\uC5C6\uB294 \uB370 \uD798 \uBE7C\uC9C0 \uB9C8."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uADF8\uB7FC \uBC24\uB9C8\uB2E4 \uB4E4\uB9AC\uB294 \uB9D0\uBC1C\uAD7D
+      \uC18C\uB9AC\uB294\uC694? \uC232\uC5D0 \uB9D0\uC774 \uB4E4\uC5B4\uC62C \uC77C\uC774
+      \uC5C6\uC796\uC544\uC694."
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "...\uC18C\uB9AC\uB9CC \uB4E4\uB9B4 \uBFD0\uC774\uC57C. \uB098\uB294 \uC808\uB300\uB85C
+      \uB0B4\uB2E4\uBCF4\uC9C0 \uC54A\uB294\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uB204\uAD70\uC9C0 \uAD81\uAE08\uD558\uC9C0\uB3C4 \uC54A\uC73C\uC138\uC694?
+      \uC65C \uC228\uC5B4\uC11C \uC9C0\uB098\uAC00\uB294 \uAC74\uB370\uC694?"
+  - _speaker: {fileID: 11400000, guid: ee324d7a600a7754290ae04a00012f5b, type: 2}
+    _text: "\uAD81\uAE08\uD574\uD560\uC218\uB85D \uBA85\uB9CC \uC9E7\uC544\uC9C0\uB294
+      \uBC95\uC774\uC57C. \uC78A\uC5B4\uBC84\uB824."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uCC3D\uBC16\uC758 \uC5B4\uB450\uC6B4
+      \uC232\uAE38\uC744 \uD55C\uCC38 \uB3D9\uC548 \uB178\uB824\uBCF4\uC558\uB2E4."
+  _nemoLine: "\uBC29 \uC548\uC5D0\uB294 \uB9E4\uCE90\uD55C \uC5F0\uAE30\uAC00 \uAC00\uB4DD\uD558\uB2E4.
+    \uC544\uBCA8\uB9AC\uC544\uB294 \uB9E4\uC6B4 \uC5F0\uAE30\uB97C \uACAC\uB514\uBA70
+    \uBC29 \uC548\uCABD\uC744 \uC720\uC2EC\uD788 \uC0B4\uD540\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

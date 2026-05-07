@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf75e2887b3af5458d469b5570aa42c, type: 3}
+  m_Name: card_excursion_forest_week_003_clever
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
+  _id: card_excursion_forest_week_003_clever
+  _cardType: {fileID: 11400000, guid: e024f57149280bd41945022e45c37b02, type: 2}
+  _title: "\uC232 - \uC601\uBBFC"
+  _originalText: 
+  _options:
+  - _semantic: 0
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC232\uC5D0 \uB4E4\uC5B4\uAC00\uC11C
+      \uC624\uB450\uB9C9\uC744 \uBC1C\uACAC\uD588\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758
+      \uC601\uBBFC\uACFC \uC548\uC815\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC232\uC5D0\uC11C \uC5F0\uAE30\uAC00
+      \uB098\uB294 \uAC83\uC744 \uBC1C\uACAC\uD588\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758
+      \uBC18\uD56D\uACFC \uBD88\uC548\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []

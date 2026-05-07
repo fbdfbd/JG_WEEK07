@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_009_excursion_garden_direct_cautious__step_event_week_009_excursion_garden_direct_cautious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: "\uC815\uC6D0 \uD5C8\uAC00-\uC2E0\uC911"
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC11C\uC57D\uB300 \uC704\uC5D0 \uB9F9\uC138\uBB38\uC774 \uB193\uC5EC
+      \uC788\uC5C8\uB2E4. \uC544\uBCA8\uB9AC\uC544\uB294 \uB2E8\uC0C1 \uC55E\uC5D0
+      \uC11C\uC11C \uCCAB \uC904\uBD80\uD130 \uCC9C\uCC9C\uD788 \uB208\uC73C\uB85C
+      \uB530\uB77C\uAC14\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uD55C \uBC88 \uB2E4 \uC77D\uC740 \uB4A4, \uC544\uBCA8\uB9AC\uC544\uB294
+      \uCC98\uC74C\uC73C\uB85C \uB3CC\uC544\uAC00 \uB2E4\uC2DC \uD55C \uC904\uC529
+      \uC9DA\uC5B4 \uB0B4\uB824\uAC14\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "...\uB2E8\uD14C."
+  - _speaker: {fileID: 11400000, guid: 31350c3de27bb9c43a5cd19e30d43ba8, type: 2}
+    _text: "\uB124, \uC544\uAC00\uC528."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uD55C \uB2E8\uC5B4\uB3C4 \uBE60\uB728\uB9AC\uACE0 \uC2F6\uC9C0 \uC54A\uC544\uC11C\uC694."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC190\uB05D\uC740 \uB2E8\uC0C1 \uBAA8\uC11C\uB9AC\uC5D0 \uAC00\uC9C0\uB7F0\uD788
+      \uB2FF\uC544 \uC788\uC5C8\uB2E4."
+  _nemoLine: "\uC11C\uC57D\uB300 \uC704\uC5D0 \uB9F9\uC138\uBB38\uC774 \uB193\uC5EC
+    \uC788\uC5C8\uB2E4. \uC544\uBCA8\uB9AC\uC544\uB294 \uB2E8\uC0C1 \uC55E\uC5D0
+    \uC11C\uC11C \uCCAB \uC904\uBD80\uD130 \uCC9C\uCC9C\uD788 \uB208\uC73C\uB85C
+    \uB530\uB77C\uAC14\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

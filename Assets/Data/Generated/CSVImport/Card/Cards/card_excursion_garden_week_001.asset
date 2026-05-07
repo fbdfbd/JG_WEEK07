@@ -13,20 +13,19 @@ MonoBehaviour:
   m_Name: card_excursion_garden_week_001
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_garden_week_001
-  _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-  _title: "\uC815\uC6D0 1\uC8FC\uCC28"
-  _originalText: "\uC815\uC6D0\uC5D0\uC11C \uB098\uBE44\uB97C \uCAD3\uB358 \uB124\uBAA8\uAC00
-    \uD6C4\uBB38 \uB108\uBA38\uB97C \uAD81\uAE08\uD574\uD55C\uB2E4. \uC5B4\uB514\uAE4C\uC9C0
-    \uB098\uAC00\uAC8C \uD560\uC9C0 \uACB0\uC815\uD55C\uB2E4."
+  _cardType: {fileID: 11400000, guid: 205022b0eed95814a9bded839025dfbf, type: 2}
+  _title: "\uC815\uC6D0"
+  _originalText: 
   _options:
-  - _semantic: 2
-    _label: "\uBC29\uBB38\uC744 \uB9C9\uB294\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C \uC678\uCD9C\uC744 \uB9C9\uACE0 \uB3CC\uB824\uBCF4\uB0B8\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: 7e9e7c466b743084c8fdfed064fa2fb3, type: 2}
   - _semantic: 0
-    _label: "\uC678\uCD9C\uC744 \uD5C8\uB77D\uD55C\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C\uAE4C\uC9C0 \uB098\uAC00\uB3C4\uB85D
-      \uD5C8\uB77D\uD55C\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uC2DC\uB4E0 \uD06C\uB808\uC774\uD504 \uBA38\uD2C0 \uC55E\uC5D0
+      \uC544\uBCA8\uB9AC\uC544\uAC00 \uBA48\uCDB0 \uC130\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758
+      \uC548\uC815\uACFC \uD638\uAE30\uC2EC\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC815\uC6D0 \uC785\uAD6C\uC5D0\uB294 \uC815\uB9AC \uC911\uC774\uB77C\uB294
+      \uD45C\uC2DD\uC774 \uAC78\uB824 \uC788\uC5C8\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758
+      \uC21C\uC751\uACFC \uC2E0\uC911\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []

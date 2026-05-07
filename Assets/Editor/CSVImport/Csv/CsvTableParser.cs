@@ -167,6 +167,22 @@ public sealed class CsvRecord
         return parsedValue;
     }
 
+    public float GetFloat(string header, float defaultValue = 0f)
+    {
+        string rawValue = this[header];
+        if (string.IsNullOrWhiteSpace(rawValue))
+        {
+            return defaultValue;
+        }
+
+        if (!float.TryParse(rawValue, out float parsedValue))
+        {
+            throw new InvalidOperationException($"Row {RowNumber}: '{header}' must be a number.");
+        }
+
+        return parsedValue;
+    }
+
     public string[] GetMultiValue(string header)
     {
         string rawValue = this[header];

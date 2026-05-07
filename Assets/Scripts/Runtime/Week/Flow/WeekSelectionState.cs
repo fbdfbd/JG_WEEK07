@@ -81,6 +81,35 @@ public sealed class WeekSelectionState
         return true;
     }
 
+    public int SelectAllBySemantic(
+        IReadOnlyList<WeekCardEntryData> weekCardEntries,
+        ECardOptionSemantic semantic)
+    {
+        ApplyWeekEntries(weekCardEntries);
+
+        int selectedCount = 0;
+
+        foreach (WeekCardEntryData weekCardEntry in weekCardEntries ?? Array.Empty<WeekCardEntryData>())
+        {
+            SO_CardInfoDefinition cardDefinition = weekCardEntry?.Card;
+            if (cardDefinition == null)
+            {
+                continue;
+            }
+
+            int optionIndex = FindOptionIndex(cardDefinition.Options, semantic);
+            if (optionIndex < 0)
+            {
+                continue;
+            }
+
+            _selectedOptionIndexByCard[cardDefinition] = optionIndex;
+            selectedCount++;
+        }
+
+        return selectedCount;
+    }
+
     public RuntimeWeekSelection[] BuildSelections(IReadOnlyList<WeekCardEntryData> weekCardEntries)
     {
         List<RuntimeWeekSelection> selections = new();
@@ -101,11 +130,12 @@ public sealed class WeekSelectionState
     }
 
     public WeekSelectionCategoryGroupPresentation[] BuildSelectionGroupPresentations(
-    IReadOnlyList<WeekCardEntryData> weekCardEntries,
-    string unknownCardTypeLabel)
+        IReadOnlyList<WeekCardEntryData> weekCardEntries,
+        string unknownCardTypeLabel,
+        RuntimeChildState childState = null)
     {
         WeekSelectionEntryPresentation[] selectionPresentations =
-            BuildSelectionPresentations(weekCardEntries, unknownCardTypeLabel);
+            BuildSelectionPresentations(weekCardEntries, unknownCardTypeLabel, childState);
 
         if (selectionPresentations.Length == 0)
         {
@@ -153,7 +183,8 @@ public sealed class WeekSelectionState
 
     public WeekSelectionEntryPresentation[] BuildSelectionPresentations(
         IReadOnlyList<WeekCardEntryData> weekCardEntries,
-        string unknownCardTypeLabel)
+        string unknownCardTypeLabel,
+        RuntimeChildState childState = null)
     {
         List<WeekSelectionEntryPresentation> selectionPresentations = new();
 
@@ -165,13 +196,22 @@ public sealed class WeekSelectionState
             }
 
             SO_CardInfoDefinition cardDefinition = weekCardEntry.Card;
+            EChildStatusType categoryStatType = default;
+            bool hasCategoryStatValue = childState != null &&
+                                        TryResolveCharacterStatType(cardDefinition, out categoryStatType);
+            int categoryStatValue = hasCategoryStatValue
+                ? childState.GetStat(categoryStatType)
+                : 0;
+
             selectionPresentations.Add(new WeekSelectionEntryPresentation(
                 cardDefinition,
                 cardDefinition.CardType != null ? cardDefinition.CardType.DisplayName : unknownCardTypeLabel,
                 cardDefinition.Title,
                 cardDefinition.OriginalText,
                 GetSelectedOptionIndex(cardDefinition),
-                cardDefinition.Options ?? Array.Empty<CardOptionData>()));
+                cardDefinition.Options ?? Array.Empty<CardOptionData>(),
+                hasCategoryStatValue,
+                categoryStatValue));
         }
 
         return selectionPresentations.ToArray();
@@ -198,5 +238,65 @@ public sealed class WeekSelectionState
         }
 
         return selectedOptionIndex;
+    }
+
+    private static int FindOptionIndex(
+        IReadOnlyList<CardOptionData> options,
+        ECardOptionSemantic semantic)
+    {
+        if (options == null)
+        {
+            return -1;
+        }
+
+        for (int i = 0; i < options.Count; i++)
+        {
+            CardOptionData option = options[i];
+            if (option != null && option.Semantic == semantic)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private static bool TryResolveCharacterStatType(
+        SO_CardInfoDefinition cardDefinition,
+        out EChildStatusType statType)
+    {
+        statType = default;
+
+        string cardId = cardDefinition != null ? cardDefinition.Id : null;
+        if (string.IsNullOrWhiteSpace(cardId))
+        {
+            return false;
+        }
+
+        if (cardId.IndexOf("rian", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            statType = EChildStatusType.Rian;
+            return true;
+        }
+
+        if (cardId.IndexOf("max", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            statType = EChildStatusType.Max;
+            return true;
+        }
+
+        if (cardId.IndexOf("millia", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            statType = EChildStatusType.Millia;
+            return true;
+        }
+
+        if (cardId.IndexOf("yuffie", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            statType = EChildStatusType.Yuffie;
+            return true;
+        }
+
+        return false;
     }
 }

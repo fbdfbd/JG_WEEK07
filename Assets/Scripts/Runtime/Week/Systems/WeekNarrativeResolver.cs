@@ -5,8 +5,25 @@ using System.Linq;
 public static class WeekNarrativeResolver
 {
     private const string NarratorSpeakerId = "speaker_narrator";
+    private static readonly EChildStatusType[] WeeklyResultSummaryStatTypes =
+    {
+        EChildStatusType.Trust,
+        EChildStatusType.Curiosity,
+        EChildStatusType.Anxiety,
+        EChildStatusType.Obedience,
+    };
 
     public static SO_InteractiveEventDefinition[] ResolvePendingEvents(
+        SO_WeekDefinition weekDefinition,
+        RuntimeChildState childState,
+        RuntimeWeekResult weekResult)
+    {
+        return ResolveDayEvents(weekDefinition, childState, weekResult)
+            .Concat(ResolveNightEvents(weekDefinition, childState, weekResult))
+            .ToArray();
+    }
+
+    public static SO_InteractiveEventDefinition[] ResolveDayEvents(
         SO_WeekDefinition weekDefinition,
         RuntimeChildState childState,
         RuntimeWeekResult weekResult)
@@ -16,8 +33,16 @@ public static class WeekNarrativeResolver
         List<SO_InteractiveEventDefinition> pendingEvents = new();
         pendingEvents.AddRange(ResolveRoutineEvents(weekDefinition?.DayFlow, childState, resolvedCardLookup));
         pendingEvents.AddRange(ResolveStoryEvents(weekDefinition?.DayFlow, childState, informationControlResult));
-        pendingEvents.AddRange(ResolveNightDialogues(weekDefinition?.NightFlow, childState, informationControlResult));
         return pendingEvents.ToArray();
+    }
+
+    public static SO_InteractiveEventDefinition[] ResolveNightEvents(
+        SO_WeekDefinition weekDefinition,
+        RuntimeChildState childState,
+        RuntimeWeekResult weekResult)
+    {
+        RuntimeInformationControlResult informationControlResult = weekResult?.InformationControlResult;
+        return ResolveNightDialogues(weekDefinition?.NightFlow, childState, informationControlResult).ToArray();
     }
 
     public static RuntimeResolvedCardRecord[] ResolveLinkedCards(
@@ -51,7 +76,7 @@ public static class WeekNarrativeResolver
             .Where(choice => choice != null)
             .Select(choice => new InteractiveEventChoicePresentation(
                 choice.Label,
-                BuildEffectSummary(choice.Interactions, weekUiText)))
+                BuildEffectSummary(choice.Interactions)))
             .ToArray()
             ?? Array.Empty<InteractiveEventChoicePresentation>();
 
@@ -62,7 +87,7 @@ public static class WeekNarrativeResolver
         return new InteractiveEventPresentation(
             string.IsNullOrWhiteSpace(step.TitleOverride) ? eventSession.EventDefinition.Title : step.TitleOverride,
             step.BodyText,
-            BuildEffectSummary(step.OnEnterInteractions, weekUiText),
+            BuildEffectSummary(step.OnEnterInteractions),
             ResolveVisualState(step, childState),
             dialogueLines,
             choices,
@@ -77,7 +102,121 @@ public static class WeekNarrativeResolver
             BuildDialogueLines(
                 selectedChoice?.ResponseDialogueLines,
                 selectedChoice?.ResponseLine),
-            BuildEffectSummary(selectedChoice?.Interactions, weekUiText));
+            BuildEffectSummary(selectedChoice?.Interactions));
+    }
+
+    public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
+        IReadOnlyList<SO_EventResultDefinition> resultLogs)
+    {
+        WeeklyResultLogEntryPresentation[] entries = resultLogs?
+            .Where(resultLog => resultLog != null)
+            .Select(resultLog => new WeeklyResultLogEntryPresentation(
+                resultLog.EventId,
+                resultLog.Title,
+                resultLog.Context))
+            .ToArray()
+            ?? Array.Empty<WeeklyResultLogEntryPresentation>();
+
+        return new WeeklyResultLogPresentation(entries);
+    }
+
+    public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs)
+    {
+        return new WeeklyResultLogPresentation(CreateWeeklyResultLogEntries(resultLogs));
+    }
+
+    public static WeeklyResultStatDeltaPresentation[] CreateWeeklyResultStatSummary(
+        RuntimeChildState childState,
+        IReadOnlyDictionary<EChildStatusType, int> beforeStats,
+        WeekUiTextProvider weekUiText)
+    {
+        if (childState == null || beforeStats == null)
+        {
+            return Array.Empty<WeeklyResultStatDeltaPresentation>();
+        }
+
+        List<WeeklyResultStatDeltaPresentation> summary = new();
+        for (int index = 0; index < WeeklyResultSummaryStatTypes.Length; index++)
+        {
+            EChildStatusType statType = WeeklyResultSummaryStatTypes[index];
+            int beforeValue = beforeStats.TryGetValue(statType, out int value)
+                ? value
+                : RuntimeChildState.DefaultStatValue;
+            int delta = childState.GetStat(statType) - beforeValue;
+            if (delta == 0)
+            {
+                continue;
+            }
+
+            summary.Add(new WeeklyResultStatDeltaPresentation(
+                statType,
+                GetDirectionalStatLabel(statType, delta),
+                delta));
+        }
+
+        return summary.ToArray();
+    }
+
+    public static WeeklyResultLogPresentation CreateWeeklyResultLogPresentation(
+        IReadOnlyList<RuntimeWeeklyResultLogRecord> history,
+        string selectedWeekId)
+    {
+        WeeklyResultLogWeekPresentation[] weeks = history?
+            .Where(record => record != null)
+            .Select(record => new WeeklyResultLogWeekPresentation(
+                record.WeekId,
+                record.WeekIndex,
+                record.WeekTitle,
+                CreateWeeklyResultLogEntries(record.ResultLogs),
+                record.StatSummary))
+            .ToArray()
+            ?? Array.Empty<WeeklyResultLogWeekPresentation>();
+
+        WeeklyResultLogWeekPresentation selectedWeek = SelectWeeklyResultLogWeek(weeks, selectedWeekId);
+        return new WeeklyResultLogPresentation(
+            selectedWeek.Entries,
+            weeks,
+            selectedWeek.WeekId,
+            selectedWeek.StatSummary);
+    }
+
+    private static WeeklyResultLogEntryPresentation[] CreateWeeklyResultLogEntries(
+        IReadOnlyList<RuntimeWeeklyResultLogEntryRecord> resultLogs)
+    {
+        return resultLogs?
+            .Where(record => record?.ResultLog != null)
+            .Select(resultLog => new WeeklyResultLogEntryPresentation(
+                resultLog.ResultLog.EventId,
+                resultLog.ResultLog.Title,
+                BuildResultContext(resultLog.ResultLog.Context, resultLog.Interactions)))
+            .ToArray()
+            ?? Array.Empty<WeeklyResultLogEntryPresentation>();
+    }
+
+    private static WeeklyResultLogWeekPresentation SelectWeeklyResultLogWeek(
+        IReadOnlyList<WeeklyResultLogWeekPresentation> weeks,
+        string selectedWeekId)
+    {
+        if (weeks == null || weeks.Count == 0)
+        {
+            return new WeeklyResultLogWeekPresentation(
+                string.Empty,
+                0,
+                string.Empty,
+                Array.Empty<WeeklyResultLogEntryPresentation>(),
+                Array.Empty<WeeklyResultStatDeltaPresentation>());
+        }
+
+        for (int index = 0; index < weeks.Count; index++)
+        {
+            if (string.Equals(weeks[index].WeekId, selectedWeekId, StringComparison.OrdinalIgnoreCase))
+            {
+                return weeks[index];
+            }
+        }
+
+        return weeks[weeks.Count - 1];
     }
 
     public static DialogueLinePresentation GetPrimaryDialogueLine(
@@ -161,7 +300,7 @@ public static class WeekNarrativeResolver
         RuntimeChildState childState,
         RuntimeInformationControlResult informationControlResult)
     {
-        return ResolveEligibleEvents(nightFlow?.Dialogues, childState, informationControlResult).Take(1);
+        return ResolveEligibleEvents(nightFlow?.Dialogues, childState, informationControlResult);
     }
 
     private static IEnumerable<SO_InteractiveEventDefinition> ResolveEligibleEvents(
@@ -186,10 +325,7 @@ public static class WeekNarrativeResolver
         }
 
         WeekEventConditionData conditions = eventDefinition.Conditions;
-        return HasRequiredFlags(childState, conditions) &&
-               HasNoBlockedFlags(childState, conditions) &&
-               MeetsStatRequirements(childState, conditions) &&
-               MeetsInformationRequirements(informationControlResult, conditions);
+        return WeekEventConditionEvaluator.MeetsAllConditions(childState, informationControlResult, conditions);
     }
 
     private static bool IsCardLinkedToEvent(
@@ -209,49 +345,6 @@ public static class WeekNarrativeResolver
         return MatchesInformationRequirements(eventDefinition.Conditions, resolvedCard);
     }
 
-    private static bool HasRequiredFlags(RuntimeChildState childState, WeekEventConditionData conditions)
-    {
-        return conditions?.RequiredFlags == null || conditions.RequiredFlags.All(childState.HasFlag);
-    }
-
-    private static bool HasNoBlockedFlags(RuntimeChildState childState, WeekEventConditionData conditions)
-    {
-        return conditions?.BlockedFlags == null || conditions.BlockedFlags.All(flagType => !childState.HasFlag(flagType));
-    }
-
-    private static bool MeetsStatRequirements(RuntimeChildState childState, WeekEventConditionData conditions)
-    {
-        if (conditions?.StatRequirements == null)
-        {
-            return true;
-        }
-
-        return conditions.StatRequirements.All(requirement =>
-        {
-            int value = childState.GetStat(requirement.StatType);
-            bool meetsMinimum = !requirement.UseMinimum || value >= requirement.MinimumValue;
-            bool meetsMaximum = !requirement.UseMaximum || value <= requirement.MaximumValue;
-            return meetsMinimum && meetsMaximum;
-        });
-    }
-
-    private static bool MeetsInformationRequirements(
-        RuntimeInformationControlResult informationControlResult,
-        WeekEventConditionData conditions)
-    {
-        if (conditions?.InformationRequirements == null)
-        {
-            return true;
-        }
-
-        return conditions.InformationRequirements.All(requirement =>
-        {
-            ECardOptionSemantic? semanticFilter = requirement.UseSemanticFilter ? requirement.Semantic : null;
-            int count = informationControlResult?.CountSelectionsForType(requirement.InformationType, semanticFilter) ?? 0;
-            return count >= requirement.MinimumCount;
-        });
-    }
-
     private static bool IsRoutineEventAvailable(
         SO_DayRoutineEventDefinition routineEvent,
         RuntimeResolvedCardRecord resolvedCard,
@@ -263,9 +356,7 @@ public static class WeekNarrativeResolver
         }
 
         WeekEventConditionData conditions = routineEvent.Conditions;
-        return HasRequiredFlags(childState, conditions) &&
-               HasNoBlockedFlags(childState, conditions) &&
-               MeetsStatRequirements(childState, conditions) &&
+        return WeekEventConditionEvaluator.MeetsStateConditions(childState, conditions) &&
                MatchesRoutineEvent(routineEvent, resolvedCard);
     }
 
@@ -334,7 +425,7 @@ public static class WeekNarrativeResolver
             .Select(candidate => new
             {
                 Candidate = candidate,
-                HasScore = TryGetSelectionScore(candidate, childState, out int score),
+                HasScore = WeekEventConditionEvaluator.TryGetSelectionScore(candidate.Event?.SelectionRule, childState, out int score),
                 Score = score,
             })
             .Where(item => item.HasScore)
@@ -350,7 +441,7 @@ public static class WeekNarrativeResolver
         }
 
         RoutineEventCandidate[] defaultCandidates = candidateArray
-            .Where(candidate => IsDefaultSelection(candidate.Event?.SelectionRule))
+            .Where(candidate => WeekEventConditionEvaluator.IsDefaultSelection(candidate.Event?.SelectionRule))
             .OrderByDescending(candidate => candidate.Event.Priority)
             .ThenBy(candidate => candidate.SourceIndex)
             .ToArray();
@@ -366,66 +457,35 @@ public static class WeekNarrativeResolver
             .First();
     }
 
-    private static bool TryGetSelectionScore(
-        RoutineEventCandidate candidate,
-        RuntimeChildState childState,
-        out int score)
-    {
-        score = 0;
-        EventSelectionRuleData rule = candidate.Event?.SelectionRule;
-        if (rule == null || childState == null)
-        {
-            return false;
-        }
-
-        int value = childState.GetStat(rule.SelectorStat);
-        switch (rule.Mode)
-        {
-            case EEventSelectionMode.MaxPositive:
-                if (value <= rule.Threshold)
-                {
-                    return false;
-                }
-
-                score = value;
-                return true;
-            case EEventSelectionMode.MaxNegative:
-                if (value >= rule.Threshold)
-                {
-                    return false;
-                }
-
-                score = rule.Threshold - value;
-                return true;
-            case EEventSelectionMode.MaxAny:
-                score = value;
-                return true;
-            case EEventSelectionMode.MinAny:
-                score = -value;
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    private static bool IsDefaultSelection(EventSelectionRuleData rule)
-    {
-        return rule != null && (rule.IsDefault || rule.Mode == EEventSelectionMode.Default);
-    }
-
     private static RuntimeResolvedCardRecord ResolveMatchedRoutineCard(
         SO_DayRoutineEventDefinition routineEvent,
         IReadOnlyDictionary<string, RuntimeResolvedCardRecord> resolvedCardLookup)
     {
         string linkedCardId = routineEvent?.LinkedCard?.Id;
-        if (string.IsNullOrWhiteSpace(linkedCardId) ||
-            resolvedCardLookup == null ||
-            !resolvedCardLookup.TryGetValue(linkedCardId, out RuntimeResolvedCardRecord resolvedCard))
+        if (!string.IsNullOrWhiteSpace(linkedCardId) &&
+            resolvedCardLookup != null &&
+            resolvedCardLookup.TryGetValue(linkedCardId, out RuntimeResolvedCardRecord resolvedCard))
+        {
+            return resolvedCard;
+        }
+
+        return ResolveBlockedRoutineFallbackCard(routineEvent, resolvedCardLookup);
+    }
+
+    private static RuntimeResolvedCardRecord ResolveBlockedRoutineFallbackCard(
+        SO_DayRoutineEventDefinition routineEvent,
+        IReadOnlyDictionary<string, RuntimeResolvedCardRecord> resolvedCardLookup)
+    {
+        if (routineEvent?.PreferredSemantics == null ||
+            !routineEvent.PreferredSemantics.Contains(ECardOptionSemantic.Blocked) ||
+            resolvedCardLookup == null)
         {
             return null;
         }
 
-        return resolvedCard;
+        return resolvedCardLookup.Values
+            .Where(resolvedCard => resolvedCard?.SelectedOption?.Semantic == ECardOptionSemantic.Blocked)
+            .FirstOrDefault(resolvedCard => MatchesRoutineEvent(routineEvent, resolvedCard));
     }
 
     private static IReadOnlyDictionary<string, RuntimeResolvedCardRecord> BuildResolvedCardLookup(
@@ -474,19 +534,54 @@ public static class WeekNarrativeResolver
     }
 
     private static string BuildEffectSummary(
-        IReadOnlyList<SO_CardInteractionDefinition> interactions,
-        WeekUiTextProvider weekUiText)
+        IReadOnlyList<SO_CardInteractionDefinition> interactions)
     {
         string[] effectNames = interactions?
             .Where(interaction => interaction != null)
-            .Select(interaction => interaction.name)
+            .SelectMany(interaction => interaction.GetDisplayNames())
             .Where(effectName => !string.IsNullOrWhiteSpace(effectName))
             .ToArray()
             ?? Array.Empty<string>();
 
         return effectNames.Length == 0
-            ? weekUiText.GetNoEffectSummary()
-            : string.Join(" / ", effectNames);
+            ? string.Empty
+            : string.Join(" ", effectNames);
+    }
+
+    private static string BuildResultContext(
+        string context,
+        IReadOnlyList<SO_CardInteractionDefinition> interactions)
+    {
+        string effectSummary = BuildEffectSummary(interactions);
+        if (string.IsNullOrWhiteSpace(effectSummary))
+        {
+            return context ?? string.Empty;
+        }
+
+        if (string.IsNullOrWhiteSpace(context))
+        {
+            return effectSummary;
+        }
+
+        return $"{context.TrimEnd()}\n{effectSummary}";
+    }
+
+    private static string GetStatLabel(EChildStatusType statType, WeekUiTextProvider weekUiText)
+    {
+        return weekUiText != null ? weekUiText.GetStatLabel(statType) : statType.ToString();
+    }
+
+    private static string GetDirectionalStatLabel(EChildStatusType statType, int delta)
+    {
+        bool isPositive = delta > 0;
+        return statType switch
+        {
+            EChildStatusType.Trust => isPositive ? "순진" : "영민",
+            EChildStatusType.Curiosity => isPositive ? "호기심" : "신중",
+            EChildStatusType.Anxiety => isPositive ? "불안" : "안정",
+            EChildStatusType.Obedience => isPositive ? "순응" : "반항",
+            _ => statType.ToString(),
+        };
     }
 
     private static DialogueLinePresentation[] BuildDialogueLines(

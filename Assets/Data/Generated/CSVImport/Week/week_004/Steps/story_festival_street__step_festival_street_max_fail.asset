@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: story_festival_street__step_festival_street_max_fail
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uACF5\uC5F0\uB300 \uCABD\uC73C\uB85C \uC0AC\uB78C\uB4E4\uC774 \uBAB0\uB9AC\uC790,
+      \uC544\uBCA8\uB9AC\uC544\uC758 \uC5B4\uAE68\uAC00 \uC0B4\uC9DD \uBC00\uB838\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB9C9\uC2A4\uAC00 \uAC00\uBB38 \uC5B4\uB978\uB4E4 \uACC1\uC5D0\uC11C
+      \uBE60\uB974\uAC8C \uB2E4\uAC00\uC654\uB2E4."
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uC774\uCABD\uC774 \uB35C \uBC00\uB824."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uB9C9\uC2A4\uB294 \uC0AC\uB78C\uB4E4 \uC0AC\uC774\uC5D0\uC11C \uBE48\uC790\uB9AC\uB97C
+      \uAC00\uB9AC\uCF30\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC5EC\uAE30?"
+  - _speaker: {fileID: 11400000, guid: c5f12395c55e0f04286ad56919148193, type: 2}
+    _text: "\uC751. \uC5EC\uAE30 \uC11C\uBA74 \uB35C \uBC00\uB824."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uB294 \uB9C9\uC2A4\uAC00 \uAC00\uB9AC\uD0A8
+      \uC790\uB9AC\uB85C \uC62E\uACBC\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uACE0\uB9C8\uC6CC."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uACF5\uC5F0\uC774 \uC2DC\uC791\uB418\uC790, \uD6C4\uC791\uAC00 \uC0AC\uB78C\uB4E4\uC774
+      \uC190\uB2D8\uC11D \uCABD\uC73C\uB85C \uC544\uC774\uB4E4\uC744 \uC548\uB0B4\uD588\uB2E4."
+  _nemoLine: "\uACF5\uC5F0\uB300 \uCABD\uC73C\uB85C \uC0AC\uB78C\uB4E4\uC774 \uBAB0\uB9AC\uC790,
+    \uC544\uBCA8\uB9AC\uC544\uC758 \uC5B4\uAE68\uAC00 \uC0B4\uC9DD \uBC00\uB838\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 11400000, guid: 66b0142ae877e8049bffc17baef1c48d, type: 2}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

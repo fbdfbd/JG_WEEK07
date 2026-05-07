@@ -19,13 +19,15 @@ public class UI_EndingPanel : MonoBehaviour
         RestartButton.onClick.RemoveListener(OnClickRestart);
     }
 
-    private void OnClickExit()
+    private async void OnClickExit()
     {
-#if UNITY_EDITOR
+        GameplayAnalyticsLogger.EndSession();
+
+    #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#else
+    #else
         Application.Quit();
-#endif
+    #endif
     }
 
     private void OnClickRestart()

@@ -9,15 +9,16 @@ public class UI_CharacterStatusView : MonoBehaviour
         public EChildStatusType StatType;
         public string LeftLabel;
         public string RightLabel;
+        public ECharacterStatusBarRenderMode RenderMode = ECharacterStatusBarRenderMode.Bipolar;
     }
 
     [Header("Stat Panels")]
     [SerializeField] private StatusDisplayRule[] _displayRules =
     {
-        new() { StatType = EChildStatusType.Trust, LeftLabel = "innocent / 순진", RightLabel = "clever / 영민" },
-        new() { StatType = EChildStatusType.Curiosity, LeftLabel = "curious / 호기심", RightLabel = "cautious / 신중" },
-        new() { StatType = EChildStatusType.Anxiety, LeftLabel = "compliant / 순응", RightLabel = "defiant / 반항" },
-        new() { StatType = EChildStatusType.Obedience, LeftLabel = "stable / 안정", RightLabel = "anxious / 불안" },
+        new() { StatType = EChildStatusType.Trust, LeftLabel = "clever / 영민", RightLabel = "innocent / 순진" },
+        new() { StatType = EChildStatusType.Curiosity, LeftLabel = "cautious / 신중", RightLabel = "curious / 호기심" },
+        new() { StatType = EChildStatusType.Anxiety, LeftLabel = "stable / 안정", RightLabel = "anxious / 불안" },
+        new() { StatType = EChildStatusType.Obedience, LeftLabel = "defiant / 반항", RightLabel = "compliant / 순응" },
     };
 
     [SerializeField] private UI_CharacterStatusBar[] _statusBars;
@@ -41,14 +42,19 @@ public class UI_CharacterStatusView : MonoBehaviour
 
             StatusDisplayRule rule = _displayRules[i];
             int statValue = FindStatValue(presentation.Stats, rule.StatType);
+            ECharacterStatusBarRenderMode renderMode = ResolveRenderMode(rule);
+            int minValue = renderMode == ECharacterStatusBarRenderMode.PositiveOnly
+                ? RuntimeChildState.DefaultStatValue
+                : RuntimeChildState.MinStatValue;
 
             statusBar.gameObject.SetActive(true);
             statusBar.Render(
                 rule.LeftLabel,
                 rule.RightLabel,
                 statValue,
-                RuntimeChildState.MinStatValue,
-                RuntimeChildState.MaxStatValue);
+                minValue,
+                RuntimeChildState.MaxStatValue,
+                renderMode);
         }
 
         for (int i = count; i < _statusBars.Length; i++)
@@ -76,5 +82,12 @@ public class UI_CharacterStatusView : MonoBehaviour
         }
 
         return RuntimeChildState.DefaultStatValue;
+    }
+
+    private static ECharacterStatusBarRenderMode ResolveRenderMode(StatusDisplayRule rule)
+    {
+        return rule.StatType == EChildStatusType.Affinity
+            ? ECharacterStatusBarRenderMode.PositiveOnly
+            : rule.RenderMode;
     }
 }

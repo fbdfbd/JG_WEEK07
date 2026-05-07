@@ -36,22 +36,23 @@ public class RuntimeChildState
         return DefaultStatValue;
     }
 
-    public void SetStat(EChildStatusType statType, int value)
+    public void SetStat(EChildStatusType statType, int value, string toastMessage = null)
     {
         int previousValue = GetStat(statType);
-        int currentValue = ClampStat(value);
+        int currentValue = ClampStat(statType, value);
         if (previousValue == currentValue)
         {
             return;
         }
 
         _stats[statType] = currentValue;
-        StatChanged?.Invoke(new StatChangeInfo(statType, previousValue, currentValue));
+        Debug.Log($"[StatChanged] {statType}: {previousValue} -> {currentValue} | {string.Join(", ", AllStatTypes.Select(type => $"{type}={GetStat(type)}"))}");
+        StatChanged?.Invoke(new StatChangeInfo(statType, previousValue, currentValue, toastMessage));
     }
 
-    public void AddStat(EChildStatusType statType, int amount)
+    public void AddStat(EChildStatusType statType, int amount, string toastMessage = null)
     {
-        SetStat(statType, GetStat(statType) + amount);
+        SetStat(statType, GetStat(statType) + amount, toastMessage);
     }
 
     public bool HasFlag(SO_FlagDefinition flagDefinition)
@@ -138,13 +139,16 @@ public class RuntimeChildState
         {
             _stats[statType] = DefaultStatValue;
         }
+
+        _stats[EChildStatusType.Anxiety] = 1;
     }
 
-    private static int ClampStat(int value)
+    private static int ClampStat(EChildStatusType statType, int value)
     {
-        if (value < MinStatValue)
+        int minValue = GetMinStatValue(statType);
+        if (value < minValue)
         {
-            return MinStatValue;
+            return minValue;
         }
 
         if (value > MaxStatValue)
@@ -154,20 +158,27 @@ public class RuntimeChildState
 
         return value;
     }
+
+    private static int GetMinStatValue(EChildStatusType statType)
+    {
+        return statType == EChildStatusType.Affinity ? 0 : MinStatValue;
+    }
 }
 
 public readonly struct StatChangeInfo
 {
-    public StatChangeInfo(EChildStatusType statType, int previousValue, int currentValue)
+    public StatChangeInfo(EChildStatusType statType, int previousValue, int currentValue, string toastMessage = null)
     {
         StatType = statType;
         PreviousValue = previousValue;
         CurrentValue = currentValue;
+        ToastMessage = toastMessage;
     }
 
     public EChildStatusType StatType { get; }
     public int PreviousValue { get; }
     public int CurrentValue { get; }
+    public string ToastMessage { get; }
     public int Delta => CurrentValue - PreviousValue;
 }
 

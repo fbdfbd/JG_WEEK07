@@ -18,8 +18,10 @@ public class UI_DialogueScreenView : MonoBehaviour
 
     [Header("Continue Action")]
     [SerializeField] private Button _continueButton;
+    [SerializeField] private Button _skipEventButton;
 
     public event Action ContinueRequested;
+    public event Action EventSkipRequested;
     public event Action<int> ChoiceSelected;
 
     private readonly List<DialogueLinePresentation> _dialogueLines = new();
@@ -41,6 +43,7 @@ public class UI_DialogueScreenView : MonoBehaviour
         BindDialogPanelEvents();
         BindChoicePanelEvents();
         BindContinueButtonEvent();
+        BindSkipEventButtonEvent();
     }
 
     private void OnDestroy()
@@ -48,6 +51,7 @@ public class UI_DialogueScreenView : MonoBehaviour
         UnbindDialogPanelEvents();
         UnbindChoicePanelEvents();
         UnbindContinueButtonEvent();
+        UnbindSkipEventButtonEvent();
     }
 
     public void ShowWeekFeedback(WeekFeedbackPresentation presentation)
@@ -111,6 +115,7 @@ public class UI_DialogueScreenView : MonoBehaviour
         _currentScreen = screen;
         _currentChildState = childState;
         _currentWeekResult = lastWeekResult;
+        RefreshInteractionButtons();
     }
 
     public System.Collections.IEnumerator PlayCurrentDialogueCutscene()
@@ -157,6 +162,32 @@ public class UI_DialogueScreenView : MonoBehaviour
 
         ContinueRequested?.Invoke();
         return true;
+    }
+
+    public void FlushUnloggedDialogueLinesToLog()
+    {
+        if (_dialogueLogService == null || _dialogueLines.Count == 0)
+        {
+            return;
+        }
+
+        int startIndex = Mathf.Max(0, _lastLoggedDialogueIndex + 1);
+        for (int index = startIndex; index < _dialogueLines.Count; index++)
+        {
+            DialogueLinePresentation line = _dialogueLines[index];
+            if (!line.HasContent)
+            {
+                continue;
+            }
+
+            _dialogueLogService.Append(new DialogueLogEntry(
+                _currentLogSource,
+                _currentLogTitle,
+                line.SpeakerName,
+                line.Text));
+        }
+
+        _lastLoggedDialogueIndex = _dialogueLines.Count - 1;
     }
 
     private void BindChoicePanelEvents()
@@ -209,6 +240,16 @@ public class UI_DialogueScreenView : MonoBehaviour
         _continueButton.onClick.AddListener(HandleContinueButtonClicked);
     }
 
+    private void BindSkipEventButtonEvent()
+    {
+        if (_skipEventButton == null)
+        {
+            return;
+        }
+
+        _skipEventButton.onClick.AddListener(HandleSkipEventButtonClicked);
+    }
+
     private void UnbindContinueButtonEvent()
     {
         if (_continueButton == null)
@@ -219,6 +260,16 @@ public class UI_DialogueScreenView : MonoBehaviour
         _continueButton.onClick.RemoveListener(HandleContinueButtonClicked);
     }
 
+    private void UnbindSkipEventButtonEvent()
+    {
+        if (_skipEventButton == null)
+        {
+            return;
+        }
+
+        _skipEventButton.onClick.RemoveListener(HandleSkipEventButtonClicked);
+    }
+
     private void HandleChoiceSelected(int choiceIndex)
     {
         ChoiceSelected?.Invoke(choiceIndex);
@@ -227,6 +278,17 @@ public class UI_DialogueScreenView : MonoBehaviour
     private void HandleContinueButtonClicked()
     {
         TryAdvance();
+    }
+
+    private void HandleSkipEventButtonClicked()
+    {
+        if (!CanRequestEventSkip())
+        {
+            return;
+        }
+
+        GameplayAnalyticsLogger.LogSkipButtonClicked(_currentScreen);
+        EventSkipRequested?.Invoke();
     }
 
     private void HandleDialogTypingCompleted()
@@ -283,6 +345,11 @@ public class UI_DialogueScreenView : MonoBehaviour
         if (_continueButton != null)
         {
             _continueButton.gameObject.SetActive(false);
+        }
+
+        if (_skipEventButton != null)
+        {
+            _skipEventButton.gameObject.SetActive(false);
         }
     }
 
@@ -460,6 +527,11 @@ public class UI_DialogueScreenView : MonoBehaviour
         {
             _continueButton.gameObject.SetActive(!shouldShowChoices);
         }
+
+        if (_skipEventButton != null)
+        {
+            _skipEventButton.gameObject.SetActive(CanRequestEventSkip());
+        }
     }
 
     private bool ShouldShowChoices()
@@ -480,6 +552,21 @@ public class UI_DialogueScreenView : MonoBehaviour
         }
 
         return _currentDialogueIndex >= _dialogueLines.Count - 1;
+    }
+
+    private bool CanRequestEventSkip()
+    {
+        if (!WeekFlowEventSkipPolicy.CanSkip(_currentScreen))
+        {
+            return false;
+        }
+
+        if (_dialogPanel != null && _dialogPanel.IsTyping)
+        {
+            return false;
+        }
+
+        return !IsBlockingDialogueCutscenePlaying();
     }
 
     private void SetLogContext(EDialogueLogSource source, string title)

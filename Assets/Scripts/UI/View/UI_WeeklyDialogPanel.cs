@@ -1,8 +1,10 @@
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class UI_WeeklyDialogPanel : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private float showDuration = 0.2f;
     [SerializeField] private float hideDuration = 0.15f;
     [SerializeField] private Ease showEase = Ease.OutBack;
@@ -13,6 +15,14 @@ public class UI_WeeklyDialogPanel : MonoBehaviour
     private void Awake()
     {
         rectTr = GetComponent<RectTransform>();
+    }
+
+    public void SetText(string text)
+    {
+        if (_dialogueText != null)
+        {
+            _dialogueText.text = text ?? string.Empty;
+        }
     }
 
     public void Show()

@@ -132,7 +132,8 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
 
         Dictionary<EChildStatusType, int> previousStats = CaptureCurrentStats();
         _childState.ClearReactionLogs();
-        _lastWeekResult = _weekRunner.RunWeek(CurrentWeek, _childState, BuildSelections());
+        WeekCardEntryData[] entries = GetCurrentWeekCards();
+        _lastWeekResult = _weekRunner.RunWeek(CurrentWeek, _childState, BuildSelections(entries), entries);
         _weekFeedback = WeekFeedbackResolver.Resolve(CurrentWeek, _lastWeekResult, _childState, previousStats);
         _pendingEvents.Clear();
         _pendingEvents.AddRange(WeekNarrativeResolver.ResolvePendingEvents(
@@ -245,7 +246,7 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
             _showChoiceResult = false;
         }
 
-        if (_currentEventSession.TryMoveToNextStep())
+        if (_currentEventSession.TryMoveToNextStep(_childState))
         {
             ShowCurrentEventStep();
             return;
@@ -312,9 +313,9 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
         _nemoFeedback = NemoFeedbackResolver.Resolve(_childState, lastResolvedCard);
     }
 
-    private RuntimeWeekSelection[] BuildSelections()
+    private RuntimeWeekSelection[] BuildSelections(IReadOnlyList<WeekCardEntryData> weekCardEntries)
     {
-        return GetCurrentWeekCards()
+        return (weekCardEntries ?? Array.Empty<WeekCardEntryData>())
             .Where(cardEntry => cardEntry?.Card != null)
             .Select(cardEntry => new RuntimeWeekSelection(
                 cardEntry.Card,
@@ -335,7 +336,7 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
 
     private WeekCardEntryData[] GetCurrentWeekCards()
     {
-        return CurrentWeek?.PreTurn?.InformationCards ?? Array.Empty<WeekCardEntryData>();
+        return WeekFlowQueryUtility.GetCurrentWeekEntries(CurrentWeek, _childState);
     }
 
     private void DrawHeader()
@@ -985,6 +986,7 @@ public sealed class WeekFlowPlaytesterController : MonoBehaviour
         SetSerializedField(step, "_visualState", visualState);
         SetSerializedField(step, "_onEnterInteractions", onEnterInteractions ?? Array.Empty<SO_CardInteractionDefinition>());
         SetSerializedField(step, "_choices", choices ?? Array.Empty<InteractiveEventChoiceData>());
+        SetSerializedField(step, "_conditionalNext", null);
         SetSerializedField(step, "_nextStep", nextStep);
         return step;
     }

@@ -22,6 +22,11 @@ public sealed class CsvDataset
     public IReadOnlyList<EventStepDialogueLineRow> EventStepDialogueLines { get; private set; }
     public IReadOnlyList<EventChoiceRow> EventChoices { get; private set; }
     public IReadOnlyList<EventChoiceDialogueLineRow> EventChoiceDialogueLines { get; private set; }
+    public IReadOnlyList<EventResultRow> EventResults { get; private set; }
+    public IReadOnlyList<EventCutsceneRuleRow> EventCutsceneRules { get; private set; }
+    public IReadOnlyList<CutsceneSequenceCommandRow> CutsceneSequenceCommands { get; private set; }
+    public IReadOnlyList<WeeklyTalkRow> WeeklyTalks { get; private set; }
+    public IReadOnlyList<EndingRow> Endings { get; private set; }
 
     public static CsvDataset Load(CsvImportSettings settings)
     {
@@ -119,7 +124,15 @@ public sealed class CsvDataset
             record.GetBool("use_custom_visual_state"),
             record["visual_state"],
             record.GetMultiValue("on_enter_interaction_ids"),
-            record["default_next_step_id"]));
+            record["default_next_step_id"],
+            record["condition_stat_1"],
+            record["condition_min_1"],
+            record["condition_max_1"],
+            record["condition_stat_2"],
+            record["condition_min_2"],
+            record["condition_max_2"],
+            record["conditional_next_step_id"],
+            record["conditional_fallback_step_id"]));
         dataset.EventStepDialogueLines = LoadTable(csvRootPath, "event_step_dialogue_lines.csv", record => new EventStepDialogueLineRow(
             record["event_id"],
             record["step_id"],
@@ -141,12 +154,80 @@ public sealed class CsvDataset
             record.GetInt("line_order"),
             record["speaker_id"],
             record["text"]));
+        dataset.EventResults = LoadOptionalTable(csvRootPath, "event_result.csv", record => new EventResultRow(
+            record["event_id"],
+            record["title"],
+            record["context"]));
+        dataset.EventCutsceneRules = LoadOptionalTable(csvRootPath, "event_cutscene_rules.csv", record => new EventCutsceneRuleRow(
+            record["rule_id"],
+            record.GetBool("enabled", true),
+            record["week_id"],
+            record["event_id"],
+            record["moment"],
+            record["sequence_id"],
+            record["special_player_id"]));
+        dataset.CutsceneSequenceCommands = LoadOptionalTable(csvRootPath, "cutscene_sequences.csv", record => new CutsceneSequenceCommandRow(
+            record["sequence_id"],
+            record.GetInt("order"),
+            record["command"],
+            record["target_key"],
+            record["value1"],
+            record["value2"],
+            record["value3"],
+            record.GetFloat("duration"),
+            record["ease"],
+            record.GetBool("blocking", true)));
+        dataset.WeeklyTalks = LoadOptionalTable(csvRootPath, "weeklytalk.csv", record => new WeeklyTalkRow(
+            record["week_id"],
+            record["direction"],
+            record.GetInt("variant_order"),
+            record.GetInt("priority"),
+            record.GetInt("weight", 1),
+            record["nemo_state"],
+            record["context"],
+            record.GetFloat("display_seconds"),
+            record.GetFloat("cooldown_seconds"),
+            record.GetBool("allow_auto", true),
+            record.GetBool("allow_click", true),
+            record.GetMultiValue("interaction_ids"),
+            record.GetMultiValue("required_flag_ids"),
+            record.GetMultiValue("blocked_flag_ids")));
+        dataset.Endings = LoadOptionalTable(csvRootPath, "ending_catalog.csv", record => new EndingRow(
+            record["ending_id"],
+            record["ending_category"],
+            record["direction_type"],
+            record["character_type"],
+            record["min_meet_count"],
+            record["max_meet_count"],
+            record["affinity_min"],
+            record["affinity_max"],
+            record.GetInt("priority"),
+            record["title"],
+            record["summary"],
+            record["body"],
+            record["closing_line"],
+            record["reputation_line"],
+            record["visual_state"],
+            record.GetBool("enabled", true),
+            record["memo"]));
         return dataset;
     }
 
     private static IReadOnlyList<TRow> LoadTable<TRow>(string csvRootPath, string fileName, Func<CsvRecord, TRow> factory)
     {
         CsvTable table = CsvTableParser.ParseFile(Path.Combine(csvRootPath, fileName));
+        return table.Rows.Select(factory).ToArray();
+    }
+
+    private static IReadOnlyList<TRow> LoadOptionalTable<TRow>(string csvRootPath, string fileName, Func<CsvRecord, TRow> factory)
+    {
+        string path = Path.Combine(csvRootPath, fileName);
+        if (!File.Exists(path))
+        {
+            return Array.Empty<TRow>();
+        }
+
+        CsvTable table = CsvTableParser.ParseFile(path);
         return table.Rows.Select(factory).ToArray();
     }
 }
@@ -459,7 +540,15 @@ public sealed class EventStepRow
         bool useCustomVisualState,
         string visualState,
         string[] onEnterInteractionIds,
-        string defaultNextStepId)
+        string defaultNextStepId,
+        string conditionStat1,
+        string conditionMin1,
+        string conditionMax1,
+        string conditionStat2,
+        string conditionMin2,
+        string conditionMax2,
+        string conditionalNextStepId,
+        string conditionalFallbackStepId)
     {
         EventId = eventId;
         StepId = stepId;
@@ -469,6 +558,14 @@ public sealed class EventStepRow
         VisualState = visualState;
         OnEnterInteractionIds = onEnterInteractionIds;
         DefaultNextStepId = defaultNextStepId;
+        ConditionStat1 = conditionStat1;
+        ConditionMin1 = conditionMin1;
+        ConditionMax1 = conditionMax1;
+        ConditionStat2 = conditionStat2;
+        ConditionMin2 = conditionMin2;
+        ConditionMax2 = conditionMax2;
+        ConditionalNextStepId = conditionalNextStepId;
+        ConditionalFallbackStepId = conditionalFallbackStepId;
     }
 
     public string EventId { get; }
@@ -479,6 +576,14 @@ public sealed class EventStepRow
     public string VisualState { get; }
     public string[] OnEnterInteractionIds { get; }
     public string DefaultNextStepId { get; }
+    public string ConditionStat1 { get; }
+    public string ConditionMin1 { get; }
+    public string ConditionMax1 { get; }
+    public string ConditionStat2 { get; }
+    public string ConditionMin2 { get; }
+    public string ConditionMax2 { get; }
+    public string ConditionalNextStepId { get; }
+    public string ConditionalFallbackStepId { get; }
 }
 
 public sealed class EventStepDialogueLineRow
@@ -552,4 +657,194 @@ public sealed class EventChoiceDialogueLineRow
     public int LineOrder { get; }
     public string SpeakerId { get; }
     public string Text { get; }
+}
+
+public sealed class EventResultRow
+{
+    public EventResultRow(string eventId, string title, string context)
+    {
+        EventId = eventId;
+        Title = title;
+        Context = context;
+    }
+
+    public string EventId { get; }
+    public string Title { get; }
+    public string Context { get; }
+}
+
+public sealed class EventCutsceneRuleRow
+{
+    public EventCutsceneRuleRow(
+        string id,
+        bool enabled,
+        string weekId,
+        string eventId,
+        string moment,
+        string sequenceId,
+        string specialPlayerId)
+    {
+        Id = id;
+        Enabled = enabled;
+        WeekId = weekId;
+        EventId = eventId;
+        Moment = moment;
+        SequenceId = sequenceId;
+        SpecialPlayerId = specialPlayerId;
+    }
+
+    public string Id { get; }
+    public bool Enabled { get; }
+    public string WeekId { get; }
+    public string EventId { get; }
+    public string Moment { get; }
+    public string SequenceId { get; }
+    public string SpecialPlayerId { get; }
+}
+
+public sealed class CutsceneSequenceCommandRow
+{
+    public CutsceneSequenceCommandRow(
+        string sequenceId,
+        int order,
+        string command,
+        string targetKey,
+        string value1,
+        string value2,
+        string value3,
+        float duration,
+        string ease,
+        bool blocking)
+    {
+        SequenceId = sequenceId;
+        Order = order;
+        Command = command;
+        TargetKey = targetKey;
+        Value1 = value1;
+        Value2 = value2;
+        Value3 = value3;
+        Duration = duration;
+        Ease = ease;
+        Blocking = blocking;
+    }
+
+    public string SequenceId { get; }
+    public int Order { get; }
+    public string Command { get; }
+    public string TargetKey { get; }
+    public string Value1 { get; }
+    public string Value2 { get; }
+    public string Value3 { get; }
+    public float Duration { get; }
+    public string Ease { get; }
+    public bool Blocking { get; }
+}
+
+public sealed class WeeklyTalkRow
+{
+    public WeeklyTalkRow(
+        string weekId,
+        string direction,
+        int variantOrder,
+        int priority,
+        int weight,
+        string nemoState,
+        string context,
+        float displaySeconds,
+        float cooldownSeconds,
+        bool allowAuto,
+        bool allowClick,
+        string[] interactionIds,
+        string[] requiredFlagIds,
+        string[] blockedFlagIds)
+    {
+        WeekId = weekId;
+        Direction = direction;
+        VariantOrder = variantOrder;
+        Priority = priority;
+        Weight = weight;
+        NemoState = nemoState;
+        Context = context;
+        DisplaySeconds = displaySeconds;
+        CooldownSeconds = cooldownSeconds;
+        AllowAuto = allowAuto;
+        AllowClick = allowClick;
+        InteractionIds = interactionIds;
+        RequiredFlagIds = requiredFlagIds;
+        BlockedFlagIds = blockedFlagIds;
+    }
+
+    public string WeekId { get; }
+    public string Direction { get; }
+    public int VariantOrder { get; }
+    public int Priority { get; }
+    public int Weight { get; }
+    public string NemoState { get; }
+    public string Context { get; }
+    public float DisplaySeconds { get; }
+    public float CooldownSeconds { get; }
+    public bool AllowAuto { get; }
+    public bool AllowClick { get; }
+    public string[] InteractionIds { get; }
+    public string[] RequiredFlagIds { get; }
+    public string[] BlockedFlagIds { get; }
+}
+
+public sealed class EndingRow
+{
+    public EndingRow(
+        string id,
+        string category,
+        string directionType,
+        string characterType,
+        string minMeetCount,
+        string maxMeetCount,
+        string affinityMin,
+        string affinityMax,
+        int priority,
+        string title,
+        string summary,
+        string body,
+        string closingLine,
+        string reputationLine,
+        string visualState,
+        bool enabled,
+        string memo)
+    {
+        Id = id;
+        Category = category;
+        DirectionType = directionType;
+        CharacterType = characterType;
+        MinMeetCount = minMeetCount;
+        MaxMeetCount = maxMeetCount;
+        AffinityMin = affinityMin;
+        AffinityMax = affinityMax;
+        Priority = priority;
+        Title = title;
+        Summary = summary;
+        Body = body;
+        ClosingLine = closingLine;
+        ReputationLine = reputationLine;
+        VisualState = visualState;
+        Enabled = enabled;
+        Memo = memo;
+    }
+
+    public string Id { get; }
+    public string Category { get; }
+    public string DirectionType { get; }
+    public string CharacterType { get; }
+    public string MinMeetCount { get; }
+    public string MaxMeetCount { get; }
+    public string AffinityMin { get; }
+    public string AffinityMax { get; }
+    public int Priority { get; }
+    public string Title { get; }
+    public string Summary { get; }
+    public string Body { get; }
+    public string ClosingLine { get; }
+    public string ReputationLine { get; }
+    public string VisualState { get; }
+    public bool Enabled { get; }
+    public string Memo { get; }
 }

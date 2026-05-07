@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44809654f209aeb45acdc27cb42ed09d, type: 3}
+  m_Name: story_festival_street
+  m_EditorClassIdentifier: Assembly-CSharp::SO_StoryEventDefinition
+  _id: story_festival_street
+  _title: "\uD6C4\uC791\uAC00 \uCD95\uC81C \uAC70\uB9AC"
+  _priority: 100
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 82d3a8b994fecea4ebecf48642185e18, type: 2}
+  _result: {fileID: 11400000, guid: dfa282ae8f8bf2c41a43329bbc96b46d, type: 2}
+  _onCompletedInteractions: []
+  _cinematicProfile: {fileID: 0}

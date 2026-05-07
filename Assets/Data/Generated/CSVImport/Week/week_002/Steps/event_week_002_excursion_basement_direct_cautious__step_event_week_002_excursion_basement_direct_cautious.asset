@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_002_excursion_basement_direct_cautious__step_event_week_002_excursion_basement_direct_cautious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC120\uBC18 \uB4A4\uC5D0\uC11C \uBD80\uC2A4\uB7ED\uAC70\uB9AC\uB294
+      \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC950\uC77C\uAE4C? \uB9C8\uB9AC, \uBA3C\uC800 \uBD10\uC918."
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC54C\uACA0\uC2B5\uB2C8\uB2E4, \uC544\uAC00\uC528. \uBB3C\uB7EC\uB098
+      \uACC4\uC138\uC694."
+  - _speaker: {fileID: 11400000, guid: 847f079bcbea6a646a71c4510ac11245, type: 2}
+    _text: "\uC544\uBCA8\uB9AC\uC544\uAC00 \uC18C\uB9AC\uC758 \uADFC\uC6D0\uC9C0\uC5D0\uC11C
+      \uBA40\uCC0D\uC774 \uB5A8\uC5B4\uC9C4\uB2E4."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uBB50\uAC00 \uC788\uC5B4..?"
+  - _speaker: {fileID: 11400000, guid: 5bb39217ef6e2284f84306acd528c0b3, type: 2}
+    _text: "\uC544\uBB34\uAC83\uB3C4 \uC5C6\uB124\uC694. \uAC71\uC815\uB9C8\uC138\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uD734, \uB2E4\uD589\uC774\uB2E4..."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC950\uB294 \uC870\uAE08 \uBB34\uC11C\uC6B0\uB2C8\uAE4C, \uC774\uC820
+      \uAD1C\uCC2E\uC544!"
+  _nemoLine: "\uC120\uBC18 \uB4A4\uC5D0\uC11C \uBD80\uC2A4\uB7ED\uAC70\uB9AC\uB294
+    \uC18C\uB9AC\uAC00 \uB0AC\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

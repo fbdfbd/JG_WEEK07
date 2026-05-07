@@ -20,6 +20,7 @@ public sealed class CsvImportContext
     public Dictionary<string, SO_CardInfoDefinition> CardsById { get; } = new();
     public Dictionary<string, ImportedWeekBundle> WeeksById { get; } = new();
     public Dictionary<string, SO_InteractiveEventDefinition> EventsById { get; } = new();
+    public Dictionary<string, SO_EventResultDefinition> EventResultsByEventId { get; } = new();
     public Dictionary<string, SO_InteractiveEventStepDefinition> StepsByKey { get; } = new();
 
     public static string BuildStepKey(string eventId, string stepId)

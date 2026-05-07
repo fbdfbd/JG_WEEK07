@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_WeekFlowScreenView : MonoBehaviour
 {
@@ -11,33 +12,42 @@ public class UI_WeekFlowScreenView : MonoBehaviour
 
     [SerializeField] private GameObject _semanticPanel;
     [SerializeField] private UI_CanvasGroupVisibilityEffect _semanticPanelEffect;
+    [SerializeField] private List<GameObject> _linkedInfoPanels = new();
+    [SerializeField] private Button _cardOutsideClickButton;
+    [SerializeField] private UI_TabSlideImage _mapSlideImage;
 
     public event Action RunWeekRequested;
     public event Action<SO_CardInfoDefinition, int> CardOptionSelected;
+    public event Action<ECardOptionSemantic> AllCardSemanticSelected;
 
-    private bool _isInfoPanelVisible = false;
+    private bool _isInfoPanelVisible = true;
 
     private void Awake()
     {
         ResolveSemanticPanelEffect();
         BindCardPanelEvents();
         BindBottomPanelEvents();
+        BindOutsideClickButtonEvent();
+        SetOutsideClickButtonVisible(_isInfoPanelVisible);
     }
 
     private void OnDestroy()
     {
         UnbindCardPanelEvents();
         UnbindBottomPanelEvents();
+        UnbindOutsideClickButtonEvent();
     }
 
-    public void RenderSelectionGroups(IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups)
+    public void RenderSelectionGroups(
+        IReadOnlyList<WeekSelectionCategoryGroupPresentation> groups,
+        WeekSelectionGroupRenderOptions renderOptions = default)
     {
         if (_cardPanel == null)
         {
             return;
         }
 
-        _cardPanel.SetCardGroups(groups);
+        _cardPanel.SetCardGroups(groups, renderOptions.ResetPosition);
     }
 
     public void RenderChildState(ChildStatePresentation presentation)
@@ -68,6 +78,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         }
 
         _cardPanel.OnCardOptionClicked += HandleCardOptionClicked;
+        _cardPanel.OnAllCardSemanticRequested += HandleAllCardSemanticRequested;
     }
 
     private void UnbindCardPanelEvents()
@@ -78,6 +89,7 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         }
 
         _cardPanel.OnCardOptionClicked -= HandleCardOptionClicked;
+        _cardPanel.OnAllCardSemanticRequested -= HandleAllCardSemanticRequested;
     }
 
     private void BindBottomPanelEvents()
@@ -107,12 +119,30 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         CardOptionSelected?.Invoke(cardDefinition, optionIndex);
     }
 
+    private void HandleAllCardSemanticRequested(ECardOptionSemantic semantic)
+    {
+        AllCardSemanticSelected?.Invoke(semantic);
+    }
+
     private void HandleInfoButtonClicked()
     {
-        _isInfoPanelVisible = !_isInfoPanelVisible;
+        SetInfoPanelsVisible(!_isInfoPanelVisible);
+    }
 
-        SetSemanticPanelVisible(_isInfoPanelVisible);
-        SetCardPanelVisible(_isInfoPanelVisible);
+    private void HandleOutsideClickButtonClicked()
+    {
+        SetInfoPanelsVisible(false);
+        _mapSlideImage.Close();
+    }
+
+    private void SetInfoPanelsVisible(bool visible)
+    {
+        _isInfoPanelVisible = visible;
+
+        SetSemanticPanelVisible(visible);
+        SetCardPanelVisible(visible);
+        SetLinkedInfoPanelsVisible(visible);
+        SetOutsideClickButtonVisible(visible);
     }
 
     private void SetCardPanelVisible(bool visible)
@@ -162,6 +192,87 @@ public class UI_WeekFlowScreenView : MonoBehaviour
         {
             _semanticPanel.SetActive(visible);
         }
+    }
+
+    private void SetLinkedInfoPanelsVisible(bool visible)
+    {
+        if (_linkedInfoPanels == null)
+        {
+            return;
+        }
+
+        foreach (GameObject panel in _linkedInfoPanels)
+        {
+            SetLinkedPanelVisible(panel, visible);
+        }
+    }
+
+    private static void SetLinkedPanelVisible(GameObject panel, bool visible)
+    {
+        if (panel == null)
+        {
+            return;
+        }
+
+        if (panel.TryGetComponent<UI_CardShowEffect>(out var cardShowEffect))
+        {
+            if (visible)
+            {
+                cardShowEffect.Open();
+            }
+            else
+            {
+                cardShowEffect.Close();
+            }
+
+            return;
+        }
+
+        if (panel.TryGetComponent<UI_CanvasGroupVisibilityEffect>(out var canvasGroupEffect))
+        {
+            if (visible)
+            {
+                canvasGroupEffect.Open();
+            }
+            else
+            {
+                canvasGroupEffect.Close();
+            }
+
+            return;
+        }
+
+        panel.SetActive(visible);
+    }
+
+    private void BindOutsideClickButtonEvent()
+    {
+        if (_cardOutsideClickButton == null)
+        {
+            return;
+        }
+
+        _cardOutsideClickButton.onClick.AddListener(HandleOutsideClickButtonClicked);
+    }
+
+    private void UnbindOutsideClickButtonEvent()
+    {
+        if (_cardOutsideClickButton == null)
+        {
+            return;
+        }
+
+        _cardOutsideClickButton.onClick.RemoveListener(HandleOutsideClickButtonClicked);
+    }
+
+    private void SetOutsideClickButtonVisible(bool visible)
+    {
+        if (_cardOutsideClickButton == null)
+        {
+            return;
+        }
+
+        _cardOutsideClickButton.gameObject.SetActive(visible);
     }
 
     private void ResolveSemanticPanelEffect()

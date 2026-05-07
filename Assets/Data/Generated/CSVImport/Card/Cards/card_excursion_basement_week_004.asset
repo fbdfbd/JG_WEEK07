@@ -13,22 +13,20 @@ MonoBehaviour:
   m_Name: card_excursion_basement_week_004
   m_EditorClassIdentifier: Assembly-CSharp::SO_CardInfoDefinition
   _id: card_excursion_basement_week_004
-  _cardType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-  _title: "\uC9C0\uD558\uC2E4 4\uC8FC\uCC28"
-  _originalText: "\uC9C0\uD558\uC2E4 \uBCBD\uC5D0\uC11C \uC624\uB798\uB41C \uB099\uC11C\uC640
-    \uD22C\uBA85\uD55C \uBCF4\uD638\uB9C9\uC744 \uBC1C\uACAC\uD55C\uB2E4. \uC65C
-    \uC9C0\uC6CC\uC9C0\uC9C0 \uC54A\uC558\uB294\uC9C0 \uC54C\uAC8C \uD560\uC9C0 \uC815\uD55C\uB2E4."
+  _cardType: {fileID: 11400000, guid: dedf20def60c1004c884dad104f732f3, type: 2}
+  _title: "\uC9C0\uD558\uC2E4"
+  _originalText: 
   _options:
-  - _semantic: 2
-    _label: "\uBC29\uBB38\uC744 \uB9C9\uB294\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C \uC678\uCD9C\uC744 \uB9C9\uACE0 \uB3CC\uB824\uBCF4\uB0B8\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-    - {fileID: 11400000, guid: 7e8a58bb3ab8b5440a4be57ce5a52c93, type: 2}
   - _semantic: 0
-    _label: "\uC678\uCD9C\uC744 \uD5C8\uB77D\uD55C\uB2E4"
-    _presentedText: "\uD574\uB2F9 \uC7A5\uC18C\uAE4C\uC9C0 \uB098\uAC00\uB3C4\uB85D
-      \uD5C8\uB77D\uD55C\uB2E4."
-    _interactions:
-    - {fileID: 11400000, guid: 3767dfb8845aead42b17c728fe339544, type: 2}
-    - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
+    _label: "\uD5C8\uAC00"
+    _presentedText: "\uCC9C\uC73C\uB85C \uB36E\uC778 \uC791\uC740 \uBB3C\uAC74\uB4E4\uC774
+      \uC904\uC9C0\uC5B4 \uB193\uC5EC \uC788\uC5C8\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758
+      \uD638\uAE30\uC2EC\uACFC \uC21C\uC9C4\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []
+  - _semantic: 2
+    _label: "\uD1B5\uC81C"
+    _presentedText: "\uC9C0\uD558\uC2E4\uC758 \uCC9C\uC73C\uB85C \uB36E\uC778 \uBB3C\uAC74
+      \uC55E\uC5D0\uB294 \uAC74\uB4DC\uB9AC\uC9C0 \uB9D0\uB77C\uB294 \uD45C\uC2DD\uC774
+      \uB193\uC5EC \uC788\uC5C8\uB2E4.\n\uC544\uBCA8\uB9AC\uC544\uC758 \uD638\uAE30\uC2EC\uACFC
+      \uBC18\uD56D\uC774 \uB192\uC544\uC9D1\uB2C8\uB2E4."
+    _interactions: []

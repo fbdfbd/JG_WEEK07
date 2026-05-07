@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_006_rian_2
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_006_rian_2
+  _title: "\uB9AC\uC548"
+  _priority: 10
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements:
+    - _statType: 5
+      _useMinimum: 1
+      _minimumValue: 3
+      _useMaximum: 1
+      _maximumValue: 4
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 9ea91dee97898654cbf288f55f766d48, type: 2}
+  _result: {fileID: 11400000, guid: 3e8dff415a7b8074dbee8f9e3e76670f, type: 2}
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
+  - {fileID: 11400000, guid: b0acdf54f7c36774fbadc86a7ef5a9d2, type: 2}
+  - {fileID: 11400000, guid: c59b64aca8f33c74f8799b37b3b2b92c, type: 2}
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: aff23461bf1a8394e86a50769f425fb0, type: 2}
+  _preferredSemantics: 00000000
+  _linkedCard: {fileID: 11400000, guid: 76b9408b43da2b24ea9f7c158871dc55, type: 2}
+  _selectionRule:
+    _mode: 0
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 0

@@ -1,4 +1,6 @@
+using System;
 using System.Linq;
+using UnityEngine;
 
 public sealed class WeekFlowPresenter
 {
@@ -7,6 +9,7 @@ public sealed class WeekFlowPresenter
     private readonly WeekUiTextProvider _weekUiText;
     private readonly WeekSelectionState _weekSelectionState;
     private readonly WeekSequenceState _weekSequenceState;
+    private string _lastRenderedSelectionWeekId;
 
     public WeekFlowPresenter(
         WeekFlowViewBase view,
@@ -27,18 +30,34 @@ public sealed class WeekFlowPresenter
         PublishWeekHeader();
         PublishSelectionEntries();
         PublishChildState();
+        PublishDayFlowProgress();
         PublishStatusMessage();
         PublishCurrentNemoFeedback();
     }
 
     public void PublishSelectionEntries()
     {
+        SO_WeekDefinition currentWeekDefinition = _weekSequenceState.CurrentWeekDefinition;
+        string currentWeekId = ResolveWeekId(currentWeekDefinition);
+        bool shouldResetPosition = !string.Equals(
+            _lastRenderedSelectionWeekId,
+            currentWeekId,
+            StringComparison.OrdinalIgnoreCase);
+
         WeekSelectionCategoryGroupPresentation[] selectionGroups =
             _weekSelectionState.BuildSelectionGroupPresentations(
-                WeekFlowQueryUtility.GetCurrentWeekEntries(_weekSequenceState.CurrentWeekDefinition),
-                _weekUiText.GetUnknownCardType());
+                WeekFlowQueryUtility.GetCurrentWeekEntries(
+                    currentWeekDefinition,
+                    _runtimeState.ChildState),
+                _weekUiText.GetUnknownCardType(),
+                _runtimeState.ChildState);
 
-        _view?.RenderSelectionGroups(selectionGroups);
+        WeekSelectionGroupRenderOptions renderOptions = shouldResetPosition
+            ? WeekSelectionGroupRenderOptions.ResetToFirstGroup
+            : WeekSelectionGroupRenderOptions.PreservePosition;
+
+        _view?.RenderSelectionGroups(selectionGroups, renderOptions);
+        _lastRenderedSelectionWeekId = currentWeekId;
     }
 
 
@@ -67,6 +86,11 @@ public sealed class WeekFlowPresenter
     public void PublishStatusMessage()
     {
         _view?.RenderStatusMessage(_runtimeState.StatusMessage);
+    }
+
+    public void PublishDayFlowProgress()
+    {
+        _view?.RenderDayFlowProgress(_runtimeState.DayFlowProgress);
     }
 
     public void PublishCurrentNemoFeedback()
@@ -107,6 +131,23 @@ public sealed class WeekFlowPresenter
         _view?.ShowInteractiveEventResult(presentation);
     }
 
+    public void ShowWeeklyResultLog(WeeklyResultLogPresentation presentation)
+    {
+        Debug.Log(
+            $"[WeeklyStatDebug] Presenter.ShowWeeklyResultLog " +
+            $"entryCount={presentation.Entries?.Count ?? 0} " +
+            $"weekCount={presentation.Weeks?.Count ?? 0}");
+        _view?.ShowWeeklyResultLog(presentation);
+    }
+
+    public void ShowWeeklyStatResult(WeeklyStatResultPresentation presentation)
+    {
+        Debug.Log(
+            $"[WeeklyStatDebug] Presenter.ShowWeeklyStatResult " +
+            $"changeCount={presentation.Changes?.Count ?? 0}");
+        _view?.ShowWeeklyStatResult(presentation);
+    }
+
     public void ShowEnding(EndingPresentation presentation)
     {
         _view?.ShowEnding(presentation);
@@ -124,6 +165,11 @@ public sealed class WeekFlowPresenter
             return;
         }
 
+        Debug.Log(
+            $"[WeeklyStatDebug] Presenter.PresentScreen " +
+            $"screen={screen.ScreenType} " +
+            $"week={FormatWeekId(screen.WeekDefinition)}");
+
         switch (screen.ScreenType)
         {
             case EWeekFlowScreenType.WeekFeedback:
@@ -134,6 +180,12 @@ public sealed class WeekFlowPresenter
                 break;
             case EWeekFlowScreenType.ChoiceResult:
                 ShowInteractiveEventResult(screen.ChoiceResult);
+                break;
+            case EWeekFlowScreenType.WeeklyResultLog:
+                ShowWeeklyResultLog(screen.WeeklyResultLog);
+                break;
+            case EWeekFlowScreenType.WeeklyStatResult:
+                ShowWeeklyStatResult(screen.WeeklyStatResult);
                 break;
             case EWeekFlowScreenType.Ending:
                 ShowEnding(screen.Ending);
@@ -146,7 +198,18 @@ public sealed class WeekFlowPresenter
 
     public void HideFlowScreens()
     {
+        Debug.Log("[WeeklyStatDebug] Presenter.HideFlowScreens");
         _view?.HideTransientViews();
+    }
+
+    private static string FormatWeekId(SO_WeekDefinition weekDefinition)
+    {
+        return weekDefinition != null ? weekDefinition.Id : "null";
+    }
+
+    private static string ResolveWeekId(SO_WeekDefinition weekDefinition)
+    {
+        return weekDefinition != null ? weekDefinition.Id : string.Empty;
     }
 
     private void PublishWeekHeader()

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6b5be06421b454a82b7e83feaf94ed, type: 3}
+  m_Name: event_week_003_excursion_library_direct_cautious
+  m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
+  _id: event_week_003_excursion_library_direct_cautious
+  _title: "\uB3C4\uC11C\uAD00 \uD5C8\uAC00-\uC2E0\uC911"
+  _priority: 30
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 3c6a61f5a6383684bb4f4a658a173294, type: 2}
+  _result: {fileID: 11400000, guid: 3d3f00069794570418c1ddc2c2c58e5f, type: 2}
+  _onCompletedInteractions:
+  - {fileID: 11400000, guid: 07a82ea2eb4e69d47b46715d83afdd61, type: 2}
+  - {fileID: 11400000, guid: d6a5e766052d89c428f1743b91d1f5ed, type: 2}
+  _cinematicProfile: {fileID: 0}
+  _relatedInformationTypes:
+  - {fileID: 11400000, guid: 03b4f0619012dd246b390e2e5c84a0b3, type: 2}
+  _preferredSemantics: 00000000
+  _linkedCard: {fileID: 11400000, guid: 2de95cddc21b34045b826de21a259600, type: 2}
+  _selectionRule:
+    _mode: 2
+    _selectorStat: 2
+    _threshold: 0
+    _isDefault: 0

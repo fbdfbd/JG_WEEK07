@@ -155,7 +155,7 @@ public class UI_DialogueLogPanel : MonoBehaviour
 
         if (!hasEntries)
         {
-            _emptyText.text = "\uC544\uC9C1 \uD45C\uC2DC\uB41C \uB300\uC0AC\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4.";
+            _emptyText.text = "아직 표시된 대사가 없습니다.";
         }
     }
 }

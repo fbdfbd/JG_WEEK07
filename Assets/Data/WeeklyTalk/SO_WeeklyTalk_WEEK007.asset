@@ -13,6 +13,23 @@ MonoBehaviour:
   m_Name: SO_WeeklyTalk_WEEK007
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeeklyTalk
   _weekId: week_007
-  _context: "\uC608\uC0B0 \uC9DC\uB294\uAC74 \uB108\uBB34 \uC5B4\uB824\uC6CC..."
+  _entries:
+  - _id: 
+    _direction: 0
+    _variantOrder: 0
+    _priority: 0
+    _weight: 0
+    _displaySeconds: 0
+    _cooldownSeconds: 0
+    _allowAuto: 0
+    _allowClick: 0
+    _conditions:
+      _requiredFlags: []
+      _blockedFlags: []
+      _statRequirements: []
+    _context: 
+    _nemoState: 0
+    _interactions: []
+  _context: ...
   _nemostate: 3
-  _CardInteraction_StatDelta: {fileID: 11400000, guid: 57220356c6098c248820648c99882432, type: 2}
+  _CardInteraction_StatDelta: {fileID: 0}

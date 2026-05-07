@@ -23,6 +23,10 @@ public static class CsvImportValidator
         HashSet<string> cardIds = dataset.Cards.Select(row => row.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
         HashSet<string> weekIds = dataset.Weeks.Select(row => row.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
         HashSet<string> eventIds = dataset.Events.Select(row => row.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        HashSet<string> sequenceIds = dataset.CutsceneSequenceCommands
+            .Select(row => row.SequenceId)
+            .Where(id => !string.IsNullOrWhiteSpace(id))
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
         HashSet<string> stepKeys = dataset.EventSteps
             .Select(row => CsvImportContext.BuildStepKey(row.EventId, row.StepId))
             .ToHashSet(StringComparer.OrdinalIgnoreCase);
@@ -47,6 +51,11 @@ public static class CsvImportValidator
         ValidateReferences(dataset.EventChoices.Select(row => (CsvImportContext.BuildStepKey(row.EventId, row.StepId), "event_choices.csv -> step")), stepKeys, errors);
         ValidateReferences(dataset.EventChoiceDialogueLines.Select(row => (row.SpeakerId, "event_choice_dialogue_lines.csv -> speaker_id")), speakerIds, errors);
         ValidateReferences(dataset.EventChoiceDialogueLines.Select(row => (CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), "event_choice_dialogue_lines.csv -> choice")), choiceKeys, errors);
+        ValidateReferences(dataset.EventResults.Select(row => (row.EventId, "event_result.csv -> event_id")), eventIds, errors);
+        ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.WeekId, "event_cutscene_rules.csv -> week_id")), weekIds, errors);
+        ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.EventId, "event_cutscene_rules.csv -> event_id")), eventIds, errors);
+        ValidateReferences(dataset.EventCutsceneRules.Select(row => (row.SequenceId, "event_cutscene_rules.csv -> sequence_id")), sequenceIds, errors);
+        ValidateReferences(dataset.WeeklyTalks.Select(row => (row.WeekId, "weeklytalk.csv -> week_id")), weekIds, errors);
 
         foreach (InteractionRow row in dataset.Interactions)
         {
@@ -131,6 +140,11 @@ public static class CsvImportValidator
                     $"event_steps.csv -> default_next_step_id ({row.EventId}/{row.StepId})",
                     errors);
             }
+
+            ValidateStepConditionSlot(row.EventId, row.StepId, 1, row.ConditionStat1, row.ConditionMin1, row.ConditionMax1, errors);
+            ValidateStepConditionSlot(row.EventId, row.StepId, 2, row.ConditionStat2, row.ConditionMin2, row.ConditionMax2, errors);
+            ValidateStepNextReference(row.EventId, row.StepId, row.ConditionalNextStepId, stepKeys, "conditional_next_step_id", errors);
+            ValidateStepNextReference(row.EventId, row.StepId, row.ConditionalFallbackStepId, stepKeys, "conditional_fallback_step_id", errors);
         }
 
         foreach (EventChoiceRow row in dataset.EventChoices)
@@ -146,13 +160,47 @@ public static class CsvImportValidator
             }
         }
 
+        foreach (EventCutsceneRuleRow row in dataset.EventCutsceneRules)
+        {
+            ValidateEnum<EWeekFlowCutsceneMoment>(row.Moment, $"event_cutscene_rules.csv -> moment ({row.Id})", errors);
+
+            bool hasSequence = !string.IsNullOrWhiteSpace(row.SequenceId);
+            bool hasSpecialPlayer = !string.IsNullOrWhiteSpace(row.SpecialPlayerId);
+            if (hasSequence == hasSpecialPlayer)
+            {
+                errors.Add($"event_cutscene_rules.csv must set exactly one of sequence_id or special_player_id ({row.Id}).");
+            }
+        }
+
+        foreach (CutsceneSequenceCommandRow row in dataset.CutsceneSequenceCommands)
+        {
+            if (string.IsNullOrWhiteSpace(row.SequenceId))
+            {
+                errors.Add($"Missing id: cutscene_sequences.csv -> sequence_id (order {row.Order})");
+            }
+
+            ValidateEnum<EDataCutsceneCommandType>(row.Command, $"cutscene_sequences.csv -> command ({row.SequenceId}/{row.Order})", errors);
+            ValidateEnum<DG.Tweening.Ease>(row.Ease, $"cutscene_sequences.csv -> ease ({row.SequenceId}/{row.Order})", errors, allowBlank: true);
+        }
+
+        foreach (WeeklyTalkRow row in dataset.WeeklyTalks)
+        {
+            ValidateEnum<WeeklyTalkStatDirection>(row.Direction, $"weeklytalk.csv -> direction ({row.WeekId}/{row.VariantOrder})", errors);
+            ValidateEnum<NemoEmotionState>(row.NemoState, $"weeklytalk.csv -> nemo_state ({row.WeekId}/{row.VariantOrder})", errors, allowBlank: true);
+            ValidateReferences(row.InteractionIds.Select(id => (id, $"weeklytalk.csv -> interaction_ids ({row.WeekId}/{row.VariantOrder})")), interactionIds, errors);
+            ValidateReferences(row.RequiredFlagIds.Select(id => (id, $"weeklytalk.csv -> required_flag_ids ({row.WeekId}/{row.VariantOrder})")), flagIds, errors);
+            ValidateReferences(row.BlockedFlagIds.Select(id => (id, $"weeklytalk.csv -> blocked_flag_ids ({row.WeekId}/{row.VariantOrder})")), flagIds, errors);
+        }
+
         ValidateGroupedUniqueness(dataset.CardOptions, row => row.CardId, row => row.OptionOrder, "card_options.csv -> option_order", errors);
         ValidateGroupedUniqueness(dataset.WeekCards, row => row.WeekId, row => row.DisplayOrder, "week_cards.csv -> display_order", errors);
         ValidateGroupedUniqueness(dataset.EventChoices, row => CsvImportContext.BuildStepKey(row.EventId, row.StepId), row => row.ChoiceOrder, "event_choices.csv -> choice_order", errors);
         ValidateGroupedUniqueness(dataset.EventStepDialogueLines, row => CsvImportContext.BuildStepKey(row.EventId, row.StepId), row => row.LineOrder, "event_step_dialogue_lines.csv -> line_order", errors);
         ValidateGroupedUniqueness(dataset.EventChoiceDialogueLines, row => CsvImportContext.BuildChoiceKey(row.EventId, row.StepId, row.ChoiceId), row => row.LineOrder, "event_choice_dialogue_lines.csv -> line_order", errors);
+        ValidateGroupedUniqueness(dataset.CutsceneSequenceCommands, row => row.SequenceId, row => row.Order, "cutscene_sequences.csv -> order", errors);
         ValidateUniqueKeys(dataset.EventSelectionRules, row => row.EventId, "event_selection_rules.csv -> event_id", errors);
-
+        ValidateUniqueKeys(dataset.EventResults, row => row.EventId, "event_result.csv -> event_id", errors);
+        ValidateUniqueKeys(dataset.EventCutsceneRules, row => row.Id, "event_cutscene_rules.csv -> rule_id", errors);
         if (errors.Count > 0)
         {
             throw new InvalidOperationException("CSV validation failed.\n" + string.Join("\n", errors));
@@ -232,6 +280,72 @@ public static class CsvImportValidator
         {
             errors.Add($"Invalid enum value: {label} -> {value}");
         }
+    }
+
+    private static void ValidateStepConditionSlot(
+        string eventId,
+        string stepId,
+        int slot,
+        string statType,
+        string minimumValue,
+        string maximumValue,
+        ICollection<string> errors)
+    {
+        string label = $"event_steps.csv -> condition_{slot} ({eventId}/{stepId})";
+        ValidateEnum<EChildStatusType>(statType, $"{label}.stat", errors, allowBlank: true);
+
+        bool hasBounds = !string.IsNullOrWhiteSpace(minimumValue) || !string.IsNullOrWhiteSpace(maximumValue);
+        if (hasBounds && string.IsNullOrWhiteSpace(statType))
+        {
+            errors.Add($"Missing enum value: {label}.stat");
+        }
+
+        ValidateOptionalInt(minimumValue, $"{label}.min", errors);
+        ValidateOptionalInt(maximumValue, $"{label}.max", errors);
+    }
+
+    private static void ValidateStepNextReference(
+        string eventId,
+        string stepId,
+        string nextStepId,
+        ISet<string> stepKeys,
+        string columnName,
+        ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(nextStepId))
+        {
+            return;
+        }
+
+        ValidateOptionalReference(
+            CsvImportContext.BuildStepKey(eventId, nextStepId),
+            stepKeys,
+            $"event_steps.csv -> {columnName} ({eventId}/{stepId})",
+            errors);
+    }
+
+    private static void ValidateOptionalInt(string value, string label, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            return;
+        }
+
+        if (!int.TryParse(value, out _))
+        {
+            errors.Add($"Invalid integer value: {label} -> {value}");
+        }
+    }
+
+    private static void ValidateRequiredInt(string value, string label, ICollection<string> errors)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            errors.Add($"Missing integer value: {label}");
+            return;
+        }
+
+        ValidateOptionalInt(value, label, errors);
     }
 
     private static void ValidateUniqueKeys<TRow, TKey>(

@@ -13,7 +13,7 @@ public static class WeekCsvImporter
                 row.Id);
             SO_WeekDefinition week = CsvImportAssetUtility.LoadOrCreateAsset<SO_WeekDefinition>(
                 CsvImportAssetUtility.CombineAssetPath(weekFolder, $"WeekDefinition_{row.Id}.asset"),
-                row.Id,
+                $"WeekDefinition_{row.Id}",
                 context.Report);
             SO_WeekPreTurnDefinition preTurn = CsvImportAssetUtility.LoadOrCreateAsset<SO_WeekPreTurnDefinition>(
                 CsvImportAssetUtility.CombineAssetPath(weekFolder, $"WeekPreTurn_{row.Id}.asset"),

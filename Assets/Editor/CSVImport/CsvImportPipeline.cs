@@ -27,6 +27,9 @@ public static class CsvImportPipeline
             CardCsvImporter.Import(context);
             WeekCsvImporter.Import(context);
             EventCsvImporter.Import(context);
+            EventResultCsvImporter.Import(context);
+            EventCutsceneCsvImporter.Import(context);
+            WeeklyTalkCsvImporter.Import(context);
         }
         finally
         {

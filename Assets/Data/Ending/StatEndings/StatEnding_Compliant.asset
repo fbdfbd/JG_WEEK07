@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1f12160130f1f48912fb0668625ce4, type: 3}
+  m_Name: StatEnding_Compliant
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EndingLayerDefinition
+  _id: ending_stat_compliant
+  _priority: 100
+  _category: 0
+  _directionType: 7
+  _characterType: 1
+  _minMeetCount: 0
+  _maxMeetCount: -1
+  _minAffinity: -2147483648
+  _maxAffinity: 2147483647
+  _text:
+    _title: "\uC81C\uAD6D\uC774 \uC0AC\uB791\uD558\uB294 \uD654\uB824\uD55C \uAF2D\uB450\uAC01\uC2DC"
+    _body: "\uC544\uBCA8\uB9AC\uC544\uB294 \uC81C\uAD6D \uADC0\uC871\uC0AC\uD68C\uC758
+      \uC608\uBC95\uACFC \uAD00\uC2B5\uC744 \uC644\uBCBD\uD558\uAC8C \uCCB4\uD654\uD55C
+      '\uBAA8\uBC94\uC801\uC778 \uC778\uD615'\uC774 \uB418\uC5C8\uC2B5\uB2C8\uB2E4.
+      \n\uADF8\uB140\uB294 \uD669\uC2E4\uACFC \uC911\uC559 \uADC0\uC871\uB4E4\uC774
+      \uC694\uAD6C\uD558\uB294 \uBAA8\uB4E0 \uC758\uBB34\uB97C \uAD70\uB9D0 \uC5C6\uC774
+      \uC218\uD589\uD558\uBA70 \uBCA8\uB77C\uB9AC\uC6B0\uC2A4\uC758 \uC774\uB984\uC744
+      \uC0AC\uAD50\uACC4\uC758 \uC815\uC810\uC5D0 \uC62C\uB824\uB193\uC558\uC9C0\uB9CC,
+      \uC815\uC791 \uC601\uC9C0\uC758 \uC2E4\uAD8C\uC740 \uC774\uBBF8 \uC678\uC138\uC758
+      \uC190\uC5D0 \uB118\uC5B4\uAC04 \uC9C0 \uC624\uB798\uC785\uB2C8\uB2E4.\n\uADF8\uB140\uC758
+      \uBAA9\uC18C\uB9AC\uB294 \uC6B0\uC544\uD558\uC9C0\uB9CC \uADF8 \uC548\uC5D0
+      \uB4E0 \uC9C4\uC2EC\uC740 \uD55C \uC870\uAC01\uB3C4 \uC5C6\uC73C\uBA70, \uADF8\uB140\uAC00
+      \uB0B4\uB9AC\uB294 \uBAA8\uB4E0 \uBA85\uB839\uC740 \uC0AC\uC2E4 \uB204\uAD70\uAC00
+      \uBBF8\uB9AC \uC791\uC131\uD574 \uB454 \uC6D0\uACE0\uC5D0 \uBD88\uACFC\uD569\uB2C8\uB2E4.
+      \n\uBCA8\uB77C\uB9AC\uC6B0\uC2A4\uB294 \uD654\uB824\uD55C \uD3EC\uC7A5\uC9C0\uC5D0
+      \uC2F8\uC778 \uCC44 \uB0B4\uBD80\uBD80\uD130 \uC369\uC5B4\uAC00\uACE0 \uC788\uC9C0\uB9CC,
+      \uC544\uBCA8\uB9AC\uC544\uB294 \uADF8\uC800 \uC815\uD574\uC9C4 \uC21C\uC11C\uC5D0
+      \uB9DE\uCDB0 \uC6B0\uC544\uD558\uAC8C \uACE0\uAC1C\uB97C \uC219\uC77C \uBFD0\uC774\uB78D\uB2C8\uB2E4."
+    _summary: 
+    _closingLine: 
+    _reputationLine: 
+    _visualState: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_003_excursion_forest_direct_clever_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_003_excursion_forest_direct_clever
+  _title: "\uC232 - \uC601\uBBFC"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uC232\uC758 \uC61B \uC0AC\uB0E5\uC9C0\uAE30
+    \uC624\uB450\uB9C9\uC744 \uC9C1\uC811 \uCC3E\uC544\uAC00 \uBB38\uC744 \uB450\uB4DC\uB9AC\uC168\uACE0,
+    \uC0AC\uB0E5\uC9C0\uAE30\uB85C\uBD80\uD130 \uC120\uB300 \uBC31\uC791\uB2D8\uACFC
+    \uC5B4\uBA38\uB2D8\uC774 \uC232\uC744 \uD568\uAED8 \uCC3E\uACE4 \uD588\uB2E4\uB294
+    \uC774\uC57C\uAE30\uB97C \uB4E4\uC73C\uC168\uC2B5\uB2C8\uB2E4."

@@ -1,176 +1,137 @@
 card_id,card_type_id,title,original_text
-card_excursion_basement_week_001,card_type_excursion,지하실 1주차,사용인과 숨박꼭질중 지하창고로 숨을려는 네모. 지하 창고로 들어가게 할지를 결정한다.
-card_excursion_garden_week_001,card_type_excursion,정원 1주차,정원에서 나비를 쫓던 네모가 후문 너머를 궁금해한다. 어디까지 나가게 할지 결정한다.
-card_excursion_lake_week_001,card_type_excursion,호수 1주차,후문 너머 호수로 가는 길에 늑대 소문이 돈다. 위험을 막을지 끝까지 나가게 할지 결정한다.
-card_excursion_library_week_001,card_type_excursion,도서관 1주차,도서관 높은 서가의 반짝이는 책이 눈에 띈다. 위험해서 막을지 직접 꺼내 보여줄지 결정한다.
-card_excursion_study_week_001,card_type_excursion,내서재 1주차,백작의 서재 문틈으로 반짝이는 깃펜과 인장이 보인다. 문 앞에서만 보게 할지 더 가까이 들여다보게 할지 정한다.
-card_external_festival_week_001,card_type_external_info,마을 축제 소식,마을 축제가 열린다는 외부 소식을 네모에게 들려줄지 정한다.
-card_external_mister_imu_week_001,card_type_external_info,북쪽 영웅 소식,북쪽 마수를 해치우고 돌아온 영웅 이야기를 네모에게 들려줄지 정한다.
-card_external_postal_delay_week_001,card_type_external_info,우편 지연 소식,비 때문에 우편이 늦어진다는 소식을 네모에게 어떻게 전할지 정한다.
-card_external_week_001,card_type_external_info,축제의 소문,"축제, 우편 지연, 북쪽 영웅 소문까지 바깥세상 이야기가 한꺼번에 들린다. 네모에게 얼마나 자세히 들려줄지 정한다."
-card_house_talk_backgate_wind_week_001,card_type_house_talk,후문 바람 소문,후문 쪽 바람과 분위기에 대한 말을 네모에게 들려줄지 정한다.
-card_house_talk_cousin1_week_001,card_type_house_talk,사촌 방문 소문,사촌이 찾아온다는 저택 안 소문을 네모에게 어느 정도로 들려줄지 정한다.
-card_house_talk_lake_wolf_week_001,card_type_house_talk,호수 늑대 소문,후문과 호수 근처에 늑대가 돈다는 소문을 네모에게 어떻게 전할지 정한다.
-card_house_talk_study_week_001,card_type_house_talk,서재 앞 소문,서재 앞에서 들리는 소리와 분위기에 대한 말을 네모에게 어떻게 설명할지 정한다.
-card_house_talk_week_001,card_type_house_talk,후문과 서재의 수상한 소문,후문 늑대 소문과 서재 근처 수상한 분위기가 함께 돈다. 네모에게 얼마나 무섭게 들려줄지 정한다.
-card_004_lineagebook,card_type_textbook,가계도 교재,가문의 기록이 담긴 교재에서 무엇을 강조할지 결정한다.
-card_textbook_etiquette,card_type_textbook,인사와 식사 예절,귀족가 기본 예절을 배우는 교재. 인사법과 식사 자리 예절을 익힌다.
-card_textbook_nature,card_type_textbook,꽃과 벌레 관찰,정원 주변의 꽃과 벌레를 관찰하고 배우는 교재.
-card_textbook_posture,card_type_textbook,몸가짐과 발놀림,바른 자세와 균형 잡기를 익히는 기초 수련 교재.
-card_textbook_story,card_type_textbook,동화와 글자,짧은 동화로 읽기와 쓰기의 기초를 배우는 교재.
-card_visitor_cousin_1_week_001,card_type_visitor,카이안 레온하르트 1주차,카이안 레온하르트가 다정한 미소와 함께 첫 선물을 들고 찾아온다. 직접 만나게 할지 거리를 두게 할지 결정한다.
-card_visitor_cousin_2_week_001,card_type_visitor,리안 1주차,낯을 가리는 리안과 처음 인사를 나눈다. 짧게 스치게 할지 말을 섞게 할지 결정한다.
-card_visitor_friend_1_week_001,card_type_visitor,막스 1주차,막스가 처음부터 숨바꼭질하듯 들이닥친다. 신나게 놀게 할지 짧게 스치게 할지 결정한다.
-card_visitor_friend_2_week_001,card_type_visitor,밀리아 1주차,밀리아는 단정하지만 조심스럽게 네모에게 다가온다. 짧게 인사하게 할지 조금 더 말 섞게 할지 정한다.
-card_visitor_friend_3_week_001,card_type_visitor,유피 1주차,유피은 나무와 구름을 엉뚱한 것에 비유하며 네모를 끌어들인다. 괴짜 같은 상상에 어울릴지 정한다.
-card_excursion_basement_week_002,card_type_excursion,지하실 2주차,네모는 공놀이중 지하 저장고에서 무언가를 발견했다. 지하저장고를 보여줄지 말지 결정한다.
-card_excursion_garden_week_002,card_type_excursion,정원 2주차,비 온 뒤 정원에서 달팽이를 발견한다. 직접 만지게 할지 안전한 선에서만 보게 할지 정한다.
-card_excursion_lake_week_002,card_type_excursion,호수 2주차,햇빛에 반짝이는 호숫가를 발견한다. 물가 가까이 다가가게 할지 선을 정해 지켜보게 할지 정한다.
-card_excursion_library_week_002,card_type_excursion,도서관 2주차,먼지가 쌓인 오래된 책을 발견한다. 손대지 못하게 할지 직접 펼쳐보게 할지 정한다.
-card_excursion_study_week_002,card_type_excursion,내서재 2주차,백작의 서재 책상 위 편지와 밀랍 봉인을 발견한다. 업무의 엄중함만 느끼게 할지 의미를 설명해줄지 정한다.
-card_external_festival_performance_week_002,card_type_external_info,축제 공연 소식,축제에 공연단이 온다는 소식을 네모에게 전할지 정한다.
-card_external_mister_imu_statue_week_002,card_type_external_info,영웅 동상 소식,미스터 이무이의 새 소문을 네모에게 어떻게 들려줄지 정한다.
-card_external_week_002,card_type_external_info,축제 공연의 소문,축제 공연과 과장된 영웅담 같은 떠들썩한 바깥 소식이 돈다. 시끌벅적한 흥분을 전할지 정한다.
-card_house_talk_clock_tower_week_002,card_type_house_talk,시계탑 종소리 소문,시계탑 종이 한 번 더 울린다는 소문을 네모에게 들려줄지 정한다.
-card_house_talk_kitchen_sugar_week_002,card_type_house_talk,부엌 설탕 소문,부엌에서 설탕이 자꾸 줄어든다는 소문을 네모에게 어떻게 전할지 정한다.
-card_house_talk_laundry_ribbon_week_002,card_type_house_talk,세탁실 리본 소문,세탁실 리본이 사라진다는 말을 네모에게 어느 정도로 들려줄지 정한다.
-card_house_talk_parlor_teacup_week_002,card_type_house_talk,응접실 찻잔 소문,손님용 찻잔이 다르다는 이야기를 네모에게 어떻게 설명할지 정한다.
-card_house_talk_week_002,card_type_house_talk,주방과 응접실의 수상한 소문,"설탕이 사라졌다는 말, 응접실 찻잔 이야기, 시계탑 종소리처럼 저택 안의 자잘한 소문이 겹친다. 어떤 분위기로 전할지 정한다."
-card_letter_cousin_2_week_002,card_type_letter,리안의 첫 편지,"리안에게서 처음으로 다시 만나고 싶다는 편지가 온다. 편지를 숨길지, 그대로 읽어줄지, 요지만 전할지 정한다."
-card_letter_friend_1_week_002,card_type_letter,막스 2주차,막스가 장난스럽게 다시 놀자며 첫 편지를 보낸다. 편지를 가볍게 넘길지 그대로 읽어줄지 정한다.
-card_letter_friend_2_week_002,card_type_letter,밀리아 2주차,밀리아가 조심스럽지만 단정한 첫 편지를 보낸다. 편지를 숨길지 그대로 전할지 정한다.
-card_letter_friend_3_week_002,card_type_letter,유피 2주차,유피는 엉뚱한 상상과 함께 또 편지를 보낸다. 장난기 많은 말을 어떻게 전할지 정한다.
-card_visitor_cousin_1_week_002,card_type_visitor,카이안 레온하르트 2주차,카이안 레온하르트가 또 다른 장난감 선물을 가져온다. 호의로 받아들이게 할지 경계하게 할지 정한다.
-card_visitor_cousin_2_week_002,card_type_visitor,리안 2주차,리안과 다시 만나 조금 더 가까워질 기회가 생긴다. 편하게 대화하게 할지 정한다.
-card_visitor_friend_1_week_002,card_type_visitor,막스 2주차,막스가 다시 와서는 바로 뛰어놀 준비를 한다. 장난기 넘치는 만남을 어디까지 허락할지 정한다.
-card_visitor_friend_2_week_002,card_type_visitor,밀리아 2주차,밀리아가 옷매무새와 예절을 챙기며 네모와 다시 만난다. 까칠한 친절을 어떻게 받아들일지 정한다.
-card_visitor_friend_3_week_002,card_type_visitor,유피 2주차,유피는 또 이상한 음식 비유를 늘어놓는다. 어이없어할지 같이 웃을지 정한다.
-card_excursion_basement_week_003,card_type_excursion,지하실 3주차,지하실 안쪽에서 푸른 냉각석을 발견한다. 차가운 돌의 정체를 어디까지 보여줄지 결정한다.
-card_excursion_garden_week_003,card_type_excursion,정원 3주차,분수대에 걸린 무지개를 발견한다. 가까이 다가가게 할지 멀리서만 보게 할지 결정한다.
-card_excursion_lake_week_003,card_type_excursion,호수 3주차,갈대 사이로 오리 가족이 지나간다. 더 가까이 보게 할지 안전한 거리만 허락할지 결정한다.
-card_excursion_library_week_003,card_type_excursion,도서관 3주차,별빛이 떠오르는 책을 마주한다. 손대지 못하게 할지 별자리를 따라가 보게 할지 정한다.
-card_excursion_study_week_003,card_type_excursion,내서재 3주차,녹는 밀랍과 인장을 보며 백작의 서명을 배운다. 멀리서 보게 할지 가까이 의미를 알게 할지 정한다.
-card_external_mister_imu_banquet_week_003,card_type_external_info,연회장 앞 미스터 이무,연회장 앞에서 소란을 벌인 영웅 이야기를 네모에게 전할지 정한다.
-card_external_starlight_bubbles_week_003,card_type_external_info,별빛 비눗방울 악사,수도의 별빛 비눗방울 악사 이야기를 네모에게 어느 정도로 전할지 정한다.
-card_external_sugar_castle_week_003,card_type_external_info,설탕 성 소동,설탕으로 만든 성이 무너진 잔칫상 소문을 네모에게 어떻게 들려줄지 정한다.
-card_external_week_003,card_type_external_info,비눗방울 악사의 소문,"별빛 비눗방울 공연, 녹아내린 설탕성, 괴짜 영웅 이야기까지 괴상하고 재밌는 소문이 모여 있다. 네모에게 어떤 결로 들려줄지 정한다."
-card_house_talk_attic_window_week_003,card_type_house_talk,다락 창문 소문,다락 창문이 자주 열린다는 말을 네모에게 어떻게 전할지 정한다.
-card_house_talk_candle_week_003,card_type_house_talk,촛대 소문,촛대와 밤 복도에 관한 소문을 네모에게 어느 정도로 전할지 정한다.
-card_house_talk_fountain_fish_week_003,card_type_house_talk,분수대 물고기 소문,분수대 물고기에 관한 소문을 네모에게 어떻게 들려줄지 정한다.
-card_house_talk_greenhouse_glass_week_003,card_type_house_talk,온실 유리 소문,온실 유리에 금이 갔다는 말을 네모에게 어느 정도로 전할지 정한다.
-card_house_talk_week_003,card_type_house_talk,다락과 온실의 수상한 소문,"다락 창문, 온실 유리, 분수대 물고기, 복도 촛대처럼 사소하지만 신경 쓰이는 일이 이어진다. 네모에게 어떻게 풀어줄지 정한다."
-card_letter_cousin_2_week_003,card_type_letter,리안의 두 번째 편지,리안이 지난 만남을 기억하며 네모를 더 알고 싶다는 편지를 보낸다. 편지를 어떻게 전할지 정한다.
-card_letter_friend_1_week_003,card_type_letter,막스 3주차,막스가 또 다른 장난과 약속을 담아 편지를 보낸다. 들뜬 마음을 얼마나 전할지 정한다.
-card_letter_friend_2_week_003,card_type_letter,밀리아 3주차,밀리아가 네모를 더 알고 싶다며 차분한 편지를 보낸다. 호감을 어떻게 전할지 정한다.
-card_letter_friend_3_week_003,card_type_letter,유피 3주차,유피는 이번엔 더 이상한 비유와 놀이를 적어 보낸다. 괴짜 같은 친밀함을 어떻게 전할지 정한다.
-card_visitor_cousin_1_week_003,card_type_visitor,카이안 레온하르트 3주차,카이안 레온하르트가 작은 상자 속 장난감으로 네모를 유혹한다. 얼마나 가까이 받아들이게 할지 정한다.
-card_visitor_cousin_2_week_003,card_type_visitor,리안 3주차,리안이 종이별 같은 작은 선물을 건네려 한다. 진심을 받아들이게 할지 망설이게 할지 정한다.
-card_visitor_friend_1_week_003,card_type_visitor,막스 3주차,막스가 복도 바닥 선을 게임판으로 바꾼다. 함께 뛰게 할지 구경만 하게 할지 정한다.
-card_visitor_friend_2_week_003,card_type_visitor,밀리아 3주차,밀리아가 손수건 접는 법을 알려주려 한다. 잔소리처럼 느끼게 할지 다정한 배움으로 받아들일지 정한다.
-card_visitor_friend_3_week_003,card_type_visitor,유피 3주차,유피는 손그림자 개구리를 보여준다. 허무맹랑한 놀이에 함께 빠질지 정한다.
-card_excursion_basement_week_004,card_type_excursion,지하실 4주차,지하실 벽에서 오래된 낙서와 투명한 보호막을 발견한다. 왜 지워지지 않았는지 알게 할지 정한다.
-card_excursion_garden_week_004,card_type_excursion,정원 4주차,해 질 무렵 밤에 피는 꽃이 열리기 시작한다. 향과 생활 마법이 깃든 화단을 어디까지 보여줄지 정한다.
-card_excursion_lake_week_004,card_type_excursion,호수 4주차,해 질 무렵 호숫가 등불이 네모의 움직임에 맞춰 켜진다. 마법 등불 길을 따라 걷게 할지 정한다.
-card_excursion_library_week_004,card_type_excursion,도서관 4주차,도서관에서 예전보다 높은 선반에 닿는 순간을 체감한다. 성장과 준비의 흔적을 어떻게 보여줄지 정한다.
-card_excursion_study_week_004,card_type_excursion,내서재 4주차,서재에서 네모 전용으로 준비된 도구를 발견한다. 백작의 세심한 배려를 얼마나 깨닫게 할지 정한다.
-card_external_week_004,card_type_external_info,밤숲의 마법사 소문,"숲속 번쩍이는 불빛을 두고 밤숲의 마법사 소문이 돈다. 무섭게 전할지, 다른 진실로 풀어줄지 정한다."
-card_house_talk_week_004,card_type_house_talk,초상화가 지켜보는 복도 소문,복도 초상화의 눈이 따라온다는 소문이 돈다. 무서운 감시처럼 들려줄지 다정한 장치처럼 풀어줄지 정한다.
-card_letter_cousin_2_week_004,card_type_letter,리안 4주차,리안이 선물과 함께 다정한 마음을 담은 편지를 보낸다. 호의의 무게를 어떻게 전할지 정한다.
-card_letter_friend_1_week_004,card_type_letter,막스 4주차,막스가 숲과 비밀 장소 이야기를 담은 편지를 보낸다. 모험의 분위기를 어떻게 전할지 정한다.
-card_letter_friend_2_week_004,card_type_letter,밀리아 4주차,밀리아가 선물과 함께 정돈된 마음을 담은 편지를 보낸다. 진중한 호의를 어떻게 전할지 정한다.
-card_letter_friend_3_week_004,card_type_letter,유피 4주차,유피는 요정과 잉크 이야기를 적어 보낸다. 엉뚱한 상상을 장난으로 넘길지 같이 믿어볼지 정한다.
-card_textbook_astronomy,card_type_textbook,별자리와 항해술,밤하늘 별자리를 보며 넓은 세상을 꿈꾸는 과목.
-card_textbook_cooking,card_type_textbook,요리와 배식의 원리,음식이 만들어지는 과정과 영양을 배우는 시간.
-card_textbook_engineering,card_type_textbook,장치 설계와 기초 공학,저택의 분수대와 시계탑 원리를 배우고 모형을 만드는 과목.
-card_textbook_riding,card_type_textbook,체전과 승마 기초,말을 다루고 활동적으로 몸을 움직이는 수업.
-card_visitor_cousin_1_week_004,card_type_visitor,카이안 레온하르트 4주차,카이안 레온하르트가 화려하고 날카로운 선물을 꺼내 든다. 위험한 매력을 어디까지 허락할지 정한다.
-card_visitor_cousin_2_week_004,card_type_visitor,리안 4주차,리안이 백작의 서재 안으로 들어와 비밀스러운 간식을 나눈다. 친밀함을 어디까지 허락할지 정한다.
-card_visitor_friend_1_week_004,card_type_visitor,막스 4주차,막스가 백작의 서재 보물에 눈을 빛낸다. 위험한 물건을 막고 다른 장난감을 보여줄지 정한다.
-card_visitor_friend_2_week_004,card_type_visitor,밀리아 4주차,밀리아와 조용한 서재에서 나란히 책을 읽는다. 휴식 시간을 나누게 할지 긴장하게 할지 정한다.
-card_visitor_friend_3_week_004,card_type_visitor,유피 4주차,유피는 서재 도구에 호기심을 보인다. 위험한 물건 대신 지구본으로 시선을 돌릴지 정한다.
-card_excursion_basement_week_005,card_type_excursion,지하실 5주차,지하실 기둥에 남은 키 표시를 발견한다. 누가 왜 몰래 기록해 왔는지 들려줄지 결정한다.
-card_excursion_garden_week_005,card_type_excursion,정원 5주차,정원 벤치에 낯익은 산새가 찾아온다. 누가 새를 불러왔는지 숨길지 알려줄지 결정한다.
-card_excursion_lake_week_005,card_type_excursion,호수 5주차,호숫가에 남은 불꽃놀이 잔해를 발견한다. 그날의 흔적을 붙잡게 할지 덮어둘지 정한다.
-card_excursion_library_week_005,card_type_excursion,도서관 5주차,책 속 밑줄과 문장을 따라가며 위로가 되는 구절을 만난다. 그 의미를 얼마나 깊게 전할지 정한다.
-card_excursion_study_week_005,card_type_excursion,내서재 5주차,서재에서 새로 그릴 수 있는 빈 종이와 기록 도구를 발견한다. 공부의 연장으로 느끼게 할지 놀이처럼 받아들이게 할지 정한다.
-card_external_week_005,card_type_external_info,그림자 의적 소문,얼굴 없는 의적이 나쁜 부자들의 돈을 나눠준다는 소문이 돈다. 전설처럼 들려줄지 장난처럼 풀어줄지 정한다.
-card_house_talk_week_005,card_type_house_talk,밤의 피아노 소리 소문,밤의 피아노 소리가 저절로 울린다는 말이 돈다. 귀신 같은 괴담으로 남길지 자연스러운 이유를 알려줄지 정한다.
-card_letter_cousin_2_week_005,card_type_letter,리안 5주차,리안이 선물과 함께 다정한 마음을 담은 편지를 보낸다. 호의의 무게를 어떻게 전할지 정한다.
-card_letter_friend_1_week_005,card_type_letter,막스 5주차,막스가 숲과 비밀 장소 이야기를 담은 편지를 보낸다. 모험의 분위기를 어떻게 전할지 정한다.
-card_letter_friend_2_week_005,card_type_letter,밀리아 5주차,밀리아가 선물과 함께 정돈된 마음을 담은 편지를 보낸다. 진중한 호의를 어떻게 전할지 정한다.
-card_letter_friend_3_week_005,card_type_letter,유피 5주차,유피는 요정과 잉크 이야기를 적어 보낸다. 엉뚱한 상상을 장난으로 넘길지 같이 믿어볼지 정한다.
-card_visitor_cousin_1_week_005,card_type_visitor,카이안 레온하르트 5주차,카이안 레온하르트가 저택 밖 이야기와 여행 냄새를 들고 온다. 바깥세상에 마음을 기울이게 할지 정한다.
-card_visitor_cousin_2_week_005,card_type_visitor,리안 5주차,리안과 백작의 지도를 보며 더 먼 세상을 상상한다. 겁 많은 친구에게 용기를 줄지 정한다.
-card_visitor_friend_1_week_005,card_type_visitor,막스 5주차,막스과 지도를 펼쳐 비밀 동굴 모험을 꿈꾼다. 표시를 남길지 멈출지 결정한다.
-card_visitor_friend_2_week_005,card_type_visitor,밀리아 5주차,밀리아와 창가에서 영지를 내려다보며 비밀 장소 이야기를 나눈다. 차분한 상상을 함께할지 정한다.
-card_visitor_friend_3_week_005,card_type_visitor,유피 5주차,유피는 지도 옆 빈 종이에 괴물을 그리자고 한다. 서재의 긴장을 웃음으로 바꿀지 정한다.
-card_excursion_basement_week_006,card_type_excursion,지하실 6주차,와인병 곁의 메모를 보고 보관에도 때가 있다는 말을 듣게 된다. 숨길지 설명해줄지 정한다.
-card_excursion_garden_week_006,card_type_excursion,정원 6주차,정원 곳곳에서 벌레를 막는 향주머니를 발견한다. 과한 관리의 이유를 얼마나 들려줄지 정한다.
-card_excursion_lake_week_006,card_type_excursion,호수 6주차,약초 주머니로 정화된 맑은 호수를 본다. 직접 손을 대게 할지 안전한 방식으로만 느끼게 할지 정한다.
-card_excursion_library_week_006,card_type_excursion,도서관 6주차,서재에 남겨진 따뜻한 코코아와 돌봄의 흔적을 발견한다. 배려를 바로 느끼게 할지 스쳐 지나가게 할지 정한다.
-card_excursion_study_week_006,card_type_excursion,내서재 6주차,서재 깊숙한 곳에서 간식장 열쇠 같은 작은 권한을 발견한다. 책임과 보상의 감각을 어떻게 보여줄지 정한다.
-card_external_week_006,card_type_external_info,황금 대륙 소문,배를 타고 한 달 가면 닿는 황금 대륙 이야기가 들려온다. 꿈같은 모험담으로 남길지 현실적으로 풀어줄지 정한다.
-card_house_talk_week_006,card_type_house_talk,은스푼 요정 소문,은스푼이 사라졌다는 말과 요정 장난 소문이 돈다. 소동을 키울지 가볍게 풀어줄지 정한다.
-card_letter_cousin_2_week_006,card_type_letter,리안 6주차,리안에게서 마지막이 될지도 모른다는 편지가 온다. 불안을 덮을지 진심을 전할지 정한다.
-card_letter_friend_1_week_006,card_type_letter,막스 6주차,막스가 계약서 흉내를 내며 둘만의 증거와 약속을 적어 보낸다. 장난으로 넘길지 진지하게 받아들일지 정한다.
-card_letter_friend_2_week_006,card_type_letter,밀리아 6주차,밀리아가 미래를 함께 상상하는 편지를 보낸다. 어른이 된 뒤의 약속을 어떻게 들려줄지 정한다.
-card_letter_friend_3_week_006,card_type_letter,유피 6주차,유피는 둘만의 비법과 비밀 작전을 적어 보낸다. 허무맹랑한 편지를 어떻게 받아들일지 정한다.
-card_visitor_cousin_1_week_006,card_type_visitor,카이안 레온하르트 6주차,카이안 레온하르트가 시야를 가리는 물건과 함께 세상을 보는 법을 들먹인다. 수상한 놀이를 어디까지 허락할지 정한다.
-card_visitor_cousin_2_week_006,card_type_visitor,리안 6주차,리안이 백작의 깃펜으로 둘만의 흔적을 남기려 한다. 이 우정을 기록으로 남길지 정한다.
-card_visitor_friend_1_week_006,card_type_visitor,막스 6주차,막스가 만년필과 잉크에 흥미를 보인다. 서재 물건으로 우정의 흔적을 남길지 정한다.
-card_visitor_friend_2_week_006,card_type_visitor,밀리아 6주차,밀리아가 글씨와 기록을 정갈하게 다루는 법을 보여준다. 백작의 서재에서 배움을 깊게 나눌지 정한다.
-card_visitor_friend_3_week_006,card_type_visitor,유피 6주차,유피는 몰래 들고 온 작은 연을 창가에 펼치며 바람이 좋은 날 함께 날리고 싶다고 말한다. 잠깐의 장난을 허락할지 정한다.
-card_excursion_basement_week_007,card_type_excursion,지하실 7주차,지하실 구석의 버려진 초상화와 오래된 거울을 발견한다. 가문의 과거를 들여다보게 할지 결정한다.
-card_excursion_garden_week_007,card_type_excursion,정원 7주차,어릴 때 심은 나무가 훌쩍 자라 있다. 규율대로 다듬게 할지 추억과 그늘을 즐기게 할지 결정한다.
-card_excursion_lake_week_007,card_type_excursion,호수 7주차,호수 수면에 비친 자신의 모습을 바라본다. 성장한 모습을 어떻게 받아들이게 할지 정한다.
-card_excursion_library_week_007,card_type_excursion,도서관 7주차,영지 운영과 법을 읽으며 후계자의 책임을 실감한다. 공부를 부담으로 느끼게 할지 사명으로 받아들이게 할지 정한다.
-card_excursion_study_week_007,card_type_excursion,내서재 7주차,자신이 맡게 될 땅을 직접 그린 지도로 살펴본다. 후계자의 시선으로 볼지 아직 꿈처럼 느끼게 할지 정한다.
-card_external_week_007,card_type_external_info,철갑 기병대 소문,국경의 철갑 기병대와 성인식 주변의 긴장 소문이 돈다. 전쟁처럼 느끼게 할지 보호의 징후처럼 들려줄지 정한다.
-card_house_talk_week_007,card_type_house_talk,밤마다 길어지는 복도 소문,밤마다 복도가 길어진다는 기묘한 소문이 돈다. 저택의 괴담으로 들려줄지 착시와 배려로 풀어줄지 정한다.
-card_letter_cousin_2_week_007,card_type_letter,리안 7주차,리안이 먼 길을 돌아오더라도 성인식 전에 꼭 얼굴을 보겠다고 적어 보낸다. 다정한 약속을 어떻게 전할지 정한다.
-card_letter_friend_1_week_007,card_type_letter,막스 7주차,막스가 성인식이 가까워지면 제일 먼저 저택 문 앞에서 축하해 주겠다고 적어 보낸다. 들뜬 마음을 그대로 전할지 정리해 전할지 정한다.
-card_letter_friend_2_week_007,card_type_letter,밀리아 7주차,"밀리아가 새 리본 색을 골라 달라며, 성인식 날 네모에게 가장 어울릴 장식을 함께 정하고 싶다고 적어 보낸다."
-card_letter_friend_3_week_007,card_type_letter,유피 7주차,유피가 성인식 전날 몰래 웃긴 이야기를 잔뜩 준비해 두겠다고 편지를 보낸다. 긴장을 풀어 줄 말을 어떻게 전할지 정한다.
-card_textbook_diplomacy,card_type_textbook,외교술과 수사학,다른 귀족과 사절을 상대하며 영지를 지키는 말하기 기술.
-card_textbook_economics,card_type_textbook,화폐 경제와 회계 기초,영지의 돈 흐름을 파악하고 예산을 짜는 법을 배운다.
-card_textbook_law,card_type_textbook,제국법과 영지 행정,영민 간 갈등을 해결하고 법을 집행하는 법을 배우는 과목.
-card_textbook_military,card_type_textbook,군사 전략과 방어 진형,영지를 침략으로부터 지키기 위한 병법을 배운다.
-card_visitor_cousin_1_week_007,card_type_visitor,카이안 레온하르트 7주차,카이안 레온하르트가 인장과 기록을 빌미로 백작의 비밀을 흔든다. 그의 말을 믿게 할지 밀어낼지 정한다.
-card_visitor_cousin_2_week_007,card_type_visitor,리안 7주차,리안이 카이안 레온하르트의 압박과 두려움을 털어놓는다. 흔들리는 마음을 받아줄지 거리 둘지 정한다.
-card_visitor_friend_1_week_007,card_type_visitor,막스 7주차,막스가 어릴 적 보물과 지도 조각을 들고 성인식 전 마지막 인사를 하러 온다. 우정을 규칙 안에 남길지 정한다.
-card_visitor_friend_2_week_007,card_type_visitor,밀리아 7주차,밀리아가 백작의 서류 속 진실을 함께 읽으며 카이안 레온하르트의 거짓을 반박한다. 냉철한 시선을 받아들일지 정한다.
-card_visitor_friend_3_week_007,card_type_visitor,유피 7주차,유피는 꽃다발을 들고 와 서재 밖 세상의 냄새를 건넨다. 공부 중인 네모를 잠시 쉬게 할지 정한다.
-card_excursion_basement_week_008,card_type_excursion,지하실 8주차,지하실 깊숙이 정체불명의 상자들이 쌓여 있다. 카이안 레온하르트 쪽 짐과 무기 소문을 얼마나 확인할지 정한다.
-card_excursion_garden_week_008,card_type_excursion,정원 8주차,화단에 낯선 장화 자국이 남아 있다. 카이안 레온하르트 쪽 사람들이 드나든 흔적을 덮을지 짚어볼지 정한다.
-card_excursion_lake_week_008,card_type_excursion,호수 8주차,호수 건너편에 카이안 레온하르트 쪽 측량사들이 나타난다. 별장 계획 소문을 감출지 직면하게 할지 정한다.
-card_excursion_library_week_008,card_type_excursion,도서관 8주차,가문 기록 보관소에서 카이안 레온하르트의 인장이 찍힌 계약서를 발견한다. 수상한 서류를 그냥 넘길지 파고들지 정한다.
-card_excursion_study_week_008,card_type_excursion,내서재 8주차,카이안 레온하르트의 시선이 머무는 서재에서 내 공간을 지켜야 한다는 감각이 강해진다. 불편함을 덮을지 직면할지 정한다.
-card_external_week_008,card_type_external_info,사라진 왕녀 소문,수도의 정변과 사라진 왕녀 이야기가 퍼진다. 위험한 정치 소문으로 전할지 모험담처럼 들려줄지 정한다.
-card_house_talk_week_008,card_type_house_talk,비극의 숲 노랫소리 소문,비극의 숲에서 들려온다는 노랫소문이 돈다. 불길한 이야기로 남길지 백작이 준비한 위로로 바꿔 들려줄지 정한다.
-card_letter_cousin_2_week_008,card_type_letter,리안 8주차,바다에서 온 조개껍데기와 함께 리안의 안부가 도착한다. 먼 곳의 진심을 어떻게 전할지 정한다.
-card_letter_friend_1_week_008,card_type_letter,막스 8주차,막스가 성인식 날 몰래 윙크 신호를 보내자고 편지를 보낸다. 발칙한 계획을 어떻게 전할지 정한다.
-card_letter_friend_2_week_008,card_type_letter,밀리아 8주차,책갈피와 함께 흔들리지 말라는 밀리아의 응원이 도착한다. 위로를 얼마나 깊게 전할지 정한다.
-card_letter_friend_3_week_008,card_type_letter,유피 8주차,유피는 햇빛과 거울을 이용한 마지막 비밀 작전을 제안한다. 장난스러운 계획을 어떻게 전할지 정한다.
-card_visitor_cousin_1_week_008,card_type_visitor,카이안 레온하르트 8주차,카이안 레온하르트가 백작에게 속았을지 모른다는 의심을 다시 불어넣는다. 흔들리게 할지 버티게 할지 정한다.
-card_visitor_cousin_2_week_008,card_type_visitor,리안 8주차,리안이 저택의 비밀과 불안을 들고 도움을 구한다. 함께 진실을 찾을지 판단하게 된다.
-card_visitor_friend_1_week_008,card_type_visitor,막스 8주차,막스가 부모님의 비극으로 여겨진 숲의 진실을 함께 보자고 한다. 슬픔의 장소를 직접 확인할지 정한다.
-card_visitor_friend_2_week_008,card_type_visitor,밀리아 8주차,밀리아가 높은 담장을 보호의 방패로 다시 바라보게 만든다. 성인이 된 뒤 무엇을 바꿀지 상상하게 된다.
-card_visitor_friend_3_week_008,card_type_visitor,유피 8주차,유피는 영지의 숨은 명소와 숲의 진실을 들려준다. 미래의 영지를 어떻게 바라볼지 정한다.
-card_excursion_basement_week_009,card_type_excursion,지하실 9주차,촛불이 꺼진 지하실에서 하녀가 겁에 질린다. 어둠 속에서 네모가 누구를 따르고 이끌지 보게 된다.
-card_excursion_garden_week_009,card_type_excursion,정원 9주차,온실 옆 꽃밭에서 차를 마실 시간이 생긴다. 휴식을 규율로 끊을지 조금 더 누리게 할지 결정한다.
-card_excursion_lake_week_009,card_type_excursion,호수 9주차,가문의 맹세가 새겨진 호숫가 비석 앞에 선다. 전통을 의무로 배울지 자신의 다짐으로 받아들일지 정한다.
-card_excursion_library_week_009,card_type_excursion,도서관 9주차,노을 비치는 도서관에서 조용히 시를 읽는다. 감상을 멈추게 할지 미래를 향한 다짐으로 이어지게 할지 정한다.
-card_excursion_study_week_009,card_type_excursion,내서재 9주차,늦은 밤까지 서재를 지키며 마지막 준비를 이어간다. 쉬게 할지 끝까지 책임을 붙들게 할지 정한다.
-card_external_week_009,card_type_external_info,백작의 유언장 소문,"성인식 전날, 백작의 유언장과 영지의 절반을 둘러싼 소문이 돈다. 위협처럼 느끼게 할지 선물처럼 받아들이게 할지 정한다."
-card_house_talk_week_009,card_type_house_talk,가문의 가보 선택 소문,성인식 가보가 주인을 고른다는 말이 하인들 사이에 돈다. 불안한 시험처럼 들려줄지 당당한 의식처럼 느끼게 할지 정한다.
-card_letter_cousin_2_week_009,card_type_letter,리안 9주차,리안이 성인이 된 뒤에도 비밀 친구로 남고 싶다는 마지막 편지를 보낸다. 떨리는 진심을 어떻게 전할지 정한다.
-card_letter_friend_1_week_009,card_type_letter,막스 9주차,막스가 영원한 단짝 계약서를 보내온다. 평생의 약속처럼 전할지 가볍게 웃어넘길지 정한다.
-card_letter_friend_2_week_009,card_type_letter,밀리아 9주차,밀리아가 성인이 된 뒤 가장 정직한 조언자가 되겠다는 약속을 보낸다. 든든한 미래를 어떻게 전할지 정한다.
-card_letter_friend_3_week_009,card_type_letter,유피 9주차,유피는 은하수 지도와 함께 자유를 잊지 말라는 편지를 보낸다. 모험가다운 우정을 어떻게 전할지 정한다.
-card_visitor_cousin_1_week_009,card_type_visitor,카이안 레온하르트 9주차,카이안 레온하르트과의 대면이 끝내 위협적인 긴장으로 번진다. 마지막까지 대화를 이어갈지 정면으로 맞설지 정한다.
-card_visitor_cousin_2_week_009,card_type_visitor,리안 9주차,리안이 끝내 진실을 마주하자며 네모 곁에 서려 한다. 마지막까지 손을 잡을지 정한다.
-card_visitor_friend_1_week_009,card_type_visitor,막스 9주차,막스가 직접 깎은 나무 인장을 마지막 선물로 건넨다. 우정을 백작의 서재에 새길지 정한다.
-card_visitor_friend_2_week_009,card_type_visitor,밀리아 9주차,밀리아가 성인식 전날 마지막 인사와 함께 미래의 동반자를 자처한다. 엄숙한 충성으로 받을지 우정으로 받을지 정한다.
-card_visitor_friend_3_week_009,card_type_visitor,유피 9주차,유피는 어릴 적 나무 칼을 들고 와 아이 시절과 작별 인사를 한다. 그 추억을 어떻게 남길지 정한다.
-card_002_courtyardrumor,card_type_external_info,뜰 밖의 소문,하인들이 전해 들은 바깥 소문을 네모에게 어느 정도 전달할지 정한다.
-card_003_tutorvisit,card_type_visitor,가정교사의 방문,방문자가 남긴 인상과 말을 네모에게 어떻게 전달할지 결정한다.
+card_excursion_garden_week_001,card_type_garden,정원,
+card_excursion_garden_week_002,card_type_garden,정원,
+card_excursion_garden_week_002_curious,card_type_garden,정원 - 호기심,
+card_excursion_garden_week_002_innocent,card_type_garden,정원 - 순진,
+card_excursion_garden_week_003,card_type_garden,정원,
+card_excursion_garden_week_003_curious,card_type_garden,정원 - 호기심,
+card_excursion_garden_week_003_cautious,card_type_garden,정원 - 신중,
+card_excursion_garden_week_004,card_type_garden,정원,
+card_excursion_garden_week_004_clever,card_type_garden,정원 - 영민,
+card_excursion_garden_week_004_innocent,card_type_garden,정원 - 순진,
+card_excursion_garden_week_005,card_type_garden,정원,
+card_excursion_garden_week_005_cautious,card_type_garden,정원 - 신중,
+card_excursion_garden_week_005_anxious,card_type_garden,정원 - 불안,
+card_excursion_garden_week_006,card_type_garden,정원,
+card_excursion_garden_week_006_clever,card_type_garden,정원 - 영민,
+card_excursion_garden_week_006_defiant,card_type_garden,정원 - 반항,
+card_excursion_garden_week_007,card_type_garden,정원,
+card_excursion_garden_week_007_stable,card_type_garden,정원 - 안정,
+card_excursion_garden_week_007_cautious,card_type_garden,정원 - 신중,
+card_excursion_garden_week_008,card_type_garden,정원,
+card_excursion_garden_week_008_curious,card_type_garden,정원 - 호기심,
+card_excursion_garden_week_008_anxious,card_type_garden,정원 - 불안,
+card_excursion_garden_week_009,card_type_garden,정원,
+card_excursion_garden_week_009_stable,card_type_garden,정원 - 안정,
+card_excursion_garden_week_009_cautious,card_type_garden,정원 - 신,
+card_excursion_basement_week_001,card_type_basement,지하실,
+card_excursion_basement_week_002,card_type_basement,지하실,
+card_excursion_basement_week_002_curious,card_type_basement,지하실,
+card_excursion_basement_week_002_cautious,card_type_basement,지하실,
+card_excursion_basement_week_003,card_type_basement,지하실,
+card_excursion_basement_week_003_curious,card_type_basement,지하실,
+card_excursion_basement_week_003_anxious,card_type_basement,지하실,
+card_excursion_basement_week_004,card_type_basement,지하실,
+card_excursion_basement_week_004_innocent,card_type_basement,지하실,
+card_excursion_basement_week_004_cautious,card_type_basement,지하실,
+card_excursion_basement_week_005,card_type_basement,지하실,
+card_excursion_basement_week_005_curious,card_type_basement,지하실,
+card_excursion_basement_week_005_anxious,card_type_basement,지하실,
+card_excursion_basement_week_006,card_type_basement,지하실,
+card_excursion_basement_week_006_innocent,card_type_basement,지하실,
+card_excursion_basement_week_006_clever,card_type_basement,지하실,
+card_excursion_basement_week_007,card_type_basement,지하실,
+card_excursion_basement_week_007_cautious,card_type_basement,지하실,
+card_excursion_basement_week_007_anxious,card_type_basement,지하실,
+card_excursion_basement_week_008,card_type_basement,지하실,
+card_excursion_basement_week_008_innocent,card_type_basement,지하실,
+card_excursion_basement_week_008_cautious,card_type_basement,지하실,
+card_excursion_basement_week_009,card_type_basement,지하실,
+card_excursion_basement_week_009_stable,card_type_basement,지하실,
+card_excursion_basement_week_009_anxious,card_type_basement,지하실,
+card_excursion_forest_week_001,card_type_forest,숲,
+card_excursion_forest_week_002,card_type_forest,숲,
+card_excursion_forest_week_002_curious,card_type_forest,숲 - 호기심,
+card_excursion_forest_week_002_compliant,card_type_forest,숲 - 순응,
+card_excursion_forest_week_003,card_type_forest,숲,
+card_excursion_forest_week_003_clever,card_type_forest,숲 - 영민,
+card_excursion_forest_week_003_curious,card_type_forest,숲 - 호기심,
+card_excursion_forest_week_004,card_type_forest,숲,
+card_excursion_forest_week_004_clever,card_type_forest,숲 - 영민,
+card_excursion_forest_week_004_anxious,card_type_forest,숲 - 불안,
+card_excursion_forest_week_005,card_type_forest,숲,
+card_excursion_forest_week_005_innocent,card_type_forest,숲 - 순진,
+card_excursion_forest_week_005_anxious,card_type_forest,숲 - 불안,
+card_excursion_forest_week_006,card_type_forest,숲,
+card_excursion_forest_week_006_clever,card_type_forest,숲 - 영민,
+card_excursion_forest_week_006_defiant,card_type_forest,숲 - 반항,
+card_excursion_forest_week_007,card_type_forest,숲,
+card_excursion_forest_week_007_clever,card_type_forest,숲 - 영민,
+card_excursion_forest_week_007_curious,card_type_forest,숲 - 호기심,
+card_excursion_forest_week_008,card_type_forest,숲,
+card_excursion_forest_week_008_clever,card_type_forest,숲 - 영민,
+card_excursion_forest_week_008_anxious,card_type_forest,숲 - 불안,
+card_excursion_forest_week_009,card_type_forest,숲,
+card_excursion_forest_week_009_clever,card_type_forest,숲 - 영민,
+card_excursion_forest_week_009_innocent,card_type_forest,숲 - 순진,
+card_excursion_library_week_001,card_type_library,도서관,
+card_excursion_library_week_002,card_type_library,도서관,
+card_excursion_library_week_002_curious,card_type_library,도서관 - 호기심,
+card_excursion_library_week_002_anxious,card_type_library,도서관 - 불안,
+card_excursion_library_week_003,card_type_library,도서관,
+card_excursion_library_week_003_cautious,card_type_library,도서관 - 신중,
+card_excursion_library_week_003_innocent,card_type_library,도서관 - 순진,
+card_excursion_library_week_004,card_type_library,도서관,
+card_excursion_library_week_004_clever,card_type_library,도서관 - 영민,
+card_excursion_library_week_004_curious,card_type_library,도서관 - 호기심,
+card_excursion_library_week_005,card_type_library,도서관,
+card_excursion_library_week_005_clever,card_type_library,도서관 - 영민,
+card_excursion_library_week_005_innocent,card_type_library,도서관 - 순진,
+card_excursion_library_week_006,card_type_library,도서관,
+card_excursion_library_week_006_clever,card_type_library,도서관 - 영민,
+card_excursion_library_week_006_cautious,card_type_library,도서관 - 신중,
+card_excursion_library_week_007,card_type_library,도서관,
+card_excursion_library_week_007_clever,card_type_library,도서관 - 영민,
+card_excursion_library_week_007_anxious,card_type_library,도서관 - 불안,
+card_excursion_library_week_008,card_type_library,도서관,
+card_excursion_library_week_008_curious,card_type_library,도서관 - 호기심,
+card_excursion_library_week_008_anxious,card_type_library,도서관 - 불안,
+card_excursion_library_week_009,card_type_library,도서관,
+card_excursion_library_week_009_stable,card_type_library,도서관 - 안정,
+card_excursion_library_week_009_anxious,card_type_library,도서관 - 불안,
+card_rian_week_001,card_type_rian,리안,이웃 영지에서 요양 중인 소년이 첫 편지를 보낸다.
+card_rian_week_002,card_type_rian,리안,리안이 작은 선물을 들고 찾아온다.
+card_rian_week_003,card_type_rian,리안,리안이 요양을 끝내고 아벨리아를 찾아온다.
+card_rian_week_004,card_type_rian,리안,리안이 축제에서 조용한 길을 알려주려 한다.
+card_rian_week_005,card_type_rian,리안,리안이 떠나기 전 아벨리아를 만나고 싶어 한다.
+card_rian_week_006,card_type_rian,리안,리안이 황실 무도회 전에 할 말이 있다고 한다.
+card_rian_week_007,card_type_rian,리안,리안이 숨겨둔 이야기를 꺼내려 한다.
+card_rian_week_008,card_type_rian,리안,리안이 자신의 위치를 이야기하려 한다.
+card_rian_week_009,card_type_rian,리안,리안이 마지막 축하 인사를 하러 온다.
+card_max_week_001,card_type_max,막스,막스가 함께 정원을 걸으며 위로하려 한다.
+card_max_week_002,card_type_max,막스,막스가 다과회에서 가까이 있겠다고 한다.
+card_max_week_003,card_type_max,막스,막스가 아벨리아와 검술 훈련을 하고 싶어 한다.
+card_max_week_004,card_type_max,막스,막스가 마차 앞에서 아벨리아를 기다린다.
+card_max_week_005,card_type_max,막스,막스가 무도회 파트너 후보로 인사하러 온다.
+card_max_week_006,card_type_max,막스,막스가 무도회 파트너 절차를 확인하러 온다.
+card_max_week_007,card_type_max,막스,막스가 아벨리아 곁에 있어도 되는지 묻는다.
+card_max_week_008,card_type_max,막스,막스가 성인식 당일 자신의 자리를 확인한다.
+card_max_week_009,card_type_max,막스,막스가 대연회장에서 아벨리아의 곁에 선다.
+card_millia_week_001,card_type_millia,밀리아,밀리아가 상단 물건을 보여주러 온다.
+card_millia_week_002,card_type_millia,밀리아,밀리아가 신기한 간식을 가져온다.
+card_millia_week_003,card_type_millia,밀리아,밀리아가 외국 서적을 함께 보자고 한다.
+card_millia_week_004,card_type_millia,밀리아,밀리아가 축제 판매 물품을 보여준다.
+card_millia_week_005,card_type_millia,밀리아,밀리아가 드레스와 장신구 견본을 보여준다.
+card_millia_week_006,card_type_millia,밀리아,밀리아가 무도회 후 파티와 상단 사람들을 알려준다.
+card_millia_week_007,card_type_millia,밀리아,밀리아가 백작가 재정 문서를 함께 보려 한다.
+card_millia_week_008,card_type_millia,밀리아,밀리아가 상단의 후원 조건을 검토받으려 한다.
+card_millia_week_009,card_type_millia,밀리아,밀리아가 백작가 부채 명세서를 확인한다.
+card_yuffie_week_001,card_type_yuffie,유피,후작가 영애 유피가 위로하기 위해 방문을 청한다.
+card_yuffie_week_002,card_type_yuffie,유피,유피가 다과회 예절을 같이 연습하려 한다.
+card_yuffie_week_003,card_type_yuffie,유피,유피가 또래끼리 친해지러 온다.
+card_yuffie_week_004,card_type_yuffie,유피,유피가 축제를 위한 선물과 조언을 가져온다.
+card_yuffie_week_005,card_type_yuffie,유피,유피가 웃는 법과 사교예법을 알려주려 한다.
+card_yuffie_week_006,card_type_yuffie,유피,유피가 황실 무도회 주의사항을 알려준다.
+card_yuffie_week_007,card_type_yuffie,유피,유피가 후작가의 딸로 사는 일을 이야기한다.
+card_yuffie_week_008,card_type_yuffie,유피,유피가 정해진 자리대로 사는 삶을 이야기한다.
+card_yuffie_week_009,card_type_yuffie,유피,유피가 후작가 보호 제안을 마지막으로 전한다.

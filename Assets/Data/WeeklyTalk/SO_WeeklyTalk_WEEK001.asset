@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_WeeklyTalk_WEEK001
   m_EditorClassIdentifier: Assembly-CSharp::SO_WeeklyTalk
   _weekId: week_001
-  _context: "\uD765."
+  _context: ...
   _nemostate: 3
-  _CardInteraction_StatDelta: {fileID: 11400000, guid: 57220356c6098c248820648c99882432, type: 2}
+  _CardInteraction_StatDelta: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b056cce100fbb48b67d025a548eb12, type: 3}
+  m_Name: event_week_008_excursion_garden_direct_anxious_result
+  m_EditorClassIdentifier: Assembly-CSharp::SO_EventResultDefinition
+  _eventId: event_week_008_excursion_garden_direct_anxious
+  _title: "\uC815\uC6D0 - \uC21C\uC9C4"
+  _context: "\uC544\uAC00\uC528\uAED8\uC11C\uB294 \uBC18\uBCF5\uD574\uC11C \uC5F4\uB9AC\uB294
+    \uBB38\uC744 \uD1B5\uD574 \uC5B5\uC9C0\uB85C \uBD99\uC7A1\uC744 \uC218 \uC5C6\uB294
+    \uC0C1\uD669\uC744 \uC0DD\uAC01\uD558\uC168\uACE0, \uADF8 \uC0AC\uC2E4 \uC55E\uC5D0\uC11C
+    \uBD88\uC548\uD55C \uAE30\uC0C9\uC744 \uBCF4\uC774\uC168\uC2B5\uB2C8\uB2E4."

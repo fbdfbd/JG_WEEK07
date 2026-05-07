@@ -8,6 +8,7 @@ public abstract class SO_InteractiveEventDefinition : ScriptableObject
     [SerializeField] private int _priority;
     [SerializeField] private WeekEventConditionData _conditions = new();
     [SerializeField] private SO_InteractiveEventStepDefinition _firstStep;
+    [SerializeField] private SO_EventResultDefinition _result;
     [SerializeField] private SO_CardInteractionDefinition[] _onCompletedInteractions = Array.Empty<SO_CardInteractionDefinition>();
     [SerializeField] private SO_WeekFlowCinematicProfile _cinematicProfile;
 
@@ -16,6 +17,7 @@ public abstract class SO_InteractiveEventDefinition : ScriptableObject
     public int Priority => _priority;
     public WeekEventConditionData Conditions => _conditions;
     public SO_InteractiveEventStepDefinition FirstStep => _firstStep;
+    public SO_EventResultDefinition Result => _result;
     public SO_CardInteractionDefinition[] OnCompletedInteractions => _onCompletedInteractions;
     public SO_WeekFlowCinematicProfile CinematicProfile => _cinematicProfile;
 }

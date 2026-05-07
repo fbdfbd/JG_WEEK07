@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: event_week_003_yuffie_1__step_event_week_003_yuffie_1
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: 
+  _bodyText: 
+  _dialogueLines:
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
+    _text: "\uC774\uBC88 \uCD95\uC81C\uC5D0 \uC778\uD615\uADF9\uC774 \uC628\uB300\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC778\uD615\uADF9?"
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
+    _text: "\uB124. \uC232\uC5D0\uC11C \uAE38\uC744 \uC783\uC740 \uACF5\uC8FC \uC774\uC57C\uAE30\uB798\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uACF5\uC8FC\uAC00 \uAE38\uC744 \uC783\uC5B4?"
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
+    _text: "\uB124. \uADF8\uB7F0\uB370 \uC800\uB294 \uADF8\uAC8C \uC88B\uC544\uC694."
+  - _speaker: {fileID: 11400000, guid: 30d9fee260dbe2f40bbd2e941f19c4b0, type: 2}
+    _text: "\uC65C?"
+  - _speaker: {fileID: 11400000, guid: 275c8535516efb949adc193602035b9c, type: 2}
+    _text: "\uAC00\uB9CC\uD788 \uAE30\uB2E4\uB9AC\uB294 \uACF5\uC8FC\uBCF4\uB2E4,
+      \uC5EC\uAE30\uC800\uAE30 \uD0D0\uD5D8\uD558\uB294 \uACF5\uC8FC\uAC00 \uB354
+      \uC7AC\uBC0C\uC73C\uB2C8\uAE4C\uC694."
+  _nemoLine: "\uC774\uBC88 \uCD95\uC81C\uC5D0 \uC778\uD615\uADF9\uC774 \uC628\uB300\uC694."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

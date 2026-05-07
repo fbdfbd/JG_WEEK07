@@ -13,24 +13,25 @@ MonoBehaviour:
   m_Name: event_week_006_excursion_basement_blocked
   m_EditorClassIdentifier: Assembly-CSharp::SO_DayRoutineEventDefinition
   _id: event_week_006_excursion_basement_blocked
-  _title: basement Blocked
+  _title: "\uC9C0\uD558\uC2E4 \uD1B5\uC81C"
   _priority: 10
   _conditions:
     _requiredFlags: []
     _blockedFlags: []
     _statRequirements: []
-    _informationRequirements:
-    - _informationType: {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
-      _useSemanticFilter: 1
-      _semantic: 2
-      _minimumCount: 1
+    _informationRequirements: []
   _firstStep: {fileID: 11400000, guid: d3b0052ccd9fc654895e33b6c77008b2, type: 2}
+  _result: {fileID: 11400000, guid: bc0a6344c138bf04fa67824b468c750d, type: 2}
   _onCompletedInteractions:
-  - {fileID: 11400000, guid: a30ed8bb6f8db0f479372922140aa11e, type: 2}
-  - {fileID: 11400000, guid: f4ea349d76ad73e488dcc5448ce0e451, type: 2}
-  - {fileID: 11400000, guid: 7e9e7c466b743084c8fdfed064fa2fb3, type: 2}
+  - {fileID: 11400000, guid: b0acdf54f7c36774fbadc86a7ef5a9d2, type: 2}
+  - {fileID: 11400000, guid: d090616150871a540b234c9482e2e144, type: 2}
   _cinematicProfile: {fileID: 0}
   _relatedInformationTypes:
-  - {fileID: 11400000, guid: dbafb5c030c34524294075dd28cedafe, type: 2}
+  - {fileID: 11400000, guid: dedf20def60c1004c884dad104f732f3, type: 2}
   _preferredSemantics: 02000000
   _linkedCard: {fileID: 11400000, guid: 47b1edc7802bee44daea06b2a00a120c, type: 2}
+  _selectionRule:
+    _mode: 5
+    _selectorStat: 0
+    _threshold: 0
+    _isDefault: 1
