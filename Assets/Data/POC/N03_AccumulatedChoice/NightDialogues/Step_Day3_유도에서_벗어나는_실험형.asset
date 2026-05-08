@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ae0b7e66326e1946bca6ce9fa70ec4c, type: 3}
+  m_Name: "Step_Day3_\uC720\uB3C4\uC5D0\uC11C_\uBC97\uC5B4\uB098\uB294_\uC2E4\uD5D8\uD615"
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InteractiveEventStepDefinition
+  _titleOverride: "DAY 3 \uBC24 \uC811\uCD09 - \uC720\uB3C4\uC5D0\uC11C \uBC97\uC5B4\uB098\uB294
+    \uC2E4\uD5D8\uD615"
+  _bodyText: "\uB0AE\uC758 \uD658\uACBD \uC870\uC815 \uACB0\uACFC\uAC00 \uB300\uC0C1\uC758
+    \uC815\uC11C\uC640 \uD0DC\uB3C4\uB85C \uC5B4\uB5BB\uAC8C \uB098\uD0C0\uB0AC\uB294\uC9C0
+    \uD655\uC778\uD55C\uB2E4."
+  _dialogueLines: []
+  _nemoLine: "\uB300\uC0C1\uC740 \uC870\uC815\uB41C \uC7A5\uC18C \uBC16\uC5D0 \uC7A0\uC2DC
+    \uBA38\uBB38\uB2E4.\n\uC774\uD6C4 \uD50C\uB808\uC774\uC5B4 \uCABD\uC744 \uBC14\uB77C\uBCF4\uC9C0\uB9CC,
+    \uBC14\uB85C \uBB3C\uB7EC\uB098\uC9C0\uB294 \uC54A\uB294\uB2E4."
+  _useCustomVisualState: 0
+  _visualState: 0
+  _onEnterInteractions: []
+  _choices: []
+  _conditionalNext:
+    _nextStep: {fileID: 0}
+    _fallbackStep: {fileID: 0}
+    _statRequirements: []
+  _nextStep: {fileID: 0}
+  _cinematicCues:
+    _enterCue: {fileID: 0}
+    _exitCue: {fileID: 0}

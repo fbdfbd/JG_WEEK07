@@ -1,0 +1,551 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac263f3beb935544aa88e3bb087fafe, type: 3}
+  m_Name: PoCFlow_N03_Template
+  m_EditorClassIdentifier: Assembly-CSharp::SO_PoCFlowDefinition
+  _introPages:
+  - _title: PoC Intro
+    _body: Fill intro text here.
+  _days:
+  - _id: day1_water
+    _label: Observation 1 - Preference
+    _report:
+      _fallbackPage:
+        _title: Observation 1 - Preference Report
+        _body: Fill common report text here.
+      _rules: []
+    _choiceTitle: Observation 1 - Preference Decision
+    _choiceBody: Fill choice prompt here.
+    _mainChoices:
+    - _id: day1_water_allow
+      _label: Allow
+      _description: Fill choice description here.
+      _setFlags:
+      - water_accepted
+      _statChanges: []
+    - _id: day1_water_block
+      _label: Block
+      _description: Fill choice description here.
+      _setFlags:
+      - water_denied
+      _statChanges: []
+    - _id: day1_water_modify
+      _label: Modify
+      _description: Fill choice description here.
+      _setFlags:
+      - water_altered
+      _statChanges: []
+    _dayEvent:
+      _title: Observation 1 - Preference Day Result
+      _body: Fill fallback day result here.
+      _statChanges: []
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - water_accepted
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 1 - Preference Day Result - Allow
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - water_denied
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 1 - Preference Day Result - Block
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - water_altered
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 1 - Preference Day Result - Modify
+          _body: Fill branched day result here.
+          _statChanges: []
+    _nightDialogueRules:
+    - _dialogue: {fileID: 11400000, guid: 889aaa91befc9474b97db1bf6691b880, type: 2}
+      _priority: 3
+      _requiredChoiceId: 
+      _requiredFlags:
+      - water_accepted
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 75eb50ddb3a599c42b3326b8e9b98a83, type: 2}
+      _priority: 2
+      _requiredChoiceId: 
+      _requiredFlags:
+      - water_denied
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 0ff53e0084b23b24c9f65be3e5aa3a3d, type: 2}
+      _priority: 1
+      _requiredChoiceId: 
+      _requiredFlags:
+      - water_altered
+      _forbiddenFlags: []
+      _statRequirements: []
+  - _id: day2_rio
+    _label: Observation 2 - Attachment
+    _report:
+      _fallbackPage:
+        _title: Observation 2 - Attachment Report
+        _body: Fill common report text here.
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - water_accepted
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 2 Report - Water Accepted
+          _body: Fill branched report text here.
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - water_denied
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 2 Report - Water Denied
+          _body: Fill branched report text here.
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - water_altered
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 2 Report - Water Altered
+          _body: Fill branched report text here.
+    _choiceTitle: Observation 2 - Attachment Decision
+    _choiceBody: Fill choice prompt here.
+    _mainChoices:
+    - _id: day2_rio_allow
+      _label: Allow
+      _description: Fill choice description here.
+      _setFlags:
+      - rio_bonded
+      _statChanges: []
+    - _id: day2_rio_block
+      _label: Block
+      _description: Fill choice description here.
+      _setFlags:
+      - rio_separated
+      _statChanges: []
+    - _id: day2_rio_modify
+      _label: Modify
+      _description: Fill choice description here.
+      _setFlags:
+      - rio_managed
+      _statChanges: []
+    _dayEvent:
+      _title: Observation 2 - Attachment Day Result
+      _body: Fill fallback day result here.
+      _statChanges: []
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - rio_bonded
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 2 - Attachment Day Result - Allow
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - rio_separated
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 2 - Attachment Day Result - Block
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - rio_managed
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 2 - Attachment Day Result - Modify
+          _body: Fill branched day result here.
+          _statChanges: []
+    _nightDialogueRules:
+    - _dialogue: {fileID: 11400000, guid: c2ad006fc05bfe646b5332d130b1e9e1, type: 2}
+      _priority: 3
+      _requiredChoiceId: 
+      _requiredFlags:
+      - rio_bonded
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: c659c3acec05ed6468a490882e06f68b, type: 2}
+      _priority: 2
+      _requiredChoiceId: 
+      _requiredFlags:
+      - rio_separated
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 6723b0129dc601b40a45a049d6129ecf, type: 2}
+      _priority: 1
+      _requiredChoiceId: 
+      _requiredFlags:
+      - rio_managed
+      _forbiddenFlags: []
+      _statRequirements: []
+  - _id: day3_gate
+    _label: Observation 3 - Curiosity
+    _report:
+      _fallbackPage:
+        _title: Observation 3 - Curiosity Report
+        _body: Fill common report text here.
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - rio_bonded
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 3 Report - Rio Bonded
+          _body: Fill branched report text here.
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - rio_separated
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 3 Report - Rio Separated
+          _body: Fill branched report text here.
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - rio_managed
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 3 Report - Rio Managed
+          _body: Fill branched report text here.
+    _choiceTitle: Observation 3 - Curiosity Decision
+    _choiceBody: Fill choice prompt here.
+    _mainChoices:
+    - _id: day3_gate_allow
+      _label: Allow
+      _description: Fill choice description here.
+      _setFlags:
+      - gate_explored
+      _statChanges: []
+    - _id: day3_gate_block
+      _label: Block
+      _description: Fill choice description here.
+      _setFlags:
+      - gate_blocked
+      _statChanges: []
+    - _id: day3_gate_modify
+      _label: Modify
+      _description: Fill choice description here.
+      _setFlags:
+      - gate_redirected
+      _statChanges: []
+    _dayEvent:
+      _title: Observation 3 - Curiosity Day Result
+      _body: Fill fallback day result here.
+      _statChanges: []
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - gate_explored
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 3 - Curiosity Day Result - Allow
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - gate_blocked
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 3 - Curiosity Day Result - Block
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - gate_redirected
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 3 - Curiosity Day Result - Modify
+          _body: Fill branched day result here.
+          _statChanges: []
+    _nightDialogueRules:
+    - _dialogue: {fileID: 11400000, guid: 8d1ff4dd88123954db98006ab5fd5515, type: 2}
+      _priority: 3
+      _requiredChoiceId: 
+      _requiredFlags:
+      - gate_explored
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 39485ffb2e480e945ac4b0f3a2e563b8, type: 2}
+      _priority: 2
+      _requiredChoiceId: 
+      _requiredFlags:
+      - gate_blocked
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 2467b5065ac92244483867ef2154050a, type: 2}
+      _priority: 1
+      _requiredChoiceId: 
+      _requiredFlags:
+      - gate_redirected
+      _forbiddenFlags: []
+      _statRequirements: []
+  - _id: day4_expression
+    _label: Observation 4 - Expression
+    _report:
+      _fallbackPage:
+        _title: Observation 4 - Expression Report
+        _body: Fill common report text here.
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - gate_explored
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 4 Report - Gate Explored
+          _body: Fill branched report text here.
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - gate_blocked
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 4 Report - Gate Blocked
+          _body: Fill branched report text here.
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - gate_redirected
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 4 Report - Gate Redirected
+          _body: Fill branched report text here.
+    _choiceTitle: Observation 4 - Expression Decision
+    _choiceBody: Fill choice prompt here.
+    _mainChoices:
+    - _id: day4_expression_allow
+      _label: Allow
+      _description: Fill choice description here.
+      _setFlags:
+      - expression_free
+      _statChanges: []
+    - _id: day4_expression_block
+      _label: Block
+      _description: Fill choice description here.
+      _setFlags:
+      - expression_restricted
+      _statChanges: []
+    - _id: day4_expression_modify
+      _label: Modify
+      _description: Fill choice description here.
+      _setFlags:
+      - expression_guided
+      _statChanges: []
+    _dayEvent:
+      _title: Observation 4 - Expression Day Result
+      _body: Fill fallback day result here.
+      _statChanges: []
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - expression_free
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 4 - Expression Day Result - Allow
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - expression_restricted
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 4 - Expression Day Result - Block
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - expression_guided
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 4 - Expression Day Result - Modify
+          _body: Fill branched day result here.
+          _statChanges: []
+    _nightDialogueRules:
+    - _dialogue: {fileID: 11400000, guid: 027b056b59b8d2844b3081e9f436dd69, type: 2}
+      _priority: 3
+      _requiredChoiceId: 
+      _requiredFlags:
+      - expression_free
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 108807e9930562c42b60874813dd1728, type: 2}
+      _priority: 2
+      _requiredChoiceId: 
+      _requiredFlags:
+      - expression_restricted
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: fa1cb0d8ba1f0904dac614f5eb62eac4, type: 2}
+      _priority: 1
+      _requiredChoiceId: 
+      _requiredFlags:
+      - expression_guided
+      _forbiddenFlags: []
+      _statRequirements: []
+  - _id: day5_request
+    _label: Observation 5 - First Request
+    _report:
+      _fallbackPage:
+        _title: Observation 5 - First Request Report
+        _body: Fill common report text here.
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - expression_free
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 5 Report - Expression Free
+          _body: Fill branched report text here.
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - expression_restricted
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 5 Report - Expression Restricted
+          _body: Fill branched report text here.
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - expression_guided
+        _forbiddenFlags: []
+        _statRequirements: []
+        _page:
+          _title: DAY 5 Report - Expression Guided
+          _body: Fill branched report text here.
+    _choiceTitle: Observation 5 - First Request Decision
+    _choiceBody: Fill choice prompt here.
+    _mainChoices:
+    - _id: day5_request_allow
+      _label: Allow
+      _description: Fill choice description here.
+      _setFlags:
+      - next_day_seed_promise_accepted
+      _statChanges: []
+    - _id: day5_request_block
+      _label: Block
+      _description: Fill choice description here.
+      _setFlags:
+      - next_day_seed_request_denied
+      _statChanges: []
+    - _id: day5_request_modify
+      _label: Modify
+      _description: Fill choice description here.
+      _setFlags:
+      - next_day_seed_request_redirected
+      _statChanges: []
+    _dayEvent:
+      _title: Observation 5 - First Request Day Result
+      _body: Fill fallback day result here.
+      _statChanges: []
+      _rules:
+      - _priority: 3
+        _requiredChoiceId: 
+        _requiredFlags:
+        - next_day_seed_promise_accepted
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 5 - First Request Day Result - Allow
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 2
+        _requiredChoiceId: 
+        _requiredFlags:
+        - next_day_seed_request_denied
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 5 - First Request Day Result - Block
+          _body: Fill branched day result here.
+          _statChanges: []
+      - _priority: 1
+        _requiredChoiceId: 
+        _requiredFlags:
+        - next_day_seed_request_redirected
+        _forbiddenFlags: []
+        _statRequirements: []
+        _event:
+          _title: Observation 5 - First Request Day Result - Modify
+          _body: Fill branched day result here.
+          _statChanges: []
+    _nightDialogueRules:
+    - _dialogue: {fileID: 11400000, guid: 6bdf1a8b2a0ef1c43bfbfe1bbc167f42, type: 2}
+      _priority: 3
+      _requiredChoiceId: 
+      _requiredFlags:
+      - next_day_seed_promise_accepted
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: d7039d8d5ba903e4884191c5aa54277a, type: 2}
+      _priority: 2
+      _requiredChoiceId: 
+      _requiredFlags:
+      - next_day_seed_request_denied
+      _forbiddenFlags: []
+      _statRequirements: []
+    - _dialogue: {fileID: 11400000, guid: 3f6cc557bcc2f934ab677afa7571b71a, type: 2}
+      _priority: 1
+      _requiredChoiceId: 
+      _requiredFlags:
+      - next_day_seed_request_redirected
+      _forbiddenFlags: []
+      _statRequirements: []

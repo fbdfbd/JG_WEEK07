@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad1bfc9a98c714295628ddfb149f51, type: 3}
+  m_Name: PrivateDialogue_Day2_allow
+  m_EditorClassIdentifier: Assembly-CSharp::SO_PrivateDialogueDefinition
+  _id: poc_day2_night_allow
+  _title: "DAY 2 \uBC24 \uC811\uCD09 - \uD5C8\uAC00"
+  _priority: 0
+  _conditions:
+    _requiredFlags: []
+    _blockedFlags: []
+    _statRequirements: []
+    _informationRequirements: []
+  _firstStep: {fileID: 11400000, guid: 9078b05f384dab94b92fdd83571902a3, type: 2}
+  _result: {fileID: 0}
+  _onCompletedInteractions: []
+  _cinematicProfile: {fileID: 0}
